@@ -138,8 +138,8 @@ class CPSForum(BaseDocument):
            if event_id:
                evtool.notify(event_id, proxy, infos={})
 
-    security.declareProtected(View, 'newPostPublished')
-    def newPostPublished(self, post_id, proxy=None):
+    security.declareProtected(View, 'postPublished')
+    def postPublished(self, post_id, proxy=None):
        """Do some processing related to the publication of a new post
 
        Does not actually publish the post (handled in calling script)
@@ -153,16 +153,54 @@ class CPSForum(BaseDocument):
        if event_id:
            evtool.notify(event_id, proxy, infos={})
 
+    security.declareProtected(View, 'postUnpublished')
+    def postUnpublished(self, post_id, proxy=None):
+       """Do some processing related to the publication of a new post
+
+       Does not actually publish the post (handled in calling script)
+       """
+       evtool = getEventService(self)
+       event_id = ''
+       if aq_parent(aq_inner(proxy)).id == '.cps_discussions':
+           event_id = 'forum_comment_unpublished'
+       else:
+           event_id = 'forum_post_unpublished'
+       if event_id:
+           evtool.notify(event_id, proxy, infos={})
+
+    security.declareProtected(View, 'postRejected')
+    def postRejected(self, post_id, proxy=None):
+       """Do some processing related to the publication of a new post
+
+       Does not actually publish the post (handled in calling script)
+       """
+       evtool = getEventService(self)
+       event_id = ''
+       if aq_parent(aq_inner(proxy)).id == '.cps_discussions':
+           event_id = 'forum_comment_rejected'
+       else:
+           event_id = 'forum_post_rejected'
+       if event_id:
+           evtool.notify(event_id, proxy, infos={})
+
     security.declareProtected(ForumModerate, 'delPosts')
     def delPosts(self, posts, proxy=None):
         """Delete a list of posts from this forum
 
         Sync data structures such as the locked thread list"""
 
+        evtool = getEventService(self)
+        event_id = ''
+        if aq_parent(aq_inner(proxy)).id == '.cps_discussions':
+            event_id = 'forum_comment_deleted'
+        else:
+            event_id = 'forum_post_deleted'
         for post in posts:
             pid = getattr(proxy, post).getContent().id
             if pid in self.locked_threads:
                 self.locked_threads.remove(pid)
+            if event_id:
+                evtool.notify(event_id, proxy, infos={})
         proxy.manage_delObjects(posts)
 
     security.declareProtected(View, 'getThreads')

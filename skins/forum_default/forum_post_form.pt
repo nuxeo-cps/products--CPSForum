@@ -1,17 +1,16 @@
 <metal:block metal:use-macro="here/main_template/macros/master">
 <metal:block fill-slot="header" />
-<metal:block fill-slot="main"
-             i18n:domain="cpsforum"
-             tal:define="parent_id options/parent_id|nothing;
-                         comment_mode here/REQUEST/comment_mode|python:0;
-                         doc python:here.getForumObject(comment_mode=comment_mode);
-                         member 
-                           python:here.portal_membership.getAuthenticatedMember();
-                         dtool python:here.portal_metadirectories['members'];
-                         errormsg options/error_message|nothing;
-                         roles 
-                           python:
-                             here.portal_membership.getCPSCandidateLocalRoles(here)">
+<metal:block 
+  fill-slot="main"
+  i18n:domain="cpsforum"
+  tal:define="
+    parent_id options/parent_id|nothing;
+    comment_mode here/REQUEST/comment_mode|python:0;
+    doc python:here.getForumObject(comment_mode=comment_mode);
+    member python:here.portal_membership.getAuthenticatedMember();
+    dtool python:here.portal_metadirectories['members'];
+    errormsg options/error_message|nothing;
+    roles python:here.portal_membership.getCPSCandidateLocalRoles(here)">
 
 <tal:block tal:condition="python:not (comment_mode or 'ForumPoster' in roles)">
   <p>You are not authorized to post on this forum</p>

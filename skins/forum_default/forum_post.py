@@ -2,7 +2,6 @@
 
 # $Id$
 
-new_id = context.computeId(compute_from=subject)
 doc = context.getForumObject(comment_mode)
 
 if (not doc) and comment_mode:
@@ -11,6 +10,7 @@ if (not doc) and comment_mode:
     doc = context.portal_discussion.addForum(context)
 
 if (not author) or (author == ""):
+    # XXX: this message must be translated
     msg = "Pseudo obligatoire"
     return context.forum_post_form(error_message=msg)
 
@@ -22,12 +22,16 @@ if (not parent_id) or parent_id.isspace():
     #of None when going through "New Thread"
     parent_id = None
 
-new_id = doc.addForumPost(id=new_id, subject=subject, author=author,
+new_id = doc.addForumPost(subject=subject, author=author,
                           message=message, parent_id=parent_id)
 
-if REQUEST is not None:
+if REQUEST:
     if comment_mode:
-        REQUEST.RESPONSE.redirect(context.absolute_url()+"/?comment_id="+new_id)
+        REQUEST.RESPONSE.redirect(
+            context.absolute_url() + "/?comment_id=" + new_id)
     else:
-        REQUEST.RESPONSE.redirect(context.absolute_url()+"/?post_id="+new_id)
+        REQUEST.RESPONSE.redirect(
+            context.absolute_url() + "/?post_id=" + new_id)
 
+else:
+    return new_id

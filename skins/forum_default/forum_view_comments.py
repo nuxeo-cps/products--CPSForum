@@ -1,6 +1,6 @@
 ##parameters=post_id, forum
 
-# $id:$
+# $Id$
 
 result = []
 for i in forum.getThreads():

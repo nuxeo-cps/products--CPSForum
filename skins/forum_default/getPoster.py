@@ -1,8 +1,8 @@
 ##parameters=post_author
 
-# $id:$
+# $Id$
 
-# Given the id/login of a forum poster, return his fullname
+"""Given the id/login of a forum poster, return his fullname."""
 
 dirtool = context.portal_metadirectories.members
 entry = dirtool.getEntry(post_author)

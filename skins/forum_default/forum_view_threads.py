@@ -1,8 +1,8 @@
 ##parameters=post_id, is_reviewer=None
 
-# $id:$
+# $Id$
 
-doc = context.getContent();
+doc = context.getContent()
 result = []
 for i in doc.getThreads():
     result.append((i, doc.getDescendants(i['id']),))

@@ -1,6 +1,6 @@
 ##parameters=descendants=(), post_id='', comment_mode=0
 
-# $id:$
+# $Id$
 
 #counter counts the message position in thread
 #forum will exist only when comment_mode is true

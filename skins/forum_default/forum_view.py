@@ -1,8 +1,9 @@
-## Script (Python) "forum_view"
 ##parameters=post_id=None, REQUEST=None
-# $id:$
 
-""" """
+# $Id$
+
+"""Default view for the forum. If post_id is not None, post with id = <post_id>
+will be displayed, otherwise first post will be displayed."""
 
 if post_id is None:
     threads = context.getContent().getThreads()

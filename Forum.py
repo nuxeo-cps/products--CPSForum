@@ -109,7 +109,7 @@ class CPSForum(BaseDocument):
     # of post documents, not post proxies)
     locked_threads = []
 
-    security.declareProtected(View, 'addPost')
+    security.declareProtected(View, 'newPostCreated')
     def newPostCreated(self, post_id, proxy=None):
        """Do some processing related to the creation of a new post
 
@@ -119,10 +119,7 @@ class CPSForum(BaseDocument):
 
        notified = 0
 
-       #
        # Is a post creation within a forum thread ?
-       #
-
        current_post =  getattr(proxy, post_id)
        info = self.getPostInfo(current_post)
        if info['parent_id']:
@@ -131,13 +128,8 @@ class CPSForum(BaseDocument):
            evtool.notify(event_id, current_post, infos={})
 
        if not notified:
-
-           #
            # Lookup within the Forum
-           #
-
            event_id = ''
-
            if aq_parent(aq_inner(proxy)).id == '.cps_discussions':
                event_id = 'forum_new_comment'
            else:
@@ -145,6 +137,21 @@ class CPSForum(BaseDocument):
 
            if event_id:
                evtool.notify(event_id, proxy, infos={})
+
+    security.declareProtected(View, 'newPostPublished')
+    def newPostPublished(self, post_id, proxy=None):
+       """Do some processing related to the publication of a new post
+
+       Does not actually publish the post (handled in calling script)
+       """
+       evtool = getEventService(self)
+       event_id = ''
+       if aq_parent(aq_inner(proxy)).id == '.cps_discussions':
+           event_id = 'forum_comment_published'
+       else:
+           event_id = 'forum_post_published'
+       if event_id:
+           evtool.notify(event_id, proxy, infos={})
 
     security.declareProtected(ForumModerate, 'delPosts')
     def delPosts(self, posts, proxy=None):

@@ -70,13 +70,8 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
 
         self.assertEquals(len(forum.getThreads(proxy=proxy_forum)), 1)
 
-        #XXX: these were working until the modification made
-        #     in CPSDefault's content_lib (r1.334)
-        # temporarily disabled the tests as a call to forum_view
-        # only fails in the context of unit tests (i.e. not when
-        # actually viewing a forum through a browser)
-##        forum.forum_view()
-##        forum.forum_view(post_id)
+        forum.forum_view()
+        forum.forum_view(post_id)
         proxy_forum.forum_post_reply(parent_id=post_id)
         
         post_proxy = getattr(proxy_forum, post_id)
@@ -112,13 +107,8 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
 
         self.assertEquals(len(forum.getThreads(proxy=proxy_forum)), 1)
 
-        #XXX: these were working until the modification made
-        #     in CPSDefault's content_lib (r1.334)
-        # temporarily disabled the tests as a call to forum_view
-        # only fails in the context of unit tests (i.e. not when
-        # actually viewing a forum through a browser)
-##        forum.forum_view()
-##        forum.forum_view(post_id)
+        forum.forum_view()
+        forum.forum_view(post_id)
         
         post_proxy = getattr(proxy_forum, post_id)
         post_info = forum.getPostInfo(post_proxy)
@@ -162,14 +152,9 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         self.assertEquals(len(forum.getDescendants(post2_id, proxy=proxy_forum)), 0)
         self.assertEquals(len(forum.getDescendants(post3_id, proxy=proxy_forum)), 0)
 
-        #XXX: these were working until the modification made
-        #     in CPSDefault's content_lib (r1.334)
-        # temporarily disabled the tests as a call to forum_view
-        # only fails in the context of unit tests (i.e. not when
-        # actually viewing a forum through a browser)
-##        forum.forum_view()
-##        forum.forum_view(post1_id)
-##        forum.forum_view(post2_id)
+        forum.forum_view()
+        forum.forum_view(post1_id)
+        forum.forum_view(post2_id)
 
 
 def test_suite():

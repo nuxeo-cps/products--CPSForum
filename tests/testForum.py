@@ -65,7 +65,7 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         pmtool = forum.portal_membership
         pmtool.setLocalRoles(forum, member_ids=['root'], 
             member_role='ForumModerator')
-        self.assertEquals(forum.getModerators(forum), ['root'])
+        self.assertEquals(forum.getModerators(forum), ['user:root'])
 
     def testPostCreation1(self):
         # Create new post using skin method.
@@ -107,11 +107,11 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
                                 author='author')
         self.assertEquals(len(forum.getThreads()), 1)
 
-        forum.changePostPublicationStatus(post_id, 1)
+        forum.changePostPublicationStatus(post_id, status=1)
         post = forum[post_id]
         self.assertEquals(post['published'], 1)
 
-        forum.changePostPublicationStatus(post_id, 0)
+        forum.changePostPublicationStatus(post_id, status=0)
         post = forum[post_id]
         self.assertEquals(post['published'], 0)
 

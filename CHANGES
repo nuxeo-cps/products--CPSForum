@@ -3,14 +3,7 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
-- security is now managed through permissions. CPSDefault's roles are mapped to
-  these permissions (managers can moderate, members and readers can post)
-- old ForumModerator and ForumPoster roles still exist and are mapped to the
-  according permissions, so that it remains possible to assign forum permissions
-  to users without any other particular role
-- notifications of new messages can be sent to explicitly declared moderators in
-  a posteriori mode
-- now possible to lock a forum (read-only)
+-
 Bug fixes:
 ~~~~~~~~~~
 -

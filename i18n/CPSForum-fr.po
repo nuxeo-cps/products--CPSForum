@@ -1,13 +1,16 @@
+# translation of CPSForum-fr.po to Français
+# Julien Anguenot <ja@nuxeo.com>, 2003
 msgid ""
-msgstr "Project-Id-Version: \n"
+msgstr ""
+"Project-Id-Version: CPSForum-fr\n"
 "POT-Creation-Date: 2002-09-03 16:09+CET\n"
-"PO-Revision-Date: 2002-09-03 16:09+CET\n"
-"Last-Translator:  <>\n"
-"Language-Team: fr-FR <>\n"
+"PO-Revision-Date: 2003-09-15 20:57+0200\n"
+"Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
+"Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-
+"X-Generator: KBabel 1.0\n"
 
 msgid "_Add a user whose_"
 msgstr "Ajouter un utilisateur tel que"
@@ -1513,7 +1516,6 @@ msgid "_(deleted_hierarchy)_"
 msgstr "(Rubrique supprimée)"
 
 # Calendar
-
 msgid "_action_addevent_"
 msgstr "Ajouter événement"
 
@@ -1980,7 +1982,6 @@ msgid "_Transparent events mean that you-re not busy during this event_"
 msgstr "Les événements transparents sont les événements durant lesquels vous n'êtes pas considéré comme occupé."
 
 # Forum
-
 msgid "L_forum_In reply to_"
 msgstr "En réponse à"
 
@@ -2033,7 +2034,6 @@ msgid "_action_calendar_"
 msgstr "Retour à l'Agenda"
 
 # Workflow schemas
-
 msgid "_wfs_Schema_created_"
 msgstr "Schéma créé"
 
@@ -2161,9 +2161,8 @@ msgid "_action_signatures_"
 msgstr "Signatures"
 
 # Newsletter
-
 msgid "_action_(un)subscribe/_"
-msgstr "Abonnement/désabonnement" 
+msgstr "Abonnement/désabonnement"
 
 msgid "_prop_frequency_"
 msgstr "Périodicité"
@@ -2224,4 +2223,49 @@ msgstr "Liste des abonnements :"
 
 msgid "_ml_subscription_disabled_"
 msgstr "Notifications désactivées."
+
+msgid "L_forum Modifier"
+msgstr "Modifier"
+
+msgid "L_forum a posteriori"
+msgstr "a posteriori"
+
+msgid "L_forum a priori"
+msgstr "a priori"
+
+msgid "L_forum date"
+msgstr "Date"
+
+msgid "L_forum depublier"
+msgstr "Dépublier"
+
+msgid "L_forum description"
+msgstr "Déscription"
+
+msgid "L_forum ecrivain"
+msgstr "Ecrivain"
+
+msgid "L_forum message"
+msgstr "Message"
+
+msgid "L_forum moderation"
+msgstr "Moderation"
+
+msgid "L_forum post"
+msgstr "Message"
+
+msgid "L_forum publier"
+msgstr "Publier"
+
+msgid "L_forum sujet"
+msgstr "Sujet"
+
+msgid "L_forum supprimer"
+msgstr "Supprimer"
+
+msgid "L_forum titre"
+msgstr "Titre"
+
+msgid "L_forum valideur"
+msgstr "Validateur"
 

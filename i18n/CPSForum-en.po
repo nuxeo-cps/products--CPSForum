@@ -1,13 +1,16 @@
+# translation of CPSForum-en.po to Français
+# Julien Anguenot <ja@nuxeo.com>, 2003
 msgid ""
-msgstr "Project-Id-Version: \n"
+msgstr ""
+"Project-Id-Version: CPSForum-en\n"
 "POT-Creation-Date: 2002-09-03 16:09+CET\n"
-"PO-Revision-Date: 2002-09-03 16:09+CET\n"
-"Last-Translator:  <>\n"
-"Language-Team: en <>\n"
+"PO-Revision-Date: 2003-09-15 20:55+0200\n"
+"Last-Translator: Julien Anguenot <ja@nuxeo.com>\n"
+"Language-Team: Français <fr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-
+"X-Generator: KBabel 1.0\n"
 
 msgid "_Add a user whose_"
 msgstr "Add a user whose"
@@ -2029,7 +2032,6 @@ msgid "_action_calendar_"
 msgstr "Return to Calendar"
 
 # Workflow schemas
-
 msgid "_wfs_Schema_created_"
 msgstr "Schema created"
 
@@ -2157,9 +2159,8 @@ msgid "_action_signatures_"
 msgstr "Signatures"
 
 # Newsletter
-
 msgid "_action_(un)subscribe/_"
-msgstr "Subscribe/unsubscribe" 
+msgstr "Subscribe/unsubscribe"
 
 msgid "_prop_frequency_"
 msgstr "Frequency"
@@ -2217,4 +2218,49 @@ msgstr "All your subscriptions: "
 
 msgid "_ml_subscription_disabled_"
 msgstr "Subscriptions disabled."
+
+msgid "L_forum Modifier"
+msgstr "Modify"
+
+msgid "L_forum a posteriori"
+msgstr "A posteriori"
+
+msgid "L_forum a priori"
+msgstr "Moderation before"
+
+msgid "L_forum date"
+msgstr "Date"
+
+msgid "L_forum depublier"
+msgstr "Unpublish"
+
+msgid "L_forum description"
+msgstr "Description"
+
+msgid "L_forum ecrivain"
+msgstr "Writer"
+
+msgid "L_forum message"
+msgstr "Message"
+
+msgid "L_forum moderation"
+msgstr "Moderation"
+
+msgid "L_forum post"
+msgstr "Post"
+
+msgid "L_forum publier"
+msgstr "Publish"
+
+msgid "L_forum sujet"
+msgstr "Subject"
+
+msgid "L_forum supprimer"
+msgstr "Delete"
+
+msgid "L_forum titre"
+msgstr "Title"
+
+msgid "L_forum valideur"
+msgstr "Validator"
 

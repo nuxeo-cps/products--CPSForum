@@ -1,4 +1,28 @@
 *******************************************
+** CPSForum V1.2.1 [R1 build 2004/06/10-09:56 by epietrig]
+
+Requires:
+~~~~~~~~~
+- product CPSInstaller
+- CPSSchemas > 0.18.0-1
+- CPSSubscriptions > 0.7.0-1 not included
+
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Removed overwriting of dumb status_history portal action. Now set in the
+  portal type by a recent CPSInstaller (needed to close #295).
+- SectionReviewers and SectionReaders could not post to forum even with
+  appropriate permission/roles
+- temporarily disable "allow anonymous posts" as this causes security problems
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** CPSForum V1.2.0 [R1 build 2004/05/21-17:07 by madarche]
 
 Requires:

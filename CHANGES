@@ -1,20 +1,12 @@
 Requires:
 ~~~~~~~~~
-- product CPSInstaller
-- CPSSchemas > 0.18.0-1
-- CPSSubscriptions > 0.7.0-1 not included
-
+-
 New features:
 ~~~~~~~~~~~~~
 -
 Bug fixes:
 ~~~~~~~~~~
-- Removed overwriting of dumb status_history portal action. Now set in the
-  portal type by a recent CPSInstaller (needed to close #295).
-- SectionReviewers and SectionReaders could not post to forum even with
-  appropriate permission/roles
-- temporarily disable "allow anonymous posts" as this causes security problems
-
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

@@ -1,4 +1,4 @@
-##parameters=descendants=(), post_id='', frm_start=0, sort_by=None, display_mode='title', wf_display_mode='wf_icon', forum=None
+##parameters=descendants=(), post_id='', frm_start=0, sort_by=None, display_mode='title', wf_display_mode='wf_icon', forum=None, REQUEST=None
 
 # $Id$
 
@@ -20,7 +20,7 @@ member = pmt.getAuthenticatedMember()
 username = member.getId()
 is_reviewer = context.portal_membership.checkPermission('Forum Moderate', context)
 try:
-    session_data = context.session_data_manager.getSessionData()
+    session_data = REQUEST.SESSION
 except AttributeError:
     session_data = None
 

@@ -4,8 +4,10 @@
 
 from ZTUtils import make_query
 
-session_data = context.session_data_manager.getSessionData()
-session_data.set('frm_sort', criterion)
+try:
+    REQUEST.SESSION['frm_sort'] = criterion
+except AttributeError:
+    pass
 
 if REQUEST is not None:
     url = "%s?%s" % (context.absolute_url(), make_query(REQUEST.form))

@@ -1,11 +1,11 @@
-##parameters=post_id, is_reviewer=None
+##parameters=post_id, is_reviewer=None, REQUEST=None
 
 # $Id$
 
 forum = context.getContent()
 
 try:
-    session_data = context.session_data_manager.getSessionData()
+    session_data = REQUEST.SESSION
     sort_by = session_data.get('frm_sort', None)
 except AttributeError:
     sort_by = None

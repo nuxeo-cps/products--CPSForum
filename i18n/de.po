@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum messages\n"
-"POT-Creation-Date: 2004-06-18 14:28default\n"
+"POT-Creation-Date: 2004-06-30 11:46default\n"
 "PO-Revision-Date: 2004-04-06 12:04+CET\n"
 "Last-Translator:  <>\n"
 "Language-Team: de <>\n"
@@ -113,7 +113,7 @@ msgstr "Nachricht"
 msgid "forum_moderation"
 msgstr "Moderation"
 
-#.   <input condition="python:here.portal_membership.checkPermission('Forum Moderate', here)" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
+#.   <input condition="python:is_reviewer and not published" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
 #: from ../skins/forum_default/post_view_snippet.pt
 msgid "forum_modify"
 msgstr "Ändern"
@@ -211,6 +211,9 @@ msgstr "Sie müssen einen Namen oder einen Nicknamen angeben"
 #, fuzzy
 msgid "forum_psm_message_posted"
 msgstr "Nachricht"
+
+msgid "psm_cpsforum_need_rights"
+msgstr ""
 
 msgid "action_activate_comments"
 msgstr ""

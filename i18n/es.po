@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es-CPSForum\n"
-"POT-Creation-Date: 2004-06-18 14:28default\n"
+"POT-Creation-Date: 2004-06-30 11:46default\n"
 "PO-Revision-Date: 2004-03-27 20:39+0100\n"
 "Last-Translator: Álvaro Tejero Cantero <alvaro@antalia.com>\n"
 "Language-Team:  EspaÃ±ol <es@li.org>\n"
@@ -146,7 +146,7 @@ msgstr "Mensaje"
 msgid "forum_moderation"
 msgstr "Moderación"
 
-#.   <input condition="python:here.portal_membership.checkPermission('Forum Moderate', here)" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
+#.   <input condition="python:is_reviewer and not published" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
 #: from ../skins/forum_default/post_view_snippet.pt
 msgid "forum_modify"
 msgstr "Modificar"
@@ -268,6 +268,9 @@ msgstr "Debe introducir un nombre o seudónimo"
 #, fuzzy
 msgid "forum_psm_message_posted"
 msgstr "Mensaje"
+
+msgid "psm_cpsforum_need_rights"
+msgstr ""
 
 msgid "action_activate_comments"
 msgstr ""

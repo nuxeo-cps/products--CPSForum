@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pt-BR\n"
-"POT-Creation-Date: 2004-05-11 15:36default\n"
+"POT-Creation-Date: 2004-06-30 11:46default\n"
 "PO-Revision-Date: 2004-06-08 15:54-0300\n"
 "Last-Translator: Mario Olimpio de Menezes <mario@curiango.ipen.br>\n"
 "Language-Team: Português do Brasil <pt@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: KBabel 1.3.1\n"
 
 #.   <option value="0">a posteriori</option>
-#.   <option attributes="selected python:not moderation_mode" value="0">
+#.   <option value="0" attributes="selected python:not moderation_mode">
 #.               a posteriori
 #.             </option>
 #: from ../skins/forum_default/forum_create_form.pt
@@ -28,7 +28,7 @@ msgid "forum_a_posteriori"
 msgstr "a posteriori"
 
 #.   <option value="1">a priori</option>
-#.   <option attributes="selected python:not not moderation_mode" value="1">
+#.   <option value="1" attributes="selected python:not not moderation_mode">
 #.               a priori
 #.             </option>
 #: from ../skins/forum_default/forum_create_form.pt
@@ -49,7 +49,7 @@ msgstr "Permite postagem anônima"
 msgid "forum_author"
 msgstr "Autor"
 
-#.   <input value="forum_button_lockunlock" class="context" name="forum_lock_thread:method" type="submit" />
+#.   <input name="forum_lock_thread:method" type="submit" class="context" value="forum_button_lockunlock" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_button_lockunlock"
 msgstr "(Des)-Bloquear"
@@ -59,13 +59,13 @@ msgstr "(Des)-Bloquear"
 msgid "forum_date"
 msgstr "Data"
 
-#.   <input define="cpsmcat nocall:here/Localizer/default" attributes="onclick python:'return window.confirm(\'%s\')' %
-#.                                  (cpsmcat('description_confirm_delete'), )" value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
+#.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
+#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/Localizer/default" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Remover"
 
-#.   <input value="forum_depublish" class="context" name="forum_unpublish_posts:method" type="submit" />
+#.   <input name="forum_unpublish_posts:method" type="submit" class="context" value="forum_depublish" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_depublish"
 msgstr "Despublicar"
@@ -92,16 +92,16 @@ msgstr "Bloquear o fórum (não será mais possível postar novas mensagens)"
 msgid "forum_link_back_to_document"
 msgstr "Voltar"
 
-#.   <a condition="next_page" attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, frm_start=next_page.first))" href=".">
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=next_page.first))" condition="next_page">
 #.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
 #.             </a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_link_next_threads ${tpp}"
 msgstr "Próximas threads ${tpp}"
 
-#.   <a condition="previous_page" attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, frm_start=previous_page.first))" href=".">
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=previous_page.first))" condition="previous_page">
 #.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
 #.             </a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
@@ -119,6 +119,11 @@ msgstr "Mensagem"
 msgid "forum_moderation"
 msgstr "Moderação"
 
+#.   <input condition="python:is_reviewer and not published" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
+#: from ../skins/forum_default/post_view_snippet.pt
+msgid "forum_modify"
+msgstr "Modificar"
+
 #.   <p>This forum is locked. You cannot post new messages to it.</p>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_msg_forum_frozen"
@@ -135,7 +140,7 @@ msgstr "Este fórum está bloqueado. Você não pode postar novas mensagens."
 msgid "forum_no_message"
 msgstr "Nenhuma mensagem!"
 
-#.   <input value="forum_post" class="standalone" name="forum_post:method" type="submit" />
+#.   <input name="forum_post:method" type="submit" class="standalone" value="forum_post" />
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_post"
 msgstr "Postar"
@@ -152,19 +157,19 @@ msgstr "Você não está autorizado a postar neste fórum."
 msgid "forum_psm_name_required"
 msgstr "O campo autor precisa ser preenchido!"
 
-#.   <div condition="python:errormsg == 'error_subject'" class="row error">
+#.   <div class="row error" condition="python:errormsg == 'error_subject'">
 #.                   Subject field must be filled
 #.           </div>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_subject_required"
 msgstr "O campo assunto precisa ser preenchido!"
 
-#.   <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
+#.   <input name="forum_publish_posts:method" type="submit" class="context" value="forum_publish" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_publish"
 msgstr "Publicar"
 
-#.   <input value="forum_reply" class="standalone" name="forum_post_reply:method" type="submit" />
+#.   <input name="forum_post_reply:method" type="submit" class="standalone" value="forum_reply" />
 #: from ../skins/forum_default/post_view_csnippet.pt
 #: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
@@ -183,9 +188,6 @@ msgstr "Assunto"
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
 msgstr "Título"
-
-msgid "forum_modify"
-msgstr "Modificar"
 
 msgid "forum_label_postedby"
 msgstr "Postado por:"
@@ -208,6 +210,13 @@ msgstr "Comentários ativados"
 msgid "forum_psm_comments_deactivated"
 msgstr "Comentários desativados"
 
+#, fuzzy
+msgid "forum_psm_message_posted"
+msgstr "Mensagem"
+
+msgid "psm_cpsforum_need_rights"
+msgstr ""
+
 msgid "action_activate_comments"
 msgstr "Ativar comentários"
 
@@ -228,3 +237,18 @@ msgstr "Comentários:"
 
 msgid "forum_label_threads_per_page"
 msgstr "Threads por página"
+
+#, fuzzy
+msgid "forum_label_subject"
+msgstr "Assunto"
+
+#, fuzzy
+msgid "forum_label_message"
+msgstr "Mensagem"
+
+msgid "portal_type_ForumPost_title"
+msgstr ""
+
+#, fuzzy
+msgid "portal_type_ForumPost_description"
+msgstr "Descrição"

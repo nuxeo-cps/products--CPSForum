@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
-"POT-Creation-Date: 2004-06-18 14:28default\n"
+"POT-Creation-Date: 2004-06-30 11:46default\n"
 "PO-Revision-Date: 2004-05-10 12:42+0100\n"
 "Last-Translator: Paolo Dina <paolo@php3.it>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -128,7 +128,7 @@ msgstr "Messaggio"
 msgid "forum_moderation"
 msgstr "Moderazione"
 
-#.   <input condition="python:here.portal_membership.checkPermission('Forum Moderate', here)" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
+#.   <input condition="python:is_reviewer and not published" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
 #: from ../skins/forum_default/post_view_snippet.pt
 msgid "forum_modify"
 msgstr "Modifica"
@@ -233,6 +233,9 @@ msgstr "Devi inserire un nome o un soprannome"
 #, fuzzy
 msgid "forum_psm_message_posted"
 msgstr "Messaggio"
+
+msgid "psm_cpsforum_need_rights"
+msgstr ""
 
 msgid "action_activate_comments"
 msgstr ""

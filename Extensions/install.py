@@ -357,7 +357,7 @@ pid = state_change.kwargs.get('parent_id', '')
 
 kw = {'Title': subject,
       'Description': msg,
-      'Creator': author,
+      'author': author,
       'parent_id': pid}
 
 object.getEditableContent().edit(**kw)

@@ -192,7 +192,7 @@ class CPSForum(BaseDocument):
 
         if discussion:
             post_doc = post.getContent()
-            return {'id': post.id, 'subject': post.title, 'author': post.creator,
+            return {'id': post.id, 'subject': post.title, 'author': post_doc.author,
                     'message': post.text, 'parent_id': post.in_reply_to,
                     'published': hasattr(post, 'inforum') and post.inforum,
                     'modified': post.bobobase_modification_time(),
@@ -203,7 +203,7 @@ class CPSForum(BaseDocument):
             wtool = getToolByName(self, 'portal_workflow')
             r_state = wtool.getInfoFor(post, 'review_state', 'nostate')
             return {
-                'id': post.id, 'subject': post.Title(), 'author': post.Creator(),
+                'id': post.id, 'subject': post.Title(), 'author': post_doc.author,
                 'message': post_doc.Description(), 'parent_id': post_doc.parent_id,
                 'published': r_state == 'published',
                 'modified': post_doc.bobobase_modification_time(),

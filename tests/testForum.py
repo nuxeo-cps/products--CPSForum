@@ -19,6 +19,11 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         self.ws.invokeFactory('CPSForum', 'forum')
         self.forum = self.ws.forum
 
+        mdir = self.portal.portal_directories.members
+        mdir.createEntry({'id': 'author'})
+        mdir.createEntry({'id': 'author1'})
+        mdir.createEntry({'id': 'author2'})
+
     def beforeTearDown(self):
         self.logout()
 
@@ -34,7 +39,12 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         forum.forum_view()
         forum.forum_post_form()
         forum.forum_edit_form()
-        forum.getPosterName('toto')
+
+        forum.forum_localrole_form()
+        self.portal.REQUEST.role_submit = 1
+        forum.forum_localrole_form()
+
+        forum.getPosterName('author')
         forum['forum_icon.gif']
 
         self.assertEquals(forum.moderation_mode, 1)
@@ -122,7 +132,7 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         self.assertEquals(len(forum.getThreads()), 1)
 
         post2_id = forum.addPost(subject='subject2', message='message2',
-            author='authorr2', parent_id=post1_id)
+            author='author2', parent_id=post1_id)
         self.assertEquals(len(forum.getThreads()), 1)
 
         self.assertEquals(len(forum.getPostReplies(post1_id)), 1)

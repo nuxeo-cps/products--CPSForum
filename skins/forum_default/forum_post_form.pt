@@ -8,7 +8,7 @@
     comment_mode here/REQUEST/comment_mode|python:0;
     doc python:here.getForumObject(comment_mode=comment_mode);
     member python:here.portal_membership.getAuthenticatedMember();
-    dtool python:here.portal_metadirectories['members'];
+    dtool python:here.portal_directories.members;
     errormsg options/error_message|nothing;
     roles python:here.portal_membership.getCPSCandidateLocalRoles(here)">
 
@@ -26,7 +26,7 @@
           <tal:block define="
             user_id member/getUserName;
             user_props python:dtool.getEntry(user_id);
-            fullname python:user_props and user_props.get(dtool.display_prop, user_id) or user_id;">
+            fullname python:user_props and user_props.get(dtool.title_field, user_id) or user_id;">
             <input type="hidden" name="author:string"
                    tal:attributes="value user_id" />
             <span tal:replace="fullname" />

@@ -3,11 +3,11 @@
 
 <div class="Desktop"
      metal:fill-slot="main"
-     tal:define="searching python: request.get('role_submit', None );
+     tal:define="searching python:request.get('role_submit', None);
                  mtool here/portal_membership;
-                 dtool here/portal_metadirectories;
-                 groups python:dtool['groups'];
-                 display_prop python:groups['display_prop'];
+                 dtool here/portal_directories;
+                 groups python:dtool.groups;
+                 title_field python:groups.title_field;
                 ">
 
 <div tal:condition="python: not searching">
@@ -54,8 +54,8 @@
 
 <div tal:condition="python:searching and (search_param == 'fullname' or
 search_param == 'email')"
-  tal:define="search_param python: request.get( 'search_param', '' );
-              search_term  python: request.get( 'search_term', '' );
+  tal:define="search_param python:request.get('search_param', '');
+              search_term  python:request.get('search_term', '');
               found python:here.folder_localrole_search(search_param, search_term);">
 <!-- Assignment -->
 <h2 i18n:translate="heading_local_roles_search_results">
@@ -85,13 +85,15 @@ search_param == 'email')"
    </tr>
 
    <tr tal:repeat="member found">
-    <td width="16">
+    <tal:block define="entry python:member[1]">
+    <td width="16" define="entry python:member[1]">
      <input type="checkbox" name="member_ids:list"
             value=""
-            tal:attributes="value string:user:${member/id_}" />
+            tal:attributes="value string:user:${entry/id}" />
     </td>
-    <td tal:content="string:user:${member/fullname}"> Username 1 </td>
-    <td tal:content="member/email"> Email 1 </td>
+    <td tal:content="string:user:${entry/givenName}"> Username 1 </td>
+    <td tal:content="entry/email"> Email 1 </td>
+    </tal:block>
    </tr>
 
    <tr tal:condition="nothing">
@@ -157,9 +159,9 @@ search_param == 'email')"
 
 
 <div tal:condition="python:searching and (search_param == 'groupname')"
-  tal:define="search_param python: request.get( 'search_param', '' );
-  search_term  python: request.get( 'search_term', '' );
-  found python: (search_term and ['group:' +group for group in here.get_valid_groupids() if group.upper().find(search_term.upper()) > 0]) or here.get_valid_groupids() ;
+  tal:define="search_param python:request.get('search_param', '');
+  search_term  python:request.get('search_term', '');
+  found python:(search_term and ['group:' +group for group in here.get_valid_groupids() if group.upper().find(search_term.upper()) > 0]) or here.get_valid_groupids() ;
  "
 >
 
@@ -197,9 +199,9 @@ search_param == 'email')"
                value=""
                tal:attributes="value string:group:${group}" />
     </td>
-    <tal:block define="igroup python:groups.searchEntry(**{'id_':group})">
+    <tal:block define="igroup python:groups.searchEntry(**{'id':group})">
       <td tal:condition="python:igroup != ()"
-          tal:content="python:igroup[0][display_prop]"> Groupame
+          tal:content="python:igroup[0][title_field]"> Groupame
       </td>
       <td tal:condition="python:igroup == ()"
           i18n:translate=""

@@ -228,7 +228,7 @@ class CPSForum(CPSBaseDocument):
     def getOfficialModerators(self, proxy):
         """XXX: what is an 'official moderator' ???"""
         moderator_list = self.getModerators(proxy)
-        dtool = getToolByName(self, 'portal_metadirectories').members
+        dtool = getToolByName(self, 'portal_directories').members
         portal_url = getToolByName(self, 'portal_url').getPortalPath()
         # XXX: this is dangerous. This URL may change one day. We need
         # an API.
@@ -239,7 +239,7 @@ class CPSForum(CPSBaseDocument):
             mdata = {'id': moderator_id}
             entry = dtool.getEntry(moderator_id)
             if entry:
-                mdata['fullname'] = entry[dtool.display_prop] or moderator_id
+                mdata['fullname'] = entry[dtool.title_field] or moderator_id
             else:
                 mdata['fullname'] = moderator_id
             mdata['homedir'] = dtool_entry_url + moderator_id

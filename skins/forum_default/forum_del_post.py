@@ -1,4 +1,4 @@
-##parameters=forum_thread_ids=(),comment_mode=0
+##parameters=forum_thread_ids=(),comment_mode=0,REQUEST
 
 # $Id$
 
@@ -7,9 +7,9 @@ for i in forum_thread_ids:
     doc.delForumPost(i)
 
 if comment_mode:
-    context.REQUEST.RESPONSE.redirect(context.absolute_url()
-                                      + "/?comment_id=" + context.REQUEST.parent_id)
+    REQUEST.RESPONSE.redirect(context.absolute_url()
+                                      + "/?comment_id=" + REQUEST.parent_id)
 
 else:
-    context.REQUEST.RESPONSE.redirect(context.absolute_url()
-                                      + "/?post_id=" + context.REQUEST.parent_id)
+    REQUEST.RESPONSE.redirect(context.absolute_url()
+                                      + "/?post_id=" + REQUEST.parent_id)

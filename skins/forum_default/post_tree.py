@@ -8,8 +8,9 @@
 from zLOG import LOG,DEBUG
 
 pmt = context.portal_membership
-is_reviewer = 'ForumModerator' in pmt.getCPSCandidateLocalRoles(context)
-username = pmt.getAuthenticatedMember().getId()
+member = pmt.getAuthenticatedMember()
+is_reviewer = member.has_permission('Forum Moderate', context)
+username = member.getId()
 try:
     session_data = context.session_data_manager.getSessionData()
 except AttributeError:

@@ -19,8 +19,8 @@
   <tal:block>
     <span tal:content="description">Description</span>
     <br/>
-    <tal:block i18n:translate="forum_moderator">Moderators</tal:block>:
-    <tal:block repeat="moderator python:here.getOfficialModerators()">
+    <tal:block i18n:translate="forum_moderators">Moderators</tal:block>:
+    <tal:block repeat="moderator python:doc.getOfficialModerators(here)">
       <a tal:attributes="href moderator/homedir"
          tal:content="moderator/fullname">fullname</a>
       <tal:block condition="not:repeat/moderator/end">,</tal:block>

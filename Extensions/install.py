@@ -360,6 +360,7 @@ def install(self):
             'new_state_id': 'unpublished',
             'clone_allowed_transitions': None,
             'trigger_type': TRIGGER_USER_ACTION,
+            'after_script_name': 'post_unpublish',
             'props': {'guard_permissions': 'Forum Moderate',
                       'guard_roles':'',
                       'guard_expr':''},
@@ -369,6 +370,7 @@ def install(self):
             'new_state_id': 'rejected',
             'clone_allowed_transitions': None,
             'trigger_type': TRIGGER_USER_ACTION,
+            'after_script_name': 'post_reject',
             'props': {'guard_permissions': 'Forum Moderate',
                       'guard_roles':'',
                       'guard_expr':''},
@@ -402,7 +404,27 @@ object.getEditableContent().edit(**kw)
 ##parameters=state_change
 object = state_change.object
 forum = object.aq_inner.aq_parent
-forum.getContent().newPostPublished(object.id, proxy=forum)
+forum.getContent().postPublished(object.id, proxy=forum)
+"""
+            },
+            'post_unpublish': {
+                '_owner': None,
+                '_proxy_roles': ['Manager'],
+                'script': """\
+##parameters=state_change
+object = state_change.object
+forum = object.aq_inner.aq_parent
+forum.getContent().postUnpublished(object.id, proxy=forum)
+"""
+            },
+            'post_reject': {
+                '_owner': None,
+                '_proxy_roles': ['Manager'],
+                'script': """\
+##parameters=state_change
+object = state_change.object
+forum = object.aq_inner.aq_parent
+forum.getContent().postRejected(object.id, proxy=forum)
 """
             },
         }

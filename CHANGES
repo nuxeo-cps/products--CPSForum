@@ -9,4 +9,5 @@ Bug fixes:
 -
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
--
+- forum specific CSS rules are now stored in a specific stylesheet (no longer
+  in CPSDefault)

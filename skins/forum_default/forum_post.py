@@ -1,5 +1,5 @@
 ##parameters=subject,author,message,parent_id=None
-new_id = context.cps_create_findid(id=subject)
+new_id = context.computeId(compute_from=subject)
 doc = hasattr(context,'getContent') and context.getContent() or context
 
 if (not author) or (author == ""):

@@ -167,9 +167,12 @@ class CPSForum(CPSBaseDocument):
         """
         Fetches a post
         """
-        disc = self.portal_discussion.getDiscussionFor(self)
-        reply = disc.getReply(id)
-        result = self.getPostInfo(reply)
+        try:
+            disc = self.portal_discussion.getDiscussionFor(self)
+            reply = disc.getReply(id)
+            result = self.getPostInfo(reply)
+        except AttributeError:
+            return None
 
         return result
 

@@ -1,24 +1,28 @@
-Installation of NuxCPSForum4
+Installation of CPSForum
 
-  NuxCPSForum4 requires either CPS2 or CPS3, amke sure this is installed and
+  CPSForum requires either CPS2 or CPS3, amke sure this is installed and
   working first.
 
-  Unpack the distribution into the Products folder of your Zope installation and
-  restart Zope. Check in Control_Panel/Products that there is a NuxCPSForum4 product
-  and that there were no import errors.
+  Unpack the distribution into the Products folder of your Zope installation
+  and restart Zope. Check in Control_Panel/Products that there is a CPSForum
+  product and that there were no import errors.
 
-  You should now have two new portal_types called 'Forum' and 'Post'. Posts are only
-  allowed to be created in forums, and that's how it should be. If you have filtering
-  on your sections and workspaces, make sure that you allow Forums to be created there.
+  You should now have two new portal_types called 'Forum' and 'Post'. Posts are
+  only allowed to be created in forums, and that's how it should be. If you
+  have filtering on your sections and workspaces, make sure that you allow
+  Forums to be created there.
 
-  You now need to add some more skin directories to the portal_skins folder. There
-  will be two new skin fodlers registered, called Products/NuxCPSForum4/skins/cmf and
-  Products/NuxCPSForum4/skins/cps. If you have CPS3 installed, there will also be
-  a third folder called Products/NuxCPSForum4/skins/cps3 installed.
+  # FIXME: this is old documentation. FIX THIS.
 
-  In portal_skins, create new Filesystem Directory Views for these above directories.
-  Name them nuxcpsforum4_cmf, nuxcpsforum4_cps and, for CPS3 also nuxcpsforum4_cps3.
-  Enter the properties page of portal_skins and add these directory views to the end
-  of all your skin definitions and press save.
+  You now need to add some more skin directories to the portal_skins folder.
+  There will be two new skin fodlers registered, called
+  Products/CPSForum/skins/cmf and Products/CPSForum/skins/cps. If you have CPS3
+  installed, there will also be a third folder called
+  Products/CPSForum/skins/cps3 installed.
+
+  In portal_skins, create new Filesystem Directory Views for these above
+  directories. Name them nuxcpsforum4_cmf, nuxcpsforum4_cps and, for CPS3 also
+  nuxcpsforum4_cps3.  Enter the properties page of portal_skins and add these
+  directory views to the end of all your skin definitions and press save.
 
   You should now be able to create forums and use them.

@@ -1,10 +1,5 @@
-import sys, os
-from App.Extensions import getPath
-from re import match
+import os
 from zLOG import LOG, INFO, DEBUG
-from Products.CMFCore.CMFCorePermissions import View, ModifyPortalContent
-from Products.ExternalMethod.ExternalMethod import ExternalMethod
-
 
 def foruminstall(self):
     
@@ -16,7 +11,7 @@ def foruminstall(self):
                    '</pre></body></html>'
 
         _log.append(bla)
-        if (bla and zlog):
+        if bla and zlog:
             LOG('ForumInstall:', INFO, bla)
 
     def prok(pr=pr):

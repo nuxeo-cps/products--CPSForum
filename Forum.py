@@ -1,15 +1,29 @@
-import time
-import string
+# (C) Copyright 2002, 2003 Nuxeo SARL <http://nuxeo.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2 as published
+# by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+# 02111-1307, USA.
+#
+# $Id$
 
 from zLOG import LOG, DEBUG, ERROR
 
 from AccessControl import ClassSecurityInfo
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.CMFCorePermissions import View, AddPortalContent, \
-        ModifyPortalContent, ManageProperties, ChangePermissions
+     ManageProperties, ChangePermissions
 from Products.NuxUserGroups.CatalogToolWithGroups import mergedLocalRoles
 from Products.CPSCore.CPSBase import CPSBaseDocument, CPSBase_adder
-from Products.CPSCore.CPSBase import CPSBaseFolder
 
 from Post import Post
 
@@ -82,7 +96,7 @@ def addDiscussionItem(self, id, title, description, text_format, text,
 
 def addCPSForum(self, id, **kw):
     """
-    Adds a Forum
+    Add a Forum
     """
     forum = CPSForum(id, **kw)
     self.moderation_mode = kw.get('moderation_mode', 1)
@@ -92,33 +106,28 @@ class CPSForum(CPSBaseDocument):
     """
     Forum CPS
     """
-    meta_type='CPSForum'
-    portal_type='CPSForum'
+    meta_type = 'CPSForum'
+    portal_type = 'CPSForum'
     allow_discussion = 1
     moderation_mode = 1 # after publishing post
     moderators = []
     security = ClassSecurityInfo()
 
-    def __init__(self, id, **kw):
-        """
-        constructor
-        """
-        CPSBaseDocument.__init__(self,id, **kw)
+    #def __init__(self, id, **kw):
+    #    """Constructor"""
+    #    CPSBaseDocument.__init__(self,id, **kw)
 
     def getThreads(self):
-        """
-        returns: tuple of root Posts
-        """
-        result = [ self.getPostInfo(post) for post in
-                self.portal_discussion.getDiscussionFor(self).getReplies()
-                if post.in_reply_to is None ]
+        """Return list of root posts"""
+        
+        discussion = self.portal_discussion.getDiscussionFor(self)
+        result = [ self.getPostInfo(post) 
+                   for post in discussion.getReplies()
+                   if post.in_reply_to is None ]
         return result
 
-
     def getPostInfo(self, post):
-        """
-        returns: tuple of root Posts
-        """
+        """Return post information as a dictionnary"""
         # NB: It looks like we're obliged to maintain
         # our own 'publication state' for the post,
         # but it should be hidden behind a WF
@@ -128,16 +137,14 @@ class CPSForum(CPSBaseDocument):
         # chosen to effectively be a Portal type,
         # which dosen't apply here
         #
-        return {'id':post.id, 'subject':post.title, 'author':post.creator,
-                'message':post.text, 'parent_id':post.in_reply_to,
-                'published':hasattr(post,'inforum') and post.inforum,
-                'modified':post.bobobase_modification_time(),
+        return {'id': post.id, 'subject': post.title, 'author': post.creator,
+                'message': post.text, 'parent_id': post.in_reply_to,
+                'published': hasattr(post, 'inforum') and post.inforum,
+                'modified': post.bobobase_modification_time(),
                }
 
     def addForumPost(self, id, **kw):
-        """
-        Adds a post
-        """
+        """Add a post"""
         discussion = self.portal_discussion.getDiscussionFor(self)
 
         post_id = discussion.createReply(
@@ -151,38 +158,31 @@ class CPSForum(CPSBaseDocument):
         return post_id
 
     def delForumPost(self, id):
-        """
-        Adds a post
-        """
+        """Delete a post"""
         self.portal_discussion.getDiscussionFor(self).deleteReply(id)
 
     def publishPost(self, id, state=1):
-        """
-        Publish posts
-        """
+        """Publish post <id>"""
         post = self.portal_discussion.getDiscussionFor(self).getReply(id)
         post.inforum = state
 
     def __getitem__(self, id):
-        """
-        Fetches a post
-        """
+        """Return post with id=<id>"""
         try:
             disc = self.portal_discussion.getDiscussionFor(self)
             reply = disc.getReply(id)
             result = self.getPostInfo(reply)
         except AttributeError:
-            return None
+            result = None
 
         return result
 
     def getPostReplies(self, post_id):
-        """
-        Fetches post replies
-        """
+        """Return replies to post <post_id>"""
         discussion = self.portal_discussion.getDiscussionFor(self)
-        result = [ self.getPostInfo(post) for post in
-                discussion.objectValues() if post.in_reply_to == post_id ]
+        result = [ self.getPostInfo(post) 
+                   for post in discussion.objectValues() 
+                   if post.in_reply_to == post_id ]
         return result
 
     def getThreadInfo(self, post_id):
@@ -213,10 +213,8 @@ class CPSForum(CPSBaseDocument):
 
         return result
 
-
-    def editForumProperties(self,**kw):
-        """
-        Sets up forum properties
+    def editForumProperties(self, **kw):
+        """Sets up forum properties
         """
         #self.title = kw.get('title', self.title)
         #self.description = kw.get('description', self.description)
@@ -225,13 +223,13 @@ class CPSForum(CPSBaseDocument):
         self.moderation_mode = kw.get('moderation_mode', 1)
         self.moderators = kw.get('moderators', [])
 
-
     def getEverything(self):
         """
         Fetches everything (DEBUG)
         """
         discussion = self.portal_discussion.getDiscussionFor(self)
         return [ self.getPostInfo(post) for post in discussion.objectValues() ]
+
 
     security.declarePublic('getModerators')
     def getModerators(self, proxy):
@@ -247,7 +245,8 @@ class CPSForum(CPSBaseDocument):
         mtool = getToolByName(self, 'portal_membership')
         dtool = getToolByName(self, 'portal_metadirectories').members
         portal_url = getToolByName(self, 'portal_url').getPortalPath()
-        dtool_entry_url = "%s/directory_view?dirname=%s&entry_id=" % (portal_url, dtool.id)
+        dtool_entry_url = "%s/directory_view?dirname=%s&entry_id=" \
+                          % (portal_url, dtool.id)
 
         result = []
         for moderator in self.moderators:
@@ -281,22 +280,21 @@ class CPSPost(CPSBaseDocument, Post):
     meta_type = "CPSPost"
     forum_meta_type = 'CPSForum'
     _properties = CPSBaseDocument._properties + (
-        { 'id': 'text', 'type': 'string', 'mode': 'w', 'label': 'Post author' },
-        { 'id': 'author', 'type': 'string', 'mode': 'w', 'label': 'Post author' },
-        { 'id': 'forum_id', 'type': 'string', 'mode': 'w', 'label': 'Parent Forum id' },
-        { 'id': 'parent_id', 'type': 'string', 'mode': 'w', 'label': 'Parent Post id' },
+        { 'id': 'text', 'type': 'string', 'mode': 'w', 
+          'label': 'Post author' },
+        { 'id': 'author', 'type': 'string', 'mode': 'w', 
+          'label': 'Post author' },
+        { 'id': 'forum_id', 'type': 'string', 'mode': 'w', 
+          'label': 'Parent Forum id' },
+        { 'id': 'parent_id', 'type': 'string', 'mode': 'w', 
+          'label': 'Parent Post id' },
         )
 
     def getPostInfo(self):
-        """function getPostInfo
-
-        returns tuple (url, subject, author)
-        """
+        """Return post information as tuple (url, subject, author)"""
         return (self.getId(), self.getSubject(), self.getAuthor())
 
-    def __init__(self, id, **kw):
-        """constructor
-        """
-        CPSBaseDocument.__init__(self, id, **kw)
-
+    #def __init__(self, id, **kw):
+    #    """Constructor"""
+    #    CPSBaseDocument.__init__(self, id, **kw)
 

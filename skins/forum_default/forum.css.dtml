@@ -14,102 +14,102 @@
 */
 
 table.forumPost {
-  width:100%;
-  border: &dtml-groupBorder;;
+  width: 100%;
+  border: <dtml-var groupBorder>;
   margin: 1em 0em 1em 0em;
   padding: 0.7em 0.7em 0.7em 0.7em;
 }
 
 div.forumPostTitle {
-  margin:0 0 0.5em 0;
-  font-weight:bold;
+  margin: 0 0 0.5em 0;
+  font-weight: bold;
 }
 
 div.forumPostText {
-  margin:0.5em 0 1em 0;
+  margin: 0.5em 0 1em 0;
 }
 
 table.forumThreads {
-  width:100%;
-  border: &dtml-groupBorder;;
+  width: 100%;
+  border: <dtml-var groupBorder>;
   margin: 1em 0em 1em 0em;
   padding: 0.7em 0.7em 0.7em 0.7em;
 }
 
 td.forumEditLabel {
-  width:30%
+  width: 30%
 }
 
 td.forumEditValue {
-  width:70%
+  width: 70%
 }
 
 td.forumDateCell {
-  text-align:center;
+  text-align: center;
 }
 
 .forumDateCell {
-  width:20%
+  width: 20%;
 }
 
 .forumWFCell {
-  width:20%;
-  text-align:center
+  width: 20%;
+  text-align: center;
 }
 
 td.forumAuthorCell {
-  text-align:center;
+  text-align: center;
 }
 
 .forumAuthorCell {
-  width:20%
+  width: 20%;
 }
 
 .forumSubjectCell {
-  width:30%
+  width: 30%;
 }
 
 .forumSelectCell {
-  width:2%
+  width: 2%;
 }
 
 .forumModerateCell {
-  width:2%
+  width: 2%;
 }
 
 .forumLockCell {
-  width:5%
+  width: 5%;
 }
 
 .forumError {
-  color:red;
+  color: #ff0000;
 }
 
 div.forumModeration {
-  margin-top: 1em
+  margin-top: 1em;
 }
 
 td.forumThreadBatch {
-  text-align:center;
-  font-size:0.9em;
-  background-color:&dtml-boxEvenBackground;;
+  text-align: center;
+  font-size: 0.9em;
+  background-color: <dtml-var boxEvenBackground>;
 }
 
 .pending {
-  color: orange;
-  font-weight:normal
+  color: #ff8200;
+  font-weight: normal;
 }
 
 .rejected {
-  color: black
+  color: black;
 }
 
 .unpublished {
-  color: red
+  color: #ff0000;
 }
 
 .published {
-  color: green
+  color: #00ff00;
 }
 
 /*

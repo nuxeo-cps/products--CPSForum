@@ -6,7 +6,10 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
--The anonymous posts were published directly even if the forum was in moderated mode
+- The anonymous posts were published directly even if the forum was in moderated
+  mode.
+- Fixed an invalid CSS property + normalized the CPSForum CSS file at the same
+  time.
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

@@ -6,7 +6,7 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
--
+-The anonymous posts were published directly even if the forum was in moderated mode
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

@@ -6,7 +6,7 @@ if (not author) or (author == ""):
     msg = "Pseudo obligatoire"
     return context.forum_post_form(error_message=msg)
 
-new_id = doc.addForumPost(new_id, subject=subject, author=author,
+new_id = doc.addForumPost(id=new_id, subject=subject, author=author,
                           message=message, parent_id=parent_id)
 
 # FIXME: what if there is no REQUEST ?

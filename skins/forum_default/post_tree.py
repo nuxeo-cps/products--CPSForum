@@ -1,4 +1,4 @@
-##parameters=descendants=(), post_id='', frm_start=0, sort_by=None, display_mode='title', forum=None
+##parameters=descendants=(), post_id='', frm_start=0, sort_by=None, display_mode='title', wf_display_mode='wf_icon', forum=None
 
 # $Id$
 
@@ -13,6 +13,7 @@ cpsmcat = context.Localizer.default
 pending_i18n = cpsmcat('forum_pending_post').encode('ISO-8859-15', 'ignore')
 unpublished_i18n = cpsmcat('forum_unpublished_post').encode('ISO-8859-15', 'ignore')
 rejected_i18n = cpsmcat('forum_rejected_post').encode('ISO-8859-15', 'ignore')
+published_i18n = cpsmcat('forum_published_post').encode('ISO-8859-15', 'ignore')
 
 pmt = context.portal_membership
 member = pmt.getAuthenticatedMember()
@@ -66,17 +67,32 @@ def getTreeIcon(post, style):
     return result
 
 def getStatusIcon(post):
-    if post['review_state'] == 'pending':
-        return '<img src="%s" width="6" height="6" align="middle" alt="%s" title="%s" />' % (
-            getattr(context, 'puce_attente.png').absolute_url(), pending_i18n, pending_i18n)
-    elif post['review_state'] == 'unpublished':
-        return '<img src="%s" width="6" height="6" align="middle" alt="%s" title="%s" />' % (
-            getattr(context, 'puce_depub.png').absolute_url(), unpublished_i18n, unpublished_i18n)
-    elif post['review_state'] == 'rejected':
-        return '<img src="%s" width="6" height="6" align="middle" alt="%s" title="%s" />' % (
-            getattr(context, 'puce_refuse.png').absolute_url(), rejected_i18n, rejected_i18n)
+    if wf_display_mode == 'wf_icon':
+        r_state = post['review_state']
+        if r_state == 'pending':
+            return '<img src="%s" width="6" height="6" align="middle" alt="%s" title="%s" />' % (
+                getattr(context, 'puce_attente.png').absolute_url(), pending_i18n, pending_i18n)
+        elif r_state == 'unpublished':
+            return '<img src="%s" width="6" height="6" align="middle" alt="%s" title="%s" />' % (
+                getattr(context, 'puce_depub.png').absolute_url(), unpublished_i18n, unpublished_i18n)
+        elif r_state == 'rejected':
+            return '<img src="%s" width="6" height="6" align="middle" alt="%s" title="%s" />' % (
+                getattr(context, 'puce_refuse.png').absolute_url(), rejected_i18n, rejected_i18n)
+        else:
+            return '<img src="/p_/sp" width="6" height="6" alt="" />'
     else:
         return '<img src="/p_/sp" width="6" height="6" alt="" />'
+
+def getStatusLabel(post):
+    r_state = post['review_state']
+    if r_state == 'pending':
+        return pending_i18n
+    elif r_state == 'unpublished':
+        return unpublished_i18n
+    elif r_state == 'rejected':
+        return rejected_i18n
+    else:
+        return published_i18n
 
 def getLockIcon(post):
     if post['locked']:
@@ -133,10 +149,16 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
             ptime = post['creation'].strftime('%d/%m/%y %H:%M')
             if is_reviewer:
                 #display thread lock status only for reviewers
-                result += '\n<td class="forumDateCell">%s</td>' % ptime
+                if wf_display_mode == 'wf_txt':
+                    result += '\n<td class="forumDateCell">%s</td>\n<td class="forumWFCell %s">%s</td>' % (ptime, post['review_state'], getStatusLabel(post))
+                else:
+                    result += '\n<td class="forumDateCell">%s</td>' % ptime
                 result += '\n<td>%s</td>' % getLockIcon(post)
             else:
-                result += '\n<td colspan="2" class="forumDateCell">%s</td>' % ptime
+                if wf_display_mode == 'wf_txt':
+                    result += '\n<td class="forumDateCell">%s</td>\n<td colspan="2" class="forumWFCell %s">%s</td>' % (ptime, post['review_state'], getStatusLabel(post))
+                else:
+                    result += '\n<td colspan="2" class="forumDateCell">%s</td>' % ptime
             result += '</tr>\n\n'
             result += more
 
@@ -158,7 +180,7 @@ def flatList(posts, sort_by):
             result += '<tr id="thread_%s" class="%s">' % \
                       (post['id'], row_class)
             if is_reviewer:
-                result += '<td><input type="checkbox" name="forum_thread_ids:list" value="%s" /></td>\n<td>%s</td>\n' % (post['id'], getStatusIcon(post))
+                result += '<td><input type="checkbox" name="forum_thread_ids:list" value="%s" style="border:none"/></td>\n<td>%s</td>\n' % (post['id'], getStatusIcon(post))
             else:
                 result += '<td>&nbsp;</td>\n<td>%s</td>\n' % getStatusIcon(post)
             result += '<td>' + getHeadline(post)
@@ -168,9 +190,15 @@ def flatList(posts, sort_by):
             ptime = post['creation'].strftime('%d/%m/%y %H:%M')
             if is_reviewer:
                 #display thread lock status only for reviewers
-                result += '\n<td class="forumDateCell">%s</td>\n<td>%s</td></tr>\n\n' % (ptime, getLockIcon(post))
+                if wf_display_mode == 'wf_txt':
+                    result += '\n<td class="forumDateCell">%s</td>\n<td class="forumWFCell %s">%s</td>\n<td>%s</td></tr>\n\n' % (ptime, post['review_state'], getStatusLabel(post), getLockIcon(post))
+                else:
+                    result += '\n<td class="forumDateCell">%s</td>\n<td>%s</td></tr>\n\n' % (ptime, getLockIcon(post))
             else:
-                result += '\n<td colspan="2" class="forumDateCell">%s</td></tr>\n\n' % ptime
+                if wf_display_mode == 'wf_txt':
+                    result += '\n<td class="forumDateCell">%s</td>\n<td colspan="2" class="forumWFCell %s">%s</td></tr>\n\n' % (ptime, post['review_state'], getStatusLabel(post))
+                else:
+                    result += '\n<td colspan="2" class="forumDateCell">%s</td></tr>\n\n' % ptime
 
     return result
 

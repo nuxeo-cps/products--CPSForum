@@ -3,6 +3,7 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
+- new workflow for forum posts, with two new states : rejected, unpublished
 - threads are now sorted by most recent post (default view, no explicit sorting)
 - use a rich text editor widget to edit posts
 - attaching documents to posts (as internal links)

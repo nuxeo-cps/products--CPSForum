@@ -1,4 +1,4 @@
-<html metal:use-macro="here/content_lib/macros/master">
+<html metal:use-macro="here/content_lib_master/macros/master">
 
 <metal:block fill-slot="head_slot">
   <tal:block tal:define="forum here/getContent;

@@ -1,4 +1,4 @@
-<metal:block metal:use-macro="here/content_lib/macros/master">
+<metal:block metal:use-macro="here/content_lib_master/macros/master">
 
 <metal:block fill-slot="header">
   <h1 tal:content="here/title_or_id">Title</h1>

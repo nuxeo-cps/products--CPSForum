@@ -1,0 +1,47 @@
+<!-- a forum_comment_lib macro -->
+<!-- $Id$ -->
+
+<!--
+&lt;!-- macro library for forum comments --&gt;
+&lt;!-- $Id$ --&gt;
+-->
+
+<metal:block define-macro="view_comments_inline">
+
+<tal:block define="post_id request/post_id|nothing;
+                   forum_proxy python:here.restrictedTraverse(here.portal_discussion.getCommentForumURL(here.absolute_url(relative=1)));
+                   forum forum_proxy/getContent;
+                   threads python:forum.getThreads(proxy=forum_proxy);
+                   is_poster python:here.portal_membership.checkPermission('Forum Post', forum);
+                   can_post python:here.isAllowedToPost(is_poster=is_poster,
+                                                        is_anon=isAnon,forum=forum)">
+  <tal:block tal:condition="python:len(threads)">
+    <h2 id="document_comment"
+        i18n:translate="forum_label_comments">Comments</h2>
+    <table class="forumPost" cellspacing="0" cellpadding="0"
+           tal:condition="post_id">
+      <tal:block tal:replace="structure python:here.post_view_csnippet(
+                                                      forum_proxy=forum_proxy,
+                                                      post_id=post_id,
+                                                      forum=forum,
+                                                      can_post=can_post)"/>
+    </table>
+    <table class="forumThreads" cellspacing="0" cellpadding="0">
+      <tal:block condition="python:len(threads)">
+        <tr><td colspan="2">
+          <tal:block replace="structure python:here.forum_view_cthreads(
+                                                 post_id=post_id,
+                                                 forum_proxy=forum_proxy,
+                                                 forum=forum,
+                                                 REQUEST=here.REQUEST)"/>
+        </td></tr>
+      </tal:block>
+      <tr tal:condition="python:not len(threads)">
+        <td i18n:translate="forum_no_message" class="forumempty">
+          Aucun message dans ce forum !
+        </td>
+      </tr>
+    </table>
+  </tal:block>
+</tal:block>
+</metal:block>

@@ -1,14 +1,12 @@
 Requires:
 ~~~~~~~~~
-- CPSWorkflow
+-
 New features:
 ~~~~~~~~~~~~~
-- Anonymous user won't see 'comment' action in Object actions box if anonymous
-  posts are disabled for comment forum object associated with the document.
-
+-
 Bug fixes:
 ~~~~~~~~~~
 -
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
-- splitting macro lib in progress
+-

@@ -1,4 +1,22 @@
 *******************************************
+** CPSForum V1.4.0 [R1 build 2005/01/20-11:33 by ben]
+
+Requires:
+~~~~~~~~~
+- CPSWorkflow
+New features:
+~~~~~~~~~~~~~
+- Anonymous user won't see 'comment' action in Object actions box if anonymous
+  posts are disabled for comment forum object associated with the document.
+
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- macro lib splitted
+
+*******************************************
 ** CPSForum V1.3.9 [R1 build 2004/12/13-09:13 by madarche]
 
 Requires:

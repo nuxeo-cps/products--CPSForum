@@ -23,6 +23,9 @@ displayed using the CPSForum interface
 from zLOG import LOG, DEBUG
 from Globals import InitializeClass, DTMLFile
 from AccessControl import ClassSecurityInfo
+from AccessControl.User import UnrestrictedUser
+from AccessControl.SecurityManagement import getSecurityManager
+from AccessControl.SecurityManagement import newSecurityManager
 
 from Products.CMFCore.PortalFolder import PortalFolder
 from Products.CMFCore.CMFCorePermissions import ManagePortal, View,\
@@ -59,18 +62,6 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     # ZMI methods
     security.declareProtected(ManagePortal, 'manage_overview')
     manage_overview = DTMLFile('dtml/explainCommentTool', globals())
-
-    # API
-    security.declarePublic('isProxyDocument')
-    def isProxyDocument(self, object):
-        if object:
-            portal_type = getattr(portal.portal_types, object.portal_type, None)
-            if portal_type and portal_type.cps_proxy_type == 'document':
-                return 1
-            else:
-                return 0
-        else:
-            return 0
 
     security.declarePublic('getCommentForumURL')
     def getCommentForumURL(self, object_url):
@@ -127,29 +118,99 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
             del data[doc_url]
             self._data = data
 
-##    security.declarePublic('notifyPostCreation')
-##    def notifyPostCreation(self, object, url_to_display=None, comment=0):
-##        """Notify the event service tool that an new post or comment
-##        has been created
+    security.declareProtected(View, 'getForum4Comments')
+    def getForum4Comments(self, proxy_doc):
+        """Get current document's commenting forum ; create it if it does not exist
+        
+        Lazy instantiation"""
 
-##        We need to call it from the skins to make the difference in between
-##        post and comment and as well to give the event_service the URL of
-##        the post to display
-##        (i.e: http://cps.bar.com/forum/forum_view_thread?post_id=4444)
-##        Notice, the URL is coompletly different form the URL of the
-##        post object itself
-##        """
-##        evtool = getEventService(self)
+        forum = None
+        portal = getToolByName(self, 'portal_url').getPortalObject()
 
-##        #
-##        # We want to separate these two types of events
-##        # Normal post / Commment
-##        #
-##        if comment:
-##            event_id = 'forum_comment_create'
-##        else:
-##            event_id = 'forum_new_message'
+        # check whether the forum object exists or not
+        forum_url = self.getCommentForumURL(proxy_doc.absolute_url(relative=1))
+        if forum_url:
+            forum = self.restrictedTraverse(forum_url)
 
-##        evtool.notify(event_id, object, {'url_to_display': url_to_display})
+        # if not create it
+        if not forum:
+            no_content_wf_chain = {}
+            #XXX: would be cleaner if based on .cps_worfklow_configuration's
+            #     declared chains
+            for ptype in portal.portal_types.objectIds():
+                no_content_wf_chain[ptype] = ''
+            #create a wf and add chains to it 
+            def wfSetup(folder, chains):
+                if not '.cps_workflow_configuration' in folder.objectIds():
+                    folder.manage_addProduct['CPSCore'].addCPSWorkflowConfiguration()
+                    wfc = getattr(folder, '.cps_workflow_configuration')
+                    for type, chain in chains.items():
+                        wfc.manage_addChain(portal_type=type, chain=chain)
+
+            # check whether the forum object exists or not
+            # if not create it (also create .discussions if necessary)
+            parent_folder = proxy_doc.aq_inner.aq_parent
+
+
+            class CPSUnrestrictedUser(UnrestrictedUser):
+                """Unrestricted user that still has an id.
+
+                Taken from CPSMembershipTool
+                """
+
+                def getId(self):
+                    """Return the ID of the user."""
+                    return self.getUserName()
+
+
+            mtool = getToolByName(self, 'portal_membership')
+            old_user = getSecurityManager().getUser()
+
+            tmp_user = CPSUnrestrictedUser('root', '',
+                                           ['Manager', 'Member'], '')
+            tmp_user = tmp_user.__of__(mtool.acl_users)
+            newSecurityManager(None, tmp_user)
+
+
+            
+            if '.cps_discussions' not in parent_folder.objectIds():
+                portal.portal_workflow.invokeFactoryFor(parent_folder, 'Workspace', '.cps_discussions')
+            cpsmcat = portal.Localizer.default
+            discussion_folder = getattr(parent_folder, '.cps_discussions')
+            kw = {'hidden_folder': 1,
+                  'Title': cpsmcat('forum_title_comments').encode('ISO-8859-15', 'ignore')}
+            discussion_folder_c = discussion_folder.getEditableContent()
+            discussion_folder_c.edit(**kw)
+            comment_wf_chain = no_content_wf_chain.copy()
+            comment_wf_chain.update({'CPSForum': 'workspace_forum_wf',
+                                     'ForumPost': 'forum_post_wf',
+                                    })
+            wfSetup(discussion_folder, comment_wf_chain)
+            portal.portal_eventservice.notifyEvent('modify_object', discussion_folder, {})
+            portal.portal_eventservice.notifyEvent('modify_object', discussion_folder_c, {})
+            existing_forum_ids = discussion_folder.objectIds()
+            # forum's id is computed using the std script
+            forum_id = portal.computeId(compute_from=proxy_doc.id,
+                                        location=discussion_folder.this())
+            portal.portal_workflow.invokeFactoryFor(discussion_folder,
+                                                    'CPSForum', forum_id)
+            forum = getattr(discussion_folder, forum_id)
+            forum_c = forum.getEditableContent()
+            kw = {'Title': cpsmcat('forum_title_comments_for').encode('ISO-8859-15', 'ignore')+' '+proxy_doc.Title(),
+                  'Description': cpsmcat('forum_desc_comments').encode('ISO-8859-15', 'ignore')+' '+proxy_doc.Title()}
+            forum_c.edit(**kw)
+            portal.portal_eventservice.notifyEvent('modify_object', forum, {})
+
+            # tell comment_tool that it is now activated and map it
+            portal.portal_discussion.registerCommentForum(proxy_path=proxy_doc.absolute_url(relative=1),
+                                                          forum_path=forum.absolute_url(relative=1))
+
+            newSecurityManager(None, old_user)
+
+        return forum
+
+
+
+
 
 InitializeClass(CommentTool)

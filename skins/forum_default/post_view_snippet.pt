@@ -31,7 +31,7 @@
         <input type="submit" name="forum_post_reply:method"
                class="standalone" value="forum_reply"
                i18n:attributes="value" />
-        <input tal:condition="is_reviewer"
+        <input tal:condition="python:is_reviewer and not published"
                type="submit" name="forum_post_modify:method"
                class="standalone" value="forum_modify"
                i18n:attributes="value" />

@@ -150,20 +150,23 @@ class CPSForum(CPSBaseDocument):
         self.portal_discussion.getDiscussionFor(self).deleteReply(id)
 
     def publishPost(self, id, state=1):
+        # XXX: this method name must be changed, since is it also used
+        # to change post state.
         """Publish post <id>"""
-        
         post = self.portal_discussion.getDiscussionFor(self).getReply(id)
+        # XXX: this breaks encapsulation. Fix this.
         post.inforum = state
             
     def __getitem__(self, id):
-        """Return post with id=<id>"""
+        """Return postinfo (dictionnary) for post with id=<id>, or None
+        if there is no such post."""
+        # XXX: shouldn't it raise KeyError in the latter case ?
         try:
             disc = self.portal_discussion.getDiscussionFor(self)
             reply = disc.getReply(id)
             result = self.getPostInfo(reply)
         except AttributeError:
             result = None
-
         return result
 
     def getPostReplies(self, post_id):

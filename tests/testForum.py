@@ -44,12 +44,15 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
 
 
     def testPostCreation1(self):
+        # Create new post using skin method.
         forum = self.forum
-        # Create new post through skin method.
         post_id = forum.forum_post(subject='subject', message='message',
             author='author')
 
         self.assertEquals(len(forum.getThreads()), 1)
+
+        forum.forum_view()
+        forum.forum_view(post_id)
 
         post = forum[post_id]
         self.assertEquals(post['id'], post_id)
@@ -59,6 +62,14 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         self.assertEquals(post['parent_id'], None)
         self.assertEquals(post['published'], 0)
         self.assert_(post['modified'])
+
+        forum.publishPost(post_id, 1)
+        post = forum[post_id]
+        self.assertEquals(post['published'], 1)
+
+        forum.publishPost(post_id, 0)
+        post = forum[post_id]
+        self.assertEquals(post['published'], 0)
 
         # getModerators / getOfficialModerators need a proxy so we put the
         # test here
@@ -70,19 +81,15 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
 
 
     def testPostCreation2(self):
+        # Create post using method calls on the Forum object.
         forum = self.forum
-        # Create post using Forum method call
         post_id = forum.addPost(subject='subject', message='message',
             author='author')
-        forum.forum_view()
-        forum.forum_view(post_id)
+        self.assertEquals(len(forum.getThreads()), 1)
 
-        post = forum[post_id]
-        self.assertEquals(post['subject'], 'subject')
-        self.assertEquals(post['message'], 'message')
-        self.assertEquals(post['author'], 'author')
+        forum.delPost(post_id)
+        self.assertEquals(forum.getThreads(), [])
 
-        #print forum.getPostInfo(post)
 
 
 def test_suite():

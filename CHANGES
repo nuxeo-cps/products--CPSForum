@@ -4,6 +4,8 @@ Requires:
 New features:
 ~~~~~~~~~~~~~
 - new workflow for forum posts, with two new states : rejected, unpublished
+- messages posted by users with Forum Moderate permission are now directly
+  published for both a priori and a posteriori moderation modes
 - threads are now sorted by most recent post (default view, no explicit sorting)
 - use a rich text editor widget to edit posts
 - attaching documents to posts (as internal links)

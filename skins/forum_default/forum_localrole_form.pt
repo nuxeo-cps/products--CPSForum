@@ -125,7 +125,6 @@ search_param == 'email')"
      </select>
     </td>
    </tr>
-  <tr><td colspan="3" tal:content="python:here.getCPSLocalRoles( mtool=mtool )"></td></tr>
    <tr>
     <td colspan="3"><br /></td>
    </tr>

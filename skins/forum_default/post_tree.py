@@ -5,7 +5,7 @@
 from zLOG import LOG, DEBUG
 
 pmt = context.portal_membership
-is_reviewer = pmt.checkPermission('Review portal content', context)
+is_reviewer = 'ForumModerator' in pmt.getCPSCandidateLocalRoles(context)
 username = pmt.getAuthenticatedMember().getId()
 session_data = context.session_data_manager.getSessionData()
 
@@ -68,7 +68,8 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
                 result += '<td>%s</td>\n' % getStatusIcon(post)
                 result += ''
             else:
-                result += '<td>&nbsp;</td><td>&nbsp;</td>'
+                result += '<td>&nbsp;</td>'
+                result += '<td>%s</td>\n' % getStatusIcon(post)
             result += '<td><img src="/p_/sp" alt="" height=12 width=%s>\n' % str(indent+1)
             if(more):
                 result += getTreeIcon(post, style)

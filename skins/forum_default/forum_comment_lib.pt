@@ -27,7 +27,8 @@
           <tal:block replace="structure python:here.forum_view_cthreads(
                                                  post_id=post_id,
                                                  forum_proxy=forum_proxy,
-                                                 forum=forum)"/>
+                                                 forum=forum,
+                                                 REQUEST=here.REQUEST)"/>
         </td></tr>
       </tal:block>
       <tr tal:condition="python:not len(threads)">

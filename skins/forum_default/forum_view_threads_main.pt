@@ -93,6 +93,7 @@
                                                              sort_by=sort_by,
                                                              display_mode=display_mode,
                                                              wf_display_mode=wf_display_mode,
+                                                             REQUEST=here.REQUEST,
                                                              forum=forum)"/>
     </tal:block>
     </tal:block>
@@ -138,7 +139,8 @@
                                                              sort_by=sort_by,
                                                              wf_display_mode=wf_display_mode,
                                                              display_mode=display_mode,
-                                                             forum=forum)"/>
+                                                             forum=forum,
+                                                             REQUEST=here.REQUEST)"/>
     </tal:block>
   </table>
   <div class="forumModeration">

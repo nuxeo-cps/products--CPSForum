@@ -10,7 +10,7 @@
 
   <table>
     <tr>
-      <td i18n:translate="forum_title">Titre</td>
+      <td i18n:translate="forum_title">Title</td>
       <td>
         <input type="text" name="title:string" 
                tal:attributes="value doc/title">
@@ -24,7 +24,7 @@
       </td>
     </tr>
     <tr>
-      <td i18n:translate="forum_moderation">Modération</td>
+      <td i18n:translate="forum_moderation">Moderation</td>
       <td>
         <select name="moderation_mode:int">
           <option value="0" i18n:translate="forum_a_posteriori"

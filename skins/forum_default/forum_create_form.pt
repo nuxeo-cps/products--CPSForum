@@ -21,7 +21,7 @@
       </td>
     </tr>
     <tr>
-      <td i18n:translate="forum_moderation">Modération</td>
+      <td i18n:translate="forum_moderation">Moderation</td>
       <td>
         <select name="moderation_mode:int">
           <option value="0" i18n:translate="forum_a_posteriori">a posteriori</option>
@@ -42,4 +42,4 @@
   </table>
 </form>
 </metal:block>
-</html>
+</metal:block>

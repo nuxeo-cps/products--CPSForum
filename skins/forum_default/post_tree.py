@@ -5,6 +5,7 @@
 #counter counts the message position in thread
 
 import cgi
+from zLOG import LOG, DEBUG
 
 pmt = context.portal_membership
 member = pmt.getAuthenticatedMember()
@@ -60,11 +61,43 @@ def getLockIcon(post):
         return context.getImgTag('lock.gif',alt="locked")
     return '<img src="/p_/sp" width="6" height="6" alt="" />'
 
+def getMostRecentPost(max_date, posts):
+    if posts:
+        new_max_date = max_date
+        for post in posts:
+            if post[0]['modified'] > new_max_date:
+                new_max_date = post[0]['modified']
+            tmp_date = getMostRecentPost(new_max_date, post[1])
+            if tmp_date > new_max_date:
+                new_max_date = tmp_date
+        return new_max_date
+    else:
+        return max_date
+
+def threadSorter(x,y):
+    x_most_recent_post = getMostRecentPost(x[0]['modified'], x[1])
+    y_most_recent_post = getMostRecentPost(y[0]['modified'], y[1])
+    if x_most_recent_post > y_most_recent_post:
+        return -1
+    elif x_most_recent_post < y_most_recent_post:
+        return 1
+    else:
+        return 0
+
 def getBranches(branches, id='ROOT', level=0, counter=0):
+
+    # sort threads by most recent post (a thread whose most recent post is
+    # more recent than another thread's most recent post gets displayed
+    # before)
+    branches.sort(threadSorter)
+    return displayBranches(branches, id=id, level=level, counter=counter)
+
+def displayBranches(branches, id='ROOT', level=0, counter=0):
     if not len(branches):
         return ("",counter)
 
     result = ''
+    
     for branch in branches:
         post = branch[0]
         if post['published'] or is_reviewer or username == post['author']:
@@ -83,7 +116,7 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
             else:
                 style = None
             if style <> 'collapsed':
-                more, counter = getBranches(branch[1], post['id'],
+                more, counter = displayBranches(branch[1], post['id'],
                                             level+1, counter)
             else:
                 more, counter = ' ', 0

@@ -1,4 +1,5 @@
-<html metal:use-macro="here/main_template/macros/master">
+<html metal:use-macro="here/main_template/macros/master"
+      i18n:domain="cpsforum">
 <metal:block fill-slot="header" />
 <metal:block fill-slot="main">
 <form method="POST"

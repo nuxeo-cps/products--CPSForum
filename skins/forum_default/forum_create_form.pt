@@ -1,9 +1,10 @@
-<html metal:use-macro="here/main_template/macros/master">
+<html metal:use-macro="here/main_template/macros/master"
+      i18n:domain="cpsforum">
 <metal:block fill-slot="header" />
 <metal:block fill-slot="main">
 
 <form method="POST"
-      tal:attributes="action here/absolute_url" 
+      tal:attributes="action here/absolute_url"
       tal:define="doc here/getContent|here;">
   <table>
     <tr>

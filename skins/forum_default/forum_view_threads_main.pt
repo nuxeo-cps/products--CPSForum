@@ -2,6 +2,7 @@
                    post_id options/post_id;
                    doc here/getContent|here;
                    is_reviewer options/is_reviewer;">
+<html i18n:domain="cpsforum">
 
   <form  method="POST" tal:attributes="action here/absolute_url" name="post_form">
 
@@ -35,4 +36,5 @@
       </tr>
     </tal:block>
   </form>
+</html>
 </tal:block>

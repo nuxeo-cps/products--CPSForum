@@ -1,6 +1,7 @@
 <html metal:use-macro="here/main_template/macros/master">
 <metal:block fill-slot="header" />
-<metal:block fill-slot="main">
+<metal:block fill-slot="main"
+             i18n:domain="cpsforum">
 <form method="POST" action="." enctype="multipart/form-data"
       tal:define="parent_id options/parent_id|nothing;
                   doc here/getContent|here;

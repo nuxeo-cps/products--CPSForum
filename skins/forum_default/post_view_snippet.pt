@@ -2,7 +2,8 @@
                    doc here/getContent|here;
                    is_reviewer options/is_reviewer;
                    post python:doc[post_id]"
-           condition="python:post">
+           condition="python:post"
+           i18n:domain="cpsforum">
 
   <tr><td colspan="2">&nbsp;</td></tr>
   <tr><td class="forumheader" colspan="2" 

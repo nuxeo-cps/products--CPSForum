@@ -43,11 +43,6 @@ forum_type = {
                  'action': 'cpsdocument_edit_form',
                  'permissions': ('Modify Folder Properties',),
                  },
-                {'id': 'metadata',
-                 'name': 'action_metadata',
-                 'action': 'cpsdocument_metadata',
-                 'permissions': ('View',)
-                 },
                 {'id': 'localroles',
                  'name': 'action_local_roles',
                  'action': 'forum_localrole_form',

@@ -207,10 +207,10 @@ class CPSForum(CPSBaseDocument):
                 branch = (info_getter(i),) # one item
                 branch += (self.getDescendants(i.id),) # one list
                 result += (branch,)
-                
+
         return result
-        
-        
+
+
     def editForumProperties(self,**kw):
         """
         Sets up forum properties
@@ -222,7 +222,7 @@ class CPSForum(CPSBaseDocument):
         self.moderation_mode = kw.get('moderation_mode', 1)
         self.moderators = kw.get('moderators', [])
 
-        
+
     def getEverything(self):
         """
         Fetches everything (DEBUG)
@@ -262,7 +262,7 @@ def addCPSPost(self, id, RESPONSE=None, **kw):
     message: string    the *structured text mix* message
     forum_id: string   the parent forum id
     parent_id: string  an optional parent Post uid, as obtained from
-                       parentPost.getPostUID()
+        parentPost.getPostUID()
     """
     post = CPSPost(id, **kw)
     post.parent_id = kw['parent_id']
@@ -283,10 +283,10 @@ class CPSPost(CPSBaseDocument, Post):
         { 'id': 'forum_id', 'type': 'string', 'mode': 'w', 'label': 'Parent Forum id' },
         { 'id': 'parent_id', 'type': 'string', 'mode': 'w', 'label': 'Parent Post id' },
         )
-    
+
     def getPostInfo(self):
         """function getPostInfo
-        
+
         returns tuple (url, subject, author)
         """
         return (self.getId(), self.getSubject(), self.getAuthor())

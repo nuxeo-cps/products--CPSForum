@@ -13,8 +13,12 @@ username = member.getId()
 is_reviewer = context.portal_membership.checkPermission('Forum Moderate', context)
 try:
     session_data = context.session_data_manager.getSessionData()
+    sort_by = session_data.get('frm_sort', None)
 except AttributeError:
     session_data = None
+    sort_by = None
+
+tree_display = context.getContent().tree_display
 
 def getHeadline(post):
     subject = cgi.escape(post['subject'])
@@ -28,8 +32,15 @@ def getHeadline(post):
                                                        post['id'],
                                                        subject)
     if post['id'] == post_id:
-        # Rendering select post (if any) with a bold font
+        # Rendering selected post (if any) with a bold font
         headline = '<strong>' + headline + '</strong>'
+    if tree_display == '200fc':
+        chunk = post['message']
+        if len(chunk) > 200:
+            chunk = chunk[:200] + ' ...'
+        headline = '<div>' + headline + '</div><div>' + chunk + '</div>'
+    elif tree_display == 'msg':
+        headline = '<div>' + headline + '</div><div>' + post['message'] + '</div>'
     return headline
 
 def getTreeIcon(post, style):
@@ -89,6 +100,7 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
     # sort threads by most recent post (a thread whose most recent post is
     # more recent than another thread's most recent post gets displayed
     # before)
+
     branches.sort(threadSorter)
     return displayBranches(branches, id=id, level=level, counter=counter)
 
@@ -121,14 +133,14 @@ def displayBranches(branches, id='ROOT', level=0, counter=0):
             else:
                 more, counter = ' ', 0
 
-            indent = 5 * min(level, 7)
+            indent = 2 * min(level, 7)
             if is_reviewer:
                 result += '<td><input type="checkbox" name="forum_thread_ids:list" value="%s" /></td>\n' % post['id']
                 result += '<td>%s</td>\n' % getStatusIcon(post)
             else:
                 result += '<td>&nbsp;</td>\n'
                 result += '<td>%s</td>\n' % getStatusIcon(post)
-            result += '<td><img src="/p_/sp" alt="" height="12" width="%s" />\n' % str(indent+1)
+            result += '<td>' + '&nbsp;' * indent
             if(more):
                 result += getTreeIcon(post, style)
             else:
@@ -136,7 +148,8 @@ def displayBranches(branches, id='ROOT', level=0, counter=0):
 
             result += getHeadline(post)
             
-            fullname = cgi.escape(context.getPosterName(post['author']))
+            fullname = '<a href="javascript:void(0)" onclick="javascript:window.open(\'popupdirectory_entry_view?dirname=members&id=' + post['author'] + '\',\'wclose\',\'width=500,height=200,scrollbars=yes,toolbar=no,status=no,resizable=yes,left=20,top=30\')">' +\
+                       cgi.escape(context.getPosterName(post['author'])) + '</a>'
             result += '</td>\n<td class="forumAuthorCell">%s</td>' % fullname
             
             ptime = post['modified'].strftime('%d/%m/%y %H:%M')
@@ -151,7 +164,11 @@ def displayBranches(branches, id='ROOT', level=0, counter=0):
 
     return (result, counter)
 
-(result, dummy) = getBranches(descendants)
+
+if sort_by is None or sort_by == 'threads':
+    (result, dummy) = getBranches(descendants)
+else:
+    (result, dummy) = (None, None)
 
 return result
 

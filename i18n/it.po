@@ -1,224 +1,213 @@
-# translation of it.po to francais
+# ##########################################################
+# ################# DON'T EDIT THIS FILE! ##################
+# ##########################################################
 # Gettext Message File for default.
-# Paolo Dina <paolo@php3.it>, 2004.
-# emmanuel <epietriga@nuxeo.com>, 2004.
-#
-#
+# Your Name <your@email>, Year
 msgid ""
 msgstr ""
-"Project-Id-Version: it\n"
+"Project-Id-Version: CPSForum\n"
 "POT-Creation-Date: 2004-09-06 16:21default\n"
-"PO-Revision-Date: 2004-05-10 12:42+0100\n"
-"Last-Translator: Paolo Dina <paolo@php3.it>\n"
-"Language-Team: francais <fr@li.org>\n"
+"PO-Revision-Date: 2004-09-30 16:19+0100\n"
+"Last-Translator: Fabio Nosari <fabnos@fastwebnet.it>\n"
+"Language-Team: Fabio Nosari <fabnos@fastwebnet.it>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Type: text/plain; charset=iso-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-code: LL\n"
+"Language-name: Language\n"
+"Preferred-encodings: utf-8 latin1\n"
+"Domain: default\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
 
-#    <option value="0">a posteriori</option>
-#    <option attributes="selected python:not moderation_mode" value="0">
-#                a posteriori
-#              </option>
 #.   <option value="0">a posteriori</option>
-#.   <option value="0" attributes="selected python:not moderation_mode">
-#.               a posteriori
-#.             </option>
-#: from ../skins/forum_default/forum_create_form.pt
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_a_posteriori"
-msgstr "a posteriori"
+msgstr "A posteriori"
 
-#    <option value="1">a priori</option>
-#    <option attributes="selected python:not not moderation_mode" value="1">
-#                a priori
-#              </option>
 #.   <option value="1">a priori</option>
-#.   <option value="1" attributes="selected python:not not moderation_mode">
-#.               a priori
-#.             </option>
-#: from ../skins/forum_default/forum_create_form.pt
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_a_priori"
-msgstr "a priori"
+msgstr "A priori"
 
 #.   <td>Allow anonymous posts</td>
-#: from ../skins/forum_default/forum_create_form.pt
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_allow_anon_posts"
-msgstr "Consenti messaggi anonimi"
+msgstr "Autorizza i messaggi di utenti anonimi:"
 
 #.   <div class="label">Author</div>
-#.   <a href="./sort_posts?criterion=author" attributes="href string:./sort_posts?criterion=${author_sort_direction}">Author</a>
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
-msgstr "Autore"
+msgstr "Autore:"
 
-#    <input value="forum_button_lockunlock" class="context" name="forum_lock_thread:method" type="submit" />
 #.   <input name="forum_lock_thread:method" type="submit" class="context" value="forum_button_lockunlock" />
-#: from ../skins/forum_default/forum_view_threads_main.pt
+#: from
+#: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_button_lockunlock"
-msgstr "(S-)blocca discussione"
+msgstr "Sblocca/Blocca discussione"
 
-#    <td class="forumsubheader" width="80">Date</td>
 #.   <a href="./sort_posts?criterion=date" attributes="href string:./sort_posts?criterion=${date_sort_direction}">Date</a>
-#: from ../skins/forum_default/forum_view_threads_main.pt
+#: from
+#: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_date"
-msgstr "Data"
+msgstr "Data:"
 
 #.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
-#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/Localizer/default" />
-#: from ../skins/forum_default/forum_view_threads_main.pt
+#: from
+#: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Elimina"
 
 #.   <input name="forum_unpublish_posts:method" type="submit" class="context" value="forum_depublish" />
-#: from ../skins/forum_default/forum_view_threads_main.pt
+#: from
+#: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_depublish"
 msgstr "Ritira"
 
 #.   <td>Description</td>
-#: from ../skins/forum_default/forum_create_form.pt
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_description"
 msgstr "Descrizione"
 
 #.   <h2 id="document_comment">Comments</h2>
-#: from ../skins/forum_default/forum_comment_lib.pt
+#: from
+#: ../skins/forum_default/forum_comment_lib.pt
 msgid "forum_label_comments"
 msgstr "Commenti"
 
 #.   <td>Lock forum (no longer possible to post new messages)</td>
-#: from ../skins/forum_default/forum_create_form.pt
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_label_lock_forum"
-msgstr "Blocca forum (sola lettura)"
+msgstr "Blocca il forum (sola lettura):"
 
 #.   <span />
-#: from ../skins/forum_default/forum_view_main.pt
+#: from
+#: ../skins/forum_default/forum_view_main.pt
 msgid "forum_link_back_to_document"
-msgstr ""
+msgstr "Ritorna all'oggetto"
 
 #.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, frm_start=next_page.first))" condition="next_page">
-#.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
-#.             </a>
-#: from ../skins/forum_default/forum_view_threads_main.pt
-#, fuzzy
+#: from
+#: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_link_next_threads ${tpp}"
-msgstr "Nuova discussione"
+msgstr "${tpp} Filoni tematici successivi"
 
 #.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, frm_start=previous_page.first))" condition="previous_page">
-#.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
-#.             </a>
-#: from ../skins/forum_default/forum_view_threads_main.pt
-#, fuzzy
+#: from
+#: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_link_prev_threads ${tpp}"
-msgstr "Nuova discussione"
+msgstr "${tpp} Filoni tematici precedenti"
 
 #.   <div class="label">Message</div>
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 msgid "forum_message"
-msgstr "Messaggio"
+msgstr "Messaggio:"
 
 #.   <td>Moderation</td>
-#: from ../skins/forum_default/forum_create_form.pt
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_moderation"
-msgstr "Moderazione"
+msgstr "Modera il forum:"
 
 #.   <input condition="python:is_reviewer and not published" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
-#: from ../skins/forum_default/post_view_snippet.pt
+#: from
+#: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_modify"
 msgstr "Modifica"
 
 #.   <p>This forum is locked. You cannot post new messages to it.</p>
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 msgid "forum_msg_forum_frozen"
-msgstr "Questo forum è bloccato. Non puoi inviare ad esso nuovi messaggi."
+msgstr "Questo forum è bloccato e quindi non puoi inviare ad esso nuovi messaggi."
 
 #.   <td class="forumempty">
-#.             Aucun message dans ce forum !
-#.           </td>
-#.   <td class="forumempty">
-#.           Aucun message dans ce forum !
-#.         </td>
-#: from ../skins/forum_default/forum_comment_lib.pt
+#: from
+#: ../skins/forum_default/forum_comment_lib.pt
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_no_message"
 msgstr "Nessun messaggio"
 
 #.   <input name="forum_post:method" type="submit" class="standalone" value="forum_post" />
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 msgid "forum_post"
 msgstr "Invia"
 
-#    <p>You are not authorized to post on this forum</p>
 #.   <p>
-#.           You are not authorized to post on this forum
-#.         </p>
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 msgid "forum_post_unauthorize"
-msgstr "Non sei autorizzato a scrivere su questo forum"
+msgstr "Non sei autorizzato a scrivere su questo forum."
 
-#    <p>You are not authorized to post on this forum</p>
 #.   <span condition="python:errormsg == 'error_author'" class="forumError">Author field must be filled</span>
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_name_required"
-msgstr "Devi inserire un nome o un soprannome"
+msgstr "Devi inserire un nome o un soprannome."
 
-#    <p>You are not authorized to post on this forum</p>
-#    <div condition="python:errormsg == 'error_subject'" class="row error">
-#                    Subject field must be filled
-#            </div>
 #.   <div class="row error" condition="python:errormsg == 'error_subject'">
-#.                   Subject field must be filled
-#.           </div>
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_subject_required"
-msgstr "Devi inserire un oggetto"
+msgstr "Devi inserire un oggetto."
 
 #.   <input name="forum_publish_posts:method" type="submit" class="context" value="forum_publish" />
-#: from ../skins/forum_default/forum_view_threads_main.pt
+#: from
+#: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_publish"
 msgstr "Pubblica"
 
 #.   <input name="forum_reject_posts:method" type="submit" class="context" value="forum_reject" />
-#: from ../skins/forum_default/forum_view_threads_main.pt
-#, fuzzy
+#: from
+#: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_reject"
-msgstr "Oggetto"
+msgstr "Rifiuta"
 
 #.   <input name="forum_post_reply:method" type="submit" class="standalone" value="forum_reply" />
-#: from ../skins/forum_default/post_view_csnippet.pt
+#: from
+#: ../skins/forum_default/post_view_csnippet.pt
 #: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
 msgstr "Rispondi"
 
-#    <td class="forumsubheader" width="80">Date</td>
 #.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
-#: from ../skins/forum_default/forum_view_threads_main.pt
-#, fuzzy
+#: from
+#: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_state"
-msgstr "Data"
+msgstr "Stato:"
 
 #.   <div class="label required">Subject</div>
-#.   <a href="./sort_posts?criterion=subject" attributes="href string:./sort_posts?criterion=${subject_sort_direction}">Subject</a>
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_subject"
-msgstr "Oggetto"
+msgstr "Oggetto del messaggio:"
 
 #.   <td>Titre</td>
-#.   <td class="forumEditLabel">Title</td>
-#: from ../skins/forum_default/forum_create_form.pt
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
 msgstr "Titolo"
 
 msgid "forum_label_postedby"
-msgstr "inviato da"
+msgstr "Inviato da:"
 
 msgid "forum_new_thread"
 msgstr "Nuova discussione"
@@ -227,121 +216,89 @@ msgid "forum_mailtitle_new_msg_submitted"
 msgstr "Nuovo messaggio inviato al forum"
 
 msgid "forum_mailbody_new_msg_submitted1"
-msgstr ""
-"Un nuovo messaggio è stato aggiunto alla lista di moderazione del forum"
+msgstr "Un nuovo messaggio è stato aggiunto alla lista di moderazione del forum"
 
 msgid "forum_mailbody_new_msg_submitted2"
 msgstr "Questo messaggio può essere visualizzato al seguente indirizzo:"
 
-#    <p>You are not authorized to post on this forum</p>
-#, fuzzy
 msgid "forum_psm_comments_activated"
-msgstr "Devi inserire un nome o un soprannome"
+msgstr "Da questo momento, i commenti per questo oggetto sono autorizzati."
 
-#    <p>You are not authorized to post on this forum</p>
-#, fuzzy
 msgid "forum_psm_comments_deactivated"
-msgstr "Devi inserire un nome o un soprannome"
+msgstr "Da questo momento, i commenti per questo oggetto non sono autorizzati."
 
-#, fuzzy
 msgid "forum_psm_message_posted"
-msgstr "Messaggio"
+msgstr "Messaggi inviati"
 
 msgid "psm_cpsforum_need_rights"
-msgstr ""
+msgstr "Non possiedi i diritti necessari per inserire un commento in questo contesto."
 
 msgid "action_activate_comments"
-msgstr ""
+msgstr "Attiva i commenti"
 
 msgid "action_deactivate_comments"
-msgstr ""
+msgstr "Disattiva i commenti"
 
-#, fuzzy
 msgid "action_manage_comments"
-msgstr "Commenti"
+msgstr "Amministra i commenti"
 
-#, fuzzy
 msgid "forum_title_comments"
 msgstr "Commenti"
 
-#, fuzzy
 msgid "forum_title_comments_for"
-msgstr "Commenti"
+msgstr "Commenti associati a questo oggetto:"
 
-#, fuzzy
 msgid "forum_desc_comments"
-msgstr "Commenti"
+msgstr "Questo forum contiene i seguenti commenti associati all'oggetto:"
 
-#, fuzzy
 msgid "forum_label_threads_per_page"
-msgstr "inviato da"
+msgstr "Numero di filoni tematici o di messaggi per pagina:"
 
-#, fuzzy
 msgid "forum_label_subject"
-msgstr "Oggetto"
+msgstr "Oggetto:"
 
-#, fuzzy
 msgid "forum_label_message"
-msgstr "Messaggio"
+msgstr "Messaggio:"
 
 msgid "portal_type_ForumPost_title"
-msgstr ""
+msgstr "Messaggio del forum"
 
-#, fuzzy
 msgid "portal_type_ForumPost_description"
-msgstr "Descrizione"
+msgstr "Tipo di messaggio utilizzato nei forum e per commentare gli oggetti"
 
-#, fuzzy
 msgid "forum_label_display_title"
-msgstr "Messaggio"
+msgstr "Titolo:"
 
-#, fuzzy
 msgid "forum_label_display_200_fc"
-msgstr "Blocca forum (sola lettura)"
+msgstr "Primi 200 caratteri"
 
-#, fuzzy
 msgid "forum_label_display_msg"
-msgstr "Messaggio"
+msgstr "Messaggio completo"
 
-#, fuzzy
 msgid "forum_label_tree_display"
-msgstr "Messaggio"
+msgstr "Modalità di visualizzazione dei messaggi:"
 
-#, fuzzy
 msgid "forum_label_attachedFiles"
-msgstr "Messaggio"
+msgstr "Allegati:"
 
-#, fuzzy
 msgid "forum_pending_post"
-msgstr "Invia"
+msgstr "In attesa di pubblicazione"
 
-#, fuzzy
 msgid "forum_unpublished_post"
-msgstr "Pubblica"
+msgstr "Ritirato"
 
-#, fuzzy
 msgid "forum_published_post"
-msgstr "Pubblica"
+msgstr "Pubblicato"
 
-#, fuzzy
 msgid "forum_rejected_post"
-msgstr "Oggetto"
+msgstr "Rifiutato"
 
-#, fuzzy
 msgid "forum_label_wf_display"
-msgstr "Messaggio"
+msgstr "Aspetto dello stato dei messaggi:"
 
-#, fuzzy
 msgid "forum_label_display_wf_icon"
-msgstr "Blocca forum (sola lettura)"
+msgstr "Icona"
 
-#, fuzzy
 msgid "forum_label_display_wf_txt"
-msgstr "Messaggio"
+msgstr "Testo"
 
-#    <td>Send moderation notifications</td>
-#~ msgid "forum_send_moderation_notification"
-#~ msgstr "Notifica moderatori (nuovi messaggi)"
-
-#~ msgid "label_name"
-#~ msgstr "Nome"

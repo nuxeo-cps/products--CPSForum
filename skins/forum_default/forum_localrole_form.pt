@@ -199,11 +199,11 @@ search_param == 'email')"
                value=""
                tal:attributes="value string:group:${group}" />
     </td>
-    <tal:block define="igroup python:groups.searchEntry(**{'id':group})">
-      <td tal:condition="python:igroup != ()"
+    <tal:block define="igroup python:groups.searchEntries(**{'id': group})">
+      <td tal:condition="python:len(igroup) > 0"
           tal:content="python:igroup[0][title_field]"> Groupame
       </td>
-      <td tal:condition="python:igroup == ()"
+      <td tal:condition="python:len(igroup) == 0"
           i18n:translate=""
           tal:content="python:modules['string'].split(group, ':')[1]" />
     </tal:block>

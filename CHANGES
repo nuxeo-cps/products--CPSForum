@@ -8,6 +8,7 @@ New features:
 - attaching documents to posts (as internal links)
 - member's information is displayed in a popup window when clicking on author
   name
+- posts can be sorted by thread, subject, date, author
 
 Bug fixes:
 ~~~~~~~~~~

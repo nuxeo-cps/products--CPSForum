@@ -1,4 +1,23 @@
 *******************************************
+** CPSForum V1.2.4 [R1 build 2004/06/21-15:24 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- script for making the transition from CPSForum 1.2.0-1.2.2 to 1.2.3 or later
+Bug fixes:
+~~~~~~~~~~
+- some missing translations for ForumPost portal type
+- forum owners can modify pending posts
+- published documents (in sections) can now be commented
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** CPSForum V1.2.3 [R1 build 2004/06/17-15:04 by epietrig]
 
 Requires:

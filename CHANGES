@@ -3,13 +3,10 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
-- script for making the transition from CPSForum 1.2.0-1.2.2 to 1.2.3 or later
+-
 Bug fixes:
 ~~~~~~~~~~
-- some missing translations for ForumPost portal type
-- forum owners can modify pending posts
-- published documents (in sections) can now be commented
-
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

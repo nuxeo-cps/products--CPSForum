@@ -2,7 +2,7 @@
                        descendants options/descendants;
                        is_reviewer options/is_reviewer;
                        forum nocall:options/forum;
-                       threads_per_page python:forum.threads_per_page">
+                       threads_per_page python:getattr(forum,'threads_per_page',0)">
   <form method="post" tal:attributes="action here/absolute_url" name="post_form">
   <table border="0" style='width:100%;height:inherit'
            cellspacing='0' cellpadding='0'>

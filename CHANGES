@@ -3,7 +3,7 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
--
+- default moderatino mode for commenting forums is now a posteriori
 Bug fixes:
 ~~~~~~~~~~
 - some missing translations when modifying a post

@@ -31,6 +31,9 @@ Installation notes
   Module Name = CPSForum.install
   Function Name = install
 
+- After creating, open the External Method object and click the "Test" tab to
+  run it.
+
 - You should now have CPSForum and ForumPost in portal_types and cps_forum in
   portal_skins.
 

@@ -1,20 +1,12 @@
 ZODB Requires:
 ~~~~~~~~~~~~~~
 -
-
 New features:
 ~~~~~~~~~~~~~
-- forums can now be used to store comments/discussions about documents
-- significant changes to the appearance of Forums
-- portal_comment is no longer used ; functionalities migrated to
-  our own version of portal_discussion (implemented by CommentTool)
-
+-
 Bug fixes:
 ~~~~~~~~~~
-- use CPSDefault style
-- added a README file with installation procedure
-
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
-- indentation / docstrings cleanups
-
+-

@@ -1,4 +1,27 @@
 *******************************************
+** CPSForum V0.2.0 [R1 build 2003-10/31-17:37 by anguenot]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+
+New features:
+~~~~~~~~~~~~~
+- forums can now be used to store comments/discussions about documents
+- significant changes to the appearance of Forums
+- portal_comment is no longer used ; functionalities migrated to
+  our own version of portal_discussion (implemented by CommentTool)
+
+Bug fixes:
+~~~~~~~~~~
+- use CPSDefault style
+- added a README file with installation procedure
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- indentation / docstrings cleanups
+
+*******************************************
 ** CPSForum V0.1.0 [R1 build 2003-10/06-09:15 by epietrig]
 
 ZODB Requires:

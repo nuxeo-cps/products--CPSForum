@@ -1,33 +1,12 @@
 Requires:
 ~~~~~~~~~
-- CPSSubscriptions 0.10.2 or later
+-
 New features:
 ~~~~~~~~~~~~~
-- new workflow for forum posts, with two new states : rejected, unpublished
-- messages posted by users with Forum Moderate permission are now directly
-  published for both a priori and a posteriori moderation modes
-- threads are now sorted by most recent post (default view, no explicit sorting)
-- use a rich text editor widget to edit posts
-- attaching documents to posts (as internal links)
-- member's information is displayed in a popup window when clicking on author
-  name
-- posts can be sorted by thread, subject, date, author
-- forum content is now batched by default (default setting is 30 threads/posts
-  per page)
-- new CPSSubscriptions events are available for posts and comments: delete,
-  reject, unpublish (in addition to existing events create and publish)
-
+-
 Bug fixes:
 ~~~~~~~~~~
-- display "Modify" button only for posts that are not published (thus not
-  modifiable)
-- Add an explicit message when you not have rights to post a comment
-- users who were explicitely set as ForumModerator were not allowed
-  to view posts in several states like pending (users who inherited this
-  permission from other roles like SectionReviewer were not subject to this
-  bug)
-- replaced post modification date by creation date (more appropriate)
-
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

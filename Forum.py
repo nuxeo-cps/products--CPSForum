@@ -16,8 +16,6 @@
 #
 # $Id$
 
-from zLOG import LOG, DEBUG, ERROR
-
 from AccessControl import ClassSecurityInfo
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.CMFCorePermissions import View, AddPortalContent, \

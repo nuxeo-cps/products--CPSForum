@@ -57,7 +57,7 @@
     <tr>
       <td i18n:translate="forum_message">Message</td>
       <td>
-        <textarea cols="40" rows="6"
+        <textarea cols="72" rows="20"
                   name="message:string"></textarea>
       </td>
     </tr>

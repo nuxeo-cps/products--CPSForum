@@ -1,6 +1,6 @@
 Requires:
 ~~~~~~~~~
--
+- CPSSubscriptions > 0.7.0-1 not included
 New features:
 ~~~~~~~~~~~~~
 - Now possible to batch threads (only display a given number of threads per

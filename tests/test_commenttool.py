@@ -97,6 +97,25 @@ class TestCommentTool(CPSForumTestCase.CPSForumTestCase):
         self.pd.setAllowDiscussion(self.proxy_doc, 0)
         self.assertEqual(doc.allow_discussion, 0)
 
+
+    def testCreateAnonymousForumPost(self):
+        proxy_forum, forum = self._createForum()
+        post_id = 'post1'
+        subject = 'subject'
+        author = 'anonymous'
+        message = 'message'
+        parent_id = None
+
+        self.assertEqual(len(proxy_forum.objectIds()), 0)
+
+        self.logout()
+        self.pd.createAnonymousForumPost(proxy_forum, post_id, subject,
+                                         author, message, parent_id)
+
+        self.assertEqual(len(proxy_forum.objectIds()), 1)
+        self.assert_(hasattr(proxy_forum, post_id))
+
+
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(TestCommentTool))

@@ -30,6 +30,7 @@ except ImportError:
 from CPSForumPermissions import ForumModerate
 from Products.BTreeFolder2.BTreeFolder2 import BTreeFolder2Base
 from zLOG import LOG, DEBUG, INFO
+import sys
 
 factory_type_information = ({
     'id': 'Forum',
@@ -234,7 +235,7 @@ class CPSForum(BaseDocument):
             'message': post_doc.Description(), 'parent_id': post_doc.parent_id,
             'published': r_state == 'published',
             'review_state': r_state,
-            'creation': post_doc.CreationDate(),
+            'creation': post_doc.created(),
             'locked': post_doc.id in self.locked_threads
             }
 

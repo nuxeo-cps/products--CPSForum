@@ -35,7 +35,7 @@
             </tal:block>
             <tal:block tal:define="mcat python:here.Localizer.cpsforum" 
                        tal:replace="python:
-               '('+mcat('forum_label_postedby')+' '+here.getPoster(post['author'])+')'"/>
+'('+mcat('forum_label_postedby').encode('ISO-8859-15', 'ignore')+' '+here.getPoster(post['author'])+')'"/>
           </td>
         </tr>
         <tr>

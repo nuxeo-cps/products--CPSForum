@@ -1,4 +1,22 @@
 *******************************************
+** CPSForum V1.2.6 [R1 build 2004/06/25-14:27 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- more documentation
+
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- changed method of handling post formating (no longer uses <pre> elements)
+
+
+*******************************************
 ** CPSForum V1.2.5 [R1 build 2004/06/22-13:07 by epietrig]
 
 Requires:

@@ -104,6 +104,7 @@ class CPSForum(CPSBaseDocument):
     moderators = []
     security = ClassSecurityInfo()
 
+    security.declareProtected(View, 'getThreads')
     def getThreads(self):
         """Return a list of root posts
 
@@ -116,6 +117,7 @@ class CPSForum(CPSBaseDocument):
                    if post.in_reply_to is None ]
         return result
 
+    security.declareProtected(View, 'getPostInfo')
     def getPostInfo(self, post):
         """Return post information as a dictionnary"""
         # NB: It looks like we're obliged to maintain
@@ -136,6 +138,7 @@ class CPSForum(CPSBaseDocument):
             'modified': post.bobobase_modification_time(),
         }
 
+    security.declareProtected(View, 'addPost')
     def addPost(self, subject="", message="", author="", parent_id=None):
         """Add a new post
 
@@ -144,15 +147,17 @@ class CPSForum(CPSBaseDocument):
         post_id = discussion.createReply(subject, message, author)
         post = discussion.getReply(post_id)
         post.in_reply_to = parent_id
-        self.publishPost(post_id, not self.moderation_mode)
+        self.changePostPublicationStatus(post_id, not self.moderation_mode)
         return post_id
 
+    security.declareProtected(View, 'delPost')
     def delPost(self, id):
         """Delete a post
 
         The post is refered to by its id"""
         self.portal_discussion.getDiscussionFor(self).deleteReply(id)
 
+    security.declareProtected(View, 'changePostPublicationStatus')
     def changePostPublicationStatus(self, id, status=1):
         """(Un)Publish post <id>"""
         post = self.portal_discussion.getDiscussionFor(self).getReply(id)
@@ -173,6 +178,7 @@ class CPSForum(CPSBaseDocument):
             result = None
         return result
 
+    security.declareProtected(View, 'getPostReplies')
     def getPostReplies(self, post_id):
         """Return replies to root post
 
@@ -184,6 +190,7 @@ class CPSForum(CPSBaseDocument):
                    if post.in_reply_to == post_id ]
         return result
 
+    security.declareProtected(View, 'getDescendants')
     def getDescendants(self, post_id):
         """Fetch post tree"""
         info_getter = self.getPostInfo
@@ -200,6 +207,7 @@ class CPSForum(CPSBaseDocument):
 
         return result
 
+    security.declareProtected('Modify Folder Properties', 'editForumProperties')
     def editForumProperties(self, **kw):
         """Edit forum properties
         """

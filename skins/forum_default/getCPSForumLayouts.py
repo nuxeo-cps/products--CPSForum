@@ -15,15 +15,15 @@ forum_layout = {
                 'label_true': 'forum_a_priori',
                 },
             },
-        'allow_anon_posts': {
-            'type': 'Boolean Widget',
-            'data': {
-                'fields': ['allow_anon_posts'],
-                'is_i18n': 1,
-                'label': 'forum_allow_anon_posts',
-                'label_edit': 'forum_allow_anon_posts',
-                },
-            },
+##        'allow_anon_posts': {
+##            'type': 'Boolean Widget',
+##            'data': {
+##                'fields': ['allow_anon_posts'],
+##                'is_i18n': 1,
+##                'label': 'forum_allow_anon_posts',
+##                'label_edit': 'forum_allow_anon_posts',
+##                },
+##            },
         'frozen_forum': {
             'type': 'Boolean Widget',
             'data': {
@@ -46,7 +46,7 @@ forum_layout = {
     'layout': {
         'style_prefix': 'layout_default_',
         'rows': [[{'widget_id': 'moderation_mode'}, ],
-                 [{'widget_id': 'allow_anon_posts'}, ],
+##                 [{'widget_id': 'allow_anon_posts'}, ],
                  [{'widget_id': 'frozen_forum'}, ],
                  [{'widget_id': 'threads_per_page'}, ],
                  ],

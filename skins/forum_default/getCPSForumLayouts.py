@@ -44,6 +44,17 @@ forum_layout = {
                 'translated': 1,
                 },
             },
+        'wf_display': {
+            'type': 'Select Widget',
+            'data': {
+                'fields': ['wf_display'],
+                'is_i18n': 1,
+                'label': '',
+                'label_edit': 'forum_label_wf_display',
+                'vocabulary': 'forum_wf_display_voc',
+                'translated': 1,
+                },
+            },
         'threads_per_page': {
             'type': 'Int Widget',
             'data': {
@@ -60,6 +71,7 @@ forum_layout = {
                  [{'widget_id': 'allow_anon_posts'}, ],
                  [{'widget_id': 'frozen_forum'}, ],
                  [{'widget_id': 'tree_display'}, ],
+                 [{'widget_id': 'wf_display'}, ],
                  [{'widget_id': 'threads_per_page'}, ],
                  ],
         }

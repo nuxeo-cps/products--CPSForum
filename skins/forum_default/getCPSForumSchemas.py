@@ -32,6 +32,10 @@ forum_schema = {
         'type': 'CPS String Field',
         'data': {'is_searchabletext': 0,
                  'default_expr': 'string:title',}},
+    'wf_display': {
+        'type': 'CPS String Field',
+        'data': {'is_searchabletext': 0,
+                 'default_expr': 'string:wf_icon',}},
     'threads_per_page': {
         'type': 'CPS Int Field',
         'data': {'is_searchabletext': 0,

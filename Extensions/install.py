@@ -134,7 +134,7 @@ def install(self):
                              ForumPost),
              }
     installer.verifyWorkflow(wfdef, {}, {}, {}, {})
-    
+
     # workflow for forums
     # in workspaces
     wfdef = {'wfid': 'workspace_forum_wf',
@@ -255,7 +255,7 @@ def install(self):
         },
     }
     installer.verifyWorkflow(wfdef, wfstates, wftransitions, {}, {})
-    
+
     # workflow for forum posts
     wfdef = {'wfid': 'forum_post_wf',
              'permissions': (View, ModifyPortalContent),
@@ -264,7 +264,7 @@ def install(self):
     wfstates = {
         'created': {
             'title': 'Created',
-            'transitions': ('auto_publish', 'auto_moderate'), #'auto_publish', 
+            'transitions': ('auto_publish', 'auto_moderate'), #'auto_publish',
             'permissions': {View: ('Manager', 'Owner', 'WorkspaceManager',
                                    'SectionManager', 'SectionReviewer',
                                    'ForumModerator'),
@@ -507,7 +507,7 @@ forum.getContent().postRejected(object.id, proxy=forum)
          'id': 'comment',
          'name': 'action_comment',
          'action': "string:${object/absolute_url}/post_comment",
-         'condition': "python:getattr(object.getTypeInfo(),'cps_proxy_type','') in ('document', 'folderishdocument') and object.getContent().allow_discussion == 1",
+         'condition': "python:object.hasCommentAction()",
          'permission': 'View',
          'category': 'object',},
     ])
@@ -530,7 +530,7 @@ forum.getContent().postRejected(object.id, proxy=forum)
                                     meta_type='*',
                                     event_type='sys_del_object',
                                     notification_type='synchronous')
-        
+
     ##############################################
     # i18n support
     ##############################################

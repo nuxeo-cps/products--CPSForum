@@ -25,7 +25,7 @@ try:
 except ImportError:
     from Products.CPSCore.CPSBase import CPSBaseDocument as BaseDocument
 from CPSForumPermissions import ForumModerate
-from zLOG import LOG, DEBUG
+from zLOG import LOG, DEBUG, INFO
 
 factory_type_information = ({
     'id': 'Forum',
@@ -38,7 +38,7 @@ factory_type_information = ({
     'filter_content_types': 1,
     'allowed_content_types': (),
     'immediate_view': 'forum_edit_form',
-    'allow_discussion': 0,
+    'allow_discussion': 1,
     'actions': ({
         'id': 'view',
         'name': 'action_view',
@@ -73,20 +73,14 @@ factory_type_information = ({
 
 def addCPSForum(self, id, REQUEST=None, **kw):
     """Add a Forum."""
-    LOG('XXXXXXXXXXX', DEBUG, 'addCPSForum id=%s, kw=%s.' % (id, kw))
-    datamodel = kw.get('datamodel')
-    if datamodel:
-        kw['datamodel']['allow_discussion'] = 1
     ob = CPSForum(id, **kw)
     CPSBase_adder(self, ob, REQUEST=REQUEST)
-
 
 class CPSForum(BaseDocument):
     """CPS Forum definition."""
     meta_type = 'CPSForum'
     portal_type = 'CPSForum'
 
-    # XXX there is too much XXX
     _properties = BaseDocument._properties + (
         {'id':'moderation_mode', 'type':'selection', 'mode':'w',
          'select_variable': 'all_moderation_mode', 'label':'Moderation mode'},

@@ -1,15 +1,13 @@
 <tal:block define="post_id options/post_id;
-                   doc here/getContent|here;
+                   forum nocall:options/forum;
                    is_reviewer options/is_reviewer;
-                   post python:doc[post_id]"
+                   comment_mode options/comment_mode;
+                   post python:forum[post_id]"
            condition="python:post"
            i18n:domain="cpsforum">
 
   <tr><td colspan="2">&nbsp;</td></tr>
-  <tr><td class="forumheader" colspan="2" 
-          i18n:translate="forum_message">Message</td></tr>
-
-  <tal:block condition="python: is_reviewer or post['published']">
+  <tal:block condition="python: is_reviewer or post['published'] or comment_mode">
     <tr><td colspan="2">
       <table style="padding:0;margin:0;width:100%;border:1px solid black;"> 
         <tr>
@@ -25,30 +23,38 @@
               </a>
             </tal:block>
             <tal:block condition="python: is_reviewer and not post['published']">
-              <b> <a tal:content="python:post['subject']"
-                     tal:attributes="href python:here.absolute_url()+'/?post_id='+post['id']">
-              Title
-              </a> </b>
+              <strong> 
+                <a tal:content="python:post['subject']"
+                   tal:attributes="href 
+                     python:here.absolute_url()+'/?post_id='+post['id']">
+                  Title
+                </a> 
+              </strong>
             </tal:block>
-            <div tal:content="python:post['message']">
-            Message
-            </div>
+            <tal:block condition="comment_mode">
+              <a tal:content="python:post['subject']"
+                 tal:attributes="href python:here.absolute_url()+'/?comment_id='+post['id']">
+                Title
+              </a>
+            </tal:block>
+            <div tal:content="python:post['message']">Message</div>
           </td>
-
         </tr>
-      </table></td>
-    </tr>
+      </table>
+    </td></tr>
     <tr>
       <td colspan="2">
         <form  method="POST" tal:attributes="action here/absolute_url" name="post_form">
+          <input type="hidden" name="parent_id:string"
+                 tal:attributes="value post_id">
+          <input type="hidden" name="comment_mode:int"
+                 tal:attributes="value comment_mode">
           <input type="submit" name="forum_post_form:method"
                  class="mainbutton" value="forum_new_thread"
-                 i18n:attributes="value" />
-          <input type="hidden" name="parent_id:string"
-                 tal:attributes="value post_id" />
+                 i18n:attributes="value">
           <input type="submit" name="forum_post_reply:method"
                  class='mainbutton' value="forum_reply"
-                 i18n:attributes="value" />
+                 i18n:attributes="value">
           <tal:block condition="is_reviewer">
             <input type="submit" name="forum_publish_thread:method"
                    class="mainbutton" value="forum_publish"
@@ -58,6 +64,8 @@
                    class="mainbutton" value="forum_depublish"
                    tal:condition="python:post['published']"
                    i18n:attributes="value" />
+          </tal:block>
+          <tal:block tal:condition="python:is_reviewer or comment_mode">
             <input type="submit" name="forum_del_thread:method"
                    class='mainbutton' value="forum_delete"
                    i18n:attributes="value" />

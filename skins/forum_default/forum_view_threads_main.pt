@@ -1,15 +1,17 @@
-<tal:block define="descendants options/descendants;
-                   post_id options/post_id;
-                   doc here/getContent|here;
-                   is_reviewer options/is_reviewer;">
+<tal:block define="post_id options/post_id;
+                   descendants options/descendants;
+                   is_reviewer options/is_reviewer;
+                   comment_mode options/comment_mode">
 <html i18n:domain="cpsforum">
-
-  <form  method="POST" tal:attributes="action here/absolute_url" name="post_form">
-
+  <form method="POST" tal:attributes="action here/absolute_url" name="post_form">
+    <input type="hidden" name="comment_mode:int" 
+           tal:attributes="value comment_mode" />
     <table border=0 style='width:100%;height:inherit' cellspacing='0' cellpadding='0'>
       <tr>
-        <td class="forumsubheader" width="20"><input type="hidden" name="parent_id:string"
-            tal:attributes="value post_id" /></td>
+        <td class="forumsubheader" width="20">
+          <input type="hidden" name="parent_id:string" 
+                 tal:attributes="value post_id" />
+        </td>
         <td class="forumsubheader" width="10">&nbsp;</td>
         <td class="forumsubheader" i18n:translate="forum_subject">Subject</td>
         <td class="forumsubheader" width="100" 
@@ -17,24 +19,28 @@
         <td class="forumsubheader" width="80" 
             i18n:translate="forum_date">Date</td>
       </tr>
-      <tal:span content="structure python:here.post_tree(descendants=descendants, post_id=post_id)" />
+      <tal:span content="structure python:here.post_tree(
+                                             descendants=descendants, 
+                                             post_id=post_id,
+                                             comment_mode=comment_mode)"/>
     </table>
-
-    <tal:block condition="is_reviewer">
-      <tr>
-        <td colspan="2">
+    <tr>
+      <td colspan="2">
+        <tal:block condition="python:not comment_mode and is_reviewer">
           <input type="submit" name="forum_publish_post:method"
                  class="mainbutton" value="forum_publish" 
                  i18n:attributes="value" />
           <input type="submit" name="forum_unpublish_post:method"
                  class="mainbutton" value="forum_depublish" 
                  i18n:attributes="value" />
+        </tal:block>
+        <tal:block condition="python:comment_mode or is_reviewer">
           <input type="submit" name="forum_del_post:method"
                  class="mainbutton" value="forum_delete" 
                  i18n:attributes="value" />
-        </td>
-      </tr>
-    </tal:block>
+        </tal:block>
+      </td>
+    </tr>
   </form>
 </html>
 </tal:block>

@@ -1,25 +1,24 @@
-<html metal:use-macro="here/main_template/macros/master">
+<metal:block metal:use-macro="here/main_template/macros/master">
 <metal:block fill-slot="header" />
 <metal:block fill-slot="main"
              i18n:domain="cpsforum"
-tal:define="parent_id options/parent_id|nothing;
-                  doc here/getContent|here;
-                  member python:here.portal_membership.getAuthenticatedMember();
-                  dtool python:here.portal_metadirectories['members'];
-                  errormsg options/error_message|nothing;
-      roles python:here.portal_membership.getCPSCandidateLocalRoles(here)">
+             tal:define="parent_id options/parent_id|nothing;
+                         comment_mode here/REQUEST/comment_mode|nothing;
+                         doc python:here.getForumObject(comment_mode=comment_mode);
+                         member 
+                           python:here.portal_membership.getAuthenticatedMember();
+                         dtool python:here.portal_metadirectories['members'];
+                         errormsg options/error_message|nothing;
+                         roles 
+                           python:
+                             here.portal_membership.getCPSCandidateLocalRoles(here)">
 
-<tal:block tal:condition="python:not 'ForumPoster' in roles">
+<tal:block tal:condition="python:not (comment_mode or 'ForumPoster' in roles)">
   <p>You are not authorized to post on this forum</p>
 </tal:block>
 
-<tal:block tal:condition="python:'ForumPoster' in roles">
-<form method="POST" action="." enctype="multipart/form-data"
-      tal:define="parent_id options/parent_id|nothing;
-                  doc here/getContent|here;
-                  member python:here.portal_membership.getAuthenticatedMember();
-                  dtool python:here.portal_metadirectories['members'];
-                  errormsg options/error_message|nothing;">
+<tal:block tal:condition="python:comment_mode or 'ForumPoster' in roles">
+<form method="POST" action="." enctype="multipart/form-data">
   <table>
     <tr>
       <td i18n:translate="forum_author">Author</td>
@@ -67,8 +66,9 @@ tal:define="parent_id options/parent_id|nothing;
       <td></td>
       <td>
         <input type="hidden" name="parent_id:string"
-               tal:condition="parent_id"
-               tal:attributes="value parent_id" />
+               tal:attributes="value parent_id">
+        <input type="hidden" name="comment_mode:int"
+               tal:attributes="value comment_mode" />
         <input type="submit" name="forum_post:method"
                class="mainbutton" value="forum_post" 
                i18n:attributes="value" />
@@ -78,4 +78,4 @@ tal:define="parent_id options/parent_id|nothing;
 </form>
 </tal:block>
 </metal:block>
-</html>
+</metal:block>

@@ -56,12 +56,6 @@ factory_type_information = (
             'name': 'action_modify',
             'action': 'forum_edit_form',
             'permissions': (ManageProperties,),
-            },
-             {
-            'id': 'post',
-            'name': 'action_add_post',
-            'action': 'forum_post_form',
-            'permissions': (View,),
             }, {
             'id': 'localroles',
             'name': 'action_local_roles',

@@ -1,8 +1,7 @@
-/* CPSForum CSS
-** $Id$
-*/
+<dtml-comment>
+$Id$
+</dtml-comment>
 
-/* DTML instructions to set caching headers.
 <dtml-let last_modified="_.DateTime()-14" expires="_.DateTime()+1" >
 <dtml-call "REQUEST.RESPONSE.setHeader( 'Content-Type', 'text/css' )">
 <dtml-call "REQUEST.RESPONSE.setHeader( 'Last-Modified', last_modified.toZone('GMT').rfc822() )">
@@ -11,7 +10,6 @@
 </dtml-let>
 
 <dtml-with stylesheet_properties>
-*/
 
 table.forumPost {
   width: 100%;
@@ -112,6 +110,4 @@ td.forumThreadBatch {
   color: #00ff00;
 }
 
-/*
 </dtml-with>
-*/

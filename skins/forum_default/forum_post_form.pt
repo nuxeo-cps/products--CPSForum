@@ -1,4 +1,4 @@
-<metal:html use-macro="here/content_lib/macros/master">
+<metal:html use-macro="here/main_template/macros/master">
 <metal:block fill-slot="header" />
 <metal:main fill-slot="main">
 <form method="POST" action="." enctype="multipart/form-data"

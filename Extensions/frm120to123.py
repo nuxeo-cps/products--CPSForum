@@ -36,6 +36,41 @@
 
 from Products.CPSInstaller.CPSInstaller import CPSInstaller
 
+# method to convert posts Creator to author
+def convertPost(proxy_post, installer):
+    installer.log("    Converting post %s" % proxy_post.id)
+    post = proxy_post.getEditableContent()
+    creator = post.Creator()
+    kw = {'author': creator or ''}
+    post.edit(**kw)
+
+# method for processing a forum
+def convertForum(proxy_forum, installer):
+    installer.log("  Processing forum %s" % proxy_forum.id)
+    # change permissions on forum
+    wf_chain = installer.portal.portal_workflow.getChainFor(proxy_forum)
+    if wf_chain[0] == 'section_forum_wf':
+        installer.log("    Forum follows section_forum_wf: updating 'Modify portal content' permission")
+        proxy_forum.manage_permission('Modify portal content',
+                                      ['ForumModerator', 'Manager', 'Owner',
+                                       'SectionManager', 'SectionReviewer',
+                                       'WorkspaceManager', 'WorkspaceMember'])
+        proxy_forum.proxyChanged()
+    # process posts
+    for proxy_post in proxy_forum.objectValues():
+        convertPost(proxy_post, installer)
+
+# recursive descent of hierarchy (Workspace, Section, etc.)
+def inspectFolder(proxy_folder, installer, portal_types_to_export):
+    installer.log("Searching for forums in %s" %
+                  installer.portal.portal_url.getRelativeUrl(proxy_folder))
+    for object in proxy_folder.objectValues():
+        if object.portal_type == 'CPSForum':
+            convertForum(object, installer)
+        elif (object.meta_type == 'CPS Proxy Folder' and
+              object.portal_type in portal_types_to_export):
+            inspectFolder(object, installer, portal_types_to_export)
+
 def convert(self):
 
     installer = CPSInstaller(self, 'ForumConverter')
@@ -49,45 +84,10 @@ def convert(self):
                 portal_types_to_export.append(type)
     installer.log("The following portal types will be considered as folders for the hierarchy recursive descent: %s" % portal_types_to_export)
 
-    # method to convert posts Creator to author
-    def convertPost(proxy_post):
-        installer.log("    Converting post %s" % proxy_post.id)
-        post = proxy_post.getEditableContent()
-        creator = post.Creator()
-        kw = {'author': creator}
-        post.edit(**kw)
-
-    # method for processing a forum
-    def convertForum(proxy_forum):
-        installer.log("  Processing forum %s" % proxy_forum.id)
-        # change permissions on forum
-        wf_chain = installer.portal.portal_workflow.getChainFor(proxy_forum)
-        if wf_chain[0] == 'section_forum_wf':
-            installer.log("    Forum follows section_forum_wf: updating 'Modify portal content' permission")
-            proxy_forum.manage_permission('Modify portal content',
-                                          ['ForumModerator', 'Manager', 'Owner',
-                                           'SectionManager', 'SectionReviewer',
-                                           'WorkspaceManager', 'WorkspaceMember'])
-            proxy_forum.proxyChanged()
-        # process posts
-        for proxy_post in proxy_forum.objectValues():
-            convertPost(proxy_post)
-
-    # recursive descent of hierarchy (Workspace, Section, etc.)
-    def inspectFolder(proxy_folder):
-        installer.log("Searching for forums in %s" %
-                      installer.portal.portal_url.getRelativeUrl(proxy_folder))
-        for object in proxy_folder.objectValues():
-            if object.portal_type == 'CPSForum':
-                convertForum(object)
-            elif (object.meta_type == 'CPS Proxy Folder' and
-                  object.portal_type in portal_types_to_export):
-                inspectFolder(object)
-                
     for object in installer.portal.objectValues():
         if (object.meta_type == 'CPS Proxy Folder' and
             object.portal_type in portal_types_to_export):
-            inspectFolder(object)
+            inspectFolder(object, installer, portal_types_to_export)
 
     installer.log("End of conversion")
     return installer.logResult()

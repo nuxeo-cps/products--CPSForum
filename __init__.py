@@ -28,7 +28,7 @@ try:
             Forum.addCPS3Post,
         )
     tools = (CPS3DiscussionTool.CPS3DiscussionTool,)
-    registerDirectory('skins/cps3', globals())
+    registerDirectory('skins/forum_default', globals())
 except ImportError: pass
 
 def initialize(registrar):

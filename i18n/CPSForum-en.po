@@ -1,0 +1,2220 @@
+msgid ""
+msgstr "Project-Id-Version: \n"
+"POT-Creation-Date: 2002-09-03 16:09+CET\n"
+"PO-Revision-Date: 2002-09-03 16:09+CET\n"
+"Last-Translator:  <>\n"
+"Language-Team: en <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "_Add a user whose_"
+msgstr "Add a user whose"
+
+msgid "_pub_transition_depublish_"
+msgstr "Depublish from"
+
+msgid "_versionstate_locked"
+msgstr "locked"
+
+msgid "_dir_Groups_"
+msgstr "Groups"
+
+msgid "_Upload_a_File_"
+msgstr "Upload a File"
+
+msgid "_box_prop_visible_"
+msgstr "Visible"
+
+msgid "_reviewstate_published"
+msgstr "published"
+
+msgid "_template_FAQs"
+msgstr "FAQs"
+
+msgid "_Create_an_entry_(in_this_directory)_"
+msgstr "Create an entry"
+
+msgid "_cpsdocuments_Your_email_is_unknown_"
+msgstr "Your E-mail is unkown"
+
+msgid "_No_news_here_"
+msgstr "No news here."
+
+msgid "_pub_history_rejected_from_"
+msgstr "Rejected from"
+
+msgid "_faq_Answer_"
+msgstr "Answer"
+
+msgid "_prop_login_"
+msgstr "Login"
+
+msgid "_Create_a_FAQ_"
+msgstr "Create a FAQ"
+
+msgid "_portal_type_News Document"
+msgstr "News"
+
+msgid "_str_Members_"
+msgstr "Members"
+
+msgid "L_forum_published_by"
+msgstr "from"
+
+msgid "L_forum_published_at"
+msgstr "at"
+
+msgid "_(comment)_by_"
+msgstr "by"
+
+msgid "_mailing_Other_members_"
+msgstr "Other members"
+
+msgid "_str_Drafts_"
+msgstr "Drafts"
+
+msgid "_If you need help, please contact_"
+msgstr "If you need help, please contact"
+
+msgid "_rename_to_"
+msgstr "to"
+
+msgid "_workgroup_Members_"
+msgstr "Members"
+
+msgid "_One line by link, URL and description separated by one space_"
+msgstr "One line by link, URL and description separated by one space"
+
+msgid "_Add users (... as ...)_"
+msgstr "Add users"
+
+msgid "_document_%(title)s_was_created_in_%(wgtitle)s_"
+msgstr "Document « %(title)s » was created in « %(wgtitle)s »"
+
+msgid "_action_modify_"
+msgstr "Modify"
+
+msgid "_(Add a user whose ...)_is:"
+msgstr "is:"
+
+msgid "_Private_Areas_"
+msgstr "Private Areas"
+
+msgid "_button_cancel_"
+msgstr "Cancel"
+
+msgid "_action_publish_"
+msgstr "Publish..."
+
+msgid "_Publication_state_of_"
+msgstr "Publication state of"
+
+msgid "_No_document_in_this_hierarchy"
+msgstr "No document in this hierarchy."
+
+msgid "_Documents_"
+msgstr "Documents"
+
+msgid "_Modify_the_boxes_"
+msgstr "Modify the global boxes"
+
+msgid "_login_successfull_"
+msgstr "Login successfull"
+
+msgid "_str_Comments:"
+msgstr "Comments:"
+
+msgid "_mailing_No_subject_"
+msgstr "No subject"
+
+msgid "_Only_one_entry_matches_your_request_(single)_"
+msgstr "Only one entry matches your request."
+
+msgid "_portal_type_URL"
+msgstr "URL"
+
+msgid "_This type of box is used to display hierarchies for navigation_"
+msgstr "This type of box is used to display hierarchies for navigation."
+
+msgid "_Search_in_(directory_name)_"
+msgstr "Search in"
+
+msgid "_action_retract_"
+msgstr "Retract..."
+
+msgid "_Create_a_News_"
+msgstr "Create a News"
+
+msgid "_button_paste_"
+msgstr "Paste"
+
+msgid "_archived_versions_"
+msgstr "Archived versions"
+
+msgid "_privateareas_"
+msgstr "Private"
+
+msgid "_dir_prop_E-mail_"
+msgstr "E-mail"
+
+msgid "_action_members_"
+msgstr "Members"
+
+msgid "_str_Pending_"
+msgstr "Pending"
+
+msgid "_Hierarchy_Rights_updated_"
+msgstr "Access Right updated"
+
+msgid "_date_%m/%d/%Y %H:%M"
+msgstr "%m/%d/%Y %H:%M"
+
+msgid "_mailing_Other_emails_"
+msgstr "Other E-mails"
+
+msgid "_role_Member_"
+msgstr "Member"
+
+msgid "_Try_an_(search_in_this_directory)_"
+msgstr "Try an"
+
+msgid "_No_FAQ_here_"
+msgstr "No FAQ here."
+
+msgid "_pub_title_reject_"
+msgstr "Reject"
+
+msgid "_button_add_"
+msgstr "Add"
+
+msgid "_portal_type_Workgroup"
+msgstr "Workgroup"
+
+msgid "_filedocument_(You_can_also_get)_a_preview_"
+msgstr "a preview"
+
+msgid "_contact_mobile_"
+msgstr "Mobile"
+
+msgid "_box_prop_style_"
+msgstr "Style"
+
+msgid "_button_create_"
+msgstr "Create"
+
+msgid "_portal_type_Mailing-list"
+msgstr "Mailing-list"
+
+msgid "_action_preview_"
+msgstr "Preview"
+
+msgid "_Sorry, no user match your query_"
+msgstr "Sorry, no user match your query."
+
+msgid "_Portal_Members_"
+msgstr "Members"
+
+msgid "_return_to_document_"
+msgstr "Return to document"
+
+msgid "_Create_a_Contact_"
+msgstr "Create a Contact"
+
+msgid "_faq_Detailed_Question_"
+msgstr "Detailed Question"
+
+msgid "_box_Detailed_display_"
+msgstr "Detailed"
+
+msgid "_str_Published_"
+msgstr "Published"
+
+msgid "_action_draft_"
+msgstr "Draft"
+
+msgid "_column_Document"
+msgstr "Document"
+
+msgid "_box_prop_title_"
+msgstr "Title"
+
+msgid "_multitab_Private_Documents_"
+msgstr "Private Documents"
+
+msgid "_box_prop_hierarchies_depth_"
+msgstr "Depth"
+
+msgid "_binaryinput_Do_not_change_"
+msgstr "Don't change"
+
+msgid "_(plural)_documents_found_for_"
+msgstr "documents found for"
+
+msgid "_pub_title_retract_"
+msgstr "Retract"
+
+msgid "_pub_title_publish_"
+msgstr "Publish"
+
+msgid "_hierarchies_"
+msgstr "Hierarchies"
+
+msgid "_contact_postalAddress_"
+msgstr "Address"
+
+msgid "_portal_type_FAQ"
+msgstr "FAQ"
+
+msgid "_contact_sn_"
+msgstr "Name"
+
+msgid "_Add_a_box_with_type:"
+msgstr "Add a box with type:"
+
+msgid "_quicklinks_"
+msgstr "Quick Links"
+
+msgid "_next_%s_"
+msgstr "Next %s"
+
+msgid "_workgroup_Manager_"
+msgstr "Manager"
+
+msgid "_Your login or password is incorrect. Please retry_"
+msgstr "Your login or password is incorrect. Please retry."
+
+msgid "_No directory available_"
+msgstr "No directory available"
+
+msgid "_reviewstate_pending"
+msgstr "pending"
+
+msgid "_versionstate_initial"
+msgstr "initial"
+
+msgid "_Edit_hierarchy_"
+msgstr "Edit hierarchy"
+
+msgid "_header_date_Modified_on_%m/%d/%Y at %H:%M"
+msgstr "Modified on %m/%d/%Y at %H:%M"
+
+msgid "_dir_prop_groupName_"
+msgstr "Group Name"
+
+msgid "_Create_a_Mailing-list_"
+msgstr "Create a Mailing-list"
+
+msgid "_pub_transition_publish_"
+msgstr "Publish directly in"
+
+msgid "_pub_history_published_in_"
+msgstr "Published in"
+
+msgid "_pub_title_accept_"
+msgstr "Accept"
+
+msgid "_Don't forget to logout when you're finished_"
+msgstr "Don't forget to logout when you're finished."
+
+msgid "_column_Published"
+msgstr "Published"
+
+msgid "_(or consult)_an_other_directory_"
+msgstr "an other directory."
+
+msgid "_mailing_Send_to_members_"
+msgstr "Send to members (for Workgroups only)"
+
+msgid "_file_list_No_document"
+msgstr "No document"
+
+msgid "_dir_Users_"
+msgstr "Users"
+
+msgid "_dir_prop_givenName_"
+msgstr "Given Name"
+
+msgid "_private_area_"
+msgstr "Private area"
+
+msgid "_dir_prop_Users_"
+msgstr "Users"
+
+msgid "_pub_history_accepted_in_"
+msgstr "Accepted in"
+
+msgid "_Entry_modified_"
+msgstr "Entry modified"
+
+msgid "_(Try_an)_other_search_(in_this_directory)_"
+msgstr "other search"
+
+msgid "_Create_a_Text_Document_"
+msgstr "Create a Text Document"
+
+msgid "_docsapprove_"
+msgstr "Documents to approve"
+
+msgid "_role_Manager_"
+msgstr "Manager"
+
+msgid "_str_All_Workgroups_"
+msgstr "Workgroups root"
+
+msgid "_Modify_the_box_"
+msgstr "Modify the box"
+
+msgid "_Manage_Access_rights_on_"
+msgstr "Access rights on"
+
+msgid "_box_prop_column_"
+msgstr "Column"
+
+msgid "_box_prop_hierarchies_paths_"
+msgstr "Hierarchies to display"
+
+msgid "_dir_prop_fullName_"
+msgstr "Full Name"
+
+msgid "_search_prop_text"
+msgstr "Text"
+
+msgid "_(follow)_log out of the ZMI?"
+msgstr "log out of the ZMI?"
+
+msgid "_sortby_ModificationDate"
+msgstr "Modification Date"
+
+msgid "_contact_roomNumber_"
+msgstr "Room Number"
+
+msgid "_mailing_Effective_emails_in_this_context_"
+msgstr "Effective E-mails in this context"
+
+msgid "_unversionned_actions"
+msgstr "actions"
+
+msgid "_portal_type_WGNav Box"
+msgstr "Workgroup Box"
+
+msgid "_prop_box_sortby_"
+msgstr "Sort by"
+
+msgid "_workgroup_Managers_"
+msgstr "Managers"
+
+msgid "_No such entry in this directory_"
+msgstr "No such entry in this directory."
+
+msgid "_Currently:"
+msgstr "Currently:"
+
+msgid "_value_Reviewer_"
+msgstr "Reviewer"
+
+msgid "_Other_Documents_"
+msgstr "Other Documents"
+
+msgid "_box_prop_minimized_"
+msgstr "Minimized"
+
+msgid "_action_abandon_draft_"
+msgstr "Abandon draft"
+
+msgid "_contact_o_"
+msgstr "Organization"
+
+msgid "_button_validate_"
+msgstr "Validate"
+
+msgid "_pub_history_depublished_from_"
+msgstr "Depublished from"
+
+msgid "_action_directories_"
+msgstr "Directories"
+
+msgid "_Search_Results_"
+msgstr "Search Results"
+
+msgid "_prop_id_"
+msgstr "Id"
+
+msgid "_welcome_"
+msgstr "Welcome"
+
+msgid "_button_rename_"
+msgstr "Rename"
+
+msgid "_prop_vignette_"
+msgstr "Vignette"
+
+msgid "_No_"
+msgstr "No"
+
+msgid "_action_subhierachies_"
+msgstr "Subhierarchies/Objects"
+
+msgid "_button_login_"
+msgstr "Login"
+
+msgid "_str_Error_"
+msgstr "Error"
+
+msgid "_linksrender_Related_links_"
+msgstr "Related links"
+
+msgid "_multitab_All_Documents_"
+msgstr "All Documents"
+
+msgid "_action_workgroup_contents_"
+msgstr "Workgroup"
+
+msgid "_Hierarchy_Changed_"
+msgstr "Hierarchy changed"
+
+msgid "_workgroup_Created_"
+msgstr "Workgroup created."
+
+msgid "_Workgroup:"
+msgstr "Workgroup:"
+
+msgid "_prop_box_types_"
+msgstr "Document Types"
+
+msgid "_mailing_Send_to_visitors_"
+msgstr "Send to visitors/readers"
+
+msgid "_Modify_(entry)_"
+msgstr "Modify"
+
+msgid "_prop_text_"
+msgstr "Text"
+
+msgid "_(document)_Untitled_"
+msgstr "Untitled"
+
+msgid "_prop_password_"
+msgstr "Password"
+
+msgid "_dir_prop_Groups_"
+msgstr "Groups"
+
+msgid "_action_current_state_"
+msgstr "Current state"
+
+msgid "_Help files not installed_"
+msgstr "Help files not installed"
+
+msgid "_prop_photo_"
+msgstr "Linked Photo"
+
+msgid "_you're logged out_"
+msgstr "You're logged out."
+
+msgid "_prop_box_display_type_"
+msgstr "Display type"
+
+msgid "_search_pubstate_published_"
+msgstr "Published documents"
+
+msgid "_contact_personalTitle_"
+msgstr "Personal Title"
+
+msgid "_search_prop_document_type"
+msgstr "Document Type"
+
+msgid "_versionstate_draft"
+msgstr "draft"
+
+msgid "_button_copy_"
+msgstr "Copy"
+
+msgid "_If you have problems authentifying, verify that your browser accepts cookies_"
+msgstr "If you have problems authentifying, verify that your browser accepts cookies."
+
+msgid "_pub_transition_submit_"
+msgstr "Submit for validation in"
+
+msgid "_cpsdocuments_Document_created_"
+msgstr "Document created"
+
+msgid "_hierarchy_Reviewers_"
+msgstr "Reviewers"
+
+msgid "_button_modify_"
+msgstr "Modify"
+
+msgid "_lang_English"
+msgstr "English"
+
+msgid "_portal_type_Text Document"
+msgstr "Text"
+
+msgid "_%s_entries_match_your_request_(plural)_"
+msgstr "%s entries match your request."
+
+msgid "_portal_type_Contact"
+msgstr "Contact"
+
+msgid "_pub_transition_reject_"
+msgstr "Reject from"
+
+msgid "_(Create_an_entry)_in_this_directory_"
+msgstr "in this directory."
+
+msgid "_filedocument_(Download)_document_"
+msgstr "document"
+
+msgid "_contact_jobTitle_"
+msgstr "Job Title"
+
+msgid "_action_check_out_"
+msgstr "Check out"
+
+msgid "_prop_comment_"
+msgstr "Comment"
+
+msgid "_contact_homePhone_"
+msgstr "Home Phone"
+
+msgid "_Current_boxes_"
+msgstr "Current boxes"
+
+msgid "_portal_type_Doc Filter Box"
+msgstr "Document Box"
+
+msgid "_binaryinput_Delete_"
+msgstr "Delete"
+
+msgid "_Modify_(object name)_"
+msgstr "Modify"
+
+msgid "_CPS Home_"
+msgstr "CPS Home"
+
+msgid "_wgnav_"
+msgstr "Workgroups"
+
+msgid "_action_view_"
+msgstr "View"
+
+msgid "_This document is pending in no hierarchy_"
+msgstr "This document is pending in no hierarchy."
+
+msgid "_Create_an_URL_link_"
+msgstr "Create an URL link"
+
+msgid "_prop_title_"
+msgstr "Title"
+
+msgid "_action_send_email_"
+msgstr "Send email"
+
+msgid "_action_login_"
+msgstr "Log in"
+
+msgid "_workgroup_Access_rights_changed_"
+msgstr "Access rights changed"
+
+msgid "_lastnews_"
+msgstr "Latest News"
+
+msgid "_filedocument_Document_"
+msgstr "Document"
+
+msgid "_column_Pending"
+msgstr "Pending"
+
+msgid "_(Search)_in_this_directory_or_consult_"
+msgstr "in this directory or consult"
+
+msgid "_search_pubstate_all_documents_"
+msgstr "All documents"
+
+msgid "_mailing_Send_to_managers_"
+msgstr "Send to managers/reviewers"
+
+msgid "_workgroup_Visitors_"
+msgstr "Visitors"
+
+msgid "_Choose a directory_"
+msgstr "Choose a directory"
+
+msgid "_button_cut_"
+msgstr "Cut"
+
+msgid "_lang_French/France"
+msgstr "Français (France)"
+
+msgid "_lang_French"
+msgstr "Français"
+
+msgid "_str_Directories_"
+msgstr "Directories"
+
+msgid "_cpsdocuments_Document_modified_"
+msgstr "Document modified"
+
+msgid "_portal_type_CatNav Box"
+msgstr "Navigation Box"
+
+msgid "_Log in_"
+msgstr "Log in"
+
+msgid "_contact_givenName_"
+msgstr "Given Name"
+
+msgid "_prop_contactphoto_"
+msgstr "Photo"
+
+msgid "_Pending_documents_"
+msgstr "Pending documents"
+
+msgid "_portal_type_Skinner Document"
+msgstr "Generic Skinner"
+
+msgid "_Add_users_"
+msgstr "Add users"
+
+msgid "__welcome_textbox__"
+msgstr "<table cellpadding=0 cellspacing=2 border=0> <tr> <td width=200><img src="$portal_url$/logoCPS_full.png" border=0 width=200></td> <td>&nbsp;</td> <td><p> Welcome to CPS.  </p> </td> </tr> <tr><td colspan=3> <p> You can create <a href="$portal_url$/Public/">hierarchies</a>, <a href="$portal_url$/Groups/">workgroups</a> (If you have the correct access rights), then documents that you will publish in the hierarchies.  To obtain information on CPS, contact us: <a href="mailto:contact@nuxeo.com?Subject=[Information CPS]">contact@nuxeo.com</a>.  </p> <br> <p> If you have any problem, contact <a href="mailto:contact@nuxeo.com?Subject=[CPS Problem]">us</a>.  <br> Release: $Date$ </p> </td></tr> </table>"
+
+msgid "_multitab_Pending_Documents_"
+msgstr "Pending Documents"
+
+msgid "_You're logged in outside the portal. You may need to_"
+msgstr "You're logged in outside the portal. You may need to"
+
+msgid "_(Add users ...) as_"
+msgstr "as"
+
+msgid "_pub_transition_accept_"
+msgstr "Accept in"
+
+msgid "_box_Minimal_display_"
+msgstr "Minimal"
+
+msgid "_faq_Short_Question_"
+msgstr "Short Question"
+
+msgid "_create_a_new_document_:"
+msgstr "Create a new document:"
+
+msgid "_create_a_new:"
+msgstr "Create a new:"
+
+msgid "_Help_"
+msgstr "Help"
+
+msgid "_Create_a_Workgroup_"
+msgstr "Create a Workgroup"
+
+msgid "_filedocument_You_can_also_get_"
+msgstr "You can also get"
+
+msgid "_Add_a_new_box_"
+msgstr "Add a new box"
+
+msgid "_date_on_%m/%d/%Y at %H:%M_"
+msgstr "on %m/%d/%Y at %H:%M"
+
+msgid "_pub_transition_retract_"
+msgstr "Retract from"
+
+msgid "_filesize_byte_"
+msgstr "B"
+
+msgid "_binaryinput_Change:_"
+msgstr "Change:"
+
+msgid "_pub_history_retracted_from_"
+msgstr "Retracted from"
+
+msgid "_lastdocs_"
+msgstr "Latest Documents"
+
+msgid "_hierarchy_Readers_"
+msgstr "Readers"
+
+msgid "_This type of box is used to display documents filtered with some criteria_"
+msgstr "This type of box is used to display documents filtered with some criteria."
+
+msgid "_search_pubstate_pending_"
+msgstr "Pending documents"
+
+msgid "_Create_an_entry_"
+msgstr "Create an entry"
+
+msgid "_This document is published in no hierarchy_"
+msgstr "This document is published in no hierarchy."
+
+msgid "_contact_phoneNumber_"
+msgstr "Phone Number"
+
+msgid "_cpsdocuments_Problem_while_sending_email_"
+msgstr "Problem while sending E-mail"
+
+msgid "_action_archived_versions_"
+msgstr "Archived versions"
+
+msgid "_button_search_"
+msgstr "Search"
+
+msgid "_Add the group (... as ...)_"
+msgstr "Add the group"
+
+msgid "_prop_skinner_"
+msgstr "Skinner"
+
+msgid "_action_reject_"
+msgstr "Reject..."
+
+msgid "_workgroup_Visitor_"
+msgstr "Visitor"
+
+msgid "_str_Archives_"
+msgstr "Archives"
+
+msgid "_cpsdocuments_No_mail_sent_"
+msgstr "No E-mail sent"
+
+msgid "_template_FirstNews+Document_"
+msgstr "FirstNews+Documents"
+
+msgid "_prop_box_dynamic_title_"
+msgstr "Dynamic Title"
+
+msgid "_versionstate_stable"
+msgstr "stable"
+
+msgid "_action_current_version_"
+msgstr "Current version"
+
+msgid "_Enter words you're looking for_"
+msgstr "Enter words you're looking for."
+
+msgid "_(single)_document_found_for_"
+msgstr "document found for"
+
+msgid "_No_entry_matches_your_request_"
+msgstr "No entry matches your request."
+
+msgid "_template_News_"
+msgstr "News"
+
+msgid "_(consult)_an_other_directory_"
+msgstr "an other directory."
+
+msgid "_Search_(in_this_directory_)_"
+msgstr "Search"
+
+msgid "_Applyied rights_"
+msgstr "Applyied rights"
+
+msgid "_mailing_Subject_"
+msgstr "Subject"
+
+msgid "_portal_type_Hierarchy"
+msgstr "Hierarchy"
+
+msgid "_action_access_rights_"
+msgstr "Access rights"
+
+msgid "_dir_prop_Login_"
+msgstr "Login"
+
+msgid "_portal_type_File Document"
+msgstr "File"
+
+msgid "_portal_type_Text Box"
+msgstr "Text Box"
+
+msgid "_filedocument_(You_can_also_get_a_preview)_if_this_document_type_is_supported_by_CPS_"
+msgstr "if this document type is supported by CPS."
+
+msgid "_archived_versions_of_"
+msgstr "Archived versions of"
+
+msgid "_contact_facsimileTelephoneNumber_"
+msgstr "Fax Number"
+
+msgid "_reviewstate_private"
+msgstr "private"
+
+msgid "_dir_prop_Roles_"
+msgstr "Roles"
+
+msgid "_linkswidget_Related_links_"
+msgstr "Related links"
+
+msgid "_folder_content_of_"
+msgstr "Content of"
+
+msgid "_folder_rename_"
+msgstr "Rename..."
+
+msgid "_Select at least one document_"
+msgstr "Select at least one document."
+
+msgid "_Copy or cut at least one document_"
+msgstr "Copy or cut at least one document."
+
+msgid "_Item(s) copied_"
+msgstr "Item(s) copied"
+
+msgid "_Item(s) cut_"
+msgstr "Item(s) cut"
+
+msgid "_Item(s) pasted_"
+msgstr "Item(s) pasted"
+
+msgid "_header_Creator:"
+msgstr "Creator:"
+
+msgid "_previous_%s_"
+msgstr "Previous %s"
+
+msgid "_urldocument_URL_"
+msgstr "URL"
+
+msgid "_action_check_in_"
+msgstr "Check in"
+
+msgid "_action_comment_"
+msgstr "Comment..."
+
+msgid "_prop_box_maxnum_"
+msgstr "Max number"
+
+msgid "_versionstate_archive"
+msgstr "archive"
+
+msgid "_Home_"
+msgstr "Home"
+
+msgid "_Create_a_Generic_Skinner_"
+msgstr "Create a Generic Skinner"
+
+msgid "_workgroup_Current_view:"
+msgstr "Current view:"
+
+msgid "_dir_prop_Id_"
+msgstr "Id"
+
+msgid "_Keep my login in a cookie_"
+msgstr "Keep my login in a cookie"
+
+msgid "_Deleted_"
+msgstr "Deleted"
+
+msgid "_mailing_Send_an_E-mail_to_"
+msgstr "Send an E-mail to"
+
+msgid "_Yes_"
+msgstr "Yes"
+
+msgid "_(other_search)_in_this_directory_or_consult_"
+msgstr "in this directory or consult"
+
+msgid "_pub_history_created_"
+msgstr "Created"
+
+msgid "_cpsdocuments_email_sent_"
+msgstr "E-mail sent"
+
+msgid "_search_pubstate_private_"
+msgstr "Private Documents"
+
+msgid "_search_pubstate_reviewable_"
+msgstr "Documents to approve"
+
+msgid "_version_current_"
+msgstr "current"
+
+msgid "_contact_mail_"
+msgstr "E-mail"
+
+msgid "_pub_history_submitted_in_"
+msgstr "Submitted in"
+
+msgid "_action_download_"
+msgstr "Download"
+
+msgid "_str_Portal_"
+msgstr "Portal"
+
+msgid "_str_Hierarchies_"
+msgstr "Hierarchies"
+
+msgid "_dir_prop_Name_"
+msgstr "Name"
+
+msgid "_skinner_Template_"
+msgstr "Template"
+
+msgid "_box_Compact_display_"
+msgstr "Compact"
+
+msgid "_filedocument_Downlad_"
+msgstr "Download"
+
+msgid "_box_prop_delete_"
+msgstr "Delete"
+
+msgid "_search_prop_pubstate"
+msgstr "Publication State"
+
+msgid "_action_help_"
+msgstr "Help"
+
+msgid "_workgroup_Member_"
+msgstr "Member"
+
+msgid "_prop_box_docstate_"
+msgstr "Document state"
+
+msgid "_str_History_"
+msgstr "History"
+
+msgid "_multitab_Published_Documents_"
+msgstr "Published Documents"
+
+msgid "_column_Version"
+msgstr "Version"
+
+msgid "_action_logout_"
+msgstr "Log out"
+
+msgid "_prop_box_sortdesc_"
+msgstr "Sort descending"
+
+msgid "_contact_labeledURI_"
+msgstr "Web Site"
+
+msgid "_help_"
+msgstr "help"
+
+msgid "_Advanced_Search_"
+msgstr "Advanced Search"
+
+msgid "_pub_history_new_version_"
+msgstr "New version"
+
+msgid "_str_Comments_"
+msgstr "Comments"
+
+msgid "_folderish_actions"
+msgstr "actions"
+
+msgid "_If you check <<Keep my login in a cookie>>, your login will be automatically filled at the next log in_"
+msgstr "If you check "Keep my login in a cookie", your login will be automatically filled at the next log in"
+
+msgid "_value_Reader_"
+msgstr "Reader"
+
+msgid "_str_Anonymous_"
+msgstr "Anonymous"
+
+msgid "_button_delete_"
+msgstr "Delete"
+
+msgid "_prop_description_"
+msgstr "Description"
+
+msgid "_searchbox_Advanced_search"
+msgstr "Advanced search"
+
+msgid "_contact_ou_"
+msgstr "Organizational Unit"
+
+msgid "_searchbox_Search_"
+msgstr "Search"
+
+msgid "_box_prop_line_"
+msgstr "Line"
+
+msgid "_button_send_"
+msgstr "Send"
+
+msgid "_dir_prop_Password_"
+msgstr "Password"
+
+msgid "_Are_you_sure?_"
+msgstr "Are you sure?"
+
+msgid "_document_%(title)s_was_submitted_in_hierarchy_%(hiertitle)s_"
+msgstr "Document « %(title)s » was submitted in « %(hiertitle)s »"
+
+msgid "_cpsdocuments_Creation_"
+msgstr "Creation"
+
+msgid "_cpsdocuments_Submit_"
+msgstr "Submit"
+
+msgid "_cpsdocuments_Modification_done_"
+msgstr "Modification done."
+
+msgid "_button_preview_"
+msgstr "Preview"
+
+msgid "_Add_a_comment_"
+msgstr "Add a comment"
+
+msgid "_comment_preview_"
+msgstr "Comment preview"
+
+msgid "_filedocument_file_type:"
+msgstr "file type:"
+
+msgid "_action_accept_"
+msgstr "Accept..."
+
+msgid "_button_close_this_window_"
+msgstr "Close this window"
+
+msgid "_No_document_matches_your_request_"
+msgstr "No document matches your request."
+
+msgid "_action_delete_"
+msgstr "Delete"
+
+msgid "_Comment_deleted_"
+msgstr "Deleted comment"
+
+msgid "_parent_comment_"
+msgstr "Parent comment"
+
+msgid "_standard_error_message_"
+msgstr "<h1>CPS has encountered an error.</h1>"
+
+msgid "_standard_notfound_message_"
+msgstr "<p>The document (or URL address) you requested was not found.</p><p>This document may have been deleted.</p>"
+
+msgid "_standard_unpredicted_error_"
+msgstr "<p>Weird error.</p><p>Contact this site administrator.</p>"
+
+msgid "_button_back_"
+msgstr "Back"
+
+msgid "_nuxdocument_unsupported_document_type_"
+msgstr "This type of document can not be translated as a simple text in order to be previewed in your browser. Maybe this server does not have the correct plugin."
+
+msgid "_pub_title_depublish_"
+msgstr "Depublish"
+
+msgid "_action_depublish_"
+msgstr "Depublish..."
+
+msgid "_action_forum_post_"
+msgstr "New thread"
+
+msgid "_action_reply_"
+msgstr "Reply"
+
+msgid "_button_extract_thread_"
+msgstr "Extract thread"
+
+msgid "_button_lock_thread_"
+msgstr "Lock thread"
+
+msgid "_button_unlock_thread_"
+msgstr "Unlock thread"
+
+msgid "_button_subscribe_thread_"
+msgstr "Subscribe"
+
+msgid "_button_unsubscribe_thread_"
+msgstr "Unsubscribe"
+
+msgid "_button_clone_"
+msgstr "Clone"
+
+msgid "_button_post_message_"
+msgstr "Post message"
+
+msgid "_forum_discussion:"
+msgstr "Discussion:"
+
+msgid "_%s_wrote:"
+msgstr "%s wrote:"
+
+msgid "_portal_type_Forum"
+msgstr "Forum"
+
+msgid "_portal_type_ThreadSnapShot"
+msgstr "Extracted forum thread"
+
+msgid "_mail_password_Password_reminder_"
+msgstr "Password reminder"
+
+msgid "_Enter your login below and click <em>Send</em>, and your password will be emailed to you if you have a valid email address._"
+msgstr "Enter your login below and click <em>Send</em>, and your password will be emailed to you if you have a valid email address."
+
+msgid "_If this does not work for you (for example, if you forgot your member name or didn't have a valid email address), send email to_"
+msgstr "If this does not work for you (for example, if you forgot your member name or didn't have a valid email address), send email to"
+
+msgid "_You entered an invalid login or you don't have a valid email address._"
+msgstr "You entered an invalid login or you don't have a valid email address."
+
+msgid "_You password has been mailed. It should arrive in your mailbox momentarily._"
+msgstr "You password has been mailed. It should arrive in your mailbox momentarily."
+
+msgid "_password_mail_Password_reminder_for:"
+msgstr "Password reminder for:"
+
+msgid "_password_mail_Hello,"
+msgstr "Hello,"
+
+msgid "_password_mail_Your_subscription_to_portal:"
+msgstr "Your subscription to portal:"
+
+msgid "_password_mail_Your_login:"
+msgstr "Your login:"
+
+msgid "_password_mail_Your_password:"
+msgstr "Your password:"
+
+msgid "_password_mail_Portal_url:"
+msgstr "Portal URL:"
+
+msgid "_If you forgot your password, try our_"
+msgstr "If you forgot your password, try our"
+
+msgid "_Configure_Portal_"
+msgstr "Configure Portal"
+
+msgid "_This form is used to set the portal configuration options._"
+msgstr "This form is used to set the portal configuration options."
+
+msgid "_Administrator Name_"
+msgstr "Administrator Name"
+
+msgid "_Administrator E-mail_"
+msgstr "Administrator E-mail"
+
+msgid "_SMTP Server_"
+msgstr "SMTP Server"
+
+msgid "_Portal title_"
+msgstr "Portal title"
+
+msgid "_Portal description_"
+msgstr "Portal description"
+
+msgid "_Portal_configured_"
+msgstr "Portal configured."
+
+msgid "_action_portalconfiguration_"
+msgstr "Portal configuration"
+
+msgid "_Item(s) renamed_"
+msgstr "Item(s) renamed"
+
+msgid "_button_move_up_"
+msgstr "Move Up"
+
+msgid "_button_move_down_"
+msgstr "Move Down"
+
+msgid "_forum_tab_title_"
+msgstr "Title and Description"
+
+msgid "_forum_tab_properties_"
+msgstr "Properties"
+
+msgid "_forum_prop_attachments_allowed_"
+msgstr "Attachments to posts allowed"
+
+msgid "_forum_prop_subscription_"
+msgstr "Subscription"
+
+msgid "_forum_prop_anonymous_subscription_"
+msgstr "Anonymous subscription"
+
+msgid "_forum_prop_flatten_"
+msgstr "Flatten threads"
+
+msgid "_forum_prop_moderation_"
+msgstr "Moderation"
+
+msgid "_forum_prop_sorton_"
+msgstr "Sort on"
+
+msgid "_forum_sorton_date_"
+msgstr "Date"
+
+msgid "_Author_"
+msgstr "Author"
+
+msgid "_Date_"
+msgstr "Date"
+
+msgid "_forum_sorton_author_"
+msgstr "Author"
+
+msgid "_forum_sorton_subject_"
+msgstr "Subject"
+
+msgid "_forum_prop_messages_per_page_"
+msgstr "Messages per page"
+
+msgid "_forum_prop_image_"
+msgstr "Forum Image"
+
+msgid "_forum_previous_%s_message(s)_"
+msgstr "Previous %s"
+
+msgid "_forum_next_%s_message(s)_"
+msgstr "Next %s"
+
+msgid "_forum_No message here"
+msgstr "No message here"
+
+msgid "_forum_col_subject_"
+msgstr "Subject"
+
+msgid "_forum_col_author_"
+msgstr "Author"
+
+msgid "_forum_col_replies_"
+msgstr "Replies"
+
+msgid "_forum_col_last_post_"
+msgstr "Last Post"
+
+msgid "_forum_Threads in this forum:"
+msgstr "Threads in this forum:"
+
+msgid "_forum_attachment_"
+msgstr "Attachment"
+
+msgid "_forum_replies"
+msgstr "Replies"
+
+msgid "_forum_thread_previous_page_"
+msgstr "Previous page"
+
+msgid "_forum_thread_next_page_"
+msgstr "Next page"
+
+msgid "_forum_you_may_subscribe_"
+msgstr "You may be notified upon new posts in this forum : "
+
+msgid "_forum_you_may_resign_"
+msgstr "You may resign your current subscription to this forum : "
+
+msgid "_forum_you_may_subscribe_this_thread_"
+msgstr "You may be notified upon new posts in this thread : "
+
+msgid "_forum_you_may_resign_this_thread_"
+msgstr "You may resign your current subscription to this thread : "
+
+msgid "_button_select/deselect_all_"
+msgstr "Select/Deselect all"
+
+msgid "_portal_type_Post"
+msgstr "Forum Message"
+
+msgid "_action_globalboxes_"
+msgstr "Global Boxes"
+
+msgid "_action_check_in_and_republish_"
+msgstr "Check in and republish"
+
+msgid "_private_area_of_%s_"
+msgstr "Area of %s"
+
+msgid "_prop_box_visible_if_empty_"
+msgstr "Visible if empty"
+
+msgid "_Click here to create a new main hierachy_"
+msgstr "Click here to create a new main hierachy"
+
+msgid "_prop_mailinglist_type_"
+msgstr "Mailing-list type"
+
+msgid "_mailinglist_notifications of created documents_"
+msgstr "Notifications of created documents"
+
+msgid "_mailinglist_notifications of submissions_"
+msgstr "Notifications of submissions"
+
+msgid "_mailinglist_other_"
+msgstr "Other"
+
+msgid "_Create_a_Hierarchy_"
+msgstr "Create a Hierarchy"
+
+msgid "_hierarchy_Created_"
+msgstr "Hierarchy created"
+
+msgid "_box_style_classic_"
+msgstr "Classic"
+
+msgid "_prop_box_wg_paths_"
+msgstr "Hierarchies to display"
+
+msgid "_prop_box_wg_depth_"
+msgstr "Depth"
+
+msgid "_action_personalboxes_"
+msgstr "My boxes"
+
+msgid "_Modify_my_boxes_"
+msgstr "Modify my boxes"
+
+msgid "_prop_box_type_"
+msgstr "Box type"
+
+msgid "_Show/Hide box."
+msgstr "Show/Hide box."
+
+msgid "_Minimize/Unminimize box (if supported)."
+msgstr "Minimize/Unminimize box (if supported)."
+
+msgid "_Delete box."
+msgstr "Delete box."
+
+msgid "_Edit box."
+msgstr "Edit box."
+
+msgid "_Add a new box."
+msgstr "Add a new box."
+
+msgid "_lower_left_slot_"
+msgstr "lower left slot"
+
+msgid "_upper_left_slot_"
+msgstr "upper left slot"
+
+msgid "_center_slot_"
+msgstr "center slot"
+
+msgid "_right_slot_"
+msgstr "right slot"
+
+msgid "_Delete_box_"
+msgstr "Delete box"
+
+msgid "_Minimize_box_"
+msgstr "Minimize box"
+
+msgid "_Unminimize_box_"
+msgstr "Unminimize box"
+
+msgid "_Edit_box_"
+msgstr "Edit box"
+
+msgid "_Hide_box_"
+msgstr "Hide box"
+
+msgid "_Show_box_"
+msgstr "Show box"
+
+msgid "_Move box to %s_"
+msgstr "Move box to %s"
+
+msgid "_Move_box_up_"
+msgstr "Move box up"
+
+msgid "_Move_box_down_"
+msgstr "Move box down"
+
+msgid "_Create_a_Flexible_Document_"
+msgstr "Create a Structured Document"
+
+msgid "_fd_Base_Template_"
+msgstr "Base Template"
+
+msgid "_fd_Add_a_new_block_of_type_"
+msgstr "Add a new block of type"
+
+msgid "_fd_Insert_a_block_of_type_"
+msgstr "Insert a block of type"
+
+msgid "_fd_Change_to_type_"
+msgstr "Change to type"
+
+msgid "_fd_File_"
+msgstr "File"
+
+msgid "_fd_Fig.:"
+msgstr "Fig.:"
+
+msgid "_fd_Fig._%s:"
+msgstr "Fig. %s:"
+
+msgid "_fd_Fig._%s"
+msgstr "Fig. %s"
+
+msgid "_fd_Change_image:"
+msgstr "Change image:"
+
+msgid "_fd_block_text_image_"
+msgstr "Two columns - One image on the right"
+
+msgid "_fd_block_image_text_"
+msgstr "Two columns - One image on the left"
+
+msgid "_fd_block_two_images_"
+msgstr "Two images"
+
+msgid "_fd_block_related_links_"
+msgstr "Related links"
+
+msgid "_fd_twocols_links_"
+msgstr "Two columns and Related links"
+
+msgid "_fd_block_hr_"
+msgstr "Horizontal line"
+
+msgid "_fd_block_spacer_"
+msgstr "Spacer"
+
+msgid "_fd_block_two_cols_"
+msgstr "Two columns"
+
+msgid "_fd_block_text_"
+msgstr "Text"
+
+msgid "_fd_block_section_"
+msgstr "Section"
+
+msgid "_fd_block_image_"
+msgstr "Image"
+
+msgid "_fd_block_file_"
+msgstr "File"
+
+msgid "_fd_base_empty_"
+msgstr "Empty"
+
+msgid "_fd_base_article_"
+msgstr "Article"
+
+msgid "_portal_type_Flexible Document"
+msgstr "Structured Document"
+
+msgid "_fd_block_code_"
+msgstr "Code"
+
+msgid "_fd_block_subsection_"
+msgstr "Subsection"
+
+msgid "_prop_base_hierarchy_"
+msgstr "Navigation base"
+
+msgid "_prop_box_contextual_"
+msgstr "Contextual"
+
+msgid "_(deleted_hierarchy)_"
+msgstr "(Deleted hierarchy)"
+
+msgid "_action_addevent_"
+msgstr "Add event"
+
+msgid "_action_month_view_"
+msgstr "Month view"
+
+msgid "_action_day_view_"
+msgstr "Day view"
+
+msgid "_action_week_view_"
+msgstr "Week view"
+
+msgid "_Create_a_Calendar_"
+msgstr "Create a Calendar"
+
+msgid "_prop_cal_usertype_"
+msgstr "Calendar type"
+
+msgid "_cal_Ressource_"
+msgstr "Ressource"
+
+msgid "_cal_Room_"
+msgstr "Room"
+
+msgid "_cal_Member_"
+msgstr "Member"
+
+msgid "_cal_Private_"
+msgstr "Private"
+
+msgid "_cal_Others_"
+msgstr "Others"
+
+msgid "_cal_Rooms_"
+msgstr "Rooms"
+
+msgid "_cal_Ressources_"
+msgstr "Ressources"
+
+msgid "_str_Calendars_"
+msgstr "Calendars"
+
+msgid "_cal_Day0"
+msgstr "Mo"
+
+msgid "_cal_Day1"
+msgstr "Tu"
+
+msgid "_cal_Day2"
+msgstr "We"
+
+msgid "_cal_Day3"
+msgstr "Th"
+
+msgid "_cal_Day4"
+msgstr "Fr"
+
+msgid "_cal_Day5"
+msgstr "Sa"
+
+msgid "_cal_Day6"
+msgstr "Su"
+
+msgid "_cal_Mo1"
+msgstr "Jan"
+
+msgid "_cal_Mo2"
+msgstr "Feb"
+
+msgid "_cal_Mo3"
+msgstr "Mar"
+
+msgid "_cal_Mo4"
+msgstr "Apr"
+
+msgid "_cal_Mo5"
+msgstr "May"
+
+msgid "_cal_Mo6"
+msgstr "Jun"
+
+msgid "_cal_Mo7"
+msgstr "Jul"
+
+msgid "_cal_Mo8"
+msgstr "Aug"
+
+msgid "_cal_Mo9"
+msgstr "Sep"
+
+msgid "_cal_Mo10"
+msgstr "Oct"
+
+msgid "_cal_Mo11"
+msgstr "Nov"
+
+msgid "_cal_Mo12"
+msgstr "Dec"
+
+msgid "_cal_Month1"
+msgstr "January"
+
+msgid "_cal_Month2"
+msgstr "February"
+
+msgid "_cal_Month3"
+msgstr "March"
+
+msgid "_cal_Month4"
+msgstr "April"
+
+msgid "_cal_Month5"
+msgstr "May"
+
+msgid "_cal_Month6"
+msgstr "June"
+
+msgid "_cal_Month7"
+msgstr "July"
+
+msgid "_cal_Month8"
+msgstr "August"
+
+msgid "_cal_Month9"
+msgstr "September"
+
+msgid "_cal_Month10"
+msgstr "October"
+
+msgid "_cal_Month11"
+msgstr "November"
+
+msgid "_cal_Month12"
+msgstr "December"
+
+msgid "_cal_Day_long0"
+msgstr "Sunday"
+
+msgid "_cal_Day_long1"
+msgstr "Monday"
+
+msgid "_cal_Day_long2"
+msgstr "Tuesday"
+
+msgid "_cal_Day_long3"
+msgstr "Wednesday"
+
+msgid "_cal_Day_long4"
+msgstr "Thursday"
+
+msgid "_cal_Day_long5"
+msgstr "Friday"
+
+msgid "_cal_Day_long6"
+msgstr "Saturday"
+
+msgid "_cal_Today_"
+msgstr "Today"
+
+msgid "_cal_Calendar_of_%s_"
+msgstr "%s's calendar"
+
+msgid "_cal_Members_"
+msgstr "Members"
+
+msgid "_cal_no_attendee_of_type_ressource_"
+msgstr "No ressource selected"
+
+msgid "_cal_no_attendee_of_type_room_"
+msgstr "No room selected"
+
+msgid "_cal_no_attendee_of_type_member_"
+msgstr "No member selected"
+
+msgid "_cal_Add_attendee:"
+msgstr "Add"
+
+msgid "_You have to notify other attendees of recent changes to this event_"
+msgstr "You have to notify other attendees of recent changes to this event."
+
+msgid "_action_attendees_"
+msgstr "Attendees"
+
+msgid "_cal_Attendees_for_event_"
+msgstr "Attendees for event"
+
+msgid "_button_Remove all attendees that declined this event_"
+msgstr "Remove all attendees that declined this event"
+
+msgid "_button_Remove cancelled events_"
+msgstr "Remove cancelled events"
+
+msgid "_button_Remove events you declined_"
+msgstr "Remove events you declined"
+
+msgid "_cal_del_Confirmation_"
+msgstr "Confirmation"
+
+msgid "_You have to notify attendees that you will delete this event_"
+msgstr "You have to notify attendees that you will delete this event."
+
+msgid "_You have to notify attendees that you will delete this events_"
+msgstr "You have to notify attendees that you will delete those events."
+
+msgid "_Unselect events you don-t want to notify attendees_"
+msgstr "Unselect events you don't want to notify attendees."
+
+msgid "_This message will be sent to attendees with a cancel notification_"
+msgstr "This message will be sent to attendees with a cancel notification"
+
+msgid "_You have to notify event-s organizer that you will delete this event_"
+msgstr "You have to notify event's organizer that you will delete this event."
+
+msgid "_This message will be sent to the event-s organizer_"
+msgstr "This message will be sent to the event's organizer."
+
+msgid "_button_delete_with_no_notification_"
+msgstr "Delete with no notification"
+
+msgid "_cal_Event_update_"
+msgstr "Event update"
+
+msgid "_cal_New_event_"
+msgstr "New event"
+
+msgid "_cal_pending_confirmed_"
+msgstr "Confirm"
+
+msgid "_cal_pending_tentative_"
+msgstr "Tentative"
+
+msgid "_cal_pending_decline_"
+msgstr "Decline"
+
+msgid "_cal_pending_decline_and_delete_"
+msgstr "Decline and delete"
+
+msgid "_cal_pending_ignore_"
+msgstr "Ignore"
+
+msgid "_cal_Status_update_"
+msgstr "Attendees status update"
+
+msgid "_cal_Pending_events_for_"
+msgstr "Pending events for"
+
+msgid "_cal_Sender:"
+msgstr "Sender:"
+
+msgid "_cal_status_decline_"
+msgstr "Decline"
+
+msgid "_cal_status_confirmed_"
+msgstr "Confirmed"
+
+msgid "_cal_status_unconfirmed_"
+msgstr "Unconfirmed"
+
+msgid "_cal_status_tentative_"
+msgstr "Tentative"
+
+msgid "_cal_prop_organizer_"
+msgstr "Organizer"
+
+msgid "_cal_prop_summary_"
+msgstr "Summary"
+
+msgid "_cal_prop_date_"
+msgstr "Date"
+
+msgid "_cal_date_From_"
+msgstr "From"
+
+msgid "_cal_date_To_"
+msgstr "To"
+
+msgid "_cal_%m/%d/%Y_"
+msgstr "%m/%d/%Y"
+
+msgid "_cal_%m/%d/%Y at %H:%M_"
+msgstr "%m/%d/%Y at %H:%M"
+
+msgid "_cal_prop_location_"
+msgstr "Location"
+
+msgid "_cal_prop_eventstatus_"
+msgstr "Event status"
+
+msgid "_cal_prop_attendees_"
+msgstr "Attendees"
+
+msgid "_cal_eventstatus_confirmed_"
+msgstr "Confirmed"
+
+msgid "_cal_eventstatus_unconfirmed_"
+msgstr "Unconfirmed"
+
+msgid "_cal_eventstatus_cancelled_"
+msgstr "Cancelled"
+
+msgid "_Create_a_calendar_"
+msgstr "Create a calendar"
+
+msgid "_You have %s pending requests_"
+msgstr "You have %s pending requests."
+
+msgid "_You have one pending request_"
+msgstr "You have one pending request."
+
+msgid "_Modify status for this event:"
+msgstr "Modify status for this event:"
+
+msgid "_cal_prop_status_"
+msgstr "Status"
+
+msgid "_cal_hour_From_"
+msgstr "From"
+
+msgid "_cal_hour_To_"
+msgstr "To"
+
+msgid "_cal_hour_sep_"
+msgstr ":"
+
+msgid "_Change event to not all day_"
+msgstr "Change event to an hour event"
+
+msgid "_Change event to all day_"
+msgstr "Change event to an all day event"
+
+msgid "_Create a not all day_"
+msgstr "Create an hour event"
+
+msgid "_Create an all day_"
+msgstr "Create an all day event"
+
+msgid "_Create_a_new_Event_"
+msgstr "Create a new Event"
+
+msgid "_cal_Events_show_"
+msgstr "Calendar of Events"
+
+msgid "_cal_Events_shows_"
+msgstr "Calendars of Events"
+
+msgid "_cal_no_attendee_of_type_events_show_"
+msgstr "No events calendar selected"
+
+msgid "_action_export_"
+msgstr "Export..."
+
+msgid "_cal_Printable_view_"
+msgstr "Printable view"
+
+msgid "_str_AddressBook_"
+msgstr "Address Book"
+
+msgid "_cal_You can download_"
+msgstr "You can download"
+
+msgid "_cal_the iCalendar version of this calendar."
+msgstr "the iCalendar version of this calendar."
+
+msgid "_cal_If you have a calendar application that supports it, you can also_"
+msgstr "If you have a calendar application that supports it, you can also"
+
+msgid "_cal_subscribe to this calendar."
+msgstr "subscribe to this calendar."
+
+msgid "_The end hour you specified was earlier than the start hour. Do you want to extend the event to the next day?_"
+msgstr "The end hour you specified was earlier than the start hour. Do you want to extend the event to the next day?"
+
+msgid "_Select the calendars you want to display with this calendar:"
+msgstr "Select the calendars you want to display with this calendar:"
+
+msgid "_action_display_"
+msgstr "Display"
+
+msgid "_cal_prop_category_"
+msgstr "Category"
+
+msgid "_cal_cat_Private_"
+msgstr "Private"
+
+msgid "_cal_cat_Work_"
+msgstr "Work"
+
+msgid "_cal_cat_Other_"
+msgstr "Other"
+
+msgid "_action_meeting_"
+msgstr "Meeting creation"
+
+msgid "_From_date_is_incorrect_"
+msgstr "From date is incorrect."
+
+msgid "_To_date_is_incorrect_"
+msgstr "To date is incorrect."
+
+msgid "_You can't select a time interval larger than a month_"
+msgstr "You can't select a time interval larger than a month."
+
+msgid "_Meeting creation helper_"
+msgstr "Meeting creation helper"
+
+msgid "_Select the attendees you want for your meeting:"
+msgstr "Select the attendees you want for your meeting:"
+
+msgid "_Include this calendar_"
+msgstr "Include this calendar"
+
+msgid "_Select the time interval you want for your meeting:"
+msgstr "Select the time interval you want for your meeting:"
+
+msgid "_cal_Between_"
+msgstr "Between"
+
+msgid "_(Between date)_and_"
+msgstr "and"
+
+msgid "_Select the desired duration of your meeting:"
+msgstr "Select the desired duration of your meeting:"
+
+msgid "_Select at least one attendee_"
+msgstr "Select at least one attendee."
+
+msgid "_Your request for a meeting has errors:"
+msgstr "Your request for a meeting has errors:"
+
+msgid "_Period of free time you can use to create your meeting_"
+msgstr "Period of free time you can use to create your meeting"
+
+msgid "_Busy time_"
+msgstr "Busy time"
+
+msgid "_Calendar selection_"
+msgstr "Calendar selection"
+
+msgid "_You can unselect some calendars if you want_"
+msgstr "You can unselect some calendars if you want."
+
+msgid "_Modify your request_"
+msgstr "Modify your request"
+
+msgid "_Cancel your request_"
+msgstr "Cancel your request"
+
+msgid "_Your request has expired_"
+msgstr "Your request has expired."
+
+msgid "_Create the meeting here_"
+msgstr "Create the meeting here"
+
+msgid "_cal_At_"
+msgstr "At"
+
+msgid "_(Duration: %sh %sm)_"
+msgstr "(Duration: %sh %sm)"
+
+msgid "_cal_prop_transparent_"
+msgstr "Transparent"
+
+msgid "_Transparent events mean that you-re not busy during this event_"
+msgstr "Transparent events mean that you're not busy during this event."
+
+msgid "L_forum_In reply to_"
+msgstr "In reply to"
+
+msgid "L_forum_Previous_message_"
+msgstr "Previous message"
+
+msgid "L_forum_Next_message_"
+msgstr "Next message"
+
+msgid "_forum_Replies_"
+msgstr "Replies"
+
+msgid "_action_notification_"
+msgstr "Notification"
+
+msgid "_forum_No reply for this message_"
+msgstr "No reply for this message"
+
+msgid "_forum_attachment_"
+msgstr "Attachment"
+
+msgid "_forum_preview_"
+msgstr "Preview"
+
+msgid "_forum_Name_"
+msgstr "Name"
+
+msgid "_forum_E-mail_"
+msgstr "E-mail"
+
+msgid "_forum_Subject_"
+msgstr "Subject"
+
+msgid "_forum_Attachment_"
+msgstr "Attachment"
+
+msgid "_forum_Post a new message_"
+msgstr "Post a new message"
+
+msgid "_forum_Reply to_"
+msgstr "Reply to"
+
+msgid "_action_mycalendar_"
+msgstr "My Calendar"
+
+msgid "_action_calendars_"
+msgstr "All Calendars"
+
+msgid "_action_calendar_"
+msgstr "Return to Calendar"
+
+# Workflow schemas
+
+msgid "_wfs_Schema_created_"
+msgstr "Schema created"
+
+msgid "_wfs_Mail_Event_"
+msgstr "Mail Event"
+
+msgid "_wfs_mail_event_description_"
+msgstr "This event sends an email to people of a Mailing-List object with the corresponding Id. Message's subject and body can use DTML code which will be executed in the document context."
+
+msgid "_wfs_prop_mailinglist_id_"
+msgstr "Mailing-List Id"
+
+msgid "_wfs_prop_from_address_"
+msgstr "From Address"
+
+msgid "_wfs_prop_subject_"
+msgstr "Subject"
+
+msgid "_wfs_DTML_allowed_"
+msgstr "DTML allowed"
+
+msgid "_wfs_prop_message_body_"
+msgstr "Body"
+
+msgid "_wfs_Publication_Event_"
+msgstr "Publication Event"
+
+msgid "_wfs_publication_event_description_"
+msgstr "This event allows or prevents normal publication workflow. It is also possible to specify if this Schema will be removed from the document's workflow chain or not."
+
+msgid "_wfs_prop_allow_publication_"
+msgstr "Allow publication"
+
+msgid "_wfs_prop_quit_schema_"
+msgstr "Quit Schema"
+
+msgid "_wfs_Title_modified_"
+msgstr "Title modified"
+
+msgid "_wfs_Associated_types_modified_"
+msgstr "Associated types modified"
+
+msgid "_wfs_State_created_"
+msgstr "State created"
+
+msgid "_wfs_Workflow_Schema_"
+msgstr "Workflow Schema"
+
+msgid "_wfs_prop_associated_types_"
+msgstr "Associated types"
+
+msgid "_wfs_Schema_"
+msgstr "Schema"
+
+msgid "_wfs_button_addstate_"
+msgstr "Add a State"
+
+msgid "_wfs_incoming_events_"
+msgstr "Incoming Events"
+
+msgid "_wfs_conditions_"
+msgstr "Conditions"
+
+msgid "_wfs_outgoing_events_"
+msgstr "Outgoing Events"
+
+msgid "_wfs_Signature_Condition_"
+msgstr "Signature Condition"
+
+msgid "_wfs_signature_condition_description_"
+msgstr "This condition verifies that all required persons have signed the document."
+
+msgid "_wfs_Events_deleted_"
+msgstr "Events deleted"
+
+msgid "_wfs_Conditions_deleted_"
+msgstr "Conditions deleted"
+
+msgid "_wfs_Event_added_"
+msgstr "Event added"
+
+msgid "_wfs_Condition_added_"
+msgstr "Condition added"
+
+msgid "_wfs_State_deleted_"
+msgstr "State deleted"
+
+msgid "_wfs_State_"
+msgstr "State"
+
+msgid "_wfs_Add_an_event_"
+msgstr "Add an Event"
+
+msgid "_wfs_Add_a_Condition_"
+msgstr "Add a Condition"
+
+msgid "_wfs_Delete_this_State_"
+msgstr "Delete this State"
+
+msgid "_wfs_Substate_Condition_"
+msgstr "Substate Condition"
+
+msgid "_wfs_substate_condition_description_"
+msgstr "This condition verifies that all object of selected types have a Workflow variable set to a specific value."
+
+msgid "_wfs_prop_object_types_"
+msgstr "Object types"
+
+msgid "_wfs_prop_workflow_variable_"
+msgstr "Workflow variable"
+
+msgid "_wfs_prop_required_value_"
+msgstr "Required value"
+
+msgid "_wfs_Workflow_Schemas_"
+msgstr "Workflow Schemas"
+
+msgid "_wfs_New_Schema_"
+msgstr "New Schema"
+
+msgid "_wfs_Schema_deleted_"
+msgstr "Schema deleted"
+
+msgid "_action_signatures_"
+msgstr "Signatures"
+
+# Newsletter
+
+msgid "_action_(un)subscribe/_"
+msgstr "Subscribe/unsubscribe" 
+
+msgid "_prop_frequency_"
+msgstr "Frequency"
+
+msgid "_subscribers_"
+msgstr "Subscribers"
+
+msgid "_manual_"
+msgstr "Manual"
+
+msgid "_daily_"
+msgstr "Daily"
+
+msgid "_weekly_"
+msgstr "Weekly"
+
+msgid "_monthly_"
+msgstr "Monthly"
+
+msgid "_forum_prop_subscription_"
+msgstr "Subscription"
+
+msgid "_Date_"
+msgstr "Date"
+
+msgid "_Author_"
+msgstr "Author"
+
+msgid "_ml_enter_email"
+msgstr "Please enter your email :"
+
+msgid "_ml_subscription_off"
+msgstr "You have not subscribed to this mailing list"
+
+msgid "_ml_subscription_on"
+msgstr "You have subscribed to this mailing list"
+
+msgid "_ml_subscribe"
+msgstr "Subscribe"
+
+msgid "_ml_unsubscribe"
+msgstr "Resign"
+
+msgid "_ml_create_subscription_"
+msgstr "Do you want to be notified of new messages in this forum ?"
+
+msgid "_ml_resign_subscription_"
+msgstr "Do you want to resign your existing subscription to this forum ?"
+
+msgid "_ml_no_subscription"
+msgstr "There are no subcription for your account"
+
+msgid "_ml_subscription_list"
+msgstr "All your subscriptions: "
+
+msgid "_ml_subscription_disabled_"
+msgstr "Subscriptions disabled."
+

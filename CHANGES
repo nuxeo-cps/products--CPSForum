@@ -6,7 +6,9 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
--
+- action "New thread" was not set properly if action box macro was called
+before forum_view_main template (e.g. if displayed in left column)
+
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

@@ -1,4 +1,20 @@
 *******************************************
+** CPSForum V0.7.1 [R1 build 2004/05/05-15:45 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Syncing with latest CPSDefault code as for the local role assignment
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** CPSForum V0.7.0 [R1 build 2004/04/09-13:27 by ben]
 
 Requires:

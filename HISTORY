@@ -1,4 +1,24 @@
 *******************************************
+** CPSForum V0.3.1 [R1 build 2004/02/08-07:47 by fermigier]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+
+New features:
+~~~~~~~~~~~~~
+-
+
+Bug fixes:
+~~~~~~~~~~
+- getCPSLocalRoles returning roles in reverse order making default role Manager
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Doesn't depend on NuxMetaDirectories anymore. (Unit tests pass, but
+some manual checking is probably still needed).
+
+*******************************************
 ** CPSForum V0.3.0 [R1 build 2004/01/21-10:42 by ben]
 
 ZODB Requires:

@@ -2,6 +2,8 @@
 
 # $Id$
 
+from zLOG import LOG, DEBUG
+
 forum = context.getContent()
 
 try:
@@ -12,71 +14,48 @@ except AttributeError:
 
 if forum.tree_display != 'title' or (sort_by is not None and sort_by != 'threads'):
     post_proxies = context.objectValues(['CPS Proxy Document'])
-    result = [forum.getPostInfo(proxy) for proxy in post_proxies]
+    post_infos = [forum.getPostInfo(proxy) for proxy in post_proxies]
+
+    # 2147483647 = sys.maxint (we cannot import sys in this context)
+    
+    def subject_sortkey(item):
+        subject = item['subject']
+        date = "%011d" % (2147483647 - int(item['creation']))
+        if subject.lower().startswith('re: '):
+            return subject[4:] + date
+        else:
+            return subject + date
+
+    def author_sortkey(item):
+        date = "%011d" % (2147483647 - int(item['creation']))
+        return item['author'] + date
+        
+    def date_sortkey(item):
+        date = "%011d" % (2147483647 - int(item['creation']))
+        subject = item['subject']
+        if subject.lower().startswith('re: '):
+            return date + subject[4:]
+        else:
+            return date + subject
 
     if sort_by == 'subject':
-        def subjectSorter(x,y):
-            x_subject = x['subject']
-            y_subject = y['subject']
-            # do not take Re: into account when sorting
-            if x_subject.lower().startswith('re: '):
-                x_subject = x_subject[4:]
-            if y_subject.lower().startswith('re: '):
-                y_subject = y_subject[4:]
-            if x_subject > y_subject:
-                return 1
-            elif x_subject < y_subject:
-                return -1
-            else:
-                if x['creation'] > y['creation']:
-                    return -1
-                elif x['creation'] < y['creation']:
-                    return 1
-                else:
-                    return 0
-        result.sort(subjectSorter)
+        make_sortkey = subject_sortkey
     elif sort_by == 'author':
-        def authorSorter(x,y):
-            x_author = x['author']
-            y_author = y['author']
-            if x_author > y_author:
-                return 1
-            elif x_author < y_author:
-                return -1
-            else:
-                if x['creation'] > y['creation']:
-                    return -1
-                elif x['creation'] < y['creation']:
-                    return 1
-                else:
-                    return 0
-        result.sort(authorSorter)
+        make_sortkey = author_sortkey
     else:
-        def dateSorter(x,y):
-            if x['creation'] > y['creation']:
-                return -1
-            elif x['creation'] < y['creation']:
-                return 1
-            else:
-                x_subject = x['subject']
-                y_subject = y['subject']
-                # do not take Re: into account when sorting
-                if x_subject.lower().startswith('re: '):
-                    x_subject = x_subject[4:]
-                if y_subject.lower().startswith('re: '):
-                    y_subject = y_subject[4:]
-                if x_subject > y_subject:
-                    return -1
-                elif x_subject < y_subject:
-                    return 1
-                else:
-                    return 0
-        result.sort(dateSorter)
+        make_sortkey = date_sortkey
+        
+    posts4sort = [(make_sortkey(post_info), post_info) for post_info in post_infos]
+    posts4sort.sort()
+
+    result = [x[1] for x in posts4sort]
+        
 else:
-    result = []
+    threads = []
     for root_post in forum.getThreads(proxy=context):
-        result.append((root_post, forum.getDescendants(root_post['id'],
+        threads.append((root_post, forum.getDescendants(root_post['id'],
                                                        proxy=context)))
+
     def getMostRecentPost(max_date, posts):
         if posts:
             new_max_date = max_date
@@ -89,18 +68,16 @@ else:
             return new_max_date
         else:
             return max_date
-    
-    def threadSorter(x,y):
-        x_most_recent_post = getMostRecentPost(x[0]['creation'], x[1])
-        y_most_recent_post = getMostRecentPost(y[0]['creation'], y[1])
-        if x_most_recent_post > y_most_recent_post:
-            return -1
-        elif x_most_recent_post < y_most_recent_post:
-            return 1
-        else:
-            return 0
-    result.sort(threadSorter)
-    
+
+    def threadDate_sortkey(thread):
+        most_recent_post_date = getMostRecentPost(thread[0]['creation'], thread[1])
+        return "%011d" % (2147483647 - int(most_recent_post_date))
+
+    threads4sort = [(threadDate_sortkey(thread), thread) for thread in threads]
+    threads4sort.sort()
+
+    result = [x[1] for x in threads4sort]
+        
 return context.forum_view_threads_main(post_id=post_id, descendants=result,
                                        is_reviewer=is_reviewer, forum=forum,
                                        sort_by=sort_by,

@@ -30,9 +30,9 @@ from zLOG import LOG,DEBUG
 factory_type_information = (
         { 'id': 'Forum',
         'meta_type': 'CPSForum',
-        'description': "Forums hold threaded discussions",
+        'description': "portal_type_CPSForum_description",
         'icon': 'forum_icon.gif',
-        'title': "forum_title",
+        'title': "portal_type_CPSForum_title",
         'product': 'CPSForum',
         'factory': 'addCPSForum',
         'filter_content_types': 1,

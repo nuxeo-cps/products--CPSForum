@@ -274,7 +274,7 @@ def install(self):
             'transitions': ('publish',),
             'permissions': {View: ('Manager', 'Owner', 'WorkspaceManager',
                                    'SectionManager', 'SectionReviewer'),
-                            ModifyPortalContent: ('Manager',
+                            ModifyPortalContent: ('Manager', 'Owner',
                                                   'WorkspaceManager',
                                                   'SectionManager',
                                                   'SectionReviewer',

@@ -1,4 +1,22 @@
 *******************************************
+** CPSForum V0.2.3 [R1 build 2004-01/06-15:11 by anguenot]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+
+New features:
+~~~~~~~~~~~~~
+-
+
+Bug fixes:
+~~~~~~~~~~
+-
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Using mergedLocalRolesWithPath within the getCPSLocalRoles.py.
+*******************************************
 ** CPSForum V0.2.2 [R1 build 2003/12/23-11:05 by ben]
 
 ZODB Requires:

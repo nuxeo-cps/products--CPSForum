@@ -3,11 +3,17 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
-- Now possible to batch threads (only display a given number of threads per page)
+- Now possible to batch threads (only display a given number of threads per
+  page)
+- Allow discussion metadata attribute can now be set to true for a given
+  portal type (it is no longer necessary to manually activate comments for each
+  document)
 
 Bug fixes:
 ~~~~~~~~~~
 -
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
--
+- Comment forums are no longer created at comment authorization time, but when
+  the first comment is posted
+  

@@ -61,7 +61,9 @@ factory_type_information = (
             'id': 'post',
             'name': 'action_add_post',
             'action': 'forum_post_form',
-            'permissions': (AddPortalContent,),
+            #'permissions': (AddPortalContent,), #XXX temporary, until we find a more
+            #suitable permission 
+            'permissions': (View,),
             }, {
             'id': 'localroles',
             'name': 'action_local_roles',

@@ -1,23 +1,25 @@
+# translation of fr.po to ben
 # translation of fr.po to francais
 # Gettext Message File for default.
 # Your Name <your@email>, Year
 # emmanuel <epietriga@nuxeo.com>, 2003.
+# ben <ben@nuxeo.com>, 2003
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "POT-Creation-Date: 2003-12-15 11:58default\n"
-"PO-Revision-Date: 2003-12-15 12:06+0100\n"
-"Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
-"Language-Team: francais <fr@li.org>\n"
+"PO-Revision-Date: 2003-12-22 17:25+0100\n"
+"Last-Translator: ben <ben@nuxeo.com>\n"
+"Language-Team: ben\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language-code: LL\n"
 "Language-name: Language\n"
 "Preferred-encodings: utf-8 latin1\n"
 "Domain: default\n"
-"X-Generator: KBabel 1.0.2\n"
+"X-Generator: KBabel 1.0.1\n"
 
 #.   <option repeat="role roles" attributes="value role" content="role">
 #.            Role1
@@ -30,7 +32,7 @@ msgstr "Role1"
 #.   <input value="button_assign_roles" type="submit" />
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "button_assign_roles"
-msgstr "D√©l√©guer r√¥le"
+msgstr "DÈlÈguer rÙle"
 
 #.   <input value="button_delete" type="submit" />
 #: from ../skins/forum_default/forum_localrole_form.pt
@@ -80,7 +82,7 @@ msgstr "Supprimer"
 #.   <input value="forum_depublish" class="context" name="forum_unpublish_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_depublish"
-msgstr "D√©publier"
+msgstr "DÈpublier"
 
 #.   <td>Description</td>
 #: from ../skins/forum_default/forum_create_form.pt
@@ -102,14 +104,14 @@ msgstr "Message"
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_moderation"
-msgstr "Mod√©ration"
+msgstr "ModÈration"
 
 #.   <td>Moderators</td>
 #.   <block>Moderators</block>
 #: from ../skins/forum_default/forum_edit_form.pt
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_moderators"
-msgstr "Mod√©rateurs"
+msgstr "ModÈrateurs"
 
 #.   <a attributes="href string:${context_url}/forum_post_form" href="">
 #.         forum_new_thread
@@ -143,7 +145,7 @@ msgstr "Publier"
 #.              </input>
 #: from ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
-msgstr "R√©pondre"
+msgstr "RÈpondre"
 
 #.   <td>Subject</td>
 #.   <td class="forumsubheader">Subject</td>
@@ -164,21 +166,21 @@ msgstr "Titre"
 #.   </h2>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "heading_local_roles_search_members"
-msgstr "D√©l√©guer des r√¥les locaux : recherche de membres"
+msgstr "DÈlÈguer des rÙles locaux : recherche de membres"
 
 #.   <h2>
 #.       Assign local roles: Search Results
 #.   </h2>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "heading_local_roles_search_results"
-msgstr "D√©l√©guer des r√¥les locaux : r√©sultats de la recherche"
+msgstr "DÈlÈguer des rÙles locaux : rÈsultats de la recherche"
 
 #.   <th style="text-align:left;">
 #.           Email address
 #.       </th>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_email"
-msgstr "Adresse de courriel"
+msgstr "Adresse de mÈl"
 
 #.   <span>Group</span>
 #: from ../skins/forum_default/forum_localrole_form.pt
@@ -213,7 +215,7 @@ msgstr "Nom"
 #.   <span>Role(s)</span>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_roles"
-msgstr "R√¥le(s)"
+msgstr "RÙle(s)"
 
 #.   <th style="text-align:left;">
 #.           User
@@ -226,7 +228,7 @@ msgstr "Utilisateur"
 #.   <option value="email">Email Address</option>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_user_email"
-msgstr "Adresse de courriel"
+msgstr "Adresse de mÈl"
 
 #.   <option value="fullname">User Name</option>
 #: from ../skins/forum_default/forum_localrole_form.pt
@@ -238,49 +240,49 @@ msgstr "Nom d'utilisateur"
 #.   </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_assigned_users"
-msgstr "Ces utilisateurs ont pour le moment des r√¥les locaux dans ce r√©pertoire :"
+msgstr "Ces utilisateurs ont pour le moment des rÙles locaux dans ce rÈpertoire :"
 
 #.   <h2>
 #.       Currently assigned local roles
 #.   </h2>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_currently_assigned"
-msgstr "R√¥les locaux d√©l√©gu√©s pour le moment"
+msgstr "RÙles locaux dÈlÈguÈs pour le moment"
 
 #.   <p>
 #.       Sorry, no groups matched your search.
 #.    </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_no_results_member"
-msgstr "D√©sol√©, aucun groupe ne correspond √† votre recherche."
+msgstr "DÈsolÈ, aucun groupe ne correspond ‡ votre recherche."
 
 #.   <p>
 #.       Sorry, no members matched your search.
 #.    </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_no_results_members"
-msgstr "D√©sol√©, aucun membre ne correspond √† votre recherche."
+msgstr "DÈsolÈ, aucun membre ne correspond ‡ votre recherche."
 
 #.   <th colspan="2">
 #.           Role to assign:
 #.       </th>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_role_to_assign"
-msgstr "R√¥le √† d√©l√©guer :"
+msgstr "RÙle ‡ dÈlÈguer :"
 
 #.   <p>
 #.       Select Group(s) and a role to assign:
 #.    </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_select_groups_and_roles"
-msgstr "Choisissez le(s) groupe(s) et un r√¥le pour d√©l√©gation :"
+msgstr "Choisissez le(s) groupe(s) et un rÙle pour dÈlÈgation :"
 
 #.   <p>
 #.       Select Member(s) and a role to assign:
 #.    </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_select_members_and_roles"
-msgstr "Choisissez le(s) membre(s) et un r√¥le pour d√©l√©gation :"
+msgstr "Choisissez le(s) membre(s) et un rÙle pour dÈlÈgation :"
 
 #.   <span>
 #.     <i>Roles in underlined </i> are set in parent folders.
@@ -288,13 +290,13 @@ msgstr "Choisissez le(s) membre(s) et un r√¥le pour d√©l√©gation :"
 #.   </span>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "link_local_roles_underlined"
-msgstr "<i>Les r√¥les soulign√©s</i> sont d√©finis dans un des r√©pertoires parents. Suivez les liens pour g√©rer ces droits dans un de ces r√©pertoires."
+msgstr "<i>Les rÙles soulignÈs</i> sont dÈfinis dans un des rÈpertoires parents. Suivez les liens pour gÈrer ces droits dans un de ces rÈpertoires."
 
 msgid "forum_modify"
 msgstr "Modifier"
 
 msgid "forum_label_postedby"
-msgstr "post√© par"
+msgstr "postÈ par"
 
 #~ msgid "forum_comment"
 #~ msgstr "Commentaire"
@@ -306,7 +308,7 @@ msgstr "post√© par"
 #~ msgstr "Commentaire"
 
 #~ msgid "forum_no_comment"
-#~ msgstr "Aucun commentaire n'est actuellement associ√© √† ce document"
+#~ msgstr "Aucun commentaire n'est actuellement associÈ ‡ ce document"
 
 #, fuzzy
 #~ msgid "forum_subscribe"
@@ -321,5 +323,5 @@ msgstr "post√© par"
 #~ msgstr "Sujet"
 
 #~ msgid "forum_moderator"
-#~ msgstr "Mod√©rateur"
+#~ msgstr "ModÈrateur"
 

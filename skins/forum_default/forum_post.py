@@ -24,7 +24,6 @@ forum = context.getContent()
 forum.newPostCreated(post_id, proxy=context)
 
 if REQUEST is not None:
-    REQUEST.RESPONSE.redirect(
-        context.absolute_url() + "/?post_id=" + post_id)
+    REQUEST.RESPONSE.redirect(context.absolute_url() + "/?post_id=" + post_id)
 else:
     return post_id

@@ -24,8 +24,8 @@
       <td i18n:translate="L_forum moderation">Modération</td>
       <td>
         <select name="moderation_mode:int">
-          <option value="0" i18n:translate="L_forum a posteriori">à posteriori</option>
-          <option value="1" i18n:translate="L_forum a priori">à priori</option>
+          <option value="0" i18n:translate="L_forum a posteriori">a posteriori</option>
+          <option value="1" i18n:translate="L_forum a priori">a priori</option>
         </select>
       </td>
     </tr>

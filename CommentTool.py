@@ -151,7 +151,6 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
             # if not create it (also create .discussions if necessary)
             parent_folder = proxy_doc.aq_inner.aq_parent
 
-
             class CPSUnrestrictedUser(UnrestrictedUser):
                 """Unrestricted user that still has an id.
 
@@ -170,8 +169,6 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
                                            ['Manager', 'Member'], '')
             tmp_user = tmp_user.__of__(mtool.acl_users)
             newSecurityManager(None, tmp_user)
-
-
             
             if '.cps_discussions' not in parent_folder.objectIds():
                 portal.portal_workflow.invokeFactoryFor(parent_folder, 'Workspace', '.cps_discussions')
@@ -209,8 +206,42 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
 
         return forum
 
+    #XXX: portal_discussion might not be the best place for such a method
+    # as it is used for all forums, not just comment forums. But I don't
+    # want to create yet another tool just for that, and there is no better
+    # place for now (Forum.py is not an option as an anon user cannot do
+    # proxy_forum.getContent() from the forum_post script).
+    def createAnonymousForumPost(self, proxy_forum, post_id, subject,
+                                 author, message, parent_id):
+        """Post a message as an anonymous user
 
-
-
+        Because anonymous posts require more rights than an anon user has"""
+        
+        wtool = getToolByName(self, 'portal_workflow')
+        # temp switch to unrestricted user
+        class CPSUnrestrictedUser(UnrestrictedUser):
+            """Unrestricted user that still has an id.
+            
+            Taken from CPSMembershipTool
+            """
+            
+            def getId(self):
+                """Return the ID of the user."""
+                return self.getUserName()
+        mtool = getToolByName(self, 'portal_membership')
+        old_user = getSecurityManager().getUser()
+        tmp_user = CPSUnrestrictedUser('root', '',
+                                       ['Manager', 'Member'], '')
+        tmp_user = tmp_user.__of__(mtool.acl_users)
+        newSecurityManager(None, tmp_user)
+        # create post
+        wtool.invokeFactoryFor(proxy_forum, 'ForumPost', post_id,
+                               subject=subject, author=author,
+                               message=message, parent_id=parent_id)
+        forum = proxy_forum.getContent()
+        forum.newPostCreated(post_id, proxy=proxy_forum)
+        # leave unrestricted user mode
+        newSecurityManager(None, old_user)
+        
 
 InitializeClass(CommentTool)

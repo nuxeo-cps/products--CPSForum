@@ -28,9 +28,9 @@ if forum.tree_display != 'title' or (sort_by is not None and sort_by != 'threads
             elif x_subject < y_subject:
                 return -1
             else:
-                if x['modified'] > y['modified']:
+                if x['creation'] > y['creation']:
                     return -1
-                elif x['modified'] < y['modified']:
+                elif x['creation'] < y['creation']:
                     return 1
                 else:
                     return 0
@@ -44,18 +44,18 @@ if forum.tree_display != 'title' or (sort_by is not None and sort_by != 'threads
             elif x_author < y_author:
                 return -1
             else:
-                if x['modified'] > y['modified']:
+                if x['creation'] > y['creation']:
                     return -1
-                elif x['modified'] < y['modified']:
+                elif x['creation'] < y['creation']:
                     return 1
                 else:
                     return 0
         result.sort(authorSorter)
     else:
         def dateSorter(x,y):
-            if x['modified'] > y['modified']:
+            if x['creation'] > y['creation']:
                 return -1
-            elif x['modified'] < y['modified']:
+            elif x['creation'] < y['creation']:
                 return 1
             else:
                 x_subject = x['subject']
@@ -81,8 +81,8 @@ else:
         if posts:
             new_max_date = max_date
             for post in posts:
-                if post[0]['modified'] > new_max_date:
-                    new_max_date = post[0]['modified']
+                if post[0]['creation'] > new_max_date:
+                    new_max_date = post[0]['creation']
                 tmp_date = getMostRecentPost(new_max_date, post[1])
                 if tmp_date > new_max_date:
                     new_max_date = tmp_date
@@ -91,8 +91,8 @@ else:
             return max_date
     
     def threadSorter(x,y):
-        x_most_recent_post = getMostRecentPost(x[0]['modified'], x[1])
-        y_most_recent_post = getMostRecentPost(y[0]['modified'], y[1])
+        x_most_recent_post = getMostRecentPost(x[0]['creation'], x[1])
+        y_most_recent_post = getMostRecentPost(y[0]['creation'], y[1])
         if x_most_recent_post > y_most_recent_post:
             return -1
         elif x_most_recent_post < y_most_recent_post:

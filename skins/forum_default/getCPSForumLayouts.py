@@ -33,6 +33,17 @@ forum_layout = {
                 'label_edit': 'forum_label_lock_forum',
                 },
             },
+        'tree_display': {
+            'type': 'Select Widget',
+            'data': {
+                'fields': ['tree_display'],
+                'is_i18n': 1,
+                'label': 'forum_label_tree_display',
+                'label_edit': 'forum_label_tree_display',
+                'vocabulary': 'forum_tree_voc',
+                'translated': 1,
+                },
+            },
         'threads_per_page': {
             'type': 'Int Widget',
             'data': {
@@ -48,6 +59,7 @@ forum_layout = {
         'rows': [[{'widget_id': 'moderation_mode'}, ],
                  [{'widget_id': 'allow_anon_posts'}, ],
                  [{'widget_id': 'frozen_forum'}, ],
+                 [{'widget_id': 'tree_display'}, ],
                  [{'widget_id': 'threads_per_page'}, ],
                  ],
         }
@@ -63,7 +75,6 @@ forumpost_layout = {
                 'is_i18n': 1,
                 'is_required': 1,
                 'label_edit': 'forum_label_subject',
-                'label': 'forum_label_subject',
                 'display_width': 72,
                 'size_max': 100,
             },
@@ -73,8 +84,8 @@ forumpost_layout = {
             'data': {
                 'fields': ['author'],
                 'is_i18n': 1,
-                'label_edit': 'label_creator',
-                'label': 'label_creator',
+                'label_edit': 'forum_label_postedby',
+                'label': 'forum_label_postedby',
                 'readonly_layout_modes': ['create', 'edit'],
                 'hidden_layout_modes': ['create'],
                 'display_width': 40,
@@ -82,7 +93,7 @@ forumpost_layout = {
             },
         },
         'Description': {
-            'type': 'Text Widget',
+            'type': 'Rich Text Editor Widget',
             'data': {
                 'fields': ['Description'],
                 'is_i18n': 1,
@@ -90,8 +101,19 @@ forumpost_layout = {
                 'label': '',
                 'css_class': 'ddescription',
                 'width': 72,
-                'height': 5,
+                'height': 10,
                 'render_format': 'text',
+            },
+        },
+        'links': {
+            'type': 'InternalLinks Widget',
+            'data': {
+                'fields': ['links'],
+                'is_required': 0,
+                'is_i18n': 1,
+                'label_edit': 'forum_label_attachedFiles',
+                'label': 'forum_label_attachedFiles',
+                'hidden_empty': 1,
             },
         },
         },
@@ -100,6 +122,7 @@ forumpost_layout = {
         'rows': [[{'widget_id': 'Title'}, ],
                  [{'widget_id': 'author'}, ],
                  [{'widget_id': 'Description'}, ],
+                 [{'widget_id': 'links'}, ],
                  ],
         }
     }

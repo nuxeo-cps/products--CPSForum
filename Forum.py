@@ -18,7 +18,7 @@
 
 from AccessControl import ClassSecurityInfo
 from Products.CMFCore.utils import getToolByName
-from Products.CMFCore.CMFCorePermissions import View, AddPortalContent, \
+from Products.CMFCore.CMFCorePermissions import View, \
      ManageProperties, ChangePermissions
 from Products.CMFCore.utils import mergedLocalRoles
 from Products.CPSCore.CPSBase import CPSBaseDocument, CPSBase_adder
@@ -27,59 +27,59 @@ from Post import Post
 
 from zLOG import LOG,DEBUG
 
-factory_type_information = (
-        { 'id': 'Forum',
-        'meta_type': 'CPSForum',
-        'description': "portal_type_CPSForum_description",
-        'icon': 'forum_icon.gif',
-        'title': "portal_type_CPSForum_title",
-        'product': 'CPSForum',
-        'factory': 'addCPSForum',
-        'filter_content_types': 1,
-        'allowed_content_types': ('Post',),
-        'immediate_view': 'forum_edit_form',
-        'allow_discussion': 0,
-        'actions': (
-            {
-            'id': 'view',
-            'name': 'action_view',
-            'action': 'forum_view',
-            'permissions': (View,),
-            },
-             {'id': 'create',
-              'name': 'action_create',
-              'action': 'forum_create_form',
-              'visible': 0,
-              'permissions': ('',)},
-            {
-            'id': 'edit',
-            'name': 'action_modify',
-            'action': 'forum_edit_form',
-            'permissions': (ManageProperties,),
-            }, {
-            'id': 'localroles',
-            'name': 'action_local_roles',
-            'action': 'folder_localrole_form',
-            'permissions': (ChangePermissions,),
-            }, {'id': 'isfunctionalobject',
-                'name': 'isfunctionalobject',
-                'action': 'isfunctionalobject',
-                'visible': 0,
-                'permissions': ('',),
-            }, {'id': 'isproxytype',
-                'name': 'isproxytype',
-                'action': 'document',
-                'visible': 0,
-                'permissions': ('',),
-            }, {'id': 'issearchabledocument',
-                'name': 'issearchabledocument',
-                'action': 'issearchabledocument',
-                'visible': 0,
-                'permissions': ('',),
-            },
-            ),
-          },
-        )
+factory_type_information = ({ 
+    'id': 'Forum',
+    'meta_type': 'CPSForum',
+    'description': "portal_type_CPSForum_description",
+    'icon': 'forum_icon.gif',
+    'title': "portal_type_CPSForum_title",
+    'product': 'CPSForum',
+    'factory': 'addCPSForum',
+    'filter_content_types': 1,
+    'allowed_content_types': ('Post',),
+    'immediate_view': 'forum_edit_form',
+    'allow_discussion': 0,
+    'actions': ({
+        'id': 'view',
+        'name': 'action_view',
+        'action': 'forum_view',
+        'permissions': (View,),
+    }, {
+        'id': 'create',
+        'name': 'action_create',
+        'action': 'forum_create_form',
+        'visible': 0,
+        'permissions': ('',)
+    }, {
+        'id': 'edit',
+        'name': 'action_modify',
+        'action': 'forum_edit_form',
+        'permissions': (ManageProperties,),
+    }, {
+        'id': 'localroles',
+        'name': 'action_local_roles',
+        'action': 'folder_localrole_form',
+        'permissions': (ChangePermissions,),
+    }, {
+        'id': 'isfunctionalobject',
+        'name': 'isfunctionalobject',
+        'action': 'isfunctionalobject',
+        'visible': 0,
+        'permissions': ('',),
+    }, {
+        'id': 'isproxytype',
+        'name': 'isproxytype',
+        'action': 'document',
+        'visible': 0,
+        'permissions': ('',),
+    }, {
+        'id': 'issearchabledocument',
+        'name': 'issearchabledocument',
+        'action': 'issearchabledocument',
+        'visible': 0,
+        'permissions': ('',),
+    },),
+},)
 
 def addDiscussionItem(self, id, title, description, text_format, text,
                       reply_to, RESPONSE=None):
@@ -133,11 +133,14 @@ class CPSForum(CPSBaseDocument):
         # chosen to effectively be a Portal type,
         # which dosen't apply here
         #
-        return {'id': post.id, 'subject': post.title, 'author': post.creator,
-                'message': post.text, 'parent_id': post.in_reply_to,
-                'published': hasattr(post, 'inforum') and post.inforum,
-                'modified': post.bobobase_modification_time(),
-               }
+        # XXX: strange, 'self' is not used in this method. Does it
+        # really belong to this class ?
+        return {
+            'id': post.id, 'subject': post.title, 'author': post.creator,
+            'message': post.text, 'parent_id': post.in_reply_to,
+            'published': hasattr(post, 'inforum') and post.inforum,
+            'modified': post.bobobase_modification_time(),
+        }
 
     def addForumPost(self, **kw):
         """Add a post"""
@@ -244,7 +247,8 @@ class CPSForum(CPSBaseDocument):
         result = []
         for moderator in moderator_list:
             mdata = {'id': moderator}
-            mdata['fullname'] = dtool.getEntry(moderator)[dtool.display_prop] or moderator
+            mdata['fullname'] = \
+                dtool.getEntry(moderator)[dtool.display_prop] or moderator
             mdata['homedir'] = dtool_entry_url + moderator
             result.append(mdata)
         return result
@@ -274,7 +278,7 @@ class CPSPost(CPSBaseDocument, Post):
           'label': 'Parent Forum id' },
         { 'id': 'parent_id', 'type': 'string', 'mode': 'w',
           'label': 'Parent Post id' },
-        )
+    )
 
     def getPostInfo(self):
         """Return post information as tuple (url, subject, author)"""

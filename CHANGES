@@ -1,6 +1,7 @@
 ZODB Requires:
 ~~~~~~~~~~~~~~
 -
+
 New features:
 ~~~~~~~~~~~~~
 - forums can now be used to store comments/discussions about documents
@@ -13,4 +14,5 @@ Bug fixes:
 
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
--
+- indentation / docstrings cleanups
+

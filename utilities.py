@@ -17,8 +17,7 @@
 #
 # $Id$
 
-import os
-from os import path as os_path
+import os.path
 from Globals import package_home
 
-_dtmldir = os_path.join(package_home( globals() ),'dtml')
+_dtmldir = os.path.join(package_home(globals()), 'dtml')

@@ -29,14 +29,9 @@ contentConstructors = ()
 fti = ()
 
 fti += Forum.factory_type_information
-contentClasses += (
-    Forum.CPSForum,
-    Forum.CPSPost,
-    )
-contentConstructors += (
-    Forum.addCPSForum,
-    Forum.addCPSPost,
-    )
+contentClasses += (Forum.CPSForum, Forum.CPSPost,)
+contentConstructors += (Forum.addCPSForum, Forum.addCPSPost,)
+
 registerDirectory('skins/forum_default', globals())
 
 tools = (CommentTool.CommentTool,)
@@ -49,8 +44,8 @@ def initialize(registrar):
         fti=fti
     ).initialize(registrar)
     utils.ToolInit('CPS Comment Tool',
-                   tools = tools,
-                   product_name = 'CPSForum',
-                   icon = 'tool.gif',
-                   ).initialize(registrar)
+        tools=tools,
+        product_name='CPSForum',
+        icon='tool.gif',
+    ).initialize(registrar)
     

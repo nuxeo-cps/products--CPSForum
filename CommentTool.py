@@ -39,15 +39,15 @@ class CommentTool(UniqueObject, PortalFolder):
 
     security = ClassSecurityInfo()
     
-    manage_options = (PortalFolder.manage_options[:1]+ 
-                      ({'label':'Overview','action':'manage_overview'},)+
+    manage_options = (PortalFolder.manage_options[:1] + 
+                      ({'label': 'Overview', 'action': 'manage_overview'},) +
                       PortalFolder.manage_options[1:])
 
     #
     #   ZMI methods
     #
     security.declareProtected(ManagePortal, 'manage_overview')
-    manage_overview = DTMLFile( 'explainCommentTool', _dtmldir )
+    manage_overview = DTMLFile('explainCommentTool', _dtmldir)
     
     def __init__(self):
         PortalFolder.__init__(self, self.id)
@@ -57,7 +57,7 @@ class CommentTool(UniqueObject, PortalFolder):
     #
     security.declarePublic('getDiscussionFor')
     def getDiscussionFor(self, proxy):
-        '''Gets the CPSForum object that applies to this proxy/doc
+        '''Get the CPSForum object that applies to this proxy/doc
         '''
 
         doc_id = proxy.getDocid()
@@ -68,33 +68,33 @@ class CommentTool(UniqueObject, PortalFolder):
 
     security.declarePublic('isCommentingAllowedFor')
     def isCommentingAllowedFor(self, proxy):
-        '''Returns a boolean indicating whether comments are
+        '''Return a boolean indicating whether comments are
            allowed for the specified proxy/content
         '''
 
         content = proxy.getContent()
-        if hasattr( content, 'allow_discussion' ):
+        if hasattr(content, 'allow_discussion'):
             return content.allow_discussion
-        typeInfo = getToolByName(self,'portal_types').getTypeInfo(content)
+        typeInfo = getToolByName(self, 'portal_types').getTypeInfo(content)
         if typeInfo:
             return typeInfo.allowDiscussion()
         return 0
 
     security.declarePublic('getForum')
-    def getForum(self,forum_id):
+    def getForum(self, forum_id):
         for item in self.contentItems():
             if item[0] == forum_id:
                 return item[1]
         return None
 
     security.declarePublic('addForum')
-    def addForum(self,doc):
+    def addForum(self, doc):
         doc_id = doc.getDocid()
         if not doc_id in self.contentIds():
             #this is the first comment about this doc
             #create a new forum, with id matching the one of the document
             #(this adds the forum directly to portal_comment)
-            addCPSForum(self,doc_id)
+            addCPSForum(self, doc_id)
         return self.getForum(doc_id)
 
 InitializeClass(CommentTool)

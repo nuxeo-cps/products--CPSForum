@@ -161,7 +161,7 @@ def install(self):
     for perm, roles in forum_perms.items():
         portal.manage_permission(perm, roles, 0)
         pr("  Permission %s" % perm)
-    portal.reindexObjectSecurity()
+    #portal.reindexObjectSecurity()
 
     pr("Verifying CPSForum roles")
     existing_roles = portal.valid_roles()

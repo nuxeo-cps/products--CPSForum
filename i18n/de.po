@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum messages\n"
-"POT-Creation-Date: 2004-07-05 11:42default\n"
+"POT-Creation-Date: 2004-07-06 14:18default\n"
 "PO-Revision-Date: 2004-04-06 12:04+CET\n"
 "Last-Translator:  <>\n"
 "Language-Team: de <>\n"
@@ -34,7 +34,7 @@ msgid "forum_allow_anon_posts"
 msgstr "Erlaube anonyme Postings"
 
 #.   <div class="label">Author</div>
-#.   <th class="forumAuthorCell">Author</th>
+#.   <a href="./sort_posts?criterion=author">Author</a>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
@@ -45,7 +45,7 @@ msgstr "Autor"
 msgid "forum_button_lockunlock"
 msgstr "(öffnen)schliessen Thema"
 
-#.   <th class="forumDateCell">Date</th>
+#.   <a href="./sort_posts?criterion=date">Date</a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_date"
 msgstr "Datum"
@@ -165,6 +165,12 @@ msgstr "Sie müssen einen Namen oder einen Nicknamen angeben"
 msgid "forum_publish"
 msgstr "Publizieren"
 
+#.   <input name="forum_reject_posts:method" type="submit" class="context" value="forum_reject" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+#, fuzzy
+msgid "forum_reject"
+msgstr "Betreff"
+
 #.   <input name="forum_post_reply:method" type="submit" class="standalone" value="forum_reply" />
 #: from ../skins/forum_default/post_view_csnippet.pt
 #: ../skins/forum_default/post_view_snippet.pt
@@ -172,7 +178,7 @@ msgid "forum_reply"
 msgstr "Antworten"
 
 #.   <div class="label required">Subject</div>
-#.   <th class="forumSubjectCell">Subject</th>
+#.   <a href="./sort_posts?criterion=subject">Subject</a>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_subject"

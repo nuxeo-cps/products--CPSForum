@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pt-BR\n"
-"POT-Creation-Date: 2004-07-05 11:42default\n"
+"POT-Creation-Date: 2004-07-06 14:18default\n"
 "PO-Revision-Date: 2004-06-08 15:54-0300\n"
 "Last-Translator: Mario Olimpio de Menezes <mario@curiango.ipen.br>\n"
 "Language-Team: Português do Brasil <pt@li.org>\n"
@@ -43,7 +43,7 @@ msgid "forum_allow_anon_posts"
 msgstr "Permite postagem anônima"
 
 #.   <div class="label">Author</div>
-#.   <th class="forumAuthorCell">Author</th>
+#.   <a href="./sort_posts?criterion=author">Author</a>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
@@ -54,7 +54,7 @@ msgstr "Autor"
 msgid "forum_button_lockunlock"
 msgstr "(Des)-Bloquear"
 
-#.   <th class="forumDateCell">Date</th>
+#.   <a href="./sort_posts?criterion=date">Date</a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_date"
 msgstr "Data"
@@ -169,6 +169,12 @@ msgstr "O campo assunto precisa ser preenchido!"
 msgid "forum_publish"
 msgstr "Publicar"
 
+#.   <input name="forum_reject_posts:method" type="submit" class="context" value="forum_reject" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+#, fuzzy
+msgid "forum_reject"
+msgstr "Assunto"
+
 #.   <input name="forum_post_reply:method" type="submit" class="standalone" value="forum_reply" />
 #: from ../skins/forum_default/post_view_csnippet.pt
 #: ../skins/forum_default/post_view_snippet.pt
@@ -176,7 +182,7 @@ msgid "forum_reply"
 msgstr "Responder"
 
 #.   <div class="label required">Subject</div>
-#.   <th class="forumSubjectCell">Subject</th>
+#.   <a href="./sort_posts?criterion=subject">Subject</a>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_subject"

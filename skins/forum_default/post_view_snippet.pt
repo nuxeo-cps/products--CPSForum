@@ -14,7 +14,7 @@
            tal:condition="python:published or (is_reviewer and not published)"
            tal:content="post/Title">
         <tal:block tal:define="mcat python:here.Localizer.default" 
-                               tal:replace="python:'('+mcat('forum_label_postedby').encode('ISO-8859-15', 'ignore')+' '+here.getPosterName(post.Creator())+')'"/>
+                               tal:replace="python:'('+mcat('forum_label_postedby').encode('ISO-8859-15', 'ignore')+' '+here.getPosterName(post_doc.author)+')'"/>
       </div>
       <div class="forumPostText"
            tal:content="post_doc/Description">Message</div>

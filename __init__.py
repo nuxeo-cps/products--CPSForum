@@ -4,7 +4,9 @@
 #
 
 # Python
-import sys
+from Products.CMFCore import utils
+from Products.CMFCore.DirectoryView import registerDirectory
+from Products.CMFCore.CMFCorePermissions import AddPortalContent
 
 contentClasses = ()
 contentConstructors = ()

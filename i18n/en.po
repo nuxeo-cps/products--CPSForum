@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2004-06-11 13:32default\n"
-"PO-Revision-Date: 2004-06-11 13:32+0200\n"
+"POT-Creation-Date: 2004-06-16 09:01default\n"
+"PO-Revision-Date: 2004-06-16 09:01+0200\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -122,6 +122,11 @@ msgstr "Message"
 msgid "forum_moderation"
 msgstr "Moderation"
 
+#.   <input condition="python:here.portal_membership.checkPermission('Forum Moderate', here)" value="forum_modify" class="standalone" name="forum_post_modify:method" type="submit" />
+#: from ../skins/forum_default/post_view_snippet.pt
+msgid "forum_modify"
+msgstr "Modify"
+
 #.   <p>This forum is locked. You cannot post new messages to it.</p>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_msg_forum_frozen"
@@ -187,9 +192,6 @@ msgstr "Subject"
 msgid "forum_title"
 msgstr "Title"
 
-msgid "forum_modify"
-msgstr "Modify"
-
 msgid "forum_label_postedby"
 msgstr "posted by"
 
@@ -234,6 +236,12 @@ msgstr "This forum contains comments associated with document"
 
 msgid "forum_label_threads_per_page"
 msgstr "Number of discussion threads per page:"
+
+msgid "forum_label_subject"
+msgstr "Subject"
+
+msgid "forum_label_message"
+msgstr "Message"
 
 #~ msgid "forum_link_next_threads <span content=\"threads_per_page\" />"
 #~ msgstr "Next ${threads_per_page} threads"

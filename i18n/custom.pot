@@ -64,3 +64,9 @@ msgstr ""
 msgid "forum_label_threads_per_page"
 msgstr ""
 
+msgid "forum_label_subject"
+msgstr ""
+
+msgid "forum_label_message"
+msgstr ""
+

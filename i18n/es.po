@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es-CPSForum\n"
-"POT-Creation-Date: 2004-06-11 13:32default\n"
+"POT-Creation-Date: 2004-06-16 09:01default\n"
 "PO-Revision-Date: 2004-03-27 20:39+0100\n"
 "Last-Translator: Álvaro Tejero Cantero <alvaro@antalia.com>\n"
 "Language-Team:  EspaÃ±ol <es@li.org>\n"
@@ -146,6 +146,11 @@ msgstr "Mensaje"
 msgid "forum_moderation"
 msgstr "Moderación"
 
+#.   <input condition="python:here.portal_membership.checkPermission('Forum Moderate', here)" value="forum_modify" class="standalone" name="forum_post_modify:method" type="submit" />
+#: from ../skins/forum_default/post_view_snippet.pt
+msgid "forum_modify"
+msgstr "Modificar"
+
 #    <p>This forum is locked. You cannot post new messages to it.</p>
 #.   <p>This forum is locked. You cannot post new messages to it.</p>
 #: from ../skins/forum_default/forum_post_form.pt
@@ -231,9 +236,6 @@ msgstr "Tema"
 msgid "forum_title"
 msgstr "Título"
 
-msgid "forum_modify"
-msgstr "Modificar"
-
 msgid "forum_label_postedby"
 msgstr "enviado por"
 
@@ -296,6 +298,17 @@ msgstr "Comentarios"
 #, fuzzy
 msgid "forum_label_threads_per_page"
 msgstr "enviado por"
+
+#    <td>Subject</td>
+#    <td class="forumsubheader">Subject</td>
+#, fuzzy
+msgid "forum_label_subject"
+msgstr "Tema"
+
+#    <td>Message</td>
+#, fuzzy
+msgid "forum_label_message"
+msgstr "Mensaje"
 
 #    <td>Send moderation notifications</td>
 #~ msgid "forum_send_moderation_notification"

@@ -77,8 +77,9 @@
           <div class="label"
                 i18n:translate="forum_message">Message</div>
           <div class="field">
-                <textarea cols="72" rows="7"
-                          name="message:string"></textarea>
+            <div style="width:550px; height:300px"
+                 tal:define="locale here/Localizer/default/get_selected_language|string:en"
+                 tal:content="structure python:here.Epoz(name='message', data='', lang=locale, style='width:550px; height:220px; border:1px solid #A0A0A0; border-style:solid;')"></div>
           </div>
         </div>
         <div class="row">

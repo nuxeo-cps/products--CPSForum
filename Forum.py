@@ -58,7 +58,7 @@ factory_type_information = ({
     }, {
         'id': 'localroles',
         'name': 'action_local_roles',
-        'action': 'folder_localrole_form',
+        'action': 'forum_localrole_form',
         'permissions': (ChangePermissions,),
     }, {
         'id': 'isfunctionalobject',

@@ -1,0 +1,376 @@
+<html metal:use-macro="here/main_template/macros/master">
+<body>
+
+<div class="Desktop"
+     metal:fill-slot="main"
+     tal:define="searching python: request.get('role_submit', None );
+                 mtool here/portal_membership;
+                 dtool here/portal_metadirectories;
+                 groups python:dtool['groups'];
+                 display_prop python:groups['display_prop'];
+                ">
+
+<div tal:condition="python: not searching">
+<!-- Search -->
+
+<h2 i18n:translate="heading_local_roles_search_members">
+ Assign local roles: Search Members
+</h2>
+
+<form method="post" action="forum_localrole_form"
+      tal:attributes="action string:${here/absolute_url}/forum_localrole_form">
+
+ <table class="FormLayout">
+ <tr>
+  <th i18n:translate="label_local_roles_search_by">Search by</th>
+  <td>
+    <select name="search_param">
+      <option i18n:translate="label_user_name"  value="fullname">User Name</option>
+      <option i18n:translate="label_group_name" value="groupname" >Group Name</option>
+      <option i18n:translate="label_user_email" value="email">Email Address</option>
+    </select>
+  </td>
+ </tr>
+ <tr>
+   <th i18n:translate="label_local_roles_search_term">Search Term</th>
+   <td><input type="text" name="search_term" size="30" /></td>
+ </tr>
+
+ <tr>
+  <td><br /></td>
+   <td>
+     <input type="submit" name="role_submit" value="button_search"
+            i18n:attributes="value" />
+   </td>
+ </tr>
+</table>
+
+</form>
+
+
+<!-- End search -->
+</div>
+
+
+<div tal:condition="python:searching and (search_param == 'fullname' or
+search_param == 'email')"
+  tal:define="search_param python: request.get( 'search_param', '' );
+              search_term  python: request.get( 'search_term', '' );
+              found python:here.folder_localrole_search(search_param, search_term);">
+<!-- Assignment -->
+<h2 i18n:translate="heading_local_roles_search_results">
+    Assign local roles: Search Results
+</h2>
+<div tal:condition="found">
+
+ <p i18n:translate="legend_local_roles_select_members_and_roles">
+    Select Member(s) and a role to assign:
+ </p>
+
+ <form method="post" action="folder_localrole_edit"
+       tal:attributes="action string:${here/absolute_url}/folder_localrole_edit"
+ >
+  <input type="hidden" name="change_type" value="add" />
+
+  <table class="FormLayout">
+
+   <tr>
+    <td width="16"><br /></td>
+    <th style="text-align:left;" i18n:translate="label_user">
+        User
+    </th>
+    <th style="text-align:left;" i18n:translate="label_email">
+        Email address
+    </th>
+   </tr>
+
+   <tr tal:repeat="member found">
+    <td width="16">
+     <input type="checkbox" name="member_ids:list"
+            value=""
+            tal:attributes="value string:user:${member/id_}" />
+    </td>
+    <td tal:content="string:user:${member/fullname}"> Username 1 </td>
+    <td tal:content="member/email"> Email 1 </td>
+   </tr>
+
+   <tr tal:condition="nothing">
+    <td width="16">
+     <input type="checkbox" name="member_ids:list" value="" />
+    </td>
+    <td> Username 2 </td>
+    <td> Email 2 </td>
+   </tr>
+
+   <tr>
+    <td colspan="3"><br /></td>
+   </tr>
+
+   <tr>
+    <th colspan="2" i18n:translate="legend_local_roles_role_to_assign">
+        Role to assign:
+    </th>
+    <td>
+     <select name="member_role"
+             tal:define="cpslr python:here.getCPSLocalRoles( mtool=mtool );
+                         roles python:cpslr[2]">
+      <option tal:repeat="role roles"
+              tal:attributes="value role"
+              i18n:translate=""
+              tal:content="role">
+         Role1
+      </option>
+      <option tal:condition="nothing"> Role2 </option>
+      <option tal:condition="nothing"> Role3 </option>
+     </select>
+    </td>
+   </tr>
+  <tr><td colspan="3" tal:content="python:here.getCPSLocalRoles( mtool=mtool )"></td></tr>
+   <tr>
+    <td colspan="3"><br /></td>
+   </tr>
+
+   <tr>
+    <td width="16"><br /></td>
+    <td colspan="2">
+        <input i18n:attributes="value"
+               type="submit" value="button_assign_roles" />
+    </td>
+   </tr>
+
+  </table>
+ </form>
+
+</div>
+
+
+<div tal:condition="python: not found">
+
+ <p i18n:translate="legend_local_roles_no_results_members">
+    Sorry, no members matched your search.
+ </p>
+
+</div>
+
+<!-- End assignment -->
+
+</div>
+
+
+<div tal:condition="python:searching and (search_param == 'groupname')"
+  tal:define="search_param python: request.get( 'search_param', '' );
+  search_term  python: request.get( 'search_term', '' );
+  found python: (search_term and ['group:' +group for group in here.get_valid_groupids() if group.upper().find(search_term.upper()) > 0]) or here.get_valid_groupids() ;
+ "
+>
+
+
+<!-- Assignment -->
+<h2 i18n:translate="heading_local_roles_search_results">
+    Assign local roles: Search Results
+</h2>
+
+<div tal:condition="found">
+
+ <p i18n:translate="legend_local_roles_select_groups_and_roles">
+    Select Group(s) and a role to assign:
+ </p>
+
+ <form method="post" action="folder_localrole_edit"
+       tal:attributes="action string:${here/absolute_url}/folder_localrole_edit"
+ >
+  <input type="hidden" name="change_type" value="add" />
+
+  <table class="FormLayout">
+
+   <tr>
+    <td width="16"><br /></td>
+    <th style="text-align:left;">
+        <span i18n:translate="label_group">Group</span>
+        <span i18n:translate="label_name">Name</span>
+    </th>
+    <th style="text-align:left;"></th>
+   </tr>
+
+   <tr tal:repeat="group found">
+    <td width="16">
+        <input type="checkbox" name="member_ids:list"
+               value=""
+               tal:attributes="value string:group:${group}" />
+    </td>
+    <tal:block define="igroup python:groups.searchEntry(**{'id_':group})">
+      <td tal:condition="python:igroup != ()"
+          tal:content="python:igroup[0][display_prop]"> Groupame
+      </td>
+      <td tal:condition="python:igroup == ()"
+          i18n:translate=""
+          tal:content="python:modules['string'].split(group, ':')[1]" />
+    </tal:block>
+   </tr>
+
+   <tr>
+    <td colspan="3"><br /></td>
+   </tr>
+
+   <tr>
+    <th colspan="2" i18n:translate="legend_local_roles_role_to_assign">
+        Role to assign:
+    </th>
+    <td>
+    <select name="member_role"
+             tal:define="cpslr python:here.getCPSLocalRoles( mtool=mtool );
+                         roles python:cpslr[2]">
+      <option tal:repeat="role roles"
+              tal:attributes="value role"
+              i18n:translate=""
+              tal:content="role"> Role1 </option>
+      <option tal:condition="nothing"> Role2 </option>
+      <option tal:condition="nothing"> Role3 </option>
+    </select>
+    </td>
+   </tr>
+
+   <tr>
+    <td colspan="3"><br /></td>
+   </tr>
+
+   <tr>
+    <td width="16"><br /></td>
+    <td colspan="2">
+      <input i18n:attributes="value"
+             type="submit" value="button_assign_roles" /></td>
+   </tr>
+
+  </table>
+ </form>
+</div>
+
+<div tal:condition="python: not found">
+ <p i18n:translate="legend_local_roles_no_results_member">
+    Sorry, no groups matched your search.
+ </p>
+
+</div>
+
+<!-- End assignment -->
+</div>
+
+
+<hr />
+
+<h2 i18n:translate="legend_local_roles_currently_assigned">
+    Currently assigned local roles
+</h2>
+
+<p i18n:translate="legend_local_roles_assigned_users">
+   These users currently have local roles assigned in this folder:
+</p>
+
+<form method="post" action="folder_localrole_edit"
+      tal:attributes="action string:${here/absolute_url}/folder_localrole_edit">
+ <input type="hidden" name="change_type" value="delete" />
+ <input type="hidden" name="member_role" value="" />
+
+ <table width="100%" class="FormLayout"
+   tal:define="lroles python:[('user:' + uroles[0],uroles[1]) for uroles in here.get_local_roles()] +
+                              [('group:' + groles[0],groles[1]) for groles in here.get_local_group_roles()]"
+ >
+ <tr>
+   <td width="16"><br /></td>
+   <th style="text-align:left;">
+     <span i18n:translate="label_user">User</span>/
+     <span i18n:translate="label_group">Group</span>
+   </th>
+   <th style="text-align:left;">
+       <span i18n:translate="label_roles">Role(s)</span>
+   </th>
+ </tr>
+
+ <tal:block define="cpslr python:here.getCPSLocalRoles(mtool=mtool);
+                    roles python:cpslr[0];
+                    editable_user python:cpslr[1];">
+   <tal:block repeat="user python:roles.keys()">
+     <tr tal:attributes="class python:test(repeat['user'].even(), 'even',
+       'odd')">
+       <tal:block define="haslrhere python:user in editable_user">
+         <tal:block condition="haslrhere">
+           <td width="1%">
+             <input type="checkbox"
+                    name="member_ids:list"
+                    value="id"
+                    tal:attributes="value user" />
+            </td>
+         </tal:block>
+       <tal:block condition="not:haslrhere">
+         <td width="1%">&nbsp;</td>
+       </tal:block>
+     </tal:block>
+     <td>
+       <span tal:content="user" />
+     </td>
+     <td>
+       <tal:block repeat="item python:roles[user]">
+         <tal:block repeat="roleElt python:item['roles']">
+           <tal:block define="ishere python:base_url+item['url'] == context_url">
+             <tal:block condition="not:ishere">
+               <a href
+                  tal:attributes="href
+                    string:${base_url}${item/url}/forum_localrole_form">
+                  <span i18n:translate="" tal:content="python:roleElt" />
+               </a>
+                       <span i18n:translate="label_in">in</span>
+                       <i tal:content="item/url" />
+             </tal:block>
+             <tal:block condition="ishere">
+               <span i18n:translate="" tal:content="roleElt" />
+             </tal:block>
+             <br tal:condition="not:repeat/item/last"/><br />
+           </tal:block>
+          </tal:block>
+         </tal:block>
+        </td>
+       </tr>
+     </tal:block>
+ </tal:block>
+
+ <tr tal:condition="nothing">
+  <td width="16">
+   <input type="checkbox" name="member_ids:list" value="id" />
+  </td>
+  <td> Username 2 </td>
+  <td> Role3 </td>
+ </tr>
+
+ <tr tal:condition="nothing">
+  <td width="16">
+   <br />
+  </td>
+  <td> Auth username </td>
+  <td> Role1, Role2, Role3 </td>
+ </tr>
+
+ <tr>
+  <td colspan="3"><br /></td>
+ </tr>
+
+ <tr>
+   <td><br /></td>
+   <td colspan="2">
+     <input type="submit"
+            value="button_delete"
+            i18n:attributes="value" />
+   </td>
+ </tr>
+
+</table>
+</form>
+<br />
+<span i18n:translate="link_local_roles_underlined">
+  <i>Roles in underlined </i> are set in parent folders.
+  Follow the links to manage the local roles in these folders.
+</span>
+
+</div>
+
+</body>
+</html>

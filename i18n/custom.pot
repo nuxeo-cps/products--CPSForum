@@ -100,6 +100,18 @@ msgstr ""
 msgid "forum_unpublished_post"
 msgstr ""
 
+msgid "forum_published_post"
+msgstr ""
+
 msgid "forum_rejected_post"
+msgstr ""
+
+msgid "forum_label_wf_display"
+msgstr ""
+
+msgid "forum_label_display_wf_icon"
+msgstr ""
+
+msgid "forum_label_display_wf_txt"
 msgstr ""
 

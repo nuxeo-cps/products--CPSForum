@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
-"POT-Creation-Date: 2004-07-06 14:47default\n"
-"PO-Revision-Date: 2004-07-06 15:29+0200\n"
+"POT-Creation-Date: 2004-09-06 16:21default\n"
+"PO-Revision-Date: 2004-09-06 16:22+0200\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -48,7 +48,7 @@ msgid "forum_allow_anon_posts"
 msgstr "Autoriser les messages anonymes"
 
 #.   <div class="label">Author</div>
-#.   <a href="./sort_posts?criterion=author">Author</a>
+#.   <a href="./sort_posts?criterion=author" attributes="href string:./sort_posts?criterion=${author_sort_direction}">Author</a>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
@@ -59,7 +59,7 @@ msgstr "Auteur"
 msgid "forum_button_lockunlock"
 msgstr "(Dé-)verrouiller le fil"
 
-#.   <a href="./sort_posts?criterion=date">Date</a>
+#.   <a href="./sort_posts?criterion=date" attributes="href string:./sort_posts?criterion=${date_sort_direction}">Date</a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_date"
 msgstr "Date"
@@ -185,8 +185,13 @@ msgstr "Rejeter"
 msgid "forum_reply"
 msgstr "Répondre"
 
+#.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_state"
+msgstr "Etat"
+
 #.   <div class="label required">Subject</div>
-#.   <a href="./sort_posts?criterion=subject">Subject</a>
+#.   <a href="./sort_posts?criterion=subject" attributes="href string:./sort_posts?criterion=${subject_sort_direction}">Subject</a>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_subject"
@@ -280,8 +285,20 @@ msgstr "En attente de publication"
 msgid "forum_unpublished_post"
 msgstr "Dépublié"
 
+msgid "forum_published_post"
+msgstr "Publié"
+
 msgid "forum_rejected_post"
 msgstr "Rejeté"
+
+msgid "forum_label_wf_display"
+msgstr "Affichage de l'état des messages :"
+
+msgid "forum_label_display_wf_icon"
+msgstr "Icône"
+
+msgid "forum_label_display_wf_txt"
+msgstr "Texte"
 
 #~ msgid "forum_link_next_threads <span content=\"threads_per_page\" />"
 #~ msgstr "${threads_per_page} fils suivants"

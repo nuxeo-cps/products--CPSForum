@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2004-07-06 14:47default\n"
+"POT-Creation-Date: 2004-09-06 16:21default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -44,7 +44,7 @@ msgid "forum_allow_anon_posts"
 msgstr ""
 
 #.   <div class="label">Author</div>
-#.   <a href="./sort_posts?criterion=author">Author</a>
+#.   <a href="./sort_posts?criterion=author" attributes="href string:./sort_posts?criterion=${author_sort_direction}">Author</a>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
@@ -55,7 +55,7 @@ msgstr ""
 msgid "forum_button_lockunlock"
 msgstr ""
 
-#.   <a href="./sort_posts?criterion=date">Date</a>
+#.   <a href="./sort_posts?criterion=date" attributes="href string:./sort_posts?criterion=${date_sort_direction}">Date</a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_date"
 msgstr ""
@@ -181,8 +181,13 @@ msgstr ""
 msgid "forum_reply"
 msgstr ""
 
+#.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_state"
+msgstr ""
+
 #.   <div class="label required">Subject</div>
-#.   <a href="./sort_posts?criterion=subject">Subject</a>
+#.   <a href="./sort_posts?criterion=subject" attributes="href string:./sort_posts?criterion=${subject_sort_direction}">Subject</a>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_subject"
@@ -276,5 +281,17 @@ msgstr ""
 msgid "forum_unpublished_post"
 msgstr ""
 
+msgid "forum_published_post"
+msgstr ""
+
 msgid "forum_rejected_post"
+msgstr ""
+
+msgid "forum_label_wf_display"
+msgstr ""
+
+msgid "forum_label_display_wf_icon"
+msgstr ""
+
+msgid "forum_label_display_wf_txt"
 msgstr ""

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
-"POT-Creation-Date: 2004-07-06 14:47default\n"
+"POT-Creation-Date: 2004-09-06 16:21default\n"
 "PO-Revision-Date: 2004-05-10 12:42+0100\n"
 "Last-Translator: Paolo Dina <paolo@php3.it>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -48,7 +48,7 @@ msgid "forum_allow_anon_posts"
 msgstr "Consenti messaggi anonimi"
 
 #.   <div class="label">Author</div>
-#.   <a href="./sort_posts?criterion=author">Author</a>
+#.   <a href="./sort_posts?criterion=author" attributes="href string:./sort_posts?criterion=${author_sort_direction}">Author</a>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
@@ -61,7 +61,7 @@ msgid "forum_button_lockunlock"
 msgstr "(S-)blocca discussione"
 
 #    <td class="forumsubheader" width="80">Date</td>
-#.   <a href="./sort_posts?criterion=date">Date</a>
+#.   <a href="./sort_posts?criterion=date" attributes="href string:./sort_posts?criterion=${date_sort_direction}">Date</a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_date"
 msgstr "Data"
@@ -196,8 +196,15 @@ msgstr "Oggetto"
 msgid "forum_reply"
 msgstr "Rispondi"
 
+#    <td class="forumsubheader" width="80">Date</td>
+#.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+#, fuzzy
+msgid "forum_state"
+msgstr "Data"
+
 #.   <div class="label required">Subject</div>
-#.   <a href="./sort_posts?criterion=subject">Subject</a>
+#.   <a href="./sort_posts?criterion=subject" attributes="href string:./sort_posts?criterion=${subject_sort_direction}">Subject</a>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_subject"
@@ -313,8 +320,24 @@ msgid "forum_unpublished_post"
 msgstr "Pubblica"
 
 #, fuzzy
+msgid "forum_published_post"
+msgstr "Pubblica"
+
+#, fuzzy
 msgid "forum_rejected_post"
 msgstr "Oggetto"
+
+#, fuzzy
+msgid "forum_label_wf_display"
+msgstr "Messaggio"
+
+#, fuzzy
+msgid "forum_label_display_wf_icon"
+msgstr "Blocca forum (sola lettura)"
+
+#, fuzzy
+msgid "forum_label_display_wf_txt"
+msgstr "Messaggio"
 
 #    <td>Send moderation notifications</td>
 #~ msgid "forum_send_moderation_notification"

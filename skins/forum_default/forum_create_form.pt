@@ -44,6 +44,13 @@
       </td>
     </tr>
     <tr>
+      <td i18n:translate="forum_label_lock_forum">Lock forum (no longer possible to post new messages)</td>
+      <td>
+        <input type="checkbox" name="frozen_forum"
+               tal:attributes="checked python:test(doc.isFrozen(),'checked',None)"/>
+      </td>
+    </tr>
+    <tr>
       <td />
       <td>
         <input type="hidden" name="type" value="Forum" />

@@ -15,7 +15,7 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
 
     def afterSetUp(self):
         forum_id = 'forum'
-        self.login('root')
+        self.login('manager')
         self.ws = self.portal.workspaces
 
         self.portal.portal_workflow.invokeFactoryFor(self.ws, 'CPSForum', forum_id)

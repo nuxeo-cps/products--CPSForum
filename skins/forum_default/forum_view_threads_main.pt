@@ -6,7 +6,7 @@
   <form method="POST" tal:attributes="action here/absolute_url" name="post_form">
     <input type="hidden" name="comment_mode:int" 
            tal:attributes="value comment_mode" />
-    <table border=0 style='width:100%;height:inherit' cellspacing='0' cellpadding='0'>
+    <table border="0" style='width:100%;height:inherit' cellspacing='0' cellpadding='0'>
       <tr>
         <td class="forumsubheader" width="20">
           <input type="hidden" name="parent_id:string" 

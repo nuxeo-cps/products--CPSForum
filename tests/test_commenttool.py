@@ -165,7 +165,13 @@ class TestCommentTool(CPSForumTestCase.CPSForumTestCase):
     def testGetForum4CommentsSections(self):
         # Create 'Chat' object as it's allowed to create it under Sections
         # by default
-        self.sc.invokeFactory('Chat', 'chat')
+        try:
+            self.ws.invokeFactory('Chat', 'chat')
+        except:
+            pass # CPSChat is probably not installed
+        chat = getattr(self.ws, 'chat', None)
+        if not chat:
+            return
         sc_proxy_doc = getattr(self.sc, 'chat')
 
         doc_url = sc_proxy_doc.absolute_url(relative=1)

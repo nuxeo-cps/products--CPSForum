@@ -3,13 +3,19 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
-- threads are now sorted by most recent post
+- threads are now sorted by most recent post (default view, no explicit sorting)
+- use a rich text editor widget to edit posts
+- attaching documents to posts (as internal links)
 
 Bug fixes:
 ~~~~~~~~~~
 - display "Modify" button only for posts that are not published (thus not
   modifiable)
 - Add an explicit message when you not have rights to post a comment
+- users who were explicitely set as ForumModerator were not allowed
+  to view posts in several states like pending (users who inherited this
+  permission from other roles like SectionReviewer were not subject to this
+  bug)
 
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~

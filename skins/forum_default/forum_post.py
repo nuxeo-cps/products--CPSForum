@@ -10,8 +10,7 @@ if (not forum) and comment_mode:
     forum = context.portal_discussion.addForum(context)
 
 if (not author) or (author == ""):
-    # XXX: this message must be translated
-    msg = "Pseudo obligatoire"
+    msg = 'error_author'
     return context.forum_post_form(error_message=msg)
 
 if (not parent_id) or parent_id.isspace():

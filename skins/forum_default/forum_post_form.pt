@@ -36,8 +36,9 @@
 
         <tal:block condition="here/portal_membership/isAnonymousUser">
           <input type="text" name="author:string" value="" />
-          <span tal:condition="errormsg" tal:content="errormsg" 
-                class="forumerror" />
+          <span tal:condition="python:errormsg == 'error_author'"
+                i18n:translate="forum_psm_name_required" 
+                class="forumerror">Author field must be filled</span>
         </tal:block>
       </td>
     </tr>

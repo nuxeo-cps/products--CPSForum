@@ -348,11 +348,12 @@ class CPSForum(CPSBaseDocument):
             subject = "Soumission d'un message sur le Forum %s" % self.title
             post_url = proxy.absolute_url() + '?post_id=' + post_id
             body = "Un nouveau message à modérer vient d'être poste sur le forum %s.\n\nCe message peut être consulte à l'adresse suivante:\n%s" % (self.title, post_url)
-            self.sendEmail(from_address=getattr(portal,
-                                                'email_from_address'),
-                           subject=subject,
-                           body=self.textwrap(body, 72),
-                           mto=checked_emails)
+            if checked_emails:
+                self.sendEmail(from_address=getattr(portal,
+                                                    'email_from_address'),
+                               subject=subject,
+                               body=self.textwrap(body, 72),
+                               mto=checked_emails)
 
     security.declarePrivate('sendEmail')
     def sendEmail(self, from_address='nobody@example.com', reply_to=None,

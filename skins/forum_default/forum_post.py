@@ -1,4 +1,4 @@
-##parameters=subject,author,message,parent_id=None,comment_mode=0
+##parameters=subject,author,message,parent_id=None,comment_mode=0,REQUEST=None
 
 # $Id$
 
@@ -25,9 +25,9 @@ if (not parent_id) or parent_id.isspace():
 new_id = doc.addForumPost(id=new_id, subject=subject, author=author,
                           message=message, parent_id=parent_id)
 
-# FIXME: what if there is no REQUEST ?
-if comment_mode:
-    context.REQUEST.RESPONSE.redirect(context.absolute_url()+"/?comment_id="+new_id)
-else:
-    context.REQUEST.RESPONSE.redirect(context.absolute_url()+"/?post_id="+new_id)
+if REQUEST is not None:
+    if comment_mode:
+        REQUEST.RESPONSE.redirect(context.absolute_url()+"/?comment_id="+new_id)
+    else:
+        REQUEST.RESPONSE.redirect(context.absolute_url()+"/?post_id="+new_id)
 

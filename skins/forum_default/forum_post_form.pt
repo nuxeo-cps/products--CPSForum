@@ -13,7 +13,7 @@
     roles python:here.portal_membership.getCPSCandidateLocalRoles(here)">
 
 <tal:block tal:condition="python:not (comment_mode or 'ForumPoster' in roles)">
-  <p>You are not authorized to post on this forum</p>
+  <p i18n:translate="forum_post_unauthorize">You are not authorized to post on this forum</p>
 </tal:block>
 
 <tal:block tal:condition="python:comment_mode or 'ForumPoster' in roles">

@@ -328,10 +328,15 @@ class CPSForum(BaseDocument):
             checked_emails = self.checkEmails(list=moderator_emails)
             utool = getToolByName(self, 'portal_url')
             portal = utool.getPortalObject()
-            # FIXME: this has to be i18n-ed
-            subject = "Soumission d'un message sur le Forum %s" % self.title
+
+            mcat = getToolByName(self, 'Localizer').default
+            subject_i18n = mcat('forum_mailtitle_new_msg_submitted')
+            subject = subject_i18n + self.title
             post_url = proxy.absolute_url() + '?post_id=' + post_id
-            body = "Un nouveau message à modérer vient d'être poste sur le forum %s.\n\nCe message peut être consulte à l'adresse suivante:\n%s" % (self.title, post_url)
+            body_i18n_1 = mcat('forum_mailbody_new_msg_submitted1')
+            body_i18n_2 = mcat('forum_mailbody_new_msg_submitted2')
+            body = body_i18n_1 + self.title + '.\n\n' + body_i18n_2 + '\n' + post_url
+
             if checked_emails:
                 self.sendEmail(from_address=getattr(portal,
                                                     'email_from_address'),

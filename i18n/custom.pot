@@ -19,3 +19,6 @@ msgstr ""
 msgid "forum_modify"
 msgstr ""
 
+msgid "forum_label_postedby"
+msgstr ""
+

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2003-10-09 17:22default\n"
+"POT-Creation-Date: 2003-10-10 12:52default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -67,27 +67,18 @@ msgstr ""
 msgid "forum_author"
 msgstr ""
 
-#.   <td class="forumheader" colspan="2">Comment</td>
-#: from ../skins/forum_default/post_view_snippet.pt
-msgid "forum_comment"
-msgstr ""
-
 #.   <td class="forumsubheader" width="80">Date</td>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_date"
 msgstr ""
 
-#.   <input value="forum_delete" class="mainbutton" name="forum_del_post:method" type="submit" />
-#.   <input value="forum_delete" class="mainbutton" name="forum_del_thread:method" type="submit" />
+#.   <input value="forum_delete" class="destructive" name="forum_del_post:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
-#: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_delete"
 msgstr ""
 
-#.   <input value="forum_depublish" class="mainbutton" name="forum_unpublish_post:method" type="submit" />
-#.   <input condition="python:post['published']" value="forum_depublish" class="mainbutton" name="forum_unpublish_thread:method" type="submit" />
+#.   <input value="forum_depublish" class="context" name="forum_unpublish_post:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
-#: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_depublish"
 msgstr ""
 
@@ -120,17 +111,10 @@ msgstr ""
 msgid "forum_moderators"
 msgstr ""
 
-#.   <input value="forum_new_thread" class="mainbutton" name="forum_post_form:method" type="submit">
-#.             <input value="forum_reply" class="mainbutton" name="forum_post_reply:method" type="submit">
-#.             <block condition="is_reviewer">
-#.               <input condition="python:not post['published']" value="forum_publish" class="mainbutton" name="forum_publish_thread:method" type="submit" />
-#.               <input condition="python:post['published']" value="forum_depublish" class="mainbutton" name="forum_unpublish_thread:method" type="submit" />
-#.             </block>
-#.             <block condition="python:is_reviewer or comment_mode">
-#.               <input value="forum_delete" class="mainbutton" name="forum_del_thread:method" type="submit" />
-#.             </block>
-#.           </input></input>
-#: from ../skins/forum_default/post_view_snippet.pt
+#.   <a attributes="href python:here.absolute_url()+'/forum_post_form'" href="">
+#.         forum_new_thread
+#.       </a>
+#: from ../skins/forum_default/forum_view_main.pt
 msgid "forum_new_thread"
 msgstr ""
 
@@ -145,26 +129,17 @@ msgstr ""
 msgid "forum_no_message"
 msgstr ""
 
-#.   <input value="forum_post" class="mainbutton" name="forum_post:method" type="submit" />
+#.   <input value="forum_post" class="standalone" name="forum_post:method" type="submit" />
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_post"
 msgstr ""
 
-#.   <input value="forum_publish" class="mainbutton" name="forum_publish_post:method" type="submit" />
-#.   <input condition="python:not post['published']" value="forum_publish" class="mainbutton" name="forum_publish_thread:method" type="submit" />
+#.   <input value="forum_publish" class="context" name="forum_publish_post:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
-#: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_publish"
 msgstr ""
 
-#.   <input value="forum_reply" class="mainbutton" name="forum_post_reply:method" type="submit">
-#.             <block condition="is_reviewer">
-#.               <input condition="python:not post['published']" value="forum_publish" class="mainbutton" name="forum_publish_thread:method" type="submit" />
-#.               <input condition="python:post['published']" value="forum_depublish" class="mainbutton" name="forum_unpublish_thread:method" type="submit" />
-#.             </block>
-#.             <block condition="python:is_reviewer or comment_mode">
-#.               <input value="forum_delete" class="mainbutton" name="forum_del_thread:method" type="submit" />
-#.             </block>
+#.   <input value="forum_reply" class="context" name="forum_post_reply:method" type="submit">
 #.           </input>
 #: from ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
@@ -316,4 +291,7 @@ msgid "link_local_roles_underlined"
 msgstr ""
 
 msgid "forum_modify"
+msgstr ""
+
+msgid "forum_label_postedby"
 msgstr ""

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2003-12-15 11:58default\n"
+"POT-Creation-Date: 2004-02-16 16:03default\n"
 "PO-Revision-Date: 2003-12-15 12:11+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -133,6 +133,12 @@ msgstr "Geen boodschap"
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_post"
 msgstr "Versturen"
+
+#.   <p>You are not authorized to post on this forum</p>
+#: from ../skins/forum_default/forum_post_form.pt
+#, fuzzy
+msgid "forum_post_unauthorize"
+msgstr "Auteur"
 
 #.   <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
@@ -288,7 +294,9 @@ msgstr "Selecteer lid/leden en een rol om toe te wijzen:"
 #.   </span>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "link_local_roles_underlined"
-msgstr "<i>Onderstreepte rollen</i> bevinden zich in bovenliggende mappen. Volg de koppeling om de locale rollen te beheren in die mappen."
+msgstr ""
+"<i>Onderstreepte rollen</i> bevinden zich in bovenliggende mappen. Volg de "
+"koppeling om de locale rollen te beheren in die mappen."
 
 msgid "forum_modify"
 msgstr "Wijzig"
@@ -322,4 +330,3 @@ msgstr "Gepost door"
 
 #~ msgid "forum_moderator"
 #~ msgstr "Moderator"
-

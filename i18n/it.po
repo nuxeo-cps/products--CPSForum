@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-12-15 11:58default\n"
+"POT-Creation-Date: 2004-02-16 16:03default\n"
 "PO-Revision-Date: 2004-01-07 12:41+0100\n"
 "Last-Translator: Paolo Dina <paolo@php3.it>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -129,6 +129,12 @@ msgstr "Nessun messaggio"
 msgid "forum_post"
 msgstr "Invia"
 
+#.   <p>You are not authorized to post on this forum</p>
+#: from ../skins/forum_default/forum_post_form.pt
+#, fuzzy
+msgid "forum_post_unauthorize"
+msgstr "Autore"
+
 #.   <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_publish"
@@ -233,7 +239,8 @@ msgstr "Nome utente"
 #.   </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_assigned_users"
-msgstr "Questi utenti hanno attualmente ruoli locali assegnati per questo elenco:"
+msgstr ""
+"Questi utenti hanno attualmente ruoli locali assegnati per questo elenco:"
 
 #.   <h2>
 #.       Currently assigned local roles
@@ -283,7 +290,9 @@ msgstr "Seleziona il(i) collaboratore(i) ed un ruolo da assegnare:"
 #.   </span>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "link_local_roles_underlined"
-msgstr "<i>I ruoli sottolineati </i> sono definiti nelle cartelle genitore. Segui i collegamenti ipertestuali per gestire i ruoli locali in queste cartelle."
+msgstr ""
+"<i>I ruoli sottolineati </i> sono definiti nelle cartelle genitore. Segui i "
+"collegamenti ipertestuali per gestire i ruoli locali in queste cartelle."
 
 msgid "forum_modify"
 msgstr "Modifica"

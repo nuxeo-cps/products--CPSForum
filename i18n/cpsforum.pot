@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2003-12-15 11:58default\n"
+"POT-Creation-Date: 2004-02-16 16:03default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -132,6 +132,11 @@ msgstr ""
 #.   <input value="forum_post" class="standalone" name="forum_post:method" type="submit" />
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_post"
+msgstr ""
+
+#.   <p>You are not authorized to post on this forum</p>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_post_unauthorize"
 msgstr ""
 
 #.   <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />

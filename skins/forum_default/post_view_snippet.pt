@@ -5,17 +5,12 @@
                    post python:forum[post_id]"
            condition="python:post"
            i18n:domain="cpsforum">
-
   <tr><td colspan="2">&nbsp;</td></tr>
   <tal:block condition="python: is_reviewer or post['published'] or comment_mode">
     <tr><td colspan="2">
-      <table style="padding:0;margin:0;width:100%;border:1px solid black;"> 
+      <table style="padding:0;margin:0;width:100%;">
         <tr>
-          <td style='vertical-align:top;border-right:1px solid black;' width="30%">
-              <span class="forum_author"
-                    tal:content="python:post['author']">Author</span>
-          </td>
-          <td style="width:70%">
+          <td>
             <tal:block condition="python: post['published']">
               <a tal:content="python:post['subject']"
                  tal:attributes="href python:here.absolute_url()+'/?post_id='+post['id']">
@@ -28,50 +23,40 @@
                    tal:attributes="href 
                      python:here.absolute_url()+'/?post_id='+post['id']">
                   Title
-                </a> 
+                </a>
               </strong>
             </tal:block>
             <tal:block condition="comment_mode">
               <a tal:content="python:post['subject']"
-                 tal:attributes="href python:here.absolute_url()+'/?comment_id='+post['id']">
+                 tal:attributes="href python:
+                            here.absolute_url()+'/?comment_id='+post['id']">
                 Title
               </a>
             </tal:block>
-            <div tal:content="python:post['message']">Message</div>
+            <tal:block tal:define="mcat python:here.Localizer.cpsforum" 
+                       tal:replace="python:
+               '('+mcat('forum_label_postedby')+' '+here.getPoster(post['author'])+')'"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <pre tal:content="python:post['message']">Message</pre>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <form  method="POST" tal:attributes="action here/absolute_url" name="post_form">
+            <input type="hidden" name="parent_id:string"
+                   tal:attributes="value post_id">
+            <input type="hidden" name="comment_mode:int"
+                   tal:attributes="value comment_mode">
+           <input type="submit" name="forum_post_reply:method"
+                   class='context' value="forum_reply"
+                   i18n:attributes="value">
+           </form>
           </td>
         </tr>
       </table>
     </td></tr>
-    <tr>
-      <td colspan="2">
-        <form  method="POST" tal:attributes="action here/absolute_url" name="post_form">
-          <input type="hidden" name="parent_id:string"
-                 tal:attributes="value post_id">
-          <input type="hidden" name="comment_mode:int"
-                 tal:attributes="value comment_mode">
-          <input type="submit" name="forum_post_form:method"
-                 class="mainbutton" value="forum_new_thread"
-                 i18n:attributes="value">
-          <input type="submit" name="forum_post_reply:method"
-                 class='mainbutton' value="forum_reply"
-                 i18n:attributes="value">
-          <tal:block condition="is_reviewer">
-            <input type="submit" name="forum_publish_thread:method"
-                   class="mainbutton" value="forum_publish"
-                   tal:condition="python:not post['published']"
-                   i18n:attributes="value" />
-            <input type="submit" name="forum_unpublish_thread:method"
-                   class="mainbutton" value="forum_depublish"
-                   tal:condition="python:post['published']"
-                   i18n:attributes="value" />
-          </tal:block>
-          <tal:block tal:condition="python:is_reviewer or comment_mode">
-            <input type="submit" name="forum_del_thread:method"
-                   class='mainbutton' value="forum_delete"
-                   i18n:attributes="value" />
-          </tal:block>
-        </form>
-      </td>
-    </tr>
   </tal:block>
 </tal:block>

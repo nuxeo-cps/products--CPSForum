@@ -8,7 +8,10 @@
                                                          'authorInv' , 'author');
                        date_sort_direction python:test(sort_by == 'date',
                                                        'dateInv' , 'date');
+                       wf_sort_direction python:test(sort_by == 'wf',
+                                                     'wfInv' , 'wf');
                        display_mode options/display_mode;
+                       wf_display_mode options/wf_display_mode;
                        forum nocall:options/forum;
                        threads_per_page python:getattr(forum,'threads_per_page',0)">
 
@@ -22,10 +25,12 @@
                                                                    start=batch_start)">
       <input type="hidden" name="frm_start" 
              tal:attributes="value batch_start" />
-      <tr tal:define="mq nocall:modules/ZTUtils/make_query;
+      <tal:block tal:define="mq nocall:modules/ZTUtils/make_query;
                       previous_page python:batched_desc.previous;
                       next_page python:batched_desc.next">
-        <td colspan="6" class="forumThreadBatch">
+      <tr tal:condition="python:previous_page or next_page">
+        <td colspan="6" class="forumThreadBatch"
+            tal:attributes="colspan python:test(wf_display_mode == 'wf_txt', '7', '6')">
           <a href="." tal:condition="previous_page"
              tal:attributes="href python:'%s?%s'%(request['URL'],
                                                   mq(request.form,
@@ -48,6 +53,7 @@
                                                      frm_start=(len(descendants) - threads_per_page + (len(descendants) % threads_per_page))))">»</a>
         </td>
       </tr>
+      </tal:block>
       <tr>
         <td class="forumSelectCell">
           <input type="hidden" name="parent_id:string" 
@@ -74,6 +80,11 @@
              tal:attributes="href string:./sort_posts?criterion=${date_sort_direction}"
              i18n:translate="forum_date">Date</a>
         </th>
+        <th class="forumWFCell" tal:condition="python:wf_display_mode == 'wf_txt'">
+          <a href="./sort_posts?criterion=wf"
+             tal:attributes="href string:./sort_posts?criterion=${wf_sort_direction}"
+             i18n:translate="forum_state">State</a>
+        </th>
         <td class="forumLockCell"></td>
       </tr>
       <tal:span tal:content="structure python:here.post_tree(descendants=batched_desc, 
@@ -81,6 +92,7 @@
                                                              frm_start=batch_start,
                                                              sort_by=sort_by,
                                                              display_mode=display_mode,
+                                                             wf_display_mode=wf_display_mode,
                                                              forum=forum)"/>
     </tal:block>
     </tal:block>
@@ -114,11 +126,17 @@
              tal:attributes="href string:./sort_posts?criterion=${date_sort_direction}"
              i18n:translate="forum_date">Date</a>
         </th>
+        <th class="forumWFCell" tal:condition="python:wf_display_mode == 'wf_txt'">
+          <a href="./sort_posts?criterion=wf"
+             tal:attributes="href string:./sort_posts?criterion=${wf_sort_direction}"
+             i18n:translate="forum_state">State</a>
+        </th>
         <td class="forumLockCell"></td>
       </tr>
       <tal:span tal:content="structure python:here.post_tree(descendants=descendants, 
                                                              post_id=post_id,
                                                              sort_by=sort_by,
+                                                             wf_display_mode=wf_display_mode,
                                                              display_mode=display_mode,
                                                              forum=forum)"/>
     </tal:block>

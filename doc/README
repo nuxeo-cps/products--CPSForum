@@ -2,15 +2,34 @@
 CPSForum README
 --------------------------------------------------
 
-Author: Emmanuel Pietriga (ep@nuxeo.com)
 $Id$
 
+Author: Emmanuel Pietriga (ep@nuxeo.com)
+
+Summary:
+- Introduction
+- History & Bug fixes
+- Installation
+- Features
+- Roles and permissions
+- Discussions (comments about documents)
+
+--------------------------------------------------
+Introduction
 --------------------------------------------------
 
-This README documents the new version of CPSForum that stores posts as
-CPSDocuments.
+CPSForum provides newsgroups and discussion threads, anywhere on the site.
+It also makes it possible to comment on documents.
+See the 'Features' section below for more information.
 
-Features and changes w.r.t earlier implementations:
+--------------------------------------------------
+History & Bug fixes
+--------------------------------------------------
+
+For history and bug fixes, please refer to the HISTORY file.
+
+Still, important features and changes w.r.t implementations (CPSForum v. 0.X.X)
+are given here:
 - posts are now searchable,
 - posts follow their own workflow (forum_post_wf) and have a publication
   status (see doc/forum_wf.svg for a graphical representation of this workflow),
@@ -20,16 +39,32 @@ Features and changes w.r.t earlier implementations:
   that all standard forum features (moderation, notification, locking, etc.)
   are available in forums used for commenting documents,
 - new permissions make it possible to fine tune who is allowed to do what
-  on forums (see below for more information). 
+  on forums (see below for more information).
 
-IMPORTANT NOTES:
-- This version of CPSForum and all subsequent versions based on CPSDocument
-  posts are incompatible with existing Forum instances that have been created
-  with earlier versions of CPSForum (i.e. which do not use CPSDocument posts).
-  This means all versions up to (and including) release 0.7.0-1 of April 2004.
+--------------------------------------------------
+Installation
+--------------------------------------------------
+
+For installation information, please refer to the INSTALL file.
+
+IMPORTANT NOTE:
+This version of CPSForum and all subsequent versions based on CPSDocument
+posts are incompatible with existing Forum instances that have been created
+with earlier versions of CPSForum (i.e. which do not use CPSDocument posts).
+This means all versions up to (and including) release 0.7.0-1 of April 2004.
+
+--------------------------------------------------
+Features
+--------------------------------------------------
+
+TODO
+
+--------------------------------------------------
+Roles and permissions
+--------------------------------------------------
 
 Some details about roles and permissions associated with forums:
-- there are three permissions associated with forums: 
+- there are three permissions associated with forums:
   * 'Forum Moderate' required to publish/unpublish/delete posts,
   * 'Forum Post' required to post new messages,
   * 'Forum manage comments' required to activate/deactivate comments about a
@@ -48,3 +83,19 @@ Some details about roles and permissions associated with forums:
 In addition, it is possible to assign roles ForumModerator and ForumPoster
 (which speak for themselves) locally in a forum. It is also possible to
 change default settings by using CPSInstaller.setupPortalPermissions()
+
+
+--------------------------------------------------
+Discussions (comments about documents)
+--------------------------------------------------
+
+If your document is discussable, an action in the action box makes it
+possible to activate comments for your document. If they are activated,
+a new action makes it possible to actually comment the document.
+These comments are managed by a CPSForum (a forum is associated with each
+document that contains comments). Beware: the forum is associated with the
+proxy document, not the actual document in the repository, meaning that
+the forum is not shared by the various versions of the document (published
+in sections, or workgroup drafts). The forum objects themselves are stored
+in a specific .cps_discussions in the parent folder (workspace or content)
+and are hidden from the user.

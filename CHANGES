@@ -1,6 +1,9 @@
 Requires:
 ~~~~~~~~~
--
+- product CPSInstaller
+- CPSSchemas > 0.18.0-1
+- CPSSubscriptions > 0.7.0-1 not included
+
 New features:
 ~~~~~~~~~~~~~
 -

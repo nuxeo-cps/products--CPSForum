@@ -1,6 +1,10 @@
 Installation of CPSForum
 
-  CPSForum requires CPS3.
+  CPSForum requires:
+  - CPS3
+  - product CPSInstaller (not included in CPS-3.0, but included in CPS-3.1)
+  - CPSSchemas > 0.18.0-1 (not included in CPS-3.0, but included in CPS-3.1)
+  - CPSSubscriptions > 0.7.0-1 (not included in CPS3)
 
 - Unpack the distribution into the Products folder of your Zope installation
   and restart Zope. Check in Control_Panel/Products that there is a CPSForum

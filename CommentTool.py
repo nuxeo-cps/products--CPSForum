@@ -31,24 +31,24 @@ from Products.CMFCore.utils import UniqueObject, getToolByName
 
 from Forum import addCPSForum
 
-class CommentTool(UniqueObject, PortalFolder):
+from Products.CMFDefault.DiscussionTool import DiscussionTool
+
+from Products.CMFCore.ActionProviderBase import ActionProviderBase
+
+class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     """Comment tool, a container for forums used to comment documents."""
 
-    id = 'portal_comment'
-    meta_type = 'Comment Tool'
+    id = 'portal_discussion'
+    meta_type = 'CPS Discussion Tool'
 
     security = ClassSecurityInfo()
     
-    manage_options = (PortalFolder.manage_options[:1] + 
+    manage_options = (ActionProviderBase.manage_options +
+                      PortalFolder.manage_options[:1] + 
                       ({'label': 'Overview', 'action': 'manage_overview'},) +
                       PortalFolder.manage_options[1:])
 
-    #
-    #   ZMI methods
-    #
-    security.declareProtected(ManagePortal, 'manage_overview')
-    manage_overview = DTMLFile('explainCommentTool', _dtmldir)
-    
+
     def __init__(self):
         PortalFolder.__init__(self, self.id)
 

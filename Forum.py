@@ -23,7 +23,7 @@ from Products.CMFCore.CMFCorePermissions import View, \
 from Products.CMFCore.utils import mergedLocalRoles
 from Products.CPSCore.CPSBase import CPSBaseDocument, CPSBase_adder
 
-from Post import Post
+#from Post import Post
 
 from zLOG import LOG, DEBUG
 
@@ -36,7 +36,7 @@ factory_type_information = ({
     'product': 'CPSForum',
     'factory': 'addCPSForum',
     'filter_content_types': 1,
-    'allowed_content_types': ('Post',),
+    'allowed_content_types': (),
     'immediate_view': 'forum_edit_form',
     'allow_discussion': 0,
     'actions': ({
@@ -233,37 +233,3 @@ class CPSForum(CPSBaseDocument):
             result.append(mdata)
         return result
 
-#def addCPSForumPost(self, id, **kw):
-#    """function addCPSForumPost
-#    """
-#    post = CPSPost(id, **kw)
-#    post.parent_id = kw['parent_id']
-#    if post.parent_id is None:
-#        post.parent_id = '_FORUM_'
-#    self._setObject(id, post)
-#
-#
-#class CPSPost(CPSBaseDocument, Post):
-#    """Class Post for CPS
-#    """
-#    # Attributes:
-#    meta_type = "CPSPost"
-#    forum_meta_type = 'CPSForum'
-#    _properties = CPSBaseDocument._properties + (
-#        { 'id': 'text', 'type': 'string', 'mode': 'w',
-#          'label': 'Post author' },
-#        { 'id': 'author', 'type': 'string', 'mode': 'w',
-#          'label': 'Post author' },
-#        { 'id': 'forum_id', 'type': 'string', 'mode': 'w',
-#          'label': 'Parent Forum id' },
-#        { 'id': 'parent_id', 'type': 'string', 'mode': 'w',
-#          'label': 'Parent Post id' },
-#    )
-#
-#    def getPostInfo(self):
-#        """Return post information as tuple (url, subject, author)"""
-#        return (self.getId(), self.getSubject(), self.getAuthor())
-#
-#    #def __init__(self, id, **kw):
-#    #    """Constructor"""
-#    #    CPSBaseDocument.__init__(self, id, **kw)

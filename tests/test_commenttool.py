@@ -32,6 +32,9 @@ class TestCommentTool(CPSForumTestCase.CPSForumTestCase):
 
 
     def beforeTearDown(self):
+        data = self.pd._data
+        data.clear()
+        self.pd._data = data
         self.logout()
 
 
@@ -45,6 +48,16 @@ class TestCommentTool(CPSForumTestCase.CPSForumTestCase):
         self.pd._data[news_url] = forum_url
         self.assertEqual(self.pd.getCommentForumURL(news_url), forum_url)
 
+
+    def testGetCommentedDocument(self):
+        proxy_forum, forum = self._createForum()
+        news_url = self.proxy_doc.absolute_url(relative=1)
+        forum_url = proxy_forum.absolute_url(relative=1)
+
+        self.assert_(self.pd.getCommentedDocument(forum_url) is None)
+
+        self.pd._data[news_url] = forum_url
+        self.assertEqual(self.pd.getCommentedDocument(forum_url), news_url)
 
 def test_suite():
     suite = unittest.TestSuite()

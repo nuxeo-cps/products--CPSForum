@@ -34,6 +34,11 @@
                  class="context" value="forum_depublish" 
                  i18n:attributes="value" />
         </tal:block>
+        <tal:block condition="python:not comment_mode and is_reviewer">
+          <input type="submit" name="forum_lock_thread:method"
+                 class="context" value="forum_button_lockunlock" 
+                 i18n:attributes="value" />
+        </tal:block>
         <tal:block condition="python:comment_mode or is_reviewer">
           <input type="submit" name="forum_del_posts:method"
                  class="destructive" value="forum_delete" 

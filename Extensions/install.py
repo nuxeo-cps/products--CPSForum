@@ -151,19 +151,14 @@ def install(self):
     # Forum-specific roles and permissions
     #################################################
     pr("Verifying CPSForum permissions")
-    workspaces_forum_perm = {
+    forum_perms = {
         ForumPost: ['Manager', 'Owner', 'Member', 'WorkspaceManager',
-                    'WorkspaceMember', 'WorkspaceReader', 'ForumPoster'],
-        ForumModerate: ['Manager', 'Owner', 'WorkspaceManager', 'ForumModerator'],
+                    'WorkspaceMember', 'WorkspaceReader', 'ForumPoster',
+                    'SectionManager', 'SectionReviewer', 'SectionReader',],
+        ForumModerate: ['Manager', 'Owner', 'WorkspaceManager', 'ForumModerator',
+                        'SectionManager', 'SectionReviewer',],
         }
-    sections_forum_perm = {
-        ForumPost: ['Manager', 'Owner', 'Member', 'SectionManager',
-                    'SectionReviewer', 'SectionReader', 'ForumPoster'],
-        ForumModerate: ['Manager', 'Owner', 'SectionManager',
-                        'SectionReviewer', 'ForumModerator'],
-        }
-
-    for perm, roles in workspaces_forum_perm.items():
+    for perm, roles in forum_perms.items():
         portal.manage_permission(perm, roles, 0)
         pr("  Permission %s" % perm)
     portal.reindexObjectSecurity()

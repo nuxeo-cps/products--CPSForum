@@ -3,9 +3,12 @@ ZODB Requires:
 -
 New features:
 ~~~~~~~~~~~~~
--
+- forums can now be used to store comments/discussions about documents
+- significant changes to the appearance of Forums
+
 Bug fixes:
 ~~~~~~~~~~
+- use CPSDefault style
 - added a README file with installation procedure
 
 New internal features:

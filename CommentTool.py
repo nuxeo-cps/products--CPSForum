@@ -144,7 +144,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
             #create a wf and add chains to it
             def wfSetup(folder, chains):
                 if not '.cps_workflow_configuration' in folder.objectIds():
-                    folder.manage_addProduct['CPSWorkflow'].addCPSWorkflowConfiguration()
+                    folder.manage_addProduct['CPSWorkflow'].addConfiguration()
                     wfc = getattr(folder, '.cps_workflow_configuration')
                     for type, chain in chains.items():
                         wfc.manage_addChain(portal_type=type, chain=chain)

@@ -244,14 +244,14 @@ class CPSForum(CPSBaseDocument):
         return result
 
     security.declarePublic('getOfficialModerators')
-    def getOfficialModerators(self):
+    def getOfficialModerators(self,proxy):
+        moderator_list = self.getModerators(proxy)
         dtool = getToolByName(self, 'portal_metadirectories').members
         portal_url = getToolByName(self, 'portal_url').getPortalPath()
-        dtool_entry_url = "%s/directory_view?dirname=%s&entry_id=" \
+        dtool_entry_url = "%s/directory_getentry?dirname=%s&entry_id=" \
                           % (portal_url, dtool.id)
-
         result = []
-        for moderator in self.moderators:
+        for moderator in moderator_list:
             mdata = {'id': moderator}
             mdata['fullname'] = dtool.getEntry(moderator)[dtool.display_prop] or moderator
             mdata['homedir'] = dtool_entry_url + moderator

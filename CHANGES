@@ -7,6 +7,7 @@ New features:
 Bug fixes:
 ~~~~~~~~~~
 - use CPS default value for action metadata
+- Use more semantical HTML markup 
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

@@ -1,6 +1,3 @@
-<metal:html use-macro="here/content_lib/macros/master">
-<metal:block fill-slot="header" />
-<metal:main fill-slot="main">
 <tal:block define="descendants options/descendants;
     post_id options/post_id;
     doc here/getContent|here;
@@ -34,5 +31,3 @@
       </tal:block>
     </form>
 </tal:block>
-</metal:main>
-</metal:html>

@@ -52,18 +52,6 @@
             </td>
         </tr>
 
-        <!-- tr>
-            <td i18n:translate="L_forum image">Image</td>
-            <td tal:define="image doc/image|nothing;">
-                <table tal:condition="image"> <tr><td>
-                    <p tal:condition="image" tal:content="structure image" />
-                </td><td>
-                    <input tal:condition="image" type="checkbox" name="image_delete:boolean" />
-                    Delete
-                </td></tr> </table>
-                <input type="file" name="image:file" />
-            </td>
-        </tr -->
         <tr>
             <td />
             <td>

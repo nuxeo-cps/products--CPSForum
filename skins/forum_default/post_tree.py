@@ -246,25 +246,19 @@ def flatList(posts, sort_by):
             result += '<tr id="thread_%s" class="%s">' % \
                       (post['id'], row_class)
             if is_reviewer:
-                result += '<td><input type="checkbox" name="forum_thread_ids:list" value="%s" /></td>\n' % post['id']
-                result += '<td>%s</td>\n' % getStatusIcon(post)
+                result += '<td><input type="checkbox" name="forum_thread_ids:list" value="%s" /></td>\n<td>%s</td>\n' % (post['id'], getStatusIcon(post))
             else:
-                result += '<td>&nbsp;</td>\n'
-                result += '<td>%s</td>\n' % getStatusIcon(post)
-            result += '<td>'
-            result += getHeadline(post)
+                result += '<td>&nbsp;</td>\n<td>%s</td>\n' % getStatusIcon(post)
+            result += '<td>' + getHeadline(post)
             
-            fullname = '<a href="javascript:void(0)" onclick="javascript:window.open(\'popupdirectory_entry_view?dirname=members&id=' + post['author'] + '\',\'wclose\',\'width=500,height=200,scrollbars=yes,toolbar=no,status=no,resizable=yes,left=20,top=30\')">' +\
-                       cgi.escape(context.getPosterName(post['author'])) + '</a>'
+            fullname = '<a href="javascript:void(0)" onclick="javascript:window.open(\'popupdirectory_entry_view?dirname=members&id=' + post['author'] + '\',\'wclose\',\'width=500,height=200,scrollbars=yes,toolbar=no,status=no,resizable=yes,left=20,top=30\')">' + cgi.escape(context.getPosterName(post['author'])) + '</a>'
             result += '</td>\n<td class="forumAuthorCell">%s</td>' % fullname
             ptime = post['modified'].strftime('%d/%m/%y %H:%M')
             if is_reviewer:
                 #display thread lock status only for reviewers
-                result += '\n<td class="forumDateCell">%s</td>' % ptime
-                result += '\n<td>%s</td>' % getLockIcon(post)
+                result += '\n<td class="forumDateCell">%s</td>\n<td>%s</td></tr>\n\n' % (ptime, getLockIcon(post))
             else:
-                result += '\n<td colspan="2" class="forumDateCell">%s</td>' % ptime
-            result += '</tr>\n\n'
+                result += '\n<td colspan="2" class="forumDateCell">%s</td></tr>\n\n' % ptime
 
     return result
 

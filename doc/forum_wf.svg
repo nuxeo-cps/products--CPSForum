@@ -1,29 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg height="600" viewBox="0 0 292 282" width="800"
+<svg height="600" viewBox="0 0 314 328" width="800"
     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g style="font-family:Arial Unicode MS,sans-serif;font-style:normal;font-weight:normal;font-size:12">
-        <ellipse cx="99" cy="27" rx="27" ry="18" style="fill:rgb(115,191,115);stroke:rgb(66,105,66)"/>
-        <ellipse cx="98" cy="118" rx="27" ry="18" style="fill:rgb(115,191,115);stroke:rgb(66,105,66)"/>
-        <text style="fill:rgb(66,105,66)" text-anchor="start" x="78" y="121">created</text>
-        <path d="M98 45L98 101" style="fill:none;stroke:rgb(90,89,206)"/>
-        <polygon points="98,106 94,98 102,98" style="fill:rgb(90,89,206);stroke:none"/>
-        <ellipse cx="238" cy="190" rx="27" ry="18" style="fill:rgb(115,191,115);stroke:rgb(66,105,66)"/>
-        <text style="fill:rgb(66,105,66)" text-anchor="start" x="216" y="193">pending</text>
-        <text style="fill:rgb(90,89,206)" text-anchor="start" x="34" y="72">cps:create</text>
-        <ellipse cx="98" cy="245" rx="33" ry="18" style="fill:rgb(115,191,115);stroke:rgb(66,105,66)"/>
-        <text style="fill:rgb(66,105,66)" text-anchor="start" x="71" y="248">published</text>
-        <path d="M98 135L98 228" style="fill:none;stroke:rgb(90,89,206)"/>
-        <text style="fill:rgb(90,89,206)" text-anchor="start" x="1" y="179">cps:auto_publish</text>
-        <polygon points="98,233 94,225 102,225" style="fill:rgb(90,89,206);stroke:none"/>
-        <path d="M124 118Q190 119 217 127 238 134 237 173" style="fill:none;stroke:rgb(90,89,206)"/>
-        <polygon points="237,178 233,170 241,170" style="fill:rgb(90,89,206);stroke:none"/>
-        <text style="fill:rgb(90,89,206)" text-anchor="start" x="167" y="113">cps:auto_moderate</text>
-        <path d="M237 208Q237 218 209 232 181 246 131 245" style="fill:none;stroke:rgb(90,89,206)"/>
-        <polygon points="126,245 134,241 134,249" style="fill:rgb(90,89,206);stroke:none"/>
-        <text style="fill:rgb(90,89,206)" text-anchor="start" x="195" y="251">cps:publish</text>
-        <path d="M106 227Q115 206 151 206 186 205 213 197" style="fill:none;stroke:rgb(90,89,206)"/>
-        <polygon points="218,196 211,202 209,194" style="fill:rgb(90,89,206);stroke:none"/>
-        <text style="fill:rgb(90,89,206)" text-anchor="start" x="124" y="197">cps:unpublish</text>
+        <ellipse cx="134" cy="27" rx="27" ry="18" style="fill:rgb(115,191,115);stroke:rgb(66,105,66)"/>
+        <ellipse cx="135" cy="109" rx="27" ry="18" style="fill:rgb(115,191,115);stroke:rgb(66,105,66)"/>
+        <text style="fill:rgb(66,105,66)" text-anchor="start" x="115" y="112">created</text>
+        <ellipse cx="264" cy="172" rx="27" ry="18" style="fill:rgb(115,191,115);stroke:rgb(66,105,66)"/>
+        <text style="fill:rgb(66,105,66)" text-anchor="start" x="242" y="175">pending</text>
+        <ellipse cx="135" cy="218" rx="33" ry="18" style="fill:rgb(115,191,115);stroke:rgb(66,105,66)"/>
+        <text style="fill:rgb(66,105,66)" text-anchor="start" x="108" y="221">published</text>
+        <ellipse cx="266" cy="280" rx="41" ry="18" style="fill:rgb(115,191,115);stroke:rgb(66,105,66)"/>
+        <text style="fill:rgb(66,105,66)" text-anchor="start" x="232" y="283">unpublished</text>
+        <ellipse cx="27" cy="280" rx="27" ry="18" style="fill:rgb(115,191,115);stroke:rgb(66,105,66)"/>
+        <text style="fill:rgb(66,105,66)" text-anchor="start" x="5" y="283">rejected</text>
+        <path d="M162 108Q262 106 263 154" style="fill:none;stroke:rgb(90,89,206)"/>
+        <polygon points="263,159 259,151 267,151" style="fill:rgb(90,89,206);stroke:none"/>
+        <path d="M135 127L135 200" style="fill:none;stroke:rgb(90,89,206)"/>
+        <polygon points="135,205 131,197 139,197" style="fill:rgb(90,89,206);stroke:none"/>
+        <path d="M264 190Q263 221 168 219" style="fill:none;stroke:rgb(90,89,206)"/>
+        <polygon points="163,219 171,215 171,223" style="fill:rgb(90,89,206);stroke:none"/>
+        <path d="M225 279Q136 278 135 236" style="fill:none;stroke:rgb(90,89,206)"/>
+        <polygon points="135,231 139,239 131,239" style="fill:rgb(90,89,206);stroke:none"/>
+        <path d="M102 218Q26 217 27 262" style="fill:none;stroke:rgb(90,89,206)"/>
+        <polygon points="27,267 23,259 31,259" style="fill:rgb(90,89,206);stroke:none"/>
+        <path d="M158 231Q185 247 223 247 261 248 263 262" style="fill:none;stroke:rgb(90,89,206)"/>
+        <polygon points="264,267 259,260 267,258" style="fill:rgb(90,89,206);stroke:none"/>
+        <text style="fill:rgb(90,89,206)" text-anchor="start" x="38" y="164">cps:auto_publish</text>
+        <text style="fill:rgb(90,89,206)" text-anchor="start" x="186" y="205">cps:publish</text>
+        <text style="fill:rgb(90,89,206)" text-anchor="start" x="195" y="241">cps:unpublish</text>
+        <text style="fill:rgb(90,89,206)" text-anchor="start" x="157" y="265">cps:publish</text>
+        <text style="fill:rgb(90,89,206)" text-anchor="start" x="46" y="242">cps:reject</text>
+        <text style="fill:rgb(90,89,206)" text-anchor="start" x="184" y="100">cps:auto_moderate</text>
+        <text style="fill:rgb(90,89,206)" text-anchor="start" x="70" y="68">cps:create</text>
+        <path d="M135 44L135 92" style="fill:none;stroke:rgb(90,89,206)"/>
+        <polygon points="135,97 131,89 139,89" style="fill:rgb(90,89,206);stroke:none"/>
     </g>
 </svg>
 <!-- Generated by ZVTM (Zoomable Visual Transformation Machine) v0.8.2 http://zvtm.sourceforge.net-->

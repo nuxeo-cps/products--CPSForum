@@ -55,8 +55,8 @@ class CommentTool(UniqueObject, PortalFolder):
     #
     #   'portal_comment' interface methods
     #
-    security.declarePublic('getDiscussionFor')
-    def getDiscussionFor(self, proxy):
+    security.declarePublic('getDiscussionForumFor')
+    def getDiscussionForumFor(self, proxy):
         '''Get the CPSForum object that applies to this proxy/doc
         '''
 

@@ -43,7 +43,7 @@ def initialize(registrar):
         extra_constructors=contentConstructors,
         fti=fti
     ).initialize(registrar)
-    utils.ToolInit('CPS Comment Tool',
+    utils.ToolInit('CPS Discussion Tool',
         tools=tools,
         product_name='CPSForum',
         icon='tool.gif',

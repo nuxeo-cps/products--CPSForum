@@ -113,12 +113,12 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
             result += getHeadline(post)
             
             fullname = context.getPosterName(post['author'])
-            result += '</td>\n<td>%s</td>' % fullname
+            result += '</td>\n<td class="forumAuthorCell">%s</td>' % fullname
             
             ptime = post['modified'].strftime('%d/%m/%y %H:%M')
             if is_reviewer:
                 #display thread lock status only for reviewers
-                result += '\n<td>%s</td>' % ptime
+                result += '\n<td class="forumDateCell">%s</td>' % ptime
                 result += '\n<td>%s</td>' % getLockIcon(post)
             else:
                 result += '\n<td colspan="2">%s</td>' % ptime

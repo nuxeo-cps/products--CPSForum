@@ -21,8 +21,9 @@ if (not parent_id) or parent_id.isspace():
     #of None when going through "New Thread"
     parent_id = None
 
-new_id = forum.addPost(subject=subject, author=author,
-                            message=message, parent_id=parent_id)
+new_id = forum.addPost(subject=subject, author=author, message=message,
+                       parent_id=parent_id, proxy=context,
+                       comment_mode=comment_mode)
 
 if REQUEST:
     if comment_mode:

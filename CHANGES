@@ -3,7 +3,8 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
--
+- threads are now sorted by most recent post
+
 Bug fixes:
 ~~~~~~~~~~
 - display "Modify" button only for posts that are not published (thus not

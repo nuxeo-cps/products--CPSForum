@@ -7,7 +7,9 @@ New features:
 
 Bug fixes:
 ~~~~~~~~~~
--
+- SMTP error when list of moderators is empty (new post)
+- error when posting first comment about a document
+
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

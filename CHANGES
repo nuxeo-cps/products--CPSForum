@@ -3,11 +3,12 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
-- date/author/subject sorting can be reversed
+- new sorting criterion : workflow status (moderation)
+- date/author/subject/wf sorting can be reversed
 
 Bug fixes:
 ~~~~~~~~~~
--
+- removed border around checkboxes (MSIE, flat sorting mode)
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

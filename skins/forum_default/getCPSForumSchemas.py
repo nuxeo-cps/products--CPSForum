@@ -28,6 +28,10 @@ forum_schema = {
         'type': 'CPS Int Field',
         'data': {'is_searchabletext': 0,
                  'default_expr': 'python:0',}},
+    'tree_display': {
+        'type': 'CPS String Field',
+        'data': {'is_searchabletext': 0,
+                 'default_expr': 'string:title',}},
     'threads_per_page': {
         'type': 'CPS Int Field',
         'data': {'is_searchabletext': 0,
@@ -46,6 +50,12 @@ forumpost_schema = {
         'type': 'CPS String Field',
         'data': {
             'is_searchabletext': 1,
+            },
+        },
+    'links': {
+        'type': 'CPS String Field',
+        'data': {
+            'is_searchabletext': 0,
             },
         },
     }

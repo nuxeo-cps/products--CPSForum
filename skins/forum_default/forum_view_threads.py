@@ -10,15 +10,17 @@ try:
 except AttributeError:
     sort_by = None
 
-if sort_by is None or sort_by == 'threads':
+if forum.tree_display != 'title' or (sort_by is not None and sort_by != 'threads'):
+    post_proxies = context.objectValues(['CPS Proxy Document'])
+    result = [forum.getPostInfo(proxy) for proxy in post_proxies]
+else:
     result = []
     for root_post in forum.getThreads(proxy=context):
         result.append((root_post, forum.getDescendants(root_post['id'],
                                                        proxy=context)))
-else:
-    post_proxies = context.objectValues(['CPS Proxy Document'])
-    result = [forum.getPostInfo(proxy) for proxy in post_proxies]
     
 return context.forum_view_threads_main(post_id=post_id, descendants=result,
-                                       is_reviewer=is_reviewer, forum=forum)
+                                       is_reviewer=is_reviewer, forum=forum,
+                                       sort_by=sort_by,
+                                       display_mode=forum.tree_display)
 

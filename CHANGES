@@ -6,7 +6,9 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
--
+- display "Modify" button only for posts that are not published (thus not
+  modifiable)
+
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

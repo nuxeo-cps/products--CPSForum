@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
-"POT-Creation-Date: 2004-05-11 15:36default\n"
+"POT-Creation-Date: 2004-06-11 13:32default\n"
 "PO-Revision-Date: 2004-02-19 12:43+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -216,6 +216,10 @@ msgstr "Er zijn momenteel geen opmerkingen aan dit document gekoppeld"
 #, fuzzy
 msgid "forum_psm_comments_deactivated"
 msgstr "Je moet je naam of bijnaam invullen"
+
+#, fuzzy
+msgid "forum_psm_message_posted"
+msgstr "Boodschap"
 
 msgid "action_activate_comments"
 msgstr ""

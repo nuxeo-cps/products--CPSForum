@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es-CPSForum\n"
-"POT-Creation-Date: 2004-05-11 15:36default\n"
+"POT-Creation-Date: 2004-06-11 13:32default\n"
 "PO-Revision-Date: 2004-03-27 20:39+0100\n"
 "Last-Translator: Álvaro Tejero Cantero <alvaro@antalia.com>\n"
 "Language-Team:  EspaÃ±ol <es@li.org>\n"
@@ -261,6 +261,11 @@ msgstr "Debe introducir un nombre o seudónimo"
 #, fuzzy
 msgid "forum_psm_comments_deactivated"
 msgstr "Debe introducir un nombre o seudónimo"
+
+#    <td>Message</td>
+#, fuzzy
+msgid "forum_psm_message_posted"
+msgstr "Mensaje"
 
 msgid "action_activate_comments"
 msgstr ""

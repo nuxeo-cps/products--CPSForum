@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2004-05-11 15:36default\n"
-"PO-Revision-Date: 2004-05-11 11:12+0200\n"
+"POT-Creation-Date: 2004-06-11 13:32default\n"
+"PO-Revision-Date: 2004-06-11 13:32+0200\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -211,6 +211,9 @@ msgstr "Comments are now authorized."
 msgid "forum_psm_comments_deactivated"
 msgstr "Comments are no longer authorized."
 
+msgid "forum_psm_message_posted"
+msgstr "Message posted"
+
 msgid "action_activate_comments"
 msgstr "Authorize comments"
 
@@ -338,3 +341,4 @@ msgstr "Number of discussion threads per page:"
 
 #~ msgid "forum_moderator"
 #~ msgstr "Moderator"
+

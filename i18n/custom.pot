@@ -40,6 +40,9 @@ msgstr ""
 msgid "forum_psm_comments_deactivated"
 msgstr ""
 
+msgid "forum_psm_message_posted"
+msgstr ""
+
 msgid "action_activate_comments"
 msgstr ""
 

@@ -47,7 +47,7 @@
         <tr>
           <td>
           <form method="POST" tal:attributes="action here/absolute_url" name="post_form"
-                tal:condition="python:can_post or comment_mode">
+                tal:condition="python:not here.locked_thread(post_id=post_id,forum=forum) and (can_post or comment_mode)">
             <input type="hidden" name="parent_id:string"
                    tal:attributes="value post_id">
             <input type="hidden" name="comment_mode:int"

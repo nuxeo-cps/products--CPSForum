@@ -25,7 +25,7 @@ from Products.CPSCore.CPSBase import CPSBaseDocument, CPSBase_adder
 
 from Post import Post
 
-from zLOG import LOG,DEBUG
+from zLOG import LOG, DEBUG
 
 factory_type_information = ({ 
     'id': 'Forum',
@@ -146,7 +146,7 @@ class CPSForum(CPSBaseDocument):
         """Add a post"""
         discussion = self.portal_discussion.getDiscussionFor(self)
         post_id = discussion.createReply(
-               kw['subject'], kw['message'],kw['author'])
+               kw['subject'], kw['message'], kw['author'])
         post = discussion.getReply(post_id)
         parent_id = kw.get('parent_id', None)
         post.in_reply_to = parent_id
@@ -177,6 +177,7 @@ class CPSForum(CPSBaseDocument):
     def getPostReplies(self, post_id):
         """Return replies to post <post_id>"""
         discussion = self.portal_discussion.getDiscussionFor(self)
+        # FIXME: is it really the right algorithm ?
         result = [ self.getPostInfo(post)
                    for post in discussion.objectValues()
                    if post.in_reply_to == post_id ]

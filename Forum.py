@@ -20,7 +20,7 @@ from AccessControl import ClassSecurityInfo
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.CMFCorePermissions import View, AddPortalContent, \
      ManageProperties, ChangePermissions
-from Products.NuxUserGroups.CatalogToolWithGroups import mergedLocalRoles
+from Products.CMFCore.utils import mergedLocalRoles
 from Products.CPSCore.CPSBase import CPSBaseDocument, CPSBase_adder
 
 from Post import Post

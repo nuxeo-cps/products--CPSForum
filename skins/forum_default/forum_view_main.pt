@@ -9,7 +9,6 @@
                    replies python:post and doc.getPostReplies(post_id);
                    image doc/image|nothing;
                    description doc/description|nothing;
-                   portal_message request/portal_message|nothing;
                    roles python:here.portal_membership.getCPSCandidateLocalRoles(here);
                    is_reviewer python: 'ForumModerator' in roles">
 

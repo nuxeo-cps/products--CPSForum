@@ -11,9 +11,9 @@
     dtool python:here.portal_directories.members;
     errormsg options/error_message|nothing;
     is_poster python:member.has_permission('Forum Post', here);
-    can_post python:here.isAllowedToPost(is_poster=is_poster,is_anon=isAnon)">
+    can_post python:here.isAllowedToPost(is_poster=is_poster,is_anon=isAnon,forum=doc)">
 
-<tal:block tal:condition="not:can_post">
+<tal:block tal:condition="python:not(comment_mode or can_post)">
   <p i18n:translate="forum_post_unauthorize">You are not authorized to post on this forum</p>
 </tal:block>
 

@@ -12,7 +12,7 @@
                    member python:here.portal_membership.getAuthenticatedMember();
                    is_poster python:member.has_permission('Forum Post', here);
                    is_reviewer python:member.has_permission('Forum Moderate', here);
-                   can_post python:here.isAllowedToPost(is_poster=is_poster,is_anon=isAnon)">
+                   can_post python:here.isAllowedToPost(is_poster=is_poster,is_anon=isAnon,forum=doc)">
 
   <div class="documentActions" tal:condition="can_post">
     <a href="" i18n:translate=""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "POT-Creation-Date: 2004-02-19 12:05default\n"
-"PO-Revision-Date: 2004-02-19 12:09+0100\n"
+"PO-Revision-Date: 2004-02-19 12:43+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgstr "a priori"
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_allow_anon_posts"
-msgstr "???"
+msgstr "Anonieme berichten toestaan"
 
 #.   <td>Author</td>
 #.   <td class="forumsubheader" width="100">Author</td>
@@ -104,7 +104,7 @@ msgstr "Opmerkingen"
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_label_lock_forum"
-msgstr "Lock forum"
+msgstr "Vergrendel het forum (Berichten kunnen alleen gelezen worden)"
 
 #.   <td>Message</td>
 #: from ../skins/forum_default/forum_post_form.pt
@@ -120,7 +120,7 @@ msgstr "Moderatie"
 #.   <p>This forum is locked. You cannot post new messages to it.</p>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_msg_forum_frozen"
-msgstr "Lock forum (read only)"
+msgstr "Het forum is vergrendeld. Je kan geen nieuwe berichten plaatsen."
 
 #.   <a attributes="href string:${context_url}/forum_post_form" href="">
 #.         forum_new_thread
@@ -153,7 +153,7 @@ msgstr "???"
 #.   <span condition="python:errormsg == 'error_author'" class="forumerror">Author field must be filled</span>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_name_required"
-msgstr "???"
+msgstr "Je moet je naam of bijnaam invullen"
 
 #.   <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt

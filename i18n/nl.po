@@ -25,22 +25,22 @@ msgstr ""
 #.   <option repeat="role roles" attributes="value role" content="role"> Role1 </option>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "Role1"
-msgstr "Role1"
+msgstr "Rol1"
 
 #.   <input value="button_assign_roles" type="submit" />
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "button_assign_roles"
-msgstr "Assign roles"
+msgstr "Ken rollen toe"
 
 #.   <input value="button_delete" type="submit" />
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "button_delete"
-msgstr "Delete"
+msgstr "Verwijder"
 
 #.   <input value="button_search" name="role_submit" type="submit" />
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "button_search"
-msgstr "Search"
+msgstr "Zoeken"
 
 #.   <option value="0">a posteriori</option>
 #.   <option attributes="selected python:not moderation_mode" value="0">
@@ -65,58 +65,58 @@ msgstr "a priori"
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
-msgstr "Author"
+msgstr "Auteur"
 
 #.   <td class="forumsubheader" width="80">Date</td>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_date"
-msgstr "Date"
+msgstr "Datum"
 
 #.   <input value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
-msgstr "Delete"
+msgstr "Verwijder"
 
 #.   <input value="forum_depublish" class="context" name="forum_unpublish_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_depublish"
-msgstr "Unpublish"
+msgstr "Maak publicatie ongedaan"
 
 #.   <td>Description</td>
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_description"
-msgstr "Description"
+msgstr "Omschrijving"
 
 #.   <h4>Comments</h4>
 #: from ../skins/forum_default/forum_comment_lib.pt
 msgid "forum_label_comments"
-msgstr "Comments"
+msgstr "Opmerkingen"
 
 #.   <td>Message</td>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_message"
-msgstr "Message"
+msgstr "Boodschap"
 
 #.   <td>Moderation</td>
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_moderation"
-msgstr "Moderation"
+msgstr "Moderatie"
 
 #.   <td>Moderators</td>
 #.   <block>Moderators</block>
 #: from ../skins/forum_default/forum_edit_form.pt
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_moderators"
-msgstr "Moderators"
+msgstr "Moderatoren"
 
 #.   <a attributes="href string:${context_url}/forum_post_form" href="">
 #.         forum_new_thread
 #.       </a>
 #: from ../skins/forum_default/forum_view_main.pt
 msgid "forum_new_thread"
-msgstr "New thread"
+msgstr "Nieuwe discussie"
 
 #.   <td class="forumempty">
 #.             No comment associated with this document.
@@ -127,68 +127,68 @@ msgstr "New thread"
 #: from ../skins/forum_default/forum_comment_lib.pt
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_no_message"
-msgstr "No message"
+msgstr "Geen boodschap"
 
 #.   <input value="forum_post" class="standalone" name="forum_post:method" type="submit" />
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_post"
-msgstr "Post"
+msgstr "Versturen"
 
 #.   <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_publish"
-msgstr "Publish"
+msgstr "Publiceren"
 
 #.   <input value="forum_reply" class="context" name="forum_post_reply:method" type="submit">
 #.              </input>
 #: from ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
-msgstr "Reply"
+msgstr "Beantwoorden"
 
 #.   <td>Subject</td>
 #.   <td class="forumsubheader">Subject</td>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_subject"
-msgstr "Subject"
+msgstr "Onderwerp"
 
 #.   <td>Titre</td>
 #.   <td>Title</td>
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
-msgstr "Title"
+msgstr "Titel"
 
 #.   <h2>
 #.    Assign local roles: Search Members
 #.   </h2>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "heading_local_roles_search_members"
-msgstr "Assign local roles: Search Members"
+msgstr "Wijs locale rollen toe: Zoek naar leden"
 
 #.   <h2>
 #.       Assign local roles: Search Results
 #.   </h2>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "heading_local_roles_search_results"
-msgstr "Assign local roles: Search Results"
+msgstr "Wijs locale rollen toe: Zoek naar resultaten"
 
 #.   <th style="text-align:left;">
 #.           Email address
 #.       </th>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_email"
-msgstr "Email address"
+msgstr "Email adres"
 
 #.   <span>Group</span>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_group"
-msgstr "Group"
+msgstr "Groep"
 
 #.   <option value="groupname">Group Name</option>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_group_name"
-msgstr "Group Name"
+msgstr "Groepsname"
 
 #.   <span>in</span>
 #: from ../skins/forum_default/forum_localrole_form.pt
@@ -198,22 +198,22 @@ msgstr "in"
 #.   <th>Search by</th>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_local_roles_search_by"
-msgstr "Search by"
+msgstr "Zoek volgens"
 
 #.   <th>Search Term</th>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_local_roles_search_term"
-msgstr "Search Term"
+msgstr "Zoek condities"
 
 #.   <span>Name</span>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_name"
-msgstr "Name"
+msgstr "Naam"
 
 #.   <span>Role(s)</span>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_roles"
-msgstr "Role(s)"
+msgstr "Rol(len)"
 
 #.   <th style="text-align:left;">
 #.           User
@@ -221,66 +221,66 @@ msgstr "Role(s)"
 #.   <span>User</span>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_user"
-msgstr "User"
+msgstr "Gebruiker"
 
 #.   <option value="email">Email Address</option>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_user_email"
-msgstr "Email Address"
+msgstr "Email Adres"
 
 #.   <option value="fullname">User Name</option>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_user_name"
-msgstr "Name"
+msgstr "Naam"
 
 #.   <p>
 #.      These users currently have local roles assigned in this folder:
 #.   </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_assigned_users"
-msgstr " These users currently have local roles assigned in this folder:"
+msgstr " Deze gebruikers hebben momenteel locale rollen in deze map:"
 
 #.   <h2>
 #.       Currently assigned local roles
 #.   </h2>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_currently_assigned"
-msgstr "Currently assigned local roles"
+msgstr "Huidige toegewezen locale rollen"
 
 #.   <p>
 #.       Sorry, no groups matched your search.
 #.    </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_no_results_member"
-msgstr "Sorry, no groups matched your search."
+msgstr "Sorry, geen groepen voldeden aan uw zoek criteria."
 
 #.   <p>
 #.       Sorry, no members matched your search.
 #.    </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_no_results_members"
-msgstr "Sorry, no members matched your search."
+msgstr "Sorry, geen leden voldeden aan uw zoek criteria."
 
 #.   <th colspan="2">
 #.           Role to assign:
 #.       </th>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_role_to_assign"
-msgstr "Role to assign:"
+msgstr "Toe te wijzen rol:"
 
 #.   <p>
 #.       Select Group(s) and a role to assign:
 #.    </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_select_groups_and_roles"
-msgstr "Select Group(s) and a role to assign:"
+msgstr "Selecteer groep(en) en een rol om toe te wijzen:"
 
 #.   <p>
 #.       Select Member(s) and a role to assign:
 #.    </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_select_members_and_roles"
-msgstr "Select Member(s) and a role to assign:"
+msgstr "Selecteer lid/leden en een rol om toe te wijzen:"
 
 #.   <span>
 #.     <i>Roles in underlined </i> are set in parent folders.
@@ -288,37 +288,37 @@ msgstr "Select Member(s) and a role to assign:"
 #.   </span>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "link_local_roles_underlined"
-msgstr "<i>Roles in underlined </i> are set in parent folders.Follow the links to manage the local roles in these folders."
+msgstr "<i>Onderstreepte rollen</i> bevinden zich in bovenliggende mappen. Volg de koppeling om de locale rollen te beheren in die mappen."
 
 msgid "forum_modify"
-msgstr "Modify"
+msgstr "Wijzig"
 
 msgid "forum_label_postedby"
-msgstr "posted by"
+msgstr "Gepost door"
 
 #~ msgid "forum_comment"
-#~ msgstr "Comment"
+#~ msgstr "Opmerkingen"
 
 #~ msgid "forum_add_comment"
-#~ msgstr "Post Comment"
+#~ msgstr "Post opmerkingen"
 
 #~ msgid "forum_doc_comment"
-#~ msgstr "Comment"
+#~ msgstr "Opmerkingen"
 
 #~ msgid "forum_no_comment"
-#~ msgstr "There are currently no comments associated with this document"
+#~ msgstr "Er zijn momenteel geen opmerkingen aan dit document gekoppeld"
 
 #, fuzzy
 #~ msgid "forum_subscribe"
-#~ msgstr "Subject"
+#~ msgstr "Onderwerp"
 
 #, fuzzy
 #~ msgid "forum_subscribe_req"
-#~ msgstr "Subject"
+#~ msgstr "Onderwerp"
 
 #, fuzzy
 #~ msgid "forum_unsubscribe"
-#~ msgstr "Subject"
+#~ msgstr "Onderwerp"
 
 #~ msgid "forum_moderator"
 #~ msgstr "Moderator"

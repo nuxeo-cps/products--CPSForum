@@ -6,18 +6,20 @@
                        can_post options/can_post | nothing;
                        published python:here.portal_workflow.getInfoFor(post,
                                    'review_state', 'nostate') == 'published';
-                       frm_start options/frm_start | nothing">
-<tal:block condition="python:is_reviewer or published">
+                       frm_start options/frm_start | nothing;
+                       member_id python:here.portal_membership.getAuthenticatedMember().getId();
+                       ">
+<tal:block condition="python:is_reviewer or published or member_id == post_doc.author">
   <tr>
     <td colspan="2">
-      <div class="forumPostTitle"
-           tal:condition="python:published or (is_reviewer and not published)"
-           tal:content="post/Title">
+      <div class="forumPostTitle">
+        <tal:block tal:replace="post/Title"/>
         <tal:block tal:define="mcat python:here.Localizer.default" 
                                tal:replace="python:'('+mcat('forum_label_postedby').encode('ISO-8859-15', 'ignore')+' '+here.getPosterName(post_doc.author)+')'"/>
       </div>
-      <div class="forumPostText"
-           tal:content="post_doc/Description">Message</div>
+      <div class="forumPostText">
+        <pre tal:content="post_doc/Description">Message</pre>
+      </div>
       <form method="post" tal:attributes="action here/absolute_url"
             name="post_form"
             tal:define="locked python:here.locked_thread(post=post,forum=forum)"
@@ -29,7 +31,7 @@
         <input type="submit" name="forum_post_reply:method"
                class="standalone" value="forum_reply"
                i18n:attributes="value" />
-        <input tal:condition="python:here.portal_membership.checkPermission('Forum Moderate', here)"
+        <input tal:condition="is_reviewer"
                type="submit" name="forum_post_modify:method"
                class="standalone" value="forum_modify"
                i18n:attributes="value" />

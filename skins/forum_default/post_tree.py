@@ -1,4 +1,4 @@
-##parameters=descendants=(), post_id='', frm_start=0
+##parameters=descendants=(), post_id='', frm_start=0, sort_by=None, display_mode='title'
 
 # $Id$
 
@@ -13,10 +13,10 @@ username = member.getId()
 is_reviewer = context.portal_membership.checkPermission('Forum Moderate', context)
 try:
     session_data = context.session_data_manager.getSessionData()
-    sort_by = session_data.get('frm_sort', None)
+##    sort_by = session_data.get('frm_sort', None)
 except AttributeError:
     session_data = None
-    sort_by = None
+##    sort_by = None
 
 tree_display = context.getContent().tree_display
 
@@ -95,6 +95,64 @@ def threadSorter(x,y):
     else:
         return 0
 
+def subjectSorter(x,y):
+
+    x_subject = x['subject']
+    y_subject = y['subject']
+    # do not take Re: into account when sorting
+    if x_subject.lower().startswith('re: '):
+        x_subject = x_subject[4:]
+    if y_subject.lower().startswith('re: '):
+        y_subject = y_subject[4:]
+    if x_subject > y_subject:
+        return 1
+    elif x_subject < y_subject:
+        return -1
+    else:
+        if x['modified'] > y['modified']:
+            return -1
+        elif x['modified'] < y['modified']:
+            return 1
+        else:
+            return 0
+
+def authorSorter(x,y):
+
+    x_author = x['author']
+    y_author = y['author']
+    if x_author > y_author:
+        return 1
+    elif x_author < y_author:
+        return -1
+    else:
+        if x['modified'] > y['modified']:
+            return -1
+        elif x['modified'] < y['modified']:
+            return 1
+        else:
+            return 0
+
+def dateSorter(x,y):
+        
+    if x['modified'] > y['modified']:
+        return -1
+    elif x['modified'] < y['modified']:
+        return 1
+    else:
+        x_subject = x['subject']
+        y_subject = y['subject']
+        # do not take Re: into account when sorting
+        if x_subject.lower().startswith('re: '):
+            x_subject = x_subject[4:]
+        if y_subject.lower().startswith('re: '):
+            y_subject = y_subject[4:]
+        if x_subject > y_subject:
+            return -1
+        elif x_subject < y_subject:
+            return 1
+        else:
+            return 0
+
 def getBranches(branches, id='ROOT', level=0, counter=0):
 
     # sort threads by most recent post (a thread whose most recent post is
@@ -165,10 +223,55 @@ def displayBranches(branches, id='ROOT', level=0, counter=0):
     return (result, counter)
 
 
-if sort_by is None or sort_by == 'threads':
-    (result, dummy) = getBranches(descendants)
+def flatList(posts, sort_by):
+
+    result = ''
+    even = 1
+
+    if sort_by is not None:
+        if sort_by == 'subject':
+            posts.sort(subjectSorter)
+        elif sort_by == 'date':
+            posts.sort(dateSorter)
+        elif sort_by == 'author':
+            posts.sort(authorSorter)
+
+    for post in posts:
+        if post['published'] or is_reviewer or username == post['author']:
+            if even:
+                row_class = 'even'
+            else:
+                row_class = 'odd'
+            even = not even
+            result += '<tr id="thread_%s" class="%s">' % \
+                      (post['id'], row_class)
+            if is_reviewer:
+                result += '<td><input type="checkbox" name="forum_thread_ids:list" value="%s" /></td>\n' % post['id']
+                result += '<td>%s</td>\n' % getStatusIcon(post)
+            else:
+                result += '<td>&nbsp;</td>\n'
+                result += '<td>%s</td>\n' % getStatusIcon(post)
+            result += '<td>'
+            result += getHeadline(post)
+            
+            fullname = '<a href="javascript:void(0)" onclick="javascript:window.open(\'popupdirectory_entry_view?dirname=members&id=' + post['author'] + '\',\'wclose\',\'width=500,height=200,scrollbars=yes,toolbar=no,status=no,resizable=yes,left=20,top=30\')">' +\
+                       cgi.escape(context.getPosterName(post['author'])) + '</a>'
+            result += '</td>\n<td class="forumAuthorCell">%s</td>' % fullname
+            ptime = post['modified'].strftime('%d/%m/%y %H:%M')
+            if is_reviewer:
+                #display thread lock status only for reviewers
+                result += '\n<td class="forumDateCell">%s</td>' % ptime
+                result += '\n<td>%s</td>' % getLockIcon(post)
+            else:
+                result += '\n<td colspan="2" class="forumDateCell">%s</td>' % ptime
+            result += '</tr>\n\n'
+
+    return result
+
+if display_mode != 'title' or (sort_by is not None and sort_by != 'threads'):
+    result = flatList(descendants, sort_by)
 else:
-    (result, dummy) = (None, None)
+    (result, dummy) = getBranches(descendants)
 
 return result
 

@@ -47,7 +47,7 @@ class Post:
     attachment = None
     forum_id = None
     parent_id = '_FORUM_'
-    
+
     meta_type = 'Post'
     forum_meta_type = 'Forum'
 
@@ -56,40 +56,40 @@ class Post:
     # Operations
     def getSubject(self):
         """function getSubject
-        
+
         returns: string the subject
         """
         return self.title
 
     getTitle = getSubject
-    
-    security.declareProtected(ManageProperties, 'setSubject')    
+
+    security.declareProtected(ManageProperties, 'setSubject')
     def setSubject(self, subject=None):
         """function setSubject
-        
+
         subject: string the subject
         """
         if not subject:
             subject = self.getId()
-        
+
         self.title = subject
 
     setTitle = setSubject
-    
+
     def getAuthor(self):
         """function getAuthor
-        
+
         returns: string the author
         """
         if self.author:
-            return self.author   
+            return self.author
 
         return self.Creator()
-    
+
     security.declareProtected(ManageProperties, 'setAuthor')
     def setAuthor(self, member_id=None):
         """function setAuthor
-        
+
         author: string the author *member id*
         """
         pm = getToolByName(self, "portal_membership")
@@ -102,33 +102,33 @@ class Post:
         #  getAuthor is in charge of
         #  returning self.Creator()
         self.author = member
-    
+
     def getMessage(self):
         """function getMessage
-        
+
         returns: string the *html cooked* message
         """
         return self.text
-    
+
     def getAttachment(self):
         """function getAttachment
-        
+
         returns None
         """
         return self.attachment
-    
+
     security.declareProtected(ManageProperties, 'setMessage')
     def setMessage(self, message):
         """function setMessage
-        
+
         message: string the *structured text mix* message
         """
         # should be moved in cmf
         self.edit(text_format='structured_text', text=message)
-    
+
     def getPostUID(self):
         """function getPostUID
-        
+
         NEARLY UNUSED - shall disappear
         making unique ids in zope ids
         in general is the rule
@@ -140,19 +140,19 @@ class Post:
             self._uid = self.getId() + "_" + self.bobobase_modification_time()
 
         return self._uid
-    
+
     def getPostInfo(self):
         """function getPostInfo
-        
+
         returns tuple (url, subject, author)
         """
         return (self.absolute_url(), self.getSubject(), self.getAuthor())
-    
+
     def getReplies(self):
         """function getPostReplies
-        
+
         post: the parent Post
-        
+
         returns tuple Brains of Post
         """
         return self.getForum().getPostReplies(self)
@@ -160,7 +160,7 @@ class Post:
 
     def getForum(self):
         """function getForum
-        
+
         returns: Forum the parent forum
         """
         query = {}
@@ -171,10 +171,10 @@ class Post:
             return results[0].getObject()
         else:
             raise KeyError, "No Forum with id = [%s] exists. Post '%s' is orphan." % (
-                    self.forum_id, 
+                    self.forum_id,
                     self.getId(),
                 )
-    
+
     def __repr__(self):
         return "<Post '%s' at forum '%s', " \
             "{'subject':\"%s\",'author':\"%s\",'message':\"%s...\"}>" % (
@@ -184,4 +184,3 @@ class Post:
                 self.getAuthor(),
                 self.getMessage()[:16],
             )
-

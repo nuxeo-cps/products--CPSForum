@@ -37,7 +37,7 @@ for user in dict_roles.keys():
 
 # List local roles according to the context
 cps_roles = mtool.getCPSCandidateLocalRoles(context)
-
+cps_roles.reverse()
 
 from zLOG import LOG, DEBUG
 

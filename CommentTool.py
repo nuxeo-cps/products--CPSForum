@@ -56,7 +56,15 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
         PortalFolder.__init__(self, self.id)
 
     #
-    #   'portal_comment' interface methods
+    # ZMI methods
+    security.declareProtected(ManagePortal, 'manage_overview')
+    manage_overview = DTMLFile('dtml/explainCommentTool')
+
+    #
+    # 'portal_comment' interface methods
+    # FIXME: there is no such 'portal_comment' interface. Is it supposed
+    # to be portal_discussion (it is not: method names are not exactly the
+    # same) ???
     #
     security.declarePublic('getDiscussionForumFor')
     def getDiscussionForumFor(self, proxy):
@@ -83,6 +91,9 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
             return typeInfo.allowDiscussion()
         return 0
 
+    #
+    # Other methods
+    #
     security.declarePublic('getForum')
     def getForum(self, forum_id):
         for item in self.contentItems():

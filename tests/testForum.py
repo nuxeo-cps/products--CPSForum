@@ -16,17 +16,19 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
     def afterSetUp(self):
         self.login('root')
         self.ws = self.portal.workspaces
-
-        # Add directory
-        #from Products.CPSDirectory.Extensions.install import install
-        #install(self.portal)
+        self.ws.invokeFactory('CPSForum', 'forum')
+        self.forum = self.ws.forum
 
     def beforeTearDown(self):
         self.logout()
 
+    def testDiscussionTool(self):
+        pd = self.portal.portal_discussion
+        self.assertEquals(pd.meta_type, "CPS Discussion Tool")
+        self.assert_(pd.manage_overview)
+
     def testForum(self):
-        self.ws.invokeFactory('CPSForum', 'forum')
-        forum = self.ws.forum
+        forum = self.forum
 
         forum.forum_view()
 
@@ -39,6 +41,8 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         self.assertEquals(post['subject'], 'subject')
         self.assertEquals(post['message'], 'message')
         self.assertEquals(post['author'], 'author')
+
+        #print forum.getPostInfo(post)
 
 
 def test_suite():

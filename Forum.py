@@ -142,13 +142,11 @@ class CPSForum(CPSBaseDocument):
             'modified': post.bobobase_modification_time(),
         }
 
-    def addForumPost(self, **kw):
-        """Add a post"""
+    def addForumPost(self, subject, message, author, parent_id=None):
+        """Add a new post. Returns its id."""
         discussion = self.portal_discussion.getDiscussionFor(self)
-        post_id = discussion.createReply(
-               kw['subject'], kw['message'], kw['author'])
+        post_id = discussion.createReply(subject, message, author)
         post = discussion.getReply(post_id)
-        parent_id = kw.get('parent_id', None)
         post.in_reply_to = parent_id
         self.publishPost(post_id, not self.moderation_mode)
         return post_id
@@ -254,8 +252,8 @@ class CPSForum(CPSBaseDocument):
             result.append(mdata)
         return result
 
-def addCPSPost(self, id, **kw):
-    """function addCPSPost
+def addCPSForumPost(self, id, **kw):
+    """function addCPSForumPost
     """
     post = CPSPost(id, **kw)
     post.parent_id = kw['parent_id']

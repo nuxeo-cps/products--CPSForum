@@ -21,6 +21,7 @@ from Products.CMFCore import utils
 from Products.CMFCore.DirectoryView import registerDirectory
 from Products.CMFCore.CMFCorePermissions import AddPortalContent
 
+
 import Forum
 import CommentTool
 
@@ -30,7 +31,7 @@ fti = ()
 
 fti += Forum.factory_type_information
 contentClasses += (Forum.CPSForum, Forum.CPSPost,)
-contentConstructors += (Forum.addCPSForum, Forum.addCPSPost,)
+contentConstructors += (Forum.addCPSForum, Forum.addCPSForumPost,)
 
 registerDirectory('skins/forum_default', globals())
 

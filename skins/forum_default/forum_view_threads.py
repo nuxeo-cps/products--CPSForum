@@ -77,6 +77,29 @@ else:
     for root_post in forum.getThreads(proxy=context):
         result.append((root_post, forum.getDescendants(root_post['id'],
                                                        proxy=context)))
+    def getMostRecentPost(max_date, posts):
+        if posts:
+            new_max_date = max_date
+            for post in posts:
+                if post[0]['modified'] > new_max_date:
+                    new_max_date = post[0]['modified']
+                tmp_date = getMostRecentPost(new_max_date, post[1])
+                if tmp_date > new_max_date:
+                    new_max_date = tmp_date
+            return new_max_date
+        else:
+            return max_date
+    
+    def threadSorter(x,y):
+        x_most_recent_post = getMostRecentPost(x[0]['modified'], x[1])
+        y_most_recent_post = getMostRecentPost(y[0]['modified'], y[1])
+        if x_most_recent_post > y_most_recent_post:
+            return -1
+        elif x_most_recent_post < y_most_recent_post:
+            return 1
+        else:
+            return 0
+    result.sort(threadSorter)
     
 return context.forum_view_threads_main(post_id=post_id, descendants=result,
                                        is_reviewer=is_reviewer, forum=forum,

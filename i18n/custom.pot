@@ -70,3 +70,9 @@ msgstr ""
 msgid "forum_label_message"
 msgstr ""
 
+msgid "portal_type_ForumPost_title"
+msgstr ""
+
+msgid "portal_type_ForumPost_description"
+msgstr ""
+

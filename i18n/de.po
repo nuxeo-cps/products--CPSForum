@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum messages\n"
-"POT-Creation-Date: 2004-06-16 09:01default\n"
+"POT-Creation-Date: 2004-06-18 14:28default\n"
 "PO-Revision-Date: 2004-04-06 12:04+CET\n"
 "Last-Translator:  <>\n"
 "Language-Team: de <>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #.   <option value="0">a posteriori</option>
-#.   <option attributes="selected python:not moderation_mode" value="0">
+#.   <option value="0" attributes="selected python:not moderation_mode">
 #.               a posteriori
 #.             </option>
 #: from ../skins/forum_default/forum_create_form.pt
@@ -19,7 +19,7 @@ msgid "forum_a_posteriori"
 msgstr "nachher"
 
 #.   <option value="1">a priori</option>
-#.   <option attributes="selected python:not not moderation_mode" value="1">
+#.   <option value="1" attributes="selected python:not not moderation_mode">
 #.               a priori
 #.             </option>
 #: from ../skins/forum_default/forum_create_form.pt
@@ -40,7 +40,7 @@ msgstr "Erlaube anonyme Postings"
 msgid "forum_author"
 msgstr "Autor"
 
-#.   <input value="forum_button_lockunlock" class="context" name="forum_lock_thread:method" type="submit" />
+#.   <input name="forum_lock_thread:method" type="submit" class="context" value="forum_button_lockunlock" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_button_lockunlock"
 msgstr "(öffnen)schliessen Thema"
@@ -50,13 +50,13 @@ msgstr "(öffnen)schliessen Thema"
 msgid "forum_date"
 msgstr "Datum"
 
-#.   <input define="cpsmcat nocall:here/Localizer/default" attributes="onclick python:'return window.confirm(\'%s\')' %
-#.                                  (cpsmcat('description_confirm_delete'), )" value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
+#.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
+#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/Localizer/default" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Löschen"
 
-#.   <input value="forum_depublish" class="context" name="forum_unpublish_posts:method" type="submit" />
+#.   <input name="forum_unpublish_posts:method" type="submit" class="context" value="forum_depublish" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_depublish"
 msgstr "Publikation zurückziehen"
@@ -84,8 +84,8 @@ msgstr "Forum schliessen (nur zur Ansicht)"
 msgid "forum_link_back_to_document"
 msgstr ""
 
-#.   <a condition="next_page" attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, frm_start=next_page.first))" href=".">
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=next_page.first))" condition="next_page">
 #.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
 #.             </a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
@@ -93,8 +93,8 @@ msgstr ""
 msgid "forum_link_next_threads ${tpp}"
 msgstr "Neues Thema"
 
-#.   <a condition="previous_page" attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, frm_start=previous_page.first))" href=".">
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=previous_page.first))" condition="previous_page">
 #.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
 #.             </a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
@@ -113,7 +113,7 @@ msgstr "Nachricht"
 msgid "forum_moderation"
 msgstr "Moderation"
 
-#.   <input condition="python:here.portal_membership.checkPermission('Forum Moderate', here)" value="forum_modify" class="standalone" name="forum_post_modify:method" type="submit" />
+#.   <input condition="python:here.portal_membership.checkPermission('Forum Moderate', here)" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
 #: from ../skins/forum_default/post_view_snippet.pt
 msgid "forum_modify"
 msgstr "Ändern"
@@ -135,7 +135,7 @@ msgstr ""
 msgid "forum_no_message"
 msgstr "Keine Nachricht"
 
-#.   <input value="forum_post" class="standalone" name="forum_post:method" type="submit" />
+#.   <input name="forum_post:method" type="submit" class="standalone" value="forum_post" />
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_post"
 msgstr "Ab mit der Post!"
@@ -152,7 +152,7 @@ msgstr "Sie sind nicht befugt in diesem Forum zu posten"
 msgid "forum_psm_name_required"
 msgstr "Sie müssen einen Namen oder einen Nicknamen angeben"
 
-#.   <div condition="python:errormsg == 'error_subject'" class="row error">
+#.   <div class="row error" condition="python:errormsg == 'error_subject'">
 #.                   Subject field must be filled
 #.           </div>
 #: from ../skins/forum_default/forum_post_form.pt
@@ -160,12 +160,12 @@ msgstr "Sie müssen einen Namen oder einen Nicknamen angeben"
 msgid "forum_psm_subject_required"
 msgstr "Sie müssen einen Namen oder einen Nicknamen angeben"
 
-#.   <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
+#.   <input name="forum_publish_posts:method" type="submit" class="context" value="forum_publish" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_publish"
 msgstr "Publizieren"
 
-#.   <input value="forum_reply" class="standalone" name="forum_post_reply:method" type="submit" />
+#.   <input name="forum_post_reply:method" type="submit" class="standalone" value="forum_reply" />
 #: from ../skins/forum_default/post_view_csnippet.pt
 #: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
@@ -245,6 +245,13 @@ msgstr "Betreff"
 #, fuzzy
 msgid "forum_label_message"
 msgstr "Nachricht"
+
+msgid "portal_type_ForumPost_title"
+msgstr ""
+
+#, fuzzy
+msgid "portal_type_ForumPost_description"
+msgstr "Beschreibung"
 
 #~ msgid "forum_send_moderation_notification"
 #~ msgstr "Moderatoren benachrichtigen (neue Nachrichten)"

@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2004-06-16 09:01default\n"
-"PO-Revision-Date: 2004-06-16 09:01+0200\n"
+"POT-Creation-Date: 2004-06-18 14:28default\n"
+"PO-Revision-Date: 2004-06-18 14:30+0200\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Generator: KBabel 1.3.1\n"
 
 #.   <option value="0">a posteriori</option>
-#.   <option attributes="selected python:not moderation_mode" value="0">
+#.   <option value="0" attributes="selected python:not moderation_mode">
 #.               a posteriori
 #.             </option>
 #: from ../skins/forum_default/forum_create_form.pt
@@ -31,7 +31,7 @@ msgid "forum_a_posteriori"
 msgstr "a posteriori"
 
 #.   <option value="1">a priori</option>
-#.   <option attributes="selected python:not not moderation_mode" value="1">
+#.   <option value="1" attributes="selected python:not not moderation_mode">
 #.               a priori
 #.             </option>
 #: from ../skins/forum_default/forum_create_form.pt
@@ -52,7 +52,7 @@ msgstr "Allow anonymous posts"
 msgid "forum_author"
 msgstr "Author"
 
-#.   <input value="forum_button_lockunlock" class="context" name="forum_lock_thread:method" type="submit" />
+#.   <input name="forum_lock_thread:method" type="submit" class="context" value="forum_button_lockunlock" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_button_lockunlock"
 msgstr "(Un-)lock thread"
@@ -62,13 +62,13 @@ msgstr "(Un-)lock thread"
 msgid "forum_date"
 msgstr "Date"
 
-#.   <input define="cpsmcat nocall:here/Localizer/default" attributes="onclick python:'return window.confirm(\'%s\')' %
-#.                                  (cpsmcat('description_confirm_delete'), )" value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
+#.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
+#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/Localizer/default" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Delete"
 
-#.   <input value="forum_depublish" class="context" name="forum_unpublish_posts:method" type="submit" />
+#.   <input name="forum_unpublish_posts:method" type="submit" class="context" value="forum_depublish" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_depublish"
 msgstr "Unpublish"
@@ -95,16 +95,16 @@ msgstr "Lock forum (read only)"
 msgid "forum_link_back_to_document"
 msgstr "Back to document"
 
-#.   <a condition="next_page" attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, frm_start=next_page.first))" href=".">
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=next_page.first))" condition="next_page">
 #.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
 #.             </a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_link_next_threads ${tpp}"
 msgstr "Next ${tpp} threads"
 
-#.   <a condition="previous_page" attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, frm_start=previous_page.first))" href=".">
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=previous_page.first))" condition="previous_page">
 #.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
 #.             </a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
@@ -122,7 +122,7 @@ msgstr "Message"
 msgid "forum_moderation"
 msgstr "Moderation"
 
-#.   <input condition="python:here.portal_membership.checkPermission('Forum Moderate', here)" value="forum_modify" class="standalone" name="forum_post_modify:method" type="submit" />
+#.   <input condition="python:here.portal_membership.checkPermission('Forum Moderate', here)" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
 #: from ../skins/forum_default/post_view_snippet.pt
 msgid "forum_modify"
 msgstr "Modify"
@@ -143,7 +143,7 @@ msgstr "This forum is locked. You cannot post new messages to it."
 msgid "forum_no_message"
 msgstr "No message"
 
-#.   <input value="forum_post" class="standalone" name="forum_post:method" type="submit" />
+#.   <input name="forum_post:method" type="submit" class="standalone" value="forum_post" />
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_post"
 msgstr "Post"
@@ -160,19 +160,19 @@ msgstr "You are not authorized to post on this forum"
 msgid "forum_psm_name_required"
 msgstr "You must enter a name or nickname"
 
-#.   <div condition="python:errormsg == 'error_subject'" class="row error">
+#.   <div class="row error" condition="python:errormsg == 'error_subject'">
 #.                   Subject field must be filled
 #.           </div>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_subject_required"
 msgstr "You must enter a subject"
 
-#.   <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
+#.   <input name="forum_publish_posts:method" type="submit" class="context" value="forum_publish" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_publish"
 msgstr "Publish"
 
-#.   <input value="forum_reply" class="standalone" name="forum_post_reply:method" type="submit" />
+#.   <input name="forum_post_reply:method" type="submit" class="standalone" value="forum_reply" />
 #: from ../skins/forum_default/post_view_csnippet.pt
 #: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
@@ -242,6 +242,12 @@ msgstr "Subject"
 
 msgid "forum_label_message"
 msgstr "Message"
+
+msgid "portal_type_ForumPost_title"
+msgstr "Post"
+
+msgid "portal_type_ForumPost_description"
+msgstr "Message type use din forums and for commenting documents"
 
 #~ msgid "forum_link_next_threads <span content=\"threads_per_page\" />"
 #~ msgstr "Next ${threads_per_page} threads"

@@ -3,8 +3,8 @@
 # $Id$
 
 forum = hasattr(context, 'getContent') and context.getContent() or context
-for i in forum_thread_ids:
-    forum.publishPost(i, 0)
+for id in forum_thread_ids:
+    changePostPublicationStatus(id, status=0)
 
 if REQUEST:
     REQUEST.RESPONSE.redirect(

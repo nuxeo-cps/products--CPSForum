@@ -114,11 +114,11 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
             author='author')
         self.assertEquals(len(forum.getThreads()), 1)
 
-        forum.publishPost(post_id, 1)
+        forum.changePostPublicationStatus(post_id, 1)
         post = forum[post_id]
         self.assertEquals(post['published'], 1)
 
-        forum.publishPost(post_id, 0)
+        forum.changePostPublicationStatus(post_id, 0)
         post = forum[post_id]
         self.assertEquals(post['published'], 0)
 

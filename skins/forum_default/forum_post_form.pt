@@ -21,10 +21,12 @@
   </tal:block>
 
   <tal:block tal:condition="python:comment_mode or can_post">
+  <div class="group">
   <form method="POST" action="." enctype="multipart/form-data">
     <table>
       <tr>
-        <td i18n:translate="forum_author">Author</td>
+        <td valign="top">
+          <div class="label" i18n:translate="forum_author">Author</div></td>
         <td>
           <tal:block condition="not:here/portal_membership/isAnonymousUser">
             <tal:block define="
@@ -46,21 +48,23 @@
       </tr>
       <tr tal:define="parent_info python:parent_id and doc[parent_id];
                       parent_subject python:parent_info and parent_info['subject'];">
-        <td i18n:translate="forum_subject">Subject</td>
+        <td  valign="top">
+          <div class="label" i18n:translate="forum_subject">Subject</div></td>
         <td>
           <tal:block condition="parent_subject">
-            <input type="text" name="subject:string"
+            <input type="text" name="subject:string" size="60"
                    tal:attributes="value string:Re: ${parent_subject};" />
           </tal:block>
           <tal:block condition="not:parent_subject">
-            <input type="text" name="subject:string" />
+            <input type="text" name="subject:string" size="60" />
           </tal:block>
         </td>
       </tr>
       <tr>
-        <td i18n:translate="forum_message">Message</td>
+        <td valign="top">
+          <div class="label" i18n:translate="forum_message">Message</div></td>
         <td>
-          <textarea cols="72" rows="20"
+          <textarea cols="72" rows="10"
                     name="message:string"></textarea>
         </td>
       </tr>
@@ -78,6 +82,7 @@
       </tr>
     </table>
   </form>
+  </div>
   </tal:block>
 </tal:block>
 
@@ -87,10 +92,12 @@
 </tal:block>
 
 <tal:block tal:condition="comment_mode">
+  <div class="group">
   <form method="POST" action="." enctype="multipart/form-data">
     <table>
       <tr>
-        <td i18n:translate="forum_author">Author</td>
+        <td valign="top">
+          <div class="label" i18n:translate="forum_author">Author</div></td>
         <td>
           <tal:block condition="not:here/portal_membership/isAnonymousUser">
             <tal:block define="
@@ -103,7 +110,7 @@
             </tal:block>
           </tal:block>
           <tal:block condition="here/portal_membership/isAnonymousUser">
-            <input type="text" name="author:string" value="" />
+            <input type="text" name="author:string" value="" size="60" />
             <span tal:condition="python:errormsg == 'error_author'"
                   i18n:translate="forum_psm_name_required" 
                   class="forumerror">Author field must be filled</span>
@@ -112,21 +119,23 @@
       </tr>
       <tr tal:define="parent_info python:parent_id and doc[parent_id];
                       parent_subject python:parent_info and parent_info['subject'];">
-        <td i18n:translate="forum_subject">Subject</td>
+        <td valign="top">
+          <div class="label" i18n:translate="forum_subject">Subject</div></td>
         <td>
           <tal:block condition="parent_subject">
-            <input type="text" name="subject:string"
+            <input type="text" name="subject:string" size="60"
                    tal:attributes="value string:Re: ${parent_subject};" />
           </tal:block>
           <tal:block condition="not:parent_subject">
-            <input type="text" name="subject:string" />
+            <input type="text" name="subject:string" size="60" />
           </tal:block>
         </td>
       </tr>
       <tr>
-        <td i18n:translate="forum_message">Message</td>
+        <td valign="top">
+          <div class="label" i18n:translate="forum_message">Message</div></td>
         <td>
-          <textarea cols="72" rows="20"
+          <textarea cols="72" rows="10"
                     name="message:string"></textarea>
         </td>
       </tr>
@@ -144,6 +153,7 @@
       </tr>
     </table>
   </form>
+  </div>
 </tal:block>
 
 </metal:block>

@@ -3,29 +3,28 @@
                    is_reviewer options/is_reviewer;
                    comment_mode options/comment_mode;
                    post python:forum[post_id];
-                   can_post options/can_post | nothing"
+                   can_post options/can_post | nothing;"
            condition="python:post"
            i18n:domain="cpsforum">
   <tr><td colspan="2">&nbsp;</td></tr>
   <tal:block condition="python: is_reviewer or post['published'] or comment_mode">
     <tr><td colspan="2">
+      <div class="group">
       <table style="padding:0;margin:0;width:100%;">
         <tr>
           <td>
+            <div class="label">
             <tal:block condition="python: post['published']">
-              <a tal:content="python:post['subject']"
-                 tal:attributes="href python:here.absolute_url()+'/?post_id='+post['id']">
-              Title
-              </a>
+              <a tal:attributes="href
+                python:here.absolute_url()+'/?post_id='+post['id']"><strong
+                tal:content="python:post['subject']">Title</strong></a>
             </tal:block>
             <tal:block condition="python: is_reviewer and not post['published']">
-              <strong> 
                 <a tal:content="python:post['subject']"
                    tal:attributes="href 
                      python:here.absolute_url()+'/?post_id='+post['id']">
                   Title
                 </a>
-              </strong>
             </tal:block>
             <tal:block condition="comment_mode">
               <a tal:content="python:post['subject']"
@@ -37,11 +36,13 @@
             <tal:block tal:define="mcat python:here.Localizer.cpsforum" 
                        tal:replace="python:
 '('+mcat('forum_label_postedby').encode('ISO-8859-15', 'ignore')+' '+here.getPosterName(post['author'])+')'"/>
+            </div>
           </td>
         </tr>
         <tr>
           <td>
-            <pre tal:content="python:post['message']">Message</pre>
+            <div class="description"
+              tal:content="python:post['message']">Message</div>
           </td>
         </tr>
         <tr>
@@ -53,12 +54,13 @@
             <input type="hidden" name="comment_mode:int"
                    tal:attributes="value comment_mode">
            <input type="submit" name="forum_post_reply:method"
-                   class='context' value="forum_reply"
+                   class="standalone" value="forum_reply"
                    i18n:attributes="value">
            </form>
           </td>
         </tr>
       </table>
+      </div>
     </td></tr>
   </tal:block>
 </tal:block>

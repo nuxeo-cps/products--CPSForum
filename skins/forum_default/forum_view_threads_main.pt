@@ -13,12 +13,12 @@
                  tal:attributes="value post_id" />
         </td>
         <td class="forumsubheader" width="2%">&nbsp;</td>
-        <td class="forumsubheader" i18n:translate="forum_subject"
-            width="40%">Subject</td>
-        <td class="forumsubheader" width="25%" 
-            i18n:translate="forum_author">Author</td>
-        <td class="forumsubheader" width="26%" 
-            i18n:translate="forum_date">Date</td>
+        <th class="forumsubheader" i18n:translate="forum_subject"
+            width="40%">Subject</th>
+        <th class="forumsubheader" width="25%" 
+            i18n:translate="forum_author">Author</th>
+        <th class="forumsubheader" width="26%" 
+            i18n:translate="forum_date">Date</th>
         <td class="forumsubheader" width="5%"></td>
       </tr>
       <tal:span content="structure python:here.post_tree(
@@ -28,6 +28,7 @@
     </table>
     <tr>
       <td colspan="2">
+        <br>
         <tal:block condition="python:not comment_mode and is_reviewer">
           <input type="submit" name="forum_publish_posts:method"
                  class="context" value="forum_publish" 

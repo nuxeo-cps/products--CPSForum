@@ -33,6 +33,9 @@
                                                     can_post=can_post,
                                                     comment_mode=0)"/>
       <tr><td colspan="2">&nbsp;</td></tr>
+    </table>
+    <div class="group">
+    <table style="width:100%;" cellspacing="0" cellpadding="0">
       <tal:block condition="python:len(threads)">
         <tr><td colspan="2">
           <tal:block replace="structure python:here.forum_view_threads(
@@ -46,6 +49,7 @@
         </td>
       </tr>
     </table>
+    </div>
   </tal:block>
 
 </tal:block>

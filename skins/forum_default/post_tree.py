@@ -22,12 +22,15 @@ def getHeadline(post):
         # the proper parameter name to give to cpsdocument_view
         # is comment_id
         param_name = 'comment_id'
+        goto_comment = "#document_comment"
     else:
         # If viewing standard forum, the proper parameter name
         # to give to the forum is post_id
         param_name = 'post_id'
-    headline = '<a href="%s/?%s=%s">%s</a>' % (
-        context.absolute_url(), param_name, post['id'], post['subject'])
+        goto_comment = ''
+    headline = '<a href="%s/?%s=%s%s">%s</a>' % (
+        context.absolute_url(), param_name, post['id'], goto_comment,
+        post['subject'])
     if post['id'] == post_id:
         # Rendering select post (if any) with a bold font
         headline = '<b>' + headline + '</b>'

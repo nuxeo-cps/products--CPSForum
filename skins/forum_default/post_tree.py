@@ -128,7 +128,7 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
             fullname = '<a href="javascript:void(0)" onclick="javascript:window.open(\'popupdirectory_entry_view?dirname=members&id=' + post['author'] + '\',\'wclose\',\'width=500,height=200,scrollbars=yes,toolbar=no,status=no,resizable=yes,left=20,top=30\')">' +\
                        cgi.escape(context.getPosterName(post['author'])) + '</a>'
             result += '</td>\n<td class="forumAuthorCell">%s</td>' % fullname
-            ptime = post['creation']
+            ptime = post['creation'].strftime('%d/%m/%y %H:%M')
             if is_reviewer:
                 #display thread lock status only for reviewers
                 result += '\n<td class="forumDateCell">%s</td>' % ptime
@@ -163,7 +163,7 @@ def flatList(posts, sort_by):
             
             fullname = '<a href="javascript:void(0)" onclick="javascript:window.open(\'popupdirectory_entry_view?dirname=members&id=' + post['author'] + '\',\'wclose\',\'width=500,height=200,scrollbars=yes,toolbar=no,status=no,resizable=yes,left=20,top=30\')">' + cgi.escape(context.getPosterName(post['author'])) + '</a>'
             result += '</td>\n<td class="forumAuthorCell">%s</td>' % fullname
-            ptime = post['creation']
+            ptime = post['creation'].strftime('%d/%m/%y %H:%M')
             if is_reviewer:
                 #display thread lock status only for reviewers
                 result += '\n<td class="forumDateCell">%s</td>\n<td>%s</td></tr>\n\n' % (ptime, getLockIcon(post))

@@ -39,8 +39,6 @@
         </tr>
         <tr>
             <td colspan="2">
-                <!-- input type="button" name="back" value="Retour"
-                class='mainbutton'   onclick="javascript:history.back()" / -->
                 <form  method="POST" tal:attributes="action here/absolute_url" name="post_form">
                     <input type="submit" name="forum_post_form:method"
                         class="mainbutton"  value="L_forum nouveau fil"

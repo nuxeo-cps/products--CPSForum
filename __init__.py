@@ -9,8 +9,6 @@ from Products.CMFCore.DirectoryView import registerDirectory
 from Products.CMFCore.CMFCorePermissions import AddPortalContent
 
 import Forum
-import CPSDiscussionTool
-
 contentClasses = ()
 contentConstructors = ()
 fti = ()
@@ -24,7 +22,6 @@ contentConstructors += (
     Forum.addCPSForum,
     Forum.addCPSPost,
     )
-tools = (CPSDiscussionTool.CPSDiscussionTool,)
 registerDirectory('skins/forum_default', globals())
 
 def initialize(registrar):
@@ -34,11 +31,4 @@ def initialize(registrar):
         extra_constructors=contentConstructors,
         fti=fti
     ).initialize(registrar)
-
-    utils.ToolInit(
-        'CPS Discussion Tool',
-        tools = tools,
-        product_name = 'CPS Forum',
-        icon = 'tool.gif',
-        ).initialize(registrar)
 

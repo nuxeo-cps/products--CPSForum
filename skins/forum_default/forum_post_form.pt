@@ -10,6 +10,7 @@
 
 <metal:block fill-slot="main"
        tal:define="parent_id options/parent_id|nothing;
+                   b_start options/b_start|nothing;
                    forum here/getContent;
                    member python:here.portal_membership.getAuthenticatedMember();
                    dtool python:here.portal_directories.members;
@@ -84,6 +85,8 @@
           <div class="field">
                 <input type="hidden" name="parent_id:string"
                        tal:attributes="value parent_id" />
+                <input type="hidden" name="b_start"
+                       tal:attributes="value b_start" />
                 <input type="submit" name="forum_post:method"
                        class="standalone" value="forum_post"
                        i18n:attributes="value" />

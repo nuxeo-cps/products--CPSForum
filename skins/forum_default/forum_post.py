@@ -1,6 +1,8 @@
-##parameters=subject,author,message,parent_id=None,REQUEST=None
+##parameters=subject,author,message,parent_id=None,b_start=None,REQUEST=None
 
 # $Id$
+
+from ZTUtils import make_query
 
 if not author:
     msg = 'error_author'
@@ -24,6 +26,12 @@ forum = context.getContent()
 forum.newPostCreated(post_id, proxy=context)
 
 if REQUEST is not None:
-    REQUEST.RESPONSE.redirect(context.absolute_url() + "/?post_id=" + post_id)
+    if b_start:
+        url = "%s?post_id=%s&b_start=%s" % (context.absolute_url(),
+                                            post_id, b_start)
+    else:
+        url = "%s?post_id=%s" % (context.absolute_url(),
+                                            post_id)
+    REQUEST.RESPONSE.redirect(url)
 else:
     return post_id

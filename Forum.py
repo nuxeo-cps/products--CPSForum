@@ -61,8 +61,6 @@ factory_type_information = (
             'id': 'post',
             'name': 'action_add_post',
             'action': 'forum_post_form',
-            #'permissions': (AddPortalContent,), #XXX temporary, until we find a more
-            #suitable permission 
             'permissions': (View,),
             }, {
             'id': 'localroles',
@@ -122,7 +120,7 @@ class CPSForum(CPSBaseDocument):
     #    CPSBaseDocument.__init__(self,id, **kw)
 
     def getThreads(self):
-        """Return list of root posts"""
+        """Return list of root posts (no replies)"""
 
         discussion = self.portal_discussion.getDiscussionFor(self)
         result = [ self.getPostInfo(post)
@@ -155,9 +153,7 @@ class CPSForum(CPSBaseDocument):
         post = discussion.getReply(post_id)
         parent_id = kw.get('parent_id', None)
         post.in_reply_to = parent_id
-
         self.publishPost(post_id, not self.moderation_mode)
-
         return post_id
 
     def delForumPost(self, id):
@@ -166,9 +162,10 @@ class CPSForum(CPSBaseDocument):
 
     def publishPost(self, id, state=1):
         """Publish post <id>"""
+        
         post = self.portal_discussion.getDiscussionFor(self).getReply(id)
         post.inforum = state
-
+            
     def __getitem__(self, id):
         """Return post with id=<id>"""
         try:

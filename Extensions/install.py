@@ -39,6 +39,8 @@ HOWTO USE THAT ?
 
 import os, sys
 from zLOG import LOG, INFO, DEBUG
+from Products.CMFCore.CMFCorePermissions import setDefaultRoles
+
 
 def cps_forum_i18n_update(self):
     """
@@ -64,7 +66,6 @@ def cps_forum_i18n_update(self):
         return id in portal.objectIds()
 
     pr(" Updating i18n support")
-
 
     Localizer = portal['Localizer']
     languages = Localizer.get_supported_languages()
@@ -144,6 +145,18 @@ def install(self):
         return id in portal.objectIds()
 
     #################################################
+    # Ajout des roles specifiques pour le forum
+    #################################################
+    pr("Verifying forum roles")
+    already = portal.valid_roles()
+    for role in ('ForumPoster',     # Forum Poster : Droit de poster un message 
+                 'ForumModerator',  # Forum Moderator : Droit de moderation du forum 
+                 ):
+        if role not in already:
+            portal._addRole(role)
+            pr(" Add role %s" % role)
+
+    #################################################
     # PORTAL TYPES
     #################################################
 
@@ -211,30 +224,31 @@ def install(self):
         pr("  Adding workflow configuration to %s" % workspaces_id)
         portal[workspaces_id].manage_addProduct['CPSCore'].addCPSWorkflowConfiguration()
 
-    pr("  Add %s chain to portal type %s in %s of %s" %('workspace_folder_wf',
+    pr("  Add %s chain to portal type %s in %s of %s" %('workspace_content_wf',
                                                         'CPSForum',
                                                         '.cps_workflow_configuration',
                                                         workspaces_id))
     wfc = getattr(portal[workspaces_id], '.cps_workflow_configuration')
-    wfc.manage_addChain(portal_type='CPSForum', chain='workspace_folder_wf')
+    wfc.manage_addChain(portal_type='CPSForum', chain='workspace_content_wf')
 
     if not '.cps_workflow_configuration' in portal[sections_id].objectIds():
         pr("  Adding workflow configuration to %s" % sections_id)
         portal[sections_id].manage_addProduct['CPSCore'].addCPSWorkflowConfiguration()
 
-    pr("  Add %s chain to portal type %s in %s of %s" %('section_folder_wf',
+    pr("  Add %s chain to portal type %s in %s of %s" %('workspace_content_wf',
                                                         'CPSForum',
                                                         '.cps_workflow_configuration',
                                                         sections_id))
     wfc = getattr(portal[sections_id], '.cps_workflow_configuration')
-    wfc.manage_addChain(portal_type='CPSForum', chain='section_folder_wf')
+    wfc.manage_addChain(portal_type='CPSForum', chain='section_content_wf')
 
     ##########################################
     # SKINS
     ##########################################
 
     skins = ('cps_forum',)
-    paths = {'cps_forum': 'Products/CPSForum/skins/forum_default'}
+    paths = {'cps_forum': 'Products/CPSForum/skins/forum_default',
+             }
 
     for skin in skins:
         path = paths[skin]
@@ -266,6 +280,33 @@ def install(self):
         portal.portal_skins.addSkinSelection(skin_name, npath)
         pr(" Fixup of skin %s" % skin_name)
 
+    ##########################################
+    # Permissions
+    ##########################################
+    pr("Verifying permissions")
+
+    #use the same var for all 'Forum Post' strings as not doing so
+    #causes an error in manage_permission (Forum Post invalid)
+    forumpost = 'Forum Post'
+    setDefaultRoles(forumpost,['ForumPoster', 'ForumModerator',])
+    
+    sections_perm = {
+        forumpost:['ForumPoster', 'ForumModerator',],
+        }
+    workspaces_perm = {
+        forumpost:['ForumPoster', 'ForumModerator',],
+        }
+    
+    pr("Section")
+    for perm, roles in sections_perm.items():
+        portal[sections_id].manage_permission(perm, roles, 0)
+        pr("  Permission %s" % perm)
+    portal[sections_id].reindexObjectSecurity()
+    pr("Workspace")
+    for perm, roles in workspaces_perm.items():
+        portal[workspaces_id].manage_permission(perm, roles, 0)
+        pr("  Permission %s" % perm)
+    portal[workspaces_id].reindexObjectSecurity()
 
     ##############################################
     # i18n support

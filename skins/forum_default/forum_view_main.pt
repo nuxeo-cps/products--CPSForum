@@ -13,11 +13,15 @@
                    roles python:here.portal_membership.getCPSCandidateLocalRoles(here);
                    is_reviewer python: 'ForumModerator' in roles">
 
-  <tal:block tal:replace="doc/title">
-    Title
-  </tal:block>
+  <div class="documentActions">
+    <a href="" i18n:translate=""
+       tal:attributes="href python:here.absolute_url()+'/forum_post_form'">
+      forum_new_thread
+    </a>
+  </div>
+  <h1 tal:content="doc/title">Title</h1>
+
   <tal:block>
-    <span tal:content="description">Description</span>
     <br/>
     <tal:block i18n:translate="forum_moderators">Moderators</tal:block>:
     <tal:block repeat="moderator python:doc.getOfficialModerators(here)">

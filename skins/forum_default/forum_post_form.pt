@@ -1,67 +1,69 @@
-<metal:html use-macro="here/main_template/macros/master">
+<html metal:use-macro="here/main_template/macros/master">
 <metal:block fill-slot="header" />
-<metal:main fill-slot="main">
+<metal:block fill-slot="main">
 <form method="POST" action="." enctype="multipart/form-data"
-        tal:define="parent_id options/parent_id|nothing;
-        doc here/getContent|here;
-        member python:here.portal_membership.getAuthenticatedMember();
-        dtool python:here.portal_metadirectories['members'];
+      tal:define="parent_id options/parent_id|nothing;
+                  doc here/getContent|here;
+                  member python:here.portal_membership.getAuthenticatedMember();
+                  dtool python:here.portal_metadirectories['members'];
 
-        errormsg options/error_message|nothing;
-        ">
-    <table>
-        <tr>
-            <td i18n:translate="L_forum ecrivain">Author</td>
-            <td>
-                <tal:block condition="not:here/portal_membership/isAnonymousUser">
-                    <tal:block define="
-                      user_id member/getUserName;
-                      user_props python:dtool.getEntry(user_id);
-                      fullname python:user_props and user_props.get(dtool.display_prop, user_id) or user_id;">
-                        <input type="hidden" name="author:string"
-                            tal:attributes="value user_id" />
-                        <span tal:replace="fullname" />
-                    </tal:block>
-                </tal:block>
+    errormsg options/error_message|nothing;
+    ">
+  <table>
+    <tr>
+      <td i18n:translate="L_forum ecrivain">Author</td>
+      <td>
+        <tal:block condition="not:here/portal_membership/isAnonymousUser">
+          <tal:block define="
+            user_id member/getUserName;
+            user_props python:dtool.getEntry(user_id);
+            fullname python:user_props and user_props.get(dtool.display_prop, user_id) or user_id;">
+            <input type="hidden" name="author:string"
+                   tal:attributes="value user_id" />
+            <span tal:replace="fullname" />
+          </tal:block>
+        </tal:block>
 
-                <tal:block condition="here/portal_membership/isAnonymousUser">
-                    <input type="text" name="author:string" value="" />
-                    <span tal:condition="errormsg" tal:content="errormsg" class="forumerror" />
-                </tal:block>
-            </td>
-        </tr>
-        <tr tal:define="parent_info python:parent_id and doc[parent_id];
-                parent_subject python:parent_info and parent_info['subject'];">
-            <td i18n:translate="L_forum sujet">Subject</td>
-            <td>
-                <tal:block condition="parent_subject">
-                    <input type="text" name="subject:string"
-                    tal:attributes="value string:Re: ${parent_subject};" />
-                </tal:block>
-                <tal:block condition="not:parent_subject">
-                    <input type="text" name="subject:string" />
-                </tal:block>
-                
-            </td>
-        </tr>
-        <tr>
-            <td i18n:translate="L_forum message">Message</td>
-            <td>
-                <textarea cols="40" rows="6"
-                    name="message:string"></textarea>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type="hidden" name="parent_id:string"
-                    tal:condition="parent_id"
-                    tal:attributes="value parent_id" />
-                <input type="submit" name="forum_post:method"
-                    class="mainbutton" value="L_forum post" i18n:attributes="value" />
-            </td>
-        </tr>
-    </table>
+        <tal:block condition="here/portal_membership/isAnonymousUser">
+          <input type="text" name="author:string" value="" />
+          <span tal:condition="errormsg" tal:content="errormsg" 
+                class="forumerror" />
+        </tal:block>
+      </td>
+    </tr>
+    <tr tal:define="parent_info python:parent_id and doc[parent_id];
+                    parent_subject python:parent_info and parent_info['subject'];">
+      <td i18n:translate="L_forum sujet">Subject</td>
+      <td>
+        <tal:block condition="parent_subject">
+          <input type="text" name="subject:string"
+                 tal:attributes="value string:Re: ${parent_subject};" />
+        </tal:block>
+        <tal:block condition="not:parent_subject">
+          <input type="text" name="subject:string" />
+        </tal:block>
+        
+      </td>
+    </tr>
+    <tr>
+      <td i18n:translate="L_forum message">Message</td>
+      <td>
+        <textarea cols="40" rows="6"
+                  name="message:string"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <input type="hidden" name="parent_id:string"
+               tal:condition="parent_id"
+               tal:attributes="value parent_id" />
+        <input type="submit" name="forum_post:method"
+               class="mainbutton" value="L_forum post" 
+               i18n:attributes="value" />
+      </td>
+    </tr>
+  </table>
 </form>
-</metal:main>
-</metal:html>
+</metal:bock>
+</html>

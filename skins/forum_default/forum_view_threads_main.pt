@@ -1,33 +1,38 @@
 <tal:block define="descendants options/descendants;
-    post_id options/post_id;
-    doc here/getContent|here;
-    is_reviewer options/is_reviewer;">
+                   post_id options/post_id;
+                   doc here/getContent|here;
+                   is_reviewer options/is_reviewer;">
 
-    <form  method="POST" tal:attributes="action here/absolute_url" name="post_form">
+  <form  method="POST" tal:attributes="action here/absolute_url" name="post_form">
 
-      <table border=0 style='width:100%;height:inherit' cellspacing='0' cellpadding='0'>
-        <tr>
-          <td class="forumsubheader" width="20"><input type="hidden" name="parent_id:string"
-              tal:attributes="value post_id" /></td>
-          <td class="forumsubheader" width="10">&nbsp;</td>
-          <td class="forumsubheader" i18n:translate="L_forum sujet">Subject</td>
-          <td class="forumsubheader" width="100" i18n:translate="L_forum ecrivain">Author</td>
-          <td class="forumsubheader" width="80" i18n:translate="L_forum date">Date</td>
-        </tr>
-        <tal:span content="structure python:here.post_tree(descendants=descendants, post_id=post_id)" />
-      </table>
+    <table border=0 style='width:100%;height:inherit' cellspacing='0' cellpadding='0'>
+      <tr>
+        <td class="forumsubheader" width="20"><input type="hidden" name="parent_id:string"
+            tal:attributes="value post_id" /></td>
+        <td class="forumsubheader" width="10">&nbsp;</td>
+        <td class="forumsubheader" i18n:translate="L_forum sujet">Subject</td>
+        <td class="forumsubheader" width="100" 
+            i18n:translate="L_forum ecrivain">Author</td>
+        <td class="forumsubheader" width="80" 
+            i18n:translate="L_forum date">Date</td>
+      </tr>
+      <tal:span content="structure python:here.post_tree(descendants=descendants, post_id=post_id)" />
+    </table>
 
-      <tal:block condition="is_reviewer">
-        <tr>
-            <td colspan="2">
-                    <input type="submit" name="forum_publish_post:method"
-                    class="mainbutton" value="L_forum publier" i18n:attributes="value" />
-                    <input type="submit" name="forum_unpublish_post:method"
-                    class="mainbutton"  value="L_forum depublier" i18n:attributes="value" />
-                    <input type="submit" name="forum_del_post:method"
-                    class="mainbutton"  value="L_forum supprimer" i18n:attributes="value" />
-            </td>
-        </tr>
-      </tal:block>
-    </form>
+    <tal:block condition="is_reviewer">
+      <tr>
+        <td colspan="2">
+          <input type="submit" name="forum_publish_post:method"
+                 class="mainbutton" value="L_forum publier" 
+                 i18n:attributes="value" />
+          <input type="submit" name="forum_unpublish_post:method"
+                 class="mainbutton" value="L_forum depublier" 
+                 i18n:attributes="value" />
+          <input type="submit" name="forum_del_post:method"
+                 class="mainbutton" value="L_forum supprimer" 
+                 i18n:attributes="value" />
+        </td>
+      </tr>
+    </tal:block>
+  </form>
 </tal:block>

@@ -1,8 +1,7 @@
 ##parameters=parent_id
 
-doc = hasattr(context,'getContent') and context.getContent() or context
+doc = hasattr(context, 'getContent') and context.getContent() or context
 doc.delForumPost(parent_id)
 
-context.REQUEST.RESPONSE.redirect(context.absolute_url()
-    +"/view")
+context.REQUEST.RESPONSE.redirect(context.absolute_url() + "/view")
 

@@ -5,14 +5,14 @@
 from zLOG import LOG, DEBUG
 
 pmt = context.portal_membership
-is_reviewer = pmt.checkPermission('Review portal content',context)
+is_reviewer = pmt.checkPermission('Review portal content', context)
 username = pmt.getAuthenticatedMember().getId()
 session_data = context.session_data_manager.getSessionData()
 
 def getHeadline(post):
     headline = '<a href="%s/?post_id=%s">%s</a>' % (
             context.absolute_url(), post['id'], post['subject'])
-    if(post['id']==post_id):
+    if post['id'] == post_id:
         headline = '<b>' + headline + '</b>'
 
     return headline
@@ -58,11 +58,11 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
 
             style = session_data.get('post_' + str(post['id']), None)
             if style <> 'collapsed':
-                more,counter = getBranches(branch[1], post['id'], level+1, counter)
+                more, counter = getBranches(branch[1], post['id'], level+1, counter)
             else:
-                more,counter = ' ',0
+                more, counter = ' ', 0
 
-            indent = 5*(min(level,7))
+            indent = 5 * min(level, 7)
             if is_reviewer:
                 result += '<td><input type="checkbox" name="forum_thread_ids:list" value="%s" /></td>\n' % post['id']
                 result += '<td>%s</td>\n' % getStatusIcon(post)
@@ -94,5 +94,4 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
 (result,dummy) = getBranches(descendants)
 
 return result
-
 

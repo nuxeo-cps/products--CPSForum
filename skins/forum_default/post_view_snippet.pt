@@ -1,68 +1,68 @@
-<tal:block define="
-        post_id options/post_id;
-        doc here/getContent|here;
-        is_reviewer options/is_reviewer;
-        post python:doc[post_id]"
-    condition="python:post">
+<tal:block define="post_id options/post_id;
+                   doc here/getContent|here;
+                   is_reviewer options/is_reviewer;
+                   post python:doc[post_id]"
+           condition="python:post">
 
-    <tr><td colspan="2">&nbsp;</td></tr>
-    <tr><td class="forumheader" colspan="2" i18n:translate="L_forum message">Message</td></tr>
+  <tr><td colspan="2">&nbsp;</td></tr>
+  <tr><td class="forumheader" colspan="2" 
+          i18n:translate="L_forum message">Message</td></tr>
 
-    <tal:block condition="python: is_reviewer or post['published']">
+  <tal:block condition="python: is_reviewer or post['published']">
+    <tr><td colspan="2">
+      <table style="padding:0;margin:0;width:100%;border:1px solid black;"> 
         <tr>
-            <td colspan="2">
-            <table style="padding:0;margin:0;width:100%;border:1px solid black;"> <tr>
-            <td style='vertical-align:top;border-right:1px solid black;' width="30%">
-                    <span class="forum_author"
-                        tal:content="python:post['author']">Author</span>
-            </td>
-            <td style="width:70%">
-                <tal:block condition="python: post['published']">
-                    <a tal:content="python:post['subject']"
-                    tal:attributes="href python:here.absolute_url()+'/?post_id='+post['id']">
-                    Title
-                    </a>
-                </tal:block>
-                <tal:block condition="python: is_reviewer and not post['published']">
-                    <b> <a tal:content="python:post['subject']"
-                    tal:attributes="href python:here.absolute_url()+'/?post_id='+post['id']">
-                    Title
-                    </a> </b>
-                </tal:block>
-                <div tal:content="python:post['message']">
-                Message
-                </div>
-            </td>
+          <td style='vertical-align:top;border-right:1px solid black;' width="30%">
+              <span class="forum_author"
+                    tal:content="python:post['author']">Author</span>
+          </td>
+          <td style="width:70%">
+            <tal:block condition="python: post['published']">
+              <a tal:content="python:post['subject']"
+                 tal:attributes="href python:here.absolute_url()+'/?post_id='+post['id']">
+              Title
+              </a>
+            </tal:block>
+            <tal:block condition="python: is_reviewer and not post['published']">
+              <b> <a tal:content="python:post['subject']"
+                     tal:attributes="href python:here.absolute_url()+'/?post_id='+post['id']">
+              Title
+              </a> </b>
+            </tal:block>
+            <div tal:content="python:post['message']">
+            Message
+            </div>
+          </td>
 
-            </tr></table>
-            </td>
         </tr>
-        <tr>
-            <td colspan="2">
-                <form  method="POST" tal:attributes="action here/absolute_url" name="post_form">
-                    <input type="submit" name="forum_post_form:method"
-                        class="mainbutton"  value="L_forum nouveau fil"
-                        i18n:attributes="value" />
-                    <input type="hidden" name="parent_id:string"
-                        tal:attributes="value post_id" />
-                    <input type="submit" name="forum_post_reply:method"
-                        class='mainbutton'  value="L_forum repondre"
-                        i18n:attributes="value" />
-                    <tal:block condition="is_reviewer">
-                        <input type="submit" name="forum_publish_thread:method"
-                            class="mainbutton"  value="L_forum publier"
-                            tal:condition="python:not post['published']"
-                            i18n:attributes="value" />
-                        <input type="submit" name="forum_unpublish_thread:method"
-                        class="mainbutton"  value="L_forum depublier"
-                        tal:condition="python:post['published']"
-                        i18n:attributes="value" />
-                        <input type="submit" name="forum_del_thread:method"
-                        class='mainbutton'  value="L_forum supprimer"
-                        i18n:attributes="value" />
-                    </tal:block>
-                </form>
-            </td>
-        </tr>
-    </tal:block>
+      </table></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <form  method="POST" tal:attributes="action here/absolute_url" name="post_form">
+          <input type="submit" name="forum_post_form:method"
+                 class="mainbutton" value="L_forum nouveau fil"
+                 i18n:attributes="value" />
+          <input type="hidden" name="parent_id:string"
+                 tal:attributes="value post_id" />
+          <input type="submit" name="forum_post_reply:method"
+                 class='mainbutton' value="L_forum repondre"
+                 i18n:attributes="value" />
+          <tal:block condition="is_reviewer">
+            <input type="submit" name="forum_publish_thread:method"
+                   class="mainbutton" value="L_forum publier"
+                   tal:condition="python:not post['published']"
+                   i18n:attributes="value" />
+            <input type="submit" name="forum_unpublish_thread:method"
+                   class="mainbutton" value="L_forum depublier"
+                   tal:condition="python:post['published']"
+                   i18n:attributes="value" />
+            <input type="submit" name="forum_del_thread:method"
+                   class='mainbutton' value="L_forum supprimer"
+                   i18n:attributes="value" />
+          </tal:block>
+        </form>
+      </td>
+    </tr>
+  </tal:block>
 </tal:block>

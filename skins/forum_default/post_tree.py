@@ -1,11 +1,13 @@
-##parameters=descendants=(), post_id='', frm_start=0, sort_by=None, display_mode='title'
+##parameters=descendants=(), post_id='', frm_start=0, sort_by=None, display_mode='title', forum=None
 
 # $Id$
 
 #counter counts the message position in thread
 
 import cgi
-from zLOG import LOG, DEBUG
+
+if forum is None:
+    forum = context.getContent()
 
 cpsmcat = context.Localizer.default
 pending_i18n = cpsmcat('forum_pending_post').encode('ISO-8859-15', 'ignore')
@@ -21,7 +23,7 @@ try:
 except AttributeError:
     session_data = None
 
-tree_display = context.getContent().tree_display
+tree_display = forum.tree_display
 
 def getHeadline(post):
     subject = cgi.escape(post['subject'])

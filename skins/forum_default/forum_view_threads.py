@@ -2,6 +2,8 @@
 
 # $Id$
 
+maxint = 2147483647 # = sys.maxint (but we cannot import sys in this context)
+
 forum = context.getContent()
 
 try:
@@ -15,26 +17,24 @@ if (getattr(forum, 'tree_display', 'title') != 'title' or
     post_proxies = context.objectValues(['CPS Proxy Document'])
     post_infos = [forum.getPostInfo(proxy) for proxy in post_proxies]
 
-    # 2147483647 = sys.maxint (we cannot import sys in this context)
-    
     def subject_sortkey(item):
         subject = item['subject']
-        date = "%011d" % (2147483647 - int(item['creation']))
+        date = "%011d" % (maxint - int(item['creation']))
         if subject.lower().startswith('re: '):
             return subject[4:] + date
         else:
             return subject + date
 
     def author_sortkey(item):
-        date = "%011d" % (2147483647 - int(item['creation']))
+        date = "%011d" % (maxint - int(item['creation']))
         return item['author'] + date
 
     def wf_sortkey(item):
-        date = "%011d" % (2147483647 - int(item['creation']))
+        date = "%011d" % (maxint - int(item['creation']))
         return item['review_state'] + date
         
     def date_sortkey(item):
-        date = "%011d" % (2147483647 - int(item['creation']))
+        date = "%011d" % (maxint - int(item['creation']))
         subject = item['subject']
         if subject.lower().startswith('re: '):
             return date + subject[4:]
@@ -84,7 +84,7 @@ else:
 
     def threadDate_sortkey(thread):
         most_recent_post_date = getMostRecentPost(thread[0]['creation'], thread[1])
-        return "%011d" % (2147483647 - int(most_recent_post_date))
+        return "%011d" % (maxint - int(most_recent_post_date))
 
     threads4sort = [(threadDate_sortkey(thread), thread) for thread in threads]
     threads4sort.sort()

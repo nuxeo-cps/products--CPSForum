@@ -66,19 +66,19 @@ def getTreeIcon(post, style):
 def getStatusIcon(post):
     if post['review_state'] == 'pending':
         return '<img src="%s" width="6" height="6" align="middle" alt="%s" title="%s" />' % (
-            getattr(context, 'puce_attente.gif').absolute_url(), pending_i18n, pending_i18n)
+            getattr(context, 'puce_attente.png').absolute_url(), pending_i18n, pending_i18n)
     elif post['review_state'] == 'unpublished':
         return '<img src="%s" width="6" height="6" align="middle" alt="%s" title="%s" />' % (
-            getattr(context, 'puce_depub.gif').absolute_url(), unpublished_i18n, unpublished_i18n)
+            getattr(context, 'puce_depub.png').absolute_url(), unpublished_i18n, unpublished_i18n)
     elif post['review_state'] == 'rejected':
         return '<img src="%s" width="6" height="6" align="middle" alt="%s" title="%s" />' % (
-            getattr(context, 'puce_refuse.gif').absolute_url(), rejected_i18n, rejected_i18n)
+            getattr(context, 'puce_refuse.png').absolute_url(), rejected_i18n, rejected_i18n)
     else:
         return '<img src="/p_/sp" width="6" height="6" alt="" />'
 
 def getLockIcon(post):
     if post['locked']:
-        return context.getImgTag('lock.gif',alt="locked")
+        return context.getImgTag('lock.png',alt="locked")
     return '<img src="/p_/sp" width="6" height="6" alt="" />'
 
 def getBranches(branches, id='ROOT', level=0, counter=0):
@@ -112,7 +112,7 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
 
             indent = 2 * min(level, 7)
             if is_reviewer:
-                result += '<td><input type="checkbox" name="forum_thread_ids:list" value="%s" /></td>\n' % post['id']
+                result += '<td><input type="checkbox" name="forum_thread_ids:list" value="%s" style="border:none" /></td>\n' % post['id']
                 result += '<td>%s</td>\n' % getStatusIcon(post)
             else:
                 result += '<td>&nbsp;</td>\n'

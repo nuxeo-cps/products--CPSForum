@@ -1,21 +1,26 @@
 <html metal:use-macro="here/content_lib/macros/master">
 
-<metal:block fill-slot="main">
-<tal:block define="post_id request/post_id|nothing;
-                   forum here/getContent;
-                   threads python:forum.getThreads(proxy=here);
-                   is_poster python:here.portal_membership.checkPermission('Forum Post', forum);
-                   is_reviewer python:here.portal_membership.checkPermission('Forum Moderate', here);
-                   can_post python:here.isAllowedToPost(is_poster=is_poster,
-                                                        is_anon=isAnon,forum=forum)">
-
-  <tal:block condition="can_post">
+<metal:block fill-slot="head_slot">
+  <tal:block tal:define="forum here/getContent;
+               is_poster python:here.portal_membership.checkPermission('Forum Post', forum);
+               can_post python:here.isAllowedToPost(is_poster=is_poster,
+                                                    is_anon=isAnon,forum=forum)"
+             tal:condition="can_post">
     <tal:block tal:define="global actions python:actions['object'].append({'id':'new_thread',
                                                    'url': 'forum_post_form',
                                                    'name': 'forum_new_thread',
                                                    'category': 'object'})" />
   </tal:block>
+</metal:block>
 
+<metal:block fill-slot="main"
+             tal:define="post_id request/post_id|nothing;
+               forum here/getContent;
+               threads python:forum.getThreads(proxy=here);
+               is_poster python:here.portal_membership.checkPermission('Forum Post', forum);
+               is_reviewer python:here.portal_membership.checkPermission('Forum Moderate', here);
+               can_post python:here.isAllowedToPost(is_poster=is_poster,
+                                                    is_anon=isAnon,forum=forum)">
   <tal:block tal:define="is_comment_forum python:here.aq_inner.aq_parent.id == '.cps_discussions'"
              tal:condition="is_comment_forum">
     <div tal:define="doc_url python:'/'+here.portal_discussion.getCommentedDocument(here.absolute_url(relative=1))"
@@ -52,8 +57,6 @@
       </td>
     </tr>
   </table>
-
-</tal:block>
 
 </metal:block>
 

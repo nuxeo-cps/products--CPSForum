@@ -211,23 +211,23 @@ def install(self):
         pr("  Adding workflow configuration to %s" % workspaces_id)
         portal[workspaces_id].manage_addProduct['CPSCore'].addCPSWorkflowConfiguration()
 
-    pr("  Add %s chain to portal type %s in %s of %s" %('workspace_content_wf',
+    pr("  Add %s chain to portal type %s in %s of %s" %('workspace_folder_wf',
                                                         'CPSForum',
                                                         '.cps_workflow_configuration',
                                                         workspaces_id))
     wfc = getattr(portal[workspaces_id], '.cps_workflow_configuration')
-    wfc.manage_addChain(portal_type='CPSForum', chain='workspace_content_wf')
+    wfc.manage_addChain(portal_type='CPSForum', chain='workspace_folder_wf')
 
     if not '.cps_workflow_configuration' in portal[sections_id].objectIds():
         pr("  Adding workflow configuration to %s" % sections_id)
         portal[sections_id].manage_addProduct['CPSCore'].addCPSWorkflowConfiguration()
 
-    pr("  Add %s chain to portal type %s in %s of %s" %('workspace_content_wf',
+    pr("  Add %s chain to portal type %s in %s of %s" %('section_folder_wf',
                                                         'CPSForum',
                                                         '.cps_workflow_configuration',
                                                         sections_id))
     wfc = getattr(portal[sections_id], '.cps_workflow_configuration')
-    wfc.manage_addChain(portal_type='CPSForum', chain='section_content_wf')
+    wfc.manage_addChain(portal_type='CPSForum', chain='section_folder_wf')
 
     ##########################################
     # SKINS

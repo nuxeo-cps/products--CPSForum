@@ -3,16 +3,10 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
-- Posts can now be edited by Forum Moderators 
-
+-
 Bug fixes:
 ~~~~~~~~~~
-- Anonymous posts should work in all contexts now
-- Some security fine tuning (some roles did not have enough permissions
-  to comment documents when no comment had been made on any document in
-  the parent folder)
-- Author is now set correctly for anonymous posts (was always 'root')
-
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

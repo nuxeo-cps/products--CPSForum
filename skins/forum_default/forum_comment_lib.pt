@@ -4,7 +4,7 @@
 <metal:block define-macro="view_comments_inline"
              i18n:domain="cpsforum">
   <tal:block 
-       tal:define="forum python:here.portal_comment.getDiscussionForumFor(here);"
+       tal:define="forum python:here.portal_discussion.getDiscussionForumFor(here);"
        tal:condition="forum">
     <h4 i18n:translate="forum_label_comments">Comments</h4>
     <table style="width:100%;" cellspacing="0" cellpadding="0"

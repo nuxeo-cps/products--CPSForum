@@ -7,6 +7,8 @@ New features:
 Bug fixes:
 ~~~~~~~~~~
 - some missing translations for ForumPost portal type
+- forum owners can modify pending posts
+- published documents (in sections) can now be commented
 
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~

@@ -279,6 +279,70 @@ class TestCommentTool(CPSForumTestCase.CPSForumTestCase):
         self.assertEqual(self.pd.isCommentingAllowedFor(sc_proxy_doc), 1)
 
 
+    def testGetForum4CommentsWorkspaces1(self):
+        # Create 'Chat' object
+        self.portal.portal_workflow.invokeFactoryFor(self.ws, 'Chat', 'chat')
+        chat = getattr(self.ws, 'chat')
+        # Create ChatItem under Chat.
+        self.portal.portal_workflow.invokeFactoryFor(chat, 'ChatItem', 'chatitem')
+        ws_proxy_doc = getattr(chat, 'chatitem')
+
+        doc_url = ws_proxy_doc.absolute_url(relative=1)
+
+        self.assertEqual(self.pd.getCommentForumURL(doc_url), '')
+
+        self.assertEqual(self.pd.isCommentingAllowedFor(ws_proxy_doc), 0)
+
+        def getParentFolder(proxy):
+            parent = proxy.aq_inner.aq_parent
+            while parent:
+                if hasattr(parent, 'portal_type') and \
+                       (parent.portal_type == 'Section' or
+                        parent.portal_type == 'Workspace'):
+                    return parent
+                parent = parent.aq_inner.aq_parent
+            return proxy.aq_inner.aq_parent
+
+        parent_folder = getParentFolder(ws_proxy_doc)
+
+        self.assert_('.cps_discussions' not in parent_folder.objectIds())
+
+        forum = self.pd.getForum4Comments(ws_proxy_doc)
+
+        # Check that .cps_discussions is created one level up from
+        # the proxy_doc
+        self.assert_('.cps_discussions' in parent_folder.objectIds())
+
+        # As we work under Workspaces check that portal_type of
+        # .cps_discussions is 'Workspace'
+        discussions_folder = getattr(parent_folder, '.cps_discussions')
+        self.assertEqual(discussions_folder.portal_type, 'Workspace')
+
+        # CPSForum should be created under .cps_discussions
+        self.assertEqual(getattr(discussions_folder, forum.getId()).portal_type,
+                         'CPSForum')
+
+        # .cps_workflow_configuration should be created under .cps_discussions
+        discussions_folder_ids = discussions_folder.objectIds()
+        self.assert_('.cps_workflow_configuration' in discussions_folder_ids)
+
+        # Check that under Workspaces placeful workflow chain for CPSForum
+        # is set to 'workspace_forum_wf'
+        wfc = getattr(discussions_folder, '.cps_workflow_configuration')
+        self.assertEqual(wfc.getPlacefulChainFor('CPSForum')[0],
+                         'workspace_forum_wf')
+
+        self.assertEqual(wfc.getPlacefulChainFor('ForumPost')[0],
+                         'forum_post_wf')
+
+        forum_url = forum.absolute_url(relative=1)
+        self.assertEqual(self.pd.getCommentForumURL(doc_url), forum_url)
+
+        self.assertEqual(self.pd.getCommentedDocument(forum_url), doc_url)
+
+        self.assertEqual(self.pd.isCommentingAllowedFor(ws_proxy_doc), 1)
+
+
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(TestCommentTool))

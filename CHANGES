@@ -6,6 +6,8 @@ New features:
 - threads are now sorted by most recent post (default view, no explicit sorting)
 - use a rich text editor widget to edit posts
 - attaching documents to posts (as internal links)
+- member's information is displayed in a popup window when clicking on author
+  name
 
 Bug fixes:
 ~~~~~~~~~~

@@ -1,15 +1,12 @@
 ZODB Requires:
 ~~~~~~~~~~~~~~
 -
-
 New features:
 ~~~~~~~~~~~~~
 -
-
 Bug fixes:
 ~~~~~~~~~~
 -
-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 - Removed useless/unused stuff (CPSPost class, getEverything method, 
@@ -19,3 +16,4 @@ New internal features:
   forum_(un)publish_posts)
 - Added many tests
 - Removed useless (!!!) class Post.
+- fr local use Mél instead of Courriel

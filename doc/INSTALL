@@ -1,13 +1,27 @@
-Installation of CPSForum
+--------------------------------------------------
+CPSForum Installation
+--------------------------------------------------
 
-  CPSForum requires:
-  - CPS3
-  - product CPSInstaller (not included in CPS-3.0, but included in CPS-3.1)
-  - CPSSchemas > 0.18.0-1 (not included in CPS-3.0, but included in CPS-3.1)
-  - CPSSubscriptions > 0.7.0-1 (not included in CPS3)
+$Id$
+
+--------------------------------------------------
+Requirements
+--------------------------------------------------
+
+CPSForum requires:
+- CPS3
+- product CPSInstaller (not included in CPS-3.0, but included in CPS-3.1)
+- CPSSchemas > 0.18.0-1 (not included in CPS-3.0, but included in CPS-3.1)
+- CPSSubscriptions > 0.7.0-1 (not included in CPS3)
+
+--------------------------------------------------
+Installation notes
+--------------------------------------------------
 
 - Unpack the distribution into the Products folder of your Zope installation
-  and restart Zope. Check in Control_Panel/Products that there is a CPSForum
+  and change its name 'CPSForum-X.X.X-X' to 'CPSForum'
+
+- Restart Zope. Check in Control_Panel/Products that there is a CPSForum
   product and that there were no import errors.
 
 - From the ZMI, go to the CPS root, instanciate an External Method with the
@@ -17,25 +31,32 @@ Installation of CPSForum
   Module Name = CPSForum.install
   Function Name = install
 
-- You should now have CPSForum in portal_types and cps_forum in portal_skins
+- You should now have CPSForum and ForumPost in portal_types and cps_forum in
+  portal_skins.
 
 - If you have filtering on your sections and workspaces, make sure
-  that you allow Forums to be created there.
+  that you allow Forums to be created there. You can also have a look at the
+  workflow configuration in sections and workspaces, as described in the
+  'Update notes' section below.
 
 - You can then go to the section/workspace of your choice and instantiate a
   CPSForum.
 
 --------------------------------------------------
-Discussions (comments about documents)
+Update notes
 --------------------------------------------------
-- If your document is discussable, an action in the action box makes it
-  possible to activate comments for your document. If they are activated,
-  a new action makes it possible to actually comment the document.
-  These comments are managed by a CPSForum (a forum is associated with each
-  document that contains comments). Beware: the forum is associated with the
-  proxy document, not the actual document in the repository, meaning that
-  the forum is not shared by the various versions of the document (published
-  in sections, or workgroup drafts). The forum objects themselves are stored
-  in a specific .cps_discussions in the parent folder (workspace or content)
-  and are hidden from the user.
 
+IMPORTANT NOTE:
+This version of CPSForum and all subsequent versions based on CPSDocument
+posts are incompatible with existing Forum instances that have been created
+with earlier versions of CPSForum (i.e. which do not use CPSDocument posts).
+This means all versions up to (and including) release 0.7.0-1 of April 2004.
+
+Some workflow configuration could not be updated properly when executing the
+installer. So please make sure that:
+- in /cps/sections/.cps_workflow_configuration:
+  - the portal type CPSForum follows: section_forum_wf
+  - the portal type ForumPost follows: forum_post_wf
+- in /cps/workspaces/.cps_workflow_configuration:
+  - the portal type CPSForum follows: workspace_forum_wf
+  - the portal type ForumPost follows: forum_post_wf

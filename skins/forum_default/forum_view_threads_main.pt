@@ -2,9 +2,16 @@
                        descendants options/descendants;
                        is_reviewer options/is_reviewer;
                        sort_by options/sort_by;
+                       subject_sort_direction python:test(sort_by == 'subject',
+                                                          'subjectInv' , 'subject');
+                       author_sort_direction python:test(sort_by == 'author',
+                                                         'authorInv' , 'author');
+                       date_sort_direction python:test(sort_by == 'date',
+                                                       'dateInv' , 'date');
                        display_mode options/display_mode;
                        forum nocall:options/forum;
                        threads_per_page python:getattr(forum,'threads_per_page',0)">
+
   <form method="post" tal:attributes="action here/absolute_url" name="post_form">
   <table border="0" style='width:100%;height:inherit'
            cellspacing='0' cellpadding='0'>
@@ -54,14 +61,17 @@
         </td>
         <th class="forumSubjectCell">
           <a href="./sort_posts?criterion=subject"
+             tal:attributes="href string:./sort_posts?criterion=${subject_sort_direction}"
              i18n:translate="forum_subject">Subject</a>
         </th>
         <th class="forumAuthorCell">
           <a href="./sort_posts?criterion=author"
+             tal:attributes="href string:./sort_posts?criterion=${author_sort_direction}"
              i18n:translate="forum_author">Author</a>
         </th>
         <th class="forumDateCell">
           <a href="./sort_posts?criterion=date"
+             tal:attributes="href string:./sort_posts?criterion=${date_sort_direction}"
              i18n:translate="forum_date">Date</a>
         </th>
         <td class="forumLockCell"></td>
@@ -91,14 +101,17 @@
         </td>
         <th class="forumSubjectCell">
           <a href="./sort_posts?criterion=subject"
+             tal:attributes="href string:./sort_posts?criterion=${subject_sort_direction}"
              i18n:translate="forum_subject">Subject</a>
         </th>
         <th class="forumAuthorCell">
           <a href="./sort_posts?criterion=author"
+             tal:attributes="href string:./sort_posts?criterion=${author_sort_direction}"
              i18n:translate="forum_author">Author</a>
         </th>
         <th class="forumDateCell">
           <a href="./sort_posts?criterion=date"
+             tal:attributes="href string:./sort_posts?criterion=${date_sort_direction}"
              i18n:translate="forum_date">Date</a>
         </th>
         <td class="forumLockCell"></td>

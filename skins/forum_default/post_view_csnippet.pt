@@ -7,14 +7,7 @@
                        published python:here.portal_workflow.getInfoFor(post, 'review_state', 'nostate') == 'published'">
   <tr>
     <td colspan="2">
-      <div class="forumPostTitle">
-        <tal:block tal:replace="post/Title"/>
-        <tal:block tal:define="mcat python:here.Localizer.default" 
-                   tal:replace="python:'('+mcat('forum_label_postedby').encode('ISO-8859-15', 'ignore')+' '+here.getPosterName(post_doc.author)+')'"/>
-      </div>
-      <div class="forumPostText"
-           tal:content="structure python:post_doc.Description().replace('\n','<br/>')">
-      </div>
+      <tal:block tal:replace="structure python:post_doc.render(proxy=post)"/>
       <form method="post" tal:attributes="action forum_proxy/absolute_url"
             name="post_form"
             tal:define="locked python:here.locked_thread(post=post,

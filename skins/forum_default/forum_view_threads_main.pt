@@ -45,11 +45,18 @@
                  tal:attributes="value post_id" />
         </td>
         <td class="forumModerateCell">&nbsp;</td>
-        <th class="forumSubjectCell" i18n:translate="forum_subject">Subject</th>
-        <th class="forumAuthorCell"
-            i18n:translate="forum_author">Author</th>
-        <th class="forumDateCell"
-            i18n:translate="forum_date">Date</th>
+        <th class="forumSubjectCell">
+          <a href="./sort_posts?criterion=subject"
+             i18n:translate="forum_subject">Subject</a>
+        </th>
+        <th class="forumAuthorCell">
+          <a href="./sort_posts?criterion=author"
+             i18n:translate="forum_author">Author</a>
+        </th>
+        <th class="forumDateCell">
+          <a href="./sort_posts?criterion=date"
+             i18n:translate="forum_date">Date</a>
+        </th>
         <td class="forumLockCell"></td>
       </tr>
       <tal:span tal:content="structure python:here.post_tree(descendants=batched_desc, 
@@ -64,11 +71,18 @@
                  tal:attributes="value post_id" />
         </td>
         <td class="forumModerateCell">&nbsp;</td>
-        <th class="forumSubjectCell" i18n:translate="forum_subject">Subject</th>
-        <th class="forumAuthorCell"
-            i18n:translate="forum_author">Author</th>
-        <th class="forumDateCell"
-            i18n:translate="forum_date">Date</th>
+        <th class="forumSubjectCell">
+          <a href="./sort_posts?criterion=subject"
+             i18n:translate="forum_subject">Subject</a>
+        </th>
+        <th class="forumAuthorCell">
+          <a href="./sort_posts?criterion=author"
+             i18n:translate="forum_author">Author</a>
+        </th>
+        <th class="forumDateCell">
+          <a href="./sort_posts?criterion=date"
+             i18n:translate="forum_date">Date</a>
+        </th>
         <td class="forumLockCell"></td>
       </tr>
       <tal:span tal:content="structure python:here.post_tree(descendants=descendants, 

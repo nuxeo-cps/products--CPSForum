@@ -3,7 +3,7 @@
 <metal:block fill-slot="main"
              i18n:domain="cpsforum"
              tal:define="parent_id options/parent_id|nothing;
-                         comment_mode here/REQUEST/comment_mode|nothing;
+                         comment_mode here/REQUEST/comment_mode|python:0;
                          doc python:here.getForumObject(comment_mode=comment_mode);
                          member 
                            python:here.portal_membership.getAuthenticatedMember();
@@ -70,7 +70,7 @@
         <input type="hidden" name="comment_mode:int"
                tal:attributes="value comment_mode" />
         <input type="submit" name="forum_post:method"
-               class="mainbutton" value="forum_post" 
+               class="standalone" value="forum_post" 
                i18n:attributes="value" />
       </td>
     </tr>

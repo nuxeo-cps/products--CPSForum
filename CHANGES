@@ -11,4 +11,6 @@ Bug fixes:
 - removed border around checkboxes (MSIE, flat sorting mode)
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
--
+- retrieve SESSION object from REQUEST (should make session-dependant
+  features work with instances that do not have a session_data_manager)
+

@@ -450,16 +450,7 @@ forum.getContent().newPostPublished(object.id, proxy=forum)
          'condition': "python:getattr(object.getTypeInfo(),'cps_proxy_type','') == 'document' and object.getContent().allow_discussion == 1",
          'permission': 'View',
          'category': 'object',},
-        {'tool': 'portal_actions',
-         'id': 'status_history',
-         'name': 'action_status_history',
-         'action': 'string: ${object/absolute_url}/content_status_history',
-         # XXX: this is as messy as what is done in cpsinstall
-         'condition': "python:getattr(object, 'portal_type', None) not in "
-                      "('Section', 'Workspace', 'Portal', 'Calendar', "
-                      "'Event', 'CPSForum')",
-         'permission': 'View',
-         'category': 'workflow',}])
+    ])
 
     ##############################################
     # New listeners for events

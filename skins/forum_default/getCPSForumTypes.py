@@ -22,6 +22,7 @@ forum_type = {
     'layouts': ['common', 'forum'],
     'cps_workspace_wf': 'workspace_forum_wf',
     'cps_section_wf': 'section_forum_wf',
+    'use_content_status_history': 1,
     'actions': ({'id': 'view',
                  'name': 'action_view',
                  'action': 'forum_view',
@@ -72,6 +73,7 @@ forumpost_type = {
     'layouts': ['forumpost'],
     'cps_workspace_wf': 'forum_post_wf',
     'cps_section_wf': 'forum_post_wf',
+    'use_content_status_history': 1,
     }
 
 return {'CPSForum': forum_type,

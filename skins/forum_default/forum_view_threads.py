@@ -28,6 +28,10 @@ if (getattr(forum, 'tree_display', 'title') != 'title' or
     def author_sortkey(item):
         date = "%011d" % (2147483647 - int(item['creation']))
         return item['author'] + date
+
+    def wf_sortkey(item):
+        date = "%011d" % (2147483647 - int(item['creation']))
+        return item['review_state'] + date
         
     def date_sortkey(item):
         date = "%011d" % (2147483647 - int(item['creation']))
@@ -41,6 +45,8 @@ if (getattr(forum, 'tree_display', 'title') != 'title' or
         make_sortkey = subject_sortkey
     elif sort_by.startswith('author'):
         make_sortkey = author_sortkey
+    elif sort_by.startswith('wf'):
+        make_sortkey = wf_sortkey
     else:
         make_sortkey = date_sortkey
         
@@ -88,5 +94,6 @@ else:
 return context.forum_view_threads_main(post_id=post_id, descendants=result,
                                        is_reviewer=is_reviewer, forum=forum,
                                        sort_by=sort_by,
-                                       display_mode=getattr(forum, 'tree_display', 'title'))
+                                       display_mode=getattr(forum, 'tree_display', 'title'),
+                                       wf_display_mode=getattr(forum, 'wf_display', 'wf_icon'))
 

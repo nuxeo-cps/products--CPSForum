@@ -7,7 +7,7 @@ forum = context.getContent()
 for post_id in forum_thread_ids:
     post = getattr(context, post_id)
     review_state = context.portal_workflow.getInfoFor(post, 'review_state', 'nostate')
-    if review_state == 'pending':
+    if review_state in ('pending', 'unpublished', 'rejected'):
         context.portal_workflow.doActionFor(post, 'publish')
     
 if REQUEST:

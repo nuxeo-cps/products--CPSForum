@@ -332,17 +332,24 @@ def install(self):
     pr("Verifiying comment action for document")
     actions_to_keep = ()
     for action in portal['portal_actions'].listActions():
-        if action.id != 'comment':
-            actions_to_keep = actions_to_keep + (action,)
+        if action.id == 'comment':
+            pr(" Removing old comment action from portal_actions")
         else:
-            pr(" Removing old comment action")
+            actions_to_keep = actions_to_keep + (action,)
     portal['portal_actions']._actions = actions_to_keep
+    actions_to_keep = ()
+    for action in portal['portal_discussion'].listActions():
+        if action.id == 'comment':
+            pr(" Removing old comment action from portal_discussion")
+        else:
+            actions_to_keep = actions_to_keep + (action,)
+    portal['portal_discussion']._actions = actions_to_keep
     pr(" Adding new comment action")
-    portal['portal_actions'].addAction(
+    portal['portal_discussion'].addAction(
         id='comment',
         name='action_comment',
         action='string: ${object/absolute_url}/forum_post_form?comment_mode=1',
-        condition="python:object is not None and hasattr(portal,'portal_discussion') and hasattr(portal.portal_discussion,'isCommentingAllowedFor') and portal.portal_discussion.isCommentingAllowedFor(object)",
+        condition="python:object is not None and portal.portal_discussion.isCommentingAllowedFor(object)",
         permission='View',
         category='object')
 

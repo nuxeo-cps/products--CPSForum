@@ -65,7 +65,7 @@ def cps_forum_i18n_update(self):
     def portalhas(id, portal=portal):
         return id in portal.objectIds()
 
-    pr(" Updating i18n support")
+    pr("Updating i18n support")
 
     Localizer = portal['Localizer']
     languages = Localizer.get_supported_languages()
@@ -145,7 +145,7 @@ def install(self):
         return id in portal.objectIds()
 
     #################################################
-    # Ajout des roles specifiques pour le forum
+    # Forum-specific roles
     #################################################
     pr("Verifying forum roles")
     already = portal.valid_roles()
@@ -155,6 +155,16 @@ def install(self):
         if role not in already:
             portal._addRole(role)
             pr(" Add role %s" % role)
+
+    ##########################################
+    # Comment Tool
+    ##########################################
+    pr("Installing Comment Tool")
+    if portalhas('portal_comment'):
+        prok()
+    else:
+        pr(" Creating Comment Tool (portal_comment)")
+        portal.manage_addProduct["CPSForum"].manage_addTool('Comment Tool')
 
     #################################################
     # PORTAL TYPES
@@ -307,6 +317,28 @@ def install(self):
         portal[workspaces_id].manage_permission(perm, roles, 0)
         pr("  Permission %s" % perm)
     portal[workspaces_id].reindexObjectSecurity()
+
+    ##############################################
+    # Actions
+    ##############################################
+    pr("Verifiying comment action for document")
+    action_found = 0
+    for action in  portal['portal_actions'].listActions():
+        if action.id == 'comment':
+            action_found = 1
+    if not action_found:
+        portal['portal_actions'].addAction(
+            id='comment',
+            name='action_comment',
+            action='string: ${object/absolute_url}/forum_post_form?comment_mode=1',
+            condition="python: object is not None and hasattr(portal,'portal_comment') and portal.portal_comment.isCommentingAllowedFor(object)",
+            permission='View',
+            category='workflow')
+        pr(" Added")
+    else:
+        pr(" Present")
+
+
 
     ##############################################
     # i18n support

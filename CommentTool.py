@@ -35,6 +35,8 @@ from Products.CMFDefault.DiscussionTool import DiscussionTool
 
 from Products.CMFCore.ActionProviderBase import ActionProviderBase
 
+from Products.CMFCore.Expression import Expression
+
 class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     """Comment tool, a container for forums used to comment documents."""
 
@@ -48,6 +50,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
                       ({'label': 'Overview', 'action': 'manage_overview'},) +
                       PortalFolder.manage_options[1:])
 
+    _actions = ()
 
     def __init__(self):
         PortalFolder.__init__(self, self.id)

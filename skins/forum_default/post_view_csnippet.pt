@@ -8,9 +8,7 @@
   <tr>
     <td colspan="2">
       <div class="forumPostTitle">
-        <a tal:attributes="href
-                             python:here.absolute_url()+'/?post_id='+post_id"
-           tal:content="post/Title">Title</a>
+        <tal:block tal:replace="post/Title"/>
         <tal:block tal:define="mcat python:here.Localizer.default" 
                    tal:replace="python:'('+mcat('forum_label_postedby').encode('ISO-8859-15', 'ignore')+' '+here.getPosterName(post.Creator())+')'"/>
       </div>

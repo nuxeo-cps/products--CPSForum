@@ -7,11 +7,11 @@
   <table border="0" style='width:100%;height:inherit'
            cellspacing='0' cellpadding='0'>
     <tal:block tal:condition="threads_per_page">
-    <tal:block tal:define="batch_start python:int(path('request/b_start | nothing') or 0);
+    <tal:block tal:define="batch_start python:int(path('request/frm_start | nothing') or 0);
                            batched_desc python:modules['ZTUtils'].Batch(descendants,
                                                                    size=threads_per_page,
                                                                    start=batch_start)">
-      <input type="hidden" name="b_start" 
+      <input type="hidden" name="frm_start" 
              tal:attributes="value batch_start" />
       <tr tal:define="mq nocall:modules/ZTUtils/make_query;
                       previous_page python:batched_desc.previous;
@@ -20,23 +20,23 @@
           <a href="." tal:condition="previous_page"
              tal:attributes="href python:'%s?%s'%(request['URL'],
                                                   mq(request.form,
-                                                     b_start=0))">«</a>
+                                                     frm_start=0))">«</a>
           <a href="." tal:condition="previous_page"
              tal:attributes="href python:'%s?%s'%(request['URL'],
-                                    mq(request.form, b_start=previous_page.first))"
+                                    mq(request.form, frm_start=previous_page.first))"
              i18n:translate="">
             forum_link_prev_threads <span i18n:name="tpp" tal:content="threads_per_page"/>
           </a>
           <a href="." tal:condition="next_page"
              tal:attributes="href python:'%s?%s'%(request['URL'],
-                                    mq(request.form, b_start=next_page.first))"
+                                    mq(request.form, frm_start=next_page.first))"
              i18n:translate="">
             forum_link_next_threads <span i18n:name="tpp" tal:content="threads_per_page"/>
           </a>
           <a href="." tal:condition="next_page"
              tal:attributes="href python:'%s?%s'%(request['URL'],
                                                   mq(request.form,
-                                                     b_start=(len(descendants) - threads_per_page + (len(descendants) % threads_per_page))))">»</a>
+                                                     frm_start=(len(descendants) - threads_per_page + (len(descendants) % threads_per_page))))">»</a>
         </td>
       </tr>
       <tr>
@@ -54,7 +54,7 @@
       </tr>
       <tal:span tal:content="structure python:here.post_tree(descendants=batched_desc, 
                                                              post_id=post_id,
-                                                             b_start=batch_start)"/>
+                                                             frm_start=batch_start)"/>
     </tal:block>
     </tal:block>
     <tal:block tal:condition="not: threads_per_page">

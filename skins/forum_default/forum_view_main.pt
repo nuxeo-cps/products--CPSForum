@@ -35,7 +35,7 @@
                                                     forum=forum,
                                                     is_reviewer=is_reviewer,
                                                     can_post=can_post,
-                                                    b_start=here.REQUEST.form.get('b_start',None))"/>
+                                                    frm_start=here.REQUEST.form.get('frm_start',None))"/>
   </table>
 
   <table class="forumThreads" cellspacing="0" cellpadding="0">

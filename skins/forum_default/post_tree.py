@@ -1,4 +1,4 @@
-##parameters=descendants=(), post_id='', b_start=0
+##parameters=descendants=(), post_id='', frm_start=0
 
 # $Id$
 
@@ -14,11 +14,11 @@ except AttributeError:
     session_data = None
 
 def getHeadline(post):
-    if b_start:
-        headline = '<a href="%s?post_id=%s&b_start=%s">%s</a>' % (context.absolute_url(),
-                                                                  post['id'],
-                                                                  b_start,
-                                                                  post['subject'])
+    if frm_start:
+        headline = '<a href="%s?post_id=%s&frm_start=%s">%s</a>' % (context.absolute_url(),
+                                                                    post['id'],
+                                                                    frm_start,
+                                                                    post['subject'])
     else:
         headline = '<a href="%s?post_id=%s">%s</a>' % (context.absolute_url(),
                                                        post['id'],
@@ -38,8 +38,8 @@ def getTreeIcon(post, style):
         label = 'Collapse'
         style = 'collapsed'
 
-    if b_start:
-        result = '<a href="./forum_branch_set?post_id=%s&action=%s&b_start=%s">' % (post['id'], style, b_start)
+    if frm_start:
+        result = '<a href="./forum_branch_set?post_id=%s&action=%s&frm_start=%s">' % (post['id'], style, frm_start)
     else:
         result = '<a href="./forum_branch_set?post_id=%s&action=%s">' % (post['id'], style)
     result += '<img src="/p_/%s" align="middle" border="0" alt="%s" height="16" width="16" /></a>\n' % ( tree_icon, label)

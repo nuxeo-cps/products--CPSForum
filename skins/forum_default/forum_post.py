@@ -1,4 +1,4 @@
-##parameters=subject,author,message,parent_id=None,b_start=None,REQUEST=None
+##parameters=subject,author,message,parent_id=None,frm_start=None,REQUEST=None
 
 # $Id$
 
@@ -24,9 +24,9 @@ forum = context.getContent()
 forum.newPostCreated(post_id, proxy=context)
 
 if REQUEST is not None:
-    if b_start:
-        url = "%s?post_id=%s&b_start=%s" % (context.absolute_url(),
-                                            post_id, b_start)
+    if frm_start:
+        url = "%s?post_id=%s&frm_start=%s" % (context.absolute_url(),
+                                              post_id, frm_start)
     else:
         url = "%s?post_id=%s" % (context.absolute_url(),
                                  post_id)

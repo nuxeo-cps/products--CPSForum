@@ -1,4 +1,4 @@
-##parameters=forum_thread_ids=(),b_start=None,REQUEST=None
+##parameters=forum_thread_ids=(),frm_start=None,REQUEST=None
 
 # $Id$
 
@@ -11,9 +11,9 @@ for post_id in forum_thread_ids:
         review_state = context.portal_workflow.getInfoFor(post, 'review_state', 'nostate')
 
 if REQUEST:
-    if b_start:
-        url = "%s?post_id=%s&b_start=%s" % (context.absolute_url(),
-                                            REQUEST.parent_id, b_start)
+    if frm_start:
+        url = "%s?post_id=%s&frm_start=%s" % (context.absolute_url(),
+                                              REQUEST.parent_id, frm_start)
     else:
         url = "%s?post_id=%s" % (context.absolute_url(),
                                  REQUEST.parent_id)

@@ -59,6 +59,23 @@ class TestCommentTool(CPSForumTestCase.CPSForumTestCase):
         self.pd._data[news_url] = forum_url
         self.assertEqual(self.pd.getCommentedDocument(forum_url), news_url)
 
+
+    def testRegisterCommentForum(self):
+        proxy_forum, forum = self._createForum()
+        news_url = self.proxy_doc.absolute_url(relative=1)
+        forum_url = proxy_forum.absolute_url(relative=1)
+
+        self.assertEqual(len(self.pd._data.keys()), 0)
+
+        # test default parameters
+        self.pd.registerCommentForum()
+        self.assertEqual(len(self.pd._data.keys()), 1)
+        self.assertEqual(self.pd._data[''], '')
+
+        self.pd.registerCommentForum(proxy_path=news_url, forum_path=forum_url)
+        self.assertEqual(len(self.pd._data.keys()), 2)
+        self.assertEqual(self.pd._data[news_url], forum_url)
+
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(TestCommentTool))

@@ -33,7 +33,7 @@ def getHeadline(post):
         post['subject'])
     if post['id'] == post_id:
         # Rendering select post (if any) with a bold font
-        headline = '<b>' + headline + '</b>'
+        headline = '<strong>' + headline + '</strong>'
     return headline
 
 def getTreeIcon(post, style):
@@ -48,21 +48,21 @@ def getTreeIcon(post, style):
 
     result = '<a href="./forum_branch_set?post_id=%s;action=%s;mode=%s">' % \
             (post['id'], style, comment_mode)
-    result += '<img src="/p_/%s" align="center" border=0 alt="%s" height="16" width="16"></a>\n' % \
+    result += '<img src="/p_/%s" align="middle" border="0" alt="%s" height="16" width="16" /></a>\n' % \
             ( tree_icon, label)
     return result
 
 def getStatusIcon(post):
     if not post['published']:
         #  TODO: Translate
-        return '<img src="%s" width="6" height="6" align="mid" alt="Not published"/>' % (
+        return '<img src="%s" width="6" height="6" align="middle" alt="Not published" />' % (
             getattr(context, 'puce.gif').absolute_url())
-    return '<img src="/p_/sp" width="6" height="6" alt=""/>'
+    return '<img src="/p_/sp" width="6" height="6" alt="" />'
 
 def getLockIcon(post):
     if post['locked']:
         return context.getImgTag('lock.gif',alt="locked")
-    return '<img src="/p_/sp" width="6" height="6" alt=""/>'
+    return '<img src="/p_/sp" width="6" height="6" alt="" />'
 
 def getBranches(branches, id='ROOT', level=0, counter=0):
     if not len(branches):
@@ -97,18 +97,18 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
                 #review buttons (checkbox and status) are shown
                 #only in std forum mode, not in comments mode
                 result += '<td><input type="checkbox" name="forum_thread_ids:list" value="%s" /></td>\n' % post['id']
-                result += '<td><img src="/p_/sp" width=6 height=6 alt="" /></td>\n'
+                result += '<td><img src="/p_/sp" width="6" height="6" alt="" /></td>\n'
             elif is_reviewer:
                 result += '<td><input type="checkbox" name="forum_thread_ids:list" value="%s" /></td>\n' % post['id']
                 result += '<td>%s</td>\n' % getStatusIcon(post)
             else:
                 result += '<td>&nbsp;</td>\n'
                 result += '<td>%s</td>\n' % getStatusIcon(post)
-            result += '<td><img src="/p_/sp" alt="" height=12 width=%s>\n' % str(indent+1)
+            result += '<td><img src="/p_/sp" alt="" height="12" width="%s" />\n' % str(indent+1)
             if(more):
                 result += getTreeIcon(post, style)
             else:
-                result += '<img align="center" src="/p_/sp" height="16" width="16" alt="" border="0">'
+                result += '<img align="middle" src="/p_/sp" height="16" width="16" alt="" border="0" />'
 
             result += getHeadline(post)
             

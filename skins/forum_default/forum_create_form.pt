@@ -1,23 +1,24 @@
 <html metal:use-macro="here/main_template/macros/master"
       i18n:domain="cpsforum">
-<metal:block fill-slot="header" />
-<metal:block fill-slot="main">
 
-<form method="POST"
+<metal:block fill-slot="header" />
+
+<metal:block fill-slot="main">
+<form method="post"
       tal:attributes="action here/absolute_url"
       tal:define="doc here/getContent|here;">
   <table>
     <tr>
       <td i18n:translate="forum_title">Titre</td>
       <td>
-        <input type="text" name="title:string"  i18n:translate=""
-               tal:attributes="value string:Forum ${doc/title}">
+        <input type="text" name="title:string"
+               tal:attributes="value string:Forum ${doc/title}" />
       </td>
     </tr>
     <tr>
       <td i18n:translate="forum_description">Description</td>
       <td>
-        <textarea  rows="6" cols="40" name="description:string"></textarea>
+        <textarea rows="6" cols="40" name="description:string"></textarea>
       </td>
     </tr>
     <tr>
@@ -33,30 +34,30 @@
       <td i18n:translate="forum_send_moderation_notification">Send moderation notifications</td>
       <td>
         <input type="checkbox" name="send_moderation_notification"
-               tal:attributes="checked python:test(doc.isSendingModerNotifs(),'checked',None)">
+               tal:attributes="checked python:test(doc.isSendingModerNotifs(),'checked',None)" />
       </td>
     </tr>
     <tr>
       <td i18n:translate="forum_allow_anon_posts">Allow anonymous posts</td>
       <td>
         <input type="checkbox" name="allow_anon_posts"
-               tal:attributes="checked python:test(doc.anonymousPostsAllowed(),'checked',None)">
+               tal:attributes="checked python:test(doc.anonymousPostsAllowed(),'checked',None)" />
       </td>
     </tr>
     <tr>
       <td i18n:translate="forum_label_lock_forum">Lock forum (no longer possible to post new messages)</td>
       <td>
         <input type="checkbox" name="frozen_forum"
-               tal:attributes="checked python:test(doc.isFrozen(),'checked',None)">
+               tal:attributes="checked python:test(doc.isFrozen(),'checked',None)" />
       </td>
     </tr>
     <tr>
       <td />
       <td>
-        <input type="hidden" name="type" value="Forum">
+        <input type="hidden" name="type" value="Forum" />
         <input type="submit" name="forum_create:method"
                class='mainbutton' tal:attributes="value string:forum_create"
-               i18n:attributes="value">
+               i18n:attributes="value" />
       </td>
     </tr>
   </table>

@@ -8,16 +8,18 @@
            tal:attributes="value comment_mode" />
     <table border="0" style='width:100%;height:inherit' cellspacing='0' cellpadding='0'>
       <tr>
-        <td class="forumsubheader" width="20">
+        <td class="forumsubheader" width="2%">
           <input type="hidden" name="parent_id:string" 
                  tal:attributes="value post_id" />
         </td>
-        <td class="forumsubheader" width="10">&nbsp;</td>
-        <td class="forumsubheader" i18n:translate="forum_subject">Subject</td>
-        <td class="forumsubheader" width="100" 
+        <td class="forumsubheader" width="2%">&nbsp;</td>
+        <td class="forumsubheader" i18n:translate="forum_subject"
+            width="40%">Subject</td>
+        <td class="forumsubheader" width="25%" 
             i18n:translate="forum_author">Author</td>
-        <td class="forumsubheader" width="80" 
+        <td class="forumsubheader" width="26%" 
             i18n:translate="forum_date">Date</td>
+        <td class="forumsubheader" width="5%"></td>
       </tr>
       <tal:span content="structure python:here.post_tree(
                                              descendants=descendants, 

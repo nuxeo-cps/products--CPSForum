@@ -40,7 +40,7 @@ HOWTO USE THAT ?
 import os, sys
 from zLOG import LOG, INFO, DEBUG
 
-def cps_forum_i18n_update(self, langs_list=None):
+def cps_forum_i18n_update(self):
     """
     Importation of the po files for internationalization.
     For CPS itself and compulsory products.
@@ -102,7 +102,21 @@ def cps_forum_i18n_update(self, langs_list=None):
             defaultCatalog.manage_import(lang, po_file)
             pr("    %s file imported" % po_path)
 
+    # Translation Service Tool
+    if portalhas('translation_service'):
+        translation_service = portal.translation_service
+        pr (" Translation Sevice Tool found in here ")
+        try:
+            if getattr(portal['translation_service'], 'cpsforum', None) == None:
+                # translation domains
+                translation_service.manage_addDomainInfo('cpsforum','Localizer/'+'cpsforum')
+                pr(" cpsforum domain set to Localizer/cpsforum")
+        except:
+            pass
+    else:
+        raise str('DependanceError'), 'translation_service'
 
+    return pr('flush')
 
 def install(self):
     """
@@ -257,7 +271,7 @@ def install(self):
     # i18n support
     ##############################################
 
-    cps_forum_i18n_update(self)
+    pr(cps_forum_i18n_update(self))
 
     pr("End of CPSForum install")
     return pr('flush')

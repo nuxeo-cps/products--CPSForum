@@ -194,7 +194,8 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
             forum = getattr(discussion_folder, forum_id)
             forum_c = forum.getEditableContent()
             kw = {'Title': cpsmcat('forum_title_comments_for').encode('ISO-8859-15', 'ignore')+' '+proxy_doc.Title(),
-                  'Description': cpsmcat('forum_desc_comments').encode('ISO-8859-15', 'ignore')+' '+proxy_doc.Title()}
+                  'Description': cpsmcat('forum_desc_comments').encode('ISO-8859-15', 'ignore')+' '+proxy_doc.Title(),
+                  'moderation_mode': 0}
             forum_c.edit(**kw)
             portal.portal_eventservice.notifyEvent('modify_object', forum, {})
 

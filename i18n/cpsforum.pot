@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2004-02-16 16:03default\n"
+"POT-Creation-Date: 2004-02-18 17:47default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -60,6 +60,12 @@ msgstr ""
 msgid "forum_a_priori"
 msgstr ""
 
+#.   <td>Allow anonymous posts</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_allow_anon_posts"
+msgstr ""
+
 #.   <td>Author</td>
 #.   <td class="forumsubheader" width="100">Author</td>
 #: from ../skins/forum_default/forum_post_form.pt
@@ -104,13 +110,6 @@ msgstr ""
 msgid "forum_moderation"
 msgstr ""
 
-#.   <td>Moderators</td>
-#.   <block>Moderators</block>
-#: from ../skins/forum_default/forum_edit_form.pt
-#: ../skins/forum_default/forum_view_main.pt
-msgid "forum_moderators"
-msgstr ""
-
 #.   <a attributes="href string:${context_url}/forum_post_form" href="">
 #.         forum_new_thread
 #.       </a>
@@ -139,6 +138,11 @@ msgstr ""
 msgid "forum_post_unauthorize"
 msgstr ""
 
+#.   <span condition="python:errormsg == 'error_author'" class="forumerror">Author field must be filled</span>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_psm_name_required"
+msgstr ""
+
 #.   <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_publish"
@@ -148,6 +152,12 @@ msgstr ""
 #.              </input>
 #: from ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
+msgstr ""
+
+#.   <td>Send moderation notifications</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_send_moderation_notification"
 msgstr ""
 
 #.   <td>Subject</td>

@@ -10,13 +10,14 @@
     member python:here.portal_membership.getAuthenticatedMember();
     dtool python:here.portal_directories.members;
     errormsg options/error_message|nothing;
-    roles python:here.portal_membership.getCPSCandidateLocalRoles(here)">
+    is_poster python:member.has_permission('Forum Post', here);
+    can_post python:here.isAllowedToPost(is_poster=is_poster,is_anon=isAnon)">
 
-<tal:block tal:condition="python:not (comment_mode or 'ForumPoster' in roles)">
+<tal:block tal:condition="not:can_post">
   <p i18n:translate="forum_post_unauthorize">You are not authorized to post on this forum</p>
 </tal:block>
 
-<tal:block tal:condition="python:comment_mode or 'ForumPoster' in roles">
+<tal:block tal:condition="python:comment_mode or can_post">
 <form method="POST" action="." enctype="multipart/form-data">
   <table>
     <tr>

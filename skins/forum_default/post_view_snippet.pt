@@ -2,7 +2,8 @@
                    forum nocall:options/forum;
                    is_reviewer options/is_reviewer;
                    comment_mode options/comment_mode;
-                   post python:forum[post_id]"
+                   post python:forum[post_id];
+                   can_post options/can_post"
            condition="python:post"
            i18n:domain="cpsforum">
   <tr><td colspan="2">&nbsp;</td></tr>
@@ -45,7 +46,8 @@
         </tr>
         <tr>
           <td>
-          <form  method="POST" tal:attributes="action here/absolute_url" name="post_form">
+          <form method="POST" tal:attributes="action here/absolute_url" name="post_form"
+                tal:condition="can_post">
             <input type="hidden" name="parent_id:string"
                    tal:attributes="value post_id">
             <input type="hidden" name="comment_mode:int"

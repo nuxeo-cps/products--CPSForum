@@ -40,7 +40,7 @@ HOWTO USE THAT ?
 import os, sys
 from zLOG import LOG, INFO, DEBUG
 
-def photoalbum_i18n_update(self, langs_list=None):
+def cps_forum_i18n_update(self, langs_list=None):
     """
     Importation of the po files for internationalization.
     For CPS itself and compulsory products.
@@ -68,30 +68,30 @@ def photoalbum_i18n_update(self, langs_list=None):
 
     Localizer = portal['Localizer']
     languages = Localizer.get_supported_languages()
-    catalog_id = 'cpsphotoalbum'
+    catalog_id = 'cpsforum'
     # Message Catalog
     if catalog_id in Localizer.objectIds():
         Localizer.manage_delObjects([catalog_id])
-        pr(" Previous default MessageCatalog deleted for CGEYPhotoAlbum")
+        pr(" Previous default MessageCatalog deleted for CPSForum")
 
     # Adding the new message Catalog
     Localizer.manage_addProduct['Localizer'].manage_addMessageCatalog(
         id=catalog_id,
-        title='CGEYPhotoAlbum messages',
+        title='CPSForum messages',
         languages=languages,
         )
 
-    defaultCatalog = Localizer.cpsphotoalbum
+    defaultCatalog = Localizer.cpsforum
 
     # computing po files' system directory
-    CGEYPhotoAlbum_path = sys.modules['Products.CPSForum/'].__path__[0]
-    i18n_path = os.path.join(CGEYPhotoAlbum_path, 'i18n')
+    CPSForum_path = sys.modules['Products.CPSForum'].__path__[0]
+    i18n_path = os.path.join(CPSForum_path, 'i18n')
     pr("   po files are searched in %s" % i18n_path)
     pr("   po files for %s are expected" % str(languages))
 
     # loading po files
     for lang in languages:
-        po_filename = 'PhotoAlbumDocument-'+lang + '.po'
+        po_filename = 'CPSForum-'+lang + '.po'
         pr("   importing %s file" % po_filename)
         po_path = os.path.join(i18n_path, po_filename)
         try:
@@ -257,7 +257,7 @@ def install(self):
     # i18n support
     ##############################################
 
-    #photoalbum_i18n_update(self)
+    cps_forum_i18n_update(self)
 
     pr("End of CPSForum install")
     return pr('flush')

@@ -7,7 +7,7 @@ the forum in CPSDocument
 forum_type = {
     'title': "portal_type_CPSForum_title",
     'description': "portal_type_CPSForum_description",
-    'content_icon': 'forum_icon.gif',
+    'content_icon': 'forum_icon.png',
     'product': 'CPSForum',
     'factory': 'addCPSForum',
     'filter_content_types': 1,
@@ -54,7 +54,7 @@ forum_type = {
 forumpost_type = {
     'title': "portal_type_ForumPost_title",
     'description': "portal_type_ForumPost_description",
-    'content_icon': 'discussionitem_icon.gif',
+    'content_icon': 'discussionitem_icon.png',
     'content_meta_type': 'CPS Document',
     'product': 'CPSDocument',
     'factory': 'addCPSDocument',

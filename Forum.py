@@ -36,7 +36,7 @@ factory_type_information = ({
     'id': 'Forum',
     'meta_type': 'CPSForum',
     'description': "portal_type_CPSForum_description",
-    'icon': 'forum_icon.gif',
+    'icon': 'forum_icon.png',
     'title': "portal_type_CPSForum_title",
     'product': 'CPSForum',
     'factory': 'addCPSForum',

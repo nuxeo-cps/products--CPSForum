@@ -32,7 +32,7 @@
          tal:condition="doc_url">
       <a href="../.."
          tal:attributes="href doc_url">
-        <img tal:replace="structure python:here.getImgTag('UpFolder_icon.gif')" />
+        <img tal:replace="structure python:here.getImgTag('UpFolder_icon.png')" />
         <span i18n:translate="forum_link_back_to_document"/>
       </a>
     </div>

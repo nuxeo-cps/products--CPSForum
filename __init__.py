@@ -47,6 +47,6 @@ def initialize(registrar):
     utils.ToolInit('CPS Discussion Tool',
         tools=tools,
         product_name='CPSForum',
-        icon='tool.gif',
+        icon='tool.png',
     ).initialize(registrar)
     

@@ -121,6 +121,10 @@ def install(self):
     forum_layouts = installer.portal.getCPSForumLayouts()
     installer.verifyLayouts(forum_layouts)
 
+    # Portal vocabularies
+    forum_vocabs = installer.portal.getCPSForumVocabularies()
+    installer.verifyVocabularies(forum_vocabs)
+
     ##########################################
     # WORKFLOW DEFINITION
     ##########################################
@@ -262,7 +266,8 @@ def install(self):
             'title': 'Created',
             'transitions': ('auto_publish', 'auto_moderate'), #'auto_publish', 
             'permissions': {View: ('Manager', 'Owner', 'WorkspaceManager',
-                                   'SectionManager', 'SectionReviewer'),
+                                   'SectionManager', 'SectionReviewer',
+                                   'ForumModerator'),
                             ModifyPortalContent: ('Manager', 'Owner',
                                                   'WorkspaceManager',
                                                   'SectionManager',
@@ -273,7 +278,8 @@ def install(self):
             'title': 'Awaiting acceptance',
             'transitions': ('publish',),
             'permissions': {View: ('Manager', 'Owner', 'WorkspaceManager',
-                                   'SectionManager', 'SectionReviewer'),
+                                   'SectionManager', 'SectionReviewer',
+                                   'ForumModerator'),
                             ModifyPortalContent: ('Manager', 'Owner',
                                                   'WorkspaceManager',
                                                   'SectionManager',
@@ -286,7 +292,8 @@ def install(self):
             'permissions': {View: ('Manager', 'Owner', 'WorkspaceManager',
                                    'WorkspaceMember', 'WorkspaceReader',
                                    'SectionManager', 'SectionReviewer',
-                                   'SectionReader', 'ForumPoster'),
+                                   'SectionReader', 'ForumPoster',
+                                   'ForumModerator'),
                             ModifyPortalContent: ('Manager',)},
             }
         }

@@ -63,11 +63,10 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         self.assertEquals(post['published'], 0)
         self.assert_(post['modified'])
 
-        forum.publishPost(post_id, 1)
+        forum.forum_publish_posts((post_id,))
         post = forum[post_id]
         self.assertEquals(post['published'], 1)
-
-        forum.publishPost(post_id, 0)
+        forum.forum_unpublish_posts((post_id,))
         post = forum[post_id]
         self.assertEquals(post['published'], 0)
 
@@ -81,14 +80,36 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
 
 
     def testPostCreation2(self):
-        # Create post using method calls on the Forum object.
+        # Create / modify post using method calls on the Forum object.
         forum = self.forum
         post_id = forum.addPost(subject='subject', message='message',
             author='author')
         self.assertEquals(len(forum.getThreads()), 1)
 
+        forum.publishPost(post_id, 1)
+        post = forum[post_id]
+        self.assertEquals(post['published'], 1)
+
+        forum.publishPost(post_id, 0)
+        post = forum[post_id]
+        self.assertEquals(post['published'], 0)
+
         forum.delPost(post_id)
         self.assertEquals(forum.getThreads(), [])
+
+    def testThread(self):
+        forum = self.forum
+        post1_id = forum.addPost(subject='subject1', message='message1',
+            author='author1')
+        self.assertEquals(len(forum.getThreads()), 1)
+
+        post2_id = forum.addPost(subject='subject2', message='message2',
+            author='authorr2', parent_id=post1_id)
+        self.assertEquals(len(forum.getThreads()), 1)
+
+        forum.forum_view()
+        forum.forum_view(post1_id)
+        forum.forum_view(post2_id)
 
 
 

@@ -27,10 +27,10 @@
     <tr>
       <td colspan="2">
         <tal:block condition="python:not comment_mode and is_reviewer">
-          <input type="submit" name="forum_publish_post:method"
+          <input type="submit" name="forum_publish_posts:method"
                  class="context" value="forum_publish" 
                  i18n:attributes="value" />
-          <input type="submit" name="forum_unpublish_post:method"
+          <input type="submit" name="forum_unpublish_posts:method"
                  class="context" value="forum_depublish" 
                  i18n:attributes="value" />
         </tal:block>

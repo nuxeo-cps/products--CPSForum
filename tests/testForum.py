@@ -81,7 +81,7 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         self.assertEquals(post_info['author'], "root")
         self.assertEquals(post_info['message'], "message")
         self.assertEquals(post_info['parent_id'], None)
-        self.assertEquals(post_info['published'], 0)
+        self.assertEquals(post_info['published'], 1)
         self.assertEquals(post_info['locked'], 0)
         self.assert_(post_info['modified'])
 

@@ -2,6 +2,11 @@ c<html metal:use-macro="here/main_template/macros/master">
 
 <metal:block fill-slot="header" />
 
+<metal:block fill-slot="css_slot">
+  <link rel="Stylesheet" type="text/css" href=""
+    tal:attributes="href string:${base_url}document.css" />
+</metal:block>
+
 <metal:block fill-slot="main">
 <form method="post"
       tal:attributes="action here/absolute_url"

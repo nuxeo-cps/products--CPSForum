@@ -18,12 +18,10 @@
 
 from AccessControl import ClassSecurityInfo
 from Products.CMFCore.utils import getToolByName
-from Products.CMFCore.CMFCorePermissions import View, \
-     ManageProperties, ChangePermissions
-from Products.CMFCore.utils import mergedLocalRoles
+from Products.CMFCore.CMFCorePermissions import View, ChangePermissions
 from Products.CPSCore.CPSBase import CPSBaseDocument, CPSBase_adder
 
-from CPSForumPermissions import ForumModerate, ForumPost
+from CPSForumPermissions import ForumModerate
 
 factory_type_information = ({
     'id': 'Forum',
@@ -317,12 +315,14 @@ class CPSForum(CPSBaseDocument):
         as built-in function reduce is not available from
         python scripts"""
         
-        def reduce_eq(func,seq,init=None):
-            if init is None: init, seq = seq[0], seq[1:]
-            for item in seq: init = func(init,item)
+        def reduceEq(func, seq, init=None):
+            if init is None: 
+                init, seq = seq[0], seq[1:]
+            for item in seq: 
+                init = func(init, item)
             return init
         
-        return reduce_eq(lambda line, word, width=width: '%s%s%s' %
+        return reduceEq(lambda line, word, width=width: '%s%s%s' %
                       (line,
                        ' \n'[(len(line[line.rfind('\n')+1:])
                               + len(word.split('\n',1)[0]
@@ -344,7 +344,7 @@ class CPSForum(CPSBaseDocument):
             checked_emails = self.checkEmails(list=moderator_emails)
             utool = getToolByName(self, 'portal_url')
             portal = utool.getPortalObject()
-            #XXX: this has to be i18n-ed
+            # FIXME: this has to be i18n-ed
             subject = "Soumission d'un message sur le Forum %s" % self.title
             post_url = proxy.absolute_url() + '?post_id=' + post_id
             body = "Un nouveau message à modérer vient d'être poste sur le forum %s.\n\nCe message peut être consulte à l'adresse suivante:\n%s" % (self.title, post_url)
@@ -373,9 +373,8 @@ Content-Type: %s; charset=%s
 Mime-Version: 1.0
 
 %s"""
-            content = content % (
-                from_address, reply_to, ', '.join(mto), subject,
-                content_type, charset, body)
+            content = content % (from_address, reply_to, ', '.join(mto), 
+                                 subject, content_type, charset, body)
             
             mailhost.send(content, mto=mto, mfrom=from_address,
                           subject=subject, encode='8bit')

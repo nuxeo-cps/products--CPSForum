@@ -25,18 +25,14 @@ from Globals import InitializeClass, DTMLFile
 from AccessControl import ClassSecurityInfo
 
 from Products.CMFCore.PortalFolder import PortalFolder
-from Products.CMFCore.CMFCorePermissions import View, ManagePortal
+from Products.CMFCore.CMFCorePermissions import ManagePortal
 from Products.CMFCore.utils import UniqueObject, getToolByName
+from Products.CMFCore.ActionProviderBase import ActionProviderBase
+from Products.CMFDefault.DiscussionTool import DiscussionTool
+from Products.CPSCore.EventServiceTool import getEventService
 
 from Forum import addCPSForum
 
-from Products.CMFDefault.DiscussionTool import DiscussionTool
-
-from Products.CMFCore.ActionProviderBase import ActionProviderBase
-
-from Products.CMFCore.Expression import Expression
-
-from Products.CPSCore.EventServiceTool import getEventService
 
 class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     """Comment tool, a container for forums used to comment documents."""
@@ -102,15 +98,15 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     def addForum(self, doc):
         doc_id = doc.getDocid()
         if not doc_id in self.contentIds():
-            #this is the first comment about this doc
-            #create a new forum, with id matching the one of the document
-            #(this adds the forum directly to portal_comment)
+            # This is the first comment about this doc:
+            # create a new forum, with id matching the one of the document
+            # (this adds the forum directly to portal_comment)
             addCPSForum(self, doc_id)
         return self.getForum(doc_id)
 
     security.declarePublic('notifyPostCreation')
     def notifyPostCreation(self, object, url_to_display=None, comment=0):
-        """ Notify the event service tool that an new post or comment
+        """Notify the event service tool that an new post or comment
         has been created
 
         We need to call it from the skins to make the difference in between
@@ -126,14 +122,11 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
         # We want to separate these two types of events
         # Normal post / Commment
         #
-
         if comment:
             event_id = 'forum_comment_create'
         else:
             event_id = 'forum_new_message'
 
-        evtool.notify(event_id,
-                      object,
-                      {'url_to_display':url_to_display})
+        evtool.notify(event_id, object, {'url_to_display': url_to_display})
 
 InitializeClass(CommentTool)

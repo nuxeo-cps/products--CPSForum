@@ -6,7 +6,7 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
--
+- it was not possible to publish unpublished/rejected posts
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

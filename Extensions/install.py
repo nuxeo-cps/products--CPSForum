@@ -353,6 +353,27 @@ def install(self):
         permission='View',
         category='object')
 
+    def getActionIndex(action_id, action_provider):
+        action_index = 0
+        for action in action_provider.listActions():
+            if action.id == action_id:
+                return action_index
+            action_index += 1
+        return -1
+
+    p_actions = portal['portal_actions']
+    action_index = getActionIndex('status_history', p_actions)
+    if action_index > -1:
+        p_actions.deleteActions((action_index,))
+    p_actions.addAction(
+        id='status_history',
+        name='action_status_history',
+        action='string: ${object/absolute_url}/content_status_history',
+        # XXX: this is as messy as what is done in cpsinstall
+        condition="python:getattr(object, 'portal_type', None) not in ('Section', 'Workspace', 'Portal', 'Calendar', 'Event', 'CPSForum')",
+        permission='View',
+        category='workflow')
+
     ##############################################
     # i18n support
     ##############################################

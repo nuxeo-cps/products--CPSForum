@@ -24,6 +24,13 @@
       </td>
     </tr>
     <tr>
+      <td i18n:translate="forum_allow_anon_posts">Allow anonymous posts</td>
+      <td>
+        <input type="checkbox" name="allow_anon_posts"
+               tal:attributes="checked python:test(doc.anonymousPostsAllowed(),'checked',None)"/>
+      </td>
+    </tr>
+    <tr>
       <td i18n:translate="forum_moderation">Moderation</td>
       <td>
         <select name="moderation_mode:int">
@@ -38,16 +45,6 @@
         </select>
       </td>
     </tr>
-    <tr>
-      <td i18n:translate="forum_moderators">Moderators</td>
-      <td>
-        <ul>
-          <li tal:define="reviewers python:doc.getModerators(here)"
-            tal:repeat="reviewer reviewers" tal:content="reviewer" />
-        </ul>
-      </td>
-    </tr>
-
     <tr>
       <td />
       <td>

@@ -1,4 +1,24 @@
 *******************************************
+** CPSForum V1.3.5 [R1 build 2004/09/07-12:43 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- new sorting criterion : workflow status (moderation)
+- date/author/subject/wf sorting can be reversed
+
+Bug fixes:
+~~~~~~~~~~
+- removed border around checkboxes (MSIE, flat sorting mode)
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- retrieve SESSION object from REQUEST (should make session-dependant
+  features work with instances that do not have a session_data_manager)
+
+
+*******************************************
 ** CPSForum V1.3.4 [R1 build 2004/08/23-05:52 by fermigier]
 
 Requires:

@@ -10,7 +10,10 @@ from zLOG import LOG,DEBUG
 pmt = context.portal_membership
 is_reviewer = 'ForumModerator' in pmt.getCPSCandidateLocalRoles(context)
 username = pmt.getAuthenticatedMember().getId()
-session_data = context.session_data_manager.getSessionData()
+try:
+    session_data = context.session_data_manager.getSessionData()
+except AttributeError:
+    session_data = None
 
 def getHeadline(post):
     if comment_mode:
@@ -70,7 +73,10 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
             result += '<tr id="thread_%s" class="%s">' % \
                       (post['id'], row_class)
 
-            style = session_data.get('post_' + str(post['id']), None)
+            if session_data:
+                style = session_data.get('post_' + str(post['id']), None)
+            else:
+                style = None
             if style <> 'collapsed':
                 more, counter = getBranches(branch[1], post['id'],
                                             level+1, counter)

@@ -89,7 +89,7 @@ forumpost_layout = {
                 'is_required': 1,
                 'label_edit': 'forum_label_subject',
                 'display_width': 72,
-                'size_max': 200,
+                'size_max': 250,
             },
         },
         'author': {

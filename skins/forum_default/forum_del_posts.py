@@ -1,4 +1,4 @@
-##parameters=forum_thread_ids=(),REQUEST=None
+##parameters=forum_thread_ids=(),b_start=None,REQUEST=None
 
 # $Id$
 
@@ -28,4 +28,9 @@ for post_id in posts_to_delete:
 forum.delPosts(posts_to_delete, proxy=context)
 
 if REQUEST is not None:
-    REQUEST.RESPONSE.redirect(context.absolute_url())
+    if b_start:
+        url = "%s?b_start=%s" % (context.absolute_url(),
+                                            b_start)
+    else:
+        url = context.absolute_url()
+    REQUEST.RESPONSE.redirect(url)

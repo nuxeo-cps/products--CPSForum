@@ -1,7 +1,19 @@
 <html metal:use-macro="here/main_template/macros/master">
 <metal:block fill-slot="header" />
 <metal:block fill-slot="main"
-             i18n:domain="cpsforum">
+             i18n:domain="cpsforum"
+tal:define="parent_id options/parent_id|nothing;
+                  doc here/getContent|here;
+                  member python:here.portal_membership.getAuthenticatedMember();
+                  dtool python:here.portal_metadirectories['members'];
+                  errormsg options/error_message|nothing;
+      roles python:here.portal_membership.getCPSCandidateLocalRoles(here)">
+
+<tal:block tal:condition="python:not 'ForumPoster' in roles">
+  <p>You are not authorized to post on this forum</p>
+</tal:block>
+
+<tal:block tal:condition="python:'ForumPoster' in roles">
 <form method="POST" action="." enctype="multipart/form-data"
       tal:define="parent_id options/parent_id|nothing;
                   doc here/getContent|here;
@@ -64,5 +76,6 @@
     </tr>
   </table>
 </form>
+</tal:block>
 </metal:block>
 </html>

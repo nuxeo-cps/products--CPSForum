@@ -22,7 +22,7 @@ tal:define="parent_id options/parent_id|nothing;
                   errormsg options/error_message|nothing;">
   <table>
     <tr>
-      <td i18n:translate="L_forum ecrivain">Author</td>
+      <td i18n:translate="forum_author">Author</td>
       <td>
         <tal:block condition="not:here/portal_membership/isAnonymousUser">
           <tal:block define="
@@ -44,7 +44,7 @@ tal:define="parent_id options/parent_id|nothing;
     </tr>
     <tr tal:define="parent_info python:parent_id and doc[parent_id];
                     parent_subject python:parent_info and parent_info['subject'];">
-      <td i18n:translate="L_forum sujet">Subject</td>
+      <td i18n:translate="forum_subject">Subject</td>
       <td>
         <tal:block condition="parent_subject">
           <input type="text" name="subject:string"
@@ -57,7 +57,7 @@ tal:define="parent_id options/parent_id|nothing;
       </td>
     </tr>
     <tr>
-      <td i18n:translate="L_forum message">Message</td>
+      <td i18n:translate="forum_message">Message</td>
       <td>
         <textarea cols="40" rows="6"
                   name="message:string"></textarea>
@@ -70,7 +70,7 @@ tal:define="parent_id options/parent_id|nothing;
                tal:condition="parent_id"
                tal:attributes="value parent_id" />
         <input type="submit" name="forum_post:method"
-               class="mainbutton" value="L_forum post" 
+               class="mainbutton" value="forum_post" 
                i18n:attributes="value" />
       </td>
     </tr>

@@ -7,7 +7,7 @@
 
   <tr><td colspan="2">&nbsp;</td></tr>
   <tr><td class="forumheader" colspan="2" 
-          i18n:translate="L_forum message">Message</td></tr>
+          i18n:translate="forum_message">Message</td></tr>
 
   <tal:block condition="python: is_reviewer or post['published']">
     <tr><td colspan="2">
@@ -42,24 +42,24 @@
       <td colspan="2">
         <form  method="POST" tal:attributes="action here/absolute_url" name="post_form">
           <input type="submit" name="forum_post_form:method"
-                 class="mainbutton" value="L_forum nouveau fil"
+                 class="mainbutton" value="forum_new_thread"
                  i18n:attributes="value" />
           <input type="hidden" name="parent_id:string"
                  tal:attributes="value post_id" />
           <input type="submit" name="forum_post_reply:method"
-                 class='mainbutton' value="L_forum repondre"
+                 class='mainbutton' value="forum_reply"
                  i18n:attributes="value" />
           <tal:block condition="is_reviewer">
             <input type="submit" name="forum_publish_thread:method"
-                   class="mainbutton" value="L_forum publier"
+                   class="mainbutton" value="forum_publish"
                    tal:condition="python:not post['published']"
                    i18n:attributes="value" />
             <input type="submit" name="forum_unpublish_thread:method"
-                   class="mainbutton" value="L_forum depublier"
+                   class="mainbutton" value="forum_depublish"
                    tal:condition="python:post['published']"
                    i18n:attributes="value" />
             <input type="submit" name="forum_del_thread:method"
-                   class='mainbutton' value="L_forum supprimer"
+                   class='mainbutton' value="forum_delete"
                    i18n:attributes="value" />
           </tal:block>
         </form>

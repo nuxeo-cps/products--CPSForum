@@ -32,7 +32,7 @@ factory_type_information = (
         'meta_type': 'CPSForum',
         'description': "Forums hold threaded discussions",
         'icon': 'forum_icon.gif',
-        'title': "L_forum title",
+        'title': "forum_title",
         'product': 'CPSForum',
         'factory': 'addCPSForum',
         'filter_content_types': 1,

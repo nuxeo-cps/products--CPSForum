@@ -11,11 +11,11 @@
         <td class="forumsubheader" width="20"><input type="hidden" name="parent_id:string"
             tal:attributes="value post_id" /></td>
         <td class="forumsubheader" width="10">&nbsp;</td>
-        <td class="forumsubheader" i18n:translate="L_forum sujet">Subject</td>
+        <td class="forumsubheader" i18n:translate="forum_subject">Subject</td>
         <td class="forumsubheader" width="100" 
-            i18n:translate="L_forum ecrivain">Author</td>
+            i18n:translate="forum_author">Author</td>
         <td class="forumsubheader" width="80" 
-            i18n:translate="L_forum date">Date</td>
+            i18n:translate="forum_date">Date</td>
       </tr>
       <tal:span content="structure python:here.post_tree(descendants=descendants, post_id=post_id)" />
     </table>
@@ -24,13 +24,13 @@
       <tr>
         <td colspan="2">
           <input type="submit" name="forum_publish_post:method"
-                 class="mainbutton" value="L_forum publier" 
+                 class="mainbutton" value="forum_publish" 
                  i18n:attributes="value" />
           <input type="submit" name="forum_unpublish_post:method"
-                 class="mainbutton" value="L_forum depublier" 
+                 class="mainbutton" value="forum_depublish" 
                  i18n:attributes="value" />
           <input type="submit" name="forum_del_post:method"
-                 class="mainbutton" value="L_forum supprimer" 
+                 class="mainbutton" value="forum_delete" 
                  i18n:attributes="value" />
         </td>
       </tr>

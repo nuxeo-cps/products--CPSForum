@@ -21,7 +21,7 @@
   <tal:block>
     <span tal:content="description">Description</span>
     <br/>
-    <tal:block i18n:translate="L_forum valideur">Moderators</tal:block>:
+    <tal:block i18n:translate="forum_moderator">Moderators</tal:block>:
     <tal:block repeat="moderator python:here.getOfficialModerators()">
       <a tal:attributes="href moderator/homedir"
          tal:content="moderator/fullname">fullname
@@ -38,7 +38,7 @@
         </td></tr>
       </tal:block>
       <tr tal:condition="python:not len(threads)">
-        <td i18n:translate="L_forum no_message" class="forumempty">
+        <td i18n:translate="forum_no_message" class="forumempty">
           Aucun message dans ce forum !
         </td>
       </tr>

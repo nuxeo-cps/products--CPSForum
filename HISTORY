@@ -1,4 +1,25 @@
 *******************************************
+** CPSForum V0.7.0 [R1 build 2004/04/09-13:27 by ben]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- new German locale !
+- CPSForum is a CPSDocument:
+  - edit page is done using layout
+  - new metadata page
+  - new CPSForum are searchable
+  - compatible with old CPSForum
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** CPSForum V0.6.0 [R1 build 2004/03/25-11:41 by ben]
 
 Requires:

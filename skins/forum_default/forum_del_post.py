@@ -1,6 +1,5 @@
 ##parameters=forum_thread_ids=(),comment_mode=0
 
-#doc = hasattr(context, 'getContent') and context.getContent() or context
 doc = context.getForumObject(comment_mode)
 for i in forum_thread_ids:
     doc.delForumPost(i)

@@ -5,14 +5,12 @@
 """Activate/deactivate comments"""
 
 if context.portal_membership.checkPermission('Forum manage comments', context):
-    
+
     if mode == '1':
-        kw = {'allow_discussion': 1,}
-        context.getEditableContent().edit(**kw)
+        context.portal_discussion.setAllowDiscussion(context, 1)
         psm = 'forum_psm_comments_activated'
     else:
-        kw = {'allow_discussion': 0,}
-        context.getEditableContent().edit(**kw)
+        context.portal_discussion.setAllowDiscussion(context, 0)
         psm = 'forum_psm_comments_deactivated'
 
     if REQUEST is not None:

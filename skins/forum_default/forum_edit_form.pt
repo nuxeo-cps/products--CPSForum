@@ -16,7 +16,7 @@
             </td>
         </tr>
         <tr>
-            <td i18n:translate="L_forum replier">Replier le fil</td>
+            <td i18n:translate="L_forum description">Description</td>
             <td>
                 <textarea  rows="3" cols="30" name="description:string"
                     tal:content="doc/description"></textarea>

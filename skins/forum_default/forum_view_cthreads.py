@@ -35,9 +35,9 @@ if (getattr(forum, 'tree_display', 'title') != 'title' or
         else:
             return date + subject
 
-    if sort_by == 'subject':
+    if sort_by.startswith('subject'):
         make_sortkey = subject_sortkey
-    elif sort_by == 'author':
+    elif sort_by.startswith('author'):
         make_sortkey = author_sortkey
     else:
         make_sortkey = date_sortkey
@@ -45,7 +45,15 @@ if (getattr(forum, 'tree_display', 'title') != 'title' or
     posts4sort = [(make_sortkey(post_info), post_info) for post_info in post_infos]
     posts4sort.sort()
 
-    result = [x[1] for x in posts4sort]
+    if sort_by.endswith('Inv'):
+        # reverse sorted list if sorting by dateInv, authorInv, subjectInv
+        result = []
+        i = len(posts4sort) - 1
+        while i >= 0:
+            result.append(posts4sort[i][1])
+            i = i - 1
+    else:
+        result = [x[1] for x in posts4sort]
         
 else:
     threads = []

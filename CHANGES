@@ -6,8 +6,7 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
-- forum instances created with CPSForum 1.2.x or earlier should no
-  longer throw a tree_display error (use frm12xto130.py if they still do)
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

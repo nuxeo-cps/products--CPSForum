@@ -17,18 +17,18 @@ except AttributeError:
 
 def getHeadline(post):
     if comment_mode:
-        #if viewing forum as document inline comments,
-        #the proper parameter name to give to cpsdocument_view
-        #is comment_id
+        # If viewing forum as document inline comments,
+        # the proper parameter name to give to cpsdocument_view
+        # is comment_id
         param_name = 'comment_id'
     else:
-        #if viewing standard forum, the proper parameter name
-        #to give to the forum is post_id
+        # If viewing standard forum, the proper parameter name
+        # to give to the forum is post_id
         param_name = 'post_id'
     headline = '<a href="%s/?%s=%s">%s</a>' % (
         context.absolute_url(), param_name, post['id'], post['subject'])
     if post['id'] == post_id:
-        #rendering select post (if any) with a bold font
+        # Rendering select post (if any) with a bold font
         headline = '<b>' + headline + '</b>'
     return headline
 
@@ -103,7 +103,7 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
 
             result += getHeadline(post)
             
-            fullname = context.getPoster(post['author'])
+            fullname = context.getPosterName(post['author'])
             result += '</td>\n<td>%s</td>' % fullname
             
             ptime = post['modified'].strftime('%d/%m/%y %H:%M')

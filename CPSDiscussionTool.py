@@ -6,16 +6,16 @@ from Products.CMFDefault.DiscussionItem import DiscussionItemContainer
 from OFS.ObjectManager import ObjectManager
 from OFS.SimpleItem import SimpleItem
 
-class CPS3DiscussionContainer(SimpleItem, DiscussionItemContainer):
-    meta_type = 'CPS3 Discussion Container'
+class CPSDiscussionContainer(SimpleItem, DiscussionItemContainer):
+    meta_type = 'CPS Discussion Container'
 
     def __init__(self, id):
         self.id = id
         self._container = PersistentMapping()
 
-class CPS3DiscussionTool(ObjectManager, DiscussionTool):
+class CPSDiscussionTool(ObjectManager, DiscussionTool):
 
-    meta_type = 'CPS3 Discussion Tool'
+    meta_type = 'CPS Discussion Tool'
     manage_options = ObjectManager.manage_options + DiscussionTool.manage_options
 
     def getDiscussionFor(self, content):
@@ -32,10 +32,10 @@ class CPS3DiscussionTool(ObjectManager, DiscussionTool):
         discussion = self._getOb(docid, None)
         if not discussion:
             discussion = self._createDiscussionFor( content )
-            LOG('CPS3DiscussionTool', DEBUG, 'New discussion created for %s' % \
+            LOG('CPSDiscussionTool', DEBUG, 'New discussion created for %s' % \
                 content.getId())
 
-        LOG('CPS3DiscussionTool', DEBUG, 'Found discussion for %s' % \
+        LOG('CPSDiscussionTool', DEBUG, 'Found discussion for %s' % \
                 content.getId(), str(discussion) + '\n')
         return discussion
 
@@ -48,6 +48,6 @@ class CPS3DiscussionTool(ObjectManager, DiscussionTool):
             raise DiscussionNotAllowed
 
         newid = content.getId()
-        discussion = CPS3DiscussionContainer(newid)
+        discussion = CPSDiscussionContainer(newid)
         self._setObject(newid, discussion)
         return discussion

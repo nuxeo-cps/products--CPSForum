@@ -1,4 +1,6 @@
+## Script (Python) "forum_view"
 ##parameters=post_id=None, REQUEST=None
+""" """
 
 if(post_id is None):
     threads = context.getContent().getThreads()

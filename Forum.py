@@ -9,25 +9,26 @@ from Products.CMFCore.CMFCorePermissions import View, AddPortalContent, \
         ModifyPortalContent, ManageProperties, ChangePermissions
 from Products.NuxUserGroups.CatalogToolWithGroups import mergedLocalRoles
 from Products.CPSCore.CPSBase import CPSBaseDocument, CPSBase_adder
+from Products.CPSCore.CPSBase import CPSBaseFolder
 
 from Post import Post
 
 factory_type_information = (
         { 'id': 'Forum',
-        'meta_type': 'CPS3Forum',
+        'meta_type': 'CPSForum',
         'description': "Forums hold threaded discussions",
         'icon': 'forum_icon.gif',
         'title': "L_forum forum",
         'product': 'CPSForum',
-        'factory': 'addCPS3Forum',
+        'factory': 'addCPSForum',
         'filter_content_types': 1,
         'allowed_content_types': ('Post',),
-        'immediate_view': 'view',
+        'immediate_view': 'forum_view',
         'actions': (
             {
             'id': 'view',
             'name': 'L_forum action view',
-            'action': 'forum_view_main',
+            'action': 'forum_view',
             'permissions': (View,),
             },
              {'id': 'create',
@@ -79,18 +80,20 @@ def addDiscussionItem(self, id, title, description, text_format, text,
         reply_to, RESPONSE))
 
 
-def addCPS3Forum(self, id, **kw):
+def addCPSForum(self, id, **kw):
     """
     Adds a Forum
     """
-    forum = CPS3Forum(id, **kw)
+    forum = CPSForum(id, **kw)
     self.moderation_mode = kw.get('moderation_mode', 1)
     CPSBase_adder(self,forum)
 
-class CPS3Forum(CPSBaseDocument):
+class CPSForum(CPSBaseDocument):
     """
-    Forum CPS3
+    Forum CPS
     """
+    meta_type='CPSForum'
+    portal_type='CPSForum'
     allow_discussion = 1
     moderation_mode = 1 # after publishing post
     moderators = []
@@ -164,14 +167,9 @@ class CPS3Forum(CPSBaseDocument):
         """
         Fetches a post
         """
-        try:
-
-            disc = self.portal_discussion.getDiscussionFor(self)
-            reply = disc.getReply(id)
-            result = self.getPostInfo(reply)
-        except AttributeError:
-            return None
-            #raise KeyError, "Post %s not found" % id
+        disc = self.portal_discussion.getDiscussionFor(self)
+        reply = disc.getReply(id)
+        result = self.getPostInfo(reply)
 
         return result
 
@@ -256,8 +254,8 @@ class CPS3Forum(CPSBaseDocument):
             result.append(mdata)
         return result
 
-def addCPS3Post(self, id, RESPONSE=None, **kw):
-    """function addCPS3Post
+def addCPSPost(self, id, RESPONSE=None, **kw):
+    """function addCPSPost
 
     title: string      the subject
     author: string     the author
@@ -266,43 +264,36 @@ def addCPS3Post(self, id, RESPONSE=None, **kw):
     parent_id: string  an optional parent Post uid, as obtained from
                        parentPost.getPostUID()
     """
-    post = CPS3Post(id, **kw)
+    post = CPSPost(id, **kw)
     post.parent_id = kw['parent_id']
     if post.parent_id is None:
         post.parent_id = '_FORUM_'
     self._setObject(id, post)
 
-try:
-    from Products.CPSCore.CPSBase import CPSBaseDocument
-    from Products.CPSCore.CPSBase import CPSBaseFolder
 
-    class CPS3Post(CPSBaseDocument, Post):
-        """Class Post for CPS3
+class CPSPost(CPSBaseDocument, Post):
+    """Class Post for CPS
+    """
+    # Attributes:
+    meta_type = "CPSPost"
+    forum_meta_type = 'CPSForum'
+    _properties = CPSBaseDocument._properties + (
+        { 'id': 'text', 'type': 'string', 'mode': 'w', 'label': 'Post author' },
+        { 'id': 'author', 'type': 'string', 'mode': 'w', 'label': 'Post author' },
+        { 'id': 'forum_id', 'type': 'string', 'mode': 'w', 'label': 'Parent Forum id' },
+        { 'id': 'parent_id', 'type': 'string', 'mode': 'w', 'label': 'Parent Post id' },
+        )
+    
+    def getPostInfo(self):
+        """function getPostInfo
+        
+        returns tuple (url, subject, author)
         """
-        # Attributes:
-        meta_type = "CPS3Post"
-        forum_meta_type = 'CPS3Forum'
-        _properties = CPSBaseDocument._properties + (
-                { 'id': 'text', 'type': 'string', 'mode': 'w', 'label': 'Post author' },
-                { 'id': 'author', 'type': 'string', 'mode': 'w', 'label': 'Post author' },
-                { 'id': 'forum_id', 'type': 'string', 'mode': 'w', 'label': 'Parent Forum id' },
-                { 'id': 'parent_id', 'type': 'string', 'mode': 'w', 'label': 'Parent Post id' },
-            )
+        return (self.getId(), self.getSubject(), self.getAuthor())
 
-        def getPostInfo(self):
-            """function getPostInfo
-
-            returns tuple (url, subject, author)
-            """
-            return (self.getId(), self.getSubject(), self.getAuthor())
-
-        def __init__(self, id, **kw):
-            """constructor
-            """
-            CPSBaseDocument.__init__(self, id, **kw)
-            #self.edit(**kw)
-
-except ImportError:
-    print "[CPSForum] CPS3 not installed, cps3 features disabled"
+    def __init__(self, id, **kw):
+        """constructor
+        """
+        CPSBaseDocument.__init__(self, id, **kw)
 
 

@@ -308,6 +308,7 @@ def install(self):
             'new_state_id': 'published',
             'trigger_type': TRIGGER_AUTOMATIC,
             'clone_allowed_transitions': None,
+            'after_script_name': 'post_publish',
             'props': {'guard_permissions': '',
                       'guard_roles':'',
                       'guard_expr':'python:container.getContent().moderation_mode == 0'},
@@ -326,6 +327,7 @@ def install(self):
             'new_state_id': 'published',
             'clone_allowed_transitions': None,
             'trigger_type': TRIGGER_USER_ACTION,
+            'after_script_name': 'post_publish',
             'props': {'guard_permissions': 'Forum Moderate',
                       'guard_roles':'',
                       'guard_expr':''},
@@ -358,6 +360,15 @@ kw = {'Title': subject,
       'parent_id': pid}
 
 object.getEditableContent().edit(**kw)
+"""
+            },
+            'post_publish': {
+                '_owner': None,
+                'script': """\
+##parameters=state_change
+object = state_change.object
+forum = object.aq_inner.aq_parent
+forum.getContent().newPostPublished(object.id, proxy=forum)
 """
             },
         }

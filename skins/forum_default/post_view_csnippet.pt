@@ -13,7 +13,8 @@
                    tal:replace="python:'('+mcat('forum_label_postedby').encode('ISO-8859-15', 'ignore')+' '+here.getPosterName(post_doc.author)+')'"/>
       </div>
       <div class="forumPostText"
-           tal:content="post_doc/Description">Message</div>
+           tal:content="structure python:post_doc.Description().replace('\n','<br/>')">
+      </div>
       <form method="post" tal:attributes="action forum_proxy/absolute_url"
             name="post_form"
             tal:define="locked python:here.locked_thread(post=post,

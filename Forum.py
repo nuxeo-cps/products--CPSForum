@@ -53,7 +53,7 @@ factory_type_information = ({
         'id': 'edit',
         'name': 'action_modify',
         'action': 'forum_edit_form',
-        'permissions': (ManageProperties,),
+        'permissions': ('Modify Folder Properties',),
     }, {
         'id': 'localroles',
         'name': 'action_local_roles',
@@ -87,6 +87,7 @@ def addCPSForum(self, id, **kw):
     """
     forum = CPSForum(id, **kw)
     self.moderation_mode = kw.get('moderation_mode', 1)
+    self.allow_anon_posts = kw.get('allow_anon_posts', 0)
     CPSBase_adder(self, forum)
 
 
@@ -98,13 +99,10 @@ class CPSForum(CPSBaseDocument):
     portal_type = 'CPSForum'
     # XXX: is it needed ?
     allow_discussion = 1
-    moderation_mode = 1 # after publishing post
+    moderation_mode = 1
+    allow_anon_posts = 0
     moderators = []
     security = ClassSecurityInfo()
-
-    #def __init__(self, id, **kw):
-    #    """Constructor"""
-    #    CPSBaseDocument.__init__(self,id, **kw)
 
     def getThreads(self):
         """Return a list of root posts
@@ -212,6 +210,7 @@ class CPSForum(CPSBaseDocument):
 
         CPSBaseDocument.edit(self,**kw)
         self.moderation_mode = kw.get('moderation_mode', 1)
+        self.allow_anon_posts = kw.get('allow_anon_posts', 0)
         self.moderators = kw.get('moderators', [])
 
     security.declarePublic('getModerators')
@@ -245,3 +244,7 @@ class CPSForum(CPSBaseDocument):
             mdata['homedir'] = dtool_entry_url + moderator_id
             result.append(mdata)
         return result
+
+    security.declarePublic('anonymousPostsAllowed')
+    def anonymousPostsAllowed(self):
+        return self.allow_anon_posts

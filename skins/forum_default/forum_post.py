@@ -9,11 +9,11 @@ if (not forum) and comment_mode:
     #the first post ; in this case create it
     forum = context.portal_discussion.addForum(context)
 
-if (not author) or (author == ""):
+if not author:
     msg = 'error_author'
     return context.forum_post_form(error_message=msg)
 
-if (not subject) or (subject == ""):
+if not subject:
     msg = 'error_subject'
     return context.forum_post_form(error_message=msg)
 

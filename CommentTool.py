@@ -24,8 +24,8 @@ from zLOG import LOG, DEBUG
 from Globals import InitializeClass, DTMLFile
 from AccessControl import ClassSecurityInfo
 from AccessControl.User import UnrestrictedUser
-from AccessControl.SecurityManagement import getSecurityManager
-from AccessControl.SecurityManagement import newSecurityManager
+from AccessControl.SecurityManagement import getSecurityManager,\
+     newSecurityManager
 
 from Products.CMFCore.PortalFolder import PortalFolder
 from Products.CMFCore.CMFCorePermissions import ManagePortal, View,\
@@ -36,6 +36,8 @@ from Products.CMFDefault.DiscussionTool import DiscussionTool
 from Products.CPSCore.EventServiceTool import getEventService
 
 from Forum import addCPSForum
+
+from CPSForumPermissions import ForumManageComments
 
 
 class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
@@ -169,9 +171,13 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
                                            ['Manager', 'Member'], '')
             tmp_user = tmp_user.__of__(mtool.acl_users)
             newSecurityManager(None, tmp_user)
+
+            # we should create a Workspace if parent folder is a workspace
+            # or a Section if parent folder is a section
+            folder_type = parent_folder.portal_type
             
             if '.cps_discussions' not in parent_folder.objectIds():
-                portal.portal_workflow.invokeFactoryFor(parent_folder, 'Workspace', '.cps_discussions')
+                portal.portal_workflow.invokeFactoryFor(parent_folder, folder_type, '.cps_discussions')
             cpsmcat = portal.Localizer.default
             discussion_folder = getattr(parent_folder, '.cps_discussions')
             kw = {'hidden_folder': 1,
@@ -179,9 +185,13 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
             discussion_folder_c = discussion_folder.getEditableContent()
             discussion_folder_c.edit(**kw)
             comment_wf_chain = no_content_wf_chain.copy()
-            comment_wf_chain.update({'CPSForum': 'workspace_forum_wf',
+            if folder_type == 'Section':
+                forum_wf_chain = 'section_forum_wf'
+            else:
+                forum_wf_chain = 'workspace_forum_wf'
+            comment_wf_chain.update({'CPSForum': forum_wf_chain,
                                      'ForumPost': 'forum_post_wf',
-                                    })
+                                     })
             wfSetup(discussion_folder, comment_wf_chain)
             portal.portal_eventservice.notifyEvent('modify_object', discussion_folder, {})
             portal.portal_eventservice.notifyEvent('modify_object', discussion_folder_c, {})
@@ -242,6 +252,34 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
         forum = proxy_forum.getContent()
         forum.newPostCreated(post_id, proxy=proxy_forum)
         # leave unrestricted user mode
+        newSecurityManager(None, old_user)
+
+    security.declareProtected(ForumManageComments, 'setAllowDiscussion')
+    def setAllowDiscussion(self, proxy, allow):
+        """Set discussion allowed or not"""
+
+        class CPSUnrestrictedUser(UnrestrictedUser):
+            """Unrestricted user that still has an id.
+            
+            Taken from CPSMembershipTool
+            """
+            
+            def getId(self):
+                """Return the ID of the user."""
+                return self.getUserName()
+
+
+        mtool = getToolByName(self, 'portal_membership')
+        old_user = getSecurityManager().getUser()
+        
+        tmp_user = CPSUnrestrictedUser('root', '',
+                                       ['Manager', 'Member'], '')
+        tmp_user = tmp_user.__of__(mtool.acl_users)
+        newSecurityManager(None, tmp_user)
+        
+        kw = {'allow_discussion': allow,}
+        proxy.getEditableContent().edit(**kw)
+
         newSecurityManager(None, old_user)
         
 

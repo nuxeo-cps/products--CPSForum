@@ -49,7 +49,12 @@ td.forumDateCell {
 }
 
 .forumDateCell {
-  width:26%
+  width:20%
+}
+
+.forumWFCell {
+  width:20%;
+  text-align:center
 }
 
 td.forumAuthorCell {
@@ -57,11 +62,11 @@ td.forumAuthorCell {
 }
 
 .forumAuthorCell {
-  width:25%
+  width:20%
 }
 
 .forumSubjectCell {
-  width:40%
+  width:30%
 }
 
 .forumSelectCell {
@@ -88,6 +93,23 @@ td.forumThreadBatch {
   text-align:center;
   font-size:0.9em;
   background-color:&dtml-boxEvenBackground;;
+}
+
+.pending {
+  color: orange;
+  font-weight:normal
+}
+
+.rejected {
+  color: black
+}
+
+.unpublished {
+  color: red
+}
+
+.published {
+  color: green
 }
 
 /*

@@ -33,12 +33,22 @@ forum_layout = {
                 'label_edit': 'forum_label_lock_forum',
                 },
             },
+        'threads_per_page': {
+            'type': 'Int Widget',
+            'data': {
+                'fields': ['threads_per_page'],
+                'is_i18n': 1,
+                'label': 'forum_label_threads_per_page',
+                'label_edit': 'forum_label_threads_per_page',
+                },
+            },
         },
     'layout': {
         'style_prefix': 'layout_default_',
         'rows': [[{'widget_id': 'moderation_mode'}, ],
                  [{'widget_id': 'allow_anon_posts'}, ],
                  [{'widget_id': 'frozen_forum'}, ],
+                 [{'widget_id': 'threads_per_page'}, ],
                  ],
         }
     }

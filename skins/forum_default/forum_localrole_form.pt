@@ -33,14 +33,14 @@
  </tr>
  <tr>
    <th i18n:translate="label_local_roles_search_term">Search Term</th>
-   <td><input type="text" name="search_term" size="30" /></td>
+   <td><input type="text" name="search_term" size="30"></td>
  </tr>
 
  <tr>
   <td><br /></td>
    <td>
      <input type="submit" name="role_submit" value="button_search"
-            i18n:attributes="value" />
+            i18n:attributes="value">
    </td>
  </tr>
 </table>
@@ -70,7 +70,7 @@ search_param == 'email')"
  <form method="post" action="folder_localrole_edit"
        tal:attributes="action string:${here/absolute_url}/folder_localrole_edit"
  >
-  <input type="hidden" name="change_type" value="add" />
+  <input type="hidden" name="change_type" value="add">
 
   <table class="FormLayout">
 
@@ -89,7 +89,7 @@ search_param == 'email')"
     <td width="16" define="entry python:member[1]">
      <input type="checkbox" name="member_ids:list"
             value=""
-            tal:attributes="value string:user:${entry/id}" />
+            tal:attributes="value string:user:${entry/id}">
     </td>
     <td tal:content="string:user:${entry/givenName}"> Username 1 </td>
     <td tal:content="entry/email"> Email 1 </td>
@@ -98,7 +98,7 @@ search_param == 'email')"
 
    <tr tal:condition="nothing">
     <td width="16">
-     <input type="checkbox" name="member_ids:list" value="" />
+     <input type="checkbox" name="member_ids:list" value="">
     </td>
     <td> Username 2 </td>
     <td> Email 2 </td>
@@ -135,7 +135,7 @@ search_param == 'email')"
     <td width="16"><br /></td>
     <td colspan="2">
         <input i18n:attributes="value"
-               type="submit" value="button_assign_roles" />
+               type="submit" value="button_assign_roles">
     </td>
    </tr>
 
@@ -180,7 +180,7 @@ search_param == 'email')"
  <form method="post" action="folder_localrole_edit"
        tal:attributes="action string:${here/absolute_url}/folder_localrole_edit"
  >
-  <input type="hidden" name="change_type" value="add" />
+  <input type="hidden" name="change_type" value="add">
 
   <table class="FormLayout">
 
@@ -197,7 +197,7 @@ search_param == 'email')"
     <td width="16">
         <input type="checkbox" name="member_ids:list"
                value=""
-               tal:attributes="value string:group:${group}" />
+               tal:attributes="value string:group:${group}">
     </td>
     <tal:block define="igroup python:groups.searchEntries(id=group)">
       <td tal:condition="python:len(igroup) > 0"
@@ -239,7 +239,7 @@ search_param == 'email')"
     <td width="16"><br /></td>
     <td colspan="2">
       <input i18n:attributes="value"
-             type="submit" value="button_assign_roles" /></td>
+             type="submit" value="button_assign_roles"></td>
    </tr>
 
   </table>
@@ -269,8 +269,8 @@ search_param == 'email')"
 
 <form method="post" action="folder_localrole_edit"
       tal:attributes="action string:${here/absolute_url}/folder_localrole_edit">
- <input type="hidden" name="change_type" value="delete" />
- <input type="hidden" name="member_role" value="" />
+ <input type="hidden" name="change_type" value="delete">
+ <input type="hidden" name="member_role" value="">
 
  <table width="100%" class="FormLayout"
    tal:define="lroles python:[('user:' + uroles[0],uroles[1]) for uroles in here.get_local_roles()] +
@@ -299,7 +299,7 @@ search_param == 'email')"
              <input type="checkbox"
                     name="member_ids:list"
                     value="id"
-                    tal:attributes="value user" />
+                    tal:attributes="value user">
             </td>
          </tal:block>
        <tal:block condition="not:haslrhere">
@@ -336,7 +336,7 @@ search_param == 'email')"
 
  <tr tal:condition="nothing">
   <td width="16">
-   <input type="checkbox" name="member_ids:list" value="id" />
+   <input type="checkbox" name="member_ids:list" value="id">
   </td>
   <td> Username 2 </td>
   <td> Role3 </td>
@@ -359,7 +359,7 @@ search_param == 'email')"
    <td colspan="2">
      <input type="submit"
             value="button_delete"
-            i18n:attributes="value" />
+            i18n:attributes="value">
    </td>
  </tr>
 

@@ -5,12 +5,12 @@
 <html i18n:domain="cpsforum">
   <form method="POST" tal:attributes="action here/absolute_url" name="post_form">
     <input type="hidden" name="comment_mode:int" 
-           tal:attributes="value comment_mode" />
+           tal:attributes="value comment_mode">
     <table border="0" style='width:100%;height:inherit' cellspacing='0' cellpadding='0'>
       <tr>
         <td class="forumsubheader" width="2%">
           <input type="hidden" name="parent_id:string" 
-                 tal:attributes="value post_id" />
+                 tal:attributes="value post_id">
         </td>
         <td class="forumsubheader" width="2%">&nbsp;</td>
         <th class="forumsubheader" i18n:translate="forum_subject"
@@ -32,20 +32,20 @@
         <tal:block condition="python:not comment_mode and is_reviewer">
           <input type="submit" name="forum_publish_posts:method"
                  class="context" value="forum_publish" 
-                 i18n:attributes="value" />
+                 i18n:attributes="value">
           <input type="submit" name="forum_unpublish_posts:method"
                  class="context" value="forum_depublish" 
-                 i18n:attributes="value" />
+                 i18n:attributes="value">
         </tal:block>
         <tal:block condition="python:not comment_mode and is_reviewer">
           <input type="submit" name="forum_lock_thread:method"
                  class="context" value="forum_button_lockunlock" 
-                 i18n:attributes="value" />
+                 i18n:attributes="value">
         </tal:block>
         <tal:block condition="python:comment_mode or is_reviewer">
           <input type="submit" name="forum_del_posts:method"
                  class="destructive" value="forum_delete" 
-                 i18n:attributes="value" />
+                 i18n:attributes="value">
         </tal:block>
       </td>
     </tr>

@@ -34,12 +34,12 @@
               user_props python:dtool.getEntry(user_id);
               fullname python:user_props and user_props.get(dtool.title_field, user_id) or user_id;">
               <input type="hidden" name="author:string"
-                     tal:attributes="value user_id" />
+                     tal:attributes="value user_id">
               <span tal:replace="fullname" />
             </tal:block>
           </tal:block>
           <tal:block condition="here/portal_membership/isAnonymousUser">
-            <input type="text" name="author:string" value="" />
+            <input type="text" name="author:string" value="">
             <span tal:condition="python:errormsg == 'error_author'"
                   i18n:translate="forum_psm_name_required" 
                   class="forumerror">Author field must be filled</span>
@@ -53,10 +53,10 @@
         <td>
           <tal:block condition="parent_subject">
             <input type="text" name="subject:string" size="60"
-                   tal:attributes="value string:Re: ${parent_subject};" />
+                   tal:attributes="value string:Re: ${parent_subject};">
           </tal:block>
           <tal:block condition="not:parent_subject">
-            <input type="text" name="subject:string" size="60" />
+            <input type="text" name="subject:string" size="60">
           </tal:block>
         </td>
       </tr>
@@ -74,10 +74,10 @@
           <input type="hidden" name="parent_id:string"
                  tal:attributes="value parent_id">
           <input type="hidden" name="comment_mode:int"
-                 tal:attributes="value comment_mode" />
+                 tal:attributes="value comment_mode">
           <input type="submit" name="forum_post:method"
                  class="standalone" value="forum_post" 
-                 i18n:attributes="value" />
+                 i18n:attributes="value">
         </td>
       </tr>
     </table>
@@ -105,12 +105,12 @@
               user_props python:dtool.getEntry(user_id);
               fullname python:user_props and user_props.get(dtool.title_field, user_id) or user_id;">
               <input type="hidden" name="author:string"
-                     tal:attributes="value user_id" />
+                     tal:attributes="value user_id">
               <span tal:replace="fullname" />
             </tal:block>
           </tal:block>
           <tal:block condition="here/portal_membership/isAnonymousUser">
-            <input type="text" name="author:string" value="" size="60" />
+            <input type="text" name="author:string" value="" size="60">
             <span tal:condition="python:errormsg == 'error_author'"
                   i18n:translate="forum_psm_name_required" 
                   class="forumerror">Author field must be filled</span>
@@ -124,10 +124,10 @@
         <td>
           <tal:block condition="parent_subject">
             <input type="text" name="subject:string" size="60"
-                   tal:attributes="value string:Re: ${parent_subject};" />
+                   tal:attributes="value string:Re: ${parent_subject};">
           </tal:block>
           <tal:block condition="not:parent_subject">
-            <input type="text" name="subject:string" size="60" />
+            <input type="text" name="subject:string" size="60">
           </tal:block>
         </td>
       </tr>
@@ -145,10 +145,10 @@
           <input type="hidden" name="parent_id:string"
                  tal:attributes="value parent_id">
           <input type="hidden" name="comment_mode:int"
-                 tal:attributes="value comment_mode" />
+                 tal:attributes="value comment_mode">
           <input type="submit" name="forum_post:method"
                  class="standalone" value="forum_post" 
-                 i18n:attributes="value" />
+                 i18n:attributes="value">
         </td>
       </tr>
     </table>

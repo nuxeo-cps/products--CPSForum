@@ -334,7 +334,9 @@ def install(self):
             'after_script_name': 'post_publish',
             'props': {'guard_permissions': '',
                       'guard_roles': '',
-                      'guard_expr': 'python:container.getContent().moderation_mode == 0 or user.has_permission(\'Forum Moderate\', container.getContent())'},
+                      'guard_expr': "python:container.getContent().moderation_mode == 0 " +
+                                    "or (user.has_permission('Forum Moderate', container.getContent()) " +
+                                        "and user.getUserName() != 'anonymous__forum__poster')"},
             },
         'auto_moderate': {
             'title': 'Moderating',
@@ -343,7 +345,9 @@ def install(self):
             'clone_allowed_transitions': None,
             'props': {'guard_permissions': '',
                       'guard_roles': '',
-                      'guard_expr': 'python: container.getContent().moderation_mode == 1 and not user.has_permission(\'Forum Moderate\', container.getContent())'},
+                      'guard_expr': "python: container.getContent().moderation_mode == 1 " +
+                                    "and (not user.has_permission('Forum Moderate', container.getContent()) " +
+                                         "or user.getUserName() == 'anonymous__forum__poster')"},
             },
         'publish': {
             'title': 'Publishing post',

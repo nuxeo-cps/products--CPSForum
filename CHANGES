@@ -3,7 +3,7 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
--
+- script for making the transition from CPSForum 1.2.0-1.2.2 to 1.2.3 or later
 Bug fixes:
 ~~~~~~~~~~
 - some missing translations for ForumPost portal type

@@ -8,18 +8,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "POT-Creation-Date: 2004-04-09 10:15default\n"
-"PO-Revision-Date: 2004-02-27 14:47+0100\n"
+"PO-Revision-Date: 2004-05-10 12:42+0100\n"
 "Last-Translator: Paolo Dina <paolo@php3.it>\n"
 "Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#.   <option value="0">a posteriori</option>
-#.   <option attributes="selected python:not moderation_mode" value="0">
-#.               a posteriori
-#.             </option>
-#: from ../skins/forum_default/forum_create_form.pt
+#    <option value="0">a posteriori</option>
+#    <option attributes="selected python:not moderation_mode" value="0">
+#                a posteriori
+#              </option>
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_a_posteriori"
 msgstr "a posteriori"
@@ -32,76 +33,89 @@ msgstr "a posteriori"
 #.   <option attributes="selected python:not not moderation_mode" value="1">
 #.               a priori
 #.             </option>
-#: from ../skins/forum_default/forum_create_form.pt
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_a_priori"
 msgstr "a priori"
 
 #.   <td>Allow anonymous posts</td>
-#: from ../skins/forum_default/forum_create_form.pt
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_allow_anon_posts"
 msgstr "Consenti messaggi anonimi"
 
 #.   <div class="label">Author</div>
 #.   <th class="forumAuthorCell">Author</th>
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
 msgstr "Autore"
 
 #    <input value="forum_button_lockunlock" class="context" name="forum_lock_thread:method" type="submit" />
 #.   <input value="forum_button_lockunlock" class="context" name="forum_lock_thread:method" type="submit" />
-#: from ../skins/forum_default/forum_view_threads_main.pt
+#: from
+#: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_button_lockunlock"
 msgstr "(S-)blocca discussione"
 
 #    <td class="forumsubheader" width="80">Date</td>
 #.   <th class="forumDateCell">Date</th>
-#: from ../skins/forum_default/forum_view_threads_main.pt
+#: from
+#: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_date"
 msgstr "Data"
 
 #.   <input value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
-#: from ../skins/forum_default/forum_view_threads_main.pt
+#: from
+#: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Elimina"
 
 #.   <input value="forum_depublish" class="context" name="forum_unpublish_posts:method" type="submit" />
-#: from ../skins/forum_default/forum_view_threads_main.pt
+#: from
+#: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_depublish"
 msgstr "Ritira"
 
 #.   <td>Description</td>
-#: from ../skins/forum_default/forum_create_form.pt
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_description"
 msgstr "Descrizione"
 
 #.   <h2 id="document_comment">Comments</h2>
-#: from ../skins/forum_default/forum_comment_lib.pt
+#: from
+#: ../skins/forum_default/forum_comment_lib.pt
 msgid "forum_label_comments"
 msgstr "Commenti"
 
 #.   <td>Lock forum (no longer possible to post new messages)</td>
-#: from ../skins/forum_default/forum_create_form.pt
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_label_lock_forum"
 msgstr "Blocca forum (sola lettura)"
 
 #.   <div class="label">Message</div>
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 msgid "forum_message"
 msgstr "Messaggio"
 
 #.   <td>Moderation</td>
-#: from ../skins/forum_default/forum_create_form.pt
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_moderation"
 msgstr "Moderazione"
 
 #.   <p>This forum is locked. You cannot post new messages to it.</p>
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 msgid "forum_msg_forum_frozen"
 msgstr "Questo forum è bloccato. Non puoi inviare ad esso nuovi messaggi."
 
@@ -111,13 +125,15 @@ msgstr "Questo forum è bloccato. Non puoi inviare ad esso nuovi messaggi."
 #.   <td class="forumempty">
 #.             Aucun message dans ce forum !
 #.           </td>
-#: from ../skins/forum_default/forum_comment_lib.pt
+#: from
+#: ../skins/forum_default/forum_comment_lib.pt
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_no_message"
 msgstr "Nessun messaggio"
 
 #.   <input value="forum_post" class="standalone" name="forum_post:method" type="submit" />
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 msgid "forum_post"
 msgstr "Invia"
 
@@ -125,58 +141,66 @@ msgstr "Invia"
 #.   <p>
 #.           You are not authorized to post on this forum
 #.         </p>
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 msgid "forum_post_unauthorize"
 msgstr "Non sei autorizzato a scrivere su questo forum"
 
 #    <p>You are not authorized to post on this forum</p>
 #.   <span condition="python:errormsg == 'error_author'" class="forumError">Author field must be filled</span>
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_name_required"
 msgstr "Devi inserire un nome o un soprannome"
 
 #    <p>You are not authorized to post on this forum</p>
-#.   <div condition="python:errormsg == 'error_subject'" class="row error">
-#.                   Subject field must be filled
-#.           </div>
-#: from ../skins/forum_default/forum_post_form.pt
-#, fuzzy
+#    <div condition="python:errormsg == 'error_subject'" class="row error">
+#                    Subject field must be filled
+#            </div>
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_subject_required"
-msgstr "Devi inserire un nome o un soprannome"
+msgstr "Devi inserire un oggetto"
 
 #.   <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
-#: from ../skins/forum_default/forum_view_threads_main.pt
+#: from
+#: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_publish"
 msgstr "Pubblica"
 
 #.   <input value="forum_reply" class="standalone" name="forum_post_reply:method" type="submit" />
-#: from ../skins/forum_default/post_view_snippet.pt
+#: from
+#: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
 msgstr "Rispondi"
 
 #    <td>Send moderation notifications</td>
 #.   <td>Send moderation notifications</td>
-#: from ../skins/forum_default/forum_create_form.pt
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_send_moderation_notification"
 msgstr "Notifica moderatori (nuovi messaggi)"
 
 #.   <div class="label required">Subject</div>
 #.   <th class="forumSubjectCell">Subject</th>
-#: from ../skins/forum_default/forum_post_form.pt
+#: from
+#: ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_subject"
 msgstr "Oggetto"
 
 #.   <td>Titre</td>
 #.   <td class="forumEditLabel">Title</td>
-#: from ../skins/forum_default/forum_create_form.pt
+#: from
+#: ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
 msgstr "Titolo"
 
 #.   <span>Name</span>
-#: from ../skins/forum_default/forum_localrole_form.pt
+#: from
+#: ../skins/forum_default/forum_localrole_form.pt
 msgid "label_name"
 msgstr "Nome"
 
@@ -190,96 +214,11 @@ msgid "forum_new_thread"
 msgstr "Nuova discussione"
 
 msgid "forum_mailtitle_new_msg_submitted"
-msgstr ""
+msgstr "Nuovo messaggio inviato al forum"
 
 msgid "forum_mailbody_new_msg_submitted1"
-msgstr ""
+msgstr "Un nuovo messaggio è stato aggiunto alla lista di moderazione del forum"
 
 msgid "forum_mailbody_new_msg_submitted2"
-msgstr ""
+msgstr "Questo messaggio può essere visualizzato al seguente indirizzo:"
 
-#    <option repeat="role roles" attributes="value role" content="role">
-#             Role1
-#          </option>
-#    <option repeat="role roles" attributes="value role" content="role"> Role1 </option>
-#~ msgid "Role1"
-#~ msgstr "Role1"
-
-#~ msgid "button_assign_roles"
-#~ msgstr "Assegna ruolo"
-
-#~ msgid "button_delete"
-#~ msgstr "Elimina"
-
-#~ msgid "button_search"
-#~ msgstr "Cerca"
-
-#~ msgid "heading_local_roles_search_members"
-#~ msgstr "Assegna ruoli locali: cerca collaboratori"
-
-#~ msgid "heading_local_roles_search_results"
-#~ msgstr "Assegna ruoli locali: cerca risultati"
-
-#~ msgid "label_email"
-#~ msgstr "Indirizzo di Email"
-
-#~ msgid "label_group"
-#~ msgstr "Gruppo"
-
-#~ msgid "label_group_name"
-#~ msgstr "Nome del gruppo"
-
-#~ msgid "label_in"
-#~ msgstr "in"
-
-#~ msgid "label_local_roles_search_by"
-#~ msgstr "Ricerca per"
-
-#~ msgid "label_local_roles_search_term"
-#~ msgstr "Termine di ricerca"
-
-#~ msgid "label_roles"
-#~ msgstr "Ruolo(i)"
-
-#~ msgid "label_user"
-#~ msgstr "Utente"
-
-#~ msgid "label_user_email"
-#~ msgstr "Indirizzo di Email"
-
-#~ msgid "label_user_name"
-#~ msgstr "Nome utente"
-
-#~ msgid "legend_local_roles_assigned_users"
-#~ msgstr ""
-#~ "Questi utenti hanno attualmente ruoli locali assegnati per questo elenco:"
-
-#~ msgid "legend_local_roles_currently_assigned"
-#~ msgstr "Ruoli locali attualmente assegnati"
-
-#    <p>
-#        Sorry, no groups matched your search.
-#     </p>
-#~ msgid "legend_local_roles_no_results_member"
-#~ msgstr "Siamo spiacenti, nessun gruppo corrisponde alla ricerca effettuata."
-
-#    <p>
-#        Sorry, no members matched your search.
-#     </p>
-#~ msgid "legend_local_roles_no_results_members"
-#~ msgstr ""
-#~ "Siamo spiacenti, nessun collaboratore corrisponde alla ricerca effettuata."
-
-#~ msgid "legend_local_roles_role_to_assign"
-#~ msgstr "Ruolo da assegnare:"
-
-#~ msgid "legend_local_roles_select_groups_and_roles"
-#~ msgstr "Seleziona un(i) groppo(i) ed un ruolo da assegnare:"
-
-#~ msgid "legend_local_roles_select_members_and_roles"
-#~ msgstr "Seleziona il(i) collaboratore(i) ed un ruolo da assegnare:"
-
-#~ msgid "link_local_roles_underlined"
-#~ msgstr ""
-#~ "<i>I ruoli sottolineati </i> sono definiti nelle cartelle genitore. Segui "
-#~ "i collegamenti ipertestuali per gestire i ruoli locali in queste cartelle."

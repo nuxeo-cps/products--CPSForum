@@ -1,4 +1,21 @@
 *******************************************
+** CPSForum V0.6.0 [R1 build 2004/03/25-11:41 by ben]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- xhtmlize XHTML 1.0 transitional
+Bug fixes:
+~~~~~~~~~~
+- When commenting objects a tal:condition "forum" was used
+  to check if the forum existed. I changed this to "nocall:forum".
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- 
+
+*******************************************
 ** CPSForum V0.5.0 [R1 build 2004/02/25-08:45 by ben]
 
 Requires:

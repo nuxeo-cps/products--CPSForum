@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
-"POT-Creation-Date: 2004-02-18 17:47default\n"
-"PO-Revision-Date: 2004-02-18 17:48+0100\n"
+"POT-Creation-Date: 2004-02-19 12:05default\n"
+"PO-Revision-Date: 2004-02-19 12:09+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -101,6 +101,12 @@ msgstr "Descrizione"
 msgid "forum_label_comments"
 msgstr "Commenti"
 
+#.   <td>Lock forum (no longer possible to post new messages)</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_label_lock_forum"
+msgstr "Lock forum"
+
 #.   <td>Message</td>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_message"
@@ -111,6 +117,11 @@ msgstr "Messaggio"
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_moderation"
 msgstr "Moderazione"
+
+#.   <p>This forum is locked. You cannot post new messages to it.</p>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_msg_forum_frozen"
+msgstr "Lock forum (read only)"
 
 #.   <a attributes="href string:${context_url}/forum_post_form" href="">
 #.         forum_new_thread
@@ -172,7 +183,7 @@ msgid "forum_subject"
 msgstr "Oggetto"
 
 #.   <td>Titre</td>
-#.   <td>Title</td>
+#.   <td style="width:30%">Title</td>
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"

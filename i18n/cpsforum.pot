@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2004-02-18 17:47default\n"
+"POT-Creation-Date: 2004-02-19 12:05default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -99,6 +99,12 @@ msgstr ""
 msgid "forum_label_comments"
 msgstr ""
 
+#.   <td>Lock forum (no longer possible to post new messages)</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_label_lock_forum"
+msgstr ""
+
 #.   <td>Message</td>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_message"
@@ -108,6 +114,11 @@ msgstr ""
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_moderation"
+msgstr ""
+
+#.   <p>This forum is locked. You cannot post new messages to it.</p>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_msg_forum_frozen"
 msgstr ""
 
 #.   <a attributes="href string:${context_url}/forum_post_form" href="">
@@ -168,7 +179,7 @@ msgid "forum_subject"
 msgstr ""
 
 #.   <td>Titre</td>
-#.   <td>Title</td>
+#.   <td style="width:30%">Title</td>
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"

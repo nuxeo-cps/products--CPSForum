@@ -47,9 +47,9 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     meta_type = 'CPS Discussion Tool'
 
     security = ClassSecurityInfo()
-    
+
     manage_options = (ActionProviderBase.manage_options +
-                      PortalFolder.manage_options[:1] + 
+                      PortalFolder.manage_options[:1] +
                       ({'label': 'Overview', 'action': 'manage_overview'},) +
                       PortalFolder.manage_options[1:])
 
@@ -123,7 +123,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     security.declareProtected(View, 'getForum4Comments')
     def getForum4Comments(self, proxy_doc):
         """Get current document's commenting forum ; create it if it does not exist
-        
+
         Lazy instantiation"""
 
         forum = None
@@ -141,7 +141,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
             #     declared chains
             for ptype in portal.portal_types.objectIds():
                 no_content_wf_chain[ptype] = ''
-            #create a wf and add chains to it 
+            #create a wf and add chains to it
             def wfSetup(folder, chains):
                 if not '.cps_workflow_configuration' in folder.objectIds():
                     folder.manage_addProduct['CPSCore'].addCPSWorkflowConfiguration()
@@ -151,7 +151,18 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
 
             # check whether the forum object exists or not
             # if not create it (also create .discussions if necessary)
-            parent_folder = proxy_doc.aq_inner.aq_parent
+            def getParentFolder(proxy):
+                """Returns 'Section' or 'Workspace' parent folder."""
+                parent = proxy.aq_inner.aq_parent
+                while parent:
+                    if hasattr(parent, 'portal_type') and \
+                           (parent.portal_type == 'Section' or
+                            parent.portal_type == 'Workspace'):
+                        return parent
+                    parent = parent.aq_inner.aq_parent
+                return proxy.aq_inner.aq_parent
+
+            parent_folder = getParentFolder(proxy_doc)
 
             class CPSUnrestrictedUser(UnrestrictedUser):
                 """Unrestricted user that still has an id.
@@ -175,7 +186,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
             # we should create a Workspace if parent folder is a workspace
             # or a Section if parent folder is a section
             folder_type = parent_folder.portal_type
-            
+
             if '.cps_discussions' not in parent_folder.objectIds():
                 portal.portal_workflow.invokeFactoryFor(parent_folder, folder_type, '.cps_discussions')
             cpsmcat = portal.Localizer.default
@@ -227,15 +238,15 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
         """Post a message as an anonymous user
 
         Because anonymous posts require more rights than an anon user has"""
-        
+
         wtool = getToolByName(self, 'portal_workflow')
         # temp switch to unrestricted user
         class CPSUnrestrictedUser(UnrestrictedUser):
             """Unrestricted user that still has an id.
-            
+
             Taken from CPSMembershipTool
             """
-            
+
             def getId(self):
                 """Return the ID of the user."""
                 return self.getUserName()
@@ -260,10 +271,10 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
 
         class CPSUnrestrictedUser(UnrestrictedUser):
             """Unrestricted user that still has an id.
-            
+
             Taken from CPSMembershipTool
             """
-            
+
             def getId(self):
                 """Return the ID of the user."""
                 return self.getUserName()
@@ -271,16 +282,16 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
 
         mtool = getToolByName(self, 'portal_membership')
         old_user = getSecurityManager().getUser()
-        
+
         tmp_user = CPSUnrestrictedUser('root', '',
                                        ['Manager', 'Member'], '')
         tmp_user = tmp_user.__of__(mtool.acl_users)
         newSecurityManager(None, tmp_user)
-        
+
         kw = {'allow_discussion': allow,}
         proxy.getEditableContent().edit(**kw)
 
         newSecurityManager(None, old_user)
-        
+
 
 InitializeClass(CommentTool)

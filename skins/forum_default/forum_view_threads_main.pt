@@ -9,7 +9,9 @@
     <tal:block tal:define="batch_start python:int(path('request/b_start | nothing') or 0);
                            batched_desc python:modules['ZTUtils'].Batch(descendants,
                                                                    size=threads_per_page,
-                                                                   start=batch_start);">
+                                                                   start=batch_start)">
+      <input type="hidden" name="b_start" 
+             tal:attributes="value batch_start" />
       <tr tal:define="mq nocall:modules/ZTUtils/make_query;
                       previous_page python:batched_desc.previous;
                       next_page python:batched_desc.next">

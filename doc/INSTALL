@@ -10,8 +10,8 @@ Requirements
 
 CPSForum requires:
 - CPS3
-- product CPSInstaller (not included in CPS-3.0, but included in CPS-3.1)
-- CPSSchemas > 0.18.0-1 (not included in CPS-3.0, but included in CPS-3.1)
+- product CPSInstaller (not included in CPS-3.0, included in CPS-3.1)
+- CPSSchemas > 0.18.0-1 (not included in CPS-3.0, included in CPS-3.1)
 - CPSSubscriptions > 0.7.0-1 (not included in CPS3)
 
 --------------------------------------------------
@@ -24,7 +24,7 @@ Installation notes
 - Restart Zope. Check in Control_Panel/Products that there is a CPSForum
   product and that there were no import errors.
 
-- From the ZMI, go to the CPS root, instanciate an External Method with the
+- From the ZMI, go to the CPS root, instantiate an External Method with the
   following parameters:
   ID = any Id you want, like cpsforum_install
   Title = anything you want, like CPSForum Installer
@@ -35,7 +35,7 @@ Installation notes
   portal_skins.
 
 - If you have filtering on your sections and workspaces, make sure
-  that you allow Forums to be created there. You can also have a look at the
+  that you allow CPSForum to be created there. You can also have a look at the
   workflow configuration in sections and workspaces, as described in the
   'Update notes' section below.
 
@@ -50,13 +50,15 @@ IMPORTANT NOTE:
 This version of CPSForum and all subsequent versions based on CPSDocument
 posts are incompatible with existing Forum instances that have been created
 with earlier versions of CPSForum (i.e. which do not use CPSDocument posts).
-This means all versions up to (and including) release 0.7.0-1 of April 2004.
+This means all versions up to (and including) release 0.7.0-1 released in
+April 2004.
 
-Some workflow configuration could not be updated properly when executing the
+Some workflow configuration might not be updated properly when executing the
 installer. So please make sure that:
 - in /cps/sections/.cps_workflow_configuration:
-  - the portal type CPSForum follows: section_forum_wf
-  - the portal type ForumPost follows: forum_post_wf
+  * portal type CPSForum follows: section_forum_wf
+  *  portal type ForumPost follows: forum_post_wf
 - in /cps/workspaces/.cps_workflow_configuration:
-  - the portal type CPSForum follows: workspace_forum_wf
-  - the portal type ForumPost follows: forum_post_wf
+  * portal type CPSForum follows: workspace_forum_wf
+  * portal type ForumPost follows: forum_post_wf
+

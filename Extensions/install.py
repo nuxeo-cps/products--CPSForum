@@ -43,6 +43,7 @@ from Products.CMFCore.CMFCorePermissions import setDefaultRoles
 
 from Products.CMFDefault.DiscussionTool import DiscussionTool
 from Products.CPSForum.CommentTool import CommentTool
+from Products.CPSForum.CPSForumPermissions import ForumPost, ForumModerate
 
 def cps_forum_i18n_update(self):
     """
@@ -147,16 +148,36 @@ def install(self):
         return id in portal.objectIds()
 
     #################################################
-    # Forum-specific roles
+    # Forum-specific roles and permissions
     #################################################
-    pr("Verifying forum roles")
-    already = portal.valid_roles()
-    for role in ('ForumPoster',     # Forum Poster : Droit de poster un message 
-                 'ForumModerator',  # Forum Moderator : Droit de moderation du forum 
-                 ):
-        if role not in already:
+    pr("Verifying CPSForum permissions")
+    workspaces_forum_perm = {
+        ForumPost: ['Manager', 'Owner', 'Member', 'WorkspaceManager',
+                    'WorkspaceMember', 'WorkspaceReader', 'ForumPoster'],
+        ForumModerate: ['Manager', 'Owner', 'WorkspaceManager', 'ForumModerator'],
+        }
+    sections_forum_perm = {
+        ForumPost: ['Manager', 'Owner', 'Member', 'SectionManager',
+                    'SectionReviewer', 'SectionReader', 'ForumPoster'],
+        ForumModerate: ['Manager', 'Owner', 'SectionManager',
+                        'SectionReviewer', 'ForumModerator'],
+        }
+
+    for perm, roles in workspaces_forum_perm.items():
+        portal.manage_permission(perm, roles, 0)
+        pr("  Permission %s" % perm)
+    portal.reindexObjectSecurity()
+
+    pr("Verifying CPSForum roles")
+    existing_roles = portal.valid_roles()
+    for role in ('ForumPoster',       # Forum Poster : Droit de poster un message
+                 'ForumModerator',):  # Forum Moderator : Droit de moderation du forum
+        if role not in existing_roles:
             portal._addRole(role)
             pr(" Add role %s" % role)
+
+
+            
 
     ##########################################
     # Comment Tool
@@ -297,34 +318,6 @@ def install(self):
         npath = ', '.join(path)
         portal.portal_skins.addSkinSelection(skin_name, npath)
         pr(" Fixup of skin %s" % skin_name)
-
-    ##########################################
-    # Permissions
-    ##########################################
-    pr("Verifying permissions")
-
-    #use the same var for all 'Forum Post' strings as not doing so
-    #causes an error in manage_permission (Forum Post invalid)
-    forumpost = 'Forum Post'
-    setDefaultRoles(forumpost,['ForumPoster', 'ForumModerator',])
-    
-    sections_perm = {
-        forumpost:['ForumPoster', 'ForumModerator',],
-        }
-    workspaces_perm = {
-        forumpost:['ForumPoster', 'ForumModerator',],
-        }
-    
-    pr("Section")
-    for perm, roles in sections_perm.items():
-        portal[sections_id].manage_permission(perm, roles, 0)
-        pr("  Permission %s" % perm)
-    portal[sections_id].reindexObjectSecurity()
-    pr("Workspace")
-    for perm, roles in workspaces_perm.items():
-        portal[workspaces_id].manage_permission(perm, roles, 0)
-        pr("  Permission %s" % perm)
-    portal[workspaces_id].reindexObjectSecurity()
 
     ##############################################
     # Actions

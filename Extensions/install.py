@@ -92,7 +92,7 @@ def cps_forum_i18n_update(self):
 
     # loading po files
     for lang in languages:
-        po_filename = 'CPSForum-'+lang + '.po'
+        po_filename = lang + '.po'
         pr("   importing %s file" % po_filename)
         po_path = os.path.join(i18n_path, po_filename)
         try:

@@ -1,0 +1,95 @@
+/* CPSForum CSS
+** $Id$
+*/
+
+/* DTML instructions to set caching headers.
+<dtml-let last_modified="_.DateTime()-14" expires="_.DateTime()+1" >
+<dtml-call "REQUEST.RESPONSE.setHeader( 'Content-Type', 'text/css' )">
+<dtml-call "REQUEST.RESPONSE.setHeader( 'Last-Modified', last_modified.toZone('GMT').rfc822() )">
+<dtml-call "REQUEST.RESPONSE.setHeader( 'Cache-Control', 'max-age=36000, must-revalidate' )">
+<dtml-call "REQUEST.RESPONSE.setHeader( 'Expires', expires.toZone('GMT').rfc822() )" >
+</dtml-let>
+
+<dtml-with stylesheet_properties>
+*/
+
+table.forumPost {
+  width:100%;
+  border: &dtml-groupBorder;;
+  margin: 1em 0em 1em 0em;
+  padding: 0.7em 0.7em 0.7em 0.7em;
+}
+
+div.forumPostTitle {
+  margin:0 0 0.5em 0;
+  font-weight:bold;
+}
+
+div.forumPostText {
+  margin:0.5em 0 1em 0;
+}
+
+table.forumThreads {
+  width:100%;
+  border: &dtml-groupBorder;;
+  margin: 1em 0em 1em 0em;
+  padding: 0.7em 0.7em 0.7em 0.7em;
+}
+
+td.forumEditLabel {
+  width:30%
+}
+
+td.forumEditValue {
+  width:70%
+}
+
+td.forumDateCell {
+  text-align:center;
+}
+
+.forumDateCell {
+  width:26%
+}
+
+td.forumAuthorCell {
+  text-align:center;
+}
+
+.forumAuthorCell {
+  width:25%
+}
+
+.forumSubjectCell {
+  width:40%
+}
+
+.forumSelectCell {
+  width:2%
+}
+
+.forumModerateCell {
+  width:2%
+}
+
+.forumLockCell {
+  width:5%
+}
+
+.forumError {
+  color:red;
+}
+
+div.forumModeration {
+  margin-top: 1em
+}
+
+td.forumThreadBatch {
+  text-align:center;
+  font-size:0.9em;
+  background-color:&dtml-boxEvenBackground;;
+}
+
+/*
+</dtml-with>
+*/

@@ -35,7 +35,7 @@ forum_schema = {
     'threads_per_page': {
         'type': 'CPS Int Field',
         'data': {'is_searchabletext': 0,
-                 }},
+                 'default_expr': 'python:30'}},
     }
 
 forumpost_schema = {

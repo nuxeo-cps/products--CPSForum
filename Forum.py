@@ -178,15 +178,6 @@ class CPSForum(CPSBaseDocument):
                    if post.in_reply_to == post_id ]
         return result
 
-    def getThreadInfo(self, post_id):
-        """ getThreadInfo """
-        post = self[post_id]
-        while post['parent_id']:
-            post = self[post['parent_id']]
-            # raise "DEBUG", "parent is "+post
-
-        return post
-
     def getDescendants(self, post_id):
         """
         Fetches post tree

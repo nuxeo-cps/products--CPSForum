@@ -4,8 +4,6 @@
 # $Id$
 """ get Merged Local Roles filtering non CPS Roles. """
 
-from zLOG import LOG, DEBUG
-
 if mtool is None:
     mtool = context.portal_membership
 
@@ -40,16 +38,33 @@ for user in dict_roles.keys():
 # List local roles according to the context
 cps_roles = mtool.getCPSCandidateLocalRoles( context )
 
-# Filter them for CPS/CPSForum
-if context.portal_type == "CPSForum":
+
+from zLOG import LOG,DEBUG
+
+# Filter them for CPS
+cps_roles = [x for x in cps_roles if x not in ('Owner',
+                                               'Member',
+                                               'Reviewer',
+                                               'Manager',
+                                               'Authenticated')]
+
+# Checking the context (Ws or section or forum)
+if context.portal_type == "Section":
+    cps_roles = [x for x in cps_roles if x not in ('WorkspaceManager',
+                                                   'WorkspaceMember',
+                                                   'WorkspaceReader',
+                                                   'ForumPoster',
+                                                   'ForumModerator')]
+elif context.portal_type == "Workspace":
+    cps_roles = [x for x in cps_roles if x not in ('SectionManager',
+                                                   'SectionReader',
+                                                   'SectionReviewer',
+                                                   'ForumPoster',
+                                                   'ForumModerator')]
+elif context.portal_type == "CPSForum":
     cps_roles = [x for x in cps_roles if x in ('ForumPoster',
                                                'ForumModerator')]
-    
 else:
-    cps_roles = [x for x in cps_roles if x not in ('Owner',
-                                                   'Member',
-                                                   'Reviewer',
-                                                   'Manager',
-                                                   'Authenticated')]
+    cps_roles = cps_roles
 
 return dict_roles, editable_users, cps_roles

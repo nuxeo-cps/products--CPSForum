@@ -25,17 +25,19 @@ from Products.CPSCore.CPSBase import CPSBaseDocument, CPSBase_adder
 
 from Post import Post
 
+from zLOG import LOG,DEBUG
+
 factory_type_information = (
         { 'id': 'Forum',
         'meta_type': 'CPSForum',
         'description': "Forums hold threaded discussions",
         'icon': 'forum_icon.gif',
-        'title': "L_forum forum",
+        'title': "L_forum title",
         'product': 'CPSForum',
         'factory': 'addCPSForum',
         'filter_content_types': 1,
         'allowed_content_types': ('Post',),
-        'immediate_view': 'forum_view',
+        'immediate_view': 'forum_edit_form',
         'allow_discussion': 0,
         'actions': (
             {
@@ -146,7 +148,6 @@ class CPSForum(CPSBaseDocument):
     def addForumPost(self, **kw):
         """Add a post"""
         discussion = self.portal_discussion.getDiscussionFor(self)
-
         post_id = discussion.createReply(
                kw['subject'], kw['message'],kw['author'])
         post = discussion.getReply(post_id)
@@ -236,7 +237,7 @@ class CPSForum(CPSBaseDocument):
         all = mergedLocalRoles(proxy)
         result = []
         for user in all.keys():
-            if 'Reviewer' in all[user]:
+            if 'ForumModerator' in all[user]:
                 result.append(user)
         return result
 

@@ -61,6 +61,11 @@
                 <tal:block condition="not:parent_subject">
                   <input type="text" name="subject:string" size="60" />
                 </tal:block>
+
+                    <span tal:condition="python:errormsg == 'error_subject'"
+                          i18n:translate="forum_psm_subject_required" 
+                          class="forumerror">Subject field must be filled</span>
+
               </td>
             </tr>
             <tr>

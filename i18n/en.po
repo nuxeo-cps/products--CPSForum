@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2004-04-09 10:15default\n"
-"PO-Revision-Date: 2004-04-09 10:23+0200\n"
+"POT-Creation-Date: 2004-05-07 13:01default\n"
+"PO-Revision-Date: 2004-05-07 13:02+0200\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,8 @@ msgstr "(Un-)lock thread"
 msgid "forum_date"
 msgstr "Date"
 
-#.   <input value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
+#.   <input define="cpsmcat nocall:here/Localizer/default" attributes="onclick python:'return window.confirm(\'%s\')' %
+#.                                      (cpsmcat('description_confirm_delete'), )" value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Delete"
@@ -89,6 +90,11 @@ msgstr "Comments"
 msgid "forum_label_lock_forum"
 msgstr "Lock forum (read only)"
 
+#.   <span />
+#: from ../skins/forum_default/forum_view_main.pt
+msgid "forum_link_back_to_document"
+msgstr "Back to document"
+
 #.   <div class="label">Message</div>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_message"
@@ -106,11 +112,11 @@ msgid "forum_msg_forum_frozen"
 msgstr "This forum is locked. You cannot post new messages to it."
 
 #.   <td class="forumempty">
-#.                 No comment associated with this document.
-#.               </td>
-#.   <td class="forumempty">
 #.             Aucun message dans ce forum !
 #.           </td>
+#.   <td class="forumempty">
+#.           Aucun message dans ce forum !
+#.         </td>
 #: from ../skins/forum_default/forum_comment_lib.pt
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_no_message"
@@ -146,15 +152,10 @@ msgid "forum_publish"
 msgstr "Publish"
 
 #.   <input value="forum_reply" class="standalone" name="forum_post_reply:method" type="submit" />
-#: from ../skins/forum_default/post_view_snippet.pt
+#: from ../skins/forum_default/post_view_csnippet.pt
+#: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
 msgstr "Reply"
-
-#.   <td>Send moderation notifications</td>
-#: from ../skins/forum_default/forum_create_form.pt
-#: ../skins/forum_default/forum_edit_form.pt
-msgid "forum_send_moderation_notification"
-msgstr "Notify moderators (new messages)"
 
 #.   <div class="label required">Subject</div>
 #.   <th class="forumSubjectCell">Subject</th>
@@ -169,11 +170,6 @@ msgstr "Subject"
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
 msgstr "Title"
-
-#.   <span>Name</span>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_name"
-msgstr "Name"
 
 msgid "forum_modify"
 msgstr "Modify"
@@ -192,6 +188,36 @@ msgstr "A new message has been added to the moderation list of forum "
 
 msgid "forum_mailbody_new_msg_submitted2"
 msgstr "This message can be viewed at the following address:"
+
+msgid "forum_psm_comments_activated"
+msgstr "Comments are now authorized."
+
+msgid "forum_psm_comments_deactivated"
+msgstr "Comments are no longer authorized."
+
+msgid "action_activate_comments"
+msgstr "Authorize comments"
+
+msgid "action_deactivate_comments"
+msgstr "Unauthorized comments"
+
+msgid "action_manage_comments"
+msgstr "Manage comments"
+
+msgid "forum_title_comments"
+msgstr "Comments"
+
+msgid "forum_title_comments_for"
+msgstr "Comments associated with document"
+
+msgid "forum_desc_comments"
+msgstr "This forum contains comments associated with document"
+
+#~ msgid "forum_send_moderation_notification"
+#~ msgstr "Notify moderators (new messages)"
+
+#~ msgid "label_name"
+#~ msgstr "Name"
 
 #~ msgid "Role1"
 #~ msgstr "Role1"
@@ -270,17 +296,8 @@ msgstr "This message can be viewed at the following address:"
 #~ msgid "forum_moderators"
 #~ msgstr "Moderators"
 
-#~ msgid "forum_comment"
-#~ msgstr "Comment"
-
 #~ msgid "forum_add_comment"
 #~ msgstr "Post Comment"
-
-#~ msgid "forum_doc_comment"
-#~ msgstr "Comment"
-
-#~ msgid "forum_no_comment"
-#~ msgstr "There are currently no comments associated with this document"
 
 #, fuzzy
 #~ msgid "forum_subscribe"

@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
-"POT-Creation-Date: 2004-04-09 10:15default\n"
-"PO-Revision-Date: 2004-04-09 10:16+0200\n"
+"POT-Creation-Date: 2004-05-07 13:01default\n"
+"PO-Revision-Date: 2004-05-07 13:02+0200\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,8 @@ msgstr "(Dé-)verrouiller le fil"
 msgid "forum_date"
 msgstr "Date"
 
-#.   <input value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
+#.   <input define="cpsmcat nocall:here/Localizer/default" attributes="onclick python:'return window.confirm(\'%s\')' %
+#.                                      (cpsmcat('description_confirm_delete'), )" value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Supprimer"
@@ -89,6 +90,11 @@ msgstr "Commentaires"
 msgid "forum_label_lock_forum"
 msgstr "Verrouiller le forum (lecture seule)"
 
+#.   <span />
+#: from ../skins/forum_default/forum_view_main.pt
+msgid "forum_link_back_to_document"
+msgstr "Retour au document"
+
 #.   <div class="label">Message</div>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_message"
@@ -106,11 +112,11 @@ msgid "forum_msg_forum_frozen"
 msgstr "Ce forum est vérouillé. Vous ne pouvez pas poster de nouveau message."
 
 #.   <td class="forumempty">
-#.                 No comment associated with this document.
-#.               </td>
-#.   <td class="forumempty">
 #.             Aucun message dans ce forum !
 #.           </td>
+#.   <td class="forumempty">
+#.           Aucun message dans ce forum !
+#.         </td>
 #: from ../skins/forum_default/forum_comment_lib.pt
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_no_message"
@@ -146,15 +152,10 @@ msgid "forum_publish"
 msgstr "Publier"
 
 #.   <input value="forum_reply" class="standalone" name="forum_post_reply:method" type="submit" />
-#: from ../skins/forum_default/post_view_snippet.pt
+#: from ../skins/forum_default/post_view_csnippet.pt
+#: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
 msgstr "Répondre"
-
-#.   <td>Send moderation notifications</td>
-#: from ../skins/forum_default/forum_create_form.pt
-#: ../skins/forum_default/forum_edit_form.pt
-msgid "forum_send_moderation_notification"
-msgstr "Notifier les modérateurs (nouveaux messages)"
 
 #.   <div class="label required">Subject</div>
 #.   <th class="forumSubjectCell">Subject</th>
@@ -170,11 +171,6 @@ msgstr "Sujet"
 msgid "forum_title"
 msgstr "Titre"
 
-#.   <span>Name</span>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_name"
-msgstr "Nom"
-
 msgid "forum_modify"
 msgstr "Modifier"
 
@@ -188,10 +184,40 @@ msgid "forum_mailtitle_new_msg_submitted"
 msgstr "Soumission d'un message sur le Forum "
 
 msgid "forum_mailbody_new_msg_submitted1"
-msgstr "Un nouveau message à modérer vient d'être poste sur le forum "
+msgstr "Un nouveau message à modérer vient d'être posté sur le forum "
 
 msgid "forum_mailbody_new_msg_submitted2"
-msgstr "Ce message peut être consulte à l'adresse suivante :"
+msgstr "Ce message peut être consulté à l'adresse suivante :"
+
+msgid "forum_psm_comments_activated"
+msgstr "Les commentaires sont maintenant autorisés sur ce document."
+
+msgid "forum_psm_comments_deactivated"
+msgstr "Les commentaires ne sont plus autorisés sur ce document."
+
+msgid "action_activate_comments"
+msgstr "Autoriser les commentaires"
+
+msgid "action_deactivate_comments"
+msgstr "Interdire les commentaires"
+
+msgid "action_manage_comments"
+msgstr "Gérer les commentaires"
+
+msgid "forum_title_comments"
+msgstr "Commentaires"
+
+msgid "forum_title_comments_for"
+msgstr "Commentaires associés au document"
+
+msgid "forum_desc_comments"
+msgstr "Ce forum contient les commentaires associés au document"
+
+#~ msgid "forum_send_moderation_notification"
+#~ msgstr "Notifier les modérateurs (nouveaux messages)"
+
+#~ msgid "label_name"
+#~ msgstr "Nom"
 
 #~ msgid "Role1"
 #~ msgstr "Role1"
@@ -271,17 +297,8 @@ msgstr "Ce message peut être consulte à l'adresse suivante :"
 #~ msgid "forum_moderators"
 #~ msgstr "Modérateurs"
 
-#~ msgid "forum_comment"
-#~ msgstr "Commentaire"
-
 #~ msgid "forum_add_comment"
 #~ msgstr "Ajouter le commentaire"
-
-#~ msgid "forum_doc_comment"
-#~ msgstr "Commentaire"
-
-#~ msgid "forum_no_comment"
-#~ msgstr "Aucun commentaire n'est actuellement associé à ce document"
 
 #, fuzzy
 #~ msgid "forum_subscribe"

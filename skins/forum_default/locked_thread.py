@@ -1,9 +1,11 @@
-##parameters=post_id=None,forum=None
+##parameters=post=None,forum=None,proxy=None
 # $Id$
 
 """Is the thread post_id belongs to locked or not?"""
 
-if forum and post_id:
-    return forum.belongsToLockedThread(post_id)
+proxy = proxy or context
+
+if forum and post:
+    return forum.belongsToLockedThread(post, proxy=proxy)
 
 return 0

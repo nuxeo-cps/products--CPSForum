@@ -2,13 +2,9 @@
 
 # $Id$
 
-forum = context.getForumObject(comment_mode)
-forum.toggleThreadsLockStatus(forum_thread_ids)
+forum = context.getContent()
+forum.toggleThreadsLockStatus(forum_thread_ids, proxy=context)
 
-if REQUEST:
-    if comment_mode:
-        REQUEST.RESPONSE.redirect(
-            context.absolute_url() + "/?comment_id=" + REQUEST.parent_id)
-    else:
-        REQUEST.RESPONSE.redirect(
-            context.absolute_url() + "/?post_id=" + REQUEST.parent_id)
+if REQUEST is not None:
+    REQUEST.RESPONSE.redirect(
+        context.absolute_url() + "/?post_id=" + REQUEST.parent_id)

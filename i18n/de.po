@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum messages\n"
-"POT-Creation-Date: 2004-04-09 10:15default\n"
+"POT-Creation-Date: 2004-05-07 13:01default\n"
 "PO-Revision-Date: 2004-04-06 12:04+CET\n"
 "Last-Translator:  <>\n"
 "Language-Team: de <>\n"
@@ -50,7 +50,8 @@ msgstr "(öffnen)schliessen Thema"
 msgid "forum_date"
 msgstr "Datum"
 
-#.   <input value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
+#.   <input define="cpsmcat nocall:here/Localizer/default" attributes="onclick python:'return window.confirm(\'%s\')' %
+#.                                      (cpsmcat('description_confirm_delete'), )" value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Löschen"
@@ -68,6 +69,7 @@ msgstr "Beschreibung"
 
 #.   <h2 id="document_comment">Comments</h2>
 #: from ../skins/forum_default/forum_comment_lib.pt
+#, fuzzy
 msgid "forum_label_comments"
 msgstr "Kommentare"
 
@@ -76,6 +78,11 @@ msgstr "Kommentare"
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_label_lock_forum"
 msgstr "Forum schliessen (nur zur Ansicht)"
+
+#.   <span />
+#: from ../skins/forum_default/forum_view_main.pt
+msgid "forum_link_back_to_document"
+msgstr ""
 
 #.   <div class="label">Message</div>
 #: from ../skins/forum_default/forum_post_form.pt
@@ -95,11 +102,11 @@ msgstr ""
 "Diese Forum ist geschlossen. Sie können jetzt keine Nachrichten senden."
 
 #.   <td class="forumempty">
-#.                 No comment associated with this document.
-#.               </td>
-#.   <td class="forumempty">
 #.             Aucun message dans ce forum !
 #.           </td>
+#.   <td class="forumempty">
+#.           Aucun message dans ce forum !
+#.         </td>
 #: from ../skins/forum_default/forum_comment_lib.pt
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_no_message"
@@ -136,15 +143,10 @@ msgid "forum_publish"
 msgstr "Publizieren"
 
 #.   <input value="forum_reply" class="standalone" name="forum_post_reply:method" type="submit" />
-#: from ../skins/forum_default/post_view_snippet.pt
+#: from ../skins/forum_default/post_view_csnippet.pt
+#: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
 msgstr "Antworten"
-
-#.   <td>Send moderation notifications</td>
-#: from ../skins/forum_default/forum_create_form.pt
-#: ../skins/forum_default/forum_edit_form.pt
-msgid "forum_send_moderation_notification"
-msgstr "Moderatoren benachrichtigen (neue Nachrichten)"
 
 #.   <div class="label required">Subject</div>
 #.   <th class="forumSubjectCell">Subject</th>
@@ -159,11 +161,6 @@ msgstr "Betreff"
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
 msgstr "Titel"
-
-#.   <span>Name</span>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_name"
-msgstr "Name"
 
 msgid "forum_modify"
 msgstr "Ändern"
@@ -182,6 +179,42 @@ msgstr ""
 
 msgid "forum_mailbody_new_msg_submitted2"
 msgstr ""
+
+#, fuzzy
+msgid "forum_psm_comments_activated"
+msgstr "Sie müssen einen Namen oder einen Nicknamen angeben"
+
+#, fuzzy
+msgid "forum_psm_comments_deactivated"
+msgstr "Sie müssen einen Namen oder einen Nicknamen angeben"
+
+msgid "action_activate_comments"
+msgstr ""
+
+msgid "action_deactivate_comments"
+msgstr ""
+
+#, fuzzy
+msgid "action_manage_comments"
+msgstr "Kommentare"
+
+#, fuzzy
+msgid "forum_title_comments"
+msgstr "Kommentare"
+
+#, fuzzy
+msgid "forum_title_comments_for"
+msgstr "Kommentare"
+
+#, fuzzy
+msgid "forum_desc_comments"
+msgstr "Kommentare"
+
+#~ msgid "forum_send_moderation_notification"
+#~ msgstr "Moderatoren benachrichtigen (neue Nachrichten)"
+
+#~ msgid "label_name"
+#~ msgstr "Name"
 
 #~ msgid "Role1"
 #~ msgstr "Rolle1"

@@ -17,14 +17,18 @@
 # $Id$
 
 from AccessControl import ClassSecurityInfo
+from Acquisition import aq_inner, aq_parent
+
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.CMFCorePermissions import View, ChangePermissions
 from Products.CPSCore.CPSBase import CPSBase_adder
+from Products.CPSCore.EventServiceTool import getEventService
 try:
     from Products.CPSDocument.CPSDocument import CPSDocument as BaseDocument
 except ImportError:
     from Products.CPSCore.CPSBase import CPSBaseDocument as BaseDocument
 from CPSForumPermissions import ForumModerate
+from Products.BTreeFolder2.BTreeFolder2 import BTreeFolder2Base
 from zLOG import LOG, DEBUG, INFO
 
 factory_type_information = ({
@@ -66,7 +70,7 @@ factory_type_information = ({
         'action': 'forum_localrole_form',
         'permissions': (ChangePermissions,),
     }, ),
-    'cps_proxy_type': 'document',
+    'cps_proxy_type': 'folder',
     'cps_is_searchable': 1,
 },)
 
@@ -97,73 +101,107 @@ class CPSForum(BaseDocument):
     moderation_mode = 1
     allow_anon_posts = 0
     send_moderation_notification = 0
-    #if frozen, no longer possible to post messages
+    # if frozen, no longer possible to post messages
     frozen_forum = 0
     moderators = []
     security = ClassSecurityInfo()
-    #contains root post ids of locked threads
+    # contains root post ids of locked threads (these are the IDs
+    # of post documents, not post proxies)
     locked_threads = []
 
+    security.declareProtected(View, 'addPost')
+    def newPostCreated(self, post_id, proxy=None):
+       """Do some processing related to the creation of a new post
+
+       Does not actually create the post (handled in calling script)
+       """
+       evtool = getEventService(self)
+
+       notified = 0
+
+       #
+       # Is a post creation within a forum thread ?
+       #
+
+       current_post =  getattr(proxy, post_id)
+       info = self.getPostInfo(current_post)
+       if info['parent_id']:
+           event_id = 'forum_new_post'
+           notified = 1
+           evtool.notify(event_id, current_post, infos={})
+
+       if not notified:
+
+           #
+           # Lookup within the Forum
+           #
+
+           event_id = ''
+
+           if aq_parent(aq_inner(proxy)).id == '.cps_discussions':
+               event_id = 'forum_new_comment'
+           else:
+               event_id = 'forum_new_post'
+
+           if event_id:
+               evtool.notify(event_id, proxy, infos={})
+
+    security.declareProtected(ForumModerate, 'delPosts')
+    def delPosts(self, posts, proxy=None):
+        """Delete a list of posts from this forum
+
+        Sync data structures such as the locked thread list"""
+
+        for post in posts:
+            pid = getattr(proxy, post).getContent().id
+            if pid in self.locked_threads:
+                self.locked_threads.remove(pid)
+        proxy.manage_delObjects(posts)
+
     security.declareProtected(View, 'getThreads')
-    def getThreads(self):
+    def getThreads(self, proxy=None):
         """Return a list of root posts
 
         Does not return replies to post, just thread root posts
         """
 
-        discussion = self.portal_discussion.getDiscussionFor(self)
-        result = [ self.getPostInfo(post)
-                   for post in discussion.getReplies()
-                   if post.in_reply_to is None ]
+        if proxy:
+            #retrieve all root posts
+            result = [self.getPostInfo(post)
+                      for post in proxy.objectValues(['CPS Proxy Document']) #[x for x in proxy.objectValues() if x.meta_type == 'CPS Proxy Document']
+                      if  post.getContent().parent_id is None]
+        else:
+            discussion = self.portal_discussion.getDiscussionFor(self)
+            result = [ self.getPostInfo(post, discussion=1)
+                       for post in discussion.getReplies()
+                       if post.in_reply_to is None ]
         return result
 
     security.declareProtected(View, 'getPostInfo')
-    def getPostInfo(self, post):
+    def getPostInfo(self, post, discussion=0):
         """Return post information as a dictionnary"""
-        # NB: It looks like we're obliged to maintain
-        # our own 'publication state' for the post,
-        # but it should be hidden behind a WF
-        # on the portal type
-        #
-        # ... provided the Post has been
-        # chosen to effectively be a Portal type,
-        # which dosen't apply here
-        #
-        # XXX: strange, 'self' is not used in this method. Does it
-        # really belong to this class ?
-        return {
-            'id': post.id, 'subject': post.title, 'author': post.creator,
-            'message': post.text, 'parent_id': post.in_reply_to,
-            'published': hasattr(post, 'inforum') and post.inforum,
-            'modified': post.bobobase_modification_time(),
-            'locked': post.id in self.locked_threads
-        }
+        # discussion is true if processing a post represented
+        # as a Discussion Item instead of a ForumPost
 
-    security.declareProtected(View, 'addPost')
-    def addPost(self, subject="", message="", author="", parent_id=None,
-                proxy=None, comment_mode=0):
-        """Add a new post
-
-        Returns the new post's id."""
-        if not self.frozen_forum:
-            discussion = self.portal_discussion.getDiscussionFor(self)
-            post_id = discussion.createReply(subject, message, author)
-            post = discussion.getReply(post_id)
-            post.in_reply_to = parent_id
-            self.changePostPublicationStatus(post_id, not self.moderation_mode)
-            if (self.send_moderation_notification and
-                self.moderation_mode and not comment_mode):
-                self.notifyModerators(post_id=post_id, proxy=proxy)
-            return post_id
+        if discussion:
+            post_doc = post.getContent()
+            return {'id': post.id, 'subject': post.title, 'author': post.creator,
+                    'message': post.text, 'parent_id': post.in_reply_to,
+                    'published': hasattr(post, 'inforum') and post.inforum,
+                    'modified': post.bobobase_modification_time(),
+                    'locked': post.id in self.locked_threads
+                    }
         else:
-            return None
-
-    security.declareProtected(View, 'delPost')
-    def delPost(self, id):
-        """Delete a post
-
-        The post is refered to by its id"""
-        self.portal_discussion.getDiscussionFor(self).deleteReply(id)
+            post_doc = post.getContent()
+            wtool = getToolByName(self, 'portal_workflow')
+            r_state = wtool.getInfoFor(post, 'review_state', 'nostate')
+            return {
+                'id': post.id, 'subject': post.Title(), 'author': post.Creator(),
+                'message': post_doc.Description(), 'parent_id': post_doc.parent_id,
+                'published': r_state == 'published',
+                'modified': post_doc.bobobase_modification_time(),
+                'locked': post_doc.id in self.locked_threads
+                }
 
     security.declareProtected(ForumModerate, 'changePostPublicationStatus')
     def changePostPublicationStatus(self, id, status=1):
@@ -172,68 +210,43 @@ class CPSForum(BaseDocument):
         # XXX: this breaks encapsulation. Fix this.
         post.inforum = status
 
-    def __getitem__(self, id):
-        """Return postinfo
-
-        Returns information (structured as a dictionnary) about post
-        with id=<id>, or None if there is no such post."""
-        # XXX: shouldn't it raise KeyError in the latter case ?
-        try:
-            disc = self.portal_discussion.getDiscussionFor(self)
-            reply = disc.getReply(id)
-            result = self.getPostInfo(reply)
-        except AttributeError:
-            result = None
-        return result
-
-    security.declareProtected(View, 'getPostReplies')
-    def getPostReplies(self, post_id):
-        """Return replies to root post
-
-        Root post is refered to by <post_id>"""
-        discussion = self.portal_discussion.getDiscussionFor(self)
-        # FIXME: is it really the right algorithm ?
-        result = [ self.getPostInfo(post)
-                   for post in discussion.objectValues()
-                   if post.in_reply_to == post_id ]
-        return result
-
     security.declareProtected(View, 'getDescendants')
-    def getDescendants(self, post_id):
+    def getDescendants(self, post_id, proxy=None):
         """Fetch post tree"""
         info_getter = self.getPostInfo
-        discussion = self.portal_discussion.getDiscussionFor(self)
-        father = discussion.getReply(post_id)
+        if proxy:
+            posts = proxy.objectValues(['CPS Proxy Document']) #[x for x in proxy.objectValues() if x.meta_type == 'CPS Proxy Document']
+
         result = ()
 
-        # ul
-        for i in discussion.objectValues():
-            if i.in_reply_to == father.id:
-                branch = (info_getter(i),) # one item
-                branch += (self.getDescendants(i.id),) # one list
+        for post in posts:
+            if post.getContent().parent_id == post_id:
+                branch = (self.getPostInfo(post),) # one item
+                branch += (self.getDescendants(post.id, proxy=proxy),) # one list
                 result += (branch,)
 
         return result
 
     security.declarePrivate('getRootPost')
-    def getRootPost(self, post_id):
-        """get the root post of thread post_id belongs to"""
+    def getRootPost(self, post_id, proxy=None):
+        """get the root post of thread to which post_id belongs to"""
 
-        discussion = self.portal_discussion.getDiscussionFor(self)
-        post = discussion.getReply(post_id)
-        while post.in_reply_to is not None:
-            post = discussion.getReply(post.in_reply_to)
-        return post
+        post_proxy = getattr(proxy, post_id)
+        post_doc = post_proxy.getContent()
+        while post_doc.parent_id is not None:
+            post_proxy = getattr(proxy, post_doc.parent_id)
+            post_doc = post_proxy.getContent()
+        return post_doc
 
     security.declarePublic('belongsToLockedThread')
-    def belongsToLockedThread(self, post_id):
+    def belongsToLockedThread(self, post, proxy=None):
         """Is a post in a locked thread"""
 
-        root_post = self.getRootPost(post_id)
-        return root_post.id in self.locked_threads
+        root_post = self.getRootPost(post.id, proxy=proxy)
+        return root_post.getContent().id in self.locked_threads
 
     security.declareProtected(ForumModerate, 'toggleThreadsLockStatus')
-    def toggleThreadsLockStatus(self, post_ids=[]):
+    def toggleThreadsLockStatus(self, post_ids=[], proxy=None):
         """lock/unlock threads
 
         Depends on current lock status for each thread"""
@@ -241,7 +254,7 @@ class CPSForum(BaseDocument):
         # first get a list of all root posts, removing duplicates
         # (in case user selected several posts in the same thread)
         for post_id in post_ids:
-            root_post_id = self.getRootPost(post_id).id
+            root_post_id = self.getRootPost(post_id, proxy=proxy).id
             if root_post_id not in root_post_ids:
                 root_post_ids.append(root_post_id)
         for root_post_id in root_post_ids:
@@ -270,10 +283,6 @@ class CPSForum(BaseDocument):
                       if k.startswith('user:') and 'ForumModerator' in v]
         return moderators
 
-    security.declarePublic('isSendingModerNotifs')
-    def isSendingModerNotifs(self):
-        return self.send_moderation_notification
-
     security.declarePublic('anonymousPostsAllowed')
     def anonymousPostsAllowed(self):
         return self.allow_anon_posts
@@ -281,89 +290,3 @@ class CPSForum(BaseDocument):
     security.declarePublic('isFrozen')
     def isFrozen(self):
         return self.frozen_forum
-
-    security.declarePrivate('checkEmails')
-    def checkEmails(self,list=[]):
-        res = []
-        for item in list:
-            if item and item not in res:
-                res.append(item)
-        return res
-
-    security.declarePrivate('textwrap')
-    def textwrap(self,text, width):
-        """Textwrap function definition, for email formatting
-
-        Wraps text to width
-        inspired by MailBoxer's version, using reduce_eq
-        as built-in function reduce is not available from
-        python scripts"""
-
-        def reduceEq(func, seq, init=None):
-            if init is None:
-                init, seq = seq[0], seq[1:]
-            for item in seq:
-                init = func(init, item)
-            return init
-
-        return reduceEq(lambda line, word, width=width: '%s%s%s' %
-                      (line,
-                       ' \n'[(len(line[line.rfind('\n')+1:])
-                              + len(word.split('\n',1)[0]
-                                    ) >= width)],
-                       word),
-                      text.split(' ')
-                      )
-
-    security.declarePrivate('notifyModerators')
-    def notifyModerators(self, post_id=None, proxy=None):
-        if post_id and proxy:
-            moderators = self.getModerators(proxy)
-            members_dir = getToolByName(self, 'portal_directories').members
-            moderator_emails = []
-            for moderator_id in moderators:
-                entry = members_dir.getEntry(moderator_id[5:])
-                if entry and entry.has_key('email'):
-                    moderator_emails.append(entry['email'])
-            checked_emails = self.checkEmails(list=moderator_emails)
-            utool = getToolByName(self, 'portal_url')
-            portal = utool.getPortalObject()
-
-            mcat = getToolByName(self, 'Localizer').default
-            subject_i18n = mcat('forum_mailtitle_new_msg_submitted').encode('ISO-8859-15', 'ignore')
-            subject = subject_i18n + self.title
-            post_url = proxy.absolute_url() + '?post_id=' + post_id
-            body_i18n_1 = mcat('forum_mailbody_new_msg_submitted1').encode('ISO-8859-15', 'ignore')
-            body_i18n_2 = mcat('forum_mailbody_new_msg_submitted2').encode('ISO-8859-15', 'ignore')
-            body = body_i18n_1 + self.title + '.\n\n' + body_i18n_2 + '\n' + post_url
-
-            if checked_emails:
-                self.sendEmail(from_address=getattr(portal,
-                                                    'email_from_address'),
-                               subject=subject,
-                               body=self.textwrap(body, 72),
-                               mto=checked_emails)
-
-    security.declarePrivate('sendEmail')
-    def sendEmail(self, from_address='nobody@example.com', reply_to=None,
-                  subject='No subject', body='No body', content_type='text/plain',
-                  charset='ISO-8859-15', mto=None):
-
-        mailhost = getattr(getToolByName(self, 'portal_url').getPortalObject(), 'MailHost')
-        if reply_to is None:
-            reply_to = from_address
-
-            content = """\
-From: %s
-Reply-To: %s
-To: %s
-Subject: %s
-Content-Type: %s; charset=%s
-Mime-Version: 1.0
-
-%s"""
-            content = content % (from_address, reply_to, ', '.join(mto),
-                                 subject, content_type, charset, body)
-
-            mailhost.send(content, mto=mto, mfrom=from_address,
-                          subject=subject, encode='8bit')

@@ -1,10 +1,7 @@
 <tal:block define="post_id options/post_id;
                    descendants options/descendants;
-                   is_reviewer options/is_reviewer;
-                   comment_mode options/comment_mode">
+                   is_reviewer options/is_reviewer">
   <form method="post" tal:attributes="action here/absolute_url" name="post_form">
-    <input type="hidden" name="comment_mode:int" 
-           tal:attributes="value comment_mode" />
     <table border="0" style='width:100%;height:inherit'
            cellspacing='0' cellpadding='0'>
       <tr>
@@ -22,11 +19,10 @@
       </tr>
       <tal:span content="structure python:here.post_tree(
                                              descendants=descendants, 
-                                             post_id=post_id,
-                                             comment_mode=comment_mode)"/>
+                                             post_id=post_id)"/>
     </table>
     <div class="forumModeration">
-        <tal:block condition="python:not comment_mode and is_reviewer">
+        <tal:block condition="python:is_reviewer">
           <input type="submit" name="forum_publish_posts:method"
                  class="context" value="forum_publish" 
                  i18n:attributes="value" />
@@ -34,14 +30,17 @@
                  class="context" value="forum_depublish" 
                  i18n:attributes="value" />
         </tal:block>
-        <tal:block condition="python:not comment_mode and is_reviewer">
+        <tal:block condition="python:is_reviewer">
           <input type="submit" name="forum_lock_thread:method"
                  class="context" value="forum_button_lockunlock" 
                  i18n:attributes="value" />
         </tal:block>
-        <tal:block condition="python:comment_mode or is_reviewer">
+        <tal:block condition="python:is_reviewer">
           <input type="submit" name="forum_del_posts:method"
-                 class="destructive" value="forum_delete" 
+                 class="destructive" value="forum_delete"
+                 tal:define="cpsmcat nocall:here/Localizer/default"
+                 tal:attributes="onclick python:'return window.confirm(\'%s\')' %
+                                   (cpsmcat('description_confirm_delete'), )"
                  i18n:attributes="value" />
         </tal:block>
     </div>

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2004-04-09 10:15default\n"
+"POT-Creation-Date: 2004-05-07 13:01default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -60,7 +60,8 @@ msgstr ""
 msgid "forum_date"
 msgstr ""
 
-#.   <input value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
+#.   <input define="cpsmcat nocall:here/Localizer/default" attributes="onclick python:'return window.confirm(\'%s\')' %
+#.                                      (cpsmcat('description_confirm_delete'), )" value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr ""
@@ -87,6 +88,11 @@ msgstr ""
 msgid "forum_label_lock_forum"
 msgstr ""
 
+#.   <span />
+#: from ../skins/forum_default/forum_view_main.pt
+msgid "forum_link_back_to_document"
+msgstr ""
+
 #.   <div class="label">Message</div>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_message"
@@ -104,11 +110,11 @@ msgid "forum_msg_forum_frozen"
 msgstr ""
 
 #.   <td class="forumempty">
-#.                 No comment associated with this document.
-#.               </td>
-#.   <td class="forumempty">
 #.             Aucun message dans ce forum !
 #.           </td>
+#.   <td class="forumempty">
+#.           Aucun message dans ce forum !
+#.         </td>
 #: from ../skins/forum_default/forum_comment_lib.pt
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_no_message"
@@ -144,14 +150,9 @@ msgid "forum_publish"
 msgstr ""
 
 #.   <input value="forum_reply" class="standalone" name="forum_post_reply:method" type="submit" />
-#: from ../skins/forum_default/post_view_snippet.pt
+#: from ../skins/forum_default/post_view_csnippet.pt
+#: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
-msgstr ""
-
-#.   <td>Send moderation notifications</td>
-#: from ../skins/forum_default/forum_create_form.pt
-#: ../skins/forum_default/forum_edit_form.pt
-msgid "forum_send_moderation_notification"
 msgstr ""
 
 #.   <div class="label required">Subject</div>
@@ -166,11 +167,6 @@ msgstr ""
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
-msgstr ""
-
-#.   <span>Name</span>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_name"
 msgstr ""
 
 msgid "forum_modify"
@@ -189,4 +185,28 @@ msgid "forum_mailbody_new_msg_submitted1"
 msgstr ""
 
 msgid "forum_mailbody_new_msg_submitted2"
+msgstr ""
+
+msgid "forum_psm_comments_activated"
+msgstr ""
+
+msgid "forum_psm_comments_deactivated"
+msgstr ""
+
+msgid "action_activate_comments"
+msgstr ""
+
+msgid "action_deactivate_comments"
+msgstr ""
+
+msgid "action_manage_comments"
+msgstr ""
+
+msgid "forum_title_comments"
+msgstr ""
+
+msgid "forum_title_comments_for"
+msgstr ""
+
+msgid "forum_desc_comments"
 msgstr ""

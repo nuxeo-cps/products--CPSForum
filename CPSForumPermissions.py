@@ -18,9 +18,12 @@
 # $Id$
 """CPS Forum permissions.
 
-  - 'Forum post' is the permission needed to post a message to a forum
+  - 'Forum Post' is the permission needed to post a message to a forum
 
-  - 'Forum moderate' is the permissions needed to moderate a forum
+  - 'Forum Moderate' is the permission needed to moderate a forum
+
+  - 'Forum manage comments' is the permission needed to manage document
+    comments (stored in forum objects)
 
 """
 
@@ -31,3 +34,7 @@ setDefaultRoles(ForumPost, ('Manager', 'Owner'))
 
 ForumModerate = 'Forum Moderate'
 setDefaultRoles(ForumModerate, ('Manager', 'Owner'))
+
+ForumManageComments = 'Forum manage comments'
+setDefaultRoles(ForumManageComments, ('Manager', 'Owner'))
+

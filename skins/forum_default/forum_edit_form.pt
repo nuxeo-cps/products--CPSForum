@@ -40,13 +40,6 @@ c<html metal:use-macro="here/main_template/macros/master">
       </td>
     </tr>
     <tr>
-      <td i18n:translate="forum_send_moderation_notification">Send moderation notifications</td>
-      <td>
-        <input type="checkbox" name="send_moderation_notification"
-               tal:attributes="checked python:test(doc.isSendingModerNotifs(),'checked',None)" />
-      </td>
-    </tr>
-    <tr>
       <td i18n:translate="forum_allow_anon_posts">Allow anonymous posts</td>
       <td>
         <input type="checkbox" name="allow_anon_posts"

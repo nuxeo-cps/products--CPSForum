@@ -1,6 +1,6 @@
 <metal:block metal:use-macro="here/content_lib/macros/master">
-<metal:block fill-slot="header"
-  tal:define="comment_mode here/REQUEST/comment_mode|python:0;">
+
+<metal:block fill-slot="header">
   <h1 tal:content="here/title_or_id">Title</h1>
   <div class="description" tal:content="doc/Description"
     tal:condition="doc/Description">
@@ -10,23 +10,22 @@
 
 <metal:block fill-slot="main"
        tal:define="parent_id options/parent_id|nothing;
-                   comment_mode here/REQUEST/comment_mode|python:0;
-                   doc python:here.getForumObject(comment_mode=comment_mode);
+                   forum here/getContent;
                    member python:here.portal_membership.getAuthenticatedMember();
                    dtool python:here.portal_directories.members;
                    errormsg options/error_message|nothing;">
 
-<tal:block tal:condition="not:comment_mode">
-  <tal:block tal:condition="python:not doc.isFrozen()"
-             tal:define="is_poster python:member.has_permission('Forum Post', here);
+  <tal:block tal:condition="python:not forum.isFrozen()"
+             tal:define="is_poster python:here.portal_membership.checkPermission('Forum Post',
+                                                                                 forum);
                          can_post python:here.isAllowedToPost(is_poster=is_poster,
-                                                              is_anon=isAnon,forum=doc)">
-    <tal:block tal:condition="python:not(can_post)">
+                                                              is_anon=isAnon,forum=forum)">
+    <tal:block tal:condition="not:can_post">
       <p i18n:translate="forum_post_unauthorize">
         You are not authorized to post on this forum
       </p>
     </tal:block>
-    <tal:block tal:condition="python:comment_mode or can_post">
+    <tal:block tal:condition="can_post">
       <form method="post" action="." enctype="multipart/form-data">
         <div class="group">
           <div class="row">
@@ -52,14 +51,16 @@
           </div>
         </div>
         <div class="row"
-           tal:define="parent_info python:parent_id and doc[parent_id];
-                       parent_subject python:parent_info and parent_info['subject']">
+           tal:define="parent_info python:parent_id and getattr(here, parent_id);
+                       parent_subject python:parent_info and parent_info.Title()">
           <div class="label required"
             i18n:translate="forum_subject">Subject</div>
           <div class="field">
                 <tal:block condition="parent_subject">
                   <input type="text" name="subject:string" size="60"
-                         tal:attributes="value string:Re: ${parent_subject}" />
+                         tal:attributes="value python:test(parent_subject.lower().startswith('re:'),
+                                                           parent_subject,
+                                                           'Re: ' + parent_subject)" />
                 </tal:block>
                 <tal:block condition="not:parent_subject">
                   <input type="text" name="subject:string" size="60" />
@@ -83,8 +84,6 @@
           <div class="field">
                 <input type="hidden" name="parent_id:string"
                        tal:attributes="value parent_id" />
-                <input type="hidden" name="comment_mode:int"
-                       tal:attributes="value comment_mode" />
                 <input type="submit" name="forum_post:method"
                        class="standalone" value="forum_post"
                        i18n:attributes="value" />
@@ -97,80 +96,9 @@
     </tal:block>
   </tal:block>
 
-  <tal:block tal:condition="python:doc.isFrozen()">
+  <tal:block tal:condition="python:forum.isFrozen()">
     <p i18n:translate="forum_msg_forum_frozen">This forum is locked. You cannot post new messages to it.</p>
   </tal:block>
-</tal:block>
-
-<tal:block tal:condition="comment_mode">
-  <form method="post" action="." enctype="multipart/form-data">
-    <div class="group">
-<h2 tal:condition="comment_mode"
-      i18n:translate="action_comment">comment</h2>
-      <div class="row">
-        <div class="label" i18n:translate="forum_author">Author</div>
-        <div class="field">
-          <tal:block condition="not:here/portal_membership/isAnonymousUser">
-              <tal:block define="user_id member/getUserName;
-                                 user_props python:dtool.getEntry(user_id);
-                 fullname python:user_props and user_props.get(dtool.title_field, user_id) or user_id;">
-                <input type="hidden" name="author:string"
-                       tal:attributes="value user_id" />
-                <span tal:replace="fullname" />
-              </tal:block>
-            </tal:block>
-            <tal:block condition="here/portal_membership/isAnonymousUser">
-              <input type="text" name="author:string" value="" size="60" />
-              <span tal:condition="python:errormsg == 'error_author'"
-                    i18n:translate="forum_psm_name_required"
-                    class="forumError">Author field must be filled</span>
-            </tal:block>
-        </div>
-      </div>
-      <div class="row"
-        tal:define="parent_info python:parent_id and doc[parent_id];
-                    parent_subject python:parent_info and parent_info['subject']">
-         <div class="label required"
-           i18n:translate="forum_subject">Subject</div>
-         <div class="field">
-            <tal:block condition="parent_subject">
-              <input type="text" name="subject:string" size="60"
-                     tal:attributes="value string:Re: ${parent_subject}" />
-            </tal:block>
-            <tal:block condition="not:parent_subject">
-              <input type="text" name="subject:string" size="60" />
-            </tal:block>
-         </div>
-       </div>
-        <div class="row error"
-          tal:condition="python:errormsg == 'error_subject'"
-          i18n:translate="forum_psm_subject_required">
-                Subject field must be filled
-        </div>
-       <div class="row">
-         <div class="label" i18n:translate="forum_message">Message</div>
-         <div class="field">
-            <textarea cols="72" rows="7"
-                      name="message:string"></textarea>
-         </div>
-       </div>
-       <div class="row">
-         <div class="field">
-            <input type="hidden" name="parent_id:string"
-                   tal:attributes="value parent_id" />
-            <input type="hidden" name="comment_mode:int"
-                   tal:attributes="value comment_mode" />
-            <input type="submit" name="forum_post:method"
-                   class="standalone" value="forum_post"
-                   i18n:attributes="value" />
-            <input type="button" class="context" onClick="history.back()"
-                   value="button_cancel" i18n:attributes="value" />
-
-          </div>
-       </div>
-    </div>
-  </form>
-</tal:block>
 
 </metal:block>
 

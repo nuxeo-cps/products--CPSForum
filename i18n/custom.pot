@@ -34,3 +34,27 @@ msgstr ""
 msgid "forum_mailbody_new_msg_submitted2"
 msgstr ""
 
+msgid "forum_psm_comments_activated"
+msgstr ""
+
+msgid "forum_psm_comments_deactivated"
+msgstr ""
+
+msgid "action_activate_comments"
+msgstr ""
+
+msgid "action_deactivate_comments"
+msgstr ""
+
+msgid "action_manage_comments"
+msgstr ""
+
+msgid "forum_title_comments"
+msgstr ""
+
+msgid "forum_title_comments_for"
+msgstr ""
+
+msgid "forum_desc_comments"
+msgstr ""
+

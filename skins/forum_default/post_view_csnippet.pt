@@ -1,0 +1,33 @@
+<tal:block tal:define="forum_proxy nocall:options/forum_proxy | nothing;
+                       post_id options/post_id | nothing;
+                       post python:getattr(forum_proxy, post_id);
+                       post_doc python:post.getContent();
+                       forum nocall:options/forum;
+                       can_post options/can_post | nothing;
+                       published python:here.portal_workflow.getInfoFor(post, 'review_state', 'nostate') == 'published'">
+  <tr>
+    <td colspan="2">
+      <div class="forumPostTitle">
+        <a tal:attributes="href
+                             python:here.absolute_url()+'/?post_id='+post_id"
+           tal:content="post/Title">Title</a>
+        <tal:block tal:define="mcat python:here.Localizer.default" 
+                   tal:replace="python:'('+mcat('forum_label_postedby').encode('ISO-8859-15', 'ignore')+' '+here.getPosterName(post.Creator())+')'"/>
+      </div>
+      <div class="forumPostText"
+           tal:content="post_doc/Description">Message</div>
+      <form method="post" tal:attributes="action forum_proxy/absolute_url"
+            name="post_form"
+            tal:define="locked python:here.locked_thread(post=post,
+                                                         forum=forum,
+                                                         proxy=forum_proxy)"
+            tal:condition="python:not locked and can_post">
+        <input type="hidden" name="parent_id:string"
+               tal:attributes="value post_id" />
+        <input type="submit" name="forum_post_reply:method"
+               class="standalone" value="forum_reply"
+               i18n:attributes="value" />
+      </form>
+    </td>
+  </tr>
+</tal:block>

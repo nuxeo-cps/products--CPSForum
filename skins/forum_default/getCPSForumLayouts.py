@@ -24,15 +24,6 @@ forum_layout = {
                 'label_edit': 'forum_allow_anon_posts',
                 },
             },
-        'send_moderation_notification': {
-            'type': 'Boolean Widget',
-            'data': {
-                'fields': ['send_moderation_notification'],
-                'is_i18n': 1,
-                'label': 'forum_send_moderation_notification',
-                'label_edit': 'forum_send_moderation_notification',
-                },
-            },
         'frozen_forum': {
             'type': 'Boolean Widget',
             'data': {
@@ -47,10 +38,61 @@ forum_layout = {
         'style_prefix': 'layout_default_',
         'rows': [[{'widget_id': 'moderation_mode'}, ],
                  [{'widget_id': 'allow_anon_posts'}, ],
-                 [{'widget_id': 'send_moderation_notification'}, ],
                  [{'widget_id': 'frozen_forum'}, ],
                  ],
         }
     }
 
-return {'forum': forum_layout}
+forumpost_layout = {
+    'widgets': {
+        'Title': {
+            'type': 'Heading Widget',
+            'data': {
+                'fields': ['Title'],
+                'level': 1,
+                'is_i18n': 1,
+                'is_required': 1,
+                'label_edit': 'cpsforum_label_subject',
+                'label': 'cpsforum_label_subject',
+                'display_width': 72,
+                'size_max': 100,
+            },
+        },
+        'Creator': {
+            'type': 'String Widget',
+            'data': {
+                'fields': ['Creator'],
+                'is_i18n': 1,
+                'label_edit': 'label_creator',
+                'label': 'label_creator',
+                'readonly_layout_modes': ['create', 'edit'],
+                'hidden_layout_modes': ['create'],
+                'display_width': 40,
+                'size_max': 50,
+            },
+        },
+        'Description': {
+            'type': 'Text Widget',
+            'data': {
+                'fields': ['Description'],
+                'is_i18n': 1,
+                'label_edit': 'cpsforum_label_message',
+                'label': '',
+                'css_class': 'ddescription',
+                'width': 72,
+                'height': 5,
+                'render_format': 'text',
+            },
+        },
+        },
+    'layout': {
+        'style_prefix': 'layout_default_',
+        'rows': [[{'widget_id': 'Title'}, ],
+                 [{'widget_id': 'Creator'}, ],
+                 [{'widget_id': 'Description'}, ],
+                 ],
+        }
+    }
+
+return {'forum': forum_layout,
+        'forumpost': forumpost_layout}

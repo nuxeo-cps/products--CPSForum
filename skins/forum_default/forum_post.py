@@ -1,13 +1,6 @@
-##parameters=subject,author,message,parent_id=None,comment_mode=0,REQUEST=None
+##parameters=subject,author,message,parent_id=None,REQUEST=None
 
 # $Id$
-
-forum = context.getForumObject(comment_mode)
-
-if (not forum) and comment_mode:
-    #the forum holding comments might not exist if this is
-    #the first post ; in this case create it
-    forum = context.portal_discussion.addForum(context)
 
 if not author:
     msg = 'error_author'
@@ -17,25 +10,21 @@ if not subject:
     msg = 'error_subject'
     return context.forum_post_form(error_message=msg)
 
-if (not parent_id) or parent_id.isspace():
-    #FIXME: for doc comment forums, parent_id is sometimes '',
-    #which is not equivalent to None as far as the thread
-    #manager is concerned, so we put it back to None in those
-    #cases ; but it would be better to find why it gets '' instead
-    #of None when going through "New Thread"
+if not parent_id or parent_id.isspace():
     parent_id = None
 
-new_id = forum.addPost(subject=subject, author=author, message=message,
-                       parent_id=parent_id, proxy=context,
-                       comment_mode=comment_mode)
+post_id = context.computeId(compute_from=subject)
+context.portal_workflow.invokeFactoryFor(context, 'ForumPost', post_id,
+                                         subject=subject,
+                                         author=author,
+                                         message=message,
+                                         parent_id=parent_id)
 
-if REQUEST:
-    if comment_mode:
-        REQUEST.RESPONSE.redirect(
-            context.absolute_url() + "/?comment_id=" + new_id)
-    else:
-        REQUEST.RESPONSE.redirect(
-            context.absolute_url() + "/?post_id=" + new_id)
+forum = context.getContent()
+forum.newPostCreated(post_id, proxy=context)
 
+if REQUEST is not None:
+    REQUEST.RESPONSE.redirect(
+        context.absolute_url() + "/?post_id=" + post_id)
 else:
-    return new_id
+    return post_id

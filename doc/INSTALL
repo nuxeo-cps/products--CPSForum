@@ -8,7 +8,7 @@ Installation of CPSForum
 
 - From the ZMI, go to the CPS root, instanciate an External Method with the
   following parameters:
-  ID = any Id you want, like cpsforuminst
+  ID = any Id you want, like cpsforum_install
   Title = anything you want, like CPSForum Installer
   Module Name = CPSForum.install
   Function Name = install
@@ -25,12 +25,13 @@ Installation of CPSForum
 Discussions (comments about documents)
 --------------------------------------------------
 - If your document is discussable, an action in the action box makes it
-  possible to add comments to your document. These comments are managed
-  by a CPSForum (a forum is associated with each document that contains
-  comments). Beware: the forum is associated with the document, not the
-  proxy(ies) that refer to it, meaning that the forum is shared by the
-  various versions of the document (published in sections, or workgroup
-  drafts). The forum objects themselves are stored in portal_comment and
-  are hidden from the user (the user sees an interface to the forum through
-  the document being commented ; he does not directly access the forum).
+  possible to activate comments for your document. If they are activated,
+  a new action makes it possible to actually comment the document.
+  These comments are managed by a CPSForum (a forum is associated with each
+  document that contains comments). Beware: the forum is associated with the
+  proxy document, not the actual document in the repository, meaning that
+  the forum is not shared by the various versions of the document (published
+  in sections, or workgroup drafts). The forum objects themselves are stored
+  in a specific .cps_discussions in the parent folder (workspace or content)
+  and are hidden from the user.
 

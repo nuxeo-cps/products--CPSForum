@@ -6,7 +6,7 @@
 will be displayed, otherwise first post will be displayed."""
 
 if post_id is None:
-    threads = context.getContent().getThreads()
+    threads = context.getContent().getThreads(proxy=context)
     if len(threads) > 0:
         return context.forum_view_main(post_id=threads[0]['id'])
 

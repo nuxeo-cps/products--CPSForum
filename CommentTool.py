@@ -25,7 +25,8 @@ from Globals import InitializeClass, DTMLFile
 from AccessControl import ClassSecurityInfo
 
 from Products.CMFCore.PortalFolder import PortalFolder
-from Products.CMFCore.CMFCorePermissions import ManagePortal
+from Products.CMFCore.CMFCorePermissions import ManagePortal, View,\
+     ModifyPortalContent
 from Products.CMFCore.utils import UniqueObject, getToolByName
 from Products.CMFCore.ActionProviderBase import ActionProviderBase
 from Products.CMFDefault.DiscussionTool import DiscussionTool
@@ -49,6 +50,8 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
 
     _actions = ()
 
+    _data = {}
+
     def __init__(self):
         PortalFolder.__init__(self, self.id)
 
@@ -57,32 +60,47 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     security.declareProtected(ManagePortal, 'manage_overview')
     manage_overview = DTMLFile('dtml/explainCommentTool', globals())
 
-    #
-    # 'portal_comment' interface methods
-    # FIXME: there is no such 'portal_comment' interface. Is it supposed
-    # to be portal_discussion (it is not: method names are not exactly the
-    # same) ???
-    #
-    security.declarePublic('getDiscussionForumFor')
-    def getDiscussionForumFor(self, proxy):
-        """Get the CPSForum object that applies to this proxy/doc"""
-        doc_id = proxy.getDocid()
-        if doc_id in self.objectIds():
-            return self.getForum(doc_id)
+    # API
+    security.declarePublic('isProxyDocument')
+    def isProxyDocument(self, object):
+        if object:
+            portal_type = getattr(portal.portal_types, object.portal_type, None)
+            if portal_type and portal_type.cps_proxy_type == 'document':
+                return 1
+            else:
+                return 0
         else:
-            return None
+            return 0
+
+    security.declarePublic('getCommentForumURL')
+    def getCommentForumURL(self, object_url):
+        return self._data.get(object_url, '')
+
+    security.declarePublic('getCommentedDocument')
+    def getCommentedDocument(self, forum_url):
+        for doc_url, frm_url in self._data.items():
+            if frm_url == forum_url:
+                return doc_url
+        return None
+
+    security.declareProtected(View, 'registerCommentForum')
+    def registerCommentForum(self, proxy_path='', forum_path=''):
+        data = self._data
+        data[proxy_path] = forum_path
+        self._data = data
 
     security.declarePublic('isCommentingAllowedFor')
     def isCommentingAllowedFor(self, proxy):
         """Return a boolean indicating whether comments are allowed for the
         specified proxy/content"""
-        content = proxy.getContent()
-        if hasattr(content, 'allow_discussion'):
-            return content.allow_discussion
-        typeInfo = getToolByName(self, 'portal_types').getTypeInfo(content)
-        if typeInfo:
-            return typeInfo.allowDiscussion()
-        return 0
+        # depending on the client's
+        # product, metadata's allow_discussion might not be read-only
+        # so check that there is actuall a forum for this document
+        proxy_url = proxy.absolute_url(relative=1)
+        if proxy_url in self._data.keys():
+            return 1
+        else:
+            return 0
 
     #
     # Other methods
@@ -101,29 +119,37 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
             addCPSForum(self, doc_id)
         return self.getForum(doc_id)
 
-    security.declarePublic('notifyPostCreation')
-    def notifyPostCreation(self, object, url_to_display=None, comment=0):
-        """Notify the event service tool that an new post or comment
-        has been created
+    security.declareProtected(View, 'notify_document_deleted')
+    def notify_document_deleted(self, event_type, object, infos):
+        doc_url = object.absolute_url(relative=1)
+        data = self._data
+        if self._data.has_key(doc_url):
+            del data[doc_url]
+            self._data = data
 
-        We need to call it from the skins to make the difference in between
-        post and comment and as well to give the event_service the URL of
-        the post to display
-        (i.e: http://cps.bar.com/forum/forum_view_thread?post_id=4444)
-        Notice, the URL is coompletly different form the URL of the
-        post object itself
-        """
-        evtool = getEventService(self)
+##    security.declarePublic('notifyPostCreation')
+##    def notifyPostCreation(self, object, url_to_display=None, comment=0):
+##        """Notify the event service tool that an new post or comment
+##        has been created
 
-        #
-        # We want to separate these two types of events
-        # Normal post / Commment
-        #
-        if comment:
-            event_id = 'forum_comment_create'
-        else:
-            event_id = 'forum_new_message'
+##        We need to call it from the skins to make the difference in between
+##        post and comment and as well to give the event_service the URL of
+##        the post to display
+##        (i.e: http://cps.bar.com/forum/forum_view_thread?post_id=4444)
+##        Notice, the URL is coompletly different form the URL of the
+##        post object itself
+##        """
+##        evtool = getEventService(self)
 
-        evtool.notify(event_id, object, {'url_to_display': url_to_display})
+##        #
+##        # We want to separate these two types of events
+##        # Normal post / Commment
+##        #
+##        if comment:
+##            event_id = 'forum_comment_create'
+##        else:
+##            event_id = 'forum_new_message'
+
+##        evtool.notify(event_id, object, {'url_to_display': url_to_display})
 
 InitializeClass(CommentTool)

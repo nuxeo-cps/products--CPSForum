@@ -1,0 +1,59 @@
+--------------------------------------------------
+CPSForum README
+--------------------------------------------------
+
+Author: Emmanuel Pietriga (ep@nuxeo.com)
+$Id$
+
+--------------------------------------------------
+
+This README documents the new version of CPSForum that stores posts as
+CPSDocuments.
+
+Features and changes w.r.t earlier implementations:
+- posts are now searchable,
+- posts follow their own workflow (forum_post_wf) and have a publication
+  status (see doc/forum_wf.svg for a graphical representation of this workflow),
+- comments are still stored in Forum objects, but there is no longer
+  a comment_mode: standard forums are used in this context (some scripts
+  differ slightly, but it is of no consequence to the user). This means
+  that all standard forum features (moderation, notification, locking, etc.)
+  are available in forums used for commenting documents,
+- new permissions make it possible to fine tune who is allowed to do what
+  on forums (see below for more information). 
+
+IMPORTANT NOTES:
+- This version of CPSForum and all subsequent versions based on CPSDocument
+  posts are incompatible with existing Forum instances that have been created
+  with earlier versions of CPSForum (i.e. which do not use CPSDocument posts).
+  This means all versions up to (and including) release 0.7.0-1 of April 2004.
+- people who decide to use this version of CPSForum should make the metadata
+  attribute 'allow_discussion' read only, as its value is now set by actions
+  performed on the document (namely action_activate_comments and 
+  action_deactivate_comments). Not making this attribute read only means that
+  any member who can modify metadata for a given document can activate or 
+  deactivate comments for this document. This can be a problem if you decide to
+  assign permission 'Forum manage comments' to a more restricted set of users
+  (which is the case with the default setting as only workspace/section
+  managers and document owners are allowed to to so).
+
+Some details about roles and permissions associated with forums:
+- there are three permissions associated with forums: 
+  * 'Forum Moderate' required to publish/unpublish/delete posts,
+  * 'Forum Post' required to post new messages,
+  * 'Forum manage comments' required to activate/deactivate comments about a
+    given document.
+
+- those three permissions are mapped to CPSDefault roles as follows:
+  for standard forums:
+    * Forum Moderate = WorkspaceManager, Section Manager, Section Reviewer,
+                       Owner
+    * Forum Post = WorkspaceManager, WorkspaceMember, WorkspaceReader,
+                   SectionManager, SectionReviewer, SectionReader,
+                   Owner
+    * Forum manage comments = WorkspaceManager, Section Manager,
+                              Section Reviewer, Owner
+
+In addition, it is possible to assign roles ForumModerator and ForumPoster
+(which speak for themselves) locally in a forum. It is also possible to
+change default settings by using CPSInstaller.setupPortalPermissions()

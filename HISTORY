@@ -1,4 +1,66 @@
 *******************************************
+** CPSForum V1.1.0 [R1 build 2004/05/10-06:35 by madarche]
+
+Requires:
+~~~~~~~~~
+- CPSSubscriptions (for notifications)
+New features:
+~~~~~~~~~~~~~
+- Uses CPSSubscriptions for notifying users about new posts (works for both
+  std forum and comment forums)
+Bug fixes:
+~~~~~~~~~~
+- use appropriate script ot get local roles (now filtering out irrelevant roles)
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.0.0 [R1 build 2004/04/29-13:24 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- more robustness when testing for comments associated with a document
+- reassign (and restrict) forum related workflows in .cps_discussions
+  in case they have been lost upper in the hierarchy
+
+
+*******************************************
+** CPSForum V0.8.0 [R1 build 2004/04/29-07:55 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- posts are searchable
+- posts follow a workflow
+- new permissions, easier to change role/permission mapping, even
+  for comment forums
+
+Bug fixes:
+~~~~~~~~~~
+- removed duplicate 'Re:' in post subjects
+- some GUI enhancements
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- big refactoring that makes this version incompatible with previous ones
+  (up to 0.7.1-1): posts are now stored as CPSDocuments
+- comments are handled in standard forums with all options available
+- both CPSForum and ForumPost objects follow their own workflow
+
+*******************************************
+
 ** CPSForum V0.7.1 [R1 build 2004/05/05-15:45 by madarche]
 
 Requires:
@@ -15,6 +77,7 @@ New internal features:
 -
 
 *******************************************
+
 ** CPSForum V0.7.0 [R1 build 2004/04/09-13:27 by ben]
 
 Requires:

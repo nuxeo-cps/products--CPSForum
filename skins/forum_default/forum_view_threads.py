@@ -4,9 +4,9 @@
 
 forum = context.getContent()
 result = []
-for thread_info in forum.getThreads():
-    result.append((thread_info, forum.getDescendants(thread_info['id']),))
+for root_post in forum.getThreads(proxy=context):
+    result.append((root_post, forum.getDescendants(root_post['id'],
+                                                   proxy=context)))
 
-return context.forum_view_threads_main(
-    post_id=post_id, descendants=result, is_reviewer=is_reviewer, 
-    comment_mode=0, forum=forum)
+return context.forum_view_threads_main(post_id=post_id, descendants=result,
+                                       is_reviewer=is_reviewer, forum=forum)

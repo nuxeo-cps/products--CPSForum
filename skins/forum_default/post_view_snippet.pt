@@ -1,65 +1,36 @@
-<tal:block define="post_id options/post_id;
-                   forum nocall:options/forum;
-                   is_reviewer options/is_reviewer;
-                   comment_mode options/comment_mode;
-                   post python:forum[post_id];
-                   can_post options/can_post | nothing;"
-           condition="python:post">
-<tal:block condition="python: is_reviewer or post['published'] or comment_mode">
+<tal:block tal:define="post_id options/post_id | nothing;
+                       post python:getattr(here, post_id);
+                       post_doc python:post.getContent();
+                       forum nocall:options/forum;
+                       is_reviewer options/is_reviewer;
+                       can_post options/can_post | nothing;
+                       published python:here.portal_workflow.getInfoFor(post,
+                                   'review_state', 'nostate') == 'published'">
+<tal:block condition="python:is_reviewer or published">
   <tr>
     <td colspan="2">
-      <div class="group">
-        <table style="padding:0;margin:0;width:100%;">
-          <tr>
-            <td>
-              <div class="label">
-                <tal:block condition="python: post['published']">
-                  <a tal:attributes="href
-                       python:here.absolute_url()+'/?post_id='+post['id']">
-                    <strong tal:content="python:post['subject']">Title</strong>
-                  </a>
-                </tal:block>
-                <tal:block condition="python: is_reviewer and not post['published']">
-                  <a tal:content="python:post['subject']"
-                     tal:attributes="href 
-                       python:here.absolute_url()+'/?post_id='+post['id']">
-                    Title
-                  </a>
-                </tal:block>
-                <tal:block condition="comment_mode">
-                  <a tal:content="python:post['subject']"
-                     tal:attributes="href python:
-                       here.absolute_url()+'/?comment_id='+post['id']">
-                    Title
-                  </a>
-                </tal:block>
-                <tal:block tal:define="mcat python:here.Localizer.default" 
-                           tal:replace="python:'('+mcat('forum_label_postedby').encode('ISO-8859-15', 'ignore')+' '+here.getPosterName(post['author'])+')'"/>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="description"
-                   tal:content="python:post['message']">Message</div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <form method="post" tal:attributes="action here/absolute_url" name="post_form"
-                    tal:condition="python:not here.locked_thread(post_id=post_id,forum=forum) and (can_post or comment_mode)">
-                <input type="hidden" name="parent_id:string"
-                       tal:attributes="value post_id" />
-                <input type="hidden" name="comment_mode:int"
-                       tal:attributes="value comment_mode" />
-                <input type="submit" name="forum_post_reply:method"
-                       class="standalone" value="forum_reply"
-                       i18n:attributes="value" />
-              </form>
-            </td>
-          </tr>
-        </table>
+      <div class="forumPostTitle">
+        <tal:block condition="python:published or (is_reviewer and not published)">
+          <a tal:attributes="href
+                               python:here.absolute_url()+'/?post_id='+post_id"
+             tal:content="post/Title">Title
+          </a>
+        </tal:block>
+        <tal:block tal:define="mcat python:here.Localizer.default" 
+                               tal:replace="python:'('+mcat('forum_label_postedby').encode('ISO-8859-15', 'ignore')+' '+here.getPosterName(post.Creator())+')'"/>
       </div>
+      <div class="forumPostText"
+           tal:content="post_doc/Description">Message</div>
+      <form method="post" tal:attributes="action here/absolute_url"
+            name="post_form"
+            tal:define="locked python:here.locked_thread(post=post,forum=forum)"
+            tal:condition="python:not locked and can_post">
+        <input type="hidden" name="parent_id:string"
+               tal:attributes="value post_id" />
+        <input type="submit" name="forum_post_reply:method"
+               class="standalone" value="forum_reply"
+               i18n:attributes="value" />
+      </form>
     </td>
   </tr>
 </tal:block>

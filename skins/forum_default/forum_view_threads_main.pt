@@ -116,6 +116,9 @@
       <input type="submit" name="forum_unpublish_posts:method"
              class="context" value="forum_depublish" 
              i18n:attributes="value" />
+      <input type="submit" name="forum_reject_posts:method"
+             class="context" value="forum_reject" 
+             i18n:attributes="value" />
       <input type="submit" name="forum_lock_thread:method"
              class="context" value="forum_button_lockunlock" 
              i18n:attributes="value" />

@@ -8,6 +8,7 @@ Bug fixes:
 ~~~~~~~~~~
 - display "Modify" button only for posts that are not published (thus not
   modifiable)
+- Add an explicit message when you not have rights to post a comment
 
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~

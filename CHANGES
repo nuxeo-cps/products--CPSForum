@@ -7,6 +7,9 @@ New features:
 Bug fixes:
 ~~~~~~~~~~
 - some missing translations when modifying a post
+- post can now be seen by its owner even if not yet published
+- original msg text layout is kept when displaying the message (preserve
+  whitespace)
 
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~

@@ -36,6 +36,7 @@ factory_type_information = (
         'filter_content_types': 1,
         'allowed_content_types': ('Post',),
         'immediate_view': 'forum_view',
+        'allow_discussion': 0,
         'actions': (
             {
             'id': 'view',

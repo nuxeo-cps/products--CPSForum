@@ -1,6 +1,8 @@
 <tal:block tal:define="post_id options/post_id;
                        descendants options/descendants;
                        is_reviewer options/is_reviewer;
+                       sort_by options/sort_by;
+                       display_mode options/display_mode;
                        forum nocall:options/forum;
                        threads_per_page python:getattr(forum,'threads_per_page',0)">
   <form method="post" tal:attributes="action here/absolute_url" name="post_form">
@@ -66,7 +68,9 @@
       </tr>
       <tal:span tal:content="structure python:here.post_tree(descendants=batched_desc, 
                                                              post_id=post_id,
-                                                             frm_start=batch_start)"/>
+                                                             frm_start=batch_start,
+                                                             sort_by=sort_by,
+                                                             display_mode=display_mode)"/>
     </tal:block>
     </tal:block>
     <tal:block tal:condition="not: threads_per_page">
@@ -76,10 +80,13 @@
                  tal:attributes="value post_id" />
         </td>
         <td class="forumModerateCell">
-          <a href="./sort_posts?criterion=threads">
+          <a href="./sort_posts?criterion=threads"
+             tal:condition="python:getattr(forum, 'tree_display', '') == 'title'">
             <img tal:replace="structure python:here.getImgTag('threads.gif',
                                                               alt='sort by threads')" />
           </a>
+          <tal:block tal:condition="python:getattr(forum, 'tree_display', '') != 'title'"
+                     tal:replace="structure string:&nbsp;"/>
         </td>
         <th class="forumSubjectCell">
           <a href="./sort_posts?criterion=subject"
@@ -96,7 +103,9 @@
         <td class="forumLockCell"></td>
       </tr>
       <tal:span tal:content="structure python:here.post_tree(descendants=descendants, 
-                                                             post_id=post_id)"/>
+                                                             post_id=post_id,
+                                                             sort_by=sort_by,
+                                                             display_mode=display_mode)"/>
     </tal:block>
   </table>
   <div class="forumModeration">

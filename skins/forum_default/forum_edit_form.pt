@@ -10,28 +10,28 @@
 
   <table>
     <tr>
-      <td i18n:translate="L_forum titre">Titre</td>
+      <td i18n:translate="forum_title">Titre</td>
       <td>
         <input type="text" name="title:string" 
                tal:attributes="value doc/title">
       </td>
     </tr>
     <tr>
-      <td i18n:translate="L_forum description">Description</td>
+      <td i18n:translate="forum_description">Description</td>
       <td>
          <textarea rows="3" cols="30" name="description:string"
                    tal:content="doc/description"></textarea>
       </td>
     </tr>
     <tr>
-      <td i18n:translate="L_forum moderation">Modération</td>
+      <td i18n:translate="forum_moderation">Modération</td>
       <td>
         <select name="moderation_mode:int">
-          <option value="0" i18n:translate="L_forum a posteriori"
+          <option value="0" i18n:translate="forum_a_posteriori"
                   tal:attributes="selected python:not moderation_mode">
             a posteriori
           </option>
-          <option value="1" i18n:translate="L_forum a priori"
+          <option value="1" i18n:translate="forum_a_priori"
                   tal:attributes="selected python:not not moderation_mode">
             a priori
           </option>
@@ -39,7 +39,7 @@
       </td>
     </tr>
     <tr>
-      <td i18n:translate="L_forum valideurs">Moderators</td>
+      <td i18n:translate="forum_moderators">Moderators</td>
       <td>
         <select name="moderators:list" multiple>
           <option tal:define="reviewers python:doc.getModerators(here)"
@@ -59,7 +59,7 @@
         <input type="hidden" name="type" value="Forum" />
         <input type="submit" name="forum_edit:method"
                class='mainbutton' 
-               tal:attributes="value string:L_forum Modifier" 
+               tal:attributes="value string:forum_modify" 
                i18n:attributes="value" />
       </td>
     </tr>

@@ -8,24 +8,24 @@
       tal:define="doc here/getContent|here;">
   <table>
     <tr>
-      <td i18n:translate="L_forum titre">Titre</td>
+      <td i18n:translate="forum_title">Titre</td>
       <td>
         <input type="text" name="title:string"  i18n:translate=""
                tal:attributes="value string:Forum ${doc/title}">
       </td>
     </tr>
     <tr>
-      <td i18n:translate="L_forum description">Description</td>
+      <td i18n:translate="forum_description">Description</td>
       <td>
         <textarea  rows="6" cols="40" name="description:string"></textarea>
       </td>
     </tr>
     <tr>
-      <td i18n:translate="L_forum moderation">Modération</td>
+      <td i18n:translate="forum_moderation">Modération</td>
       <td>
         <select name="moderation_mode:int">
-          <option value="0" i18n:translate="L_forum a posteriori">a posteriori</option>
-          <option value="1" i18n:translate="L_forum a priori">a priori</option>
+          <option value="0" i18n:translate="forum_a_posteriori">a posteriori</option>
+          <option value="1" i18n:translate="forum_a_priori">a priori</option>
         </select>
       </td>
     </tr>
@@ -35,7 +35,7 @@
       <td>
         <input type="hidden" name="type" value="Forum" />
         <input type="submit" name="forum_create:method"
-               class='mainbutton' tal:attributes="value string:L_forum creer"
+               class='mainbutton' tal:attributes="value string:forum_create"
                i18n:attributes="value" />
       </td>
     </tr>

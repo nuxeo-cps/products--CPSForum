@@ -1,0 +1,163 @@
+msgid ""
+msgstr "Project-Id-Version: CPSForum messages\n"
+"POT-Creation-Date: 2004-04-06 12:04+CET\n"
+"PO-Revision-Date: 2004-04-06 12:04+CET\n"
+"Last-Translator:  <>\n"
+"Language-Team: de <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "Role1"
+msgstr "Rolle1"
+
+msgid "button_assign_roles"
+msgstr "Rollen zuweisen"
+
+msgid "button_delete"
+msgstr "Löschen"
+
+msgid "button_search"
+msgstr "Suchen"
+
+msgid "forum_a_posteriori"
+msgstr "nachher"
+
+msgid "forum_a_priori"
+msgstr "vorher"
+
+msgid "forum_allow_anon_posts"
+msgstr "Erlaube anonyme Postings"
+
+msgid "forum_author"
+msgstr "Autor"
+
+msgid "forum_button_lockunlock"
+msgstr "(öffnen)schliessen Thema"
+
+msgid "forum_date"
+msgstr "Datum"
+
+msgid "forum_delete"
+msgstr "Löschen"
+
+msgid "forum_depublish"
+msgstr "Publikation zurückziehen"
+
+msgid "forum_description"
+msgstr "Beschreibung"
+
+msgid "forum_label_comments"
+msgstr "Kommentare"
+
+msgid "forum_label_lock_forum"
+msgstr "Forum schliessen (nur zur Ansicht)"
+
+msgid "forum_label_postedby"
+msgstr "geposted von"
+
+msgid "forum_message"
+msgstr "Nachricht"
+
+msgid "forum_moderation"
+msgstr "Moderation"
+
+msgid "forum_modify"
+msgstr "Ändern"
+
+msgid "forum_msg_forum_frozen"
+msgstr "Diese Forum ist geschlossen. Sie können jetzt keine Nachrichten senden."
+
+msgid "forum_new_thread"
+msgstr "Neues Thema"
+
+msgid "forum_no_message"
+msgstr "Keine Nachricht"
+
+msgid "forum_post"
+msgstr "Ab mit der Post!"
+
+msgid "forum_post_unauthorize"
+msgstr "Sie sind nicht befugt in diesem Forum zu posten"
+
+msgid "forum_psm_name_required"
+msgstr "Sie müssen einen Namen oder einen Nicknamen angeben"
+
+msgid "forum_publish"
+msgstr "Publizieren"
+
+msgid "forum_reply"
+msgstr "Antworten"
+
+msgid "forum_send_moderation_notification"
+msgstr "Moderatoren benachrichtigen (neue Nachrichten)"
+
+msgid "forum_subject"
+msgstr "Betreff"
+
+msgid "forum_title"
+msgstr "Titel"
+
+msgid "heading_local_roles_search_members"
+msgstr "Lokale Rolle zuweisen: Suche Mitglieder"
+
+msgid "heading_local_roles_search_results"
+msgstr "Lokale Rolle zuweisen: Suche Ergebnisse"
+
+msgid "label_email"
+msgstr "Email Adresse"
+
+msgid "label_group"
+msgstr "Gruppe"
+
+msgid "label_group_name"
+msgstr "Gruppen Name"
+
+msgid "label_in"
+msgstr "in"
+
+msgid "label_local_roles_search_by"
+msgstr "Suchen nach"
+
+msgid "label_local_roles_search_term"
+msgstr "Such Term"
+
+msgid "label_name"
+msgstr "Name"
+
+msgid "label_roles"
+msgstr "Rolle(n)"
+
+msgid "label_user"
+msgstr "Teilnehmer"
+
+msgid "label_user_email"
+msgstr "Email Adresse"
+
+msgid "label_user_name"
+msgstr "Name"
+
+msgid "legend_local_roles_assigned_users"
+msgstr "Diese Teilnehmer haben keine lokale Rollen in diesem Folder:"
+
+msgid "legend_local_roles_currently_assigned"
+msgstr "Aktuell zugewiesene lokale Rollen"
+
+msgid "legend_local_roles_no_results_member"
+msgstr "Sorry, keine Gruppen die zu Ihrer Abfrage passen."
+
+msgid "legend_local_roles_no_results_members"
+msgstr "Sorry, keine Teilnehmer die zu Ihrer Abfrage passen."
+
+msgid "legend_local_roles_role_to_assign"
+msgstr "Rolle die zugewiesen werden soll:"
+
+msgid "legend_local_roles_select_groups_and_roles"
+msgstr "Wähle Gruppe(n) und Rolle die zugewiesen werden soll:"
+
+msgid "legend_local_roles_select_members_and_roles"
+msgstr "Wähle Teilnehmer und Rolle die zugewiesen werden soll:"
+
+msgid "link_local_roles_underlined"
+msgstr "<i>Rollen mit Unterstrich </i> werden in übergeordneten Foldern vergeben. Folgen sie den Verweisen um die lokalen Rollen in diesen Foldern zu verwalten."

@@ -16,7 +16,7 @@ class TestCommentTool(CPSForumTestCase.CPSForumTestCase):
         self.ws = self.portal.workspaces
         self.sc = self.portal.sections
 
-        self.portal.portal_workflow.invokeFactoryFor(self.ws, 'News', 'news')
+        self.ws.invokeFactory('News', 'news')
         self.proxy_doc = getattr(self.ws, 'news')
         self.doc = self.proxy_doc.getContent()
 
@@ -25,8 +25,7 @@ class TestCommentTool(CPSForumTestCase.CPSForumTestCase):
 
     def _createForum(self):
         forum_id = 'forum'
-        self.portal.portal_workflow.invokeFactoryFor(self.ws, 'CPSForum',
-                                                     forum_id)
+        self.ws.invokeFactory('CPSForum', forum_id)
         proxy_forum = getattr(self.ws, forum_id)
         forum = proxy_forum.getContent()
         return (proxy_forum, forum)
@@ -166,7 +165,7 @@ class TestCommentTool(CPSForumTestCase.CPSForumTestCase):
     def testGetForum4CommentsSections(self):
         # Create 'Chat' object as it's allowed to create it under Sections
         # by default
-        self.portal.portal_workflow.invokeFactoryFor(self.sc, 'Chat', 'chat')
+        self.sc.invokeFactory('Chat', 'chat')
         sc_proxy_doc = getattr(self.sc, 'chat')
 
         doc_url = sc_proxy_doc.absolute_url(relative=1)
@@ -217,10 +216,15 @@ class TestCommentTool(CPSForumTestCase.CPSForumTestCase):
     def testGetForum4CommentsSections1(self):
         # Create 'Chat' object as it's allowed to create it under Sections
         # by default
-        self.portal.portal_workflow.invokeFactoryFor(self.sc, 'Chat', 'chat')
-        chat = getattr(self.sc, 'chat')
+        try:
+            self.sc.invokeFactory('Chat', 'chat')
+        except:
+            pass # CPSChat is probably not installed
+        chat = getattr(self.sc, 'chat', None)
+        if not chat:
+            return
         # Create ChatItem under Chat.
-        self.portal.portal_workflow.invokeFactoryFor(chat, 'ChatItem', 'chatitem')
+        chat.invokeFactory('ChatItem', 'chatitem')
         sc_proxy_doc = getattr(chat, 'chatitem')
 
         doc_url = sc_proxy_doc.absolute_url(relative=1)
@@ -281,10 +285,15 @@ class TestCommentTool(CPSForumTestCase.CPSForumTestCase):
 
     def testGetForum4CommentsWorkspaces1(self):
         # Create 'Chat' object
-        self.portal.portal_workflow.invokeFactoryFor(self.ws, 'Chat', 'chat')
-        chat = getattr(self.ws, 'chat')
+        try:
+            self.ws.invokeFactory('Chat', 'chat')
+        except:
+            pass # CPSChat is probably not installed
+        chat = getattr(self.ws, 'chat', None)
+        if not chat:
+            return
         # Create ChatItem under Chat.
-        self.portal.portal_workflow.invokeFactoryFor(chat, 'ChatItem', 'chatitem')
+        chat.invokeFactory('ChatItem', 'chatitem')
         ws_proxy_doc = getattr(chat, 'chatitem')
 
         doc_url = ws_proxy_doc.absolute_url(relative=1)

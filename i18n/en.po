@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2004-04-06 16:01default\n"
-"PO-Revision-Date: 2004-03-26 17:24+0100\n"
+"POT-Creation-Date: 2004-04-09 10:15default\n"
+"PO-Revision-Date: 2004-04-09 10:23+0200\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Language-name: Language\n"
 "Preferred-encodings: utf-8 latin1\n"
 "Domain: default\n"
-"X-Generator: KBabel 1.0.2\n"
+"X-Generator: KBabel 1.3.1\n"
 
 #.   <option value="0">a posteriori</option>
 #.   <option attributes="selected python:not moderation_mode" value="0">
@@ -133,9 +133,9 @@ msgstr "You are not authorized to post on this forum"
 msgid "forum_psm_name_required"
 msgstr "You must enter a name or nickname"
 
-#.   <td class="forumError">
+#.   <div condition="python:errormsg == 'error_subject'" class="row error">
 #.                   Subject field must be filled
-#.                 </td>
+#.           </div>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_subject_required"
 msgstr "You must enter a subject"
@@ -156,7 +156,7 @@ msgstr "Reply"
 msgid "forum_send_moderation_notification"
 msgstr "Notify moderators (new messages)"
 
-#.   <div class="label">Subject</div>
+#.   <div class="label required">Subject</div>
 #.   <th class="forumSubjectCell">Subject</th>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
@@ -183,6 +183,15 @@ msgstr "posted by"
 
 msgid "forum_new_thread"
 msgstr "New thread"
+
+msgid "forum_mailtitle_new_msg_submitted"
+msgstr "New message submitted to forum "
+
+msgid "forum_mailbody_new_msg_submitted1"
+msgstr "A new message has been added to the moderation list of forum "
+
+msgid "forum_mailbody_new_msg_submitted2"
+msgstr "This message can be viewed at the following address:"
 
 #~ msgid "Role1"
 #~ msgstr "Role1"
@@ -287,3 +296,4 @@ msgstr "New thread"
 
 #~ msgid "forum_moderator"
 #~ msgstr "Moderator"
+

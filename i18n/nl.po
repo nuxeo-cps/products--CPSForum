@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
-"POT-Creation-Date: 2004-04-06 16:01default\n"
+"POT-Creation-Date: 2004-04-09 10:15default\n"
 "PO-Revision-Date: 2004-02-19 12:43+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -132,9 +132,9 @@ msgstr "???"
 msgid "forum_psm_name_required"
 msgstr "Je moet je naam of bijnaam invullen"
 
-#.   <td class="forumError">
+#.   <div condition="python:errormsg == 'error_subject'" class="row error">
 #.                   Subject field must be filled
-#.                 </td>
+#.           </div>
 #: from ../skins/forum_default/forum_post_form.pt
 #, fuzzy
 msgid "forum_psm_subject_required"
@@ -156,7 +156,7 @@ msgstr "Beantwoorden"
 msgid "forum_send_moderation_notification"
 msgstr "Notify moderators (new messages)"
 
-#.   <div class="label">Subject</div>
+#.   <div class="label required">Subject</div>
 #.   <th class="forumSubjectCell">Subject</th>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
@@ -183,6 +183,15 @@ msgstr "Gepost door"
 
 msgid "forum_new_thread"
 msgstr "Nieuwe discussie"
+
+msgid "forum_mailtitle_new_msg_submitted"
+msgstr ""
+
+msgid "forum_mailbody_new_msg_submitted1"
+msgstr ""
+
+msgid "forum_mailbody_new_msg_submitted2"
+msgstr ""
 
 #~ msgid "Role1"
 #~ msgstr "Rol1"

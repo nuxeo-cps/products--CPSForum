@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es-CPSForum\n"
-"POT-Creation-Date: 2004-04-06 16:01default\n"
+"POT-Creation-Date: 2004-04-09 10:15default\n"
 "PO-Revision-Date: 2004-03-27 20:39+0100\n"
 "Last-Translator: Álvaro Tejero Cantero <alvaro@antalia.com>\n"
 "Language-Team:  EspaÃ±ol <es@li.org>\n"
@@ -160,9 +160,9 @@ msgid "forum_psm_name_required"
 msgstr "Debe introducir un nombre o seudónimo"
 
 #    <span condition="python:errormsg == 'error_author'" class="forumerror">Author field must be filled</span>
-#.   <td class="forumError">
+#.   <div condition="python:errormsg == 'error_subject'" class="row error">
 #.                   Subject field must be filled
-#.                 </td>
+#.           </div>
 #: from ../skins/forum_default/forum_post_form.pt
 #, fuzzy
 msgid "forum_psm_subject_required"
@@ -190,7 +190,7 @@ msgstr "Notificar a los moderadores (nuevos mensajes)"
 
 #    <td>Subject</td>
 #    <td class="forumsubheader">Subject</td>
-#.   <div class="label">Subject</div>
+#.   <div class="label required">Subject</div>
 #.   <th class="forumSubjectCell">Subject</th>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
@@ -223,6 +223,15 @@ msgstr "enviado por"
 #        </a>
 msgid "forum_new_thread"
 msgstr "Nuevo hilo "
+
+msgid "forum_mailtitle_new_msg_submitted"
+msgstr ""
+
+msgid "forum_mailbody_new_msg_submitted1"
+msgstr ""
+
+msgid "forum_mailbody_new_msg_submitted2"
+msgstr ""
 
 #    <option repeat="role roles" attributes="value role" content="role">
 #             Role1

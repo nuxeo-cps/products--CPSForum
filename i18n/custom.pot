@@ -25,3 +25,12 @@ msgstr ""
 msgid "forum_new_thread"
 msgstr ""
 
+msgid "forum_mailtitle_new_msg_submitted"
+msgstr ""
+
+msgid "forum_mailbody_new_msg_submitted1"
+msgstr ""
+
+msgid "forum_mailbody_new_msg_submitted2"
+msgstr ""
+

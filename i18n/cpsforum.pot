@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2004-04-06 16:01default\n"
+"POT-Creation-Date: 2004-04-09 10:15default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -131,9 +131,9 @@ msgstr ""
 msgid "forum_psm_name_required"
 msgstr ""
 
-#.   <td class="forumError">
+#.   <div condition="python:errormsg == 'error_subject'" class="row error">
 #.                   Subject field must be filled
-#.                 </td>
+#.           </div>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_subject_required"
 msgstr ""
@@ -154,7 +154,7 @@ msgstr ""
 msgid "forum_send_moderation_notification"
 msgstr ""
 
-#.   <div class="label">Subject</div>
+#.   <div class="label required">Subject</div>
 #.   <th class="forumSubjectCell">Subject</th>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
@@ -180,4 +180,13 @@ msgid "forum_label_postedby"
 msgstr ""
 
 msgid "forum_new_thread"
+msgstr ""
+
+msgid "forum_mailtitle_new_msg_submitted"
+msgstr ""
+
+msgid "forum_mailbody_new_msg_submitted1"
+msgstr ""
+
+msgid "forum_mailbody_new_msg_submitted2"
 msgstr ""

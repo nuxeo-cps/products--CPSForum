@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
-"POT-Creation-Date: 2004-04-06 16:01default\n"
+"POT-Creation-Date: 2004-04-09 10:15default\n"
 "PO-Revision-Date: 2004-02-27 14:47+0100\n"
 "Last-Translator: Paolo Dina <paolo@php3.it>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -136,9 +136,9 @@ msgid "forum_psm_name_required"
 msgstr "Devi inserire un nome o un soprannome"
 
 #    <p>You are not authorized to post on this forum</p>
-#.   <td class="forumError">
+#.   <div condition="python:errormsg == 'error_subject'" class="row error">
 #.                   Subject field must be filled
-#.                 </td>
+#.           </div>
 #: from ../skins/forum_default/forum_post_form.pt
 #, fuzzy
 msgid "forum_psm_subject_required"
@@ -161,7 +161,7 @@ msgstr "Rispondi"
 msgid "forum_send_moderation_notification"
 msgstr "Notifica moderatori (nuovi messaggi)"
 
-#.   <div class="label">Subject</div>
+#.   <div class="label required">Subject</div>
 #.   <th class="forumSubjectCell">Subject</th>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
@@ -188,6 +188,15 @@ msgstr "inviato da"
 
 msgid "forum_new_thread"
 msgstr "Nuova discussione"
+
+msgid "forum_mailtitle_new_msg_submitted"
+msgstr ""
+
+msgid "forum_mailbody_new_msg_submitted1"
+msgstr ""
+
+msgid "forum_mailbody_new_msg_submitted2"
+msgstr ""
 
 #    <option repeat="role roles" attributes="value role" content="role">
 #             Role1

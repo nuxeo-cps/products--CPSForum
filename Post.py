@@ -24,25 +24,19 @@ from Products.CMFCore.utils import getToolByName
 from AccessControl import ClassSecurityInfo
 from zLOG import LOG, INFO
 
-def addPost(self, id, post):
+def addPost(self, id, **kw):
     """function addPost
-    
-    title: string      the subject
-    author: string     the author
-    message: string    the *structured text mix* message
-    forum_id: string   the parent forum id
-    parent_id: string  an optional parent Post uid, as obtained from 
-                       parentPost.getPostUID()
     """
     if not kw.has_key("post"):
         raise KeyError(
             "No 'Post' instance was submitted for this Post creation in " +
             str(kw))
 
-    #LOG(post.__class__.__name__, DEBUG, "post = %s, forum_id = %s" % ( post, kw.get('forum_id','*NO FORUM*') ) )
     self._setObject(id, kw['post'])
     if hasattr(kw, "REQUEST"):
         return self.manage_main(self, kw['REQUEST'])
+
+    return None
 
 
 class Post:

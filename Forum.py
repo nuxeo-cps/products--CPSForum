@@ -141,7 +141,7 @@ class CPSForum(CPSBaseDocument):
                 'modified': post.bobobase_modification_time(),
                }
 
-    def addForumPost(self, id, **kw):
+    def addForumPost(self, **kw):
         """Add a post"""
         discussion = self.portal_discussion.getDiscussionFor(self)
 
@@ -239,8 +239,7 @@ class CPSForum(CPSBaseDocument):
         return result
 
     security.declarePublic('getOfficialModerators')
-    def getOfficialModerators(self, proxy):
-        mtool = getToolByName(self, 'portal_membership')
+    def getOfficialModerators(self):
         dtool = getToolByName(self, 'portal_metadirectories').members
         portal_url = getToolByName(self, 'portal_url').getPortalPath()
         dtool_entry_url = "%s/directory_view?dirname=%s&entry_id=" \
@@ -254,15 +253,8 @@ class CPSForum(CPSBaseDocument):
             result.append(mdata)
         return result
 
-def addCPSPost(self, id, RESPONSE=None, **kw):
+def addCPSPost(self, id, **kw):
     """function addCPSPost
-
-    title: string      the subject
-    author: string     the author
-    message: string    the *structured text mix* message
-    forum_id: string   the parent forum id
-    parent_id: string  an optional parent Post uid, as obtained from
-        parentPost.getPostUID()
     """
     post = CPSPost(id, **kw)
     post.parent_id = kw['parent_id']

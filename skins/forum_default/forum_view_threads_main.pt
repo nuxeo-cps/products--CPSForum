@@ -44,7 +44,12 @@
           <input type="hidden" name="parent_id:string" 
                  tal:attributes="value post_id" />
         </td>
-        <td class="forumModerateCell">&nbsp;</td>
+        <td class="forumModerateCell">
+          <a href="./sort_posts?criterion=threads">
+            <img tal:replace="structure python:here.getImgTag('threads.gif',
+                                                              alt='sort by threads')" />
+          </a>
+        </td>
         <th class="forumSubjectCell">
           <a href="./sort_posts?criterion=subject"
              i18n:translate="forum_subject">Subject</a>
@@ -70,7 +75,12 @@
           <input type="hidden" name="parent_id:string" 
                  tal:attributes="value post_id" />
         </td>
-        <td class="forumModerateCell">&nbsp;</td>
+        <td class="forumModerateCell">
+          <a href="./sort_posts?criterion=threads">
+            <img tal:replace="structure python:here.getImgTag('threads.gif',
+                                                              alt='sort by threads')" />
+          </a>
+        </td>
         <th class="forumSubjectCell">
           <a href="./sort_posts?criterion=subject"
              i18n:translate="forum_subject">Subject</a>

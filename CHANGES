@@ -3,7 +3,8 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
--
+- now possible to lock single threads
+
 Bug fixes:
 ~~~~~~~~~~
 -

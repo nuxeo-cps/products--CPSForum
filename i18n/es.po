@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es-CPSForum\n"
-"POT-Creation-Date: 2004-05-11 11:11default\n"
+"POT-Creation-Date: 2004-05-11 15:36default\n"
 "PO-Revision-Date: 2004-03-27 20:39+0100\n"
 "Last-Translator: ¡lvaro Tejero Cantero <alvaro@antalia.com>\n"
 "Language-Team:  Espa√±ol <es@li.org>\n"
@@ -113,7 +113,7 @@ msgstr ""
 #          forum_new_thread
 #        </a>
 #.   <a condition="next_page" attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, b_start=next_page.first))" href=".">
+#.                                       mq(request.form, frm_start=next_page.first))" href=".">
 #.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
 #.             </a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
@@ -125,7 +125,7 @@ msgstr "Nuevo hilo "
 #          forum_new_thread
 #        </a>
 #.   <a condition="previous_page" attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, b_start=previous_page.first))" href=".">
+#.                                       mq(request.form, frm_start=previous_page.first))" href=".">
 #.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
 #.             </a>
 #: from ../skins/forum_default/forum_view_threads_main.pt

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2004-05-11 11:11default\n"
+"POT-Creation-Date: 2004-05-11 15:36default\n"
 "PO-Revision-Date: 2004-05-11 11:12+0200\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -96,7 +96,7 @@ msgid "forum_link_back_to_document"
 msgstr "Back to document"
 
 #.   <a condition="next_page" attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, b_start=next_page.first))" href=".">
+#.                                       mq(request.form, frm_start=next_page.first))" href=".">
 #.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
 #.             </a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
@@ -104,7 +104,7 @@ msgid "forum_link_next_threads ${tpp}"
 msgstr "Next ${tpp} threads"
 
 #.   <a condition="previous_page" attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, b_start=previous_page.first))" href=".">
+#.                                       mq(request.form, frm_start=previous_page.first))" href=".">
 #.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
 #.             </a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
@@ -338,4 +338,3 @@ msgstr "Number of discussion threads per page:"
 
 #~ msgid "forum_moderator"
 #~ msgstr "Moderator"
-

@@ -12,4 +12,9 @@ Bug fixes:
 
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
--
+- Renamed addCPSPost -> addCPSForumPost
+- Removed useless/unused stuff (CPSPost class, getEverything method, 
+  forum_del_threads...)
+- Renamed a few methods (addForumPost -> addPost, delForumPost -> delPost,
+  forum_del_post -> forum_del_posts)
+- Added many tests

@@ -30,8 +30,8 @@ contentConstructors = ()
 fti = ()
 
 fti += Forum.factory_type_information
-contentClasses += (Forum.CPSForum, Forum.CPSPost,)
-contentConstructors += (Forum.addCPSForum, Forum.addCPSForumPost,)
+contentClasses += (Forum.CPSForum,) # Forum.CPSPost,)
+contentConstructors += (Forum.addCPSForum,) # Forum.addCPSForumPost,)
 
 registerDirectory('skins/forum_default', globals())
 

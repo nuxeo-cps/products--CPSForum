@@ -21,7 +21,6 @@ displayed using the CPSForum interface
 """
 
 from zLOG import LOG, DEBUG
-from utilities import _dtmldir
 from Globals import InitializeClass, DTMLFile
 from AccessControl import ClassSecurityInfo
 
@@ -68,9 +67,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     #
     security.declarePublic('getDiscussionForumFor')
     def getDiscussionForumFor(self, proxy):
-        '''Get the CPSForum object that applies to this proxy/doc
-        '''
-
+        """Get the CPSForum object that applies to this proxy/doc"""
         doc_id = proxy.getDocid()
         if doc_id in self.contentIds():
             return self.getForum(doc_id)
@@ -79,10 +76,8 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
 
     security.declarePublic('isCommentingAllowedFor')
     def isCommentingAllowedFor(self, proxy):
-        '''Return a boolean indicating whether comments are
-           allowed for the specified proxy/content
-        '''
-
+        """Return a boolean indicating whether comments are allowed for the
+        specified proxy/content"""
         content = proxy.getContent()
         if hasattr(content, 'allow_discussion'):
             return content.allow_discussion

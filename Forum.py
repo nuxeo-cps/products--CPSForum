@@ -81,14 +81,6 @@ factory_type_information = ({
     },),
 },)
 
-def addDiscussionItem(self, id, title, description, text_format, text,
-                      reply_to, RESPONSE=None):
-    """
-    Add a discussion item
-    """
-    raise "DISCUSSION", str((id, title, description, text_format, text,
-        reply_to, RESPONSE))
-
 
 def addCPSForum(self, id, **kw):
     """
@@ -96,7 +88,8 @@ def addCPSForum(self, id, **kw):
     """
     forum = CPSForum(id, **kw)
     self.moderation_mode = kw.get('moderation_mode', 1)
-    CPSBase_adder(self,forum)
+    CPSBase_adder(self, forum)
+
 
 class CPSForum(CPSBaseDocument):
     """
@@ -104,6 +97,7 @@ class CPSForum(CPSBaseDocument):
     """
     meta_type = 'CPSForum'
     portal_type = 'CPSForum'
+    # XXX: is it needed ?
     allow_discussion = 1
     moderation_mode = 1 # after publishing post
     moderators = []
@@ -142,7 +136,7 @@ class CPSForum(CPSBaseDocument):
             'modified': post.bobobase_modification_time(),
         }
 
-    def addForumPost(self, subject, message, author, parent_id=None):
+    def addPost(self, subject="", message="", author="", parent_id=None):
         """Add a new post. Returns its id."""
         discussion = self.portal_discussion.getDiscussionFor(self)
         post_id = discussion.createReply(subject, message, author)
@@ -151,7 +145,7 @@ class CPSForum(CPSBaseDocument):
         self.publishPost(post_id, not self.moderation_mode)
         return post_id
 
-    def delForumPost(self, id):
+    def delPost(self, id):
         """Delete a post"""
         self.portal_discussion.getDiscussionFor(self).deleteReply(id)
 
@@ -190,12 +184,11 @@ class CPSForum(CPSBaseDocument):
 
         return post
 
-    def getDescendants(self, post_id, info_getter=None):
+    def getDescendants(self, post_id):
         """
         Fetches post tree
         """
-        if not info_getter:
-            info_getter = self.getPostInfo
+        info_getter = self.getPostInfo
         discussion = self.portal_discussion.getDiscussionFor(self)
         father = discussion.getReply(post_id)
         result = ()
@@ -219,16 +212,9 @@ class CPSForum(CPSBaseDocument):
         self.moderation_mode = kw.get('moderation_mode', 1)
         self.moderators = kw.get('moderators', [])
 
-    def getEverything(self):
-        """
-        Fetches everything (DEBUG)
-        """
-        discussion = self.portal_discussion.getDiscussionFor(self)
-        return [ self.getPostInfo(post) for post in discussion.objectValues() ]
-
-
     security.declarePublic('getModerators')
     def getModerators(self, proxy):
+        """XXX: docstring???"""
         all = mergedLocalRoles(proxy)
         result = []
         for user in all.keys():
@@ -237,7 +223,8 @@ class CPSForum(CPSBaseDocument):
         return result
 
     security.declarePublic('getOfficialModerators')
-    def getOfficialModerators(self,proxy):
+    def getOfficialModerators(self, proxy):
+        """XXX: what is an "official moderator" ???"""
         moderator_list = self.getModerators(proxy)
         dtool = getToolByName(self, 'portal_metadirectories').members
         portal_url = getToolByName(self, 'portal_url').getPortalPath()
@@ -252,37 +239,37 @@ class CPSForum(CPSBaseDocument):
             result.append(mdata)
         return result
 
-def addCPSForumPost(self, id, **kw):
-    """function addCPSForumPost
-    """
-    post = CPSPost(id, **kw)
-    post.parent_id = kw['parent_id']
-    if post.parent_id is None:
-        post.parent_id = '_FORUM_'
-    self._setObject(id, post)
-
-
-class CPSPost(CPSBaseDocument, Post):
-    """Class Post for CPS
-    """
-    # Attributes:
-    meta_type = "CPSPost"
-    forum_meta_type = 'CPSForum'
-    _properties = CPSBaseDocument._properties + (
-        { 'id': 'text', 'type': 'string', 'mode': 'w',
-          'label': 'Post author' },
-        { 'id': 'author', 'type': 'string', 'mode': 'w',
-          'label': 'Post author' },
-        { 'id': 'forum_id', 'type': 'string', 'mode': 'w',
-          'label': 'Parent Forum id' },
-        { 'id': 'parent_id', 'type': 'string', 'mode': 'w',
-          'label': 'Parent Post id' },
-    )
-
-    def getPostInfo(self):
-        """Return post information as tuple (url, subject, author)"""
-        return (self.getId(), self.getSubject(), self.getAuthor())
-
-    #def __init__(self, id, **kw):
-    #    """Constructor"""
-    #    CPSBaseDocument.__init__(self, id, **kw)
+#def addCPSForumPost(self, id, **kw):
+#    """function addCPSForumPost
+#    """
+#    post = CPSPost(id, **kw)
+#    post.parent_id = kw['parent_id']
+#    if post.parent_id is None:
+#        post.parent_id = '_FORUM_'
+#    self._setObject(id, post)
+#
+#
+#class CPSPost(CPSBaseDocument, Post):
+#    """Class Post for CPS
+#    """
+#    # Attributes:
+#    meta_type = "CPSPost"
+#    forum_meta_type = 'CPSForum'
+#    _properties = CPSBaseDocument._properties + (
+#        { 'id': 'text', 'type': 'string', 'mode': 'w',
+#          'label': 'Post author' },
+#        { 'id': 'author', 'type': 'string', 'mode': 'w',
+#          'label': 'Post author' },
+#        { 'id': 'forum_id', 'type': 'string', 'mode': 'w',
+#          'label': 'Parent Forum id' },
+#        { 'id': 'parent_id', 'type': 'string', 'mode': 'w',
+#          'label': 'Parent Post id' },
+#    )
+#
+#    def getPostInfo(self):
+#        """Return post information as tuple (url, subject, author)"""
+#        return (self.getId(), self.getSubject(), self.getAuthor())
+#
+#    #def __init__(self, id, **kw):
+#    #    """Constructor"""
+#    #    CPSBaseDocument.__init__(self, id, **kw)

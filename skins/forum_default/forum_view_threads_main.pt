@@ -35,7 +35,7 @@
                  i18n:attributes="value" />
         </tal:block>
         <tal:block condition="python:comment_mode or is_reviewer">
-          <input type="submit" name="forum_del_post:method"
+          <input type="submit" name="forum_del_posts:method"
                  class="destructive" value="forum_delete" 
                  i18n:attributes="value" />
         </tal:block>

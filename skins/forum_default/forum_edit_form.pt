@@ -10,8 +10,8 @@
 
   <table>
     <tr>
-      <td i18n:translate="forum_title">Title</td>
-      <td>
+      <td i18n:translate="forum_title" style="width:30%">Title</td>
+      <td style="width:70%">
         <input type="text" name="title:string" 
                tal:attributes="value doc/title">
       </td>
@@ -21,13 +21,6 @@
       <td>
          <textarea rows="3" cols="30" name="description:string"
                    tal:content="doc/description"></textarea>
-      </td>
-    </tr>
-    <tr>
-      <td i18n:translate="forum_allow_anon_posts">Allow anonymous posts</td>
-      <td>
-        <input type="checkbox" name="allow_anon_posts"
-               tal:attributes="checked python:test(doc.anonymousPostsAllowed(),'checked',None)"/>
       </td>
     </tr>
     <tr>
@@ -43,6 +36,20 @@
             a priori
           </option>
         </select>
+      </td>
+    </tr>
+    <tr>
+      <td i18n:translate="forum_send_moderation_notification">Send moderation notifications</td>
+      <td>
+        <input type="checkbox" name="send_moderation_notification"
+               tal:attributes="checked python:test(doc.isSendingModerNotifs(),'checked',None)"/>
+      </td>
+    </tr>
+    <tr>
+      <td i18n:translate="forum_allow_anon_posts">Allow anonymous posts</td>
+      <td>
+        <input type="checkbox" name="allow_anon_posts"
+               tal:attributes="checked python:test(doc.anonymousPostsAllowed(),'checked',None)"/>
       </td>
     </tr>
     <tr>

@@ -21,19 +21,26 @@
       </td>
     </tr>
     <tr>
-      <td i18n:translate="forum_allow_anon_posts">Allow anonymous posts</td>
-      <td>
-        <input type="checkbox" name="allow_anon_posts"
-               tal:attributes="checked python:test(doc.anonymousPostsAllowed(),'checked',None)"/>
-      </td>
-    </tr>
-    <tr>
       <td i18n:translate="forum_moderation">Moderation</td>
       <td>
         <select name="moderation_mode:int">
           <option value="0" i18n:translate="forum_a_posteriori">a posteriori</option>
           <option value="1" i18n:translate="forum_a_priori">a priori</option>
         </select>
+      </td>
+    </tr>
+    <tr>
+      <td i18n:translate="forum_send_moderation_notification">Send moderation notifications</td>
+      <td>
+        <input type="checkbox" name="send_moderation_notification"
+               tal:attributes="checked python:test(doc.isSendingModerNotifs(),'checked',None)"/>
+      </td>
+    </tr>
+    <tr>
+      <td i18n:translate="forum_allow_anon_posts">Allow anonymous posts</td>
+      <td>
+        <input type="checkbox" name="allow_anon_posts"
+               tal:attributes="checked python:test(doc.anonymousPostsAllowed(),'checked',None)"/>
       </td>
     </tr>
     <tr>

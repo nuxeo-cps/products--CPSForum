@@ -16,7 +16,7 @@ class TestCommentTool(CPSForumTestCase.CPSForumTestCase):
         self.ws = self.portal.workspaces
         self.sc = self.portal.sections
 
-        self.ws.invokeFactory('News', 'news')
+        self.ws.invokeFactory('News Item', 'news')
         self.proxy_doc = getattr(self.ws, 'news')
         self.doc = self.proxy_doc.getContent()
 

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es-CPSForum\n"
-"POT-Creation-Date: 2004-09-06 16:21default\n"
+"POT-Creation-Date: 2004-10-25 10:20default\n"
 "PO-Revision-Date: 2004-03-27 20:39+0100\n"
 "Last-Translator: Álvaro Tejero Cantero <alvaro@antalia.com>\n"
 "Language-Team:  EspaÃ±ol <es@li.org>\n"
@@ -251,6 +251,16 @@ msgstr "Tema"
 msgid "forum_title"
 msgstr "Título"
 
+#    <h2>
+#        Currently assigned local roles
+#    </h2>
+#.   <h2>
+#.       Currently assigned local roles
+#.   </h2>
+#: from ../skins/forum_default/forum_localrole_form.pt
+msgid "legend_local_roles_currently_assigned"
+msgstr "Roles locales delegados actualmente"
+
 msgid "forum_label_postedby"
 msgstr "enviado por"
 
@@ -397,6 +407,11 @@ msgstr "Bloquear el foro (sólo lectura)"
 msgid "forum_label_display_wf_txt"
 msgstr "Mensaje"
 
+#    <td>Moderation</td>
+#, fuzzy
+msgid "forum_help_moderation"
+msgstr "Moderación"
+
 #    <td>Send moderation notifications</td>
 #~ msgid "forum_send_moderation_notification"
 #~ msgstr "Notificar a los moderadores (nuevos mensajes)"
@@ -487,12 +502,6 @@ msgstr "Mensaje"
 #~ msgid "legend_local_roles_assigned_users"
 #~ msgstr ""
 #~ " Los siguientes usuarios tienen actualmente roles locales en esta carpeta:"
-
-#    <h2>
-#        Currently assigned local roles
-#    </h2>
-#~ msgid "legend_local_roles_currently_assigned"
-#~ msgstr "Roles locales delegados actualmente"
 
 #    <p>
 #        Sorry, no groups matched your search.

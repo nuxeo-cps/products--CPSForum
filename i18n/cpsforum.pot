@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2004-09-06 16:21default\n"
+"POT-Creation-Date: 2004-10-25 10:20default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -200,6 +200,13 @@ msgstr ""
 msgid "forum_title"
 msgstr ""
 
+#.   <h2>
+#.       Currently assigned local roles
+#.   </h2>
+#: from ../skins/forum_default/forum_localrole_form.pt
+msgid "legend_local_roles_currently_assigned"
+msgstr ""
+
 msgid "forum_label_postedby"
 msgstr ""
 
@@ -294,4 +301,7 @@ msgid "forum_label_display_wf_icon"
 msgstr ""
 
 msgid "forum_label_display_wf_txt"
+msgstr ""
+
+msgid "forum_help_moderation"
 msgstr ""

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum messages\n"
-"POT-Creation-Date: 2004-09-06 16:21default\n"
+"POT-Creation-Date: 2004-10-25 10:20default\n"
 "PO-Revision-Date: 2004-07-12 18:04+CET\n"
 "Last-Translator: Georg Hennemann <georg.hennemann@dhl.com>\n"
 "Language-Team: German <rheinland@dzug.org>\n"
@@ -199,6 +199,13 @@ msgstr "Betreff"
 msgid "forum_title"
 msgstr "Titel"
 
+#.   <h2>
+#.       Currently assigned local roles
+#.   </h2>
+#: from ../skins/forum_default/forum_localrole_form.pt
+msgid "legend_local_roles_currently_assigned"
+msgstr "Aktuell zugewiesene lokale Rollen"
+
 msgid "forum_label_postedby"
 msgstr "erstellt von"
 
@@ -318,6 +325,10 @@ msgstr "Forum schliessen (nur Lesen)"
 msgid "forum_label_display_wf_txt"
 msgstr "Forum schliessen (nur Lesen)"
 
+#, fuzzy
+msgid "forum_help_moderation"
+msgstr "Moderation"
+
 #~ msgid "forum_send_moderation_notification"
 #~ msgstr "Moderatoren benachrichtigen (neue Nachrichten)"
 
@@ -374,9 +385,6 @@ msgstr "Forum schliessen (nur Lesen)"
 
 #~ msgid "legend_local_roles_assigned_users"
 #~ msgstr "Diese Teilnehmer haben keine lokale Rollen in diesem Folder:"
-
-#~ msgid "legend_local_roles_currently_assigned"
-#~ msgstr "Aktuell zugewiesene lokale Rollen"
 
 #~ msgid "legend_local_roles_no_results_member"
 #~ msgstr "Sorry, keine Gruppen die zu Ihrer Abfrage passen."

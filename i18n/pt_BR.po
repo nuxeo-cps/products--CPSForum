@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pt-BR\n"
-"POT-Creation-Date: 2004-07-06 14:47default\n"
+"POT-Creation-Date: 2004-10-25 10:20default\n"
 "PO-Revision-Date: 2004-09-08 16:03-0300\n"
 "Last-Translator: Mario Olimpio de Menezes <mario@curiango.ipen.br>\n"
 "Language-Team: Portugues do Brasil <pt@li.org>\n"
@@ -42,7 +42,7 @@ msgid "forum_allow_anon_posts"
 msgstr "Permite postagem anônima"
 
 #.   <div class="label">Author</div>
-#.   <a href="./sort_posts?criterion=author">Author</a>
+#.   <a href="./sort_posts?criterion=author" attributes="href string:./sort_posts?criterion=${author_sort_direction}">Author</a>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
@@ -53,7 +53,7 @@ msgstr "Autor"
 msgid "forum_button_lockunlock"
 msgstr "(Des)-Bloquear"
 
-#.   <a href="./sort_posts?criterion=date">Date</a>
+#.   <a href="./sort_posts?criterion=date" attributes="href string:./sort_posts?criterion=${date_sort_direction}">Date</a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_date"
 msgstr "Data"
@@ -179,8 +179,14 @@ msgstr "Rejeitar"
 msgid "forum_reply"
 msgstr "Responder"
 
+#.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+#, fuzzy
+msgid "forum_state"
+msgstr "Data"
+
 #.   <div class="label required">Subject</div>
-#.   <a href="./sort_posts?criterion=subject">Subject</a>
+#.   <a href="./sort_posts?criterion=subject" attributes="href string:./sort_posts?criterion=${subject_sort_direction}">Subject</a>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_subject"
@@ -192,6 +198,13 @@ msgstr "Assunto"
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
 msgstr "Título"
+
+#.   <h2>
+#.       Currently assigned local roles
+#.   </h2>
+#: from ../skins/forum_default/forum_localrole_form.pt
+msgid "legend_local_roles_currently_assigned"
+msgstr ""
 
 msgid "forum_label_postedby"
 msgstr "Postado por:"
@@ -275,5 +288,25 @@ msgstr "Pendente."
 msgid "forum_unpublished_post"
 msgstr "Não publicado."
 
+#, fuzzy
+msgid "forum_published_post"
+msgstr "Não publicado."
+
 msgid "forum_rejected_post"
 msgstr "Rejeitado."
+
+#, fuzzy
+msgid "forum_label_wf_display"
+msgstr "Mostra a árvore de mensagens"
+
+#, fuzzy
+msgid "forum_label_display_wf_icon"
+msgstr "Primeiros 200 caracteres"
+
+#, fuzzy
+msgid "forum_label_display_wf_txt"
+msgstr "Título"
+
+#, fuzzy
+msgid "forum_help_moderation"
+msgstr "Moderação"

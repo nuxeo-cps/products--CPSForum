@@ -13,6 +13,7 @@ forum_layout = {
                 'label_edit': 'forum_moderation',
                 'label_false': 'forum_a_posteriori',
                 'label_true': 'forum_a_priori',
+                'help': 'forum_help_moderation',
                 },
             },
         'allow_anon_posts': {

@@ -89,6 +89,7 @@ def addCPSForum(self, id, **kw):
     self.moderation_mode = kw.get('moderation_mode', 1)
     self.allow_anon_posts = kw.get('allow_anon_posts', 0)
     self.send_moderation_notification = kw.get('send_moderation_notification', 0)
+    self.frozen_forum = kw.get('frozen_forum', 0)
     CPSBase_adder(self, forum)
 
 
@@ -104,6 +105,8 @@ class CPSForum(CPSBaseDocument):
     moderation_mode = 1
     allow_anon_posts = 0
     send_moderation_notification = 0
+    #if frozen, no longer possible to post messages
+    frozen_forum = 0
     moderators = []
     security = ClassSecurityInfo()
 
@@ -147,15 +150,18 @@ class CPSForum(CPSBaseDocument):
         """Add a new post
 
         Returns the new post's id."""
-        discussion = self.portal_discussion.getDiscussionFor(self)
-        post_id = discussion.createReply(subject, message, author)
-        post = discussion.getReply(post_id)
-        post.in_reply_to = parent_id
-        self.changePostPublicationStatus(post_id, not self.moderation_mode)
-        if (self.send_moderation_notification and
-            self.moderation_mode and not comment_mode):
-            self.notifyModerators(post_id=post_id, proxy=proxy)
-        return post_id
+        if not self.frozen_forum:
+            discussion = self.portal_discussion.getDiscussionFor(self)
+            post_id = discussion.createReply(subject, message, author)
+            post = discussion.getReply(post_id)
+            post.in_reply_to = parent_id
+            self.changePostPublicationStatus(post_id, not self.moderation_mode)
+            if (self.send_moderation_notification and
+                self.moderation_mode and not comment_mode):
+                self.notifyModerators(post_id=post_id, proxy=proxy)
+            return post_id
+        else:
+            return None
 
     security.declareProtected(View, 'delPost')
     def delPost(self, id):
@@ -223,6 +229,7 @@ class CPSForum(CPSBaseDocument):
         self.moderation_mode = kw.get('moderation_mode', 1)
         self.allow_anon_posts = kw.get('allow_anon_posts', 0)
         self.send_moderation_notification = kw.get('send_moderation_notification', 0)
+        self.frozen_forum = kw.get('frozen_forum', 0)
         self.moderators = kw.get('moderators', [])
 
     security.declarePublic('getModerators')
@@ -243,6 +250,10 @@ class CPSForum(CPSBaseDocument):
     security.declarePublic('anonymousPostsAllowed')
     def anonymousPostsAllowed(self):
         return self.allow_anon_posts
+
+    security.declarePublic('isFrozen')
+    def isFrozen(self):
+        return self.frozen_forum
 
     security.declarePrivate('checkEmails')
     def checkEmails(self,list=[]):

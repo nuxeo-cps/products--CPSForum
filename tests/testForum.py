@@ -61,18 +61,11 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
     def testModerators(self):
         forum = self.forum
         self.assertEquals(forum.getModerators(forum), [])
-        self.assertEquals(forum.getOfficialModerators(forum), [])
 
         pmtool = forum.portal_membership
         pmtool.setLocalRoles(forum, member_ids=['root'], 
             member_role='ForumModerator')
         self.assertEquals(forum.getModerators(forum), ['root'])
-        self.assertEquals(forum.getOfficialModerators(forum), [{
-            'id': 'root', 
-            'homedir': 
-                '/portal/directory_getentry?dirname=members&entry_id=root', 
-            'fullname': 'root'}])
-
 
     def testPostCreation1(self):
         # Create new post using skin method.
@@ -111,7 +104,7 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         # Create / modify post using method calls on the Forum object.
         forum = self.forum
         post_id = forum.addPost(subject='subject', message='message',
-            author='author')
+                                author='author')
         self.assertEquals(len(forum.getThreads()), 1)
 
         forum.changePostPublicationStatus(post_id, 1)

@@ -230,7 +230,7 @@ msgid "action_activate_comments"
 msgstr "Authorize comments"
 
 msgid "action_deactivate_comments"
-msgstr "Unauthorized comments"
+msgstr "Unauthorize comments"
 
 msgid "action_manage_comments"
 msgstr "Manage comments"

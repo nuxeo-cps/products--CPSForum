@@ -2,17 +2,10 @@
 # $Id$
 
 """Determine whether the current user has posting rights on a forum"""
+ret = 0
+if forum and not forum.isFrozen():
+    if ((is_anon and forum.anonymousPostsAllowed()) or
+        (not is_anon and is_poster)):
+        ret = 1
 
-if forum:
-    if not forum.isFrozen():
-        if forum.anonymousPostsAllowed():
-            return 1
-        else:
-            if not is_anon and is_poster:
-                return 1
-            else:
-                return 0
-    else:
-        return 0
-else:
-    return 0
+return ret

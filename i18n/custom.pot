@@ -22,3 +22,6 @@ msgstr ""
 msgid "forum_label_postedby"
 msgstr ""
 
+msgid "forum_new_thread"
+msgstr ""
+

@@ -71,9 +71,19 @@ def install(self):
     installer.verifyRoles(('ForumPoster','ForumModerator',))
     installer.setupPortalPermissions(forum_perms)
 
-    #################################################
+    ##########################################
+    # SKINS
+    ##########################################
+    skins = {'cps_forum': 'Products/CPSForum/skins/forum_default',}
+    installer.verifySkins(skins)
+    installer.resetSkinCache()
+
+    ##########################################
     # PORTAL TYPES
-    #################################################
+    ##########################################
+    forum_types = installer.portal.getCPSForumTypes()
+    installer.verifyFlexibleTypes(forum_types)
+
     installer.allowContentTypes('CPSForum', ('Workspace', 'Section'))
     ptypes = {
         'CPSForum' : {
@@ -83,6 +93,15 @@ def install(self):
         },
     }
     installer.verifyContentTypes(ptypes)
+
+    # Portal Schemas
+    forum_schemas = installer.portal.getCPSForumSchemas()
+    installer.verifySchemas(forum_schemas)
+
+    # Portal Layouts
+    forum_layouts = installer.portal.getCPSForumLayouts()
+    installer.verifyLayouts(forum_layouts)
+
 
     ########################################
     #   WORKFLOW ASSOCIATIONS
@@ -94,11 +113,17 @@ def install(self):
     installer.verifyLocalWorkflowChains(installer.portal['sections'],
                                         se_chains)
 
+
     ##########################################
-    # SKINS
+    # WORKFLOW DEFINITION
     ##########################################
-    skins = {'cps_forum': 'Products/CPSForum/skins/forum_default',}
-    installer.verifySkins(skins)
+    # this is done to propagate forum permissions into portal_repository
+    wfdef = {'wfid': 'forum_permissions_dummy_wf',
+             'permissions': (ForumModerate,
+                             ForumPost),
+             }
+    installer.verifyWorkflow(wfdef, {}, {}, {}, {})
+
 
     ##############################################
     # Actions
@@ -132,8 +157,7 @@ def install(self):
     ##############################################
     # i18n support
     ##############################################
-    installer.verifyMessageCatalog('cpsforum', 'CPSForum messages')
-    installer.setupTranslations(message_catalog='cpsforum')
+    installer.setupTranslations()
 
     ##############################################
     # Finished!

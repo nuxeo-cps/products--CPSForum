@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2004-03-26 17:23default\n"
+"POT-Creation-Date: 2004-04-06 16:01default\n"
 "PO-Revision-Date: 2004-03-26 17:24+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -20,27 +20,6 @@ msgstr ""
 "Preferred-encodings: utf-8 latin1\n"
 "Domain: default\n"
 "X-Generator: KBabel 1.0.2\n"
-
-#.   <option repeat="role roles" attributes="value role" content="role">Role1</option>
-#.   <option repeat="role roles" attributes="value role" content="role"> Role1 </option>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "Role1"
-msgstr "Role1"
-
-#.   <input value="button_assign_roles" type="submit" />
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "button_assign_roles"
-msgstr "Assign roles"
-
-#.   <input value="button_delete" type="submit" />
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "button_delete"
-msgstr "Delete"
-
-#.   <input value="button_search" name="role_submit" type="submit" />
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "button_search"
-msgstr "Search"
 
 #.   <option value="0">a posteriori</option>
 #.   <option attributes="selected python:not moderation_mode" value="0">
@@ -126,13 +105,6 @@ msgstr "Moderation"
 msgid "forum_msg_forum_frozen"
 msgstr "This forum is locked. You cannot post new messages to it."
 
-#.   <a attributes="href string:${context_url}/forum_post_form" href="">
-#.         forum_new_thread
-#.       </a>
-#: from ../skins/forum_default/forum_view_main.pt
-msgid "forum_new_thread"
-msgstr "New thread"
-
 #.   <td class="forumempty">
 #.                 No comment associated with this document.
 #.               </td>
@@ -156,12 +128,14 @@ msgstr "Post"
 msgid "forum_post_unauthorize"
 msgstr "You are not authorized to post on this forum"
 
-#.   <span condition="python:errormsg == 'error_author'" class="forumerror">Author field must be filled</span>
+#.   <span condition="python:errormsg == 'error_author'" class="forumError">Author field must be filled</span>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_name_required"
 msgstr "You must enter a name or nickname"
 
-#.   <span condition="python:errormsg == 'error_subject'" class="forumerror">Subject field must be filled</span>
+#.   <td class="forumError">
+#.                   Subject field must be filled
+#.                 </td>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_subject_required"
 msgstr "You must enter a subject"
@@ -196,147 +170,93 @@ msgstr "Subject"
 msgid "forum_title"
 msgstr "Title"
 
-#.   <h2>
-#.      Assign local roles: Search Members
-#.     </h2>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "heading_local_roles_search_members"
-msgstr "Assign local roles: Search Members"
-
-#.   <h2>
-#.       Assign local roles: Search Results
-#.     </h2>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "heading_local_roles_search_results"
-msgstr "Assign local roles: Search Results"
-
-#.   <th>
-#.             Email address
-#.           </th>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_email"
-msgstr "Email address"
-
-#.   <span>Group</span>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_group"
-msgstr "Group"
-
-#.   <option value="groupname">Group Name</option>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_group_name"
-msgstr "Group Name"
-
-#.   <span>in</span>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_in"
-msgstr "in"
-
-#.   <th>Search by</th>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_local_roles_search_by"
-msgstr "Search by"
-
-#.   <th>Search Term</th>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_local_roles_search_term"
-msgstr "Search Term"
-
 #.   <span>Name</span>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_name"
 msgstr "Name"
-
-#.   <span>Role(s)</span>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_roles"
-msgstr "Role(s)"
-
-#.   <th>
-#.             User
-#.           </th>
-#.   <span>User</span>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_user"
-msgstr "User"
-
-#.   <option value="email">Email Address</option>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_user_email"
-msgstr "Email Address"
-
-#.   <option value="fullname">User Name</option>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_user_name"
-msgstr "Name"
-
-#.   <p>
-#.     These users currently have local roles assigned in this folder:
-#.   </p>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_assigned_users"
-msgstr " These users currently have local roles assigned in this folder:"
-
-#.   <h2>
-#.     Currently assigned local roles
-#.   </h2>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_currently_assigned"
-msgstr "Currently assigned local roles"
-
-#.   <p>
-#.         Sorry, no groups matched your search.
-#.       </p>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_no_results_member"
-msgstr "Sorry, no groups matched your search."
-
-#.   <p>
-#.       Sorry, no members matched your search.
-#.     </p>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_no_results_members"
-msgstr "Sorry, no members matched your search."
-
-#.   <th colspan="2">
-#.             Role to assign:
-#.           </th>
-#.   <th colspan="2">
-#.               Role to assign:
-#.             </th>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_role_to_assign"
-msgstr "Role to assign:"
-
-#.   <p>
-#.         Select Group(s) and a role to assign:
-#.       </p>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_select_groups_and_roles"
-msgstr "Select Group(s) and a role to assign:"
-
-#.   <p>
-#.         Select Member(s) and a role to assign:
-#.       </p>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_select_members_and_roles"
-msgstr "Select Member(s) and a role to assign:"
-
-#.   <span>
-#.     <i>Roles in underlined </i> are set in parent folders.
-#.     Follow the links to manage the local roles in these folders.
-#.   </span>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "link_local_roles_underlined"
-msgstr ""
-"<i>Roles in underlined </i> are set in parent folders.Follow the links to "
-"manage the local roles in these folders."
 
 msgid "forum_modify"
 msgstr "Modify"
 
 msgid "forum_label_postedby"
 msgstr "posted by"
+
+msgid "forum_new_thread"
+msgstr "New thread"
+
+#~ msgid "Role1"
+#~ msgstr "Role1"
+
+#~ msgid "button_assign_roles"
+#~ msgstr "Assign roles"
+
+#~ msgid "button_delete"
+#~ msgstr "Delete"
+
+#~ msgid "button_search"
+#~ msgstr "Search"
+
+#~ msgid "heading_local_roles_search_members"
+#~ msgstr "Assign local roles: Search Members"
+
+#~ msgid "heading_local_roles_search_results"
+#~ msgstr "Assign local roles: Search Results"
+
+#~ msgid "label_email"
+#~ msgstr "Email address"
+
+#~ msgid "label_group"
+#~ msgstr "Group"
+
+#~ msgid "label_group_name"
+#~ msgstr "Group Name"
+
+#~ msgid "label_in"
+#~ msgstr "in"
+
+#~ msgid "label_local_roles_search_by"
+#~ msgstr "Search by"
+
+#~ msgid "label_local_roles_search_term"
+#~ msgstr "Search Term"
+
+#~ msgid "label_roles"
+#~ msgstr "Role(s)"
+
+#~ msgid "label_user"
+#~ msgstr "User"
+
+#~ msgid "label_user_email"
+#~ msgstr "Email Address"
+
+#~ msgid "label_user_name"
+#~ msgstr "Name"
+
+#~ msgid "legend_local_roles_assigned_users"
+#~ msgstr " These users currently have local roles assigned in this folder:"
+
+#~ msgid "legend_local_roles_currently_assigned"
+#~ msgstr "Currently assigned local roles"
+
+#~ msgid "legend_local_roles_no_results_member"
+#~ msgstr "Sorry, no groups matched your search."
+
+#~ msgid "legend_local_roles_no_results_members"
+#~ msgstr "Sorry, no members matched your search."
+
+#~ msgid "legend_local_roles_role_to_assign"
+#~ msgstr "Role to assign:"
+
+#~ msgid "legend_local_roles_select_groups_and_roles"
+#~ msgstr "Select Group(s) and a role to assign:"
+
+#~ msgid "legend_local_roles_select_members_and_roles"
+#~ msgstr "Select Member(s) and a role to assign:"
+
+#~ msgid "link_local_roles_underlined"
+#~ msgstr ""
+#~ "<i>Roles in underlined </i> are set in parent folders.Follow the links to "
+#~ "manage the local roles in these folders."
 
 #~ msgid "forum_moderators"
 #~ msgstr "Moderators"
@@ -367,4 +287,3 @@ msgstr "posted by"
 
 #~ msgid "forum_moderator"
 #~ msgstr "Moderator"
-

@@ -67,7 +67,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     def getDiscussionForumFor(self, proxy):
         """Get the CPSForum object that applies to this proxy/doc"""
         doc_id = proxy.getDocid()
-        if doc_id in self.contentIds():
+        if doc_id in self.objectIds():
             return self.getForum(doc_id)
         else:
             return None
@@ -89,15 +89,12 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     #
     security.declarePublic('getForum')
     def getForum(self, forum_id):
-        for item in self.contentItems():
-            if item[0] == forum_id:
-                return item[1]
-        return None
+        return getattr(self, forum_id, None)
 
     security.declarePublic('addForum')
     def addForum(self, doc):
         doc_id = doc.getDocid()
-        if not doc_id in self.contentIds():
+        if not doc_id in self.objectIds():
             # This is the first comment about this doc:
             # create a new forum, with id matching the one of the document
             # (this adds the forum directly to portal_comment)

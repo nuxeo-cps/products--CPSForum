@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
-"POT-Creation-Date: 2004-03-26 17:23default\n"
+"POT-Creation-Date: 2004-04-06 16:01default\n"
 "PO-Revision-Date: 2004-02-19 12:43+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -19,27 +19,6 @@ msgstr ""
 "Preferred-encodings: utf-8 latin1\n"
 "Domain: default\n"
 "X-Generator: KBabel 1.0.2\n"
-
-#.   <option repeat="role roles" attributes="value role" content="role">Role1</option>
-#.   <option repeat="role roles" attributes="value role" content="role"> Role1 </option>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "Role1"
-msgstr "Rol1"
-
-#.   <input value="button_assign_roles" type="submit" />
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "button_assign_roles"
-msgstr "Ken rollen toe"
-
-#.   <input value="button_delete" type="submit" />
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "button_delete"
-msgstr "Verwijder"
-
-#.   <input value="button_search" name="role_submit" type="submit" />
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "button_search"
-msgstr "Zoeken"
 
 #.   <option value="0">a posteriori</option>
 #.   <option attributes="selected python:not moderation_mode" value="0">
@@ -125,13 +104,6 @@ msgstr "Moderatie"
 msgid "forum_msg_forum_frozen"
 msgstr "Het forum is vergrendeld. Je kan geen nieuwe berichten plaatsen."
 
-#.   <a attributes="href string:${context_url}/forum_post_form" href="">
-#.         forum_new_thread
-#.       </a>
-#: from ../skins/forum_default/forum_view_main.pt
-msgid "forum_new_thread"
-msgstr "Nieuwe discussie"
-
 #.   <td class="forumempty">
 #.                 No comment associated with this document.
 #.               </td>
@@ -155,12 +127,14 @@ msgstr "Versturen"
 msgid "forum_post_unauthorize"
 msgstr "???"
 
-#.   <span condition="python:errormsg == 'error_author'" class="forumerror">Author field must be filled</span>
+#.   <span condition="python:errormsg == 'error_author'" class="forumError">Author field must be filled</span>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_name_required"
 msgstr "Je moet je naam of bijnaam invullen"
 
-#.   <span condition="python:errormsg == 'error_subject'" class="forumerror">Subject field must be filled</span>
+#.   <td class="forumError">
+#.                   Subject field must be filled
+#.                 </td>
 #: from ../skins/forum_default/forum_post_form.pt
 #, fuzzy
 msgid "forum_psm_subject_required"
@@ -196,147 +170,93 @@ msgstr "Onderwerp"
 msgid "forum_title"
 msgstr "Titel"
 
-#.   <h2>
-#.      Assign local roles: Search Members
-#.     </h2>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "heading_local_roles_search_members"
-msgstr "Wijs locale rollen toe: Zoek naar leden"
-
-#.   <h2>
-#.       Assign local roles: Search Results
-#.     </h2>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "heading_local_roles_search_results"
-msgstr "Wijs locale rollen toe: Zoek naar resultaten"
-
-#.   <th>
-#.             Email address
-#.           </th>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_email"
-msgstr "Email adres"
-
-#.   <span>Group</span>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_group"
-msgstr "Groep"
-
-#.   <option value="groupname">Group Name</option>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_group_name"
-msgstr "Groepsname"
-
-#.   <span>in</span>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_in"
-msgstr "in"
-
-#.   <th>Search by</th>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_local_roles_search_by"
-msgstr "Zoek volgens"
-
-#.   <th>Search Term</th>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_local_roles_search_term"
-msgstr "Zoek condities"
-
 #.   <span>Name</span>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_name"
 msgstr "Naam"
-
-#.   <span>Role(s)</span>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_roles"
-msgstr "Rol(len)"
-
-#.   <th>
-#.             User
-#.           </th>
-#.   <span>User</span>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_user"
-msgstr "Gebruiker"
-
-#.   <option value="email">Email Address</option>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_user_email"
-msgstr "Email Adres"
-
-#.   <option value="fullname">User Name</option>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "label_user_name"
-msgstr "Naam"
-
-#.   <p>
-#.     These users currently have local roles assigned in this folder:
-#.   </p>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_assigned_users"
-msgstr " Deze gebruikers hebben momenteel locale rollen in deze map:"
-
-#.   <h2>
-#.     Currently assigned local roles
-#.   </h2>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_currently_assigned"
-msgstr "Huidige toegewezen locale rollen"
-
-#.   <p>
-#.         Sorry, no groups matched your search.
-#.       </p>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_no_results_member"
-msgstr "Sorry, geen groepen voldeden aan uw zoek criteria."
-
-#.   <p>
-#.       Sorry, no members matched your search.
-#.     </p>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_no_results_members"
-msgstr "Sorry, geen leden voldeden aan uw zoek criteria."
-
-#.   <th colspan="2">
-#.             Role to assign:
-#.           </th>
-#.   <th colspan="2">
-#.               Role to assign:
-#.             </th>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_role_to_assign"
-msgstr "Toe te wijzen rol:"
-
-#.   <p>
-#.         Select Group(s) and a role to assign:
-#.       </p>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_select_groups_and_roles"
-msgstr "Selecteer groep(en) en een rol om toe te wijzen:"
-
-#.   <p>
-#.         Select Member(s) and a role to assign:
-#.       </p>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_select_members_and_roles"
-msgstr "Selecteer lid/leden en een rol om toe te wijzen:"
-
-#.   <span>
-#.     <i>Roles in underlined </i> are set in parent folders.
-#.     Follow the links to manage the local roles in these folders.
-#.   </span>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "link_local_roles_underlined"
-msgstr ""
-"<i>Onderstreepte rollen</i> bevinden zich in bovenliggende mappen. Volg de "
-"koppeling om de locale rollen te beheren in die mappen."
 
 msgid "forum_modify"
 msgstr "Wijzig"
 
 msgid "forum_label_postedby"
 msgstr "Gepost door"
+
+msgid "forum_new_thread"
+msgstr "Nieuwe discussie"
+
+#~ msgid "Role1"
+#~ msgstr "Rol1"
+
+#~ msgid "button_assign_roles"
+#~ msgstr "Ken rollen toe"
+
+#~ msgid "button_delete"
+#~ msgstr "Verwijder"
+
+#~ msgid "button_search"
+#~ msgstr "Zoeken"
+
+#~ msgid "heading_local_roles_search_members"
+#~ msgstr "Wijs locale rollen toe: Zoek naar leden"
+
+#~ msgid "heading_local_roles_search_results"
+#~ msgstr "Wijs locale rollen toe: Zoek naar resultaten"
+
+#~ msgid "label_email"
+#~ msgstr "Email adres"
+
+#~ msgid "label_group"
+#~ msgstr "Groep"
+
+#~ msgid "label_group_name"
+#~ msgstr "Groepsname"
+
+#~ msgid "label_in"
+#~ msgstr "in"
+
+#~ msgid "label_local_roles_search_by"
+#~ msgstr "Zoek volgens"
+
+#~ msgid "label_local_roles_search_term"
+#~ msgstr "Zoek condities"
+
+#~ msgid "label_roles"
+#~ msgstr "Rol(len)"
+
+#~ msgid "label_user"
+#~ msgstr "Gebruiker"
+
+#~ msgid "label_user_email"
+#~ msgstr "Email Adres"
+
+#~ msgid "label_user_name"
+#~ msgstr "Naam"
+
+#~ msgid "legend_local_roles_assigned_users"
+#~ msgstr " Deze gebruikers hebben momenteel locale rollen in deze map:"
+
+#~ msgid "legend_local_roles_currently_assigned"
+#~ msgstr "Huidige toegewezen locale rollen"
+
+#~ msgid "legend_local_roles_no_results_member"
+#~ msgstr "Sorry, geen groepen voldeden aan uw zoek criteria."
+
+#~ msgid "legend_local_roles_no_results_members"
+#~ msgstr "Sorry, geen leden voldeden aan uw zoek criteria."
+
+#~ msgid "legend_local_roles_role_to_assign"
+#~ msgstr "Toe te wijzen rol:"
+
+#~ msgid "legend_local_roles_select_groups_and_roles"
+#~ msgstr "Selecteer groep(en) en een rol om toe te wijzen:"
+
+#~ msgid "legend_local_roles_select_members_and_roles"
+#~ msgstr "Selecteer lid/leden en een rol om toe te wijzen:"
+
+#~ msgid "link_local_roles_underlined"
+#~ msgstr ""
+#~ "<i>Onderstreepte rollen</i> bevinden zich in bovenliggende mappen. Volg "
+#~ "de koppeling om de locale rollen te beheren in die mappen."
 
 #~ msgid "forum_moderators"
 #~ msgstr "Moderatoren"

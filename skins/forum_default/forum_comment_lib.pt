@@ -1,8 +1,7 @@
 <!-- macro library for forum comments -->
 <!-- $Id$ -->
 
-<metal:block define-macro="view_comments_inline"
-             i18n:domain="cpsforum">
+<metal:block define-macro="view_comments_inline">
   <tal:block tal:define="forum python:here.portal_discussion.getDiscussionForumFor(here);"
              tal:condition="nocall:forum">
     <h2 id="document_comment"

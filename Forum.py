@@ -19,9 +19,13 @@
 from AccessControl import ClassSecurityInfo
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.CMFCorePermissions import View, ChangePermissions
-from Products.CPSCore.CPSBase import CPSBaseDocument, CPSBase_adder
-
+from Products.CPSCore.CPSBase import CPSBase_adder
+try:
+    from Products.CPSDocument.CPSDocument import CPSDocument as BaseDocument
+except ImportError:
+    from Products.CPSCore.CPSBase import CPSBaseDocument as BaseDocument
 from CPSForumPermissions import ForumModerate
+from zLOG import LOG, DEBUG
 
 factory_type_information = ({
     'id': 'Forum',
@@ -47,6 +51,11 @@ factory_type_information = ({
         'visible': 0,
         'permissions': ('',)
     }, {
+        'id': 'new_thread',
+        'name': 'new_thread',
+        'action': 'forum_post_form',
+        'permissions': ('Modify Folder Properties',),
+    }, {
         'id': 'edit',
         'name': 'action_modify',
         'action': 'forum_edit_form',
@@ -56,49 +65,41 @@ factory_type_information = ({
         'name': 'action_local_roles',
         'action': 'forum_localrole_form',
         'permissions': (ChangePermissions,),
-    }, {
-        'id': 'isfunctionalobject',
-        'name': 'isfunctionalobject',
-        'action': 'isfunctionalobject',
-        'visible': 0,
-        'permissions': ('',),
-    }, {
-        'id': 'isproxytype',
-        'name': 'isproxytype',
-        'action': 'document',
-        'visible': 0,
-        'permissions': ('',),
-    }, {
-        'id': 'issearchabledocument',
-        'name': 'issearchabledocument',
-        'action': 'issearchabledocument',
-        'visible': 0,
-        'permissions': ('',),
-    },),
+    }, ),
+    'cps_proxy_type': 'document',
+    'cps_is_searchable': 1,
 },)
 
 
-def addCPSForum(self, id, **kw):
-    """
-    Add a Forum
-    """
-    forum = CPSForum(id, **kw)
-    self.moderation_mode = kw.get('moderation_mode', 1)
-    self.allow_anon_posts = kw.get('allow_anon_posts', 0)
-    self.send_moderation_notification = kw.get('send_moderation_notification', 0)
-    self.frozen_forum = kw.get('frozen_forum', 0)
-    CPSBase_adder(self, forum)
+def addCPSForum(self, id, REQUEST=None, **kw):
+    """Add a Forum."""
+    LOG('XXXXXXXXXXX', DEBUG, 'addCPSForum id=%s, kw=%s.' % (id, kw))
+    datamodel = kw.get('datamodel')
+    if datamodel:
+        kw['datamodel']['allow_discussion'] = 1
+    ob = CPSForum(id, **kw)
+    CPSBase_adder(self, ob, REQUEST=REQUEST)
 
 
-class CPSForum(CPSBaseDocument):
-    """
-    CPS Forum definition
-    """
+class CPSForum(BaseDocument):
+    """CPS Forum definition."""
     meta_type = 'CPSForum'
     portal_type = 'CPSForum'
-    # XXX: is it needed ?
+
+    # XXX there is too much XXX
+    _properties = BaseDocument._properties + (
+        {'id':'moderation_mode', 'type':'selection', 'mode':'w',
+         'select_variable': 'all_moderation_mode', 'label':'Moderation mode'},
+        {'id':'allow_anon_posts', 'type':'boolean', 'mode':'w',
+         'label':'Allow anonymous posts'},
+        {'id':'send_moderation_notification', 'type':'boolean', 'mode':'w',
+         'label':'Send moderation notification'},
+        {'id':'frozen_forum', 'type':'boolean', 'mode':'w',
+         'label':'Frozen forum'},
+        )
+
     allow_discussion = 1
-    #moderation_mode: 1=a priori, 0=a posteriori
+    all_moderation_mode = (0, 1)  #0=a posteriori, 1=a priori
     moderation_mode = 1
     allow_anon_posts = 0
     send_moderation_notification = 0
@@ -223,7 +224,7 @@ class CPSForum(CPSBaseDocument):
     security.declarePrivate('getRootPost')
     def getRootPost(self, post_id):
         """get the root post of thread post_id belongs to"""
-    
+
         discussion = self.portal_discussion.getDiscussionFor(self)
         post = discussion.getReply(post_id)
         while post.in_reply_to is not None:
@@ -262,18 +263,7 @@ class CPSForum(CPSBaseDocument):
             self.locked_threads.remove(root_post_id)
         else:
             self.locked_threads.append(root_post_id)
-        
-    security.declareProtected('Modify Folder Properties', 'editForumProperties')
-    def editForumProperties(self, **kw):
-        """Edit forum properties
-        """
 
-        CPSBaseDocument.edit(self,**kw)
-        self.moderation_mode = kw.get('moderation_mode', 1)
-        self.allow_anon_posts = kw.get('allow_anon_posts', 0)
-        self.send_moderation_notification = kw.get('send_moderation_notification', 0)
-        self.frozen_forum = kw.get('frozen_forum', 0)
-        self.moderators = kw.get('moderators', [])
 
     security.declarePublic('getModerators')
     def getModerators(self, proxy):
@@ -314,14 +304,14 @@ class CPSForum(CPSBaseDocument):
         inspired by MailBoxer's version, using reduce_eq
         as built-in function reduce is not available from
         python scripts"""
-        
+
         def reduceEq(func, seq, init=None):
-            if init is None: 
+            if init is None:
                 init, seq = seq[0], seq[1:]
-            for item in seq: 
+            for item in seq:
                 init = func(init, item)
             return init
-        
+
         return reduceEq(lambda line, word, width=width: '%s%s%s' %
                       (line,
                        ' \n'[(len(line[line.rfind('\n')+1:])
@@ -363,7 +353,7 @@ class CPSForum(CPSBaseDocument):
         mailhost = getattr(getToolByName(self, 'portal_url').getPortalObject(), 'MailHost')
         if reply_to is None:
             reply_to = from_address
-            
+
             content = """\
 From: %s
 Reply-To: %s
@@ -373,9 +363,8 @@ Content-Type: %s; charset=%s
 Mime-Version: 1.0
 
 %s"""
-            content = content % (from_address, reply_to, ', '.join(mto), 
+            content = content % (from_address, reply_to, ', '.join(mto),
                                  subject, content_type, charset, body)
-            
+
             mailhost.send(content, mto=mto, mfrom=from_address,
                           subject=subject, encode='8bit')
-

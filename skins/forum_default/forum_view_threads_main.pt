@@ -1,8 +1,7 @@
 <tal:block define="post_id options/post_id;
                    descendants options/descendants;
                    is_reviewer options/is_reviewer;
-                   comment_mode options/comment_mode"
-           i18n:domain="cpsforum">
+                   comment_mode options/comment_mode">
   <form method="post" tal:attributes="action here/absolute_url" name="post_form">
     <input type="hidden" name="comment_mode:int" 
            tal:attributes="value comment_mode" />

@@ -4,9 +4,7 @@
                    comment_mode options/comment_mode;
                    post python:forum[post_id];
                    can_post options/can_post | nothing;"
-           condition="python:post"
-           i18n:domain="cpsforum">
-<tr><td colspan="2">&nbsp;</td></tr>
+           condition="python:post">
 <tal:block condition="python: is_reviewer or post['published'] or comment_mode">
   <tr>
     <td colspan="2">
@@ -35,7 +33,7 @@
                     Title
                   </a>
                 </tal:block>
-                <tal:block tal:define="mcat python:here.Localizer.cpsforum" 
+                <tal:block tal:define="mcat python:here.Localizer.default" 
                            tal:replace="python:'('+mcat('forum_label_postedby').encode('ISO-8859-15', 'ignore')+' '+here.getPosterName(post['author'])+')'"/>
               </div>
             </td>

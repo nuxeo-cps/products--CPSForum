@@ -1,9 +1,8 @@
-<html metal:use-macro="here/main_template/macros/master"
-      i18n:domain="cpsforum">
+<html metal:use-macro="here/content_lib/macros/master">
 
 <metal:block fill-slot="main">
 <tal:block define="post_id request/post_id|nothing;
-                   doc here/getContent|here;
+                   doc here/getContent;
                    threads doc/getThreads;
                    post python:doc[post_id];
                    replies python:post and doc.getPostReplies(post_id);
@@ -15,16 +14,14 @@
                    can_post python:here.isAllowedToPost(is_poster=is_poster,
                                                         is_anon=isAnon,forum=doc)">
 
-  <div class="documentActions" tal:condition="can_post">
-    <a href="" i18n:translate=""
-       tal:attributes="href string:${context_url}/forum_post_form">
-      forum_new_thread
-    </a>
-  </div>
+    <tal:block condition="can_post">
+      <tal:block
+        define="global actions python:actions['object'].append({'id':'new_thread',
+        'url': 'forum_post_form',
+        'name': 'forum_new_thread',
+        'category': 'object'})" />
+    </tal:block>
 
-  <h1 tal:content="doc/title">Title</h1>
-
-  <br />
   <table class="forumPost" cellspacing="0" cellpadding="0">
     <tal:block condition="post_id"
                replace="structure python:here.post_view_snippet(

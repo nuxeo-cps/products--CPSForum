@@ -3,7 +3,11 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
--
+- CPSForum is a CPSDocument:
+  - edit page is done using layout
+  - new metadata page
+  - new CPSForum are searchable
+  - compatible with old CPSForum
 Bug fixes:
 ~~~~~~~~~~
 -

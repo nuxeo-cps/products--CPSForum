@@ -68,10 +68,10 @@ forumpost_layout = {
                 'size_max': 100,
             },
         },
-        'Creator': {
+        'author': {
             'type': 'String Widget',
             'data': {
-                'fields': ['Creator'],
+                'fields': ['author'],
                 'is_i18n': 1,
                 'label_edit': 'label_creator',
                 'label': 'label_creator',
@@ -98,7 +98,7 @@ forumpost_layout = {
     'layout': {
         'style_prefix': 'layout_default_',
         'rows': [[{'widget_id': 'Title'}, ],
-                 [{'widget_id': 'Creator'}, ],
+                 [{'widget_id': 'author'}, ],
                  [{'widget_id': 'Description'}, ],
                  ],
         }

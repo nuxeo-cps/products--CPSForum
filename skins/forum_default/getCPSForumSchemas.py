@@ -42,6 +42,12 @@ forumpost_schema = {
             'is_searchabletext': 0,
             },
         },
+    'author': {
+        'type': 'CPS String Field',
+        'data': {
+            'is_searchabletext': 1,
+            },
+        },
     }
 
 return {'forum': forum_schema,

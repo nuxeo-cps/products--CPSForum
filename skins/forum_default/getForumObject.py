@@ -6,4 +6,4 @@
 if comment_mode:
     return context.portal_comment.getDiscussionFor(context)
 else:
-    return hasattr(context, 'getContent') and context.getContent() or context
+    return context.getContent() or context

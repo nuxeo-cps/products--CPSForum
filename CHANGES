@@ -26,6 +26,7 @@ Bug fixes:
   to view posts in several states like pending (users who inherited this
   permission from other roles like SectionReviewer were not subject to this
   bug)
+- replaced post modification date by creation date (more appropriate)
 
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~

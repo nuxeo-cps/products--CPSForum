@@ -6,67 +6,16 @@
 
 if context.portal_membership.checkPermission('Forum manage comments', context):
     
-    comment_tool = context.portal_discussion
-
-    no_content_wf_chain = {}
-    #XXX: would be cleaner if based on .cps_worfklow_configuration's
-    #     declared chains
-    for ptype in context.portal_types.objectIds():
-        no_content_wf_chain[ptype] = ''
-
-    #create a wf and add chains to it 
-    def wfSetup(folder, chains):
-        if not '.cps_workflow_configuration' in folder.objectIds():
-            folder.manage_addProduct['CPSCore'].addCPSWorkflowConfiguration()
-            wfc = getattr(folder, '.cps_workflow_configuration')
-            for type, chain in chains.items():
-                wfc.manage_addChain(portal_type=type, chain=chain)
-
     if mode == '1':
-        # check whether the forum object exists or not
-        # if not create it (also create .discussions if necessary)
-        parent_folder = context.aq_inner.aq_parent
-        if '.cps_discussions' not in parent_folder.objectIds():
-            context.portal_workflow.invokeFactoryFor(parent_folder, 'Workspace', '.cps_discussions')
-        cpsmcat = context.Localizer.default
-        discussion_folder = getattr(parent_folder, '.cps_discussions')
-        kw = {'hidden_folder': 1,
-              'Title': cpsmcat('forum_title_comments').encode('ISO-8859-15', 'ignore')}
-        discussion_folder_c = discussion_folder.getEditableContent()
-        discussion_folder_c.edit(**kw)
-        comment_wf_chain = no_content_wf_chain.copy()
-        comment_wf_chain.update({'CPSForum': 'workspace_forum_wf',
-                                 'ForumPost': 'forum_post_wf',
-                                })
-        wfSetup(discussion_folder, comment_wf_chain)
-        context.portal_eventservice.notifyEvent('modify_object', discussion_folder, {})
-        context.portal_eventservice.notifyEvent('modify_object', discussion_folder_c, {})
-        existing_forum_ids = discussion_folder.objectIds()
-        # forum's id is computed using the std script
-        forum_id = context.computeId(compute_from=context.id,
-                                     location=discussion_folder.this())
-        context.portal_workflow.invokeFactoryFor(discussion_folder,
-                                                 'CPSForum', forum_id)
-        forum = getattr(discussion_folder, forum_id)
-        forum_c = forum.getEditableContent()
-        kw = {'Title': cpsmcat('forum_title_comments_for').encode('ISO-8859-15', 'ignore')+' '+context.Title(),
-              'Description': cpsmcat('forum_desc_comments').encode('ISO-8859-15', 'ignore')+' '+context.Title()}
-        forum_c.edit(**kw)
-        context.portal_eventservice.notifyEvent('modify_object', forum, {})
-
-        # tell comment_tool that it is now activated and map it
-        context.portal_discussion.registerCommentForum(proxy_path=context.absolute_url(relative=1),
-                                                       forum_path=forum.absolute_url(relative=1))
         kw = {'allow_discussion': 1,}
         context.getEditableContent().edit(**kw)
-
         psm = 'forum_psm_comments_activated'
     else:
         kw = {'allow_discussion': 0,}
         context.getEditableContent().edit(**kw)
-
         psm = 'forum_psm_comments_deactivated'
 
     if REQUEST is not None:
         REQUEST.RESPONSE.redirect('%s?portal_status_message=%s' %
                                   (context.absolute_url(), psm))
+

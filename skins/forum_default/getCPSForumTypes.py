@@ -17,7 +17,7 @@ forum_type = {
     'cps_is_searchable': 1,
     'cps_display_as_document_in_listing': 1,
     'cps_proxy_type': 'folder',
-    'schemas': ['metadata', 'common', 'forum'],
+    'schemas': ['metadata', 'forum'],
     'layouts': ['common', 'forum'],
     'actions': ({'id': 'view',
                  'name': 'action_view',

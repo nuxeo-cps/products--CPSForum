@@ -405,18 +405,6 @@ msgstr ""
 #~ msgid "forum_add_comment"
 #~ msgstr "Post Comment"
 
-#, fuzzy
-#~ msgid "forum_subscribe"
-#~ msgstr "Subject"
-
-#, fuzzy
-#~ msgid "forum_subscribe_req"
-#~ msgstr "Subject"
-
-#, fuzzy
-#~ msgid "forum_unsubscribe"
-#~ msgstr "Subject"
-
 #~ msgid "forum_moderator"
 #~ msgstr "Moderator"
 

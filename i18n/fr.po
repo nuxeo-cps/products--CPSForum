@@ -406,18 +406,6 @@ msgstr ""
 #~ msgid "forum_add_comment"
 #~ msgstr "Ajouter le commentaire"
 
-#, fuzzy
-#~ msgid "forum_subscribe"
-#~ msgstr "Sujet"
-
-#, fuzzy
-#~ msgid "forum_subscribe_req"
-#~ msgstr "Sujet"
-
-#, fuzzy
-#~ msgid "forum_unsubscribe"
-#~ msgstr "Sujet"
-
 #~ msgid "forum_moderator"
 #~ msgstr "Modérateur"
 

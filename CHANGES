@@ -10,6 +10,7 @@ New features:
   to users without any other particular role
 - notifications of new messages can be sent to explicitly declared moderators in
   a posteriori mode
+- now possible to lock a forum (read-only)
 Bug fixes:
 ~~~~~~~~~~
 -

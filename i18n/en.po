@@ -9,10 +9,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2004-06-30 11:46default\n"
-"PO-Revision-Date: 2004-06-30 11:48+0200\n"
-"Last-Translator: Encolpe DEGOUTE <ed@nuxeo.com>\n"
-"Language-Team: French <cantact@nuxeo.com>\n"
+"POT-Creation-Date: 2004-07-05 11:42default\n"
+"PO-Revision-Date: 2004-07-05 11:43+0200\n"
+"Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
+"Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -253,6 +253,21 @@ msgstr "Post"
 
 msgid "portal_type_ForumPost_description"
 msgstr "Message type use din forums and for commenting documents"
+
+msgid "forum_label_display_title"
+msgstr "Title"
+
+msgid "forum_label_display_200_fc"
+msgstr "200 first characters"
+
+msgid "forum_label_display_msg"
+msgstr "Whole message"
+
+msgid "forum_label_tree_display"
+msgstr "Post tree display"
+
+msgid "forum_label_attachedFiles"
+msgstr "Attachments"
 
 #~ msgid "forum_link_next_threads <span content=\"threads_per_page\" />"
 #~ msgstr "Next ${threads_per_page} threads"

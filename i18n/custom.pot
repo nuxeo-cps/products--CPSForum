@@ -79,3 +79,18 @@ msgstr ""
 msgid "portal_type_ForumPost_description"
 msgstr ""
 
+msgid "forum_label_display_title"
+msgstr ""
+
+msgid "forum_label_display_200_fc"
+msgstr ""
+
+msgid "forum_label_display_msg"
+msgstr ""
+
+msgid "forum_label_tree_display"
+msgstr ""
+
+msgid "forum_label_attachedFiles"
+msgstr ""
+

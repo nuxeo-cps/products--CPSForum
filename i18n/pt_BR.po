@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pt-BR\n"
-"POT-Creation-Date: 2004-06-30 11:46default\n"
+"POT-Creation-Date: 2004-07-05 11:42default\n"
 "PO-Revision-Date: 2004-06-08 15:54-0300\n"
 "Last-Translator: Mario Olimpio de Menezes <mario@curiango.ipen.br>\n"
 "Language-Team: Português do Brasil <pt@li.org>\n"
@@ -252,3 +252,23 @@ msgstr ""
 #, fuzzy
 msgid "portal_type_ForumPost_description"
 msgstr "Descrição"
+
+#, fuzzy
+msgid "forum_label_display_title"
+msgstr "Mensagem"
+
+#, fuzzy
+msgid "forum_label_display_200_fc"
+msgstr "Bloquear o fórum (não será mais possível postar novas mensagens)"
+
+#, fuzzy
+msgid "forum_label_display_msg"
+msgstr "Mensagem"
+
+#, fuzzy
+msgid "forum_label_tree_display"
+msgstr "Mensagem"
+
+#, fuzzy
+msgid "forum_label_attachedFiles"
+msgstr "Mensagem"

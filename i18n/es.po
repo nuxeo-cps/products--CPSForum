@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es-CPSForum\n"
-"POT-Creation-Date: 2004-06-30 11:46default\n"
+"POT-Creation-Date: 2004-07-05 11:42default\n"
 "PO-Revision-Date: 2004-03-27 20:39+0100\n"
 "Last-Translator: Álvaro Tejero Cantero <alvaro@antalia.com>\n"
 "Language-Team:  EspaÃ±ol <es@li.org>\n"
@@ -320,6 +320,31 @@ msgstr ""
 #, fuzzy
 msgid "portal_type_ForumPost_description"
 msgstr "Descripción"
+
+#    <td>Message</td>
+#, fuzzy
+msgid "forum_label_display_title"
+msgstr "Mensaje"
+
+#    <td>Lock forum (no longer possible to post new messages)</td>
+#, fuzzy
+msgid "forum_label_display_200_fc"
+msgstr "Bloquear el foro (sólo lectura)"
+
+#    <td>Message</td>
+#, fuzzy
+msgid "forum_label_display_msg"
+msgstr "Mensaje"
+
+#    <td>Message</td>
+#, fuzzy
+msgid "forum_label_tree_display"
+msgstr "Mensaje"
+
+#    <td>Message</td>
+#, fuzzy
+msgid "forum_label_attachedFiles"
+msgstr "Mensaje"
 
 #    <td>Send moderation notifications</td>
 #~ msgid "forum_send_moderation_notification"

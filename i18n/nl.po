@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
-"POT-Creation-Date: 2004-06-30 11:46default\n"
+"POT-Creation-Date: 2004-07-05 11:42default\n"
 "PO-Revision-Date: 2004-02-19 12:43+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -266,6 +266,26 @@ msgstr ""
 #, fuzzy
 msgid "portal_type_ForumPost_description"
 msgstr "Omschrijving"
+
+#, fuzzy
+msgid "forum_label_display_title"
+msgstr "Boodschap"
+
+#, fuzzy
+msgid "forum_label_display_200_fc"
+msgstr "Vergrendel het forum (Berichten kunnen alleen gelezen worden)"
+
+#, fuzzy
+msgid "forum_label_display_msg"
+msgstr "Boodschap"
+
+#, fuzzy
+msgid "forum_label_tree_display"
+msgstr "Boodschap"
+
+#, fuzzy
+msgid "forum_label_attachedFiles"
+msgstr "Boodschap"
 
 #~ msgid "forum_send_moderation_notification"
 #~ msgstr "Notify moderators (new messages)"

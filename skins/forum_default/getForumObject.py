@@ -6,6 +6,6 @@
 # $id:$
 
 if comment_mode:
-    return context.portal_comment.getDiscussionFor(context)
+    return context.portal_comment.getDiscussionForumFor(context)
 else:
     return context.getContent()

@@ -106,64 +106,6 @@ def threadSorter(x,y):
     else:
         return 0
 
-def subjectSorter(x,y):
-
-    x_subject = x['subject']
-    y_subject = y['subject']
-    # do not take Re: into account when sorting
-    if x_subject.lower().startswith('re: '):
-        x_subject = x_subject[4:]
-    if y_subject.lower().startswith('re: '):
-        y_subject = y_subject[4:]
-    if x_subject > y_subject:
-        return 1
-    elif x_subject < y_subject:
-        return -1
-    else:
-        if x['modified'] > y['modified']:
-            return -1
-        elif x['modified'] < y['modified']:
-            return 1
-        else:
-            return 0
-
-def authorSorter(x,y):
-
-    x_author = x['author']
-    y_author = y['author']
-    if x_author > y_author:
-        return 1
-    elif x_author < y_author:
-        return -1
-    else:
-        if x['modified'] > y['modified']:
-            return -1
-        elif x['modified'] < y['modified']:
-            return 1
-        else:
-            return 0
-
-def dateSorter(x,y):
-        
-    if x['modified'] > y['modified']:
-        return -1
-    elif x['modified'] < y['modified']:
-        return 1
-    else:
-        x_subject = x['subject']
-        y_subject = y['subject']
-        # do not take Re: into account when sorting
-        if x_subject.lower().startswith('re: '):
-            x_subject = x_subject[4:]
-        if y_subject.lower().startswith('re: '):
-            y_subject = y_subject[4:]
-        if x_subject > y_subject:
-            return -1
-        elif x_subject < y_subject:
-            return 1
-        else:
-            return 0
-
 def getBranches(branches, id='ROOT', level=0, counter=0):
 
     # sort threads by most recent post (a thread whose most recent post is
@@ -238,14 +180,6 @@ def flatList(posts, sort_by):
 
     result = ''
     even = 1
-
-    if sort_by is not None:
-        if sort_by == 'subject':
-            posts.sort(subjectSorter)
-        elif sort_by == 'date':
-            posts.sort(dateSorter)
-        elif sort_by == 'author':
-            posts.sort(authorSorter)
 
     for post in posts:
         if post['published'] or is_reviewer or username == post['author']:

@@ -1,4 +1,24 @@
 *******************************************
+** CPSForum V1.2.3 [R1 build 2004/06/17-15:04 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- default moderatino mode for commenting forums is now a posteriori
+Bug fixes:
+~~~~~~~~~~
+- some missing translations when modifying a post
+- post can now be seen by its owner even if not yet published
+- original msg text layout is kept when displaying the message (preserve
+  whitespace)
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** CPSForum V1.2.2 [R1 build 2004/06/11-14:15 by epietrig]
 
 Requires:

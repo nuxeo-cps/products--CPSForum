@@ -3,14 +3,10 @@ Requires:
 -
 New features:
 ~~~~~~~~~~~~~
-- default moderatino mode for commenting forums is now a posteriori
+-
 Bug fixes:
 ~~~~~~~~~~
-- some missing translations when modifying a post
-- post can now be seen by its owner even if not yet published
-- original msg text layout is kept when displaying the message (preserve
-  whitespace)
-
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

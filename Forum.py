@@ -99,6 +99,7 @@ class CPSForum(CPSBaseDocument):
     portal_type = 'CPSForum'
     # XXX: is it needed ?
     allow_discussion = 1
+    #moderation_mode: 1=a priori, 0=a posteriori
     moderation_mode = 1
     allow_anon_posts = 0
     moderators = []
@@ -139,7 +140,8 @@ class CPSForum(CPSBaseDocument):
         }
 
     security.declareProtected(View, 'addPost')
-    def addPost(self, subject="", message="", author="", parent_id=None):
+    def addPost(self, subject="", message="", author="", parent_id=None,
+                proxy=None, comment_mode=0):
         """Add a new post
 
         Returns the new post's id."""
@@ -148,6 +150,8 @@ class CPSForum(CPSBaseDocument):
         post = discussion.getReply(post_id)
         post.in_reply_to = parent_id
         self.changePostPublicationStatus(post_id, not self.moderation_mode)
+        if self.moderation_mode and not comment_mode:
+            self.notifyModerators(post_id=post_id, proxy=proxy)
         return post_id
 
     security.declareProtected(View, 'delPost')
@@ -211,8 +215,6 @@ class CPSForum(CPSBaseDocument):
     def editForumProperties(self, **kw):
         """Edit forum properties
         """
-        #self.title = kw.get('title', self.title)
-        #self.description = kw.get('description', self.description)
 
         CPSBaseDocument.edit(self,**kw)
         self.moderation_mode = kw.get('moderation_mode', 1)
@@ -222,35 +224,94 @@ class CPSForum(CPSBaseDocument):
     security.declarePublic('getModerators')
     def getModerators(self, proxy):
         """Get moderators of this forum"""
-        all = mergedLocalRoles(proxy)
-        result = []
-        for user_id in all.keys():
-            if 'ForumModerator' in all[user_id]:
-                result.append(user_id)
-        return result
 
-    security.declarePublic('getOfficialModerators')
-    def getOfficialModerators(self, proxy):
-        """XXX: what is an 'official moderator' ???"""
-        moderator_list = self.getModerators(proxy)
-        dtool = getToolByName(self, 'portal_directories').members
-        portal_url = getToolByName(self, 'portal_url').getPortalPath()
-        # XXX: this is dangerous. This URL may change one day. We need
-        # an API.
-        dtool_entry_url = "%s/directory_getentry?dirname=%s&entry_id=" \
-                          % (portal_url, dtool.id)
-        result = []
-        for moderator_id in moderator_list:
-            mdata = {'id': moderator_id}
-            entry = dtool.getEntry(moderator_id)
-            if entry:
-                mdata['fullname'] = entry[dtool.title_field] or moderator_id
-            else:
-                mdata['fullname'] = moderator_id
-            mdata['homedir'] = dtool_entry_url + moderator_id
-            result.append(mdata)
-        return result
+        pmtool = getToolByName(self, 'portal_membership')
+        # filtering on role instead of permission as we are interested
+        # in users who have explicit moderator role assigned to them only
+        moderators = [k for k,v in pmtool.getMergedLocalRoles(proxy).items()
+                      if k.startswith('user:') and 'ForumModerator' in v]
+        return moderators
 
     security.declarePublic('anonymousPostsAllowed')
     def anonymousPostsAllowed(self):
         return self.allow_anon_posts
+
+    security.declarePrivate('checkEmails')
+    def checkEmails(self,list=[]):
+        res = []
+        for item in list:
+            if item and item not in res:
+                res.append(item)
+        return res
+
+    security.declarePrivate('textwrap')
+    def textwrap(self,text, width):
+        """Textwrap function definition, for email formatting
+
+        Wraps text to width
+        inspired by MailBoxer's version, using reduce_eq
+        as built-in function reduce is not available from
+        python scripts"""
+        
+        def reduce_eq(func,seq,init=None):
+            if init is None: init, seq = seq[0], seq[1:]
+            for item in seq: init = func(init,item)
+            return init
+        
+        return reduce_eq(lambda line, word, width=width: '%s%s%s' %
+                      (line,
+                       ' \n'[(len(line[line.rfind('\n')+1:])
+                              + len(word.split('\n',1)[0]
+                                    ) >= width)],
+                       word),
+                      text.split(' ')
+                      )
+
+    security.declarePrivate('notifyModerators')
+    def notifyModerators(self, post_id=None, proxy=None):
+        if post_id and proxy:
+            moderators = self.getModerators(proxy)
+            members_dir = getToolByName(self, 'portal_directories').members
+            moderator_emails = []
+            for moderator_id in moderators:
+                entry = members_dir.getEntry(moderator_id[5:])
+                if entry and entry.has_key('email'):
+                    moderator_emails.append(entry['email'])
+            checked_emails = self.checkEmails(list=moderator_emails)
+            utool = getToolByName(self, 'portal_url')
+            portal = utool.getPortalObject()
+            #XXX: this has to be i18n-ed
+            subject = "Soumission d'un message sur le Forum %s" % self.title
+            post_url = proxy.absolute_url() + '?post_id=' + post_id
+            body = "Un nouveau message à modérer vient d'être poste sur le forum %s.\n\nCe message peut être consulte à l'adresse suivante:\n%s" % (self.title, post_url)
+            self.sendEmail(from_address=getattr(portal,
+                                                'email_from_address'),
+                           subject=subject,
+                           body=self.textwrap(body, 72),
+                           mto=checked_emails)
+
+    security.declarePrivate('sendEmail')
+    def sendEmail(self, from_address='nobody@example.com', reply_to=None,
+                  subject='No subject', body='No body', content_type='text/plain',
+                  charset='ISO-8859-15', mto=None):
+
+        mailhost = getattr(getToolByName(self, 'portal_url').getPortalObject(), 'MailHost')
+        if reply_to is None:
+            reply_to = from_address
+            
+            content = """\
+From: %s
+Reply-To: %s
+To: %s
+Subject: %s
+Content-Type: %s; charset=%s
+Mime-Version: 1.0
+
+%s"""
+            content = content % (
+                from_address, reply_to, ', '.join(mto), subject,
+                content_type, charset, body)
+            
+            mailhost.send(content, mto=mto, mfrom=from_address,
+                          subject=subject, encode='8bit')
+

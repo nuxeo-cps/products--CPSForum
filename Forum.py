@@ -153,13 +153,11 @@ class CPSForum(CPSBaseDocument):
         The post is refered to by its id"""
         self.portal_discussion.getDiscussionFor(self).deleteReply(id)
 
-    def publishPost(self, id, state=1):
-        # XXX: this method name must be changed, since is it also used
-        # to change post state.
-        """Publish post <id>"""
+    def changePostPublicationStatus(self, id, status=1):
+        """(Un)Publish post <id>"""
         post = self.portal_discussion.getDiscussionFor(self).getReply(id)
         # XXX: this breaks encapsulation. Fix this.
-        post.inforum = state
+        post.inforum = status
 
     def __getitem__(self, id):
         """Return postinfo

@@ -188,7 +188,8 @@ class CPSForum(BaseDocument):
     def getPostInfo(self, post, discussion=0):
         """Return post information as a dictionnary"""
         # discussion is true if processing a post represented
-        # as a Discussion Item instead of a ForumPost
+        # as a Discussion Item instead of a ForumPost (should no
+        # longer happen)
 
         if discussion:
             post_doc = post.getContent()

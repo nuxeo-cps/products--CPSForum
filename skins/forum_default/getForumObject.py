@@ -6,4 +6,4 @@
 if comment_mode:
     return context.portal_comment.getDiscussionFor(context)
 else:
-    return context.getContent() or context
+    return context.getContent()

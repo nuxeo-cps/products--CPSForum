@@ -6,9 +6,7 @@
                   doc here/getContent|here;
                   member python:here.portal_membership.getAuthenticatedMember();
                   dtool python:here.portal_metadirectories['members'];
-
-    errormsg options/error_message|nothing;
-    ">
+                  errormsg options/error_message|nothing;">
   <table>
     <tr>
       <td i18n:translate="L_forum ecrivain">Author</td>
@@ -65,5 +63,5 @@
     </tr>
   </table>
 </form>
-</metal:bock>
+</metal:block>
 </html>

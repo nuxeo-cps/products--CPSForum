@@ -330,11 +330,11 @@ class CPSForum(BaseDocument):
             portal = utool.getPortalObject()
 
             mcat = getToolByName(self, 'Localizer').default
-            subject_i18n = mcat('forum_mailtitle_new_msg_submitted')
+            subject_i18n = mcat('forum_mailtitle_new_msg_submitted').encode('ISO-8859-15', 'ignore')
             subject = subject_i18n + self.title
             post_url = proxy.absolute_url() + '?post_id=' + post_id
-            body_i18n_1 = mcat('forum_mailbody_new_msg_submitted1')
-            body_i18n_2 = mcat('forum_mailbody_new_msg_submitted2')
+            body_i18n_1 = mcat('forum_mailbody_new_msg_submitted1').encode('ISO-8859-15', 'ignore')
+            body_i18n_2 = mcat('forum_mailbody_new_msg_submitted2').encode('ISO-8859-15', 'ignore')
             body = body_i18n_1 + self.title + '.\n\n' + body_i18n_2 + '\n' + post_url
 
             if checked_emails:

@@ -29,6 +29,10 @@
         <input type="submit" name="forum_post_reply:method"
                class="standalone" value="forum_reply"
                i18n:attributes="value" />
+        <input tal:condition="python:here.portal_membership.checkPermission('Forum Moderate', context)"
+               type="submit" name="forum_post_modify:method"
+               class="standalone" value="forum_modify"
+               i18n:attributes="value" />
       </form>
     </td>
   </tr>

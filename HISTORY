@@ -1,3 +1,22 @@
 *******************************************
+** CPSForum V0.1.0 [R1 build 2003-10/06-09:15 by epietrig]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- added/fixed moderator and poster permissions
+- started i18n from scratch
+
+Bug fixes:
+~~~~~~~~~~
+- presentation bugs
+- status icon (unpublished)
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+*******************************************
 ** CPSForum V0.0.1 [R1 build 2003-09/15-19:14 by anguenot]
 

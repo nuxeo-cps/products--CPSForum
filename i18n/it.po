@@ -307,7 +307,3 @@ msgstr "Icona"
 
 msgid "forum_label_display_wf_txt"
 msgstr "Testo"
-
-#, fuzzy
-msgid "forum_help_moderation"
-msgstr "Modera il forum:"

@@ -90,13 +90,6 @@ msgstr "Retirar"
 msgid "forum_description"
 msgstr "Descripción"
 
-#    <h4>Comments</h4>
-#.   <h2 id="document_comment">Comments</h2>
-#: from ../skins/forum_default/forum_comment_lib.pt
-#, fuzzy
-msgid "forum_label_comments"
-msgstr "Comentarios"
-
 #    <td>Lock forum (no longer possible to post new messages)</td>
 #.   <td>Lock forum (no longer possible to post new messages)</td>
 #: from ../skins/forum_default/forum_create_form.pt
@@ -108,30 +101,6 @@ msgstr "Bloquear el foro (sólo lectura)"
 #: from ../skins/forum_default/forum_view_main.pt
 msgid "forum_link_back_to_document"
 msgstr ""
-
-#    <a attributes="href string:${context_url}/forum_post_form" href="">
-#          forum_new_thread
-#        </a>
-#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, frm_start=next_page.first))" condition="next_page">
-#.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
-#.             </a>
-#: from ../skins/forum_default/forum_view_threads_main.pt
-#, fuzzy
-msgid "forum_link_next_threads ${tpp}"
-msgstr "Nuevo hilo "
-
-#    <a attributes="href string:${context_url}/forum_post_form" href="">
-#          forum_new_thread
-#        </a>
-#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, frm_start=previous_page.first))" condition="previous_page">
-#.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
-#.             </a>
-#: from ../skins/forum_default/forum_view_threads_main.pt
-#, fuzzy
-msgid "forum_link_prev_threads ${tpp}"
-msgstr "Nuevo hilo "
 
 #    <td>Message</td>
 #.   <div class="label">Message</div>
@@ -180,28 +149,10 @@ msgstr "No hay mensajes en este foro."
 msgid "forum_post"
 msgstr "Escribir"
 
-#    <p>You are not authorized to post on this forum</p>
-#.   <p>
-#.           You are not authorized to post on this forum
-#.         </p>
-#: from ../skins/forum_default/forum_post_form.pt
-#, fuzzy
-msgid "forum_post_unauthorize"
-msgstr "No tiene los permisos necesarios para escribir mensajes en este foro"
-
 #    <span condition="python:errormsg == 'error_author'" class="forumerror">Author field must be filled</span>
 #.   <span condition="python:errormsg == 'error_author'" class="forumError">Author field must be filled</span>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_name_required"
-msgstr "Debe introducir un nombre o seudónimo"
-
-#    <span condition="python:errormsg == 'error_author'" class="forumerror">Author field must be filled</span>
-#.   <div class="row error" condition="python:errormsg == 'error_subject'">
-#.                   Subject field must be filled
-#.           </div>
-#: from ../skins/forum_default/forum_post_form.pt
-#, fuzzy
-msgid "forum_psm_subject_required"
 msgstr "Debe introducir un nombre o seudónimo"
 
 #    <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
@@ -210,14 +161,6 @@ msgstr "Debe introducir un nombre o seudónimo"
 msgid "forum_publish"
 msgstr "Publicar"
 
-#    <td>Subject</td>
-#    <td class="forumsubheader">Subject</td>
-#.   <input name="forum_reject_posts:method" type="submit" class="context" value="forum_reject" />
-#: from ../skins/forum_default/forum_view_threads_main.pt
-#, fuzzy
-msgid "forum_reject"
-msgstr "Tema"
-
 #    <input value="forum_reply" class="context" name="forum_post_reply:method" type="submit">
 #               </input>
 #.   <input name="forum_post_reply:method" type="submit" class="standalone" value="forum_reply" />
@@ -225,13 +168,6 @@ msgstr "Tema"
 #: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
 msgstr "Responder"
-
-#    <td class="forumsubheader" width="80">Date</td>
-#.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
-#: from ../skins/forum_default/forum_view_threads_main.pt
-#, fuzzy
-msgid "forum_state"
-msgstr "Fecha"
 
 #    <td>Subject</td>
 #    <td class="forumsubheader">Subject</td>
@@ -279,21 +215,6 @@ msgstr ""
 msgid "forum_mailbody_new_msg_submitted2"
 msgstr ""
 
-#    <span condition="python:errormsg == 'error_author'" class="forumerror">Author field must be filled</span>
-#, fuzzy
-msgid "forum_psm_comments_activated"
-msgstr "Debe introducir un nombre o seudónimo"
-
-#    <span condition="python:errormsg == 'error_author'" class="forumerror">Author field must be filled</span>
-#, fuzzy
-msgid "forum_psm_comments_deactivated"
-msgstr "Debe introducir un nombre o seudónimo"
-
-#    <td>Message</td>
-#, fuzzy
-msgid "forum_psm_message_posted"
-msgstr "Mensaje"
-
 msgid "psm_cpsforum_need_rights"
 msgstr ""
 
@@ -303,241 +224,5 @@ msgstr ""
 msgid "action_deactivate_comments"
 msgstr ""
 
-#    <h4>Comments</h4>
-#, fuzzy
-msgid "action_manage_comments"
-msgstr "Comentarios"
-
-#    <h4>Comments</h4>
-#, fuzzy
-msgid "forum_title_comments"
-msgstr "Comentarios"
-
-#    <h4>Comments</h4>
-#, fuzzy
-msgid "forum_title_comments_for"
-msgstr "Comentarios"
-
-#    <h4>Comments</h4>
-#, fuzzy
-msgid "forum_desc_comments"
-msgstr "Comentarios"
-
-#, fuzzy
-msgid "forum_label_threads_per_page"
-msgstr "enviado por"
-
-#    <td>Subject</td>
-#    <td class="forumsubheader">Subject</td>
-#, fuzzy
-msgid "forum_label_subject"
-msgstr "Tema"
-
-#    <td>Message</td>
-#, fuzzy
-msgid "forum_label_message"
-msgstr "Mensaje"
-
 msgid "portal_type_ForumPost_title"
 msgstr ""
-
-#    <td>Description</td>
-#, fuzzy
-msgid "portal_type_ForumPost_description"
-msgstr "Descripción"
-
-#    <td>Message</td>
-#, fuzzy
-msgid "forum_label_display_title"
-msgstr "Mensaje"
-
-#    <td>Lock forum (no longer possible to post new messages)</td>
-#, fuzzy
-msgid "forum_label_display_200_fc"
-msgstr "Bloquear el foro (sólo lectura)"
-
-#    <td>Message</td>
-#, fuzzy
-msgid "forum_label_display_msg"
-msgstr "Mensaje"
-
-#    <td>Message</td>
-#, fuzzy
-msgid "forum_label_tree_display"
-msgstr "Mensaje"
-
-#    <td>Message</td>
-#, fuzzy
-msgid "forum_label_attachedFiles"
-msgstr "Mensaje"
-
-#    <input value="forum_post" class="standalone" name="forum_post:method" type="submit" />
-#, fuzzy
-msgid "forum_pending_post"
-msgstr "Escribir"
-
-#    <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
-#, fuzzy
-msgid "forum_unpublished_post"
-msgstr "Publicar"
-
-#    <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
-#, fuzzy
-msgid "forum_published_post"
-msgstr "Publicar"
-
-#    <td>Subject</td>
-#    <td class="forumsubheader">Subject</td>
-#, fuzzy
-msgid "forum_rejected_post"
-msgstr "Tema"
-
-#    <td>Message</td>
-#, fuzzy
-msgid "forum_label_wf_display"
-msgstr "Mensaje"
-
-#    <td>Lock forum (no longer possible to post new messages)</td>
-#, fuzzy
-msgid "forum_label_display_wf_icon"
-msgstr "Bloquear el foro (sólo lectura)"
-
-#    <td>Message</td>
-#, fuzzy
-msgid "forum_label_display_wf_txt"
-msgstr "Mensaje"
-
-#    <td>Moderation</td>
-#, fuzzy
-msgid "forum_help_moderation"
-msgstr "Moderación"
-
-#    <td>Send moderation notifications</td>
-#~ msgid "forum_send_moderation_notification"
-#~ msgstr "Notificar a los moderadores (nuevos mensajes)"
-
-#    <span>Name</span>
-#~ msgid "label_name"
-#~ msgstr "Nombre"
-
-#    <option repeat="role roles" attributes="value role" content="role">
-#             Role1
-#          </option>
-#    <option repeat="role roles" attributes="value role" content="role"> Role1 </option>
-#~ msgid "Role1"
-#~ msgstr "Rol1"
-
-#    <input value="button_assign_roles" type="submit" />
-#~ msgid "button_assign_roles"
-#~ msgstr "Delegar rol"
-
-#    <input value="button_delete" type="submit" />
-#~ msgid "button_delete"
-#~ msgstr "Borrar"
-
-#    <input value="button_search" name="role_submit" type="submit" />
-#~ msgid "button_search"
-#~ msgstr "Buscar"
-
-#    <h2>
-#     Assign local roles: Search Members
-#    </h2>
-#~ msgid "heading_local_roles_search_members"
-#~ msgstr "Delegar roles locales: búsqueda de miembros"
-
-#    <h2>
-#        Assign local roles: Search Results
-#    </h2>
-#~ msgid "heading_local_roles_search_results"
-#~ msgstr "Delegar roles locales: resultados de la búsqueda"
-
-#    <th style="text-align:left;">
-#            Email address
-#        </th>
-#~ msgid "label_email"
-#~ msgstr "Correo-e"
-
-#    <span>Group</span>
-#~ msgid "label_group"
-#~ msgstr "Grupo"
-
-#    <option value="groupname">Group Name</option>
-#~ msgid "label_group_name"
-#~ msgstr "Nombre del grupo"
-
-#    <span>in</span>
-#~ msgid "label_in"
-#~ msgstr "en"
-
-#    <th>Search by</th>
-#~ msgid "label_local_roles_search_by"
-#~ msgstr "Buscar por"
-
-#    <th>Search Term</th>
-#~ msgid "label_local_roles_search_term"
-#~ msgstr "Palabras claves de la búsqueda"
-
-#    <span>Role(s)</span>
-#~ msgid "label_roles"
-#~ msgstr "Rol(es)"
-
-#    <th style="text-align:left;">
-#            User
-#        </th>
-#    <span>User</span>
-#~ msgid "label_user"
-#~ msgstr "Usuario"
-
-#    <option value="email">Email Address</option>
-#~ msgid "label_user_email"
-#~ msgstr "Dirección de correo del usuario"
-
-#    <option value="fullname">User Name</option>
-#~ msgid "label_user_name"
-#~ msgstr "Nombre del usuario"
-
-#    <p>
-#       These users currently have local roles assigned in this folder:
-#    </p>
-#~ msgid "legend_local_roles_assigned_users"
-#~ msgstr ""
-#~ " Los siguientes usuarios tienen actualmente roles locales en esta carpeta:"
-
-#    <p>
-#        Sorry, no groups matched your search.
-#     </p>
-#~ msgid "legend_local_roles_no_results_member"
-#~ msgstr "Lo sentimos, ningún grupo se corresponde con su búsqueda"
-
-#    <p>
-#        Sorry, no members matched your search.
-#     </p>
-#~ msgid "legend_local_roles_no_results_members"
-#~ msgstr "Lo sentimos, ningún miembro corresponde con su búsqueda"
-
-#    <th colspan="2">
-#            Role to assign:
-#        </th>
-#~ msgid "legend_local_roles_role_to_assign"
-#~ msgstr "Rol a delegar:"
-
-#    <p>
-#        Select Group(s) and a role to assign:
-#     </p>
-#~ msgid "legend_local_roles_select_groups_and_roles"
-#~ msgstr "Escoja el/los grupo/s y un rol para delegar:"
-
-#    <p>
-#        Select Member(s) and a role to assign:
-#     </p>
-#~ msgid "legend_local_roles_select_members_and_roles"
-#~ msgstr "Escoja el/los miembros y un rol para delegar:"
-
-#    <span>
-#      <i>Roles in underlined </i> are set in parent folders.
-#      Follow the links to manage the local roles in these folders.
-#    </span>
-#~ msgid "link_local_roles_underlined"
-#~ msgstr ""
-#~ "<em>Los roles subrayados</em> están definidos en uno de los directorios "
-#~ "padre. Siga los enlaces para gestionarlos allí."

@@ -271,7 +271,8 @@ msgid "portal_type_ForumPost_title"
 msgstr "Message de forum"
 
 msgid "portal_type_ForumPost_description"
-msgstr "Type de message utilisé dans les forums et les commentaires de documents"
+msgstr ""
+"Type de message utilisé dans les forums et les commentaires de documents"
 
 msgid "forum_label_display_title"
 msgstr "Titre"
@@ -311,101 +312,7 @@ msgstr "Texte"
 
 msgid "forum_help_moderation"
 msgstr ""
-"<ul> "
-"<li>Modération a priori :<p>Le responsable du forum doit lire et accepter chaque message avant publication.</p></li>"
-"<li>Modération a posteriori :<p>Pas de modération, les messages sont publiés directement sur le forum. Le responsable pourra néanmoins en supprimer.</p></li>"
-"</ul>"
-
-#~ msgid "forum_link_next_threads <span content=\"threads_per_page\" />"
-#~ msgstr "${threads_per_page} fils suivants"
-
-#~ msgid "forum_link_prev_threads <span content=\"threads_per_page\" />"
-#~ msgstr "${threads_per_page} fils précédents"
-
-#~ msgid "forum_send_moderation_notification"
-#~ msgstr "Notifier les modérateurs (nouveaux messages)"
-
-#~ msgid "label_name"
-#~ msgstr "Nom"
-
-#~ msgid "Role1"
-#~ msgstr "Role1"
-
-#~ msgid "button_assign_roles"
-#~ msgstr "Déléguer rôle"
-
-#~ msgid "button_delete"
-#~ msgstr "Supprimer"
-
-#~ msgid "button_search"
-#~ msgstr "Rechercher"
-
-#~ msgid "heading_local_roles_search_members"
-#~ msgstr "Déléguer des rôles locaux : recherche de membres"
-
-#~ msgid "heading_local_roles_search_results"
-#~ msgstr "Déléguer des rôles locaux : résultats de la recherche"
-
-#~ msgid "label_email"
-#~ msgstr "Adresse de mél"
-
-#~ msgid "label_group"
-#~ msgstr "Groupe"
-
-#~ msgid "label_group_name"
-#~ msgstr "Nom du groupe"
-
-#~ msgid "label_in"
-#~ msgstr "dans"
-
-#~ msgid "label_local_roles_search_by"
-#~ msgstr "Rechercher par"
-
-#~ msgid "label_local_roles_search_term"
-#~ msgstr "Mots clefs de la recherche"
-
-#~ msgid "label_roles"
-#~ msgstr "Rôle(s)"
-
-#~ msgid "label_user"
-#~ msgstr "Utilisateur"
-
-#~ msgid "label_user_email"
-#~ msgstr "Adresse de mél"
-
-#~ msgid "label_user_name"
-#~ msgstr "Nom d'utilisateur"
-
-#~ msgid "legend_local_roles_assigned_users"
-#~ msgstr ""
-#~ "Ces utilisateurs ont pour le moment des rôles locaux dans ce répertoire :"
-
-#~ msgid "legend_local_roles_no_results_member"
-#~ msgstr "Désolé, aucun groupe ne correspond à votre recherche."
-
-#~ msgid "legend_local_roles_no_results_members"
-#~ msgstr "Désolé, aucun membre ne correspond à votre recherche."
-
-#~ msgid "legend_local_roles_role_to_assign"
-#~ msgstr "Rôle à déléguer :"
-
-#~ msgid "legend_local_roles_select_groups_and_roles"
-#~ msgstr "Choisissez le(s) groupe(s) et un rôle pour délégation :"
-
-#~ msgid "legend_local_roles_select_members_and_roles"
-#~ msgstr "Choisissez le(s) membre(s) et un rôle pour délégation :"
-
-#~ msgid "link_local_roles_underlined"
-#~ msgstr ""
-#~ "<i>Les rôles soulignés</i> sont définis dans un des répertoires parents. "
-#~ "Suivez les liens pour gérer ces droits dans un de ces répertoires."
-
-#~ msgid "forum_moderators"
-#~ msgstr "Modérateurs"
-
-#~ msgid "forum_add_comment"
-#~ msgstr "Ajouter le commentaire"
-
-#~ msgid "forum_moderator"
-#~ msgstr "Modérateur"
-
+"<ul> <li>Modération a priori :<p>Le responsable du forum doit lire et "
+"accepter chaque message avant publication.</p></li><li>Modération a "
+"posteriori :<p>Pas de modération, les messages sont publiés directement sur "
+"le forum. Le responsable pourra néanmoins en supprimer.</p></li></ul>"

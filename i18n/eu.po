@@ -284,4 +284,3 @@ msgstr "Unpublished"
 
 msgid "forum_rejected_post"
 msgstr "Rejected"
-

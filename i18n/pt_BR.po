@@ -179,12 +179,6 @@ msgstr "Rejeitar"
 msgid "forum_reply"
 msgstr "Responder"
 
-#.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
-#: from ../skins/forum_default/forum_view_threads_main.pt
-#, fuzzy
-msgid "forum_state"
-msgstr "Data"
-
 #.   <div class="label required">Subject</div>
 #.   <a href="./sort_posts?criterion=subject" attributes="href string:./sort_posts?criterion=${subject_sort_direction}">Subject</a>
 #: from ../skins/forum_default/forum_post_form.pt
@@ -263,10 +257,6 @@ msgstr "Mensagem"
 msgid "portal_type_ForumPost_title"
 msgstr "Postar"
 
-#, fuzzy
-msgid "portal_type_ForumPost_description"
-msgstr "Tipo de mensagem"
-
 msgid "forum_label_display_title"
 msgstr "Título"
 
@@ -288,25 +278,5 @@ msgstr "Pendente."
 msgid "forum_unpublished_post"
 msgstr "Não publicado."
 
-#, fuzzy
-msgid "forum_published_post"
-msgstr "Não publicado."
-
 msgid "forum_rejected_post"
 msgstr "Rejeitado."
-
-#, fuzzy
-msgid "forum_label_wf_display"
-msgstr "Mostra a árvore de mensagens"
-
-#, fuzzy
-msgid "forum_label_display_wf_icon"
-msgstr "Primeiros 200 caracteres"
-
-#, fuzzy
-msgid "forum_label_display_wf_txt"
-msgstr "Título"
-
-#, fuzzy
-msgid "forum_help_moderation"
-msgstr "Moderação"

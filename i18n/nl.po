@@ -78,41 +78,11 @@ msgstr "Maak publicatie ongedaan"
 msgid "forum_description"
 msgstr "Omschrijving"
 
-#.   <h2 id="document_comment">Comments</h2>
-#: from ../skins/forum_default/forum_comment_lib.pt
-#, fuzzy
-msgid "forum_label_comments"
-msgstr "Opmerkingen"
-
 #.   <td>Lock forum (no longer possible to post new messages)</td>
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_label_lock_forum"
 msgstr "Vergrendel het forum (Berichten kunnen alleen gelezen worden)"
-
-#.   <span />
-#: from ../skins/forum_default/forum_view_main.pt
-#, fuzzy
-msgid "forum_link_back_to_document"
-msgstr "Opmerkingen"
-
-#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, frm_start=next_page.first))" condition="next_page">
-#.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
-#.             </a>
-#: from ../skins/forum_default/forum_view_threads_main.pt
-#, fuzzy
-msgid "forum_link_next_threads ${tpp}"
-msgstr "Nieuwe discussie"
-
-#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
-#.                                       mq(request.form, frm_start=previous_page.first))" condition="previous_page">
-#.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
-#.             </a>
-#: from ../skins/forum_default/forum_view_threads_main.pt
-#, fuzzy
-msgid "forum_link_prev_threads ${tpp}"
-msgstr "Nieuwe discussie"
 
 #.   <div class="label">Message</div>
 #: from ../skins/forum_default/forum_post_form.pt
@@ -163,36 +133,16 @@ msgstr "???"
 msgid "forum_psm_name_required"
 msgstr "Je moet je naam of bijnaam invullen"
 
-#.   <div class="row error" condition="python:errormsg == 'error_subject'">
-#.                   Subject field must be filled
-#.           </div>
-#: from ../skins/forum_default/forum_post_form.pt
-#, fuzzy
-msgid "forum_psm_subject_required"
-msgstr "Je moet je naam of bijnaam invullen"
-
 #.   <input name="forum_publish_posts:method" type="submit" class="context" value="forum_publish" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_publish"
 msgstr "Publiceren"
-
-#.   <input name="forum_reject_posts:method" type="submit" class="context" value="forum_reject" />
-#: from ../skins/forum_default/forum_view_threads_main.pt
-#, fuzzy
-msgid "forum_reject"
-msgstr "Onderwerp"
 
 #.   <input name="forum_post_reply:method" type="submit" class="standalone" value="forum_reply" />
 #: from ../skins/forum_default/post_view_csnippet.pt
 #: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
 msgstr "Beantwoorden"
-
-#.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
-#: from ../skins/forum_default/forum_view_threads_main.pt
-#, fuzzy
-msgid "forum_state"
-msgstr "Datum"
 
 #.   <div class="label required">Subject</div>
 #.   <a href="./sort_posts?criterion=subject" attributes="href string:./sort_posts?criterion=${subject_sort_direction}">Subject</a>
@@ -230,18 +180,6 @@ msgstr ""
 msgid "forum_mailbody_new_msg_submitted2"
 msgstr ""
 
-#, fuzzy
-msgid "forum_psm_comments_activated"
-msgstr "Er zijn momenteel geen opmerkingen aan dit document gekoppeld"
-
-#, fuzzy
-msgid "forum_psm_comments_deactivated"
-msgstr "Je moet je naam of bijnaam invullen"
-
-#, fuzzy
-msgid "forum_psm_message_posted"
-msgstr "Boodschap"
-
 msgid "psm_cpsforum_need_rights"
 msgstr ""
 
@@ -251,187 +189,5 @@ msgstr ""
 msgid "action_deactivate_comments"
 msgstr ""
 
-#, fuzzy
-msgid "action_manage_comments"
-msgstr "Opmerkingen"
-
-#, fuzzy
-msgid "forum_title_comments"
-msgstr "Opmerkingen"
-
-#, fuzzy
-msgid "forum_title_comments_for"
-msgstr "Opmerkingen"
-
-#, fuzzy
-msgid "forum_desc_comments"
-msgstr "Opmerkingen"
-
-#, fuzzy
-msgid "forum_label_threads_per_page"
-msgstr "Gepost door"
-
-#, fuzzy
-msgid "forum_label_subject"
-msgstr "Onderwerp"
-
-#, fuzzy
-msgid "forum_label_message"
-msgstr "Boodschap"
-
 msgid "portal_type_ForumPost_title"
 msgstr ""
-
-#, fuzzy
-msgid "portal_type_ForumPost_description"
-msgstr "Omschrijving"
-
-#, fuzzy
-msgid "forum_label_display_title"
-msgstr "Boodschap"
-
-#, fuzzy
-msgid "forum_label_display_200_fc"
-msgstr "Vergrendel het forum (Berichten kunnen alleen gelezen worden)"
-
-#, fuzzy
-msgid "forum_label_display_msg"
-msgstr "Boodschap"
-
-#, fuzzy
-msgid "forum_label_tree_display"
-msgstr "Boodschap"
-
-#, fuzzy
-msgid "forum_label_attachedFiles"
-msgstr "Boodschap"
-
-#, fuzzy
-msgid "forum_pending_post"
-msgstr "Versturen"
-
-#, fuzzy
-msgid "forum_unpublished_post"
-msgstr "Publiceren"
-
-#, fuzzy
-msgid "forum_published_post"
-msgstr "Publiceren"
-
-#, fuzzy
-msgid "forum_rejected_post"
-msgstr "Onderwerp"
-
-#, fuzzy
-msgid "forum_label_wf_display"
-msgstr "Boodschap"
-
-#, fuzzy
-msgid "forum_label_display_wf_icon"
-msgstr "Vergrendel het forum (Berichten kunnen alleen gelezen worden)"
-
-#, fuzzy
-msgid "forum_label_display_wf_txt"
-msgstr "Boodschap"
-
-#, fuzzy
-msgid "forum_help_moderation"
-msgstr "Moderatie"
-
-#~ msgid "forum_send_moderation_notification"
-#~ msgstr "Notify moderators (new messages)"
-
-#~ msgid "label_name"
-#~ msgstr "Naam"
-
-#~ msgid "Role1"
-#~ msgstr "Rol1"
-
-#~ msgid "button_assign_roles"
-#~ msgstr "Ken rollen toe"
-
-#~ msgid "button_delete"
-#~ msgstr "Verwijder"
-
-#~ msgid "button_search"
-#~ msgstr "Zoeken"
-
-#~ msgid "heading_local_roles_search_members"
-#~ msgstr "Wijs locale rollen toe: Zoek naar leden"
-
-#~ msgid "heading_local_roles_search_results"
-#~ msgstr "Wijs locale rollen toe: Zoek naar resultaten"
-
-#~ msgid "label_email"
-#~ msgstr "Email adres"
-
-#~ msgid "label_group"
-#~ msgstr "Groep"
-
-#~ msgid "label_group_name"
-#~ msgstr "Groepsname"
-
-#~ msgid "label_in"
-#~ msgstr "in"
-
-#~ msgid "label_local_roles_search_by"
-#~ msgstr "Zoek volgens"
-
-#~ msgid "label_local_roles_search_term"
-#~ msgstr "Zoek condities"
-
-#~ msgid "label_roles"
-#~ msgstr "Rol(len)"
-
-#~ msgid "label_user"
-#~ msgstr "Gebruiker"
-
-#~ msgid "label_user_email"
-#~ msgstr "Email Adres"
-
-#~ msgid "label_user_name"
-#~ msgstr "Naam"
-
-#~ msgid "legend_local_roles_assigned_users"
-#~ msgstr " Deze gebruikers hebben momenteel locale rollen in deze map:"
-
-#~ msgid "legend_local_roles_no_results_member"
-#~ msgstr "Sorry, geen groepen voldeden aan uw zoek criteria."
-
-#~ msgid "legend_local_roles_no_results_members"
-#~ msgstr "Sorry, geen leden voldeden aan uw zoek criteria."
-
-#~ msgid "legend_local_roles_role_to_assign"
-#~ msgstr "Toe te wijzen rol:"
-
-#~ msgid "legend_local_roles_select_groups_and_roles"
-#~ msgstr "Selecteer groep(en) en een rol om toe te wijzen:"
-
-#~ msgid "legend_local_roles_select_members_and_roles"
-#~ msgstr "Selecteer lid/leden en een rol om toe te wijzen:"
-
-#~ msgid "link_local_roles_underlined"
-#~ msgstr ""
-#~ "<i>Onderstreepte rollen</i> bevinden zich in bovenliggende mappen. Volg "
-#~ "de koppeling om de locale rollen te beheren in die mappen."
-
-#~ msgid "forum_moderators"
-#~ msgstr "Moderatoren"
-
-#~ msgid "forum_add_comment"
-#~ msgstr "Post opmerkingen"
-
-#, fuzzy
-#~ msgid "forum_subscribe"
-#~ msgstr "Onderwerp"
-
-#, fuzzy
-#~ msgid "forum_subscribe_req"
-#~ msgstr "Onderwerp"
-
-#, fuzzy
-#~ msgid "forum_unsubscribe"
-#~ msgstr "Onderwerp"
-
-#~ msgid "forum_moderator"
-#~ msgstr "Moderator"

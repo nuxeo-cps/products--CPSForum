@@ -3,51 +3,48 @@
                    is_reviewer options/is_reviewer;
                    comment_mode options/comment_mode"
            i18n:domain="cpsforum">
-  <form method="POST" tal:attributes="action here/absolute_url" name="post_form">
+  <form method="post" tal:attributes="action here/absolute_url" name="post_form">
     <input type="hidden" name="comment_mode:int" 
-           tal:attributes="value comment_mode">
-    <table border="0" style='width:100%;height:inherit' cellspacing='0' cellpadding='0'>
+           tal:attributes="value comment_mode" />
+    <table border="0" style='width:100%;height:inherit'
+           cellspacing='0' cellpadding='0'>
       <tr>
-        <td class="forumsubheader" width="2%">
+        <td class="forumSelectCell">
           <input type="hidden" name="parent_id:string" 
-                 tal:attributes="value post_id">
+                 tal:attributes="value post_id" />
         </td>
-        <td class="forumsubheader" width="2%">&nbsp;</td>
-        <th class="forumsubheader" i18n:translate="forum_subject"
-            width="40%">Subject</th>
-        <th class="forumsubheader" width="25%" 
+        <td class="forumModerateCell">&nbsp;</td>
+        <th class="forumSubjectCell" i18n:translate="forum_subject">Subject</th>
+        <th class="forumAuthorCell"
             i18n:translate="forum_author">Author</th>
-        <th class="forumsubheader" width="26%" 
+        <th class="forumDateCell"
             i18n:translate="forum_date">Date</th>
-        <td class="forumsubheader" width="5%"></td>
+        <td class="forumLockCell"></td>
       </tr>
       <tal:span content="structure python:here.post_tree(
                                              descendants=descendants, 
                                              post_id=post_id,
                                              comment_mode=comment_mode)"/>
     </table>
-    <tr>
-      <td colspan="2">
-        <br>
+    <div class="forumModeration">
         <tal:block condition="python:not comment_mode and is_reviewer">
           <input type="submit" name="forum_publish_posts:method"
                  class="context" value="forum_publish" 
-                 i18n:attributes="value">
+                 i18n:attributes="value" />
           <input type="submit" name="forum_unpublish_posts:method"
                  class="context" value="forum_depublish" 
-                 i18n:attributes="value">
+                 i18n:attributes="value" />
         </tal:block>
         <tal:block condition="python:not comment_mode and is_reviewer">
           <input type="submit" name="forum_lock_thread:method"
                  class="context" value="forum_button_lockunlock" 
-                 i18n:attributes="value">
+                 i18n:attributes="value" />
         </tal:block>
         <tal:block condition="python:comment_mode or is_reviewer">
           <input type="submit" name="forum_del_posts:method"
                  class="destructive" value="forum_delete" 
-                 i18n:attributes="value">
+                 i18n:attributes="value" />
         </tal:block>
-      </td>
-    </tr>
+    </div>
   </form>
 </tal:block>

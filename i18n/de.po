@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum messages\n"
-"POT-Creation-Date: 2004-07-06 14:18default\n"
+"POT-Creation-Date: 2004-07-06 14:47default\n"
 "PO-Revision-Date: 2004-04-06 12:04+CET\n"
 "Last-Translator:  <>\n"
 "Language-Team: de <>\n"
@@ -281,6 +281,18 @@ msgstr "Nachricht"
 #, fuzzy
 msgid "forum_label_attachedFiles"
 msgstr "Nachricht"
+
+#, fuzzy
+msgid "forum_pending_post"
+msgstr "Ab mit der Post!"
+
+#, fuzzy
+msgid "forum_unpublished_post"
+msgstr "Publizieren"
+
+#, fuzzy
+msgid "forum_rejected_post"
+msgstr "Betreff"
 
 #~ msgid "forum_send_moderation_notification"
 #~ msgstr "Moderatoren benachrichtigen (neue Nachrichten)"

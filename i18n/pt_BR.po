@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pt-BR\n"
-"POT-Creation-Date: 2004-07-06 14:18default\n"
+"POT-Creation-Date: 2004-07-06 14:47default\n"
 "PO-Revision-Date: 2004-06-08 15:54-0300\n"
 "Last-Translator: Mario Olimpio de Menezes <mario@curiango.ipen.br>\n"
 "Language-Team: Português do Brasil <pt@li.org>\n"
@@ -278,3 +278,15 @@ msgstr "Mensagem"
 #, fuzzy
 msgid "forum_label_attachedFiles"
 msgstr "Mensagem"
+
+#, fuzzy
+msgid "forum_pending_post"
+msgstr "Postar"
+
+#, fuzzy
+msgid "forum_unpublished_post"
+msgstr "Publicar"
+
+#, fuzzy
+msgid "forum_rejected_post"
+msgstr "Assunto"

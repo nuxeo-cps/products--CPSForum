@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es-CPSForum\n"
-"POT-Creation-Date: 2004-07-06 14:18default\n"
+"POT-Creation-Date: 2004-07-06 14:47default\n"
 "PO-Revision-Date: 2004-03-27 20:39+0100\n"
 "Last-Translator: ¡lvaro Tejero Cantero <alvaro@antalia.com>\n"
 "Language-Team:  Espa√±ol <es@li.org>\n"
@@ -353,6 +353,22 @@ msgstr "Mensaje"
 #, fuzzy
 msgid "forum_label_attachedFiles"
 msgstr "Mensaje"
+
+#    <input value="forum_post" class="standalone" name="forum_post:method" type="submit" />
+#, fuzzy
+msgid "forum_pending_post"
+msgstr "Escribir"
+
+#    <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
+#, fuzzy
+msgid "forum_unpublished_post"
+msgstr "Publicar"
+
+#    <td>Subject</td>
+#    <td class="forumsubheader">Subject</td>
+#, fuzzy
+msgid "forum_rejected_post"
+msgstr "Tema"
 
 #    <td>Send moderation notifications</td>
 #~ msgid "forum_send_moderation_notification"

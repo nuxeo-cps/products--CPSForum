@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2004-07-06 14:18default\n"
-"PO-Revision-Date: 2004-07-06 14:19+0200\n"
+"POT-Creation-Date: 2004-07-06 14:47default\n"
+"PO-Revision-Date: 2004-07-06 14:50+0200\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -273,6 +273,15 @@ msgstr "Post tree display"
 
 msgid "forum_label_attachedFiles"
 msgstr "Attachments"
+
+msgid "forum_pending_post"
+msgstr "Pending"
+
+msgid "forum_unpublished_post"
+msgstr "Unpublished"
+
+msgid "forum_rejected_post"
+msgstr "Rejected"
 
 #~ msgid "forum_link_next_threads <span content=\"threads_per_page\" />"
 #~ msgstr "Next ${threads_per_page} threads"

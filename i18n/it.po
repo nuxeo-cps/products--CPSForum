@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
-"POT-Creation-Date: 2004-07-06 14:18default\n"
+"POT-Creation-Date: 2004-07-06 14:47default\n"
 "PO-Revision-Date: 2004-05-10 12:42+0100\n"
 "Last-Translator: Paolo Dina <paolo@php3.it>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -303,6 +303,18 @@ msgstr "Messaggio"
 #, fuzzy
 msgid "forum_label_attachedFiles"
 msgstr "Messaggio"
+
+#, fuzzy
+msgid "forum_pending_post"
+msgstr "Invia"
+
+#, fuzzy
+msgid "forum_unpublished_post"
+msgstr "Pubblica"
+
+#, fuzzy
+msgid "forum_rejected_post"
+msgstr "Oggetto"
 
 #    <td>Send moderation notifications</td>
 #~ msgid "forum_send_moderation_notification"

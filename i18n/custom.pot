@@ -94,3 +94,12 @@ msgstr ""
 msgid "forum_label_attachedFiles"
 msgstr ""
 
+msgid "forum_pending_post"
+msgstr ""
+
+msgid "forum_unpublished_post"
+msgstr ""
+
+msgid "forum_rejected_post"
+msgstr ""
+

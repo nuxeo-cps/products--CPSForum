@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
-"POT-Creation-Date: 2004-07-06 14:18default\n"
+"POT-Creation-Date: 2004-07-06 14:47default\n"
 "PO-Revision-Date: 2004-02-19 12:43+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -292,6 +292,18 @@ msgstr "Boodschap"
 #, fuzzy
 msgid "forum_label_attachedFiles"
 msgstr "Boodschap"
+
+#, fuzzy
+msgid "forum_pending_post"
+msgstr "Versturen"
+
+#, fuzzy
+msgid "forum_unpublished_post"
+msgstr "Publiceren"
+
+#, fuzzy
+msgid "forum_rejected_post"
+msgstr "Onderwerp"
 
 #~ msgid "forum_send_moderation_notification"
 #~ msgstr "Notify moderators (new messages)"

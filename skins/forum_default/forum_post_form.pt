@@ -44,7 +44,7 @@
                   <input type="text" name="author:string" value="" />
                     <span tal:condition="python:errormsg == 'error_author'"
                           i18n:translate="forum_psm_name_required" 
-                          class="forumerror">Author field must be filled</span>
+                          class="forumError">Author field must be filled</span>
                 </tal:block>
               </td>
             </tr>
@@ -61,11 +61,12 @@
                 <tal:block condition="not:parent_subject">
                   <input type="text" name="subject:string" size="60" />
                 </tal:block>
-
-                    <span tal:condition="python:errormsg == 'error_subject'"
-                          i18n:translate="forum_psm_subject_required" 
-                          class="forumerror">Subject field must be filled</span>
-
+              </td>
+            </tr>
+            <tr tal:condition="python:errormsg == 'error_subject'">
+              <td></td>
+              <td i18n:translate="forum_psm_subject_required" class="forumError">
+                Subject field must be filled
               </td>
             </tr>
             <tr>
@@ -122,7 +123,7 @@
               <input type="text" name="author:string" value="" size="60" />
               <span tal:condition="python:errormsg == 'error_author'"
                     i18n:translate="forum_psm_name_required" 
-                    class="forumerror">Author field must be filled</span>
+                    class="forumError">Author field must be filled</span>
             </tal:block>
           </td>
         </tr>

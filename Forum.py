@@ -143,6 +143,7 @@ class CPSForum(CPSBaseDocument):
             'message': post.text, 'parent_id': post.in_reply_to,
             'published': hasattr(post, 'inforum') and post.inforum,
             'modified': post.bobobase_modification_time(),
+            'locked': post.id in self.locked_threads
         }
 
     security.declareProtected(View, 'addPost')

@@ -31,16 +31,6 @@
                     class="mainbutton"  value="L_forum supprimer" i18n:attributes="value" />
             </td>
         </tr>
-        <!--//
-        <tr>
-            <td colspan="2">
-                <br />
-                    <input type="button" onClick="javascript:selectALL(1);"
-                    class="mainbutton"  value="L_forum tout selectionner" i18n:attributes="value" />
-                    <input type="button" onClick="javascript:selectALL(0);"
-                    class="mainbutton"  value="L_forum tout deselectionner" i18n:attributes="value" />
-            </td>
-        </tr> //-->
       </tal:block>
     </form>
 </tal:block>

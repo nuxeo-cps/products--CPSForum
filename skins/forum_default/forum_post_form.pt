@@ -14,13 +14,7 @@
         <tr>
             <td i18n:translate="L_forum ecrivain">Author</td>
             <td>
-
-                <tal:block replace="nothing">
-                    TODO: add default author
-                    when forum manager is posting
-                </tal:block>
                 <tal:block condition="not:here/portal_membership/isAnonymousUser">
-
                     <tal:block define="
                       user_id member/getUserName;
                       user_props python:dtool.getEntry(user_id);

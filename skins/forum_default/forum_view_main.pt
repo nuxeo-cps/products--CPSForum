@@ -34,34 +34,6 @@
                     <tr><td colspan="2">
                         <tal:block replace="structure python:here.forum_view_threads(post_id=post_id, threads=threads, is_reviewer=is_reviewer)" />
                     </td></tr>
-                    <tal:block condition="nothing">
-                        <tr><td class="forumheader" colspan="2" i18n:translate="L_forum reponses">Réponses</td></tr>
-                        <tal:block repeat="post replies">
-                            <tal:block condition="python: is_reviewer or post['published']">
-                                <tr>
-                                    <td width="20%">
-                                        <span class="forum_author" tal:content="python:post['author']">
-                                            Author
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <tal:block condition="python: post['published']">
-                                            <a tal:content="python:post['subject']"
-                                            tal:attributes="href python:here.absolute_url()+'/?post_id='+post['id']">
-                                                Title
-                                            </a>
-                                        </tal:block>
-                                        <tal:block condition="python: is_reviewer and not post['published']">
-                                            <b><a tal:content="python:post['subject']"
-                                                tal:attributes="href python:here.absolute_url()+'/?post_id='+post['id']">
-                                                Subject
-                                            </a></b>
-                                        </tal:block>
-                                    </td>
-                                </tr>
-                            </tal:block>
-                        </tal:block>
-                    </tal:block>
                 </tal:block>
                 <tr tal:condition="python:not len(threads)">
                     <td i18n:translate="L_forum no_message" class="forumempty">
@@ -69,18 +41,6 @@
                     </td>
                 </tr>
             </table>
-            <span id="forum_retract" style="visibility:hidden;width:0;height:0;">
-                &nbsp;|&nbsp;
-                <a href="javascript:;" onClick="javascript:changeAll(0);" style="color:white;" i18n:translate="L_forum replier">
-                    Replier le fil
-                </a>
-            </span>
-            <span id="forum_expand" style="visibility:hidden;width:0;height:0;">
-                &nbsp;|&nbsp;
-                <a href="javascript:;" onClick="javascript:changeAll(1);" style="color:white" i18n:translate="L_forum deplier">
-                    Déplier le fil
-                </a>
-            </span>
         </metal:block>
     </metal:block>
 </tal:block>

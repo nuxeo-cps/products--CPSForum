@@ -10,6 +10,8 @@ New features:
 - member's information is displayed in a popup window when clicking on author
   name
 - posts can be sorted by thread, subject, date, author
+- forum content is now batched by default (default setting is 30 threads/posts
+  per page)
 
 Bug fixes:
 ~~~~~~~~~~

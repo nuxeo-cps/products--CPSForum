@@ -1,4 +1,4 @@
-# TODO: 
+# TODO:
 # - don't depend on getDocumentSchemas / getDocumentTypes but is there
 #   an API for that ?
 
@@ -14,10 +14,13 @@ import CPSForumTestCase
 class TestForum(CPSForumTestCase.CPSForumTestCase):
 
     def afterSetUp(self):
+        forum_id = 'forum'
         self.login('root')
         self.ws = self.portal.workspaces
-        self.ws.invokeFactory('CPSForum', 'forum')
-        self.forum = self.ws.forum
+
+        self.ws.invokeFactory('CPSForum', forum_id)
+        self.proxy_forum = getattr(self.ws, forum_id)
+        self.forum = self.proxy_forum.getContent()
 
         mdir = self.portal.portal_directories.members
         mdir.createEntry({'id': 'author'})
@@ -34,15 +37,15 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
 
     def testEmptyForum(self):
         forum = self.forum
-
+        proxy_forum = self.proxy_forum
         # Test skins
-        forum.forum_view()
-        forum.forum_post_form()
-        forum.forum_edit_form()
+        proxy_forum.forum_view()
+        proxy_forum.forum_post_form()
+        proxy_forum.forum_edit_form()
 
-        forum.forum_localrole_form()
+        proxy_forum.forum_localrole_form()
         self.portal.REQUEST.role_submit = 1
-        forum.forum_localrole_form()
+        proxy_forum.forum_localrole_form()
 
         forum.getPosterName('author')
         forum['forum_icon.gif']
@@ -52,10 +55,10 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
 
     def testEditForum(self):
         forum = self.forum
-        forum.editForumProperties(title="new title", 
-            description="new description", moderation_mode=0)
-        self.assertEquals(forum.title, "new title")
-        self.assertEquals(forum.description, "new description")
+        forum.edit(Title="new title",
+                   Description="new description", moderation_mode=0)
+        self.assertEquals(forum.Title(), "new title")
+        self.assertEquals(forum.Description(), "new description")
         self.assertEquals(forum.moderation_mode, 0)
 
     def testModerators(self):
@@ -63,7 +66,7 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         self.assertEquals(forum.getModerators(forum), [])
 
         pmtool = forum.portal_membership
-        pmtool.setLocalRoles(forum, member_ids=['root'], 
+        pmtool.setLocalRoles(forum, member_ids=['root'],
             member_role='ForumModerator')
         self.assertEquals(forum.getModerators(forum), ['user:root'])
 
@@ -140,4 +143,3 @@ def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(TestForum))
     return suite
-

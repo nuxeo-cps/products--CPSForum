@@ -22,9 +22,6 @@ from Products.CMFCore.CMFCorePermissions import View, \
      ManageProperties, ChangePermissions
 from Products.CMFCore.utils import mergedLocalRoles
 from Products.CPSCore.CPSBase import CPSBaseDocument, CPSBase_adder
-
-from Products.CPSCore.EventServiceTool import getEventService
-
 #from Post import Post
 
 from zLOG import LOG, DEBUG
@@ -165,33 +162,6 @@ class CPSForum(CPSBaseDocument):
         post = self.portal_discussion.getDiscussionFor(self).getReply(id)
         # XXX: this breaks encapsulation. Fix this.
         post.inforum = state
-
-    def notifyPostCreation(self, url_to_display=None, comment=0):
-        """ Notify the event service tool that an new post or comment
-        has been created
-
-        We need to call it from the skins to make the difference in between
-        post and comment and as well to give the event_service the URL of
-        the post to display
-        (i.e: http://cps.bar.com/forum/forum_view_thread?post_id=4444)
-        Notice, the URL is coompletly different form the URL of the
-        post object itself
-        """
-        evtool = getEventService(self)
-
-        #
-        # We want to separate thes two types of events
-        # Normal post / Commment
-        #
-
-        if comment:
-            event_id = 'forum_comment_create'
-        else:
-            event_id = 'forum_new_message'
-
-        evtool.notify(event_id,
-                      self,
-                      {'url_to_display':url_to_display})
 
     def __getitem__(self, id):
         """Return postinfo

@@ -207,7 +207,7 @@ class CPSForum(BaseDocument):
                 'id': post.id, 'subject': post.Title(), 'author': post_doc.author,
                 'message': post_doc.Description(), 'parent_id': post_doc.parent_id,
                 'published': r_state == 'published',
-                'rstate': r_state,
+                'review_state': r_state,
                 'modified': post_doc.bobobase_modification_time(),
                 'locked': post_doc.id in self.locked_threads
                 }

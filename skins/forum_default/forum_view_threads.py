@@ -41,7 +41,9 @@ if (getattr(forum, 'tree_display', 'title') != 'title' or
         else:
             return date + subject
 
-    if sort_by.startswith('subject'):
+    if sort_by is None:
+        make_sortkey = date_sortkey
+    elif sort_by.startswith('subject'):
         make_sortkey = subject_sortkey
     elif sort_by.startswith('author'):
         make_sortkey = author_sortkey

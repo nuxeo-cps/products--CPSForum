@@ -57,13 +57,38 @@ This means all versions up to (and including) release 0.7.0-1 of April 2004.
 Features
 --------------------------------------------------
 
-TODO
+Forum objects can be created in sections or workspaces.
+
+- Forum settings
+  - Moderation
+    It is possible to assign moderators to any forum.
+    There are two kinds of moderation:
+    - 'a priori': messages posted have to be validated by the moderator
+      to be visible by other users.
+    - 'a posteriori': messages posted are visible to the users as soon as they
+      published. But the moderator can make them unvisible or delete them
+      afterwards.
+  - Anonymous posts: it is possible to allow anonymous users to post messages
+    in the forum.
+  - Lock: it is possible to lock the forum, making it read only.
+  - Number of discussion threads per page: a maximum number of threads per page
+    can be set. The value 0 means that there is no limit.
+
+- Forum posts handling
+  Users allowed to post messages can create new discussion threads or answer to
+  messages in other discussion threads.
+  If the forum is moderated 'a priori', the message will appear in the thread
+  with a red spot in front of it, meaning that other users cannot see it.
+  Users moderating the forum can publish this kind of messages, making them
+  visible to all the other users in this forum.
+  Moderators can also unpublish, or even delete messages.
 
 --------------------------------------------------
 Roles and permissions
 --------------------------------------------------
 
 Some details about roles and permissions associated with forums:
+
 - there are three permissions associated with forums:
   * 'Forum Moderate' required to publish/unpublish/delete posts,
   * 'Forum Post' required to post new messages,
@@ -84,6 +109,8 @@ In addition, it is possible to assign roles ForumModerator and ForumPoster
 (which speak for themselves) locally in a forum. It is also possible to
 change default settings by using CPSInstaller.setupPortalPermissions()
 
+A given user has to have access to a forum object to be able to use his/her
+roles specific to the forum.
 
 --------------------------------------------------
 Discussions (comments about documents)

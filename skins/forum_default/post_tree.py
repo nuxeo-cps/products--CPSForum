@@ -61,9 +61,9 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
             counter += 1
             
             if counter%2:
-                row_class = 'odd'
-            else:
                 row_class = 'even'
+            else:
+                row_class = 'odd'
             
             result += '<tr id="thread_%s" class="%s">' % \
                       (post['id'], row_class)

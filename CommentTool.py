@@ -241,7 +241,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
                 return self.getUserName()
         mtool = getToolByName(self, 'portal_membership')
         old_user = getSecurityManager().getUser()
-        tmp_user = CPSUnrestrictedUser('root', '',
+        tmp_user = CPSUnrestrictedUser('anonymous__forum__poster', '',
                                        ['Manager', 'Member'], '')
         tmp_user = tmp_user.__of__(mtool.acl_users)
         newSecurityManager(None, tmp_user)

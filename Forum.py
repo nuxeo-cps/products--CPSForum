@@ -22,9 +22,8 @@ from Products.CMFCore.CMFCorePermissions import View, \
      ManageProperties, ChangePermissions
 from Products.CMFCore.utils import mergedLocalRoles
 from Products.CPSCore.CPSBase import CPSBaseDocument, CPSBase_adder
-#from Post import Post
 
-from zLOG import LOG, DEBUG
+from CPSForumPermissions import ForumModerate, ForumPost
 
 factory_type_information = ({
     'id': 'Forum',
@@ -109,6 +108,8 @@ class CPSForum(CPSBaseDocument):
     frozen_forum = 0
     moderators = []
     security = ClassSecurityInfo()
+    #contains root post ids of locked threads
+    locked_threads = []
 
     security.declareProtected(View, 'getThreads')
     def getThreads(self):
@@ -170,7 +171,7 @@ class CPSForum(CPSBaseDocument):
         The post is refered to by its id"""
         self.portal_discussion.getDiscussionFor(self).deleteReply(id)
 
-    security.declareProtected(View, 'changePostPublicationStatus')
+    security.declareProtected(ForumModerate, 'changePostPublicationStatus')
     def changePostPublicationStatus(self, id, status=1):
         """(Un)Publish post <id>"""
         post = self.portal_discussion.getDiscussionFor(self).getReply(id)
@@ -220,6 +221,49 @@ class CPSForum(CPSBaseDocument):
 
         return result
 
+    security.declarePrivate('getRootPost')
+    def getRootPost(self, post_id):
+        """get the root post of thread post_id belongs to"""
+    
+        discussion = self.portal_discussion.getDiscussionFor(self)
+        post = discussion.getReply(post_id)
+        while post.in_reply_to is not None:
+            post = discussion.getReply(post.in_reply_to)
+        return post
+
+    security.declarePublic('belongsToLockedThread')
+    def belongsToLockedThread(self, post_id):
+        """Is a post in a locked thread"""
+
+        root_post = self.getRootPost(post_id)
+        return root_post.id in self.locked_threads
+
+    security.declareProtected(ForumModerate, 'toggleThreadsLockStatus')
+    def toggleThreadsLockStatus(self, post_ids=[]):
+        """lock/unlock threads
+
+        Depends on current lock status for each thread"""
+        root_post_ids = []
+        # first get a list of all root posts, removing duplicates
+        # (in case user selected several posts in the same thread)
+        for post_id in post_ids:
+            root_post_id = self.getRootPost(post_id).id
+            if root_post_id not in root_post_ids:
+                root_post_ids.append(root_post_id)
+        for root_post_id in root_post_ids:
+            self.changeThreadLockStatus(root_post_id,
+                                        lock=root_post_id in self.locked_threads)
+
+    security.declarePrivate('changeThreadLockStatus')
+    def changeThreadLockStatus(self, root_post_id, lock=0):
+        """(un)lock a thread"""
+
+        #By adding/removing the root post from the list of locked threads
+        if lock:
+            self.locked_threads.remove(root_post_id)
+        else:
+            self.locked_threads.append(root_post_id)
+        
     security.declareProtected('Modify Folder Properties', 'editForumProperties')
     def editForumProperties(self, **kw):
         """Edit forum properties

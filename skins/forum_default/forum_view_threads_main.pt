@@ -70,7 +70,8 @@
                                                              post_id=post_id,
                                                              frm_start=batch_start,
                                                              sort_by=sort_by,
-                                                             display_mode=display_mode)"/>
+                                                             display_mode=display_mode,
+                                                             forum=forum)"/>
     </tal:block>
     </tal:block>
     <tal:block tal:condition="not: threads_per_page">
@@ -105,7 +106,8 @@
       <tal:span tal:content="structure python:here.post_tree(descendants=descendants, 
                                                              post_id=post_id,
                                                              sort_by=sort_by,
-                                                             display_mode=display_mode)"/>
+                                                             display_mode=display_mode,
+                                                             forum=forum)"/>
     </tal:block>
   </table>
   <div class="forumModeration">

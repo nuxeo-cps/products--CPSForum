@@ -2,11 +2,11 @@
 
 # $Id$
 
-doc = context.getContent()
+forum = context.getContent()
 result = []
-for i in doc.getThreads():
-    result.append((i, doc.getDescendants(i['id']),))
+for thread_info in forum.getThreads():
+    result.append((thread_info, forum.getDescendants(thread_info['id']),))
 
-return context.forum_view_threads_main(post_id=post_id, descendants=result, 
-                                       is_reviewer=is_reviewer, comment_mode=0,
-                                       forum=doc)
+return context.forum_view_threads_main(
+    post_id=post_id, descendants=result, is_reviewer=is_reviewer, 
+    comment_mode=0, forum=forum)

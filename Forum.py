@@ -211,9 +211,9 @@ class CPSForum(CPSBaseDocument):
         """XXX: docstring???"""
         all = mergedLocalRoles(proxy)
         result = []
-        for user in all.keys():
-            if 'ForumModerator' in all[user]:
-                result.append(user)
+        for user_id in all.keys():
+            if 'ForumModerator' in all[user_id]:
+                result.append(user_id)
         return result
 
     security.declarePublic('getOfficialModerators')
@@ -222,14 +222,19 @@ class CPSForum(CPSBaseDocument):
         moderator_list = self.getModerators(proxy)
         dtool = getToolByName(self, 'portal_metadirectories').members
         portal_url = getToolByName(self, 'portal_url').getPortalPath()
+        # XXX: this is dangerous. This URL may change one day. We need
+        # an API.
         dtool_entry_url = "%s/directory_getentry?dirname=%s&entry_id=" \
                           % (portal_url, dtool.id)
         result = []
-        for moderator in moderator_list:
-            mdata = {'id': moderator}
-            mdata['fullname'] = \
-                dtool.getEntry(moderator)[dtool.display_prop] or moderator
-            mdata['homedir'] = dtool_entry_url + moderator
+        for moderator_id in moderator_list:
+            mdata = {'id': moderator_id}
+            entry = dtool.getEntry(moderator_id)
+            if entry:
+                mdata['fullname'] = entry[dtool.display_prop] or moderator_id
+            else:
+                mdata['fullname'] = moderator_id
+            mdata['homedir'] = dtool_entry_url + moderator_id
             result.append(mdata)
         return result
 

@@ -11,18 +11,18 @@
            tal:define="comment_id request/comment_id|nothing;
                        threads forum/getThreads;">
       <tal:block condition="comment_id"
-                   replace="structure 
+                 replace="structure 
                               python:here.post_view_snippet(post_id=comment_id, 
                                                             forum=forum,
                                                             is_reviewer=0,
                                                             comment_mode=1)"/>
-      <tal:block condition="python:len(threads)">
-        <tr><td colspan="2">
+      <tr tal:condition="python:len(threads)">
+        <td colspan="2">
           <tal:block replace="structure 
-                                python:here.forum_view_comments(
-                                                    comment_id,forum)" />
-        </td></tr>
-      </tal:block>
+                              python:here.forum_view_comments(
+                                                    comment_id, forum)" />
+        </td>
+      </tr>
       <tr tal:condition="python:not len(threads)">
         <td i18n:translate="forum_no_message" class="forumempty">
           No comment associated with this document.

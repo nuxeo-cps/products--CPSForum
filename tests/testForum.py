@@ -29,7 +29,13 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
 
     def testEmptyForum(self):
         forum = self.forum
+
+        # Test skins
         forum.forum_view()
+        forum.forum_post_form()
+        forum.forum_edit_form()
+        forum.getPosterName('toto')
+        forum['forum_icon.gif']
 
         self.assertEquals(forum.moderation_mode, 1)
         self.assertEquals(forum.getThreads(), [])
@@ -42,6 +48,21 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         self.assertEquals(forum.description, "new description")
         self.assertEquals(forum.moderation_mode, 0)
 
+    def testModerators(self):
+        forum = self.forum
+        self.assertEquals(forum.getModerators(forum), [])
+        self.assertEquals(forum.getOfficialModerators(forum), [])
+
+        pmtool = forum.portal_membership
+        pmtool.setLocalRoles(forum, member_ids=['root'], 
+            member_role='ForumModerator')
+        self.assertEquals(forum.getModerators(forum), ['root'])
+        self.assertEquals(forum.getOfficialModerators(forum), [{
+            'id': 'root', 
+            'homedir': 
+                '/portal/directory_getentry?dirname=members&entry_id=root', 
+            'fullname': 'root'}])
+
 
     def testPostCreation1(self):
         # Create new post using skin method.
@@ -53,6 +74,7 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
 
         forum.forum_view()
         forum.forum_view(post_id)
+        forum.forum_post_reply(parent_id=post_id)
 
         post = forum[post_id]
         self.assertEquals(post['id'], post_id)
@@ -63,17 +85,13 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         self.assertEquals(post['published'], 0)
         self.assert_(post['modified'])
 
+        # Publish / unpublish
         forum.forum_publish_posts((post_id,))
         post = forum[post_id]
         self.assertEquals(post['published'], 1)
         forum.forum_unpublish_posts((post_id,))
         post = forum[post_id]
         self.assertEquals(post['published'], 0)
-
-        # getModerators / getOfficialModerators need a proxy so we put the
-        # test here
-        # self.assertEquals(forum.getModerators(post), [])
-        # self.assertEquals(forum.getOfficialModerators(post), [])
 
         forum.forum_del_posts((post_id,))
         self.assertEquals(forum.getThreads(), [])
@@ -107,10 +125,12 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
             author='authorr2', parent_id=post1_id)
         self.assertEquals(len(forum.getThreads()), 1)
 
+        self.assertEquals(len(forum.getPostReplies(post1_id)), 1)
+        self.assertEquals(len(forum.getPostReplies(post2_id)), 0)
+
         forum.forum_view()
         forum.forum_view(post1_id)
         forum.forum_view(post2_id)
-
 
 
 def test_suite():

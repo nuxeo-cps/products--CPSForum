@@ -339,7 +339,7 @@ def install(self):
             id='comment',
             name='action_comment',
             action='string: ${object/absolute_url}/forum_post_form?comment_mode=1',
-            condition="python: object is not None and hasattr(portal,'portal_discussion') and portal.portal_discussion.isCommentingAllowedFor(object)",
+            condition="python: object is not None and hasattr(portal,'portal_discussion') and hasattr(portal.portal_discussion,'isCommentingAllowedFor') and portal.portal_discussion.isCommentingAllowedFor(object)",
             permission='View',
             category='workflow')
         pr(" Added")

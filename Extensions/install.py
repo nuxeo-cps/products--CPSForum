@@ -38,7 +38,7 @@ HOWTO USE THAT ?
 """
 
 from Products.CPSInstaller.CPSInstaller import CPSInstaller
-from Products.CMFCore.CMFCorePermissions import View, ModifyPortalContent
+from Products.CMFCore.permissions import View, ModifyPortalContent
 from Products.CPSForum.CPSForumPermissions import ForumPost, ForumModerate,\
      ForumManageComments
 from Products.CPSWorkflow.transitions import \

@@ -20,7 +20,7 @@ from AccessControl import ClassSecurityInfo
 from Acquisition import aq_inner, aq_parent
 
 from Products.CMFCore.utils import getToolByName
-from Products.CMFCore.CMFCorePermissions import View, ChangePermissions
+from Products.CMFCore.permissions import View, ChangePermissions
 from Products.CPSCore.CPSBase import CPSBase_adder
 from Products.CPSCore.EventServiceTool import getEventService
 try:

@@ -27,7 +27,7 @@
 
 """
 
-from Products.CMFCore.CMFCorePermissions import setDefaultRoles
+from Products.CMFCore.permissions import setDefaultRoles
 
 ForumPost = 'Forum Post'
 setDefaultRoles(ForumPost, ('Manager', 'Owner'))

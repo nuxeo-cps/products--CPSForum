@@ -28,7 +28,7 @@ from AccessControl.SecurityManagement import getSecurityManager,\
      newSecurityManager
 
 from Products.CMFCore.PortalFolder import PortalFolder
-from Products.CMFCore.CMFCorePermissions import ManagePortal, View,\
+from Products.CMFCore.permissions import ManagePortal, View,\
      ModifyPortalContent
 from Products.CMFCore.utils import UniqueObject, getToolByName
 from Products.CMFCore.ActionProviderBase import ActionProviderBase

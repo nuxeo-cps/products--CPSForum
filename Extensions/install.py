@@ -193,7 +193,7 @@ def install(self):
 
     # in sections
     wfdef = {'wfid': 'section_forum_wf',
-            'permissions': (View,)}
+            'permissions': (View, ModifyPortalContent)}
 
     wfstates = {
         'work': {
@@ -346,6 +346,7 @@ def install(self):
     wfscripts = {
             'post_edit': {
                 '_owner': None,
+                '_proxy_roles': ['Manager'],
                 'script': """\
 ##parameters=state_change
 object = state_change.object
@@ -364,6 +365,7 @@ object.getEditableContent().edit(**kw)
             },
             'post_publish': {
                 '_owner': None,
+                '_proxy_roles': ['Manager'],
                 'script': """\
 ##parameters=state_change
 object = state_change.object

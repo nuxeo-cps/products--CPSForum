@@ -112,8 +112,10 @@ In addition, it is possible to assign roles ForumModerator and ForumPoster
 (which speak for themselves) locally in a forum. It is also possible to
 change default settings by using CPSInstaller.setupPortalPermissions()
 
-A given user must have access to a forum object to be able to use his/her
-roles specific to the forum.
+Whatever their local roles/permissions on a given forum, users need also
+to have standard permissions set on it (e.g. View). This should be the case
+unless you have been making significant changes to the default CPS
+role/permission mapping.
 
 --------------------------------------------------
 Discussions (comments about documents)

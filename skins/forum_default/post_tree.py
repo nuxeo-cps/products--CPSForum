@@ -23,7 +23,7 @@ try:
 except AttributeError:
     session_data = None
 
-tree_display = forum.tree_display
+tree_display = getattr(forum, 'tree_display', 'title')
 
 def getHeadline(post):
     subject = cgi.escape(post['subject'])

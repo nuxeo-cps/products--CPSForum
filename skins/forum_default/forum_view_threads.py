@@ -12,7 +12,8 @@ try:
 except AttributeError:
     sort_by = None
 
-if forum.tree_display != 'title' or (sort_by is not None and sort_by != 'threads'):
+if (getattr(forum, 'tree_display', 'title') != 'title' or
+    (sort_by is not None and sort_by != 'threads')):
     post_proxies = context.objectValues(['CPS Proxy Document'])
     post_infos = [forum.getPostInfo(proxy) for proxy in post_proxies]
 
@@ -81,5 +82,5 @@ else:
 return context.forum_view_threads_main(post_id=post_id, descendants=result,
                                        is_reviewer=is_reviewer, forum=forum,
                                        sort_by=sort_by,
-                                       display_mode=forum.tree_display)
+                                       display_mode=getattr(forum, 'tree_display', 'title'))
 

@@ -1,0 +1,88 @@
+<metal:html use-macro="here/content_lib/macros/master">
+<metal:block fill-slot="header" />
+<metal:main fill-slot="main">
+<tal:block define="post_id request/post_id|nothing;
+                   doc here/getContent|here;
+                   threads doc/getThreads;
+                   post python:doc[post_id];
+                   replies python:post and doc.getPostReplies(post_id);
+
+                   image doc/image|nothing;
+                   description doc/description|nothing;
+                   portal_message request/portal_message|nothing;
+
+                   is_reviewer python: here.portal_membership.checkPermission('Review portal content',here);
+            ">
+    <metal:block use-macro="here/main_widgets/macros/boxstd">
+        <metal:block fill-slot="box_title" tal:content="doc/title">
+            Title
+        </metal:block>
+
+        <metal:block fill-slot="box_body">
+            <span tal:content="description">Description</span>
+            <br/>
+            <tal:block i18n:translate="L_forum valideur">Moderators</tal:block>:
+            <tal:block repeat="moderator python:doc.getOfficialModerators(here)">
+                <a tal:attributes="href moderator/homedir" tal:content="moderator/fullname">fullname
+                </a><tal:block condition="not:repeat/moderator/end">,</tal:block>
+              </tal:block>
+            <table style="width:100%;" cellspacing="0" cellpadding="0">
+                <tal:block condition="post_id" replace="structure python:here.post_view_snippet(post_id=post_id, threads=threads, is_reviewer=is_reviewer)" />
+                <tr><td colspan="2">&nbsp;</td></tr>
+
+                <tal:block condition="python:len(threads)">
+                    <tr><td colspan="2">
+                        <tal:block replace="structure python:here.forum_view_threads(post_id=post_id, threads=threads, is_reviewer=is_reviewer)" />
+                    </td></tr>
+                    <tal:block condition="nothing">
+                        <tr><td class="forumheader" colspan="2" i18n:translate="L_forum reponses">Réponses</td></tr>
+                        <tal:block repeat="post replies">
+                            <tal:block condition="python: is_reviewer or post['published']">
+                                <tr>
+                                    <td width="20%">
+                                        <span class="forum_author" tal:content="python:post['author']">
+                                            Author
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <tal:block condition="python: post['published']">
+                                            <a tal:content="python:post['subject']"
+                                            tal:attributes="href python:here.absolute_url()+'/?post_id='+post['id']">
+                                                Title
+                                            </a>
+                                        </tal:block>
+                                        <tal:block condition="python: is_reviewer and not post['published']">
+                                            <b><a tal:content="python:post['subject']"
+                                                tal:attributes="href python:here.absolute_url()+'/?post_id='+post['id']">
+                                                Subject
+                                            </a></b>
+                                        </tal:block>
+                                    </td>
+                                </tr>
+                            </tal:block>
+                        </tal:block>
+                    </tal:block>
+                </tal:block>
+                <tr tal:condition="python:not len(threads)">
+                    <td i18n:translate="L_forum no_message" class="forumempty">
+                        Aucun message dans ce forum !
+                    </td>
+                </tr>
+            </table>
+            <span id="forum_retract" style="visibility:hidden;width:0;height:0;">
+                &nbsp;|&nbsp;
+                <a href="javascript:;" onClick="javascript:changeAll(0);" style="color:white;" i18n:translate="L_forum replier">
+                    Replier le fil
+                </a>
+            </span>
+            <span id="forum_expand" style="visibility:hidden;width:0;height:0;">
+                &nbsp;|&nbsp;
+                <a href="javascript:;" onClick="javascript:changeAll(1);" style="color:white" i18n:translate="L_forum deplier">
+                    Déplier le fil
+                </a>
+            </span>
+        </metal:block>
+    </metal:block>
+</tal:block>
+</metal:main>
+</metal:html>

@@ -1,0 +1,78 @@
+<metal:html use-macro="here/content_lib/macros/master">
+<metal:block fill-slot="header" />
+<metal:main fill-slot="main">
+<form method="POST"
+        tal:attributes="action here/absolute_url"
+        tal:define="doc here/getContent|here;
+                moderation_mode doc/moderation_mode|nothing;
+                moderators doc/moderators">
+
+    <table>
+        <tr>
+            <td i18n:translate="L_forum titre">Titre</td>
+            <td>
+                <input type="text" name="title:string" 
+                    tal:attributes="value doc/title">
+            </td>
+        </tr>
+        <tr>
+            <td i18n:translate="L_forum replier">Replier le fil</td>
+            <td>
+                <textarea  rows="3" cols="30" name="description:string"
+                    tal:content="doc/description"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td i18n:translate="L_forum moderation">Modération</td>
+            <td>
+                <select name="moderation_mode:int">
+                    <option value="0" i18n:translate="L_forum a posteriori"
+                        tal:attributes="selected python:not moderation_mode">
+                      à posteriori
+                    </option>
+                    <option value="1" i18n:translate="L_forum a priori"
+                        tal:attributes="selected python:not not moderation_mode">
+                      à priori
+                    </option>
+                <select/>
+            </td>
+        </tr>
+        <tr>
+            <td i18n:translate="L_forum valideurs">Moderators</td>
+            <td>
+                <select name="moderators:list" multiple>
+                    <option tal:define="reviewers python:doc.getModerators(here)"
+                            tal:repeat="reviewer reviewers"
+                            tal:attributes="value reviewer;
+                                            selected python:reviewer in moderators"
+                            tal:content="reviewer">
+                      user_name_here
+                    </option>
+                <select/>
+            </td>
+        </tr>
+
+        <!-- tr>
+            <td i18n:translate="L_forum image">Image</td>
+            <td tal:define="image doc/image|nothing;">
+                <table tal:condition="image"> <tr><td>
+                    <p tal:condition="image" tal:content="structure image" />
+                </td><td>
+                    <input tal:condition="image" type="checkbox" name="image_delete:boolean" />
+                    Delete
+                </td></tr> </table>
+                <input type="file" name="image:file" />
+            </td>
+        </tr -->
+        <tr>
+            <td />
+            <td>
+                <input type="hidden" name="type" value="Forum" />
+                <input type="submit" name="forum_edit:method"
+                  class='mainbutton' tal:attributes="value string:L_forum Modifier" i18n:attributes="value" />
+            </td>
+        </tr>
+    </table>
+</form>
+</metal:main>
+</metal:html>

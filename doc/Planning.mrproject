@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<project xmlns="http://mrproject.codefactory.se/format/project/1" name="" company="" manager="">
+  <tasks>
+    <task id="1" name="Initialisation" start="20030409T130000" end="20030409T140000" percent-complete="0" note="">
+      <predecessors/>
+    </task>
+    <task id="2" name="Usecases" start="20030409T130000" end="20030409T140000" percent-complete="0" note="">
+      <predecessors/>
+    </task>
+    <task id="3" name="Diagrammes" start="20030409T130036" end="20030409T140036" percent-complete="0" note="">
+      <predecessors/>
+    </task>
+    <task id="4" name="Fonctionnement CMF1.3" start="20030409T130036" end="20030409T140036" percent-complete="0" note="">
+      <predecessors/>
+    </task>
+    <task id="5" name="Int&#233;gration CPS" start="20030409T130036" end="20030409T140036" percent-complete="0" note="">
+      <predecessors/>
+    </task>
+    <task id="6" name="Skinning" start="20030409T130036" end="20030409T150036" percent-complete="0" note="">
+      <predecessors/>
+    </task>
+  </tasks>
+  <resource-groups/>
+  <resources>
+    <resource id="1" name="S&#233;bastien Migniot" group="-1" type="1" units="100" email="" std-rate="100.000000" ovt-rate="200.000000"/>
+  </resources>
+  <allocations>
+    <allocation task-id="1" resource-id="1"/>
+  </allocations>
+</project>

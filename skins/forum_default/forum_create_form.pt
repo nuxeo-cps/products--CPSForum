@@ -1,0 +1,56 @@
+<metal:html use-macro="here/content_lib/macros/master">
+<metal:block fill-slot="header" />
+<metal:main fill-slot="main">
+
+<form method="POST"
+        tal:attributes="action here/absolute_url" 
+        tal:define="doc here/getContent|here;">
+    <table>
+        <tr>
+            <td i18n:translate="L_forum titre">Titre</td>
+            <td>
+                <input type="text" name="title:string"  i18n:translate=""
+                    tal:attributes="value string:Forum ${doc/title}">
+            </td>
+        </tr>
+        <tr>
+            <td i18n:translate="L_forum description">Description</td>
+            <td>
+                <textarea  rows="6" cols="40" name="description:string"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td i18n:translate="L_forum moderation">Modération</td>
+            <td>
+                <select name="moderation_mode:int">
+                    <option value="0" i18n:translate="L_forum a posteriori">à posteriori</option>
+                    <option value="1" i18n:translate="L_forum a priori">à priori</option>
+                <select/>
+            </td>
+        </tr>
+
+        <!--//<tr>
+            <td i18n:translate="L_forum image">Image</td>
+            <td tal:define="image doc/image|nothing;">
+                <table tal:condition="image"> <tr><td>
+                    <p tal:condition="image" tal:content="structure image" />
+                </td><td>
+                    <input tal:condition="image" type="checkbox" name="image_delete:boolean" />
+                    Delete
+                </td></tr> </table>
+                <input type="file" name="image:file" />
+            </td>
+        </tr>//-->
+        <tr>
+            <td />
+            <td>
+                <input type="hidden" name="type" value="Forum" />
+                <input type="submit" name="forum_create:method"
+                  class='mainbutton' tal:attributes="value string:L_forum creer"
+                  i18n:attributes="value" />
+            </td>
+        </tr>
+    </table>
+</form>
+</metal:main>
+</metal:html>

@@ -66,6 +66,7 @@ forumpost_type = {
     'cps_proxy_type': 'document',
     'schemas': ['common', 'metadata', 'forumpost'],
     'layouts': ['forumpost'],
+    'layout_clusters': ['metadata:metadata'],
     'cps_workspace_wf': 'forum_post_wf',
     'cps_section_wf': 'forum_post_wf',
     'use_content_status_history': 1,

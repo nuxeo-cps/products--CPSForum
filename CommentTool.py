@@ -57,7 +57,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     #
     # ZMI methods
     security.declareProtected(ManagePortal, 'manage_overview')
-    manage_overview = DTMLFile('dtml/explainCommentTool')
+    manage_overview = DTMLFile('dtml/explainCommentTool', globals())
 
     #
     # 'portal_comment' interface methods

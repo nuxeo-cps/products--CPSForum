@@ -41,6 +41,8 @@ import os, sys
 from zLOG import LOG, INFO, DEBUG
 from Products.CMFCore.CMFCorePermissions import setDefaultRoles
 
+from Products.CMFDefault.DiscussionTool import DiscussionTool
+from Products.CPSForum.CommentTool import CommentTool
 
 def cps_forum_i18n_update(self):
     """
@@ -159,12 +161,18 @@ def install(self):
     ##########################################
     # Comment Tool
     ##########################################
-    pr("Installing Comment Tool")
-    if portalhas('portal_comment'):
-        prok()
+    pr("Installing CPS Discussion Tool")
+    if portalhas('portal_discussion'):
+        if isinstance(portal.portal_discussion,CommentTool):
+            prok()
+        else:
+            pr(" Destroying existing CMF portal_discussion")
+            portal.manage_delObjects(['portal_discussion',])
+            pr(" Creating CPS Discussion Tool (portal_discussion)")
+            portal.manage_addProduct["CPSForum"].manage_addTool('CPS Discussion Tool')
     else:
-        pr(" Creating Comment Tool (portal_comment)")
-        portal.manage_addProduct["CPSForum"].manage_addTool('Comment Tool')
+        pr(" Creating CPS Discussion Tool (portal_discussion)")
+        portal.manage_addProduct["CPSForum"].manage_addTool('CPS Discussion Tool')
 
     #################################################
     # PORTAL TYPES
@@ -331,7 +339,7 @@ def install(self):
             id='comment',
             name='action_comment',
             action='string: ${object/absolute_url}/forum_post_form?comment_mode=1',
-            condition="python: object is not None and hasattr(portal,'portal_comment') and portal.portal_comment.isCommentingAllowedFor(object)",
+            condition="python: object is not None and hasattr(portal,'portal_discussion') and portal.portal_discussion.isCommentingAllowedFor(object)",
             permission='View',
             category='workflow')
         pr(" Added")

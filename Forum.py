@@ -40,29 +40,29 @@ factory_type_information = (
         'actions': (
             {
             'id': 'view',
-            'name': 'L_forum action view',
+            'name': 'action_view',
             'action': 'forum_view',
             'permissions': (View,),
             },
              {'id': 'create',
-              'name': 'L_forum action create',
+              'name': 'action_create',
               'action': 'forum_create_form',
               'visible': 0,
               'permissions': ('',)},
             {
             'id': 'edit',
-            'name': 'L_forum action modify',
+            'name': 'action_modify',
             'action': 'forum_edit_form',
             'permissions': (ManageProperties,),
-            }, 
+            },
              {
             'id': 'post',
-            'name': 'L_action forum post',
+            'name': 'action_add_post',
             'action': 'forum_post_form',
             'permissions': (AddPortalContent,),
             }, {
             'id': 'localroles',
-            'name': 'L_workspace gestion des droits',
+            'name': 'action_local_roles',
             'action': 'folder_localrole_form',
             'permissions': (ChangePermissions,),
             }, {'id': 'isfunctionalobject',
@@ -81,8 +81,9 @@ factory_type_information = (
                 'visible': 0,
                 'permissions': ('',),
             },
-        ), },
-    )
+            ),
+          },
+        )
 
 def addDiscussionItem(self, id, title, description, text_format, text,
                       reply_to, RESPONSE=None):
@@ -118,9 +119,9 @@ class CPSForum(CPSBaseDocument):
 
     def getThreads(self):
         """Return list of root posts"""
-        
+
         discussion = self.portal_discussion.getDiscussionFor(self)
-        result = [ self.getPostInfo(post) 
+        result = [ self.getPostInfo(post)
                    for post in discussion.getReplies()
                    if post.in_reply_to is None ]
         return result
@@ -179,8 +180,8 @@ class CPSForum(CPSBaseDocument):
     def getPostReplies(self, post_id):
         """Return replies to post <post_id>"""
         discussion = self.portal_discussion.getDiscussionFor(self)
-        result = [ self.getPostInfo(post) 
-                   for post in discussion.objectValues() 
+        result = [ self.getPostInfo(post)
+                   for post in discussion.objectValues()
                    if post.in_reply_to == post_id ]
         return result
 
@@ -271,13 +272,13 @@ class CPSPost(CPSBaseDocument, Post):
     meta_type = "CPSPost"
     forum_meta_type = 'CPSForum'
     _properties = CPSBaseDocument._properties + (
-        { 'id': 'text', 'type': 'string', 'mode': 'w', 
+        { 'id': 'text', 'type': 'string', 'mode': 'w',
           'label': 'Post author' },
-        { 'id': 'author', 'type': 'string', 'mode': 'w', 
+        { 'id': 'author', 'type': 'string', 'mode': 'w',
           'label': 'Post author' },
-        { 'id': 'forum_id', 'type': 'string', 'mode': 'w', 
+        { 'id': 'forum_id', 'type': 'string', 'mode': 'w',
           'label': 'Parent Forum id' },
-        { 'id': 'parent_id', 'type': 'string', 'mode': 'w', 
+        { 'id': 'parent_id', 'type': 'string', 'mode': 'w',
           'label': 'Parent Post id' },
         )
 
@@ -288,4 +289,3 @@ class CPSPost(CPSBaseDocument, Post):
     #def __init__(self, id, **kw):
     #    """Constructor"""
     #    CPSBaseDocument.__init__(self, id, **kw)
-

@@ -83,7 +83,7 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         self.assertEquals(post_info['parent_id'], None)
         self.assertEquals(post_info['published'], 1)
         self.assertEquals(post_info['locked'], 0)
-        self.assert_(post_info['modified'])
+        self.assert_(post_info['creation'])
 
         # Publish / unpublish
         proxy_forum.forum_publish_posts(forum_thread_ids=(post_id,))
@@ -119,7 +119,7 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         self.assertEquals(post_info['parent_id'], None)
         self.assertEquals(post_info['published'], 1)
         self.assertEquals(post_info['locked'], 0)
-        self.assert_(post_info['modified'])
+        self.assert_(post_info['creation'])
 
         # Publish / unpublish
         proxy_forum.forum_unpublish_posts(forum_thread_ids=(post_id,))

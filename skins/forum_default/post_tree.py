@@ -59,13 +59,14 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
         post = branch[0]
         if comment_mode or post['published'] or is_reviewer or username == post['author']:
             counter += 1
+            
             if counter%2:
-                bgcolor = '#F0F0F0'
+                row_class = 'odd'
             else:
-                bgcolor = '#FFFFFF'
-
-            result += '<tr id="thread_%s" style="background-color:%s">' % \
-                (post['id'], bgcolor)
+                row_class = 'even'
+            
+            result += '<tr id="thread_%s" class="%s">' % \
+                      (post['id'], row_class)
 
             style = session_data.get('post_' + str(post['id']), None)
             if style <> 'collapsed':
@@ -93,14 +94,10 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
                 result += '<img align="center" src="/p_/sp" height="16" width="16" alt="" border="0">'
 
             result += getHeadline(post)
-
-            dirtool = context.portal_metadirectories.members
-            entry = dirtool.getEntry(post['author'])
-            if entry is None:
-                fullname = post['author']
-            else:
-                fullname = entry.get(dirtool.display_prop, post['author'])
+            
+            fullname = context.getPoster(post['author'])
             result += '</td>\n<td>%s</td>' % fullname
+            
             ptime = post['modified'].strftime('%d/%m/%y %H:%M')
             result += '\n<td>%s</td>' % ptime
             result += '</tr>\n\n'

@@ -6,7 +6,8 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
--
+- When commenting objects a tal:condition "forum" was used
+  to check if the forum existed. I changed this to "nocall:forum".
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

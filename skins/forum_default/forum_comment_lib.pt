@@ -5,7 +5,7 @@
              i18n:domain="cpsforum">
   <tal:block
        tal:define="forum python:here.portal_discussion.getDiscussionForumFor(here);"
-       tal:condition="forum">
+       tal:condition="nocall:forum">
     <h2 id="document_comment"
       i18n:translate="forum_label_comments">Comments</h2>
     <tal:block define="comment_id request/comment_id|nothing;

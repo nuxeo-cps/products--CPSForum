@@ -35,21 +35,16 @@
                   tal:attributes="selected python:not not moderation_mode">
             a priori
           </option>
-        <select/>
+        </select>
       </td>
     </tr>
     <tr>
       <td i18n:translate="forum_moderators">Moderators</td>
       <td>
-        <select name="moderators:list" multiple>
-          <option tal:define="reviewers python:doc.getModerators(here)"
-                  tal:repeat="reviewer reviewers"
-                  tal:attributes="value reviewer;
-                                  selected python:reviewer in moderators"
-                  tal:content="reviewer">
-            user_name_here
-          </option>
-        <select/>
+        <ul>
+          <li tal:define="reviewers python:doc.getModerators(here)"
+            tal:repeat="reviewer reviewers" tal:content="reviewer" />
+        </ul>
       </td>
     </tr>
 

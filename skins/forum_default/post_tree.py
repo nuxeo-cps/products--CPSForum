@@ -4,6 +4,8 @@
 
 #counter counts the message position in thread
 
+import cgi
+
 pmt = context.portal_membership
 member = pmt.getAuthenticatedMember()
 username = member.getId()
@@ -14,15 +16,16 @@ except AttributeError:
     session_data = None
 
 def getHeadline(post):
+    subject = cgi.escape(post['subject'])
     if frm_start:
         headline = '<a href="%s?post_id=%s&frm_start=%s">%s</a>' % (context.absolute_url(),
                                                                     post['id'],
                                                                     frm_start,
-                                                                    post['subject'])
+                                                                    subject)
     else:
         headline = '<a href="%s?post_id=%s">%s</a>' % (context.absolute_url(),
                                                        post['id'],
-                                                       post['subject'])
+                                                       subject)
     if post['id'] == post_id:
         # Rendering select post (if any) with a bold font
         headline = '<strong>' + headline + '</strong>'
@@ -100,7 +103,7 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
 
             result += getHeadline(post)
             
-            fullname = context.getPosterName(post['author'])
+            fullname = cgi.escape(context.getPosterName(post['author']))
             result += '</td>\n<td class="forumAuthorCell">%s</td>' % fullname
             
             ptime = post['modified'].strftime('%d/%m/%y %H:%M')

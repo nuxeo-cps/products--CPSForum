@@ -4,9 +4,8 @@
 <form method="POST" action="." enctype="multipart/form-data"
         tal:define="parent_id options/parent_id|nothing;
         doc here/getContent|here;
-        elements python: here.portal_elements.getElements(object=here);
-        member elements/MEMBER;
-        dtool elements/DIRECTORY_MEMBERS;
+        member python:here.portal_membership.getAuthenticatedMember();
+        dtool python:here.portal_metadirectories['members'];
 
         errormsg options/error_message|nothing;
         ">

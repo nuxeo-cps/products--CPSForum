@@ -1,5 +1,5 @@
 <metal:html use-macro="here/content_lib/macros/master">
-<metal:block fill-slot="header" />
+
 <metal:main fill-slot="main">
 <tal:block define="post_id request/post_id|nothing;
                    doc here/getContent|here;
@@ -13,12 +13,11 @@
 
                    is_reviewer python: here.portal_membership.checkPermission('Review portal content',here);
             ">
-    <metal:block use-macro="here/main_widgets/macros/boxstd">
-        <metal:block fill-slot="box_title" tal:content="doc/title">
+        <tal:block tal:replace="doc/title">
             Title
-        </metal:block>
-
-        <metal:block fill-slot="box_body">
+        </tal:block>
+        
+        <tal:block>
             <span tal:content="description">Description</span>
             <br/>
             <tal:block i18n:translate="L_forum valideur">Moderators</tal:block>:
@@ -41,8 +40,8 @@
                     </td>
                 </tr>
             </table>
-        </metal:block>
-    </metal:block>
+        </tal:block>
+            
 </tal:block>
 </metal:main>
 </metal:html>

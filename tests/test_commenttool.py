@@ -87,6 +87,16 @@ class TestCommentTool(CPSForumTestCase.CPSForumTestCase):
         self.assertEqual(self.pd.isCommentingAllowedFor(self.proxy_doc), 1)
 
 
+    def testSetAllowDiscussion(self):
+        doc = self.proxy_doc.getContent()
+        self.assertEqual(doc.allow_discussion, 0)
+
+        self.pd.setAllowDiscussion(self.proxy_doc, 1)
+        self.assertEqual(doc.allow_discussion, 1)
+
+        self.pd.setAllowDiscussion(self.proxy_doc, 0)
+        self.assertEqual(doc.allow_discussion, 0)
+
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(unittest.makeSuite(TestCommentTool))

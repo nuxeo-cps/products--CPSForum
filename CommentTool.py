@@ -36,6 +36,8 @@ from Products.CMFCore.ActionProviderBase import ActionProviderBase
 
 from Products.CMFCore.Expression import Expression
 
+from Products.CPSCore.EventServiceTool import getEventService
+
 class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     """Comment tool, a container for forums used to comment documents."""
 
@@ -105,5 +107,33 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
             #(this adds the forum directly to portal_comment)
             addCPSForum(self, doc_id)
         return self.getForum(doc_id)
+
+    security.declarePublic('notifyPostCreation')
+    def notifyPostCreation(self, object, url_to_display=None, comment=0):
+        """ Notify the event service tool that an new post or comment
+        has been created
+
+        We need to call it from the skins to make the difference in between
+        post and comment and as well to give the event_service the URL of
+        the post to display
+        (i.e: http://cps.bar.com/forum/forum_view_thread?post_id=4444)
+        Notice, the URL is coompletly different form the URL of the
+        post object itself
+        """
+        evtool = getEventService(self)
+
+        #
+        # We want to separate these two types of events
+        # Normal post / Commment
+        #
+
+        if comment:
+            event_id = 'forum_comment_create'
+        else:
+            event_id = 'forum_new_message'
+
+        evtool.notify(event_id,
+                      object,
+                      {'url_to_display':url_to_display})
 
 InitializeClass(CommentTool)

@@ -7,6 +7,11 @@
 import cgi
 from zLOG import LOG, DEBUG
 
+cpsmcat = context.Localizer.default
+pending_i18n = cpsmcat('forum_pending_post').encode('ISO-8859-15', 'ignore')
+unpublished_i18n = cpsmcat('forum_unpublished_post').encode('ISO-8859-15', 'ignore')
+rejected_i18n = cpsmcat('forum_rejected_post').encode('ISO-8859-15', 'ignore')
+
 pmt = context.portal_membership
 member = pmt.getAuthenticatedMember()
 username = member.getId()
@@ -61,11 +66,17 @@ def getTreeIcon(post, style):
     return result
 
 def getStatusIcon(post):
-    if not post['published']:
-        #  TODO: Translate
-        return '<img src="%s" width="6" height="6" align="middle" alt="Not published" />' % (
-            getattr(context, 'puce.gif').absolute_url())
-    return '<img src="/p_/sp" width="6" height="6" alt="" />'
+    if post['rstate'] == 'pending':
+        return '<img src="%s" width="6" height="6" align="middle" alt="%s" title="%s" />' % (
+            getattr(context, 'puce_attente.gif').absolute_url(), pending_i18n, pending_i18n)
+    elif post['rstate'] == 'unpublished':
+        return '<img src="%s" width="6" height="6" align="middle" alt="%s" title="%s" />' % (
+            getattr(context, 'puce_depub.gif').absolute_url(), unpublished_i18n, unpublished_i18n)
+    elif post['rstate'] == 'rejected':
+        return '<img src="%s" width="6" height="6" align="middle" alt="%s" title="%s" />' % (
+            getattr(context, 'puce_refuse.gif').absolute_url(), rejected_i18n, rejected_i18n)
+    else:
+        return '<img src="/p_/sp" width="6" height="6" alt="" />'
 
 def getLockIcon(post):
     if post['locked']:

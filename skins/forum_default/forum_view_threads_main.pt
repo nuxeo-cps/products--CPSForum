@@ -48,7 +48,7 @@
         </td>
         <td class="forumModerateCell">
           <a href="./sort_posts?criterion=threads">
-            <img tal:replace="structure python:here.getImgTag('threads.gif',
+            <img tal:replace="structure python:here.getImgTag('threads.png',
                                                               alt='sort by threads')" />
           </a>
         </td>
@@ -82,7 +82,7 @@
         <td class="forumModerateCell">
           <a href="./sort_posts?criterion=threads"
              tal:condition="python:getattr(forum, 'tree_display', '') == 'title'">
-            <img tal:replace="structure python:here.getImgTag('threads.gif',
+            <img tal:replace="structure python:here.getImgTag('threads.png',
                                                               alt='sort by threads')" />
           </a>
           <tal:block tal:condition="python:getattr(forum, 'tree_display', '') != 'title'"

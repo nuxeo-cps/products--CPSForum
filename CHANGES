@@ -8,8 +8,8 @@ Bug fixes:
 ~~~~~~~~~~
 - The anonymous posts were published directly even if the forum was in moderated
   mode.
-- Fixed an invalid CSS property + normalized the CPSForum CSS file at the same
-  time.
+- Fixed an invalid CSS property ("orange" color is not defined in CSS spec)+
+  normalized the CPSForum CSS file at the same time.
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

@@ -333,8 +333,8 @@ def install(self):
             'clone_allowed_transitions': None,
             'after_script_name': 'post_publish',
             'props': {'guard_permissions': '',
-                      'guard_roles':'',
-                      'guard_expr':'python:container.getContent().moderation_mode == 0'},
+                      'guard_roles': '',
+                      'guard_expr': 'python:container.getContent().moderation_mode == 0 or user.has_permission(\'Forum Moderate\', container.getContent())'},
             },
         'auto_moderate': {
             'title': 'Moderating',
@@ -342,8 +342,8 @@ def install(self):
             'trigger_type': TRIGGER_AUTOMATIC,
             'clone_allowed_transitions': None,
             'props': {'guard_permissions': '',
-                      'guard_roles':'',
-                      'guard_expr':'python:container.getContent().moderation_mode == 1'},
+                      'guard_roles': '',
+                      'guard_expr': 'python: container.getContent().moderation_mode == 1 and not user.has_permission(\'Forum Moderate\', container.getContent())'},
             },
         'publish': {
             'title': 'Publishing post',

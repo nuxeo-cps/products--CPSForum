@@ -52,9 +52,14 @@ def getTreeIcon(post, style):
 def getStatusIcon(post):
     if not post['published']:
         #  TODO: Translate
-        return '<img src="%s" width=6 height=6 align="mid" alt="Not published"/>' % (
+        return '<img src="%s" width="6" height="6" align="mid" alt="Not published"/>' % (
             getattr(context, 'puce.gif').absolute_url())
-    return '<img src="/p_/sp" width=6 height=6 alt=""/>'
+    return '<img src="/p_/sp" width="6" height="6" alt=""/>'
+
+def getLockIcon(post):
+    if post['locked']:
+        return context.getImgTag('lock.gif',alt="locked")
+    return '<img src="/p_/sp" width="6" height="6" alt=""/>'
 
 def getBranches(branches, id='ROOT', level=0, counter=0):
     if not len(branches):
@@ -108,7 +113,12 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
             result += '</td>\n<td>%s</td>' % fullname
             
             ptime = post['modified'].strftime('%d/%m/%y %H:%M')
-            result += '\n<td>%s</td>' % ptime
+            if is_reviewer:
+                #display thread lock status only for reviewers
+                result += '\n<td>%s</td>' % ptime
+                result += '\n<td>%s</td>' % getLockIcon(post)
+            else:
+                result += '\n<td colspan="2">%s</td>' % ptime
             result += '</tr>\n\n'
             result += more
 

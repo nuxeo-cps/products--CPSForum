@@ -1,5 +1,7 @@
 ##parameters=descendants=(), post_id='', comment_mode=0
 
+# $id:$
+
 #counter counts the message position in thread
 #forum will exist only when comment_mode is true
 
@@ -105,7 +107,7 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
 
     return (result, counter)
 
-(result,dummy) = getBranches(descendants)
+(result, dummy) = getBranches(descendants)
 
 return result
 

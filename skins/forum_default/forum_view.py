@@ -1,5 +1,7 @@
 ## Script (Python) "forum_view"
 ##parameters=post_id=None, REQUEST=None
+# $id:$
+
 """ """
 
 if post_id is None:

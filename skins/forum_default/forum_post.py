@@ -1,5 +1,7 @@
 ##parameters=subject,author,message,parent_id=None,comment_mode=0
 
+# $Id$
+
 new_id = context.computeId(compute_from=subject)
 doc = context.getForumObject(comment_mode)
 
@@ -7,7 +9,6 @@ if (not doc) and comment_mode:
     #the forum holding comments might not exist if this is
     #the first post ; in this case create it
     doc = context.portal_comment.addForum(context)
-
 
 if (not author) or (author == ""):
     msg = "Pseudo obligatoire"

@@ -1,5 +1,7 @@
 ##parameters=parent_id
 
+# $id:$
+
 doc = hasattr(context, 'getContent') and context.getContent() or context
 doc.publishPost(parent_id, 0)
 context.REQUEST.RESPONSE.redirect(context.absolute_url()

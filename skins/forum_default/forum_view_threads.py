@@ -1,5 +1,7 @@
 ##parameters=post_id, is_reviewer=None
 
+# $id:$
+
 doc = context.getContent();
 result = []
 for i in doc.getThreads():

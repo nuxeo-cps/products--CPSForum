@@ -1,5 +1,7 @@
 ##parameters=post_id, action, mode
 
+# $Id$
+
 #mode is '0' for standard forums, '1' for comments
 
 session_data = context.session_data_manager.getSessionData()

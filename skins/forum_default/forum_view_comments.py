@@ -1,5 +1,7 @@
 ##parameters=post_id, forum
 
+# $id:$
+
 result = []
 for i in forum.getThreads():
     result.append((i, forum.getDescendants(i['id']),))

@@ -1,5 +1,7 @@
 ##parameters=forum_thread_ids=()
 
+# $id:$
+
 doc = hasattr(context, 'getContent') and context.getContent() or context
 for i in forum_thread_ids:
     doc.publishPost(i, 0)

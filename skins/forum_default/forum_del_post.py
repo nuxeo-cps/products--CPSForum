@@ -1,5 +1,7 @@
 ##parameters=forum_thread_ids=(),comment_mode=0
 
+# $Id$
+
 doc = context.getForumObject(comment_mode)
 for i in forum_thread_ids:
     doc.delForumPost(i)

@@ -1,5 +1,7 @@
 ##parameters=REQUEST=None
 
+# $Id$
+
 # FIXME: what if REQUEST is actually None ?
 
 context.getContent().editForumProperties(**REQUEST.form)

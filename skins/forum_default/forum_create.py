@@ -1,5 +1,7 @@
 ##parameters=title, description, REQUEST=None
 
+# $Id$
+
 # FIXME: THIS NEED TO BE FIXED ONCE AND FOR ALL !
 id = string.translate(title,string.maketrans(' .йиазкло','__eeaceei'))
 if hasattr(context, id):

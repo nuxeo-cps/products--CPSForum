@@ -93,7 +93,7 @@ def addCPSForum(self, id, **kw):
 
 class CPSForum(CPSBaseDocument):
     """
-    Forum CPS
+    CPS Forum definition
     """
     meta_type = 'CPSForum'
     portal_type = 'CPSForum'
@@ -108,7 +108,10 @@ class CPSForum(CPSBaseDocument):
     #    CPSBaseDocument.__init__(self,id, **kw)
 
     def getThreads(self):
-        """Return list of root posts (no replies)"""
+        """Return a list of root posts
+
+        Does not return replies to post, just thread root posts
+        """
 
         discussion = self.portal_discussion.getDiscussionFor(self)
         result = [ self.getPostInfo(post)
@@ -137,7 +140,9 @@ class CPSForum(CPSBaseDocument):
         }
 
     def addPost(self, subject="", message="", author="", parent_id=None):
-        """Add a new post. Returns its id."""
+        """Add a new post
+
+        Returns the new post's id."""
         discussion = self.portal_discussion.getDiscussionFor(self)
         post_id = discussion.createReply(subject, message, author)
         post = discussion.getReply(post_id)
@@ -146,7 +151,9 @@ class CPSForum(CPSBaseDocument):
         return post_id
 
     def delPost(self, id):
-        """Delete a post"""
+        """Delete a post
+
+        The post is refered to by its id"""
         self.portal_discussion.getDiscussionFor(self).deleteReply(id)
 
     def publishPost(self, id, state=1):
@@ -158,8 +165,10 @@ class CPSForum(CPSBaseDocument):
         post.inforum = state
             
     def __getitem__(self, id):
-        """Return postinfo (dictionnary) for post with id=<id>, or None
-        if there is no such post."""
+        """Return postinfo
+
+        Returns information (structured as a dictionnary) about post
+        with id=<id>, or None if there is no such post."""
         # XXX: shouldn't it raise KeyError in the latter case ?
         try:
             disc = self.portal_discussion.getDiscussionFor(self)
@@ -170,7 +179,9 @@ class CPSForum(CPSBaseDocument):
         return result
 
     def getPostReplies(self, post_id):
-        """Return replies to post <post_id>"""
+        """Return replies to root post
+
+        Root post is refered to by <post_id>"""
         discussion = self.portal_discussion.getDiscussionFor(self)
         # FIXME: is it really the right algorithm ?
         result = [ self.getPostInfo(post)
@@ -179,9 +190,7 @@ class CPSForum(CPSBaseDocument):
         return result
 
     def getDescendants(self, post_id):
-        """
-        Fetches post tree
-        """
+        """Fetch post tree"""
         info_getter = self.getPostInfo
         discussion = self.portal_discussion.getDiscussionFor(self)
         father = discussion.getReply(post_id)
@@ -197,7 +206,7 @@ class CPSForum(CPSBaseDocument):
         return result
 
     def editForumProperties(self, **kw):
-        """Sets up forum properties
+        """Edit forum properties
         """
         #self.title = kw.get('title', self.title)
         #self.description = kw.get('description', self.description)
@@ -208,7 +217,7 @@ class CPSForum(CPSBaseDocument):
 
     security.declarePublic('getModerators')
     def getModerators(self, proxy):
-        """XXX: docstring???"""
+        """Get moderators of this forum"""
         all = mergedLocalRoles(proxy)
         result = []
         for user_id in all.keys():
@@ -218,7 +227,7 @@ class CPSForum(CPSBaseDocument):
 
     security.declarePublic('getOfficialModerators')
     def getOfficialModerators(self, proxy):
-        """XXX: what is an "official moderator" ???"""
+        """XXX: what is an 'official moderator' ???"""
         moderator_list = self.getModerators(proxy)
         dtool = getToolByName(self, 'portal_metadirectories').members
         portal_url = getToolByName(self, 'portal_url').getPortalPath()

@@ -1,16 +1,12 @@
 Requires:
 ~~~~~~~~~
-- CPSDocument > 0.23.0 (for proper display of inline comments)
-
+-
 New features:
 ~~~~~~~~~~~~~
 -
 Bug fixes:
 ~~~~~~~~~~
-- translate role:{Anonymous,Authenticated}
-- sorting was not supported in comment forums
-
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
-- forum specific CSS rules are now stored in a specific stylesheet (no longer
-  in CPSDefault)
+-

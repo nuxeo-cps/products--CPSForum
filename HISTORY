@@ -1,4 +1,24 @@
 *******************************************
+** CPSForum V1.3.2 [R1 build 2004/07/16-09:14 by epietrig]
+
+Requires:
+~~~~~~~~~
+- CPSDocument > 0.23.0 (for proper display of inline comments)
+
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- translate role:{Anonymous,Authenticated}
+- sorting was not supported in comment forums
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- forum specific CSS rules are now stored in a specific stylesheet (no longer
+  in CPSDefault)
+
+*******************************************
 ** CPSForum V1.3.1 [R1 build 2004/07/07-16:01 by epietrig]
 
 Requires:

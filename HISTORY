@@ -1,4 +1,21 @@
 *******************************************
+** CPSForum V1.3.1 [R1 build 2004/07/07-16:01 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- replaced gif icons by png icons
+- more efficient sorting algorithms (for thread/post display)
+
+*******************************************
 ** CPSForum V1.3.0 [R1 build 2004/07/07-08:49 by epietrig]
 
 Requires:

@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
-"POT-Creation-Date: 2004-02-19 12:05default\n"
-"PO-Revision-Date: 2004-02-19 12:07+0100\n"
+"POT-Creation-Date: 2004-02-20 14:25default\n"
+"PO-Revision-Date: 2004-02-20 14:25+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -74,6 +74,11 @@ msgstr "Autoriser les messages anonymes"
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
 msgstr "Auteur"
+
+#.   <input value="forum_button_lockunlock" class="context" name="forum_lock_thread:method" type="submit" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_button_lockunlock"
+msgstr "(Dé-)verrouiller le fil"
 
 #.   <td class="forumsubheader" width="80">Date</td>
 #: from ../skins/forum_default/forum_view_threads_main.pt

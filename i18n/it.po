@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
-"POT-Creation-Date: 2004-02-19 12:05default\n"
+"POT-Creation-Date: 2004-02-20 14:25default\n"
 "PO-Revision-Date: 2004-02-19 12:09+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -73,6 +73,11 @@ msgstr "Consenti messaggi anonimi"
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
 msgstr "Autore"
+
+#.   <input value="forum_button_lockunlock" class="context" name="forum_lock_thread:method" type="submit" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_button_lockunlock"
+msgstr ""
 
 #    <td class="forumsubheader" width="80">Date</td>
 #.   <td class="forumsubheader" width="80">Date</td>
@@ -268,7 +273,8 @@ msgstr "Nome utente"
 #.   </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_assigned_users"
-msgstr "Questi utenti hanno attualmente ruoli locali assegnati per questo elenco:"
+msgstr ""
+"Questi utenti hanno attualmente ruoli locali assegnati per questo elenco:"
 
 #.   <h2>
 #.       Currently assigned local roles
@@ -330,4 +336,3 @@ msgstr "inviato da"
 
 #~ msgid "forum_moderators"
 #~ msgstr "Moderatori"
-

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2004-02-19 12:05default\n"
+"POT-Creation-Date: 2004-02-20 14:25default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -71,6 +71,11 @@ msgstr ""
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
+msgstr ""
+
+#.   <input value="forum_button_lockunlock" class="context" name="forum_lock_thread:method" type="submit" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_button_lockunlock"
 msgstr ""
 
 #.   <td class="forumsubheader" width="80">Date</td>

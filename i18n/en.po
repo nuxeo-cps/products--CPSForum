@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: en\n"
-"POT-Creation-Date: 2004-05-07 13:01default\n"
-"PO-Revision-Date: 2004-05-07 13:02+0200\n"
+"POT-Creation-Date: 2004-05-11 11:11default\n"
+"PO-Revision-Date: 2004-05-11 11:12+0200\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -63,7 +63,7 @@ msgid "forum_date"
 msgstr "Date"
 
 #.   <input define="cpsmcat nocall:here/Localizer/default" attributes="onclick python:'return window.confirm(\'%s\')' %
-#.                                      (cpsmcat('description_confirm_delete'), )" value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
+#.                                  (cpsmcat('description_confirm_delete'), )" value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Delete"
@@ -94,6 +94,22 @@ msgstr "Lock forum (read only)"
 #: from ../skins/forum_default/forum_view_main.pt
 msgid "forum_link_back_to_document"
 msgstr "Back to document"
+
+#.   <a condition="next_page" attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, b_start=next_page.first))" href=".">
+#.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
+#.             </a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_link_next_threads ${tpp}"
+msgstr "Next ${tpp} threads"
+
+#.   <a condition="previous_page" attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, b_start=previous_page.first))" href=".">
+#.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
+#.             </a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_link_prev_threads ${tpp}"
+msgstr "Previous ${tpp} threads"
 
 #.   <div class="label">Message</div>
 #: from ../skins/forum_default/forum_post_form.pt
@@ -212,6 +228,15 @@ msgstr "Comments associated with document"
 
 msgid "forum_desc_comments"
 msgstr "This forum contains comments associated with document"
+
+msgid "forum_label_threads_per_page"
+msgstr "Number of discussion threads per page:"
+
+#~ msgid "forum_link_next_threads <span content=\"threads_per_page\" />"
+#~ msgstr "Next ${threads_per_page} threads"
+
+#~ msgid "forum_link_prev_threads <span content=\"threads_per_page\" />"
+#~ msgstr "Previous ${threads_per_page} threads"
 
 #~ msgid "forum_send_moderation_notification"
 #~ msgstr "Notify moderators (new messages)"

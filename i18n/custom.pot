@@ -58,3 +58,6 @@ msgstr ""
 msgid "forum_desc_comments"
 msgstr ""
 
+msgid "forum_label_threads_per_page"
+msgstr ""
+

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es-CPSForum\n"
-"POT-Creation-Date: 2004-05-07 13:01default\n"
+"POT-Creation-Date: 2004-05-11 11:11default\n"
 "PO-Revision-Date: 2004-03-27 20:39+0100\n"
 "Last-Translator: Álvaro Tejero Cantero <alvaro@antalia.com>\n"
 "Language-Team:  EspaÃ±ol <es@li.org>\n"
@@ -72,7 +72,7 @@ msgstr "Fecha"
 
 #    <input value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
 #.   <input define="cpsmcat nocall:here/Localizer/default" attributes="onclick python:'return window.confirm(\'%s\')' %
-#.                                      (cpsmcat('description_confirm_delete'), )" value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
+#.                                  (cpsmcat('description_confirm_delete'), )" value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Borrar"
@@ -108,6 +108,30 @@ msgstr "Bloquear el foro (sólo lectura)"
 #: from ../skins/forum_default/forum_view_main.pt
 msgid "forum_link_back_to_document"
 msgstr ""
+
+#    <a attributes="href string:${context_url}/forum_post_form" href="">
+#          forum_new_thread
+#        </a>
+#.   <a condition="next_page" attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, b_start=next_page.first))" href=".">
+#.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
+#.             </a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+#, fuzzy
+msgid "forum_link_next_threads ${tpp}"
+msgstr "Nuevo hilo "
+
+#    <a attributes="href string:${context_url}/forum_post_form" href="">
+#          forum_new_thread
+#        </a>
+#.   <a condition="previous_page" attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, b_start=previous_page.first))" href=".">
+#.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
+#.             </a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+#, fuzzy
+msgid "forum_link_prev_threads ${tpp}"
+msgstr "Nuevo hilo "
 
 #    <td>Message</td>
 #.   <div class="label">Message</div>
@@ -263,6 +287,10 @@ msgstr "Comentarios"
 #, fuzzy
 msgid "forum_desc_comments"
 msgstr "Comentarios"
+
+#, fuzzy
+msgid "forum_label_threads_per_page"
+msgstr "enviado por"
 
 #    <td>Send moderation notifications</td>
 #~ msgid "forum_send_moderation_notification"

@@ -8,6 +8,7 @@ Bug fixes:
 ~~~~~~~~~~
 - action "New thread" was not set properly if action box macro was called
 before forum_view_main template (e.g. if displayed in left column)
+- made frm120to123 migration script work with Zope 2.6.x
 
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~

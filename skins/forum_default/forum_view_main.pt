@@ -9,10 +9,12 @@
                    replies python:post and doc.getPostReplies(post_id);
                    image doc/image|nothing;
                    description doc/description|nothing;
-                   roles python:here.portal_membership.getCPSCandidateLocalRoles(here);
-                   is_reviewer python: 'ForumModerator' in roles">
+                   member python:here.portal_membership.getAuthenticatedMember();
+                   is_poster python:member.has_permission('Forum Post', here);
+                   is_reviewer python:member.has_permission('Forum Moderate', here);
+                   can_post python:here.isAllowedToPost(is_poster=is_poster,is_anon=isAnon)">
 
-  <div class="documentActions">
+  <div class="documentActions" tal:condition="can_post">
     <a href="" i18n:translate=""
        tal:attributes="href string:${context_url}/forum_post_form">
       forum_new_thread
@@ -22,18 +24,13 @@
 
   <tal:block>
     <br/>
-    <tal:block i18n:translate="forum_moderators">Moderators</tal:block>:
-    <tal:block repeat="moderator python:doc.getOfficialModerators(here)">
-      <a tal:attributes="href moderator/homedir"
-         tal:content="moderator/fullname">fullname</a>
-      <tal:block condition="not:repeat/moderator/end">,</tal:block>
-    </tal:block>
     <table style="width:100%;" cellspacing="0" cellpadding="0">
       <tal:block condition="post_id"
                  replace="structure python:here.post_view_snippet(
                                                     post_id=post_id,
                                                     forum=doc,
                                                     is_reviewer=is_reviewer,
+                                                    can_post=can_post,
                                                     comment_mode=0)"/>
       <tr><td colspan="2">&nbsp;</td></tr>
       <tal:block condition="python:len(threads)">

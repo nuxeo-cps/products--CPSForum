@@ -15,7 +15,7 @@
 
   <div class="documentActions">
     <a href="" i18n:translate=""
-       tal:attributes="href python:here.absolute_url()+'/forum_post_form'">
+       tal:attributes="href string:${context_url}/forum_post_form">
       forum_new_thread
     </a>
   </div>

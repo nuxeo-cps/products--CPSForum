@@ -225,30 +225,18 @@ class CPSForum(BaseDocument):
     security.declareProtected(View, 'getPostInfo')
     def getPostInfo(self, post, discussion=0):
         """Return post information as a dictionnary"""
-        # discussion is true if processing a post represented
-        # as a Discussion Item instead of a ForumPost (should no
-        # longer happen)
 
-        if discussion:
-            post_doc = post.getContent()
-            return {'id': post.id, 'subject': post.title, 'author': post_doc.author,
-                    'message': post.text, 'parent_id': post.in_reply_to,
-                    'published': hasattr(post, 'inforum') and post.inforum,
-                    'modified': post.bobobase_modification_time(),
-                    'locked': post.id in self.locked_threads
-                    }
-        else:
-            post_doc = post.getContent()
-            wtool = getToolByName(self, 'portal_workflow')
-            r_state = wtool.getInfoFor(post, 'review_state', 'nostate')
-            return {
-                'id': post.id, 'subject': post.Title(), 'author': post_doc.author,
-                'message': post_doc.Description(), 'parent_id': post_doc.parent_id,
-                'published': r_state == 'published',
-                'review_state': r_state,
-                'modified': post_doc.bobobase_modification_time(),
-                'locked': post_doc.id in self.locked_threads
-                }
+        post_doc = post.getContent()
+        wtool = getToolByName(self, 'portal_workflow')
+        r_state = wtool.getInfoFor(post, 'review_state', 'nostate')
+        return {
+            'id': post.id, 'subject': post.Title(), 'author': post_doc.author,
+            'message': post_doc.Description(), 'parent_id': post_doc.parent_id,
+            'published': r_state == 'published',
+            'review_state': r_state,
+            'creation': post_doc.CreationDate(),
+            'locked': post_doc.id in self.locked_threads
+            }
 
     security.declareProtected(ForumModerate, 'changePostPublicationStatus')
     def changePostPublicationStatus(self, id, status=1):

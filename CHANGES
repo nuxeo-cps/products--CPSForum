@@ -1,15 +1,12 @@
 ZODB Requires:
 ~~~~~~~~~~~~~~
 -
-
 New features:
 ~~~~~~~~~~~~~
 -
-
 Bug fixes:
 ~~~~~~~~~~
--
-
+- getCPSLocalRoles reterning roles in reverse order making default role Manager
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

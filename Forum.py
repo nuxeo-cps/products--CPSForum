@@ -88,6 +88,7 @@ def addCPSForum(self, id, **kw):
     forum = CPSForum(id, **kw)
     self.moderation_mode = kw.get('moderation_mode', 1)
     self.allow_anon_posts = kw.get('allow_anon_posts', 0)
+    self.send_moderation_notification = kw.get('send_moderation_notification', 0)
     CPSBase_adder(self, forum)
 
 
@@ -102,6 +103,7 @@ class CPSForum(CPSBaseDocument):
     #moderation_mode: 1=a priori, 0=a posteriori
     moderation_mode = 1
     allow_anon_posts = 0
+    send_moderation_notification = 0
     moderators = []
     security = ClassSecurityInfo()
 
@@ -150,7 +152,8 @@ class CPSForum(CPSBaseDocument):
         post = discussion.getReply(post_id)
         post.in_reply_to = parent_id
         self.changePostPublicationStatus(post_id, not self.moderation_mode)
-        if self.moderation_mode and not comment_mode:
+        if (self.send_moderation_notification and
+            self.moderation_mode and not comment_mode):
             self.notifyModerators(post_id=post_id, proxy=proxy)
         return post_id
 
@@ -219,6 +222,7 @@ class CPSForum(CPSBaseDocument):
         CPSBaseDocument.edit(self,**kw)
         self.moderation_mode = kw.get('moderation_mode', 1)
         self.allow_anon_posts = kw.get('allow_anon_posts', 0)
+        self.send_moderation_notification = kw.get('send_moderation_notification', 0)
         self.moderators = kw.get('moderators', [])
 
     security.declarePublic('getModerators')
@@ -231,6 +235,10 @@ class CPSForum(CPSBaseDocument):
         moderators = [k for k,v in pmtool.getMergedLocalRoles(proxy).items()
                       if k.startswith('user:') and 'ForumModerator' in v]
         return moderators
+
+    security.declarePublic('isSendingModerNotifs')
+    def isSendingModerNotifs(self):
+        return self.send_moderation_notification
 
     security.declarePublic('anonymousPostsAllowed')
     def anonymousPostsAllowed(self):

@@ -6,17 +6,13 @@
                        can_post options/can_post | nothing;
                        published python:here.portal_workflow.getInfoFor(post,
                                    'review_state', 'nostate') == 'published';
-                       b_start options/b_start | nothing">
+                       frm_start options/frm_start | nothing">
 <tal:block condition="python:is_reviewer or published">
   <tr>
     <td colspan="2">
-      <div class="forumPostTitle">
-        <tal:block condition="python:published or (is_reviewer and not published)">
-          <a tal:attributes="href
-                               python:here.absolute_url()+'/?post_id='+post_id"
-             tal:content="post/Title">Title
-          </a>
-        </tal:block>
+      <div class="forumPostTitle"
+           tal:condition="python:published or (is_reviewer and not published)"
+           tal:content="post/Title">
         <tal:block tal:define="mcat python:here.Localizer.default" 
                                tal:replace="python:'('+mcat('forum_label_postedby').encode('ISO-8859-15', 'ignore')+' '+here.getPosterName(post.Creator())+')'"/>
       </div>
@@ -28,8 +24,8 @@
             tal:condition="python:not locked and can_post">
         <input type="hidden" name="parent_id:string"
                tal:attributes="value post_id" />
-        <input type="hidden" name="b_start" value=""
-               tal:attributes="value b_start" />
+        <input type="hidden" name="frm_start" value=""
+               tal:attributes="value frm_start" />
         <input type="submit" name="forum_post_reply:method"
                class="standalone" value="forum_reply"
                i18n:attributes="value" />

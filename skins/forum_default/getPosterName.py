@@ -5,7 +5,7 @@
 """Given the id/login of a forum poster, return his fullname."""
 
 dirtool = context.portal_directories.members
-entry = dirtool.getEntry(post_author)
+entry = dirtool.getEntry(post_author, default=None)
 if entry is None:
     return post_author
 else:

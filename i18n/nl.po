@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
-"POT-Creation-Date: 2004-02-20 14:25default\n"
+"POT-Creation-Date: 2004-03-26 17:23default\n"
 "PO-Revision-Date: 2004-02-19 12:43+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -20,9 +20,7 @@ msgstr ""
 "Domain: default\n"
 "X-Generator: KBabel 1.0.2\n"
 
-#.   <option repeat="role roles" attributes="value role" content="role">
-#.            Role1
-#.         </option>
+#.   <option repeat="role roles" attributes="value role" content="role">Role1</option>
 #.   <option repeat="role roles" attributes="value role" content="role"> Role1 </option>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "Role1"
@@ -67,8 +65,8 @@ msgstr "a priori"
 msgid "forum_allow_anon_posts"
 msgstr "Anonieme berichten toestaan"
 
-#.   <td>Author</td>
-#.   <td class="forumsubheader" width="100">Author</td>
+#.   <div class="label">Author</div>
+#.   <th class="forumAuthorCell">Author</th>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
@@ -79,7 +77,7 @@ msgstr "Auteur"
 msgid "forum_button_lockunlock"
 msgstr ""
 
-#.   <td class="forumsubheader" width="80">Date</td>
+#.   <th class="forumDateCell">Date</th>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_date"
 msgstr "Datum"
@@ -100,7 +98,7 @@ msgstr "Maak publicatie ongedaan"
 msgid "forum_description"
 msgstr "Omschrijving"
 
-#.   <h4>Comments</h4>
+#.   <h2 id="document_comment">Comments</h2>
 #: from ../skins/forum_default/forum_comment_lib.pt
 msgid "forum_label_comments"
 msgstr "Opmerkingen"
@@ -111,7 +109,7 @@ msgstr "Opmerkingen"
 msgid "forum_label_lock_forum"
 msgstr "Vergrendel het forum (Berichten kunnen alleen gelezen worden)"
 
-#.   <td>Message</td>
+#.   <div class="label">Message</div>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_message"
 msgstr "Boodschap"
@@ -135,8 +133,8 @@ msgid "forum_new_thread"
 msgstr "Nieuwe discussie"
 
 #.   <td class="forumempty">
-#.             No comment associated with this document.
-#.           </td>
+#.                 No comment associated with this document.
+#.               </td>
 #.   <td class="forumempty">
 #.             Aucun message dans ce forum !
 #.           </td>
@@ -150,7 +148,9 @@ msgstr "Geen boodschap"
 msgid "forum_post"
 msgstr "Versturen"
 
-#.   <p>You are not authorized to post on this forum</p>
+#.   <p>
+#.           You are not authorized to post on this forum
+#.         </p>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_post_unauthorize"
 msgstr "???"
@@ -160,13 +160,18 @@ msgstr "???"
 msgid "forum_psm_name_required"
 msgstr "Je moet je naam of bijnaam invullen"
 
+#.   <span condition="python:errormsg == 'error_subject'" class="forumerror">Subject field must be filled</span>
+#: from ../skins/forum_default/forum_post_form.pt
+#, fuzzy
+msgid "forum_psm_subject_required"
+msgstr "Je moet je naam of bijnaam invullen"
+
 #.   <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_publish"
 msgstr "Publiceren"
 
-#.   <input value="forum_reply" class="context" name="forum_post_reply:method" type="submit">
-#.              </input>
+#.   <input value="forum_reply" class="standalone" name="forum_post_reply:method" type="submit" />
 #: from ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
 msgstr "Beantwoorden"
@@ -177,37 +182,37 @@ msgstr "Beantwoorden"
 msgid "forum_send_moderation_notification"
 msgstr "Notify moderators (new messages)"
 
-#.   <td>Subject</td>
-#.   <td class="forumsubheader">Subject</td>
+#.   <div class="label">Subject</div>
+#.   <th class="forumSubjectCell">Subject</th>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_subject"
 msgstr "Onderwerp"
 
 #.   <td>Titre</td>
-#.   <td style="width:30%">Title</td>
+#.   <td class="forumEditLabel">Title</td>
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
 msgstr "Titel"
 
 #.   <h2>
-#.    Assign local roles: Search Members
-#.   </h2>
+#.      Assign local roles: Search Members
+#.     </h2>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "heading_local_roles_search_members"
 msgstr "Wijs locale rollen toe: Zoek naar leden"
 
 #.   <h2>
 #.       Assign local roles: Search Results
-#.   </h2>
+#.     </h2>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "heading_local_roles_search_results"
 msgstr "Wijs locale rollen toe: Zoek naar resultaten"
 
-#.   <th style="text-align:left;">
-#.           Email address
-#.       </th>
+#.   <th>
+#.             Email address
+#.           </th>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_email"
 msgstr "Email adres"
@@ -247,9 +252,9 @@ msgstr "Naam"
 msgid "label_roles"
 msgstr "Rol(len)"
 
-#.   <th style="text-align:left;">
-#.           User
-#.       </th>
+#.   <th>
+#.             User
+#.           </th>
 #.   <span>User</span>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_user"
@@ -266,50 +271,53 @@ msgid "label_user_name"
 msgstr "Naam"
 
 #.   <p>
-#.      These users currently have local roles assigned in this folder:
+#.     These users currently have local roles assigned in this folder:
 #.   </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_assigned_users"
 msgstr " Deze gebruikers hebben momenteel locale rollen in deze map:"
 
 #.   <h2>
-#.       Currently assigned local roles
+#.     Currently assigned local roles
 #.   </h2>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_currently_assigned"
 msgstr "Huidige toegewezen locale rollen"
 
 #.   <p>
-#.       Sorry, no groups matched your search.
-#.    </p>
+#.         Sorry, no groups matched your search.
+#.       </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_no_results_member"
 msgstr "Sorry, geen groepen voldeden aan uw zoek criteria."
 
 #.   <p>
 #.       Sorry, no members matched your search.
-#.    </p>
+#.     </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_no_results_members"
 msgstr "Sorry, geen leden voldeden aan uw zoek criteria."
 
 #.   <th colspan="2">
-#.           Role to assign:
-#.       </th>
+#.             Role to assign:
+#.           </th>
+#.   <th colspan="2">
+#.               Role to assign:
+#.             </th>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_role_to_assign"
 msgstr "Toe te wijzen rol:"
 
 #.   <p>
-#.       Select Group(s) and a role to assign:
-#.    </p>
+#.         Select Group(s) and a role to assign:
+#.       </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_select_groups_and_roles"
 msgstr "Selecteer groep(en) en een rol om toe te wijzen:"
 
 #.   <p>
-#.       Select Member(s) and a role to assign:
-#.    </p>
+#.         Select Member(s) and a role to assign:
+#.       </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_select_members_and_roles"
 msgstr "Selecteer lid/leden en een rol om toe te wijzen:"

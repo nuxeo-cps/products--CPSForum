@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
-"POT-Creation-Date: 2004-02-20 14:25default\n"
-"PO-Revision-Date: 2004-02-20 14:25+0100\n"
+"POT-Creation-Date: 2004-03-26 17:23default\n"
+"PO-Revision-Date: 2004-03-26 17:24+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,9 +21,7 @@ msgstr ""
 "Domain: default\n"
 "X-Generator: KBabel 1.0.2\n"
 
-#.   <option repeat="role roles" attributes="value role" content="role">
-#.            Role1
-#.         </option>
+#.   <option repeat="role roles" attributes="value role" content="role">Role1</option>
 #.   <option repeat="role roles" attributes="value role" content="role"> Role1 </option>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "Role1"
@@ -68,8 +66,8 @@ msgstr "a priori"
 msgid "forum_allow_anon_posts"
 msgstr "Autoriser les messages anonymes"
 
-#.   <td>Author</td>
-#.   <td class="forumsubheader" width="100">Author</td>
+#.   <div class="label">Author</div>
+#.   <th class="forumAuthorCell">Author</th>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
@@ -80,7 +78,7 @@ msgstr "Auteur"
 msgid "forum_button_lockunlock"
 msgstr "(Dé-)verrouiller le fil"
 
-#.   <td class="forumsubheader" width="80">Date</td>
+#.   <th class="forumDateCell">Date</th>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_date"
 msgstr "Date"
@@ -101,7 +99,7 @@ msgstr "Dépublier"
 msgid "forum_description"
 msgstr "Description"
 
-#.   <h4>Comments</h4>
+#.   <h2 id="document_comment">Comments</h2>
 #: from ../skins/forum_default/forum_comment_lib.pt
 msgid "forum_label_comments"
 msgstr "Commentaires"
@@ -112,7 +110,7 @@ msgstr "Commentaires"
 msgid "forum_label_lock_forum"
 msgstr "Verrouiller le forum (lecture seule)"
 
-#.   <td>Message</td>
+#.   <div class="label">Message</div>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_message"
 msgstr "Message"
@@ -136,8 +134,8 @@ msgid "forum_new_thread"
 msgstr "Nouveau fil"
 
 #.   <td class="forumempty">
-#.             No comment associated with this document.
-#.           </td>
+#.                 No comment associated with this document.
+#.               </td>
 #.   <td class="forumempty">
 #.             Aucun message dans ce forum !
 #.           </td>
@@ -151,7 +149,9 @@ msgstr "Pas de message"
 msgid "forum_post"
 msgstr "Poster"
 
-#.   <p>You are not authorized to post on this forum</p>
+#.   <p>
+#.           You are not authorized to post on this forum
+#.         </p>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_post_unauthorize"
 msgstr "Vous n'avez pas le droit de poster de message sur ce forum"
@@ -161,13 +161,17 @@ msgstr "Vous n'avez pas le droit de poster de message sur ce forum"
 msgid "forum_psm_name_required"
 msgstr "Vous devez entrer un nom ou pseudo"
 
+#.   <span condition="python:errormsg == 'error_subject'" class="forumerror">Subject field must be filled</span>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_psm_subject_required"
+msgstr "Vous devez entrer un sujet"
+
 #.   <input value="forum_publish" class="context" name="forum_publish_posts:method" type="submit" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_publish"
 msgstr "Publier"
 
-#.   <input value="forum_reply" class="context" name="forum_post_reply:method" type="submit">
-#.              </input>
+#.   <input value="forum_reply" class="standalone" name="forum_post_reply:method" type="submit" />
 #: from ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
 msgstr "Répondre"
@@ -178,37 +182,37 @@ msgstr "Répondre"
 msgid "forum_send_moderation_notification"
 msgstr "Notifier les modérateurs (nouveaux messages)"
 
-#.   <td>Subject</td>
-#.   <td class="forumsubheader">Subject</td>
+#.   <div class="label">Subject</div>
+#.   <th class="forumSubjectCell">Subject</th>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_subject"
 msgstr "Sujet"
 
 #.   <td>Titre</td>
-#.   <td style="width:30%">Title</td>
+#.   <td class="forumEditLabel">Title</td>
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
 msgstr "Titre"
 
 #.   <h2>
-#.    Assign local roles: Search Members
-#.   </h2>
+#.      Assign local roles: Search Members
+#.     </h2>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "heading_local_roles_search_members"
 msgstr "Déléguer des rôles locaux : recherche de membres"
 
 #.   <h2>
 #.       Assign local roles: Search Results
-#.   </h2>
+#.     </h2>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "heading_local_roles_search_results"
 msgstr "Déléguer des rôles locaux : résultats de la recherche"
 
-#.   <th style="text-align:left;">
-#.           Email address
-#.       </th>
+#.   <th>
+#.             Email address
+#.           </th>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_email"
 msgstr "Adresse de mél"
@@ -248,9 +252,9 @@ msgstr "Nom"
 msgid "label_roles"
 msgstr "Rôle(s)"
 
-#.   <th style="text-align:left;">
-#.           User
-#.       </th>
+#.   <th>
+#.             User
+#.           </th>
 #.   <span>User</span>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "label_user"
@@ -267,50 +271,53 @@ msgid "label_user_name"
 msgstr "Nom d'utilisateur"
 
 #.   <p>
-#.      These users currently have local roles assigned in this folder:
+#.     These users currently have local roles assigned in this folder:
 #.   </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_assigned_users"
 msgstr "Ces utilisateurs ont pour le moment des rôles locaux dans ce répertoire :"
 
 #.   <h2>
-#.       Currently assigned local roles
+#.     Currently assigned local roles
 #.   </h2>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_currently_assigned"
 msgstr "Rôles locaux délégués pour le moment"
 
 #.   <p>
-#.       Sorry, no groups matched your search.
-#.    </p>
+#.         Sorry, no groups matched your search.
+#.       </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_no_results_member"
 msgstr "Désolé, aucun groupe ne correspond à votre recherche."
 
 #.   <p>
 #.       Sorry, no members matched your search.
-#.    </p>
+#.     </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_no_results_members"
 msgstr "Désolé, aucun membre ne correspond à votre recherche."
 
 #.   <th colspan="2">
-#.           Role to assign:
-#.       </th>
+#.             Role to assign:
+#.           </th>
+#.   <th colspan="2">
+#.               Role to assign:
+#.             </th>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_role_to_assign"
 msgstr "Rôle à déléguer :"
 
 #.   <p>
-#.       Select Group(s) and a role to assign:
-#.    </p>
+#.         Select Group(s) and a role to assign:
+#.       </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_select_groups_and_roles"
 msgstr "Choisissez le(s) groupe(s) et un rôle pour délégation :"
 
 #.   <p>
-#.       Select Member(s) and a role to assign:
-#.    </p>
+#.         Select Member(s) and a role to assign:
+#.       </p>
 #: from ../skins/forum_default/forum_localrole_form.pt
 msgid "legend_local_roles_select_members_and_roles"
 msgstr "Choisissez le(s) membre(s) et un rôle pour délégation :"

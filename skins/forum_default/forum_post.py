@@ -2,8 +2,6 @@
 
 # $Id$
 
-from ZTUtils import make_query
-
 if not author:
     msg = 'error_author'
     return context.forum_post_form(error_message=msg)
@@ -31,7 +29,7 @@ if REQUEST is not None:
                                             post_id, b_start)
     else:
         url = "%s?post_id=%s" % (context.absolute_url(),
-                                            post_id)
+                                 post_id)
     REQUEST.RESPONSE.redirect(url)
 else:
     return post_id

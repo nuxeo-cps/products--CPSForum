@@ -330,23 +330,21 @@ def install(self):
     # Actions
     ##############################################
     pr("Verifiying comment action for document")
-    action_found = 0
-    for action in  portal['portal_actions'].listActions():
-        if action.id == 'comment':
-            action_found = 1
-    if not action_found:
-        portal['portal_actions'].addAction(
-            id='comment',
-            name='action_comment',
-            action='string: ${object/absolute_url}/forum_post_form?comment_mode=1',
-            condition="python: object is not None and hasattr(portal,'portal_discussion') and hasattr(portal.portal_discussion,'isCommentingAllowedFor') and portal.portal_discussion.isCommentingAllowedFor(object)",
-            permission='View',
-            category='workflow')
-        pr(" Added")
-    else:
-        pr(" Present")
-
-
+    actions_to_keep = ()
+    for action in portal['portal_actions'].listActions():
+        if action.id != 'comment':
+            actions_to_keep = actions_to_keep + (action,)
+        else:
+            pr(" Removing old comment action")
+    portal['portal_actions']._actions = actions_to_keep
+    pr(" Adding new comment action")
+    portal['portal_actions'].addAction(
+        id='comment',
+        name='action_comment',
+        action='string: ${object/absolute_url}/forum_post_form?comment_mode=1',
+        condition="python:object is not None and hasattr(portal,'portal_discussion') and hasattr(portal.portal_discussion,'isCommentingAllowedFor') and portal.portal_discussion.isCommentingAllowedFor(object)",
+        permission='View',
+        category='object')
 
     ##############################################
     # i18n support

@@ -18,18 +18,15 @@ Summary:
 Introduction
 --------------------------------------------------
 
-CPSForum provides newsgroups and discussion threads, anywhere on the site.
-It also makes it possible to comment on documents.
-See the 'Features' section below for more information.
+CPSForum provides newsgroup-like discussion threads anywhere on the site.
+It also makes it possible to make comments about documents also organized
+by threads. See the 'Features' section below for more information.
 
 --------------------------------------------------
 History & Bug fixes
 --------------------------------------------------
 
-For history and bug fixes, please refer to the HISTORY file.
-
-Still, important features and changes w.r.t implementations (CPSForum v. 0.X.X)
-are given here:
+Important features and changes w.r.t CPSForum releases earlier than 0.8.x:
 - posts are now searchable,
 - posts follow their own workflow (forum_post_wf) and have a publication
   status (see doc/forum_wf.svg for a graphical representation of this workflow),
@@ -41,6 +38,8 @@ are given here:
 - new permissions make it possible to fine tune who is allowed to do what
   on forums (see below for more information).
 
+For history and bug fixes, please refer to the HISTORY file.
+
 --------------------------------------------------
 Installation
 --------------------------------------------------
@@ -51,7 +50,8 @@ IMPORTANT NOTE:
 This version of CPSForum and all subsequent versions based on CPSDocument
 posts are incompatible with existing Forum instances that have been created
 with earlier versions of CPSForum (i.e. which do not use CPSDocument posts).
-This means all versions up to (and including) release 0.7.0-1 of April 2004.
+This means all versions up to (and including) release 0.7.0-1 released in
+April 2004.
 
 --------------------------------------------------
 Features
@@ -60,25 +60,29 @@ Features
 Forum objects can be created in sections or workspaces.
 
 - Forum settings
-  - Moderation
+  o Moderation
     It is possible to assign moderators to any forum.
-    There are two kinds of moderation:
-    - 'a priori': messages posted have to be validated by the moderator
+    There are two moderation modes:
+    * 'a priori': messages posted have to be validated by a moderator
       to be visible by other users.
-    - 'a posteriori': messages posted are visible to the users as soon as they
-      published. But the moderator can make them unvisible or delete them
-      afterwards.
-  - Anonymous posts: it is possible to allow anonymous users to post messages
-    in the forum.
-  - Lock: it is possible to lock the forum, making it read only.
-  - Number of discussion threads per page: a maximum number of threads per page
-    can be set. The value 0 means that there is no limit.
+    * 'a posteriori': messages are published (and thus visible) directly after
+      their posting.  Moderators can unpublish or delete them afterwards.
+  o Anonymous posts: it is possible to allow anonymous users to post messages
+    on a forum.
+  o Locking mechanism: it is possible to lock a forum, making it read only.
+    Locks can also be set at a finer grain (thread level: forbid new replies
+    to a given thread)
+  o Number of discussion threads per page: a maximum number of threads per page
+    can be set. The value 0 means that there is no limit (all threads are
+    displayed on the same page).
 
-- Forum posts handling
+- Forum post handling
   Users allowed to post messages can create new discussion threads or answer to
   messages in other discussion threads.
   If the forum is moderated 'a priori', the message will appear in the thread
-  with a red spot in front of it, meaning that other users cannot see it.
+  with a red spot in front of it, meaning that other users cannot see it
+  (moderators can of course see a pending message, as well as the user who
+  created it).
   Users moderating the forum can publish this kind of messages, making them
   visible to all the other users in this forum.
   Moderators can also unpublish, or even delete messages.
@@ -96,7 +100,6 @@ Some details about roles and permissions associated with forums:
     given document.
 
 - those three permissions are mapped to CPSDefault roles as follows:
-  for standard forums:
     * Forum Moderate = WorkspaceManager, Section Manager, Section Reviewer,
                        Owner
     * Forum Post = WorkspaceManager, WorkspaceMember, WorkspaceReader,
@@ -109,20 +112,22 @@ In addition, it is possible to assign roles ForumModerator and ForumPoster
 (which speak for themselves) locally in a forum. It is also possible to
 change default settings by using CPSInstaller.setupPortalPermissions()
 
-A given user has to have access to a forum object to be able to use his/her
+A given user must have access to a forum object to be able to use his/her
 roles specific to the forum.
 
 --------------------------------------------------
 Discussions (comments about documents)
 --------------------------------------------------
 
-If your document is discussable, an action in the action box makes it
-possible to activate comments for your document. If they are activated,
-a new action makes it possible to actually comment the document.
-These comments are managed by a CPSForum (a forum is associated with each
-document that contains comments). Beware: the forum is associated with the
-proxy document, not the actual document in the repository, meaning that
-the forum is not shared by the various versions of the document (published
-in sections, or workgroup drafts). The forum objects themselves are stored
-in a specific .cps_discussions in the parent folder (workspace or content)
-and are hidden from the user.
+If your document is discussable (allow_discussion set to true),
+an action in the action box makes it possible to activate comments for your
+document. If comments are activated, a new action makes it possible to
+actually comment the document. These comments are managed by a CPSForum object
+(a forum is associated with each document that contains comments). 
+Beware: the forum is associated with the proxy document, not the actual
+document in the repository, meaning that the forum is not shared by the
+various versions of the document (published in sections, or workgroup drafts).
+Forum objects themselves are stored in a specific .cps_discussions folder in the
+document-being-commented's parent folder (workspace or section) and are hidden
+from the user.
+

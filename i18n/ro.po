@@ -74,7 +74,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
-"POT-Creation-Date: 2004-10-25 10:20default\n"
+"POT-Creation-Date: 2005-04-13 18:03default\n"
 "PO-Revision-Date: 2005-03-29 13:32+0300\n"
 "Last-Translator: \n"
 "Language-Team:  <en@li.org>\n"
@@ -147,7 +147,7 @@ msgid "forum_description"
 msgstr "Descriere"
 
 #.   <h2 id="document_comment">Comments</h2>
-#: from ../skins/forum_default/forum_comment_lib.pt
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
 msgid "forum_label_comments"
 msgstr "Comentarii"
 
@@ -205,7 +205,7 @@ msgstr "Acest forum este blocat. Nu puteti posta mesaje noi."
 #.   <td class="forumempty">
 #.           Aucun message dans ce forum !
 #.         </td>
-#: from ../skins/forum_default/forum_comment_lib.pt
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_no_message"
 msgstr "Nici un mesaj."
@@ -334,7 +334,8 @@ msgid "portal_type_ForumPost_title"
 msgstr "Mesajul forumului:"
 
 msgid "portal_type_ForumPost_description"
-msgstr "Tipuri de mesaje utilizate in forumuri si comentariile pentru documente"
+msgstr ""
+"Tipuri de mesaje utilizate in forumuri si comentariile pentru documente"
 
 msgid "forum_label_display_title"
 msgstr "Titlu"
@@ -374,6 +375,7 @@ msgstr "Text"
 
 msgid "forum_help_moderation"
 msgstr ""
-"<ul> <li>Moderare a priori :<p>Responsabilul forumului trebuie sa citeasca si sa accepte fiecare mesaj inainte de publicare.</p></li><li>Moderare a "
-"posteriori :<p>Fara moderare, mesajele sunt publicate direct pe forum. Responsabilul nu va mai putea suprima mesajele.</p></li></ul>"
-
+"<ul> <li>Moderare a priori :<p>Responsabilul forumului trebuie sa citeasca "
+"si sa accepte fiecare mesaj inainte de publicare.</p></li><li>Moderare a "
+"posteriori :<p>Fara moderare, mesajele sunt publicate direct pe forum. "
+"Responsabilul nu va mai putea suprima mesajele.</p></li></ul>"

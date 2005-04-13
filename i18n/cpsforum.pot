@@ -1,12 +1,9 @@
-# ##########################################################
-# ################# DON'T EDIT THIS FILE! ##################
-# ##########################################################
 # Gettext Message File for default.
 # Your Name <your@email>, Year
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2004-10-25 10:20default\n"
+"POT-Creation-Date: 2005-04-13 18:03default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -78,7 +75,7 @@ msgid "forum_description"
 msgstr ""
 
 #.   <h2 id="document_comment">Comments</h2>
-#: from ../skins/forum_default/forum_comment_lib.pt
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
 msgid "forum_label_comments"
 msgstr ""
 
@@ -136,7 +133,7 @@ msgstr ""
 #.   <td class="forumempty">
 #.           Aucun message dans ce forum !
 #.         </td>
-#: from ../skins/forum_default/forum_comment_lib.pt
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_no_message"
 msgstr ""

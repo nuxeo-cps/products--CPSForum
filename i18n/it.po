@@ -3,10 +3,11 @@
 # ##########################################################
 # Gettext Message File for default.
 # Your Name <your@email>, Year
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum\n"
-"POT-Creation-Date: 2004-10-25 10:20default\n"
+"POT-Creation-Date: 2005-04-13 18:03default\n"
 "PO-Revision-Date: 2004-09-30 16:19+0100\n"
 "Last-Translator: Fabio Nosari <fabnos@fastwebnet.it>\n"
 "Language-Team: Fabio Nosari <fabnos@fastwebnet.it>\n"
@@ -80,7 +81,7 @@ msgid "forum_description"
 msgstr "Descrizione"
 
 #.   <h2 id="document_comment">Comments</h2>
-#: from ../skins/forum_default/forum_comment_lib.pt
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
 msgid "forum_label_comments"
 msgstr "Commenti"
 
@@ -139,7 +140,7 @@ msgstr ""
 #.   <td class="forumempty">
 #.           Aucun message dans ce forum !
 #.         </td>
-#: from ../skins/forum_default/forum_comment_lib.pt
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_no_message"
 msgstr "Nessun messaggio"
@@ -307,3 +308,11 @@ msgstr "Icona"
 
 msgid "forum_label_display_wf_txt"
 msgstr "Testo"
+
+#, fuzzy
+msgid "forum_help_moderation"
+msgstr ""
+"<ul> <li>Modération a priori :<p>Le responsable du forum doit lire et "
+"accepter chaque message avant publication.</p></li><li>Modération a "
+"posteriori :<p>Pas de modération, les messages sont publiés directement sur "
+"le forum. Le responsable pourra néanmoins en supprimer.</p></li></ul>"

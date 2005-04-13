@@ -3,10 +3,11 @@
 # Gettext Message File for default.
 # Your Name <your@email>, Year
 # emmanuel <epietriga@nuxeo.com>, 2003, 2004.
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
-"POT-Creation-Date: 2004-10-25 10:20default\n"
+"POT-Creation-Date: 2005-04-13 18:03default\n"
 "PO-Revision-Date: 2004-02-19 12:43+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -78,11 +79,40 @@ msgstr "Maak publicatie ongedaan"
 msgid "forum_description"
 msgstr "Omschrijving"
 
+#.   <h2 id="document_comment">Comments</h2>
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
+#, fuzzy
+msgid "forum_label_comments"
+msgstr "Comments"
+
 #.   <td>Lock forum (no longer possible to post new messages)</td>
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_label_lock_forum"
 msgstr "Vergrendel het forum (Berichten kunnen alleen gelezen worden)"
+
+#.   <span />
+#: from ../skins/forum_default/forum_view_main.pt
+msgid "forum_link_back_to_document"
+msgstr ""
+
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=next_page.first))" condition="next_page">
+#.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
+#.             </a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+#, fuzzy
+msgid "forum_link_next_threads ${tpp}"
+msgstr "Next ${tpp} threads"
+
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=previous_page.first))" condition="previous_page">
+#.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
+#.             </a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+#, fuzzy
+msgid "forum_link_prev_threads ${tpp}"
+msgstr "Previous ${tpp} threads"
 
 #.   <div class="label">Message</div>
 #: from ../skins/forum_default/forum_post_form.pt
@@ -111,7 +141,7 @@ msgstr "Het forum is vergrendeld. Je kan geen nieuwe berichten plaatsen."
 #.   <td class="forumempty">
 #.           Aucun message dans ce forum !
 #.         </td>
-#: from ../skins/forum_default/forum_comment_lib.pt
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_no_message"
 msgstr "Geen boodschap"
@@ -133,16 +163,36 @@ msgstr "???"
 msgid "forum_psm_name_required"
 msgstr "Je moet je naam of bijnaam invullen"
 
+#.   <div class="row error" condition="python:errormsg == 'error_subject'">
+#.                   Subject field must be filled
+#.           </div>
+#: from ../skins/forum_default/forum_post_form.pt
+#, fuzzy
+msgid "forum_psm_subject_required"
+msgstr "You must enter a subject"
+
 #.   <input name="forum_publish_posts:method" type="submit" class="context" value="forum_publish" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_publish"
 msgstr "Publiceren"
+
+#.   <input name="forum_reject_posts:method" type="submit" class="context" value="forum_reject" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+#, fuzzy
+msgid "forum_reject"
+msgstr "Reject"
 
 #.   <input name="forum_post_reply:method" type="submit" class="standalone" value="forum_reply" />
 #: from ../skins/forum_default/post_view_csnippet.pt
 #: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
 msgstr "Beantwoorden"
+
+#.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+#, fuzzy
+msgid "forum_state"
+msgstr "Status"
 
 #.   <div class="label required">Subject</div>
 #.   <a href="./sort_posts?criterion=subject" attributes="href string:./sort_posts?criterion=${subject_sort_direction}">Subject</a>
@@ -180,6 +230,18 @@ msgstr ""
 msgid "forum_mailbody_new_msg_submitted2"
 msgstr ""
 
+#, fuzzy
+msgid "forum_psm_comments_activated"
+msgstr "Comments are now authorized."
+
+#, fuzzy
+msgid "forum_psm_comments_deactivated"
+msgstr "Comments are no longer authorized."
+
+#, fuzzy
+msgid "forum_psm_message_posted"
+msgstr "Message posted"
+
 msgid "psm_cpsforum_need_rights"
 msgstr ""
 
@@ -189,5 +251,92 @@ msgstr ""
 msgid "action_deactivate_comments"
 msgstr ""
 
+msgid "action_manage_comments"
+msgstr ""
+
+#, fuzzy
+msgid "forum_title_comments"
+msgstr "Comments"
+
+#, fuzzy
+msgid "forum_title_comments_for"
+msgstr "Comments associated with document"
+
+#, fuzzy
+msgid "forum_desc_comments"
+msgstr "This forum contains comments associated with document"
+
+#, fuzzy
+msgid "forum_label_threads_per_page"
+msgstr "Number of discussion threads or posts per page:"
+
+#, fuzzy
+msgid "forum_label_subject"
+msgstr "Subject"
+
+#, fuzzy
+msgid "forum_label_message"
+msgstr "Message"
+
 msgid "portal_type_ForumPost_title"
 msgstr ""
+
+#, fuzzy
+msgid "portal_type_ForumPost_description"
+msgstr "Message type use din forums and for commenting documents"
+
+#, fuzzy
+msgid "forum_label_display_title"
+msgstr "Title"
+
+#, fuzzy
+msgid "forum_label_display_200_fc"
+msgstr "200 first characters"
+
+#, fuzzy
+msgid "forum_label_display_msg"
+msgstr "Whole message"
+
+#, fuzzy
+msgid "forum_label_tree_display"
+msgstr "Post tree display"
+
+#, fuzzy
+msgid "forum_label_attachedFiles"
+msgstr "Attachments"
+
+#, fuzzy
+msgid "forum_pending_post"
+msgstr "Pending"
+
+#, fuzzy
+msgid "forum_unpublished_post"
+msgstr "Unpublished"
+
+#, fuzzy
+msgid "forum_published_post"
+msgstr "Published"
+
+#, fuzzy
+msgid "forum_rejected_post"
+msgstr "Rejected"
+
+#, fuzzy
+msgid "forum_label_wf_display"
+msgstr "Post status display:"
+
+#, fuzzy
+msgid "forum_label_display_wf_icon"
+msgstr "Icon"
+
+#, fuzzy
+msgid "forum_label_display_wf_txt"
+msgstr "Text"
+
+#, fuzzy
+msgid "forum_help_moderation"
+msgstr ""
+"<ul> <li>A priori moderation:<p>The forum manager must read and accept every "
+"message before its publication.</p></li><li>A posteriori moderation:<p>No "
+"moderation, messages are immediately published on the forum. The forum "
+"manager can delete them afterwards.</p></li></ul>"

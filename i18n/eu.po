@@ -8,10 +8,11 @@
 # ben <ben@nuxeo.com>, 2004.
 # Encolpe DEGOUTE <ed@nuxeo.com>, 2004.
 # Aitzol Naberan Burgaña <anaberan@codesyntax.com>, 2004.
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum_en\n"
-"POT-Creation-Date: 2004-07-06 14:47default\n"
+"POT-Creation-Date: 2005-04-13 18:03default\n"
 "PO-Revision-Date: 2004-09-24 09:44+0200\n"
 "Last-Translator: Aitzol Naberan Burgaña <anaberan@codesyntax.com>\n"
 "Language-Team: Euskara <eu@li.org>\n"
@@ -50,7 +51,7 @@ msgid "forum_allow_anon_posts"
 msgstr "Allow anonymous posts"
 
 #.   <div class="label">Author</div>
-#.   <a href="./sort_posts?criterion=author">Author</a>
+#.   <a href="./sort_posts?criterion=author" attributes="href string:./sort_posts?criterion=${author_sort_direction}">Author</a>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_author"
@@ -61,7 +62,7 @@ msgstr "Author"
 msgid "forum_button_lockunlock"
 msgstr "(Un-)lock thread"
 
-#.   <a href="./sort_posts?criterion=date">Date</a>
+#.   <a href="./sort_posts?criterion=date" attributes="href string:./sort_posts?criterion=${date_sort_direction}">Date</a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_date"
 msgstr "Date"
@@ -84,7 +85,7 @@ msgid "forum_description"
 msgstr "Description"
 
 #.   <h2 id="document_comment">Comments</h2>
-#: from ../skins/forum_default/forum_comment_lib.pt
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
 msgid "forum_label_comments"
 msgstr "Comments"
 
@@ -142,7 +143,7 @@ msgstr "This forum is locked. You cannot post new messages to it."
 #.   <td class="forumempty">
 #.           Aucun message dans ce forum !
 #.         </td>
-#: from ../skins/forum_default/forum_comment_lib.pt
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_no_message"
 msgstr "No message"
@@ -187,8 +188,14 @@ msgstr "Reject"
 msgid "forum_reply"
 msgstr "Reply"
 
+#.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+#, fuzzy
+msgid "forum_state"
+msgstr "Status"
+
 #.   <div class="label required">Subject</div>
-#.   <a href="./sort_posts?criterion=subject">Subject</a>
+#.   <a href="./sort_posts?criterion=subject" attributes="href string:./sort_posts?criterion=${subject_sort_direction}">Subject</a>
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_subject"
@@ -200,6 +207,13 @@ msgstr "Subject"
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
 msgstr "Title"
+
+#.   <h2>
+#.       Currently assigned local roles
+#.   </h2>
+#: from ../skins/forum_default/forum_localrole_form.pt
+msgid "legend_local_roles_currently_assigned"
+msgstr ""
 
 msgid "forum_label_postedby"
 msgstr "posted by"
@@ -282,5 +296,29 @@ msgstr "Pending"
 msgid "forum_unpublished_post"
 msgstr "Unpublished"
 
+#, fuzzy
+msgid "forum_published_post"
+msgstr "Published"
+
 msgid "forum_rejected_post"
 msgstr "Rejected"
+
+#, fuzzy
+msgid "forum_label_wf_display"
+msgstr "Post status display:"
+
+#, fuzzy
+msgid "forum_label_display_wf_icon"
+msgstr "Icon"
+
+#, fuzzy
+msgid "forum_label_display_wf_txt"
+msgstr "Text"
+
+#, fuzzy
+msgid "forum_help_moderation"
+msgstr ""
+"<ul> <li>A priori moderation:<p>The forum manager must read and accept every "
+"message before its publication.</p></li><li>A posteriori moderation:<p>No "
+"moderation, messages are immediately published on the forum. The forum "
+"manager can delete them afterwards.</p></li></ul>"

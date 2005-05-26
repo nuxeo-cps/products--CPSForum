@@ -1,9 +1,5 @@
-# ##########################################################
-# ################# DON'T EDIT THIS FILE! ##################
-# ##########################################################
 # Gettext Message File for default.
 # Your Name <your@email>, Year
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum\n"
@@ -15,12 +11,12 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language-code: LL\n"
-"Language-name: Language\n"
 "Preferred-encodings: utf-8 latin1\n"
-"Domain: default\n"
 "X-Poedit-Language: Italian\n"
 "X-Poedit-Country: ITALY\n"
+"Language-Code: it\n"
+"Language-Name: Italian\n"
+"Domain: default\n"
 
 #.   <option value="0">a posteriori</option>
 #.   <option value="0" attributes="selected python:not moderation_mode">

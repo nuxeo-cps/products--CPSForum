@@ -55,7 +55,7 @@ if (getattr(forum, 'tree_display', 'title') != 'title' or
     posts4sort = [(make_sortkey(post_info), post_info) for post_info in post_infos]
     posts4sort.sort()
 
-    if sort_by.endswith('Inv'):
+    if sort_by and sort_by.endswith('Inv'):
         # reverse sorted list if sorting by dateInv, authorInv, subjectInv
         result = []
         i = len(posts4sort) - 1

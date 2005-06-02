@@ -6,7 +6,8 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
--
+- Fixed sorting key.
+- Use folder_localrole_form for inherited local roles.
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
--
+- Updated translations.

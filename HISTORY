@@ -1,4 +1,21 @@
 *******************************************
+** CPSForum V1.5.2 [R1 build 2005/06/02-11:51 by fguillaume]
+** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 22111
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Fixed sorting key.
+- Use folder_localrole_form for inherited local roles.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Updated translations.
+
+*******************************************
 ** CPSForum V1.5.1 [R1 build 2005/04/13-16:03 by madarche]
 
 Requires:

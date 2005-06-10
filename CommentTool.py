@@ -189,7 +189,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
 
             if '.cps_discussions' not in parent_folder.objectIds():
                 portal.portal_workflow.invokeFactoryFor(parent_folder, folder_type, '.cps_discussions')
-            cpsmcat = portal.Localizer.default
+            cpsmcat = portal.translation_service
             discussion_folder = getattr(parent_folder, '.cps_discussions')
             kw = {'hidden_folder': 1,
                   'Title': cpsmcat('forum_title_comments').encode('ISO-8859-15', 'ignore')}

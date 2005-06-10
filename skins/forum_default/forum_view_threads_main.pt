@@ -23,7 +23,7 @@
                            batched_desc python:modules['ZTUtils'].Batch(descendants,
                                                                    size=threads_per_page,
                                                                    start=batch_start)">
-      <input type="hidden" name="frm_start" 
+      <input type="hidden" name="frm_start"
              tal:attributes="value batch_start" />
       <tal:block tal:define="mq nocall:modules/ZTUtils/make_query;
                       previous_page python:batched_desc.previous;
@@ -56,7 +56,7 @@
       </tal:block>
       <tr>
         <td class="forumSelectCell">
-          <input type="hidden" name="parent_id:string" 
+          <input type="hidden" name="parent_id:string"
                  tal:attributes="value post_id" />
         </td>
         <td class="forumModerateCell">
@@ -87,7 +87,7 @@
         </th>
         <td class="forumLockCell"></td>
       </tr>
-      <tal:span tal:content="structure python:here.post_tree(descendants=batched_desc, 
+      <tal:span tal:content="structure python:here.post_tree(descendants=batched_desc,
                                                              post_id=post_id,
                                                              frm_start=batch_start,
                                                              sort_by=sort_by,
@@ -100,7 +100,7 @@
     <tal:block tal:condition="not: threads_per_page">
       <tr>
         <td class="forumSelectCell">
-          <input type="hidden" name="parent_id:string" 
+          <input type="hidden" name="parent_id:string"
                  tal:attributes="value post_id" />
         </td>
         <td class="forumModerateCell">
@@ -134,7 +134,7 @@
         </th>
         <td class="forumLockCell"></td>
       </tr>
-      <tal:span tal:content="structure python:here.post_tree(descendants=descendants, 
+      <tal:span tal:content="structure python:here.post_tree(descendants=descendants,
                                                              post_id=post_id,
                                                              sort_by=sort_by,
                                                              wf_display_mode=wf_display_mode,
@@ -146,20 +146,20 @@
   <div class="forumModeration">
     <tal:block condition="python:is_reviewer">
       <input type="submit" name="forum_publish_posts:method"
-             class="context" value="forum_publish" 
+             class="context" value="forum_publish"
              i18n:attributes="value" />
       <input type="submit" name="forum_unpublish_posts:method"
-             class="context" value="forum_depublish" 
+             class="context" value="forum_depublish"
              i18n:attributes="value" />
       <input type="submit" name="forum_reject_posts:method"
-             class="context" value="forum_reject" 
+             class="context" value="forum_reject"
              i18n:attributes="value" />
       <input type="submit" name="forum_lock_thread:method"
-             class="context" value="forum_button_lockunlock" 
+             class="context" value="forum_button_lockunlock"
              i18n:attributes="value" />
       <input type="submit" name="forum_del_posts:method"
              class="destructive" value="forum_delete"
-             tal:define="cpsmcat nocall:here/Localizer/default"
+             tal:define="cpsmcat nocall:here/translation_service"
              tal:attributes="onclick python:'return window.confirm(\'%s\')' %
                                (cpsmcat('description_confirm_delete'), )"
              i18n:attributes="value" />

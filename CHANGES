@@ -6,7 +6,8 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
--
+- removed buggy localrole form templates and use those of CPSDefault (folder)
+  instead
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

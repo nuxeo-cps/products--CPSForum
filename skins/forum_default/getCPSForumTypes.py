@@ -45,7 +45,7 @@ forum_type = {
                  },
                 {'id': 'localroles',
                  'name': 'action_local_roles',
-                 'action': 'forum_localrole_form',
+                 'action': 'folder_localrole_form',
                  'permissions': ('Change permissions',),
                  },
                 ),

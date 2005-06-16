@@ -43,9 +43,9 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         proxy_forum.forum_post_form()
         proxy_forum.forum_edit_form()
 
-        proxy_forum.forum_localrole_form()
+        proxy_forum.folder_localrole_form()
         self.portal.REQUEST.role_submit = 1
-        proxy_forum.forum_localrole_form()
+        proxy_forum.folder_localrole_form()
 
         forum.getPosterName('author')
 

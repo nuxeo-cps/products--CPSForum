@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum_en\n"
-"POT-Creation-Date: 2005-04-13 18:03default\n"
+"POT-Creation-Date: 2005-06-23 17:32default\n"
 "PO-Revision-Date: 2004-09-24 09:44+0200\n"
 "Last-Translator: Aitzol Naberan Burgaña <anaberan@codesyntax.com>\n"
 "Language-Team: Euskara <eu@li.org>\n"
@@ -65,7 +65,7 @@ msgid "forum_date"
 msgstr "Date"
 
 #.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
-#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/Localizer/default" />
+#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/translation_service" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Delete"
@@ -189,7 +189,7 @@ msgstr "Reply"
 #: from ../skins/forum_default/forum_view_threads_main.pt
 #, fuzzy
 msgid "forum_state"
-msgstr "Status"
+msgstr "Estado"
 
 #.   <div class="label required">Subject</div>
 #.   <a href="./sort_posts?criterion=subject" attributes="href string:./sort_posts?criterion=${subject_sort_direction}">Subject</a>
@@ -204,13 +204,6 @@ msgstr "Subject"
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
 msgstr "Title"
-
-#.   <h2>
-#.       Currently assigned local roles
-#.   </h2>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_currently_assigned"
-msgstr ""
 
 msgid "forum_label_postedby"
 msgstr "posted by"
@@ -295,27 +288,33 @@ msgstr "Unpublished"
 
 #, fuzzy
 msgid "forum_published_post"
-msgstr "Published"
+msgstr "Publicado"
 
 msgid "forum_rejected_post"
 msgstr "Rejected"
 
 #, fuzzy
 msgid "forum_label_wf_display"
-msgstr "Post status display:"
+msgstr "Muestra del estado del mensaje"
 
 #, fuzzy
 msgid "forum_label_display_wf_icon"
-msgstr "Icon"
+msgstr "Icono"
 
 #, fuzzy
 msgid "forum_label_display_wf_txt"
-msgstr "Text"
+msgstr "Texto"
 
 #, fuzzy
 msgid "forum_help_moderation"
 msgstr ""
-"<ul> <li>A priori moderation:<p>The forum manager must read and accept every "
-"message before its publication.</p></li><li>A posteriori moderation:<p>No "
-"moderation, messages are immediately published on the forum. The forum "
-"manager can delete them afterwards.</p></li></ul>"
+"<ul> <li>Moderación a priori:<p>El administrador del foro debe leer y "
+"aceptar cada mensaje antes de su publicación.</p></li><li>Moderación a "
+"posteriori:<p>Sin moderación, los mensajes se publican inmediatamente en el "
+"foro. El administrador del foro puede borrarlos después.</p></li></ul>"
+
+#    <h2>
+#        Currently assigned local roles
+#    </h2>
+msgid "legend_local_roles_currently_assigned"
+msgstr "Roles locales delegados actualmente"

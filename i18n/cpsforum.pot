@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2005-04-13 18:03default\n"
+"POT-Creation-Date: 2005-06-23 17:32default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -11,8 +11,8 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language-code: LL\n"
-"Language-name: Language\n"
+"Language-Code: LL\n"
+"Language-Name: Language\n"
 "Preferred-encodings: utf-8 latin1\n"
 "Domain: default\n"
 
@@ -58,7 +58,7 @@ msgid "forum_date"
 msgstr ""
 
 #.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
-#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/Localizer/default" />
+#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/translation_service" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr ""
@@ -195,13 +195,6 @@ msgstr ""
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
-msgstr ""
-
-#.   <h2>
-#.       Currently assigned local roles
-#.   </h2>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_currently_assigned"
 msgstr ""
 
 msgid "forum_label_postedby"

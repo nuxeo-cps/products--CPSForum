@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum\n"
-"POT-Creation-Date: 2005-04-13 18:03default\n"
+"POT-Creation-Date: 2005-06-23 17:32default\n"
 "PO-Revision-Date: 2005-05-18 16:19+0100\n"
 "Last-Translator: Jesús <jesusmartin@lasalle.es>\n"
 "Language-Team: español <jesusmartin@lasalle.es>\n"
@@ -13,7 +13,8 @@ msgstr ""
 "Language-Name: Español\n"
 "Domain: default\n"
 "Preferred-encodings: utf-8 latin1\n"
-"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-sv es-gt es-"
+"hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 "X-Generator: KBabel 1.0.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Language: Spanish\n"
@@ -76,7 +77,7 @@ msgstr "Fecha"
 
 #    <input value="forum_delete" class="destructive" name="forum_del_posts:method" type="submit" />
 #.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
-#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/Localizer/default" />
+#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/translation_service" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Borrar"
@@ -236,16 +237,6 @@ msgstr "Tema"
 msgid "forum_title"
 msgstr "Título"
 
-#    <h2>
-#        Currently assigned local roles
-#    </h2>
-#.   <h2>
-#.       Currently assigned local roles
-#.   </h2>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_currently_assigned"
-msgstr "Roles locales delegados actualmente"
-
 msgid "forum_label_postedby"
 msgstr "enviado por"
 
@@ -346,5 +337,14 @@ msgid "forum_label_display_wf_txt"
 msgstr "Texto"
 
 msgid "forum_help_moderation"
-msgstr "<ul> <li>Moderación a priori:<p>El administrador del foro debe leer y aceptar cada mensaje antes de su publicación.</p></li><li>Moderación a posteriori:<p>Sin moderación, los mensajes se publican inmediatamente en el foro. El administrador del foro puede borrarlos después.</p></li></ul>"
+msgstr ""
+"<ul> <li>Moderación a priori:<p>El administrador del foro debe leer y "
+"aceptar cada mensaje antes de su publicación.</p></li><li>Moderación a "
+"posteriori:<p>Sin moderación, los mensajes se publican inmediatamente en el "
+"foro. El administrador del foro puede borrarlos después.</p></li></ul>"
 
+#    <h2>
+#        Currently assigned local roles
+#    </h2>
+#~ msgid "legend_local_roles_currently_assigned"
+#~ msgstr "Roles locales delegados actualmente"

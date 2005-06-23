@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
-"POT-Creation-Date: 2005-04-13 18:03default\n"
+"POT-Creation-Date: 2005-06-23 17:32default\n"
 "PO-Revision-Date: 2004-10-25 11:38+0200\n"
 "Last-Translator: DARCHE <madarche@nuxeo.com>\n"
 "Language-Team: Francais <fr@li.org>\n"
@@ -63,7 +63,7 @@ msgid "forum_date"
 msgstr "Date"
 
 #.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
-#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/Localizer/default" />
+#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/translation_service" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Supprimer"
@@ -202,13 +202,6 @@ msgstr "Sujet"
 msgid "forum_title"
 msgstr "Titre"
 
-#.   <h2>
-#.       Currently assigned local roles
-#.   </h2>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_currently_assigned"
-msgstr "Rôles locaux délégués pour le moment"
-
 msgid "forum_label_postedby"
 msgstr "posté par"
 
@@ -312,3 +305,6 @@ msgstr ""
 "accepter chaque message avant publication.</p></li><li>Modération a "
 "posteriori :<p>Pas de modération, les messages sont publiés directement sur "
 "le forum. Le responsable pourra néanmoins en supprimer.</p></li></ul>"
+
+#~ msgid "legend_local_roles_currently_assigned"
+#~ msgstr "Rôles locaux délégués pour le moment"

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
-"POT-Creation-Date: 2005-04-13 18:03default\n"
+"POT-Creation-Date: 2005-06-23 17:32default\n"
 "PO-Revision-Date: 2004-02-19 12:43+0100\n"
 "Last-Translator: emmanuel <epietriga@nuxeo.com>\n"
 "Language-Team: francais <fr@li.org>\n"
@@ -62,7 +62,7 @@ msgid "forum_date"
 msgstr "Datum"
 
 #.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
-#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/Localizer/default" />
+#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/translation_service" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Verwijder"
@@ -207,13 +207,6 @@ msgstr "Onderwerp"
 msgid "forum_title"
 msgstr "Titel"
 
-#.   <h2>
-#.       Currently assigned local roles
-#.   </h2>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_currently_assigned"
-msgstr "Huidige toegewezen locale rollen"
-
 msgid "forum_label_postedby"
 msgstr "Gepost door"
 
@@ -339,3 +332,6 @@ msgstr ""
 "message before its publication.</p></li><li>A posteriori moderation:<p>No "
 "moderation, messages are immediately published on the forum. The forum "
 "manager can delete them afterwards.</p></li></ul>"
+
+msgid "legend_local_roles_currently_assigned"
+msgstr "Huidige toegewezen locale rollen"

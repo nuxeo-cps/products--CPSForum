@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ro\n"
-"POT-Creation-Date: 2005-04-13 18:03default\n"
+"POT-Creation-Date: 2005-06-23 17:32default\n"
 "PO-Revision-Date: 2005-03-29 13:32+0300\n"
 "Last-Translator: \n"
 "Language-Team:  <en@li.org>\n"
@@ -59,7 +59,7 @@ msgid "forum_date"
 msgstr "Data"
 
 #.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
-#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/Localizer/default" />
+#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/translation_service" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Sterge"
@@ -198,13 +198,6 @@ msgstr "Subiect"
 msgid "forum_title"
 msgstr "Titlu"
 
-#.   <h2>
-#.       Currently assigned local roles
-#.   </h2>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_currently_assigned"
-msgstr "Roluri locale desemnate momentan"
-
 msgid "forum_label_postedby"
 msgstr "postat de "
 
@@ -308,3 +301,6 @@ msgstr ""
 "si sa accepte fiecare mesaj inainte de publicare.</p></li><li>Moderare a "
 "posteriori :<p>Fara moderare, mesajele sunt publicate direct pe forum. "
 "Responsabilul nu va mai putea suprima mesajele.</p></li></ul>"
+
+#~ msgid "legend_local_roles_currently_assigned"
+#~ msgstr "Roluri locale desemnate momentan"

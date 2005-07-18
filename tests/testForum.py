@@ -70,8 +70,8 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
 
         self.assertEquals(len(forum.getThreads(proxy=proxy_forum)), 1)
 
-        forum.forum_view()
-        forum.forum_view(post_id)
+        proxy_forum.forum_view()
+        proxy_forum.forum_view(post_id)
         proxy_forum.forum_post_reply(parent_id=post_id)
         
         post_proxy = getattr(proxy_forum, post_id)
@@ -107,8 +107,8 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
 
         self.assertEquals(len(forum.getThreads(proxy=proxy_forum)), 1)
 
-        forum.forum_view()
-        forum.forum_view(post_id)
+        proxy_forum.forum_view()
+        proxy_forum.forum_view(post_id)
         
         post_proxy = getattr(proxy_forum, post_id)
         post_info = forum.getPostInfo(post_proxy)
@@ -152,9 +152,9 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         self.assertEquals(len(forum.getDescendants(post2_id, proxy=proxy_forum)), 0)
         self.assertEquals(len(forum.getDescendants(post3_id, proxy=proxy_forum)), 0)
 
-        forum.forum_view()
-        forum.forum_view(post1_id)
-        forum.forum_view(post2_id)
+        proxy_forum.forum_view()
+        proxy_forum.forum_view(post1_id)
+        proxy_forum.forum_view(post2_id)
 
 
 def test_suite():

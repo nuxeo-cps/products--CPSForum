@@ -194,7 +194,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
             kw = {'hidden_folder': 1,
                   'Title': cpsmcat('forum_title_comments').encode('ISO-8859-15', 'ignore')}
             discussion_folder_c = discussion_folder.getEditableContent()
-            discussion_folder_c.edit(**kw)
+            discussion_folder_c.edit(proxy=discussion_folder, **kw)
             comment_wf_chain = no_content_wf_chain.copy()
             if folder_type == 'Section':
                 forum_wf_chain = 'section_forum_wf'

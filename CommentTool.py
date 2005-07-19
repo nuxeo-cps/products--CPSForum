@@ -217,7 +217,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
             kw = {'Title': cpsmcat('forum_title_comments_for').encode('ISO-8859-15', 'ignore')+' '+proxy_doc.Title(),
                   'Description': cpsmcat('forum_desc_comments').encode('ISO-8859-15', 'ignore')+' '+proxy_doc.Title(),
                   'moderation_mode': 0}
-            forum_c.edit(**kw)
+            forum_c.edit(proxy=forum, **kw)
             portal.portal_eventservice.notifyEvent('modify_object', forum, {})
 
             # tell comment_tool that it is now activated and map it
@@ -289,7 +289,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
         newSecurityManager(None, tmp_user)
 
         kw = {'allow_discussion': allow,}
-        proxy.getEditableContent().edit(**kw)
+        proxy.getEditableContent().edit(proxy=proxy, **kw)
 
         newSecurityManager(None, old_user)
 

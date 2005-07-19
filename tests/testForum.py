@@ -55,7 +55,7 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
     def testEditForum(self):
         forum = self.forum
         forum.edit(Title="new title", Description="new description",
-                   moderation_mode=0)
+                   moderation_mode=0, proxy=self.proxy_forum)
         self.assertEquals(forum.Title(), "new title")
         self.assertEquals(forum.Description(), "new description")
         self.assertEquals(forum.moderation_mode, 0)
@@ -100,7 +100,7 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
         # Create new post using skin method.
         forum = self.forum
         proxy_forum = self.proxy_forum
-        forum.edit(moderation_mode=0)
+        forum.edit(moderation_mode=0, proxy=proxy_forum)
         self.assertEquals(forum.moderation_mode, 0)
         post_id = proxy_forum.forum_post(subject='subject', message='message',
                                          author='root')
@@ -129,7 +129,7 @@ class TestForum(CPSForumTestCase.CPSForumTestCase):
     def testThread(self):
         forum = self.forum
         proxy_forum = self.proxy_forum
-        forum.edit(moderation_mode=0)
+        forum.edit(moderation_mode=0, proxy=proxy_forum)
         self.assertEquals(forum.moderation_mode, 0)
 
         post1_id = proxy_forum.forum_post(subject='subject1',

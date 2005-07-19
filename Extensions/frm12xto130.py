@@ -41,7 +41,7 @@ def convertForum(proxy_forum, installer):
     installer.log("  Processing forum %s" % proxy_forum.id)
     forum = proxy_forum.getContent()
     kw = {'tree_display': getattr(forum, 'tree_display', 'title')}
-    proxy_forum.getEditableContent().edit(**kw)
+    proxy_forum.getEditableContent().edit(proxy=proxy_forum, **kw)
 
 # recursive descent of hierarchy (Workspace, Section, etc.)
 def inspectFolder(proxy_folder, installer, portal_types_to_export):

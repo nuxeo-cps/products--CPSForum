@@ -1,18 +1,17 @@
-## Script (Python) "getForumLocalRoles.py"
 ##parameters=mtool=None, base_url=None, context_url=None
-##
 # $Id$
+"""get Merged Local Roles filtering non CPSForum Roles.
+"""
+# XXX AT: This method has to be updated like it's been done in CPSDefault, and
+# base_url and context_url are not useful anymore
 
-""" get Merged Local Roles filtering non CPSForum Roles. """
+from Products.CMFcore.utils import getToolByName
 
 if mtool is None:
-    mtool = context.portal_membership
+    mtool = getToolByName(context, 'portal_membership')
 
-if base_url is None:
-    base_url = context.getBaseUrl()
-
-if context_url is None:
-    context_url = context.getContextUrl()
+utool = getToolByName(context, 'portal_url')
+rpath = utool.getRelativeContentURL(context)
 
 # Get the list of Roles from the tool
 dict_roles = mtool.getMergedLocalRolesWithPath(context)
@@ -25,7 +24,7 @@ for user in dict_roles.keys():
         roles = [r for r in roles if r not in ('Owner', 'Member')]
         if user == 'group:role:Anonymous' and '-' in roles:
             roles = [r for r in roles if r != '-']
-            if base_url+item['url'] == context_url:
+            if item['url'] == rpath:
                 local_roles_blocked = 1
         item['roles'] = roles
 
@@ -38,7 +37,7 @@ for user in dict_roles.keys():
 editable_users = []
 for user in dict_roles.keys():
     for item in dict_roles[user]:
-        if base_url+item['url'] == context_url:
+        if item['url'] == rpath:
             editable_users.append(user)
             continue
 

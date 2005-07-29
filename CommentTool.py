@@ -43,8 +43,12 @@ from CPSForumPermissions import ForumManageComments
 class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     """Comment tool, a container for forums used to comment documents."""
 
+    __implements__ = ActionProviderBase.__implements__
+    # XXX should also implement IDiscussionTool
+
     id = 'portal_discussion'
     meta_type = 'CPS Discussion Tool'
+    _actions = ()
 
     security = ClassSecurityInfo()
 
@@ -52,8 +56,6 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
                       PortalFolder.manage_options[:1] +
                       ({'label': 'Overview', 'action': 'manage_overview'},) +
                       PortalFolder.manage_options[1:])
-
-    _actions = ()
 
     _data = {}
 

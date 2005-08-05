@@ -6,11 +6,7 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
-- Removed buggy localrole form templates and use those of CPSDefault (folder)
-  instead
-- Taking advantage of the new centralized CPSI18n.tests.translations module.
-- Fixed translation files through the CPSI18n/bin/fix_pos script.
-- Replaced incorrect code producing broken urls using virtual hosting.
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

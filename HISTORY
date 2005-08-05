@@ -1,4 +1,24 @@
 *******************************************
+** CPSForum V1.5.3 [R1 build 2005/08/05-13:55 by ben]
+** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 25426
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Removed buggy localrole form templates and use those of CPSDefault (folder)
+  instead
+- Taking advantage of the new centralized CPSI18n.tests.translations module.
+- Fixed translation files through the CPSI18n/bin/fix_pos script.
+- Replaced incorrect code producing broken urls using virtual hosting.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** CPSForum V1.5.2 [R1 build 2005/06/02-11:51 by fguillaume]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 22111
 Requires:

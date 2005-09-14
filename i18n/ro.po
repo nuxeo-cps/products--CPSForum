@@ -84,7 +84,7 @@ msgstr "Comentarii"
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_label_lock_forum"
-msgstr "Blocheaza forumul(doar posibilitate de a citi)"
+msgstr "Blocheaza forumul (doar posibilitate de a citi)"
 
 #.   <span />
 #: from ../skins/forum_default/forum_view_main.pt
@@ -263,7 +263,7 @@ msgid "forum_label_display_title"
 msgstr "Titlu"
 
 msgid "forum_label_display_200_fc"
-msgstr "primele 200 caractere"
+msgstr "primele 200 de caractere"
 
 msgid "forum_label_display_msg"
 msgstr "Mesajul complet"
@@ -275,7 +275,7 @@ msgid "forum_label_attachedFiles"
 msgstr "Atasamente"
 
 msgid "forum_pending_post"
-msgstr "In asteptare de a fi publicat"
+msgstr "In asteptare pentru a fi publicat"
 
 msgid "forum_unpublished_post"
 msgstr "Nepublicat"

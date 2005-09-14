@@ -144,8 +144,6 @@ def getBranches(branches, id='ROOT', level=0, counter=0):
             result += getHeadline(post)
             
             try:
-                members_dir = context.portal_directories['members']
-                member_entry = members_dir.getEntry(post['author'])
                 fullname = '<a href="javascript:void(0)" onclick="javascript:window.open(\'popupdirectory_entry_view?dirname=members&id=' + post['author'] + '\',\'wclose\',\'width=500,height=200,scrollbars=yes,toolbar=no,status=no,resizable=yes,left=20,top=30\')">' +\
                        cgi.escape(context.getPosterName(post['author'])) + '</a>'
             except KeyError:

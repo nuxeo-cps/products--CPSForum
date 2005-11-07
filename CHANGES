@@ -6,9 +6,7 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
-- Conditions used in discussion related actions required that document had a
-  field named 'allow_discussion' in its schema ; fixed thanks to Joachim
-  Schmitz.
+-
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

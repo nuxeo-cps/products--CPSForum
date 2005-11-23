@@ -6,7 +6,7 @@ New features:
 -
 Bug fixes:
 ~~~~~~~~~~
-- Added basic support for another HTML editor than Epoz.
+- Added support for FCKeditor another HTML editor than Epoz.
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

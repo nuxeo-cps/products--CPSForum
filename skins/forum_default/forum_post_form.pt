@@ -81,6 +81,19 @@
                 i18n:translate="forum_message">Message</div>
           <div class="field">
             <tal:block condition="python:modules['Products.CPSUtil.integration'].isProductPresent('Products.FCKeditor')">
+              <script type="text/javascript" src=""
+                 tal:attributes="src string:${base_url}fckeditor.js">
+              </script>
+              <script type="text/javascript" tal:content="structure string:
+var oFCKeditor = new FCKeditor('message');
+oFCKeditor.BasePath = '${base_url}';
+oFCKeditor.Config['CustomConfigurationsPath'] = 'fckconfig-cps.js';
+oFCKeditor.ToolbarSet='Semantic';
+oFCKeditor.Width = 610;
+oFCKeditor.Height = 410;
+oFCKeditor.Create();
+">
+              </script>
             </tal:block>
             <tal:block condition="python:modules['Products.CPSUtil.integration'].isProductPresent('Products.Epoz')">
             <div style="width:550px; height:300px"

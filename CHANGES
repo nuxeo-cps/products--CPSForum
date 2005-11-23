@@ -7,6 +7,7 @@ New features:
 Bug fixes:
 ~~~~~~~~~~
 - Added support for FCKeditor another HTML editor than Epoz.
+- Fix bug on forum_comment_lib_view_comments_inline.pt. Use the comment tool API. 
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 -

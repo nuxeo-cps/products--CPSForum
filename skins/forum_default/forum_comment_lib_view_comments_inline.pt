@@ -9,7 +9,7 @@
 <metal:block define-macro="view_comments_inline">
 
 <tal:block define="post_id request/post_id|nothing;
-                   forum_proxy python:here.restrictedTraverse(here.portal_discussion.getCommentForumURL(here.absolute_url(relative=1)));
+                   forum_proxy python:here.portal_discussions.getForum4Comments(here);
                    forum forum_proxy/getContent;
                    threads python:forum.getThreads(proxy=forum_proxy);
                    is_poster python:here.portal_membership.checkPermission('Forum Post', forum);

@@ -11,4 +11,4 @@ Bug fixes:
 - Fix bug in naming discussion tool.
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
--
+- Added ignore_event flag on discussions tool.

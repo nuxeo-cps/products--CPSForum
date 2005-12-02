@@ -52,6 +52,12 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
 
     security = ClassSecurityInfo()
 
+    _properties = PortalFolder._properties + (
+        {'id': 'ignore_events', 'type': 'boolean', 'mode': 'w',
+         'label': "Ignore events"},
+        )
+    ignore_events = False
+
     manage_options = (ActionProviderBase.manage_options +
                       PortalFolder.manage_options[:1] +
                       ({'label': 'Overview', 'action': 'manage_overview'},) +
@@ -116,6 +122,8 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
 
     security.declareProtected(View, 'notify_document_deleted')
     def notify_document_deleted(self, event_type, object, infos):
+        if self.ignore_events:
+            return
         doc_url = object.absolute_url(relative=1)
         data = self._data
         if self._data.has_key(doc_url):

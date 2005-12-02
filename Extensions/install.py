@@ -517,8 +517,8 @@ forum.getContent().postRejected(object.id, proxy=forum)
     # New listeners for events
     ##############################################
     installer.log("Checking doc deletion listener (for commenting forum mapping sync)")
-    estool = installer.portal.portal_eventservice
-    objs = estool.objectValues()
+    evtool = installer.portal.portal_eventservice
+    objs = evtool.objectValues()
     subscribers = []
     for obj in objs:
         subscribers.append(obj.subscriber)
@@ -526,7 +526,7 @@ forum.getContent().postRejected(object.id, proxy=forum)
         installer.logOK()
     else:
         installer.log(" Creating portal_discussion subscriber")
-        estool.manage_addSubscriber(subscriber='portal_discussion',
+        evtool.manage_addSubscriber(subscriber='portal_discussion',
                                     action='document_deleted',
                                     meta_type='*',
                                     event_type='sys_del_object',

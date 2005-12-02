@@ -214,8 +214,9 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
                                      'ForumPost': 'forum_post_wf',
                                      })
             wfSetup(discussion_folder, comment_wf_chain)
-            portal.portal_eventservice.notifyEvent('modify_object', discussion_folder, {})
-            portal.portal_eventservice.notifyEvent('modify_object', discussion_folder_c, {})
+            evtool = getEventService(portal)
+            evtool.notifyEvent('modify_object', discussion_folder, {})
+            evtool.notifyEvent('modify_object', discussion_folder_c, {})
             existing_forum_ids = discussion_folder.objectIds()
             # forum's id is computed using the std script
             forum_id = portal.computeId(compute_from=proxy_doc.id,
@@ -228,7 +229,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
                   'Description': cpsmcat('forum_desc_comments').encode('ISO-8859-15', 'ignore')+' '+proxy_doc.Title(),
                   'moderation_mode': 0}
             forum_c.edit(proxy=forum, **kw)
-            portal.portal_eventservice.notifyEvent('modify_object', forum, {})
+            evtool.notifyEvent('modify_object', forum, {})
 
             # tell comment_tool that it is now activated and map it
             portal.portal_discussion.registerCommentForum(proxy_path=proxy_doc.absolute_url(relative=1),

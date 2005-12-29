@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum-de CPS-3.2.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-13 18:03default\n"
+"POT-Creation-Date: 2005-06-23 17:32default\n"
 "PO-Revision-Date: 2005-03-14 10:58+0100\n"
 "Last-Translator: Georg Hennemann <georg.hennemann@dhl.com>\n"
 "Language-Team: de <rheinland@dzug.org>\n"
@@ -58,7 +58,7 @@ msgid "forum_date"
 msgstr "Datum"
 
 #.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
-#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/Localizer/default" />
+#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/translation_service" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
 msgstr "Löschen"
@@ -198,13 +198,6 @@ msgstr "Betreff"
 msgid "forum_title"
 msgstr "Titel"
 
-#.   <h2>
-#.       Currently assigned local roles
-#.   </h2>
-#: from ../skins/forum_default/forum_localrole_form.pt
-msgid "legend_local_roles_currently_assigned"
-msgstr "Aktuell vorliegende lokale Rollen"
-
 msgid "forum_label_postedby"
 msgstr "erstellt von"
 
@@ -308,6 +301,9 @@ msgstr ""
 "message before its publication.</p></li><li>A posteriori moderation:<p>No "
 "moderation, messages are immediately published on the forum. The forum "
 "manager can delete them afterwards.</p></li></ul>"
+
+msgid "legend_local_roles_currently_assigned"
+msgstr "Aktuell vorliegende lokale Rollen"
 
 #~ msgid "label_name"
 #~ msgstr "Name"

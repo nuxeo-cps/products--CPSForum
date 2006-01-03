@@ -1,20 +1,15 @@
-# translation of en.po to German
-# Georg Hennemann <georg.hennemann@dhl.com>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum-de CPS-3.2.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-30 12:41default\n"
-"PO-Revision-Date: 2005-03-14 10:58+0100\n"
+"POT-Creation-Date: 2006-01-03 14:51default\n"
+"PO-Revision-Date: 2005-10-12 23:37+0200\n"
 "Last-Translator: Georg Hennemann <georg.hennemann@dhl.com>\n"
 "Language-Team: de <rheinland@dzug.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=iso-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language-Code: de\n"
-"Language-Name: German\n"
-"Domain: default\n"
 
 #.   <option value="0">a posteriori</option>
 #.   <option value="0" attributes="selected python:not moderation_mode">
@@ -189,7 +184,7 @@ msgstr "Status "
 #: from ../skins/forum_default/forum_post_form.pt
 #: ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_subject"
-msgstr "Betreff"
+msgstr "Thema"
 
 #.   <td>Titre</td>
 #.   <td class="forumEditLabel">Title</td>
@@ -253,10 +248,10 @@ msgid "forum_label_message"
 msgstr "Nachricht"
 
 msgid "portal_type_ForumPost_title"
-msgstr "Nachricht Titel"
+msgstr "Nachricht"
 
 msgid "portal_type_ForumPost_description"
-msgstr "Nachrichten Typ f�r Webforen und Kommentare auf Dokumente"
+msgstr "Nachrichten Typ f�r Webforen oder Kommentare "
 
 msgid "forum_label_display_title"
 msgstr "Nachricht"
@@ -271,13 +266,13 @@ msgid "forum_label_tree_display"
 msgstr "Anzeige des Nachrichten Baumes"
 
 msgid "forum_label_attachedFiles"
-msgstr "Anhaftende Dateien"
+msgstr "Angef�gte Dateien"
 
 msgid "forum_pending_post"
 msgstr "Nachricht in der Schwebe"
 
 msgid "forum_unpublished_post"
-msgstr "nicht publizierte Nachricht"
+msgstr "Nicht publizierte Nachricht"
 
 msgid "forum_published_post"
 msgstr "Publizierte Nachricht"
@@ -286,7 +281,7 @@ msgid "forum_rejected_post"
 msgstr "Abgelehnte Nachricht"
 
 msgid "forum_label_wf_display"
-msgstr "Anzeige Nachrichten Status:"
+msgstr "Nachrichten Status:"
 
 msgid "forum_label_display_wf_icon"
 msgstr "Minibild"
@@ -294,16 +289,15 @@ msgstr "Minibild"
 msgid "forum_label_display_wf_txt"
 msgstr "Text"
 
-#, fuzzy
 msgid "forum_help_moderation"
 msgstr ""
-"<ul> <li>A priori moderation:<p>The forum manager must read and accept every "
-"message before its publication.</p></li><li>A posteriori moderation:<p>No "
-"moderation, messages are immediately published on the forum. The forum "
-"manager can delete them afterwards.</p></li></ul>"
+"<ul> <li>A priori Moderation:<p>Der Forum Manager muss jede Nachricht vor "
+"der Publikation lesen und akzeptieren.</p></li><li>A posteriori moderation:"
+"<p> Keine Moderation, dhNachrichten werden sofort im Forum publiziert. Der "
+"Forum Manager kann die nachricht im nachhinein l�schen.</p></li></ul>"
 
-msgid "legend_local_roles_currently_assigned"
-msgstr "Aktuell vorliegende lokale Rollen"
+#~ msgid "legend_local_roles_currently_assigned"
+#~ msgstr "Aktuell vorliegende lokale Rollen"
 
 #~ msgid "label_name"
 #~ msgstr "Name"
@@ -315,7 +309,7 @@ msgstr "Aktuell vorliegende lokale Rollen"
 #~ msgstr "Rollen zuweisen"
 
 #~ msgid "button_delete"
-#~ msgstr "Löschen"
+#~ msgstr "LÃÂ¶schen"
 
 #~ msgid "button_search"
 #~ msgstr "Suchen"
@@ -369,13 +363,12 @@ msgstr "Aktuell vorliegende lokale Rollen"
 #~ msgstr "Rolle die zugewiesen werden soll:"
 
 #~ msgid "legend_local_roles_select_groups_and_roles"
-#~ msgstr "Wähle Gruppe(n) und Rolle die zugewiesen werden soll:"
+#~ msgstr "WÃâ¬hle Gruppe(n) und Rolle die zugewiesen werden soll:"
 
 #~ msgid "legend_local_roles_select_members_and_roles"
-#~ msgstr "Wähle Teilnehmer und Rolle die zugewiesen werden soll:"
+#~ msgstr "WÃâ¬hle Teilnehmer und Rolle die zugewiesen werden soll:"
 
 #~ msgid "link_local_roles_underlined"
 #~ msgstr ""
-#~ "<i>Rollen mit Unterstrich </i> werden in übergeordneten Foldern "
-#~ "vergeben. Folgen sie den Verweisen um die lokalen Rollen in diesen "
-#~ "Foldern zu verwalten."
+#~ "<i>Rollen mit Unterstrich </i> werden in ÃÅbergeordneten Foldern vergeben. Folgen sie den Verweisen um die lokalen "
+#~ "Rollen in diesen Foldern zu verwalten."

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: default\n"
-"POT-Creation-Date: 2006-01-03 14:51default\n"
+"POT-Creation-Date: 2006-01-16 17:30default\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Your Name <your@email>\n"
 "Language-Team: Name <email>\n"
@@ -294,4 +294,10 @@ msgid "forum_label_display_wf_txt"
 msgstr ""
 
 msgid "forum_help_moderation"
+msgstr ""
+
+msgid "portal_type_CPSForum_title"
+msgstr ""
+
+msgid "portal_type_CPSForum_description"
 msgstr ""

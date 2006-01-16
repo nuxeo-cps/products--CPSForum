@@ -302,5 +302,12 @@ msgstr ""
 "posteriori :<p>Fara moderare, mesajele sunt publicate direct pe forum. "
 "Responsabilul nu va mai putea suprima mesajele.</p></li></ul>"
 
+msgid "portal_type_CPSForum_title"
+msgstr "Forum"
+
+msgid "portal_type_CPSForum_description"
+msgstr ""
+"Pastreaza discutiile organizate in functie de subiect (foi de discutie)"
+
 #~ msgid "legend_local_roles_currently_assigned"
 #~ msgstr "Roluri locale desemnate momentan"

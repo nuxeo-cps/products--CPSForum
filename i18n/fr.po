@@ -306,5 +306,11 @@ msgstr ""
 "posteriori :<p>Pas de modération, les messages sont publiés directement sur "
 "le forum. Le responsable pourra néanmoins en supprimer.</p></li></ul>"
 
+msgid "portal_type_CPSForum_title"
+msgstr "Forum"
+
+msgid "portal_type_CPSForum_description"
+msgstr "Gère des discussions organisées par sujet (fils de discussions)"
+
 #~ msgid "legend_local_roles_currently_assigned"
 #~ msgstr "Rôles locaux délégués pour le moment"

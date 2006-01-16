@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum\n"
-"POT-Creation-Date: 2006-01-03 14:51default\n"
+"POT-Creation-Date: 2006-01-16 17:30default\n"
 "PO-Revision-Date: 2005-05-18 16:19+0100\n"
 "Last-Translator: Jesús <jesusmartin@lasalle.es>\n"
 "Language-Team: español <jesusmartin@lasalle.es>\n"
@@ -341,6 +341,12 @@ msgstr ""
 "aceptar cada mensaje antes de su publicación.</p></li><li>Moderación a "
 "posteriori:<p>Sin moderación, los mensajes se publican inmediatamente en el "
 "foro. El administrador del foro puede borrarlos después.</p></li></ul>"
+
+msgid "portal_type_CPSForum_title"
+msgstr "Foro"
+
+msgid "portal_type_CPSForum_description"
+msgstr "Gestiona discusiones organizadas por temas (hilos de discusión) "
 
 #    <h2>
 #        Currently assigned local roles

@@ -303,3 +303,9 @@ msgstr ""
 "aceitar cada mensagem antes da sua publicação.</p></li><li>Moderação a "
 "posteriori:<p>Sem moderação, as mensagens são publicadas imediatamente no "
 "fórum. O administrador do fórum pode removê-las mais tarde.</p></li></ul>"
+
+msgid "portal_type_CPSForum_title"
+msgstr "Fórum"
+
+msgid "portal_type_CPSForum_description"
+msgstr "Organiza discussões categorizadas por temas (subtemas de discussão)"

@@ -335,3 +335,11 @@ msgstr ""
 
 msgid "legend_local_roles_currently_assigned"
 msgstr "Huidige toegewezen locale rollen"
+
+msgid "portal_type_CPSForum_title"
+msgstr "Forum"
+
+msgid "portal_type_CPSForum_description"
+msgstr ""
+"Faciliteert discussies die volgens onderwerp worden georganiseerd (draden "
+"van discussies)"

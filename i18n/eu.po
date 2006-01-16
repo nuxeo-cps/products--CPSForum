@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum_en\n"
-"POT-Creation-Date: 2006-01-03 14:51default\n"
+"POT-Creation-Date: 2006-01-16 17:30default\n"
 "PO-Revision-Date: 2004-09-24 09:44+0200\n"
 "Last-Translator: Aitzol Naberan Burgaña <anaberan@codesyntax.com>\n"
 "Language-Team: Euskara <eu@li.org>\n"
@@ -312,6 +312,12 @@ msgstr ""
 "aceptar cada mensaje antes de su publicación.</p></li><li>Moderación a "
 "posteriori:<p>Sin moderación, los mensajes se publican inmediatamente en el "
 "foro. El administrador del foro puede borrarlos después.</p></li></ul>"
+
+msgid "portal_type_CPSForum_title"
+msgstr "Foruma"
+
+msgid "portal_type_CPSForum_description"
+msgstr "Gaiaren arabera antolatutako eztabaidaguneak"
 
 #    <h2>
 #        Currently assigned local roles

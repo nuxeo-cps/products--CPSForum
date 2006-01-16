@@ -117,3 +117,9 @@ msgstr ""
 
 msgid "forum_help_moderation"
 msgstr ""
+
+msgid "portal_type_CPSForum_title"
+msgstr ""
+
+msgid "portal_type_CPSForum_description"
+msgstr ""

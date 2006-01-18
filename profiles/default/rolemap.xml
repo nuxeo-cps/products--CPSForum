@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<rolemap>
+ <roles>
+  <role name="ForumModerator"/>
+  <role name="ForumPoster"/>
+ </roles>
+ <permissions>
+  <permission name="Forum Moderate" acquire="False">
+   <role name="Manager"/>
+   <role name="Owner"/>
+   <role name="WorkspaceManager"/>
+   <role name="ForumModerator"/>
+   <role name="SectionManager"/>
+   <role name="SectionReviewer"/>
+  </permission>
+  <permission name="Forum Post" acquire="False">
+   <role name="Manager"/>
+   <role name="Owner"/>
+   <role name="Member"/>
+   <role name="WorkspaceManager"/>
+   <role name="WorkspaceMember"/>
+   <role name="WorkspaceReader"/>
+   <role name="ForumPoster"/>
+   <role name="SectionManager"/>
+   <role name="SectionReviewer"/>
+   <role name="SectionReader"/>
+  </permission>
+  <permission name="Forum manage comments" acquire="False">
+   <role name="Manager"/>
+   <role name="Owner"/>
+   <role name="WorkspaceManager"/>
+   <role name="SectionManager"/>
+   <role name="SectionReviewer"/>
+  </permission>
+ </permissions>
+</rolemap>

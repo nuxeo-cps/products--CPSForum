@@ -12,3 +12,4 @@ Bug fixes:
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
 - Added ignore_event flag on discussions tool.
+- Added extension profile

@@ -20,6 +20,10 @@
 from Products.CMFCore import utils
 from Products.CMFCore.DirectoryView import registerDirectory
 from Products.CMFCore.permissions import AddPortalContent
+from Products.GenericSetup import profile_registry
+from Products.GenericSetup import EXTENSION
+
+from Products.CPSCore.interfaces import ICPSSite
 
 
 import Forum
@@ -49,3 +53,11 @@ def initialize(registrar):
         icon='tool.png',
     ).initialize(registrar)
     
+    profile_registry.registerProfile(
+        'default',
+        'CPS Forum',
+        "Forum product for CPS.",
+        'profiles/default',
+        'CPSForum',
+        EXTENSION,
+        for_=ICPSSite)

@@ -1,4 +1,22 @@
 *******************************************
+** CPSForum V1.6.0 [R1 build 2006/01/23-17:27 by fermigier]
+** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 31976
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Added support for FCKeditor another HTML editor than Epoz.
+- Fix bug on forum_comment_lib_view_comments_inline.pt. Use the comment tool API.
+- Fix bug in naming discussion tool.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Added ignore_event flag on discussions tool.
+- Added extension profile
+*******************************************
 ** CPSForum V1.5.5 [R1 build 2005/11/07-15:20 by fguillaume]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 29057
 Requires:

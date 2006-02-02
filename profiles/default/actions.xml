@@ -5,14 +5,14 @@
      category="object"
      condition_expr="python:getattr(object.getTypeInfo(),'cps_proxy_type','') in ('document', 'folderishdocument') and getattr(object.getContent(), 'allow_discussion', None) == 0"
      url_expr="string:${object/absolute_url}/set_comment_mode?mode=1"
-     visible="True">
+     visible="False">
    <permission>Forum manage comments</permission>
   </action>
   <action title="action_deactivate_comments" action_id="deactivate_comments"
      category="object"
      condition_expr="python:getattr(object.getTypeInfo(),'cps_proxy_type','') in ('document', 'folderishdocument') and getattr(object.getContent(), 'allow_discussion', None) == 1"
      url_expr="string:${object/absolute_url}/set_comment_mode?mode=0"
-     visible="True">
+     visible="False">
    <permission>Forum manage comments</permission>
   </action>
   <action title="action_manage_comments" action_id="manage_comments"

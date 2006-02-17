@@ -1,4 +1,21 @@
 *******************************************
+** CPSForum V1.6.1 [R1 build 2006/02/17-20:19 by fermigier]
+** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 32986
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Deactivate allow/dissalow comments actions because they already exist in the 
+  metadata form (#1248)
+
+*******************************************
 ** CPSForum V1.6.0 [R1 build 2006/01/23-17:27 by fermigier]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 31976
 Requires:

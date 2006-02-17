@@ -9,5 +9,4 @@ Bug fixes:
 -
 New internal features:
 ~~~~~~~~~~~~~~~~~~~~~~
-- Deactivate allow/dissalow comments actions because they already exist in the 
-  metadata form (#1248)
+-

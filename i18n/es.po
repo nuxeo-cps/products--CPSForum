@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum\n"
 "POT-Creation-Date: 2005-06-23 17:32default\n"
-"PO-Revision-Date: 2006-02-22 17:56+0100\n"
+"PO-Revision-Date: 2006-04-06 13:43+0100\n"
 "Last-Translator: Jesús Martín <jesusmartin@lasalle.es>\n"
 "Language-Team: español <jesusmartin@lasalle.es>\n"
 "MIME-Version: 1.0\n"
@@ -143,7 +143,7 @@ msgstr "No hay mensajes en este foro."
 #.   <input name="forum_post:method" type="submit" class="standalone" value="forum_post" />
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_post"
-msgstr "Escribir"
+msgstr "Enviar"
 
 #.   <p>
 #.           You are not authorized to post on this forum

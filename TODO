@@ -1,0 +1,18 @@
+CPSForum
+
+  o A forum should have an additional property to select which of the users
+    with moderations rights is the official moderators.
+
+Future developments
+  
+  o Read markings together with 'next unread' actions and such.
+
+  o 'Forwarding' or 'proxy' posts together with 'post reply as new
+    thread'-action.
+
+  o I would prefer to only list the main subjects in the forum view, and
+    then have post views that show the thread. This however is only a good
+    idea when read markings have been implemented, so that you can easily see
+    in which threads you have unread.
+
+  o Ratings. OK, so that's a whole new product, really. ;)

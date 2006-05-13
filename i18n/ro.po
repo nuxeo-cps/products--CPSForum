@@ -1,0 +1,313 @@
+# Gettext Message File for default.
+# Your Name <your@email>, Year
+msgid ""
+msgstr ""
+"Project-Id-Version: ro\n"
+"POT-Creation-Date: 2006-01-03 14:51default\n"
+"PO-Revision-Date: 2005-03-29 13:32+0300\n"
+"Last-Translator: \n"
+"Language-Team:  <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Preferred-encodings: utf-8 latin1\n"
+"X-Generator: KBabel 1.9.1\n"
+"Language-Code: ro\n"
+"Language-Name: Romanian\n"
+"Domain: default\n"
+
+#.   <option value="0">a posteriori</option>
+#.   <option value="0" attributes="selected python:not moderation_mode">
+#.               a posteriori
+#.             </option>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_a_posteriori"
+msgstr "a posteriori"
+
+#.   <option value="1">a priori</option>
+#.   <option value="1" attributes="selected python:not not moderation_mode">
+#.               a priori
+#.             </option>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_a_priori"
+msgstr "a priori"
+
+#.   <td>Allow anonymous posts</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_allow_anon_posts"
+msgstr "Autorizeaza mesajele anonime"
+
+#.   <div class="label">Author</div>
+#.   <a href="./sort_posts?criterion=author" attributes="href string:./sort_posts?criterion=${author_sort_direction}">Author</a>
+#: from ../skins/forum_default/forum_post_form.pt
+#: ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_author"
+msgstr "Autor"
+
+#.   <input name="forum_lock_thread:method" type="submit" class="context" value="forum_button_lockunlock" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_button_lockunlock"
+msgstr "De-(blocheaza) firul"
+
+#.   <a href="./sort_posts?criterion=date" attributes="href string:./sort_posts?criterion=${date_sort_direction}">Date</a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_date"
+msgstr "Data"
+
+#.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
+#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/translation_service" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_delete"
+msgstr "Sterge"
+
+#.   <input name="forum_unpublish_posts:method" type="submit" class="context" value="forum_depublish" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_depublish"
+msgstr "Scoate din starea de publicare"
+
+#.   <td>Description</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_description"
+msgstr "Descriere"
+
+#.   <h2 id="document_comment">Comments</h2>
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
+msgid "forum_label_comments"
+msgstr "Comentarii"
+
+#.   <td>Lock forum (no longer possible to post new messages)</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_label_lock_forum"
+msgstr "Blocheaza forumul (doar posibilitate de a citi)"
+
+#.   <span />
+#: from ../skins/forum_default/forum_view_main.pt
+msgid "forum_link_back_to_document"
+msgstr "Intoarcere la document"
+
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=next_page.first))" condition="next_page">
+#.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
+#.             </a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_link_next_threads ${tpp}"
+msgstr "${tpp} file urmatoare"
+
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=previous_page.first))" condition="previous_page">
+#.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
+#.             </a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_link_prev_threads ${tpp}"
+msgstr "${tpp} file precedente"
+
+#.   <div class="label">Message</div>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_message"
+msgstr "Mesaj"
+
+#.   <td>Moderation</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_moderation"
+msgstr "Moderare"
+
+#.   <input condition="python:is_reviewer and not published" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
+#: from ../skins/forum_default/post_view_snippet.pt
+msgid "forum_modify"
+msgstr "Modifica"
+
+#.   <p>This forum is locked. You cannot post new messages to it.</p>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_msg_forum_frozen"
+msgstr "Acest forum este blocat. Nu puteti posta mesaje noi."
+
+#.   <td class="forumempty">
+#.             Aucun message dans ce forum !
+#.           </td>
+#.   <td class="forumempty">
+#.           Aucun message dans ce forum !
+#.         </td>
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
+#: ../skins/forum_default/forum_view_main.pt
+msgid "forum_no_message"
+msgstr "Nici un mesaj."
+
+#.   <input name="forum_post:method" type="submit" class="standalone" value="forum_post" />
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_post"
+msgstr "Posteaza"
+
+#.   <p>
+#.           You are not authorized to post on this forum
+#.         </p>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_post_unauthorize"
+msgstr "Nu aveti dreptul de a posta mesaje pe acest forum."
+
+#.   <span condition="python:errormsg == 'error_author'" class="forumError">Author field must be filled</span>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_psm_name_required"
+msgstr "Trebuie sa introduci un nume sau o porecla."
+
+#.   <div class="row error" condition="python:errormsg == 'error_subject'">
+#.                   Subject field must be filled
+#.           </div>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_psm_subject_required"
+msgstr "Trebuie sa introduci un subiect."
+
+#.   <input name="forum_publish_posts:method" type="submit" class="context" value="forum_publish" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_publish"
+msgstr "Publica"
+
+#.   <input name="forum_reject_posts:method" type="submit" class="context" value="forum_reject" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_reject"
+msgstr "Respinge"
+
+#.   <input name="forum_post_reply:method" type="submit" class="standalone" value="forum_reply" />
+#: from ../skins/forum_default/post_view_csnippet.pt
+#: ../skins/forum_default/post_view_snippet.pt
+msgid "forum_reply"
+msgstr "Raspunde"
+
+#.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_state"
+msgstr "Stare"
+
+#.   <div class="label required">Subject</div>
+#.   <a href="./sort_posts?criterion=subject" attributes="href string:./sort_posts?criterion=${subject_sort_direction}">Subject</a>
+#: from ../skins/forum_default/forum_post_form.pt
+#: ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_subject"
+msgstr "Subiect"
+
+#.   <td>Titre</td>
+#.   <td class="forumEditLabel">Title</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_title"
+msgstr "Titlu"
+
+msgid "forum_label_postedby"
+msgstr "postat de "
+
+msgid "forum_new_thread"
+msgstr "Fila noua"
+
+msgid "forum_mailtitle_new_msg_submitted"
+msgstr "Adaugare a unui mesaj pe forum"
+
+msgid "forum_mailbody_new_msg_submitted1"
+msgstr "Un nou mesaj a fost adaugat la lista forumului"
+
+msgid "forum_mailbody_new_msg_submitted2"
+msgstr "Acest mesaj poate fi vizualizat la urmatoarea adresa:"
+
+msgid "forum_psm_comments_activated"
+msgstr "Comentariile sunt autorizate acum."
+
+msgid "forum_psm_comments_deactivated"
+msgstr "Comentariile nu mai sunt autorizate."
+
+msgid "forum_psm_message_posted"
+msgstr "Mesaj trimis"
+
+msgid "psm_cpsforum_need_rights"
+msgstr "Nu aveti drepturile necesare pentru a posta un comentariu aici."
+
+msgid "action_activate_comments"
+msgstr "Autorizeaza comentariile"
+
+msgid "action_deactivate_comments"
+msgstr "Interzice comentariile"
+
+msgid "action_manage_comments"
+msgstr "Administreaza comentariile"
+
+msgid "forum_title_comments"
+msgstr "Comentarii"
+
+msgid "forum_title_comments_for"
+msgstr "Comentarii asociate acestui document"
+
+msgid "forum_desc_comments"
+msgstr "Acest forum contine comentarii asociate unui document."
+
+msgid "forum_label_threads_per_page"
+msgstr "Numar de file de discutie sau de mesaje pe pagina:"
+
+msgid "forum_label_subject"
+msgstr "Subiect"
+
+msgid "forum_label_message"
+msgstr "Mesaj"
+
+msgid "portal_type_ForumPost_title"
+msgstr "Mesajul forumului:"
+
+msgid "portal_type_ForumPost_description"
+msgstr ""
+"Tipuri de mesaje utilizate in forumuri si comentariile pentru documente"
+
+msgid "forum_label_display_title"
+msgstr "Titlu"
+
+msgid "forum_label_display_200_fc"
+msgstr "primele 200 de caractere"
+
+msgid "forum_label_display_msg"
+msgstr "Mesajul complet"
+
+msgid "forum_label_tree_display"
+msgstr "Afisare arborescenta a mesajelor"
+
+msgid "forum_label_attachedFiles"
+msgstr "Atasamente"
+
+msgid "forum_pending_post"
+msgstr "In asteptare pentru a fi publicat"
+
+msgid "forum_unpublished_post"
+msgstr "Nepublicat"
+
+msgid "forum_published_post"
+msgstr "Publicat"
+
+msgid "forum_rejected_post"
+msgstr "Refuzat"
+
+msgid "forum_label_wf_display"
+msgstr "Afisarea starii mesajelor:"
+
+msgid "forum_label_display_wf_icon"
+msgstr "Imagine"
+
+msgid "forum_label_display_wf_txt"
+msgstr "Text"
+
+msgid "forum_help_moderation"
+msgstr ""
+"<ul> <li>Moderare a priori :<p>Responsabilul forumului trebuie sa citeasca "
+"si sa accepte fiecare mesaj inainte de publicare.</p></li><li>Moderare a "
+"posteriori :<p>Fara moderare, mesajele sunt publicate direct pe forum. "
+"Responsabilul nu va mai putea suprima mesajele.</p></li></ul>"
+
+msgid "portal_type_CPSForum_title"
+msgstr "Forum"
+
+msgid "portal_type_CPSForum_description"
+msgstr ""
+"Pastreaza discutiile organizate in functie de subiect (foi de discutie)"
+
+#~ msgid "legend_local_roles_currently_assigned"
+#~ msgstr "Roluri locale desemnate momentan"

@@ -1,0 +1,169 @@
+<tal:block tal:define="post_id options/post_id;
+                       descendants options/descendants;
+                       is_reviewer options/is_reviewer;
+                       sort_by options/sort_by;
+                       subject_sort_direction python:test(sort_by == 'subject',
+                                                          'subjectInv' , 'subject');
+                       author_sort_direction python:test(sort_by == 'author',
+                                                         'authorInv' , 'author');
+                       date_sort_direction python:test(sort_by == 'date',
+                                                       'dateInv' , 'date');
+                       wf_sort_direction python:test(sort_by == 'wf',
+                                                     'wfInv' , 'wf');
+                       display_mode options/display_mode;
+                       wf_display_mode options/wf_display_mode;
+                       forum nocall:options/forum;
+                       threads_per_page python:getattr(forum,'threads_per_page',0)">
+
+  <form method="post" tal:attributes="action here/absolute_url" name="post_form">
+  <table border="0" style='width:100%;height:inherit'
+           cellspacing='0' cellpadding='0'>
+    <tal:block tal:condition="threads_per_page">
+    <tal:block tal:define="batch_start python:int(path('request/frm_start | nothing') or 0);
+                           batched_desc python:modules['ZTUtils'].Batch(descendants,
+                                                                   size=threads_per_page,
+                                                                   start=batch_start)">
+      <input type="hidden" name="frm_start"
+             tal:attributes="value batch_start" />
+      <tal:block tal:define="mq nocall:modules/ZTUtils/make_query;
+                      previous_page python:batched_desc.previous;
+                      next_page python:batched_desc.next">
+      <tr tal:condition="python:previous_page or next_page">
+        <td colspan="6" class="forumThreadBatch"
+            tal:attributes="colspan python:test(wf_display_mode == 'wf_txt', '7', '6')">
+          <a href="." tal:condition="previous_page"
+             tal:attributes="href python:'%s?%s'%(request['URL'],
+                                                  mq(request.form,
+                                                     frm_start=0))">«</a>
+          <a href="." tal:condition="previous_page"
+             tal:attributes="href python:'%s?%s'%(request['URL'],
+                                    mq(request.form, frm_start=previous_page.first))"
+             i18n:translate="">
+            forum_link_prev_threads <span i18n:name="tpp" tal:content="threads_per_page"/>
+          </a>
+          <a href="." tal:condition="next_page"
+             tal:attributes="href python:'%s?%s'%(request['URL'],
+                                    mq(request.form, frm_start=next_page.first))"
+             i18n:translate="">
+            forum_link_next_threads <span i18n:name="tpp" tal:content="threads_per_page"/>
+          </a>
+          <a href="." tal:condition="next_page"
+             tal:attributes="href python:'%s?%s'%(request['URL'],
+                                                  mq(request.form,
+                                                     frm_start=(len(descendants) - threads_per_page + (len(descendants) % threads_per_page))))">»</a>
+        </td>
+      </tr>
+      </tal:block>
+      <tr>
+        <td class="forumSelectCell">
+          <input type="hidden" name="parent_id:string"
+                 tal:attributes="value post_id" />
+        </td>
+        <td class="forumModerateCell">
+          <a href="./sort_posts?criterion=threads">
+            <img tal:replace="structure python:here.getImgTag('threads.png',
+                                                              alt='sort by threads')" />
+          </a>
+        </td>
+        <th class="forumSubjectCell">
+          <a href="./sort_posts?criterion=subject"
+             tal:attributes="href string:./sort_posts?criterion=${subject_sort_direction}"
+             i18n:translate="forum_subject">Subject</a>
+        </th>
+        <th class="forumAuthorCell">
+          <a href="./sort_posts?criterion=author"
+             tal:attributes="href string:./sort_posts?criterion=${author_sort_direction}"
+             i18n:translate="forum_author">Author</a>
+        </th>
+        <th class="forumDateCell">
+          <a href="./sort_posts?criterion=date"
+             tal:attributes="href string:./sort_posts?criterion=${date_sort_direction}"
+             i18n:translate="forum_date">Date</a>
+        </th>
+        <th class="forumWFCell" tal:condition="python:wf_display_mode == 'wf_txt'">
+          <a href="./sort_posts?criterion=wf"
+             tal:attributes="href string:./sort_posts?criterion=${wf_sort_direction}"
+             i18n:translate="forum_state">State</a>
+        </th>
+        <td class="forumLockCell"></td>
+      </tr>
+      <tal:span tal:content="structure python:here.post_tree(descendants=batched_desc,
+                                                             post_id=post_id,
+                                                             frm_start=batch_start,
+                                                             sort_by=sort_by,
+                                                             display_mode=display_mode,
+                                                             wf_display_mode=wf_display_mode,
+                                                             REQUEST=here.REQUEST,
+                                                             forum=forum)"/>
+    </tal:block>
+    </tal:block>
+    <tal:block tal:condition="not: threads_per_page">
+      <tr>
+        <td class="forumSelectCell">
+          <input type="hidden" name="parent_id:string"
+                 tal:attributes="value post_id" />
+        </td>
+        <td class="forumModerateCell">
+          <a href="./sort_posts?criterion=threads"
+             tal:condition="python:getattr(forum, 'tree_display', '') == 'title'">
+            <img tal:replace="structure python:here.getImgTag('threads.png',
+                                                              alt='sort by threads')" />
+          </a>
+          <tal:block tal:condition="python:getattr(forum, 'tree_display', '') != 'title'"
+                     tal:replace="structure string:&nbsp;"/>
+        </td>
+        <th class="forumSubjectCell">
+          <a href="./sort_posts?criterion=subject"
+             tal:attributes="href string:./sort_posts?criterion=${subject_sort_direction}"
+             i18n:translate="forum_subject">Subject</a>
+        </th>
+        <th class="forumAuthorCell">
+          <a href="./sort_posts?criterion=author"
+             tal:attributes="href string:./sort_posts?criterion=${author_sort_direction}"
+             i18n:translate="forum_author">Author</a>
+        </th>
+        <th class="forumDateCell">
+          <a href="./sort_posts?criterion=date"
+             tal:attributes="href string:./sort_posts?criterion=${date_sort_direction}"
+             i18n:translate="forum_date">Date</a>
+        </th>
+        <th class="forumWFCell" tal:condition="python:wf_display_mode == 'wf_txt'">
+          <a href="./sort_posts?criterion=wf"
+             tal:attributes="href string:./sort_posts?criterion=${wf_sort_direction}"
+             i18n:translate="forum_state">State</a>
+        </th>
+        <td class="forumLockCell"></td>
+      </tr>
+      <tal:span tal:content="structure python:here.post_tree(descendants=descendants,
+                                                             post_id=post_id,
+                                                             sort_by=sort_by,
+                                                             wf_display_mode=wf_display_mode,
+                                                             display_mode=display_mode,
+                                                             forum=forum,
+                                                             REQUEST=here.REQUEST)"/>
+    </tal:block>
+  </table>
+  <div class="forumModeration">
+    <tal:block condition="python:is_reviewer">
+      <input type="submit" name="forum_publish_posts:method"
+             class="context" value="forum_publish"
+             i18n:attributes="value" />
+      <input type="submit" name="forum_unpublish_posts:method"
+             class="context" value="forum_depublish"
+             i18n:attributes="value" />
+      <input type="submit" name="forum_reject_posts:method"
+             class="context" value="forum_reject"
+             i18n:attributes="value" />
+      <input type="submit" name="forum_lock_thread:method"
+             class="context" value="forum_button_lockunlock"
+             i18n:attributes="value" />
+      <input type="submit" name="forum_del_posts:method"
+             class="destructive" value="forum_delete"
+             tal:define="cpsmcat nocall:here/translation_service"
+             tal:attributes="onclick python:'return window.confirm(\'%s\')' %
+                               (cpsmcat('description_confirm_delete'), )"
+             i18n:attributes="value" />
+    </tal:block>
+  </div>
+  </form>
+</tal:block>

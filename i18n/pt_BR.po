@@ -1,0 +1,311 @@
+# translation of pt-BR.po to Português do Brasil
+# translation of cpsforum.po to PortuguÃªs do Brasil
+# ##########################################################
+# ################# DON'T EDIT THIS FILE! ##################
+# ##########################################################
+# Gettext Message File for default.
+# Your Name <your@email>, Year
+# Mario Olimpio de Menezes <mario@curiango.ipen.br>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: pt-BR\n"
+"POT-Creation-Date: 2006-01-16 17:30default\n"
+"PO-Revision-Date: 2005-12-19 15:13-0200\n"
+"Last-Translator: Mario Olimpio de Menezes <mario@ipen.br>\n"
+"Language-Team: Portugues do Brasil <pt@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Code: pt_BR\n"
+"Language-Name: Portuguese Brazilian\n"
+"Domain: default\n"
+
+#.   <option value="0">a posteriori</option>
+#.   <option value="0" attributes="selected python:not moderation_mode">
+#.               a posteriori
+#.             </option>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_a_posteriori"
+msgstr "a posteriori"
+
+#.   <option value="1">a priori</option>
+#.   <option value="1" attributes="selected python:not not moderation_mode">
+#.               a priori
+#.             </option>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_a_priori"
+msgstr "a priori"
+
+#.   <td>Allow anonymous posts</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_allow_anon_posts"
+msgstr "Permite postagem anônima"
+
+#.   <div class="label">Author</div>
+#.   <a href="./sort_posts?criterion=author" attributes="href string:./sort_posts?criterion=${author_sort_direction}">Author</a>
+#: from ../skins/forum_default/forum_post_form.pt
+#: ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_author"
+msgstr "Autor"
+
+#.   <input name="forum_lock_thread:method" type="submit" class="context" value="forum_button_lockunlock" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_button_lockunlock"
+msgstr "(Des)-Bloquear"
+
+#.   <a href="./sort_posts?criterion=date" attributes="href string:./sort_posts?criterion=${date_sort_direction}">Date</a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_date"
+msgstr "Data"
+
+#.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
+#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/translation_service" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_delete"
+msgstr "Remover"
+
+#.   <input name="forum_unpublish_posts:method" type="submit" class="context" value="forum_depublish" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_depublish"
+msgstr "Despublicar"
+
+#.   <td>Description</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_description"
+msgstr "Descrição"
+
+#.   <h2 id="document_comment">Comments</h2>
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
+msgid "forum_label_comments"
+msgstr "Comentários"
+
+#.   <td>Lock forum (no longer possible to post new messages)</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_label_lock_forum"
+msgstr "Bloquear o fórum (não será mais possível postar novas mensagens)"
+
+#.   <span />
+#: from ../skins/forum_default/forum_view_main.pt
+msgid "forum_link_back_to_document"
+msgstr "Voltar"
+
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=next_page.first))" condition="next_page">
+#.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
+#.             </a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_link_next_threads ${tpp}"
+msgstr "Próximas threads ${tpp}"
+
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=previous_page.first))" condition="previous_page">
+#.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
+#.             </a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_link_prev_threads ${tpp}"
+msgstr "Threads anteriores ${tpp}"
+
+#.   <div class="label">Message</div>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_message"
+msgstr "Mensagem"
+
+#.   <td>Moderation</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_moderation"
+msgstr "Moderação"
+
+#.   <input condition="python:is_reviewer and not published" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
+#: from ../skins/forum_default/post_view_snippet.pt
+msgid "forum_modify"
+msgstr "Modificar"
+
+#.   <p>This forum is locked. You cannot post new messages to it.</p>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_msg_forum_frozen"
+msgstr "Este fórum está bloqueado. Você não pode postar novas mensagens."
+
+#.   <td class="forumempty">
+#.             Aucun message dans ce forum !
+#.           </td>
+#.   <td class="forumempty">
+#.           Aucun message dans ce forum !
+#.         </td>
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
+#: ../skins/forum_default/forum_view_main.pt
+msgid "forum_no_message"
+msgstr "Nenhuma mensagem!"
+
+#.   <input name="forum_post:method" type="submit" class="standalone" value="forum_post" />
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_post"
+msgstr "Postar"
+
+#.   <p>
+#.           You are not authorized to post on this forum
+#.         </p>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_post_unauthorize"
+msgstr "Você não está autorizado a postar neste fórum."
+
+#.   <span condition="python:errormsg == 'error_author'" class="forumError">Author field must be filled</span>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_psm_name_required"
+msgstr "O campo autor precisa ser preenchido!"
+
+#.   <div class="row error" condition="python:errormsg == 'error_subject'">
+#.                   Subject field must be filled
+#.           </div>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_psm_subject_required"
+msgstr "O campo assunto precisa ser preenchido!"
+
+#.   <input name="forum_publish_posts:method" type="submit" class="context" value="forum_publish" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_publish"
+msgstr "Publicar"
+
+#.   <input name="forum_reject_posts:method" type="submit" class="context" value="forum_reject" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_reject"
+msgstr "Rejeitar"
+
+#.   <input name="forum_post_reply:method" type="submit" class="standalone" value="forum_reply" />
+#: from ../skins/forum_default/post_view_csnippet.pt
+#: ../skins/forum_default/post_view_snippet.pt
+msgid "forum_reply"
+msgstr "Responder"
+
+#.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_state"
+msgstr "Estado"
+
+#.   <div class="label required">Subject</div>
+#.   <a href="./sort_posts?criterion=subject" attributes="href string:./sort_posts?criterion=${subject_sort_direction}">Subject</a>
+#: from ../skins/forum_default/forum_post_form.pt
+#: ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_subject"
+msgstr "Assunto"
+
+#.   <td>Titre</td>
+#.   <td class="forumEditLabel">Title</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_title"
+msgstr "Título"
+
+msgid "forum_label_postedby"
+msgstr "Postado por:"
+
+msgid "forum_new_thread"
+msgstr "Nova thread"
+
+msgid "forum_mailtitle_new_msg_submitted"
+msgstr "Nova mensagem submetida ao forum "
+
+msgid "forum_mailbody_new_msg_submitted1"
+msgstr "Uma nova mensagem foi adicionada à lista de moderação do forum."
+
+msgid "forum_mailbody_new_msg_submitted2"
+msgstr "Esta mensagem pode ser vista no seguinte endereço:"
+
+msgid "forum_psm_comments_activated"
+msgstr "Comentários ativados"
+
+msgid "forum_psm_comments_deactivated"
+msgstr "Comentários desativados"
+
+msgid "forum_psm_message_posted"
+msgstr "Mensagem postada"
+
+msgid "psm_cpsforum_need_rights"
+msgstr "Você não tem direitos suficientes para postar um comentário aqui."
+
+msgid "action_activate_comments"
+msgstr "Ativar comentários"
+
+msgid "action_deactivate_comments"
+msgstr "Desativar comentários"
+
+msgid "action_manage_comments"
+msgstr "Administrar comentários"
+
+msgid "forum_title_comments"
+msgstr "Comentários"
+
+msgid "forum_title_comments_for"
+msgstr "Comentários para:"
+
+msgid "forum_desc_comments"
+msgstr "Comentários:"
+
+msgid "forum_label_threads_per_page"
+msgstr "Threads por página"
+
+msgid "forum_label_subject"
+msgstr "Assunto"
+
+msgid "forum_label_message"
+msgstr "Mensagem"
+
+msgid "portal_type_ForumPost_title"
+msgstr "Postar"
+
+msgid "portal_type_ForumPost_description"
+msgstr "Campo para digitar sua mensagem."
+
+msgid "forum_label_display_title"
+msgstr "Título"
+
+msgid "forum_label_display_200_fc"
+msgstr "Primeiros 200 caracteres"
+
+msgid "forum_label_display_msg"
+msgstr "Mensagem completa"
+
+msgid "forum_label_tree_display"
+msgstr "Mostra a árvore de mensagens"
+
+msgid "forum_label_attachedFiles"
+msgstr "Anexos"
+
+msgid "forum_pending_post"
+msgstr "Pendente."
+
+msgid "forum_unpublished_post"
+msgstr "Não publicado."
+
+msgid "forum_published_post"
+msgstr "Publicado"
+
+msgid "forum_rejected_post"
+msgstr "Rejeitado."
+
+msgid "forum_label_wf_display"
+msgstr "Mostra estado da postagem:"
+
+msgid "forum_label_display_wf_icon"
+msgstr "Ícone"
+
+msgid "forum_label_display_wf_txt"
+msgstr "Texto"
+
+msgid "forum_help_moderation"
+msgstr ""
+"<ul> <li>Moderação a priori:<p>O administrador do fórum precisa ler e "
+"aceitar cada mensagem antes da sua publicação.</p></li><li>Moderação a "
+"posteriori:<p>Sem moderação, as mensagens são publicadas imediatamente no "
+"fórum. O administrador do fórum pode removê-las mais tarde.</p></li></ul>"
+
+msgid "portal_type_CPSForum_title"
+msgstr "Fórum"
+
+msgid "portal_type_CPSForum_description"
+msgstr "Organiza discussões categorizadas por temas (subtemas de discussão)"

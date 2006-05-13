@@ -1,0 +1,139 @@
+==================================
+CPSForum - Documentation technique
+==================================
+
+:Revision: $Id$
+
+.. sectnum::    :depth: 4
+.. contents::   :depth: 4
+
+
+Utilisation du module
+=====================
+
+CPSForum est un outil permettant aux utilisateurs du portail de
+poster des messages dans des forums, sous la forme de fils de
+discussion. Il permet également d'associer des commentaires à des
+documents, ces commentaires étant gérés comme des fils de
+discussion.
+
+
+Historique du module
+====================
+
+Le produit CPSForum existe depuis CPS2. Il a été porté sur CPS3 :
+ceci correspond aux versions sous la forme 0.X.X. Il a ensuite été
+complètement réfactoré : ceci correspond aux versions sous la
+forme 1.X.X.
+
+Les objets forums crées avec les versions 0.X.X ne sont pas
+compatibles avec les versions de CPSForum 1.X.X.
+
+
+Prérequis à l'utilisation du module
+===================================
+
+CPSForum requiert:
+
+- CPS3
+
+- le produit CPSInstaller (non inclus dans CPS-3.0, mais inclus
+  dans CPS-3.1)
+
+- CPSSchemas > 0.18.0-1 (non inclus dans CPS-3.0, mais inclus dans
+  CPS-3.1)
+
+- CPSSubscriptions > 0.7.0-1 pour la gestion des notifications
+  (non inclus dans CPS3)
+
+Il a été testé avec Zope 2.6 et Zope 2.7.
+
+
+Installation
+============
+
+Décompresser l'archive contenant le module dans le répertoire
+Products. Renommer "CPSForum" le dossier obtenu. Redémarrer Zope.
+
+Le fichier INSTALL contenu dans le répertoire doc/ du produit
+contient les informations d'installation dans une instance de CPS.
+Il donne également des informations concernant la mise à jour,
+lorsqu'une version antérieure de CPSForum a déjà été installée
+dans un instance de CPS.
+
+
+Fonctionnalités du module
+=========================
+
+cf doc fonctionnelle CNCC.
+
+Il n'existe pas de fonctionnalités supplémentaires par rapport aux
+fonctionnalités décrites dans le document pour la CNCC.
+
+Le fichier README contenu dans le répertoire doc/ du produit
+présente une description succinte des fonctionnalités, ainsi que
+le mode d'utilisation du module.
+
+
+Fonctionnement général
+======================
+
+Les objets CPSForum (classe Forum dans Forum.py) s'apparentent à
+des folders et résident dans le repository. Comme les autres
+folders (Workspace, Section, ...), des proxies pointent sur les
+forums du repository. Les objets CPSForum suivent respectivement
+le workflow workspace_content_wf ou section_content_wf suivant
+qu'ils résident dans un workspace ou une section.
+
+Les posts sont des CPSDocument qui suivent leur propre workflow
+(forum_post_wf). Ce workflow gère la modération et la publication
+des messages en fonction du mode de modération. Un diagramme
+(``doc/forum_wf.svg``) décrit le workflow suivi par les posts.
+
+Comme pour tous les autres CPSDocument, les ForumPost sont stockés
+dans le repository et référencés par des proxies situés dans le
+proxy associé au forum.
+
+Les documents ForumPost sont indexés et sont donc pris en compte
+dans la recherche.
+
+La déclaration des permissions utilisée par les forums se fait
+dans le module CPSForumPermissions.py
+
+La correspondance entre roles et permissions est établie dans
+l'installer de CPSForum (Extensions/install.py), et peut être
+modifiée simplement dans un installer de produit client.
+
+
+Commentaires de documents
+=========================
+
+Les commentaires associés à un document sont stockés dans un
+object de type CPSForum, sous la forme de documents ForumPost.
+D'un point de vue fonctionnel, rien ne distingue un CPSForum
+standard d'un CPSForum utilisé pour stocker les commentaires
+associés a un document. Les objets forums utilisés pour commenter
+un document (abrégés cforums dans la suite du document) utilisent
+donc le même mécanisme de stockage : repository avec proxies les
+référençant.
+
+Les proxies associés aux cforums sont stockés de la manière
+suivante :
+
+- si le document commenté est workspaces/ws1/doc1
+
+- le proxy du cforum associé est workspaces/ws1/.cps_discussions/doc1
+
+Le forum a donc la même ID que le document, mais se trouve dans un
+répertoire special caché à l'utilisateur (visible depuis la ZMI).
+
+La classe CommentTool (dans CommentTool.py) est utilisée pour
+gérer les commentaires associés a un document, notamment pour
+établir la correspondance entre un document et le forum qui lui
+est associé (s'il existe). Cette classe vient remplacer (par
+monkey patching) l'objet portal_discussion de CMF (ajout de
+fonctionnalites).
+
+La classe CPSForum (Forum.py) gère aussi les callbacks sur
+CPSSubscriptions pour notifier la création et la publication de
+nouveaux posts ou commentaires.

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object name="portal_workflow">
+ <object name="forum_permissions_dummy_wf" meta_type="CPS Workflow"/>
+ <object name="forum_post_wf" meta_type="CPS Workflow"/>
+ <object name="section_forum_wf" meta_type="CPS Workflow"/>
+ <object name="workspace_forum_wf" meta_type="CPS Workflow"/>
+</object>

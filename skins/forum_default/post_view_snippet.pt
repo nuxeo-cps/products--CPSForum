@@ -1,0 +1,35 @@
+<tal:block tal:define="post_id options/post_id | nothing;
+                       post python:getattr(here, post_id);
+                       post_doc python:post.getContent();
+                       forum nocall:options/forum;
+                       is_reviewer options/is_reviewer;
+                       can_post options/can_post | nothing;
+                       published python:here.portal_workflow.getInfoFor(post,
+                                   'review_state', 'nostate') == 'published';
+                       frm_start options/frm_start | nothing;
+                       member_id python:here.portal_membership.getAuthenticatedMember().getId();
+                       ">
+<tal:block condition="python:is_reviewer or published or member_id == post_doc.author">
+  <tr>
+    <td colspan="2">
+      <tal:block tal:replace="structure python:post_doc.render(proxy=post)"/>
+      <form method="post" tal:attributes="action here/absolute_url"
+            name="post_form"
+            tal:define="locked python:here.locked_thread(post=post,forum=forum)"
+            tal:condition="python:not locked and can_post">
+        <input type="hidden" name="parent_id:string"
+               tal:attributes="value post_id" />
+        <input type="hidden" name="frm_start" value=""
+               tal:attributes="value frm_start" />
+        <input type="submit" name="forum_post_reply:method"
+               class="standalone" value="forum_reply"
+               i18n:attributes="value" />
+        <input tal:condition="python:is_reviewer and not published"
+               type="submit" name="forum_post_modify:method"
+               class="standalone" value="forum_modify"
+               i18n:attributes="value" />
+      </form>
+    </td>
+  </tr>
+</tal:block>
+</tal:block>

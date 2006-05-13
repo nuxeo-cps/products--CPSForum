@@ -1,0 +1,865 @@
+*******************************************
+** CPSForum V1.7.0 [R1 build 2006/03/03-17:44 by ben]
+** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 33914
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- update po
+
+*******************************************
+** CPSForum V1.6.1 [R1 build 2006/02/17-20:19 by fermigier]
+** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 32986
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Deactivate allow/dissalow comments actions because they already exist in the 
+  metadata form (#1248)
+
+*******************************************
+** CPSForum V1.6.0 [R1 build 2006/01/23-17:27 by fermigier]
+** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 31976
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Added support for FCKeditor another HTML editor than Epoz.
+- Fix bug on forum_comment_lib_view_comments_inline.pt. Use the comment tool API.
+- Fix bug in naming discussion tool.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Added ignore_event flag on discussions tool.
+- Added extension profile
+*******************************************
+** CPSForum V1.5.5 [R1 build 2005/11/07-15:20 by fguillaume]
+** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 29057
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Conditions used in discussion related actions required that document had a
+  field named 'allow_discussion' in its schema ; fixed thanks to Joachim
+  Schmitz.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.5.4 [R1 build 2005/09/21-15:13 by fguillaume]
+** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 27306
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- #925 Some folderish local roles don't work
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.5.3 [R1 build 2005/08/05-13:55 by ben]
+** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 25426
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Removed buggy localrole form templates and use those of CPSDefault (folder)
+  instead
+- Taking advantage of the new centralized CPSI18n.tests.translations module.
+- Fixed translation files through the CPSI18n/bin/fix_pos script.
+- Replaced incorrect code producing broken urls using virtual hosting.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.5.2 [R1 build 2005/06/02-11:51 by fguillaume]
+** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 22111
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Fixed sorting key.
+- Use folder_localrole_form for inherited local roles.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Updated translations.
+
+*******************************************
+** CPSForum V1.5.1 [R1 build 2005/04/13-16:03 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Updated i18n with new version of update_pos.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.5.0 [R1 build 2005/04/08-16:20 by ben]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Removed warnings: replaces CMFCore.CMFCorePermissions by CMFCore.permissions.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Made forum posts use the 'metadata' cluster instead of the 'metadata'
+  layout.
+
+*******************************************
+** CPSForum V1.4.1 [R1 build 2005/03/07-15:56 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Changed title size limitation from 100 characters to 250.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.4.0 [R1 build 2005/01/20-11:33 by ben]
+
+Requires:
+~~~~~~~~~
+- CPSWorkflow
+New features:
+~~~~~~~~~~~~~
+- Anonymous user won't see 'comment' action in Object actions box if anonymous
+  posts are disabled for comment forum object associated with the document.
+
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- macro lib splitted
+
+*******************************************
+** CPSForum V1.3.9 [R1 build 2004/12/13-09:13 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- The anonymous posts were published directly even if the forum was in moderated
+  mode.
+- Fixed an invalid CSS property ("orange" color is not defined in CSS spec)+
+  normalized the CPSForum CSS file at the same time.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.3.8 [R1 build 2004/10/25-11:39 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Adding a tooltip help message on moderation option.
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.3.7 [R1 build 2004/10/08-14:00 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- it was not possible to publish unpublished/rejected posts
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.3.6 [R1 build 2004/09/15-15:17 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Switch the last GIF images of this product to PNG images.
+
+*******************************************
+** CPSForum V1.3.5 [R1 build 2004/09/07-12:45 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.3.5 [R1 build 2004/09/07-12:43 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- new sorting criterion : workflow status (moderation)
+- date/author/subject/wf sorting can be reversed
+
+Bug fixes:
+~~~~~~~~~~
+- removed border around checkboxes (MSIE, flat sorting mode)
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- retrieve SESSION object from REQUEST (should make session-dependant
+  features work with instances that do not have a session_data_manager)
+
+
+*******************************************
+** CPSForum V1.3.4 [R1 build 2004/08/23-05:52 by fermigier]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- use CPS default value for action metadata
+- Use more semantical HTML markup 
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.3.3 [R1 build 2004/07/19-12:11 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- forum instances created with CPSForum 1.2.x or earlier should no
+  longer throw a tree_display error (use frm12xto130.py if they still do)
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.3.2 [R1 build 2004/07/16-09:14 by epietrig]
+
+Requires:
+~~~~~~~~~
+- CPSDocument > 0.23.0 (for proper display of inline comments)
+
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- translate role:{Anonymous,Authenticated}
+- sorting was not supported in comment forums
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- forum specific CSS rules are now stored in a specific stylesheet (no longer
+  in CPSDefault)
+
+*******************************************
+** CPSForum V1.3.1 [R1 build 2004/07/07-16:01 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- replaced gif icons by png icons
+- more efficient sorting algorithms (for thread/post display)
+
+*******************************************
+** CPSForum V1.3.0 [R1 build 2004/07/07-08:49 by epietrig]
+
+Requires:
+~~~~~~~~~
+- CPSSubscriptions 0.10.2 or later
+New features:
+~~~~~~~~~~~~~
+- new workflow for forum posts, with two new states : rejected, unpublished
+- messages posted by users with Forum Moderate permission are now directly
+  published for both a priori and a posteriori moderation modes
+- threads are now sorted by most recent post (default view, no explicit sorting)
+- use a rich text editor widget to edit posts
+- attaching documents to posts (as internal links)
+- member's information is displayed in a popup window when clicking on author
+  name
+- posts can be sorted by thread, subject, date, author
+- forum content is now batched by default (default setting is 30 threads/posts
+  per page)
+- new CPSSubscriptions events are available for posts and comments: delete,
+  reject, unpublish (in addition to existing events create and publish)
+
+Bug fixes:
+~~~~~~~~~~
+- display "Modify" button only for posts that are not published (thus not
+  modifiable)
+- Add an explicit message when you not have rights to post a comment
+- users who were explicitely set as ForumModerator were not allowed
+  to view posts in several states like pending (users who inherited this
+  permission from other roles like SectionReviewer were not subject to this
+  bug)
+- replaced post modification date by creation date (more appropriate)
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.2.6 [R1 build 2004/06/25-14:27 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- more documentation
+
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- changed method of handling post formating (no longer uses <pre> elements)
+
+
+*******************************************
+** CPSForum V1.2.5 [R1 build 2004/06/22-13:07 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- action "New thread" was not set properly if action box macro was called
+before forum_view_main template (e.g. if displayed in left column)
+- made frm120to123 migration script work with Zope 2.6.x
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.2.4 [R1 build 2004/06/21-15:24 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- script for making the transition from CPSForum 1.2.0-1.2.2 to 1.2.3 or later
+Bug fixes:
+~~~~~~~~~~
+- some missing translations for ForumPost portal type
+- forum owners can modify pending posts
+- published documents (in sections) can now be commented
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.2.3 [R1 build 2004/06/17-15:04 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- default moderatino mode for commenting forums is now a posteriori
+Bug fixes:
+~~~~~~~~~~
+- some missing translations when modifying a post
+- post can now be seen by its owner even if not yet published
+- original msg text layout is kept when displaying the message (preserve
+  whitespace)
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.2.2 [R1 build 2004/06/11-14:15 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Posts can now be edited by Forum Moderators 
+
+Bug fixes:
+~~~~~~~~~~
+- Anonymous posts should work in all contexts now
+- Some security fine tuning (some roles did not have enough permissions
+  to comment documents when no comment had been made on any document in
+  the parent folder)
+- Author is now set correctly for anonymous posts (was always 'root')
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.2.1 [R1 build 2004/06/10-09:56 by epietrig]
+
+Requires:
+~~~~~~~~~
+- product CPSInstaller
+- CPSSchemas > 0.18.0-1
+- CPSSubscriptions > 0.7.0-1 not included
+
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Removed overwriting of dumb status_history portal action. Now set in the
+  portal type by a recent CPSInstaller (needed to close #295).
+- SectionReviewers and SectionReaders could not post to forum even with
+  appropriate permission/roles
+- temporarily disable "allow anonymous posts" as this causes security problems
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.2.0 [R1 build 2004/05/21-17:07 by madarche]
+
+Requires:
+~~~~~~~~~
+- CPSSubscriptions > 0.7.0-1 not included
+New features:
+~~~~~~~~~~~~~
+- Now possible to batch threads (only display a given number of threads per
+  page)
+- Allow discussion metadata attribute can now be set to true for a given
+  portal type (it is no longer necessary to manually activate comments for each
+  document)
+- Now possible to subscribe to 2 kinds of events: post creation (mainly for
+  moderators), and post publication (for people who want to know when new posts
+  get publically available on a forum)
+
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Comment forums are no longer created at comment authorization time, but when
+  the first comment is posted
+  
+
+*******************************************
+** CPSForum V1.1.0 [R1 build 2004/05/10-06:35 by madarche]
+
+Requires:
+~~~~~~~~~
+- CPSSubscriptions (for notifications)
+New features:
+~~~~~~~~~~~~~
+- Uses CPSSubscriptions for notifying users about new posts (works for both
+  std forum and comment forums)
+Bug fixes:
+~~~~~~~~~~
+- use appropriate script ot get local roles (now filtering out irrelevant roles)
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V1.0.0 [R1 build 2004/04/29-13:24 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- more robustness when testing for comments associated with a document
+- reassign (and restrict) forum related workflows in .cps_discussions
+  in case they have been lost upper in the hierarchy
+
+
+*******************************************
+** CPSForum V0.8.0 [R1 build 2004/04/29-07:55 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- posts are searchable
+- posts follow a workflow
+- new permissions, easier to change role/permission mapping, even
+  for comment forums
+
+Bug fixes:
+~~~~~~~~~~
+- removed duplicate 'Re:' in post subjects
+- some GUI enhancements
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- big refactoring that makes this version incompatible with previous ones
+  (up to 0.7.1-1): posts are now stored as CPSDocuments
+- comments are handled in standard forums with all options available
+- both CPSForum and ForumPost objects follow their own workflow
+
+*******************************************
+
+** CPSForum V0.7.1 [R1 build 2004/05/05-15:45 by madarche]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Syncing with latest CPSDefault code as for the local role assignment
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+
+** CPSForum V0.7.0 [R1 build 2004/04/09-13:27 by ben]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- new German locale !
+- CPSForum is a CPSDocument:
+  - edit page is done using layout
+  - new metadata page
+  - new CPSForum are searchable
+  - compatible with old CPSForum
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V0.6.0 [R1 build 2004/03/25-11:41 by ben]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- xhtmlize XHTML 1.0 transitional
+Bug fixes:
+~~~~~~~~~~
+- When commenting objects a tal:condition "forum" was used
+  to check if the forum existed. I changed this to "nocall:forum".
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- 
+
+*******************************************
+** CPSForum V0.5.0 [R1 build 2004/02/25-08:45 by ben]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- improve cps integration
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V0.4.1 [R1 build 2004/02/20-16:03 by epietrig]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- now possible to lock single threads
+
+Bug fixes:
+~~~~~~~~~~
+- SMTP error when list of moderators is empty (new post)
+- error when posting first comment about a document
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V0.4.0 [R1 build 2004/02/19-15:57 by ben]
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- security is now managed through permissions. CPSDefault's roles are mapped to
+  these permissions (managers can moderate, members and readers can post)
+- old ForumModerator and ForumPoster roles still exist and are mapped to the
+  according permissions, so that it remains possible to assign forum permissions
+  to users without any other particular role
+- notifications of new messages can be sent to explicitly declared moderators in
+  a posteriori mode
+- now possible to lock a forum (read-only)
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
+** CPSForum V0.3.1 [R1 build 2004/02/08-07:47 by fermigier]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+
+New features:
+~~~~~~~~~~~~~
+-
+
+Bug fixes:
+~~~~~~~~~~
+- getCPSLocalRoles returning roles in reverse order making default role Manager
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Doesn't depend on NuxMetaDirectories anymore. (Unit tests pass, but
+some manual checking is probably still needed).
+
+*******************************************
+** CPSForum V0.3.0 [R1 build 2004/01/21-10:42 by ben]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- Italian translation.
+Bug fixes:
+~~~~~~~~~~
+- moderators are display in list vs multi selection in edit page
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- new forum icon
+
+*******************************************
+** CPSForum V0.2.3 [R1 build 2004-01/06-15:11 by anguenot]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+
+New features:
+~~~~~~~~~~~~~
+-
+
+Bug fixes:
+~~~~~~~~~~
+-
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Using mergedLocalRolesWithPath within the getCPSLocalRoles.py.
+*******************************************
+** CPSForum V0.2.2 [R1 build 2003/12/23-11:05 by ben]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+-
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Removed useless/unused stuff (CPSPost class, getEverything method, 
+  forum_del_threads, forum_(un)publish_threads...)
+- Renamed a few methods (addForumPost -> addPost, delForumPost -> delPost,
+  forum_del_post -> forum_del_posts, forum_(un)publish_post ->
+  forum_(un)publish_posts)
+- Added many tests
+- Removed useless (!!!) class Post.
+- fr local use Mél instead of Courriel
+
+*******************************************
+** CPSForum V0.2.1 [R1 build 2003/12/01-15:32 by ben]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+
+New features:
+~~~~~~~~~~~~~
+-
+
+Bug fixes:
+~~~~~~~~~~
+- skins/forum_default/forum_create_form.pt: Fix ZPT syntax error.
+- skins/forum_default/post_view_snippet.pt: fix encoding problem
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- Add unit tests.
+
+*******************************************
+** CPSForum V0.2.0 [R1 build 2003-10/31-17:37 by anguenot]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+
+New features:
+~~~~~~~~~~~~~
+- forums can now be used to store comments/discussions about documents
+- significant changes to the appearance of Forums
+- portal_comment is no longer used ; functionalities migrated to
+  our own version of portal_discussion (implemented by CommentTool)
+
+Bug fixes:
+~~~~~~~~~~
+- use CPSDefault style
+- added a README file with installation procedure
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+- indentation / docstrings cleanups
+
+*******************************************
+** CPSForum V0.1.0 [R1 build 2003-10/06-09:15 by epietrig]
+
+ZODB Requires:
+~~~~~~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- added/fixed moderator and poster permissions
+- started i18n from scratch
+
+Bug fixes:
+~~~~~~~~~~
+- presentation bugs
+- status icon (unpublished)
+
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+*******************************************
+** CPSForum V0.0.1 [R1 build 2003-09/15-19:14 by anguenot]
+

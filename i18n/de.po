@@ -1,0 +1,383 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CPSForum-de CPS-3.2.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-01-16 17:30default\n"
+"PO-Revision-Date: 2005-10-12 23:37+0200\n"
+"Last-Translator: Georg Hennemann <georg.hennemann@dhl.com>\n"
+"Language-Team: de <rheinland@dzug.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Code: de\n"
+"Domain: default\n"
+"Language-Name: German\n"
+
+#.   <option value="0">a posteriori</option>
+#.   <option value="0" attributes="selected python:not moderation_mode">
+#.               a posteriori
+#.             </option>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_a_posteriori"
+msgstr "nachher"
+
+#.   <option value="1">a priori</option>
+#.   <option value="1" attributes="selected python:not not moderation_mode">
+#.               a priori
+#.             </option>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_a_priori"
+msgstr "vorher"
+
+#.   <td>Allow anonymous posts</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_allow_anon_posts"
+msgstr "Erlaube anonyme Postings"
+
+#.   <div class="label">Author</div>
+#.   <a href="./sort_posts?criterion=author" attributes="href string:./sort_posts?criterion=${author_sort_direction}">Author</a>
+#: from ../skins/forum_default/forum_post_form.pt
+#: ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_author"
+msgstr "Autor"
+
+#.   <input name="forum_lock_thread:method" type="submit" class="context" value="forum_button_lockunlock" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_button_lockunlock"
+msgstr "(Öffnen)Schliessen eines Themas"
+
+#.   <a href="./sort_posts?criterion=date" attributes="href string:./sort_posts?criterion=${date_sort_direction}">Date</a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_date"
+msgstr "Datum"
+
+#.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
+#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/translation_service" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_delete"
+msgstr "Löschen"
+
+#.   <input name="forum_unpublish_posts:method" type="submit" class="context" value="forum_depublish" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_depublish"
+msgstr "Publikation zurückziehen"
+
+#.   <td>Description</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_description"
+msgstr "Beschreibung"
+
+#.   <h2 id="document_comment">Comments</h2>
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
+msgid "forum_label_comments"
+msgstr "Kommentare"
+
+#.   <td>Lock forum (no longer possible to post new messages)</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_label_lock_forum"
+msgstr "Forum schliessen (nur Lesen)"
+
+#.   <span />
+#: from ../skins/forum_default/forum_view_main.pt
+msgid "forum_link_back_to_document"
+msgstr "Zurück zum Dokument "
+
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=next_page.first))" condition="next_page">
+#.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
+#.             </a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_link_next_threads ${tpp}"
+msgstr "Nächste ${tpp} Themen"
+
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=previous_page.first))" condition="previous_page">
+#.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
+#.             </a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_link_prev_threads ${tpp}"
+msgstr "Vorherige ${tpp Themen"
+
+#.   <div class="label">Message</div>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_message"
+msgstr "Nachricht"
+
+#.   <td>Moderation</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_moderation"
+msgstr "Moderation"
+
+#.   <input condition="python:is_reviewer and not published" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
+#: from ../skins/forum_default/post_view_snippet.pt
+msgid "forum_modify"
+msgstr "Modifizieren"
+
+#.   <p>This forum is locked. You cannot post new messages to it.</p>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_msg_forum_frozen"
+msgstr ""
+"Diese Forum ist geschlossen. Sie können jetzt keine Nachrichten senden."
+
+#.   <td class="forumempty">
+#.             Aucun message dans ce forum !
+#.           </td>
+#.   <td class="forumempty">
+#.           Aucun message dans ce forum !
+#.         </td>
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
+#: ../skins/forum_default/forum_view_main.pt
+msgid "forum_no_message"
+msgstr "Keine Nachricht"
+
+#.   <input name="forum_post:method" type="submit" class="standalone" value="forum_post" />
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_post"
+msgstr "Absenden!"
+
+#.   <p>
+#.           You are not authorized to post on this forum
+#.         </p>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_post_unauthorize"
+msgstr "Sie sind nicht berechtigt in diesem Forum zu posten"
+
+#.   <span condition="python:errormsg == 'error_author'" class="forumError">Author field must be filled</span>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_psm_name_required"
+msgstr "Sie müssen einen Namen oder einen Nicknamen angeben"
+
+#.   <div class="row error" condition="python:errormsg == 'error_subject'">
+#.                   Subject field must be filled
+#.           </div>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_psm_subject_required"
+msgstr "Angabe eines Subjekts ist erforderlich"
+
+#.   <input name="forum_publish_posts:method" type="submit" class="context" value="forum_publish" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_publish"
+msgstr "Publizieren"
+
+#.   <input name="forum_reject_posts:method" type="submit" class="context" value="forum_reject" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_reject"
+msgstr "Ablehnen "
+
+#.   <input name="forum_post_reply:method" type="submit" class="standalone" value="forum_reply" />
+#: from ../skins/forum_default/post_view_csnippet.pt
+#: ../skins/forum_default/post_view_snippet.pt
+msgid "forum_reply"
+msgstr "Antworten"
+
+#.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_state"
+msgstr "Status "
+
+#.   <div class="label required">Subject</div>
+#.   <a href="./sort_posts?criterion=subject" attributes="href string:./sort_posts?criterion=${subject_sort_direction}">Subject</a>
+#: from ../skins/forum_default/forum_post_form.pt
+#: ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_subject"
+msgstr "Thema"
+
+#.   <td>Titre</td>
+#.   <td class="forumEditLabel">Title</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_title"
+msgstr "Titel"
+
+msgid "forum_label_postedby"
+msgstr "erstellt von"
+
+msgid "forum_new_thread"
+msgstr "Neues Thema"
+
+msgid "forum_mailtitle_new_msg_submitted"
+msgstr "Eine neue Nachricht ist im Forum"
+
+msgid "forum_mailbody_new_msg_submitted1"
+msgstr "Eine neue Nachricht steht auf der Moderatoren Liste"
+
+msgid "forum_mailbody_new_msg_submitted2"
+msgstr "Diese Nachricht steht an der folgender Adresse:"
+
+msgid "forum_psm_comments_activated"
+msgstr "Kommentare sind nun aktiviert"
+
+msgid "forum_psm_comments_deactivated"
+msgstr "Kommentare sind nun deaktiviert"
+
+msgid "forum_psm_message_posted"
+msgstr "Nachricht erstellt"
+
+msgid "psm_cpsforum_need_rights"
+msgstr "Sie haben nicht genug Rechte für einen Kommentar hier."
+
+msgid "action_activate_comments"
+msgstr "Kommentar +"
+
+msgid "action_deactivate_comments"
+msgstr "Kommentar -"
+
+msgid "action_manage_comments"
+msgstr "Kommentare pflegen"
+
+msgid "forum_title_comments"
+msgstr "Kommentare"
+
+msgid "forum_title_comments_for"
+msgstr "Kommentare für"
+
+msgid "forum_desc_comments"
+msgstr "Dieses Forum enthält Kommentare für Dokumente"
+
+msgid "forum_label_threads_per_page"
+msgstr "Themen pro Seite"
+
+msgid "forum_label_subject"
+msgstr "Subjekt"
+
+msgid "forum_label_message"
+msgstr "Nachricht"
+
+msgid "portal_type_ForumPost_title"
+msgstr "Nachricht"
+
+msgid "portal_type_ForumPost_description"
+msgstr "Nachrichten Typ für Webforen oder Kommentare "
+
+msgid "forum_label_display_title"
+msgstr "Nachricht"
+
+msgid "forum_label_display_200_fc"
+msgstr "die 200 ersten Buchstaben"
+
+msgid "forum_label_display_msg"
+msgstr "ganze Nachricht"
+
+msgid "forum_label_tree_display"
+msgstr "Anzeige des Nachrichten Baumes"
+
+msgid "forum_label_attachedFiles"
+msgstr "Angefügte Dateien"
+
+msgid "forum_pending_post"
+msgstr "Nachricht in der Schwebe"
+
+msgid "forum_unpublished_post"
+msgstr "Nicht publizierte Nachricht"
+
+msgid "forum_published_post"
+msgstr "Publizierte Nachricht"
+
+msgid "forum_rejected_post"
+msgstr "Abgelehnte Nachricht"
+
+msgid "forum_label_wf_display"
+msgstr "Nachrichten Status:"
+
+msgid "forum_label_display_wf_icon"
+msgstr "Minibild"
+
+msgid "forum_label_display_wf_txt"
+msgstr "Text"
+
+msgid "forum_help_moderation"
+msgstr ""
+"<ul> <li>A priori Moderation:<p>Der Forum Manager muss jede Nachricht vor "
+"der Publikation lesen und akzeptieren.</p></li><li>A posteriori moderation:"
+"<p> Keine Moderation, dhNachrichten werden sofort im Forum publiziert. Der "
+"Forum Manager kann die nachricht im nachhinein löschen.</p></li></ul>"
+
+msgid "portal_type_CPSForum_title"
+msgstr "Forum"
+
+msgid "portal_type_CPSForum_description"
+msgstr "Diskussionforum mit Themenlinien"
+
+#~ msgid "legend_local_roles_currently_assigned"
+#~ msgstr "Aktuell vorliegende lokale Rollen"
+
+#~ msgid "label_name"
+#~ msgstr "Name"
+
+#~ msgid "Role1"
+#~ msgstr "Rolle1"
+
+#~ msgid "button_assign_roles"
+#~ msgstr "Rollen zuweisen"
+
+#~ msgid "button_delete"
+#~ msgstr "LÃƒÂƒÃ‚Â¶schen"
+
+#~ msgid "button_search"
+#~ msgstr "Suchen"
+
+#~ msgid "heading_local_roles_search_members"
+#~ msgstr "Lokale Rolle zuweisen: Suche Mitglieder"
+
+#~ msgid "heading_local_roles_search_results"
+#~ msgstr "Lokale Rolle zuweisen: Suche Ergebnisse"
+
+#~ msgid "label_email"
+#~ msgstr "Email Adresse"
+
+#~ msgid "label_group"
+#~ msgstr "Gruppe"
+
+#~ msgid "label_group_name"
+#~ msgstr "Gruppen Name"
+
+#~ msgid "label_in"
+#~ msgstr "in"
+
+#~ msgid "label_local_roles_search_by"
+#~ msgstr "Suchen nach"
+
+#~ msgid "label_local_roles_search_term"
+#~ msgstr "Such Term"
+
+#~ msgid "label_roles"
+#~ msgstr "Rolle(n)"
+
+#~ msgid "label_user"
+#~ msgstr "Teilnehmer"
+
+#~ msgid "label_user_email"
+#~ msgstr "Email Adresse"
+
+#~ msgid "label_user_name"
+#~ msgstr "Name"
+
+#~ msgid "legend_local_roles_assigned_users"
+#~ msgstr "Diese Teilnehmer haben keine lokale Rollen in diesem Folder:"
+
+#~ msgid "legend_local_roles_no_results_member"
+#~ msgstr "Sorry, keine Gruppen die zu Ihrer Abfrage passen."
+
+#~ msgid "legend_local_roles_no_results_members"
+#~ msgstr "Sorry, keine Teilnehmer die zu Ihrer Abfrage passen."
+
+#~ msgid "legend_local_roles_role_to_assign"
+#~ msgstr "Rolle die zugewiesen werden soll:"
+
+#~ msgid "legend_local_roles_select_groups_and_roles"
+#~ msgstr "WÃƒÂƒÃ¢Â‚Â¬hle Gruppe(n) und Rolle die zugewiesen werden soll:"
+
+#~ msgid "legend_local_roles_select_members_and_roles"
+#~ msgstr "WÃƒÂƒÃ¢Â‚Â¬hle Teilnehmer und Rolle die zugewiesen werden soll:"
+
+#~ msgid "link_local_roles_underlined"
+#~ msgstr ""
+#~ "<i>Rollen mit Unterstrich </i> werden in ÃƒÂƒÃ…Â’bergeordneten Foldern vergeben. Folgen sie den Verweisen um die lokalen "
+#~ "Rollen in diesen Foldern zu verwalten."

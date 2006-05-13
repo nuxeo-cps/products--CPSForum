@@ -1,0 +1,8 @@
+# $Id$
+
+# Note: CPSDefault is only required to manage the le local roles of a forum
+# instance thanks to folder_localrole_form.pt and friends
+
+# CPS --------------------
+CPSCore
+CPSDefault > 3.34.0

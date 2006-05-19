@@ -1,4 +1,20 @@
 *******************************************
+** CPSForum V1.7.1 [R1 build 2006/05/19-13:00 by fermigier]
+** SVN URL: https://svn.nuxeo.org/pub/CPS3/products/CPSForum/trunk Revision: 45740
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+-
+Bug fixes:
+~~~~~~~~~~
+- Updated brazilian portugese translations (thanks to mo.menezes@gmail.com).
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
+*******************************************
 ** CPSForum V1.7.0 [R1 build 2006/03/03-17:44 by ben]
 ** SVN URL: https://svn.nuxeo.org/pub/CPSForum/trunk Revision: 33914
 Requires:

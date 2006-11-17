@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum Italian Translation\n"
-"POT-Creation-Date: 2006-01-03 14:51default\n"
+"POT-Creation-Date: 2006-11-17 11:19default\n"
 "PO-Revision-Date: 2005-11-10 09:09+0100\n"
 "Last-Translator: Stefano Schintu <schintu@gmail.com>\n"
 "Language-Team: CPS Italian <schintu@gmail.com>\n"
@@ -303,3 +303,16 @@ msgstr ""
 "accettare ogni messaggio prima della pubblicazione</p></li><li>Moderazione a "
 "posteriori:<p>Senza moderazione, i messaggi saranno pubblicati direttamente "
 "nel forum. Il responsabile del forum potrà comunque eliminarli.</p></li></ul>"
+
+#, fuzzy
+msgid "portal_type_CPSForum_title"
+msgstr "Forum"
+
+#, fuzzy
+msgid "portal_type_CPSForum_description"
+msgstr ""
+"Un dossier contenant des discussions organisées par sujet (fils de "
+"discussions)"
+
+msgid "legend_local_roles_currently_assigned"
+msgstr "Rôles locaux délégués pour le moment"

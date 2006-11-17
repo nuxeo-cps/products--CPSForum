@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum\n"
-"POT-Creation-Date: 2005-06-23 17:32default\n"
+"POT-Creation-Date: 2006-11-17 11:19default\n"
 "PO-Revision-Date: 2006-11-16 15:42+0100\n"
 "Last-Translator: Jesus Martin <jesusmartin@lasalle.es>\n"
 "Language-Team: euskera <perikoalkain@lasalle.es>\n"
@@ -12,7 +12,8 @@ msgstr ""
 "Language-Name: Spanish\n"
 "Domain: default\n"
 "Preferred-encodings: utf-8 latin1\n"
-"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-sv es-gt es-"
+"hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 "X-Generator: KBabel 1.0.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Language: basque\n"
@@ -125,6 +126,7 @@ msgid "forum_modify"
 msgstr "Aldatu"
 
 #    <p>This forum is locked. You cannot post new messages to it.</p>
+#.   <p>This forum is locked. You cannot post new messages to it.</p>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_msg_forum_frozen"
 msgstr "Foro hau blokeatuta dago. Ezin dut mezu berririk bidali."
@@ -257,7 +259,8 @@ msgid "portal_type_ForumPost_title"
 msgstr "Atari-mota"
 
 msgid "portal_type_ForumPost_description"
-msgstr "Mezu-motak din  foroak erabiltzen ditu eta dokumentuak komentatzeko ere bai"
+msgstr ""
+"Mezu-motak din  foroak erabiltzen ditu eta dokumentuak komentatzeko ere bai"
 
 msgid "forum_label_display_title"
 msgstr "Izenburua"
@@ -296,11 +299,15 @@ msgid "forum_label_display_wf_txt"
 msgstr "Testua"
 
 msgid "forum_help_moderation"
-msgstr "<ul> <li>A priori-ko moderazioa:<p>Foroaren admintratzaileak mezu bakoitza irakurri eta onartu egin behar ditu argitaratu aurretik.</p></li><li>A posteriori-ko moderazoai:<p>Moderaziorik gabe, mezuak bere horretan argitaratzen dira foroan. Foroaren administratzaileak gero ezaba ditzake.</p></li></ul>"
+msgstr ""
+"<ul> <li>A priori-ko moderazioa:<p>Foroaren admintratzaileak mezu bakoitza "
+"irakurri eta onartu egin behar ditu argitaratu aurretik.</p></li><li>A "
+"posteriori-ko moderazoai:<p>Moderaziorik gabe, mezuak bere horretan "
+"argitaratzen dira foroan. Foroaren administratzaileak gero ezaba ditzake.</"
+"p></li></ul>"
 
 msgid "portal_type_CPSForum_title"
 msgstr "Foroa"
 
 msgid "portal_type_CPSForum_description"
 msgstr "Haria mantentzen du"
-

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum\n"
-"POT-Creation-Date: 2006-01-16 17:30default\n"
+"POT-Creation-Date: 2006-11-17 11:19default\n"
 "PO-Revision-Date: 2006-07-14 22:24+0100\n"
 "Last-Translator: Domènec Arcalís <darcalis@gmail.com>\n"
 "Language-Team: català <darcalis@gmail.com>\n"
@@ -16,15 +16,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Language: Catalan\n"
 "X-Poedit-Country: SPAIN\n"
-
-msgid "action_activate_comments"
-msgstr "activar comentaris"
-
-msgid "action_deactivate_comments"
-msgstr "desactivar comentaris"
-
-msgid "action_manage_comments"
-msgstr "administrar comentaris"
 
 #.   <option value="0">a posteriori</option>
 #.   <option value="0" attributes="selected python:not moderation_mode">
@@ -78,68 +69,22 @@ msgstr "Esborrar"
 msgid "forum_depublish"
 msgstr "Retirar"
 
-msgid "forum_desc_comments"
-msgstr "Aquest fòrum conté comentaris associats amb el document"
-
 #.   <td>Description</td>
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_description"
 msgstr "Descripció"
 
-msgid "forum_help_moderation"
-msgstr ""
-"<ul> <li>Moderació a priori:<p>L'administrador del fòrum ha de llegir i "
-"acceptar cada missatge perquè es pugui publicar.</p></li><li>Moderació a "
-"posteriori:<p>Sense moderació: els missatges es publiquen immediatament al "
-"fòrum. L'administrador del fòrum pot esborrar-los després.</p></li></ul>"
-
-msgid "forum_label_attachedFiles"
-msgstr "Arxius adjunts"
-
 #.   <h2 id="document_comment">Comments</h2>
 #: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
 msgid "forum_label_comments"
 msgstr "Comentaris"
-
-msgid "forum_label_display_200_fc"
-msgstr "200 primers caràcters"
-
-msgid "forum_label_display_msg"
-msgstr "Missatge complet"
-
-msgid "forum_label_display_title"
-msgstr "Títol"
-
-msgid "forum_label_display_wf_icon"
-msgstr "Icona"
-
-msgid "forum_label_display_wf_txt"
-msgstr "Text"
 
 #.   <td>Lock forum (no longer possible to post new messages)</td>
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_label_lock_forum"
 msgstr "Bloquejar el fòrum (només lectura)"
-
-msgid "forum_label_message"
-msgstr "Missatge"
-
-msgid "forum_label_postedby"
-msgstr "enviat per"
-
-msgid "forum_label_subject"
-msgstr "Tema"
-
-msgid "forum_label_threads_per_page"
-msgstr "Número de enllaços o missatges per pàgina"
-
-msgid "forum_label_tree_display"
-msgstr "Mostrar arbre de missatges"
-
-msgid "forum_label_wf_display"
-msgstr "Mostra de l'estat del missatge"
 
 #.   <span />
 #: from ../skins/forum_default/forum_view_main.pt
@@ -161,15 +106,6 @@ msgstr "Següent ${tpp} "
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_link_prev_threads ${tpp}"
 msgstr "Enllaços ${tpp} previs"
-
-msgid "forum_mailbody_new_msg_submitted1"
-msgstr "cos de correu enviat"
-
-msgid "forum_mailbody_new_msg_submitted2"
-msgstr "nou cos de correu enviat"
-
-msgid "forum_mailtitle_new_msg_submitted"
-msgstr "títol de correu del fòrum"
 
 #.   <div class="label">Message</div>
 #: from ../skins/forum_default/forum_post_form.pt
@@ -193,9 +129,6 @@ msgstr "Modificar"
 msgid "forum_msg_forum_frozen"
 msgstr "Aquest fòrum està bloquejat. No hi pot enviar nous missatges."
 
-msgid "forum_new_thread"
-msgstr "Nou fil de discusió"
-
 #.   <td class="forumempty">
 #.             Aucun message dans ce forum !
 #.           </td>
@@ -206,9 +139,6 @@ msgstr "Nou fil de discusió"
 #: ../skins/forum_default/forum_view_main.pt
 msgid "forum_no_message"
 msgstr "No hi ha missatges en aquest fòrum."
-
-msgid "forum_pending_post"
-msgstr "Pendent"
 
 #.   <input name="forum_post:method" type="submit" class="standalone" value="forum_post" />
 #: from ../skins/forum_default/forum_post_form.pt
@@ -221,15 +151,6 @@ msgstr "Escriure"
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_post_unauthorize"
 msgstr "No té autorització per a enviar missatges a aquest fòrum"
-
-msgid "forum_psm_comments_activated"
-msgstr "No es permet fer comentaris."
-
-msgid "forum_psm_comments_deactivated"
-msgstr "Els comentaris ja estan autoritzats"
-
-msgid "forum_psm_message_posted"
-msgstr "Missatge enviat"
 
 #.   <span condition="python:errormsg == 'error_author'" class="forumError">Author field must be filled</span>
 #: from ../skins/forum_default/forum_post_form.pt
@@ -248,16 +169,10 @@ msgstr "Ha d'introduir un tema"
 msgid "forum_publish"
 msgstr "Publicar"
 
-msgid "forum_published_post"
-msgstr "Publicat"
-
 #.   <input name="forum_reject_posts:method" type="submit" class="context" value="forum_reject" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_reject"
 msgstr "Rebutjar"
-
-msgid "forum_rejected_post"
-msgstr "Rebutjat"
 
 #.   <input name="forum_post_reply:method" type="submit" class="standalone" value="forum_reply" />
 #: from ../skins/forum_default/post_view_csnippet.pt
@@ -284,26 +199,111 @@ msgstr "Tema"
 msgid "forum_title"
 msgstr "Títol"
 
+msgid "forum_label_postedby"
+msgstr "enviat per"
+
+msgid "forum_new_thread"
+msgstr "Nou fil de discusió"
+
+msgid "forum_mailtitle_new_msg_submitted"
+msgstr "títol de correu del fòrum"
+
+msgid "forum_mailbody_new_msg_submitted1"
+msgstr "cos de correu enviat"
+
+msgid "forum_mailbody_new_msg_submitted2"
+msgstr "nou cos de correu enviat"
+
+msgid "forum_psm_comments_activated"
+msgstr "No es permet fer comentaris."
+
+msgid "forum_psm_comments_deactivated"
+msgstr "Els comentaris ja estan autoritzats"
+
+msgid "forum_psm_message_posted"
+msgstr "Missatge enviat"
+
+msgid "psm_cpsforum_need_rights"
+msgstr "No té permís per a posar aquí un comentari."
+
+msgid "action_activate_comments"
+msgstr "activar comentaris"
+
+msgid "action_deactivate_comments"
+msgstr "desactivar comentaris"
+
+msgid "action_manage_comments"
+msgstr "administrar comentaris"
+
 msgid "forum_title_comments"
 msgstr "Comentaris"
 
 msgid "forum_title_comments_for"
 msgstr "Comentaris associats amb el document"
 
-msgid "forum_unpublished_post"
-msgstr "No publicat"
+msgid "forum_desc_comments"
+msgstr "Aquest fòrum conté comentaris associats amb el document"
 
-msgid "portal_type_CPSForum_description"
-msgstr "Manté les discussions encadenades"
+msgid "forum_label_threads_per_page"
+msgstr "Número de enllaços o missatges per pàgina"
 
-msgid "portal_type_CPSForum_title"
-msgstr "Fòrum"
+msgid "forum_label_subject"
+msgstr "Tema"
 
-msgid "portal_type_ForumPost_description"
-msgstr "El tipus de missatge utilitza fòrums din i per a comentar documents"
+msgid "forum_label_message"
+msgstr "Missatge"
 
 msgid "portal_type_ForumPost_title"
 msgstr "tipus de portal"
 
-msgid "psm_cpsforum_need_rights"
-msgstr "No té permís per a posar aquí un comentari."
+msgid "portal_type_ForumPost_description"
+msgstr "El tipus de missatge utilitza fòrums din i per a comentar documents"
+
+msgid "forum_label_display_title"
+msgstr "Títol"
+
+msgid "forum_label_display_200_fc"
+msgstr "200 primers caràcters"
+
+msgid "forum_label_display_msg"
+msgstr "Missatge complet"
+
+msgid "forum_label_tree_display"
+msgstr "Mostrar arbre de missatges"
+
+msgid "forum_label_attachedFiles"
+msgstr "Arxius adjunts"
+
+msgid "forum_pending_post"
+msgstr "Pendent"
+
+msgid "forum_unpublished_post"
+msgstr "No publicat"
+
+msgid "forum_published_post"
+msgstr "Publicat"
+
+msgid "forum_rejected_post"
+msgstr "Rebutjat"
+
+msgid "forum_label_wf_display"
+msgstr "Mostra de l'estat del missatge"
+
+msgid "forum_label_display_wf_icon"
+msgstr "Icona"
+
+msgid "forum_label_display_wf_txt"
+msgstr "Text"
+
+msgid "forum_help_moderation"
+msgstr ""
+"<ul> <li>Moderació a priori:<p>L'administrador del fòrum ha de llegir i "
+"acceptar cada missatge perquè es pugui publicar.</p></li><li>Moderació a "
+"posteriori:<p>Sense moderació: els missatges es publiquen immediatament al "
+"fòrum. L'administrador del fòrum pot esborrar-los després.</p></li></ul>"
+
+msgid "portal_type_CPSForum_title"
+msgstr "Fòrum"
+
+msgid "portal_type_CPSForum_description"
+msgstr "Manté les discussions encadenades"

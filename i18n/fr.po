@@ -310,7 +310,7 @@ msgid "portal_type_CPSForum_title"
 msgstr "Forum"
 
 msgid "portal_type_CPSForum_description"
-msgstr "Gère des discussions organisées par sujet (fils de discussions)"
+msgstr "Un dossier contenant des discussions organisées par sujet (fils de discussions)"
 
 #~ msgid "legend_local_roles_currently_assigned"
 #~ msgstr "Rôles locaux délégués pour le moment"

@@ -309,7 +309,7 @@ msgid "portal_type_CPSForum_title"
 msgstr "Forum"
 
 msgid "portal_type_CPSForum_description"
-msgstr "Holds threaded discussions"
+msgstr "A folder containing threaded discussions"
 
 #~ msgid "legend_local_roles_currently_assigned"
 #~ msgstr "Currently assigned local roles"

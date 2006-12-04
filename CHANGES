@@ -1,13 +1,12 @@
-Requires:
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
 ~~~~~~~~~
 -
-New features:
-~~~~~~~~~~~~~
-- #1702: Added new Catalan translation thanks to Santi Camps.
-Bug fixes:
-~~~~~~~~~~
-- Fixed #1505 : Make the portal types description consistent.
-- Updated Spanish translation thanks to Jesús Martín.
-New internal features:
-~~~~~~~~~~~~~~~~~~~~~~
--
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 

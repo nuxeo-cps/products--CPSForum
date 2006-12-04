@@ -1,3 +1,24 @@
+===========================================================
+Package: CPSForum 1.8.0
+===========================================================
+First release built by: madarche at: 2006-12-04T15:33:41
+SVN Tag: https://svn.nuxeo.org/pub/CPS3/products/CPSForum/tags/1.8.0
+Build from: https://svn.nuxeo.org/pub/CPS3/products/CPSForum/trunk@50420
+
+Requires:
+~~~~~~~~~
+-
+New features:
+~~~~~~~~~~~~~
+- #1702: Added new Catalan translation thanks to Santi Camps.
+Bug fixes:
+~~~~~~~~~~
+- Fixed #1505 : Make the portal types description consistent.
+- Updated Spanish translation thanks to Jesús Martín.
+New internal features:
+~~~~~~~~~~~~~~~~~~~~~~
+-
+
 *******************************************
 ** CPSForum V1.7.1 [R1 build 2006/05/19-13:00 by fermigier]
 ** SVN URL: https://svn.nuxeo.org/pub/CPS3/products/CPSForum/trunk Revision: 45740

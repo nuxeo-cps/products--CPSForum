@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: CPSForum\n"
-"POT-Creation-Date: 2006-11-17 11:19default\n"
+"POT-Creation-Date: 2007-04-25 12:24default\n"
 "PO-Revision-Date: 2006-11-16 15:42+0100\n"
 "Last-Translator: Jesus Martin <jesusmartin@lasalle.es>\n"
 "Language-Team: euskera <perikoalkain@lasalle.es>\n"
@@ -18,6 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Language: basque\n"
 "X-Poedit-Country: SPAIN\n"
+
+#.   <strong>cpsdir_label_upto_directories</strong>
+#: from ../skins/forum_default/popupdirectory_entry_view.pt
+msgid "cpsdir_label_upto_directories"
+msgstr ""
 
 #.   <option value="0">a posteriori</option>
 #.   <option value="0" attributes="selected python:not moderation_mode">

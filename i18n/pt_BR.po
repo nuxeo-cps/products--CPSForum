@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: pt-BR\n"
-"POT-Creation-Date: 2006-11-17 11:19default\n"
+"POT-Creation-Date: 2007-04-25 12:24default\n"
 "PO-Revision-Date: 2005-12-19 15:13-0200\n"
 "Last-Translator: Mario Olimpio de Menezes <mario@ipen.br>\n"
 "Language-Team: Portugues do Brasil <pt@li.org>\n"
@@ -19,6 +19,11 @@ msgstr ""
 "Language-Code: pt_BR\n"
 "Language-Name: Portuguese Brazilian\n"
 "Domain: default\n"
+
+#.   <strong>cpsdir_label_upto_directories</strong>
+#: from ../skins/forum_default/popupdirectory_entry_view.pt
+msgid "cpsdir_label_upto_directories"
+msgstr ""
 
 #.   <option value="0">a posteriori</option>
 #.   <option value="0" attributes="selected python:not moderation_mode">

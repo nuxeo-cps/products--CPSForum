@@ -1,0 +1,307 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CPSForum\n"
+"POT-Creation-Date: 2006-11-17 11:19default\n"
+"PO-Revision-Date: 2007-05-11 19:20+0100\n"
+"Last-Translator: xosé francisco martínez reboiras <xosereboiras@lasalle.es>\n"
+"Language-Team: español <jesusmartin@lasalle.es>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Code: es\n"
+"Language-Name: Spanish\n"
+"Domain: default\n"
+"Preferred-encodings: utf-8 latin1\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+"X-Generator: KBabel 1.0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+
+#.   <option value="0">a posteriori</option>
+#.   <option value="0" attributes="selected python:not moderation_mode">
+#.               a posteriori
+#.             </option>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_a_posteriori"
+msgstr "a posteriori"
+
+#.   <option value="1">a priori</option>
+#.   <option value="1" attributes="selected python:not not moderation_mode">
+#.               a priori
+#.             </option>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_a_priori"
+msgstr "a priori"
+
+#.   <td>Allow anonymous posts</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_allow_anon_posts"
+msgstr "Autorizar as mensaxes anónimas"
+
+#.   <div class="label">Author</div>
+#.   <a href="./sort_posts?criterion=author" attributes="href string:./sort_posts?criterion=${author_sort_direction}">Author</a>
+#: from ../skins/forum_default/forum_post_form.pt
+#: ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_author"
+msgstr "Autor"
+
+#.   <input name="forum_lock_thread:method" type="submit" class="context" value="forum_button_lockunlock" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_button_lockunlock"
+msgstr "(Des-)bloquear el hilo"
+
+#.   <a href="./sort_posts?criterion=date" attributes="href string:./sort_posts?criterion=${date_sort_direction}">Date</a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_date"
+msgstr "Data"
+
+#.   <input name="forum_del_posts:method" type="submit" class="destructive" value="forum_delete" attributes="onclick python:'return window.confirm(\'%s\')' %
+#.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/translation_service" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_delete"
+msgstr "Borrar"
+
+#.   <input name="forum_unpublish_posts:method" type="submit" class="context" value="forum_depublish" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_depublish"
+msgstr "Retirar"
+
+#.   <td>Description</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_description"
+msgstr "Descrición"
+
+#.   <h2 id="document_comment">Comments</h2>
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
+msgid "forum_label_comments"
+msgstr "Comentarios"
+
+#.   <td>Lock forum (no longer possible to post new messages)</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_label_lock_forum"
+msgstr "Bloquear o foro (só lectura)"
+
+#.   <span />
+#: from ../skins/forum_default/forum_view_main.pt
+msgid "forum_link_back_to_document"
+msgstr "enlace de volta ao documento"
+
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=next_page.first))" condition="next_page">
+#.               forum_link_next_threads ${tpp (tal content="threads_per_page")}
+#.             </a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_link_next_threads ${tpp}"
+msgstr "Seguinte ${tpp} "
+
+#.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
+#.                                       mq(request.form, frm_start=previous_page.first))" condition="previous_page">
+#.               forum_link_prev_threads ${tpp (tal content="threads_per_page")}
+#.             </a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_link_prev_threads ${tpp}"
+msgstr "Enlaces ${tpp} previos"
+
+#.   <div class="label">Message</div>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_message"
+msgstr "Mensaxe"
+
+#.   <td>Moderation</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_moderation"
+msgstr "Moderación"
+
+#.   <input condition="python:is_reviewer and not published" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
+#: from ../skins/forum_default/post_view_snippet.pt
+msgid "forum_modify"
+msgstr "Modificar"
+
+#    <p>This forum is locked. You cannot post new messages to it.</p>
+#.   <p>This forum is locked. You cannot post new messages to it.</p>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_msg_forum_frozen"
+msgstr "Este foro está bloqueado. Non pode enviar novas mensaxes."
+
+#.   <td class="forumempty">
+#.             Aucun message dans ce forum !
+#.           </td>
+#.   <td class="forumempty">
+#.           Aucun message dans ce forum !
+#.         </td>
+#: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
+#: ../skins/forum_default/forum_view_main.pt
+msgid "forum_no_message"
+msgstr "Non hai mensaxes neste foro."
+
+#.   <input name="forum_post:method" type="submit" class="standalone" value="forum_post" />
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_post"
+msgstr "Enviar"
+
+#.   <p>
+#.           You are not authorized to post on this forum
+#.         </p>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_post_unauthorize"
+msgstr "Non tes autorización para enviar mensaxes neste foro"
+
+#.   <span condition="python:errormsg == 'error_author'" class="forumError">Author field must be filled</span>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_psm_name_required"
+msgstr "Debe introducir un nome ou seudónimo"
+
+#.   <div class="row error" condition="python:errormsg == 'error_subject'">
+#.                   Subject field must be filled
+#.           </div>
+#: from ../skins/forum_default/forum_post_form.pt
+msgid "forum_psm_subject_required"
+msgstr "Debe introducir un tema"
+
+#.   <input name="forum_publish_posts:method" type="submit" class="context" value="forum_publish" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_publish"
+msgstr "Publicar"
+
+#.   <input name="forum_reject_posts:method" type="submit" class="context" value="forum_reject" />
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_reject"
+msgstr "Rexeitar"
+
+#.   <input name="forum_post_reply:method" type="submit" class="standalone" value="forum_reply" />
+#: from ../skins/forum_default/post_view_csnippet.pt
+#: ../skins/forum_default/post_view_snippet.pt
+msgid "forum_reply"
+msgstr "Responder"
+
+#.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
+#: from ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_state"
+msgstr "Estado"
+
+#.   <div class="label required">Subject</div>
+#.   <a href="./sort_posts?criterion=subject" attributes="href string:./sort_posts?criterion=${subject_sort_direction}">Subject</a>
+#: from ../skins/forum_default/forum_post_form.pt
+#: ../skins/forum_default/forum_view_threads_main.pt
+msgid "forum_subject"
+msgstr "Tema"
+
+#.   <td>Titre</td>
+#.   <td class="forumEditLabel">Title</td>
+#: from ../skins/forum_default/forum_create_form.pt
+#: ../skins/forum_default/forum_edit_form.pt
+msgid "forum_title"
+msgstr "Título"
+
+msgid "forum_label_postedby"
+msgstr "enviado por"
+
+msgid "forum_new_thread"
+msgstr "Novo fío de discusión"
+
+msgid "forum_mailtitle_new_msg_submitted"
+msgstr "título de correo do foro"
+
+msgid "forum_mailbody_new_msg_submitted1"
+msgstr "corpo de correo enviado"
+
+msgid "forum_mailbody_new_msg_submitted2"
+msgstr "novo corpo de correo enviado"
+
+msgid "forum_psm_comments_activated"
+msgstr "Non se permite facer comentarios."
+
+msgid "forum_psm_comments_deactivated"
+msgstr "Os comentarios xa non están autorizados"
+
+msgid "forum_psm_message_posted"
+msgstr "Mensaxe enviada"
+
+msgid "psm_cpsforum_need_rights"
+msgstr "Non tes permiso para poñer aquí un comentario."
+
+msgid "action_activate_comments"
+msgstr "activar comentarios"
+
+msgid "action_deactivate_comments"
+msgstr "desactivar comentarios"
+
+msgid "action_manage_comments"
+msgstr "administrar comentarios"
+
+msgid "forum_title_comments"
+msgstr "Comentarios"
+
+msgid "forum_title_comments_for"
+msgstr "Comentarios asociados co documento"
+
+msgid "forum_desc_comments"
+msgstr "Este foro contén comentarios asociados co documento"
+
+msgid "forum_label_threads_per_page"
+msgstr "Número de enlaces ou mensaxes por páxina"
+
+msgid "forum_label_subject"
+msgstr "Tema"
+
+msgid "forum_label_message"
+msgstr "Mensaxe"
+
+msgid "portal_type_ForumPost_title"
+msgstr "tipo de portal"
+
+msgid "portal_type_ForumPost_description"
+msgstr "O tipo de mensaxe utiliza foros din e para comentar documentos"
+
+msgid "forum_label_display_title"
+msgstr "Título"
+
+msgid "forum_label_display_200_fc"
+msgstr "200 primeiros caracteres"
+
+msgid "forum_label_display_msg"
+msgstr "Mensaxe completa"
+
+msgid "forum_label_tree_display"
+msgstr "Mostrar árbore de mensaxes"
+
+msgid "forum_label_attachedFiles"
+msgstr "Archivos adxuntos"
+
+msgid "forum_pending_post"
+msgstr "Pendente"
+
+msgid "forum_unpublished_post"
+msgstr "Non publicado"
+
+msgid "forum_published_post"
+msgstr "Publicado"
+
+msgid "forum_rejected_post"
+msgstr "Rexeitado"
+
+msgid "forum_label_wf_display"
+msgstr "Mostra do estado da mensaxe"
+
+msgid "forum_label_display_wf_icon"
+msgstr "Icona"
+
+msgid "forum_label_display_wf_txt"
+msgstr "Texto"
+
+msgid "forum_help_moderation"
+msgstr "<ul> <li>Moderación a priori:<p>O administrador do foro debe ler e aceptar cada mensaxe antes da súa publicación.</p></li><li>Moderación a posteriori:<p>Sen moderación, as mensaxes publícanse inmediatamente no foro. O administrador do foro pode borralos despois.</p></li></ul>"
+
+msgid "portal_type_CPSForum_title"
+msgstr "Foro"
+
+msgid "portal_type_CPSForum_description"
+msgstr "Mantén os fíos de discusión"
+

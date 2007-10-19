@@ -1,4 +1,24 @@
 ===========================================================
+Package: CPSForum 1.9.0
+===========================================================
+First release built by: madarche at: 2007-10-19T12:19:40
+SVN Tag: https://svn.nuxeo.org/pub/CPS3/products/CPSForum/tags/1.9.0
+Build from: https://svn.nuxeo.org/pub/CPS3/products/CPSForum/trunk@52013
+
+Requires
+~~~~~~~~
+- CPSI18n >= 1.0.0
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+-
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: CPSForum 1.8.0
 ===========================================================
 First release built by: madarche at: 2006-12-04T15:33:41

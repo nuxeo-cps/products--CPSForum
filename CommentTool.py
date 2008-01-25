@@ -165,9 +165,8 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
                 """Returns 'Section' or 'Workspace' parent folder."""
                 parent = proxy.aq_inner.aq_parent
                 while parent:
-                    if (hasattr(parent, 'portal_type') and
-                        (parent.portal_type == 'Section' or
-                         parent.portal_type == 'Workspace')):
+                    if (hasattr(parent, 'portal_type')
+                        and parent.portal_type in ['Section', 'Workspace']):
                         return parent
                     parent = parent.aq_inner.aq_parent
                 return proxy.aq_inner.aq_parent

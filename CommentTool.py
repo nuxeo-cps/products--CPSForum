@@ -1,4 +1,4 @@
-# (C) Copyright 2003 Nuxeo SARL <http://nuxeo.com>
+# (C) Copyright 2003-2008 Nuxeo SAS <http://nuxeo.com>
 # Author: Emmanuel Pietriga <ep@nuxeo.com>
 #
 # This program is free software; you can redistribute it and/or modify
@@ -165,9 +165,9 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
                 """Returns 'Section' or 'Workspace' parent folder."""
                 parent = proxy.aq_inner.aq_parent
                 while parent:
-                    if hasattr(parent, 'portal_type') and \
-                           (parent.portal_type == 'Section' or
-                            parent.portal_type == 'Workspace'):
+                    if (hasattr(parent, 'portal_type') and
+                        (parent.portal_type == 'Section' or
+                         parent.portal_type == 'Workspace')):
                         return parent
                     parent = parent.aq_inner.aq_parent
                 return proxy.aq_inner.aq_parent

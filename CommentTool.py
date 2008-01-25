@@ -39,6 +39,10 @@ from Forum import addCPSForum
 
 from CPSForumPermissions import ForumManageComments
 
+# This constant is used to find where to store the .cps_discussions
+# comments holder.
+COMMENTS_HOLDER_PORTAL_TYPES = ('Section', 'Workspace')
+
 
 class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     """Comment tool, a container for forums used to comment documents."""
@@ -166,7 +170,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
                 parent = proxy.aq_inner.aq_parent
                 while parent:
                     if (hasattr(parent, 'portal_type')
-                        and parent.portal_type in ['Section', 'Workspace']):
+                        and parent.portal_type in COMMENTS_HOLDER_PORTAL_TYPES):
                         return parent
                     parent = parent.aq_inner.aq_parent
                 return proxy.aq_inner.aq_parent

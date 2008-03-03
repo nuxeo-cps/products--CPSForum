@@ -15,6 +15,7 @@
    <permission-role>WorkspaceManager</permission-role>
    <permission-role>WorkspaceMember</permission-role>
    <permission-role>WorkspaceReader</permission-role>
+   <permission-role>Reader</permission-role>
    <permission-role>ForumModerator</permission-role>
    <permission-role>ForumPoster</permission-role>
   </permission-map>

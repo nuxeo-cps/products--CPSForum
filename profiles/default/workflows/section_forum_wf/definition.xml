@@ -23,6 +23,7 @@
    <permission-role>SectionManager</permission-role>
    <permission-role>SectionReviewer</permission-role>
    <permission-role>SectionReader</permission-role>
+   <permission-role>Reader</permission-role>
    <permission-role>ForumModerator</permission-role>
    <permission-role>ForumPoster</permission-role>
   </permission-map>

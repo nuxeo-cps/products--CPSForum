@@ -1,4 +1,24 @@
 ===========================================================
+Package: CPSForum 1.9.2
+===========================================================
+First release built by: madarche at: 2008-03-07T18:44:59
+SVN Tag: https://svn.nuxeo.org/pub/CPS3/products/CPSForum/tags/1.9.2
+Build from: https://svn.nuxeo.org/pub/CPS3/products/CPSForum/trunk@52640
+
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- Made CPSForum aware of the Reader role.
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: CPSForum 1.9.1
 ===========================================================
 First release built by: madarche at: 2008-02-22T15:55:45

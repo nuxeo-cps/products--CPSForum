@@ -3,20 +3,20 @@ msgstr ""
 "Project-Id-Version: CPSForum\n"
 "POT-Creation-Date: 2006-11-17 11:19default\n"
 "PO-Revision-Date: 2007-05-11 19:20+0100\n"
-"Last-Translator: xosé francisco martínez reboiras <xosereboiras@lasalle.es>\n"
-"Language-Team: español <jesusmartin@lasalle.es>\n"
+"Last-Translator: xosÃ© francisco martÃ­nez reboiras <xosereboiras@lasalle.es>\n"
+"Language-Team: espaÃ±ol <jesusmartin@lasalle.es>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language-Code: gl\n"
-"Language-Name: Spanish\n"
-"Domain: default\n"
-"Preferred-encodings: utf-8 latin1\n"
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 "X-Generator: KBabel 1.0.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Language: Spanish\n"
 "X-Poedit-Country: SPAIN\n"
+"Language-Code: gl\n"
+"Language-Name: Galician\n"
+"Domain: default\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Preferred-Encodings: utf-8\n"
 
 #.   <option value="0">a posteriori</option>
 #.   <option value="0" attributes="selected python:not moderation_mode">
@@ -40,7 +40,7 @@ msgstr "a priori"
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_allow_anon_posts"
-msgstr "Autorizar as mensaxes anónimas"
+msgstr "Autorizar as mensaxes anÃ³nimas"
 
 #.   <div class="label">Author</div>
 #.   <a href="./sort_posts?criterion=author" attributes="href string:./sort_posts?criterion=${author_sort_direction}">Author</a>
@@ -74,7 +74,7 @@ msgstr "Retirar"
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_description"
-msgstr "Descrición"
+msgstr "DescriciÃ³n"
 
 #.   <h2 id="document_comment">Comments</h2>
 #: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
@@ -85,7 +85,7 @@ msgstr "Comentarios"
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_label_lock_forum"
-msgstr "Bloquear o foro (só lectura)"
+msgstr "Bloquear o foro (sÃ³ lectura)"
 
 #.   <span />
 #: from ../skins/forum_default/forum_view_main.pt
@@ -117,7 +117,7 @@ msgstr "Mensaxe"
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_moderation"
-msgstr "Moderación"
+msgstr "ModeraciÃ³n"
 
 #.   <input condition="python:is_reviewer and not published" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
 #: from ../skins/forum_default/post_view_snippet.pt
@@ -128,7 +128,7 @@ msgstr "Modificar"
 #.   <p>This forum is locked. You cannot post new messages to it.</p>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_msg_forum_frozen"
-msgstr "Este foro está bloqueado. Non pode enviar novas mensaxes."
+msgstr "Este foro estÃ¡ bloqueado. Non pode enviar novas mensaxes."
 
 #.   <td class="forumempty">
 #.             Aucun message dans ce forum !
@@ -151,12 +151,12 @@ msgstr "Enviar"
 #.         </p>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_post_unauthorize"
-msgstr "Non tes autorización para enviar mensaxes neste foro"
+msgstr "Non tes autorizaciÃ³n para enviar mensaxes neste foro"
 
 #.   <span condition="python:errormsg == 'error_author'" class="forumError">Author field must be filled</span>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_name_required"
-msgstr "Debe introducir un nome ou seudónimo"
+msgstr "Debe introducir un nome ou seudÃ³nimo"
 
 #.   <div class="row error" condition="python:errormsg == 'error_subject'">
 #.                   Subject field must be filled
@@ -198,16 +198,16 @@ msgstr "Tema"
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
-msgstr "Título"
+msgstr "TÃ­tulo"
 
 msgid "forum_label_postedby"
 msgstr "enviado por"
 
 msgid "forum_new_thread"
-msgstr "Novo fío de discusión"
+msgstr "Novo fÃ­o de discusiÃ³n"
 
 msgid "forum_mailtitle_new_msg_submitted"
-msgstr "título de correo do foro"
+msgstr "tÃ­tulo de correo do foro"
 
 msgid "forum_mailbody_new_msg_submitted1"
 msgstr "corpo de correo enviado"
@@ -219,13 +219,13 @@ msgid "forum_psm_comments_activated"
 msgstr "Non se permite facer comentarios."
 
 msgid "forum_psm_comments_deactivated"
-msgstr "Os comentarios xa non están autorizados"
+msgstr "Os comentarios xa non estÃ¡n autorizados"
 
 msgid "forum_psm_message_posted"
 msgstr "Mensaxe enviada"
 
 msgid "psm_cpsforum_need_rights"
-msgstr "Non tes permiso para poñer aquí un comentario."
+msgstr "Non tes permiso para poÃ±er aquÃ­ un comentario."
 
 msgid "action_activate_comments"
 msgstr "activar comentarios"
@@ -243,10 +243,10 @@ msgid "forum_title_comments_for"
 msgstr "Comentarios asociados co documento"
 
 msgid "forum_desc_comments"
-msgstr "Este foro contén comentarios asociados co documento"
+msgstr "Este foro contÃ©n comentarios asociados co documento"
 
 msgid "forum_label_threads_per_page"
-msgstr "Número de enlaces ou mensaxes por páxina"
+msgstr "NÃºmero de enlaces ou mensaxes por pÃ¡xina"
 
 msgid "forum_label_subject"
 msgstr "Tema"
@@ -261,7 +261,7 @@ msgid "portal_type_ForumPost_description"
 msgstr "O tipo de mensaxe utiliza foros din e para comentar documentos"
 
 msgid "forum_label_display_title"
-msgstr "Título"
+msgstr "TÃ­tulo"
 
 msgid "forum_label_display_200_fc"
 msgstr "200 primeiros caracteres"
@@ -270,7 +270,7 @@ msgid "forum_label_display_msg"
 msgstr "Mensaxe completa"
 
 msgid "forum_label_tree_display"
-msgstr "Mostrar árbore de mensaxes"
+msgstr "Mostrar Ã¡rbore de mensaxes"
 
 msgid "forum_label_attachedFiles"
 msgstr "Archivos adxuntos"
@@ -297,11 +297,11 @@ msgid "forum_label_display_wf_txt"
 msgstr "Texto"
 
 msgid "forum_help_moderation"
-msgstr "<ul> <li>Moderación a priori:<p>O administrador do foro debe ler e aceptar cada mensaxe antes da súa publicación.</p></li><li>Moderación a posteriori:<p>Sen moderación, as mensaxes publícanse inmediatamente no foro. O administrador do foro pode borralos despois.</p></li></ul>"
+msgstr "<ul> <li>ModeraciÃ³n a priori:<p>O administrador do foro debe ler e aceptar cada mensaxe antes da sÃºa publicaciÃ³n.</p></li><li>ModeraciÃ³n a posteriori:<p>Sen moderaciÃ³n, as mensaxes publÃ­canse inmediatamente no foro. O administrador do foro pode borralos despois.</p></li></ul>"
 
 msgid "portal_type_CPSForum_title"
 msgstr "Foro"
 
 msgid "portal_type_CPSForum_description"
-msgstr "Mantén os fíos de discusión"
+msgstr "MantÃ©n os fÃ­os de discusiÃ³n"
 

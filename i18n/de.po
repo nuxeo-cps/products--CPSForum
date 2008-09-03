@@ -8,11 +8,12 @@ msgstr ""
 "Last-Translator: Georg Hennemann <georg.hennemann@dhl.com>\n"
 "Language-Team: de <rheinland@dzug.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Code: de\n"
-"Domain: default\n"
 "Language-Name: German\n"
+"Domain: default\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Preferred-Encodings: utf-8\n"
 
 #.   <strong>cpsdir_label_upto_directories</strong>
 #: from ../skins/forum_default/popupdirectory_entry_view.pt
@@ -53,7 +54,7 @@ msgstr "Autor"
 #.   <input name="forum_lock_thread:method" type="submit" class="context" value="forum_button_lockunlock" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_button_lockunlock"
-msgstr "(�ffnen)Schliessen eines Themas"
+msgstr "(Öffnen)Schliessen eines Themas"
 
 #.   <a href="./sort_posts?criterion=date" attributes="href string:./sort_posts?criterion=${date_sort_direction}">Date</a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
@@ -64,12 +65,12 @@ msgstr "Datum"
 #.                                  (cpsmcat('description_confirm_delete'), )" define="cpsmcat nocall:here/translation_service" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_delete"
-msgstr "L�schen"
+msgstr "Löschen"
 
 #.   <input name="forum_unpublish_posts:method" type="submit" class="context" value="forum_depublish" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_depublish"
-msgstr "Publikation zur�ckziehen"
+msgstr "Publikation zurückziehen"
 
 #.   <td>Description</td>
 #: from ../skins/forum_default/forum_create_form.pt
@@ -91,7 +92,7 @@ msgstr "Forum schliessen (nur Lesen)"
 #.   <span />
 #: from ../skins/forum_default/forum_view_main.pt
 msgid "forum_link_back_to_document"
-msgstr "Zur�ck zum Dokument "
+msgstr "Zurück zum Dokument "
 
 #.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
 #.                                       mq(request.form, frm_start=next_page.first))" condition="next_page">
@@ -99,7 +100,7 @@ msgstr "Zur�ck zum Dokument "
 #.             </a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_link_next_threads ${tpp}"
-msgstr "N�chste ${tpp} Themen"
+msgstr "Nächste ${tpp} Themen"
 
 #.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
 #.                                       mq(request.form, frm_start=previous_page.first))" condition="previous_page">
@@ -129,7 +130,7 @@ msgstr "Modifizieren"
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_msg_forum_frozen"
 msgstr ""
-"Diese Forum ist geschlossen. Sie k�nnen jetzt keine Nachrichten senden."
+"Diese Forum ist geschlossen. Sie können jetzt keine Nachrichten senden."
 
 #.   <td class="forumempty">
 #.             Aucun message dans ce forum !
@@ -157,7 +158,7 @@ msgstr "Sie sind nicht berechtigt in diesem Forum zu posten"
 #.   <span condition="python:errormsg == 'error_author'" class="forumError">Author field must be filled</span>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_psm_name_required"
-msgstr "Sie m�ssen einen Namen oder einen Nicknamen angeben"
+msgstr "Sie müssen einen Namen oder einen Nicknamen angeben"
 
 #.   <div class="row error" condition="python:errormsg == 'error_subject'">
 #.                   Subject field must be filled
@@ -226,7 +227,7 @@ msgid "forum_psm_message_posted"
 msgstr "Nachricht erstellt"
 
 msgid "psm_cpsforum_need_rights"
-msgstr "Sie haben nicht genug Rechte f�r einen Kommentar hier."
+msgstr "Sie haben nicht genug Rechte für einen Kommentar hier."
 
 msgid "action_activate_comments"
 msgstr "Kommentar +"
@@ -241,10 +242,10 @@ msgid "forum_title_comments"
 msgstr "Kommentare"
 
 msgid "forum_title_comments_for"
-msgstr "Kommentare f�r"
+msgstr "Kommentare für"
 
 msgid "forum_desc_comments"
-msgstr "Dieses Forum enth�lt Kommentare f�r Dokumente"
+msgstr "Dieses Forum enthält Kommentare für Dokumente"
 
 msgid "forum_label_threads_per_page"
 msgstr "Themen pro Seite"
@@ -259,7 +260,7 @@ msgid "portal_type_ForumPost_title"
 msgstr "Nachricht"
 
 msgid "portal_type_ForumPost_description"
-msgstr "Nachrichten Typ f�r Webforen oder Kommentare "
+msgstr "Nachrichten Typ für Webforen oder Kommentare "
 
 msgid "forum_label_display_title"
 msgstr "Nachricht"
@@ -274,7 +275,7 @@ msgid "forum_label_tree_display"
 msgstr "Anzeige des Nachrichten Baumes"
 
 msgid "forum_label_attachedFiles"
-msgstr "Angef�gte Dateien"
+msgstr "Angefügte Dateien"
 
 msgid "forum_pending_post"
 msgstr "Nachricht in der Schwebe"
@@ -302,7 +303,7 @@ msgstr ""
 "<ul> <li>A priori Moderation:<p>Der Forum Manager muss jede Nachricht vor "
 "der Publikation lesen und akzeptieren.</p></li><li>A posteriori moderation:"
 "<p> Keine Moderation, dhNachrichten werden sofort im Forum publiziert. Der "
-"Forum Manager kann die nachricht im nachhinein l�schen.</p></li></ul>"
+"Forum Manager kann die nachricht im nachhinein löschen.</p></li></ul>"
 
 msgid "portal_type_CPSForum_title"
 msgstr "Forum"
@@ -323,7 +324,7 @@ msgstr "Diskussionforum mit Themenlinien"
 #~ msgstr "Rollen zuweisen"
 
 #~ msgid "button_delete"
-#~ msgstr "LÃÂ¶schen"
+#~ msgstr "LÃÂÃÂ¶schen"
 
 #~ msgid "button_search"
 #~ msgstr "Suchen"
@@ -377,12 +378,12 @@ msgstr "Diskussionforum mit Themenlinien"
 #~ msgstr "Rolle die zugewiesen werden soll:"
 
 #~ msgid "legend_local_roles_select_groups_and_roles"
-#~ msgstr "WÃâ¬hle Gruppe(n) und Rolle die zugewiesen werden soll:"
+#~ msgstr "WÃÂÃ¢ÂÂ¬hle Gruppe(n) und Rolle die zugewiesen werden soll:"
 
 #~ msgid "legend_local_roles_select_members_and_roles"
-#~ msgstr "WÃâ¬hle Teilnehmer und Rolle die zugewiesen werden soll:"
+#~ msgstr "WÃÂÃ¢ÂÂ¬hle Teilnehmer und Rolle die zugewiesen werden soll:"
 
 #~ msgid "link_local_roles_underlined"
 #~ msgstr ""
-#~ "<i>Rollen mit Unterstrich </i> werden in ÃÅbergeordneten Foldern vergeben. Folgen sie den Verweisen um die lokalen "
+#~ "<i>Rollen mit Unterstrich </i> werden in ÃÂÃÂbergeordneten Foldern vergeben. Folgen sie den Verweisen um die lokalen "
 #~ "Rollen in diesen Foldern zu verwalten."

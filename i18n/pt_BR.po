@@ -1,5 +1,5 @@
-# translation of pt-BR.po to PortuguÍs do Brasil
-# translation of cpsforum.po to Portugu√™s do Brasil
+# translation of pt-BR.po to Portugu√™s do Brasil
+# translation of cpsforum.po to Portugu√É¬™s do Brasil
 # ##########################################################
 # ################# DON'T EDIT THIS FILE! ##################
 # ##########################################################
@@ -14,11 +14,12 @@ msgstr ""
 "Last-Translator: Mario Olimpio de Menezes <mario@ipen.br>\n"
 "Language-Team: Portugues do Brasil <pt@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Code: pt_BR\n"
 "Language-Name: Portuguese Brazilian\n"
 "Domain: default\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Preferred-Encodings: utf-8\n"
 
 #.   <strong>cpsdir_label_upto_directories</strong>
 #: from ../skins/forum_default/popupdirectory_entry_view.pt
@@ -47,7 +48,7 @@ msgstr "a priori"
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_allow_anon_posts"
-msgstr "Permite postagem anÙnima"
+msgstr "Permite postagem an√¥nima"
 
 #.   <div class="label">Author</div>
 #.   <a href="./sort_posts?criterion=author" attributes="href string:./sort_posts?criterion=${author_sort_direction}">Author</a>
@@ -81,18 +82,18 @@ msgstr "Despublicar"
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_description"
-msgstr "DescriÁ„o"
+msgstr "Descri√ß√£o"
 
 #.   <h2 id="document_comment">Comments</h2>
 #: from ../skins/forum_default/forum_comment_lib_view_comments_inline.pt
 msgid "forum_label_comments"
-msgstr "Coment·rios"
+msgstr "Coment√°rios"
 
 #.   <td>Lock forum (no longer possible to post new messages)</td>
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_label_lock_forum"
-msgstr "Bloquear o fÛrum (n„o ser· mais possÌvel postar novas mensagens)"
+msgstr "Bloquear o f√≥rum (n√£o ser√° mais poss√≠vel postar novas mensagens)"
 
 #.   <span />
 #: from ../skins/forum_default/forum_view_main.pt
@@ -105,7 +106,7 @@ msgstr "Voltar"
 #.             </a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_link_next_threads ${tpp}"
-msgstr "PrÛximas threads ${tpp}"
+msgstr "Pr√≥ximas threads ${tpp}"
 
 #.   <a href="." attributes="href python:'%s?%s'%(request['URL'],
 #.                                       mq(request.form, frm_start=previous_page.first))" condition="previous_page">
@@ -124,7 +125,7 @@ msgstr "Mensagem"
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_moderation"
-msgstr "ModeraÁ„o"
+msgstr "Modera√ß√£o"
 
 #.   <input condition="python:is_reviewer and not published" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
 #: from ../skins/forum_default/post_view_snippet.pt
@@ -134,7 +135,7 @@ msgstr "Modificar"
 #.   <p>This forum is locked. You cannot post new messages to it.</p>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_msg_forum_frozen"
-msgstr "Este fÛrum est· bloqueado. VocÍ n„o pode postar novas mensagens."
+msgstr "Este f√≥rum est√° bloqueado. Voc√™ n√£o pode postar novas mensagens."
 
 #.   <td class="forumempty">
 #.             Aucun message dans ce forum !
@@ -157,7 +158,7 @@ msgstr "Postar"
 #.         </p>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_post_unauthorize"
-msgstr "VocÍ n„o est· autorizado a postar neste fÛrum."
+msgstr "Voc√™ n√£o est√° autorizado a postar neste f√≥rum."
 
 #.   <span condition="python:errormsg == 'error_author'" class="forumError">Author field must be filled</span>
 #: from ../skins/forum_default/forum_post_form.pt
@@ -204,7 +205,7 @@ msgstr "Assunto"
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_title"
-msgstr "TÌtulo"
+msgstr "T√≠tulo"
 
 msgid "forum_label_postedby"
 msgstr "Postado por:"
@@ -216,43 +217,43 @@ msgid "forum_mailtitle_new_msg_submitted"
 msgstr "Nova mensagem submetida ao forum "
 
 msgid "forum_mailbody_new_msg_submitted1"
-msgstr "Uma nova mensagem foi adicionada ‡ lista de moderaÁ„o do forum."
+msgstr "Uma nova mensagem foi adicionada √† lista de modera√ß√£o do forum."
 
 msgid "forum_mailbody_new_msg_submitted2"
-msgstr "Esta mensagem pode ser vista no seguinte endereÁo:"
+msgstr "Esta mensagem pode ser vista no seguinte endere√ßo:"
 
 msgid "forum_psm_comments_activated"
-msgstr "Coment·rios ativados"
+msgstr "Coment√°rios ativados"
 
 msgid "forum_psm_comments_deactivated"
-msgstr "Coment·rios desativados"
+msgstr "Coment√°rios desativados"
 
 msgid "forum_psm_message_posted"
 msgstr "Mensagem postada"
 
 msgid "psm_cpsforum_need_rights"
-msgstr "VocÍ n„o tem direitos suficientes para postar um coment·rio aqui."
+msgstr "Voc√™ n√£o tem direitos suficientes para postar um coment√°rio aqui."
 
 msgid "action_activate_comments"
-msgstr "Ativar coment·rios"
+msgstr "Ativar coment√°rios"
 
 msgid "action_deactivate_comments"
-msgstr "Desativar coment·rios"
+msgstr "Desativar coment√°rios"
 
 msgid "action_manage_comments"
-msgstr "Administrar coment·rios"
+msgstr "Administrar coment√°rios"
 
 msgid "forum_title_comments"
-msgstr "Coment·rios"
+msgstr "Coment√°rios"
 
 msgid "forum_title_comments_for"
-msgstr "Coment·rios para:"
+msgstr "Coment√°rios para:"
 
 msgid "forum_desc_comments"
-msgstr "Coment·rios:"
+msgstr "Coment√°rios:"
 
 msgid "forum_label_threads_per_page"
-msgstr "Threads por p·gina"
+msgstr "Threads por p√°gina"
 
 msgid "forum_label_subject"
 msgstr "Assunto"
@@ -267,7 +268,7 @@ msgid "portal_type_ForumPost_description"
 msgstr "Campo para digitar sua mensagem."
 
 msgid "forum_label_display_title"
-msgstr "TÌtulo"
+msgstr "T√≠tulo"
 
 msgid "forum_label_display_200_fc"
 msgstr "Primeiros 200 caracteres"
@@ -276,7 +277,7 @@ msgid "forum_label_display_msg"
 msgstr "Mensagem completa"
 
 msgid "forum_label_tree_display"
-msgstr "Mostra a ·rvore de mensagens"
+msgstr "Mostra a √°rvore de mensagens"
 
 msgid "forum_label_attachedFiles"
 msgstr "Anexos"
@@ -285,7 +286,7 @@ msgid "forum_pending_post"
 msgstr "Pendente."
 
 msgid "forum_unpublished_post"
-msgstr "N„o publicado."
+msgstr "N√£o publicado."
 
 msgid "forum_published_post"
 msgstr "Publicado"
@@ -297,20 +298,20 @@ msgid "forum_label_wf_display"
 msgstr "Mostra estado da postagem:"
 
 msgid "forum_label_display_wf_icon"
-msgstr "Õcone"
+msgstr "√çcone"
 
 msgid "forum_label_display_wf_txt"
 msgstr "Texto"
 
 msgid "forum_help_moderation"
 msgstr ""
-"<ul> <li>ModeraÁ„o a priori:<p>O administrador do fÛrum precisa ler e "
-"aceitar cada mensagem antes da sua publicaÁ„o.</p></li><li>ModeraÁ„o a "
-"posteriori:<p>Sem moderaÁ„o, as mensagens s„o publicadas imediatamente no "
-"fÛrum. O administrador do fÛrum pode removÍ-las mais tarde.</p></li></ul>"
+"<ul> <li>Modera√ß√£o a priori:<p>O administrador do f√≥rum precisa ler e "
+"aceitar cada mensagem antes da sua publica√ß√£o.</p></li><li>Modera√ß√£o a "
+"posteriori:<p>Sem modera√ß√£o, as mensagens s√£o publicadas imediatamente no "
+"f√≥rum. O administrador do f√≥rum pode remov√™-las mais tarde.</p></li></ul>"
 
 msgid "portal_type_CPSForum_title"
-msgstr "FÛrum"
+msgstr "F√≥rum"
 
 msgid "portal_type_CPSForum_description"
-msgstr "Organiza discussıes categorizadas por temas (subtemas de discuss„o)"
+msgstr "Organiza discuss√µes categorizadas por temas (subtemas de discuss√£o)"

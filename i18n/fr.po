@@ -12,14 +12,14 @@ msgstr ""
 "Last-Translator: DARCHE <madarche@nuxeo.com>\n"
 "Language-Team: Francais <fr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Preferred-encodings: utf-8 latin1\n"
 "X-Generator: KBabel 1.3.1\n"
 "Language-Code: fr\n"
 "Language-Name: French\n"
 "Domain: default\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Preferred-Encodings: utf-8\n"
 
 #.   <strong>cpsdir_label_upto_directories</strong>
 #: from ../skins/forum_default/popupdirectory_entry_view.pt
@@ -60,7 +60,7 @@ msgstr "Auteur"
 #.   <input name="forum_lock_thread:method" type="submit" class="context" value="forum_button_lockunlock" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_button_lockunlock"
-msgstr "(Dé-)verrouiller le fil"
+msgstr "(DÃ©-)verrouiller le fil"
 
 #.   <a href="./sort_posts?criterion=date" attributes="href string:./sort_posts?criterion=${date_sort_direction}">Date</a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
@@ -76,7 +76,7 @@ msgstr "Supprimer"
 #.   <input name="forum_unpublish_posts:method" type="submit" class="context" value="forum_depublish" />
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_depublish"
-msgstr "Dépublier"
+msgstr "DÃ©publier"
 
 #.   <td>Description</td>
 #: from ../skins/forum_default/forum_create_form.pt
@@ -114,7 +114,7 @@ msgstr "${tpp} fils suivants"
 #.             </a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
 msgid "forum_link_prev_threads ${tpp}"
-msgstr "${tpp} fils précédents"
+msgstr "${tpp} fils prÃ©cÃ©dents"
 
 #.   <div class="label">Message</div>
 #: from ../skins/forum_default/forum_post_form.pt
@@ -125,7 +125,7 @@ msgstr "Message"
 #: from ../skins/forum_default/forum_create_form.pt
 #: ../skins/forum_default/forum_edit_form.pt
 msgid "forum_moderation"
-msgstr "Modération"
+msgstr "ModÃ©ration"
 
 #.   <input condition="python:is_reviewer and not published" name="forum_post_modify:method" type="submit" class="standalone" value="forum_modify" />
 #: from ../skins/forum_default/post_view_snippet.pt
@@ -135,7 +135,7 @@ msgstr "Modifier"
 #.   <p>This forum is locked. You cannot post new messages to it.</p>
 #: from ../skins/forum_default/forum_post_form.pt
 msgid "forum_msg_forum_frozen"
-msgstr "Ce forum est vérouillé. Vous ne pouvez pas poster de nouveau message."
+msgstr "Ce forum est vÃ©rouillÃ©. Vous ne pouvez pas poster de nouveau message."
 
 #.   <td class="forumempty">
 #.             Aucun message dans ce forum !
@@ -186,7 +186,7 @@ msgstr "Rejeter"
 #: from ../skins/forum_default/post_view_csnippet.pt
 #: ../skins/forum_default/post_view_snippet.pt
 msgid "forum_reply"
-msgstr "Répondre"
+msgstr "RÃ©pondre"
 
 #.   <a href="./sort_posts?criterion=wf" attributes="href string:./sort_posts?criterion=${wf_sort_direction}">State</a>
 #: from ../skins/forum_default/forum_view_threads_main.pt
@@ -208,7 +208,7 @@ msgid "forum_title"
 msgstr "Titre"
 
 msgid "forum_label_postedby"
-msgstr "posté par"
+msgstr "postÃ© par"
 
 msgid "forum_new_thread"
 msgstr "Nouveau fil"
@@ -217,19 +217,19 @@ msgid "forum_mailtitle_new_msg_submitted"
 msgstr "Soumission d'un message sur le Forum "
 
 msgid "forum_mailbody_new_msg_submitted1"
-msgstr "Un nouveau message à modérer vient d'être posté sur le forum "
+msgstr "Un nouveau message Ã  modÃ©rer vient d'Ãªtre postÃ© sur le forum "
 
 msgid "forum_mailbody_new_msg_submitted2"
-msgstr "Ce message peut être consulté à l'adresse suivante :"
+msgstr "Ce message peut Ãªtre consultÃ© Ã  l'adresse suivante :"
 
 msgid "forum_psm_comments_activated"
-msgstr "Les commentaires sont maintenant autorisés sur ce document."
+msgstr "Les commentaires sont maintenant autorisÃ©s sur ce document."
 
 msgid "forum_psm_comments_deactivated"
-msgstr "Les commentaires ne sont plus autorisés sur ce document."
+msgstr "Les commentaires ne sont plus autorisÃ©s sur ce document."
 
 msgid "forum_psm_message_posted"
-msgstr "Message envoyé"
+msgstr "Message envoyÃ©"
 
 msgid "psm_cpsforum_need_rights"
 msgstr "Vous n'avez pas les droits suffisant pour poster un commentaire."
@@ -241,16 +241,16 @@ msgid "action_deactivate_comments"
 msgstr "Interdire les commentaires"
 
 msgid "action_manage_comments"
-msgstr "Gérer les commentaires"
+msgstr "GÃ©rer les commentaires"
 
 msgid "forum_title_comments"
 msgstr "Commentaires"
 
 msgid "forum_title_comments_for"
-msgstr "Commentaires associés au document"
+msgstr "Commentaires associÃ©s au document"
 
 msgid "forum_desc_comments"
-msgstr "Ce forum contient les commentaires associés au document"
+msgstr "Ce forum contient les commentaires associÃ©s au document"
 
 msgid "forum_label_threads_per_page"
 msgstr "Nombre de fils de discussion ou de messages par page :"
@@ -266,13 +266,13 @@ msgstr "Message de forum"
 
 msgid "portal_type_ForumPost_description"
 msgstr ""
-"Type de message utilisé dans les forums et les commentaires de documents"
+"Type de message utilisÃ© dans les forums et les commentaires de documents"
 
 msgid "forum_label_display_title"
 msgstr "Titre"
 
 msgid "forum_label_display_200_fc"
-msgstr "200 premiers caractères"
+msgstr "200 premiers caractÃ¨res"
 
 msgid "forum_label_display_msg"
 msgstr "Message complet"
@@ -281,43 +281,43 @@ msgid "forum_label_tree_display"
 msgstr "Affichage de l'arborescence des messages"
 
 msgid "forum_label_attachedFiles"
-msgstr "Pièces jointes"
+msgstr "PiÃ¨ces jointes"
 
 msgid "forum_pending_post"
 msgstr "En attente de publication"
 
 msgid "forum_unpublished_post"
-msgstr "Dépublié"
+msgstr "DÃ©publiÃ©"
 
 msgid "forum_published_post"
-msgstr "Publié"
+msgstr "PubliÃ©"
 
 msgid "forum_rejected_post"
-msgstr "Rejeté"
+msgstr "RejetÃ©"
 
 msgid "forum_label_wf_display"
-msgstr "Affichage de l'état des messages :"
+msgstr "Affichage de l'Ã©tat des messages :"
 
 msgid "forum_label_display_wf_icon"
-msgstr "Icône"
+msgstr "IcÃ´ne"
 
 msgid "forum_label_display_wf_txt"
 msgstr "Texte"
 
 msgid "forum_help_moderation"
 msgstr ""
-"<ul> <li>Modération a priori :<p>Le responsable du forum doit lire et "
-"accepter chaque message avant publication.</p></li><li>Modération a "
-"posteriori :<p>Pas de modération, les messages sont publiés directement sur "
-"le forum. Le responsable pourra néanmoins en supprimer.</p></li></ul>"
+"<ul> <li>ModÃ©ration a priori :<p>Le responsable du forum doit lire et "
+"accepter chaque message avant publication.</p></li><li>ModÃ©ration a "
+"posteriori :<p>Pas de modÃ©ration, les messages sont publiÃ©s directement sur "
+"le forum. Le responsable pourra nÃ©anmoins en supprimer.</p></li></ul>"
 
 msgid "portal_type_CPSForum_title"
 msgstr "Forum"
 
 msgid "portal_type_CPSForum_description"
 msgstr ""
-"Un dossier contenant des discussions organisées par sujet (fils de "
+"Un dossier contenant des discussions organisÃ©es par sujet (fils de "
 "discussions)"
 
 #~ msgid "legend_local_roles_currently_assigned"
-#~ msgstr "Rôles locaux délégués pour le moment"
+#~ msgstr "RÃ´les locaux dÃ©lÃ©guÃ©s pour le moment"

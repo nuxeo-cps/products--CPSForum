@@ -1,4 +1,24 @@
 ===========================================================
+Package: CPSForum 1.9.3
+===========================================================
+First release built by: madarche at: 2008-11-23T22:11:37
+SVN Tag: https://svn.nuxeo.org/pub/CPS3/products/CPSForum/tags/1.9.3
+Build from: https://svn.nuxeo.org/pub/CPS3/products/CPSForum/trunk@53051
+
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- #1916: Switch all the .po files to UTF-8
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: CPSForum 1.9.2
 ===========================================================
 First release built by: madarche at: 2008-03-07T18:44:59

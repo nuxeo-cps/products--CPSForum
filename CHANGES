@@ -6,7 +6,7 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
-- #2178: adapted to the fact that None is no longer accepted by string field
+-
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 

@@ -1,4 +1,21 @@
 ===========================================================
+Package: CPSForum 1.9.6
+===========================================================
+First release built by: gracinet at: 2010-07-26T23:57:58
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- #2178: adapted to the fact that None is no longer accepted by string field
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: CPSForum 1.9.5
 ===========================================================
 First release built by: gracinet at: 2010-07-23T02:29:02

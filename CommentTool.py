@@ -302,7 +302,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
         tmp_user = tmp_user.__of__(mtool.acl_users)
         newSecurityManager(None, tmp_user)
 
-        kw = {'allow_discussion': allow,}
+        kw = {'allow_discussion': bool(allow),}
         proxy.getEditableContent().edit(proxy=proxy, **kw)
 
         newSecurityManager(None, old_user)

@@ -283,29 +283,8 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
     def setAllowDiscussion(self, proxy, allow):
         """Set discussion allowed or not"""
 
-        class CPSUnrestrictedUser(UnrestrictedUser):
-            """Unrestricted user that still has an id.
-
-            Taken from CPSMembershipTool
-            """
-
-            def getId(self):
-                """Return the ID of the user."""
-                return self.getUserName()
-
-
-        mtool = getToolByName(self, 'portal_membership')
-        old_user = getSecurityManager().getUser()
-
-        tmp_user = CPSUnrestrictedUser('root', '',
-                                       ['Manager', 'Member'], '')
-        tmp_user = tmp_user.__of__(mtool.acl_users)
-        newSecurityManager(None, tmp_user)
-
-        kw = {'allow_discussion': bool(allow),}
-        proxy.getEditableContent().edit(proxy=proxy, **kw)
-
-        newSecurityManager(None, old_user)
+        doc = proxy.getEditableContent()
+        doc._edit(proxy=proxy, check_perms=False, allow_discussion=bool(allow))
 
 
 InitializeClass(CommentTool)

@@ -89,13 +89,13 @@ class TestCommentTool(CPSForumTestCase.CPSForumTestCase):
 
     def testSetAllowDiscussion(self):
         doc = self.proxy_doc.getContent()
-        self.assertEqual(doc.allow_discussion, 0)
+        self.assertEqual(doc.allow_discussion, False)
 
         self.pd.setAllowDiscussion(self.proxy_doc, 1)
-        self.assertEqual(doc.allow_discussion, 1)
+        self.assertEqual(doc.allow_discussion, True)
 
         self.pd.setAllowDiscussion(self.proxy_doc, 0)
-        self.assertEqual(doc.allow_discussion, 0)
+        self.assertEqual(doc.allow_discussion, False)
 
 
     def testCreateAnonymousForumPost(self):

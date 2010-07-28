@@ -28,7 +28,6 @@ from Products.CPSCore.interfaces import ICPSSite
 
 import Forum
 import CommentTool
-import fields
 
 contentClasses = ()
 contentConstructors = ()

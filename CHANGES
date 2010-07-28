@@ -6,7 +6,7 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
--
+- #2180: standard String Field can now accept None values 
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 

@@ -4,5 +4,7 @@
   <property name="is_searchabletext">True</property>
  </field>
  <field name="links" meta_type="CPS String Field"/>
- <field name="parent_id" meta_type="CPS String or None Field"/>
+ <field name="parent_id" meta_type="CPS String Field">
+   <property name="validate_none">True</property>
+ </field>
 </object>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<action-icons>
+ <action-icon category="object" action_id="new_thread"
+              title="forum_new_thread" priority="0"
+              icon_expr="actionicon_add.png"/>
+</action-icons>

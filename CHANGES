@@ -6,7 +6,7 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
--
+- #2320 : loss of message if subject missing (partial fix)
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 

@@ -4,11 +4,13 @@
 
 if not author:
     msg = 'error_author'
-    return context.forum_post_form(error_message=msg)
+    return context.forum_post_form(error_message=msg, subject=subject,
+                                   message=message)
 
 if not subject:
     msg = 'error_subject'
-    return context.forum_post_form(error_message=msg)
+    return context.forum_post_form(error_message=msg, author=author,
+                                   message=message)
 
 if not parent_id or parent_id.isspace():
     parent_id = None

@@ -1,4 +1,21 @@
 ===========================================================
+Package: CPSForum 1.9.9
+===========================================================
+First release built by: gracinet at: 2011-01-13T02:27:00
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- #2320 : loss of message if subject missing (partial fix)
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: CPSForum 1.9.8
 ===========================================================
 First release built by: gracinet at: 2010-12-30T13:05:15

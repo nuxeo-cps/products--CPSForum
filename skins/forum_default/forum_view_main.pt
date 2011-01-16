@@ -48,7 +48,7 @@
                                                     frm_start=here.REQUEST.form.get('frm_start',None))"/>
   </table>
 
-  <table class="forumThreads" cellspacing="0" cellpadding="0">
+  <table class="forumThreads" cellspacing="0" cellpadding="0" style="width:100%">
     <tal:block condition="python:len(threads)">
       <tr><td colspan="2">
         <tal:block replace="structure python:here.forum_view_threads(

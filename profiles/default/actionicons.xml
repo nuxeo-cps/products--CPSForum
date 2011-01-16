@@ -3,4 +3,13 @@
  <action-icon category="object" action_id="new_thread"
               title="forum_new_thread" priority="0"
               icon_expr="actionicon_add.png"/>
+ <action-icon category="object" action_id="activate_comments"
+              title="action_activate_comments" priority="20"
+              icon_expr="actionicon_activate_comments.png"/>
+ <action-icon category="object" action_id="manage_comments"
+              title="action_manage_comments" priority="20"
+              icon_expr="actionicon_manage_comments.png"/>
+ <action-icon category="object" action_id="comment"
+              title="action_comment" priority="20"
+              icon_expr="actionicon_comment_add.png"/>
 </action-icons>

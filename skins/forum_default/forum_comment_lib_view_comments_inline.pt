@@ -19,14 +19,14 @@
     <h2 id="document_comment"
         i18n:translate="forum_label_comments">Comments</h2>
     <table class="forumPost" cellspacing="0" cellpadding="0"
-           tal:condition="post_id">
+           tal:condition="post_id" style="width:100%">
       <tal:block tal:replace="structure python:here.post_view_csnippet(
                                                       forum_proxy=forum_proxy,
                                                       post_id=post_id,
                                                       forum=forum,
                                                       can_post=can_post)"/>
     </table>
-    <table class="forumThreads" cellspacing="0" cellpadding="0">
+    <table class="forumThreads" cellspacing="0" cellpadding="0" style="width:100%">
       <tal:block condition="python:len(threads)">
         <tr><td colspan="2">
           <tal:block replace="structure python:here.forum_view_cthreads(

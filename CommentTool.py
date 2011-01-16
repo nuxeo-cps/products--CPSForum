@@ -205,7 +205,7 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
             cpsmcat = portal.translation_service
             discussion_folder = getattr(parent_folder, '.cps_discussions')
             kw = {'hidden_folder': 1,
-                  'Title': cpsmcat('forum_title_comments').encode('ISO-8859-15', 'ignore')}
+                  'Title': cpsmcat('forum_title_comments')}
             discussion_folder_c = discussion_folder.getEditableContent()
             discussion_folder_c.edit(proxy=discussion_folder, **kw)
             comment_wf_chain = no_content_wf_chain.copy()
@@ -228,8 +228,10 @@ class CommentTool(UniqueObject, PortalFolder, DiscussionTool):
                                                     'CPSForum', forum_id)
             forum = getattr(discussion_folder, forum_id)
             forum_c = forum.getEditableContent()
-            kw = {'Title': cpsmcat('forum_title_comments_for').encode('ISO-8859-15', 'ignore')+' '+proxy_doc.Title(),
-                  'Description': cpsmcat('forum_desc_comments').encode('ISO-8859-15', 'ignore')+' '+proxy_doc.Title(),
+            kw = {'Title': ' '.join((cpsmcat('forum_title_comments_for'),
+                                     proxy_doc.Title())),
+                  'Description': ' '.join((cpsmcat('forum_desc_comments'),
+                                           proxy_doc.Title())),
                   'moderation_mode': 0}
             forum_c.edit(proxy=forum, **kw)
             evtool.notifyEvent('modify_object', forum, {})

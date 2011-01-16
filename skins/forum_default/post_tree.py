@@ -10,10 +10,10 @@ if forum is None:
     forum = context.getContent()
 
 cpsmcat = context.Localizer.default
-pending_i18n = cpsmcat('forum_pending_post').encode('ISO-8859-15', 'ignore')
-unpublished_i18n = cpsmcat('forum_unpublished_post').encode('ISO-8859-15', 'ignore')
-rejected_i18n = cpsmcat('forum_rejected_post').encode('ISO-8859-15', 'ignore')
-published_i18n = cpsmcat('forum_published_post').encode('ISO-8859-15', 'ignore')
+pending_i18n = cpsmcat('forum_pending_post')
+unpublished_i18n = cpsmcat('forum_unpublished_post')
+rejected_i18n = cpsmcat('forum_rejected_post')
+published_i18n = cpsmcat('forum_published_post')
 
 pmt = context.portal_membership
 member = pmt.getAuthenticatedMember()

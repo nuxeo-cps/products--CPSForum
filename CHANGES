@@ -6,7 +6,7 @@ New features
 -
 Bug fixes
 ~~~~~~~~~
--
+- Robustness in case user hasn't enough rights
 New internal features
 ~~~~~~~~~~~~~~~~~~~~~
 - 

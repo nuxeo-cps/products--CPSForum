@@ -1,4 +1,21 @@
 ===========================================================
+Package: CPSForum 1.9.11
+===========================================================
+First release built by: gracinet at: 2011-02-07T12:41:46
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- Robustness in case user hasn't enough rights
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: CPSForum 1.9.10
 ===========================================================
 First release built by: gracinet at: 2011-02-01T21:22:05

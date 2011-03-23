@@ -6,6 +6,7 @@
  <property name="style_prefix">layout_default_</property>
  <property name="flexible_widgets"/>
  <property name="validate_values_expr"></property>
+
  <widget name="Description" meta_type="Text Widget">
   <property name="fields">
    <element value="Description"/>
@@ -18,6 +19,7 @@
   <property name="html_editor_position">embedded</property>
   <property name="render_format">html</property>
  </widget>
+
  <widget name="Title" meta_type="Heading Widget">
   <property name="fields">
    <element value="Title"/>
@@ -26,7 +28,9 @@
   <property name="label_edit">forum_label_subject</property>
   <property name="is_i18n">True</property>
   <property name="size_max">250</property>
+  <property name="level">2</property>
  </widget>
+
  <widget name="author" meta_type="String Widget">
   <property name="fields">
    <element value="author"/>
@@ -44,6 +48,7 @@
   <property name="display_width">40</property>
   <property name="size_max">50</property>
  </widget>
+
  <widget name="links" meta_type="InternalLinks Widget">
   <property name="fields">
    <element value="links"/>
@@ -53,6 +58,7 @@
   <property name="is_i18n">True</property>
   <property name="hidden_empty">True</property>
  </widget>
+
  <table>
   <row>
    <cell name="Title"/>
@@ -67,4 +73,5 @@
    <cell name="links"/>
   </row>
  </table>
+
 </object>

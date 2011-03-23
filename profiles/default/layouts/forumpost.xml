@@ -13,7 +13,7 @@
   </property>
   <property name="label_edit">forum_label_message</property>
   <property name="is_i18n">True</property>
-  <property name="css_class">ddescription</property>
+  <property name="css_class">dforum</property>
   <property name="width">72</property>
   <property name="height">10</property>
   <property name="html_editor_position">embedded</property>
@@ -31,7 +31,7 @@
   <property name="level">2</property>
  </widget>
 
- <widget name="author" meta_type="String Widget">
+ <widget name="author" meta_type="Directory Entry Widget">
   <property name="fields">
    <element value="author"/>
   </property>
@@ -45,8 +45,7 @@
   <property name="hidden_layout_modes">
    <element value="create"/>
   </property>
-  <property name="display_width">40</property>
-  <property name="size_max">50</property>
+  <property name="directory">members</property>
  </widget>
 
  <widget name="links" meta_type="InternalLinks Widget">

@@ -1,4 +1,22 @@
 ===========================================================
+Package: CPSForum 1.9.12
+===========================================================
+First release built by: gracinet at: 2011-05-04T18:45:57
+Requires
+~~~~~~~~
+-
+New features
+~~~~~~~~~~~~
+-
+Bug fixes
+~~~~~~~~~
+- #2380: double h1 for Forum posts
+- #2381: improvement of Forum post layout
+New internal features
+~~~~~~~~~~~~~~~~~~~~~
+- 
+
+===========================================================
 Package: CPSForum 1.9.11
 ===========================================================
 First release built by: gracinet at: 2011-02-07T12:41:46

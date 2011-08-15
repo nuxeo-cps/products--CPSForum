@@ -14,11 +14,13 @@
                                                          forum=forum,
                                                          proxy=forum_proxy)"
             tal:condition="python:not locked and can_post">
-        <input type="hidden" name="parent_id:string"
-               tal:attributes="value post_id" />
-        <input type="submit" name="forum_post_reply:method"
-               class="standalone" value="forum_reply"
-               i18n:attributes="value" />
+        <p class="buttons">
+         <input type="hidden" name="parent_id:string"
+                tal:attributes="value post_id" />
+         <input type="submit" name="forum_post_reply:method"
+                class="standalone" value="forum_reply"
+                i18n:attributes="value" />
+	</p>
       </form>
     </td>
   </tr>

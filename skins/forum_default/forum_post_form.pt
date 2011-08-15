@@ -103,7 +103,7 @@ oFCKeditor.Create();
           </div>
         </div>
         <div class="row">
-          <div class="field">
+          <div class="buttons field">
                 <input type="hidden" name="parent_id:string"
                        tal:attributes="value parent_id" />
                 <input type="hidden" name="frm_start"

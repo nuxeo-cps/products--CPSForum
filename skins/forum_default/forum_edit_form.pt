@@ -1,4 +1,4 @@
-c<html metal:use-macro="here/main_template/macros/master">
+<html metal:use-macro="here/main_template/macros/master">
 
 <metal:block fill-slot="header" />
 
@@ -60,7 +60,7 @@ c<html metal:use-macro="here/main_template/macros/master">
     </tr>
     <tr>
       <td />
-      <td>
+      <td class="buttons">
         <input type="hidden" name="type" value="Forum" />
         <input type="submit" name="forum_edit:method"
                class='mainbutton' 

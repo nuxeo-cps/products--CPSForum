@@ -17,6 +17,7 @@
             name="post_form"
             tal:define="locked python:here.locked_thread(post=post,forum=forum)"
             tal:condition="python:not locked and can_post">
+       <p class="buttons">
         <input type="hidden" name="parent_id:string"
                tal:attributes="value post_id" />
         <input type="hidden" name="frm_start" value=""
@@ -28,6 +29,7 @@
                type="submit" name="forum_post_modify:method"
                class="standalone" value="forum_modify"
                i18n:attributes="value" />
+       </p>
       </form>
     </td>
   </tr>

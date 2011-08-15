@@ -50,7 +50,7 @@
     </tr>
     <tr>
       <td />
-      <td>
+      <td class="buttons">
         <input type="hidden" name="type" value="Forum" />
         <input type="submit" name="forum_create:method"
                class='mainbutton' tal:attributes="value string:forum_create"

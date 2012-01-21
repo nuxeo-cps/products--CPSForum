@@ -8,7 +8,7 @@
              tal:condition="can_post">
     <tal:block tal:define="global actions python:actions['object'].append({'id':'new_thread',
                                                    'url': 'forum_post_form',
-                                                   'name': 'forum_new_thread',
+                                                   'title': 'forum_new_thread',
                                                    'category': 'object'})" />
   </tal:block>
 </metal:block>
